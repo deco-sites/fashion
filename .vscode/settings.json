@@ -1,0 +1,13 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true,
+  "deno.importMap": "./import_map.json",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
+}

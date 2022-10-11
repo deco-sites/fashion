@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "start": "deno run -A --watch=static/ dev.ts",
+    "component": "deno eval 'import \"$live/scripts/component.ts\"'"
+  },
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
+}
