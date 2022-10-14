@@ -3,7 +3,7 @@ import Alert, {
   schema as alertSchema,
 } from "./ui/Alert.tsx";
 import type { h } from "preact";
-import type { JSONSchema7 } from "https://esm.sh/v92/@types/json-schema@7.0.11/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjEwLjY/index.d.ts";
+import type { JSONSchema7 } from "json-schema"
 import ZeedogLogoTitle from "./icons/ZeedogLogoTitle.tsx";
 import ZeedodKitchenLogo from "./icons/ZeedogKitchenLogo.tsx";
 import ZeedogHumanLogo from "./icons/ZeedogHumanLogo.tsx";

@@ -79,6 +79,7 @@ import * as $$$51 from "./components/ui/Alert.tsx";
 import * as $$$52 from "./components/ui/Image.tsx";
 import * as $$$53 from "./components/ui/Spinner.tsx";
 import * as $$$54 from "./components/ui/Video.tsx";
+import * as $$$$0 from "./loaders/vtex/searchCollections.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -162,6 +163,7 @@ const manifest: DecoManifest = {
     "./components/ui/Spinner.tsx": $$$53,
     "./components/ui/Video.tsx": $$$54,
   },
+  loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
   schemas: {
     "Banner": {
       "title": "Main Banner",
@@ -333,13 +335,25 @@ const manifest: DecoManifest = {
         },
       },
     },
+    "ProductDetails": {
+      "title": "Product Details",
+      "type": "object",
+      "properties": { "products": { "$ref": "searchCollections" } },
+    },
     "ProductShelf": {
       "title": "Product Shelf",
       "type": "object",
       "required": ["title", "collection"],
       "properties": {
         "title": { "type": "string", "title": "Título" },
-        "collection": { "type": "string", "title": "Coleção" },
+        "products": {
+          "$ref": "searchCollections",
+          "type": "object",
+          "title": "Products",
+          "properties": {
+            "collection": { "type": "string", "title": "Coleção" },
+          },
+        },
       },
     },
     "ui/Alert": {

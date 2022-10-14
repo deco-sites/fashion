@@ -1,4 +1,4 @@
-import type { JSONSchema7 } from "https://esm.sh/v92/@types/json-schema@7.0.11/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjEwLjY/index.d.ts";
+import type { JSONSchema7 } from "json-schema"
 import TruckIcon from "../icons/TruckIcon.tsx";
 
 export const schema: JSONSchema7 = {

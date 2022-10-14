@@ -1,8 +1,9 @@
 import ProductCard, { Product } from "../components/ProductCard.tsx";
-import type { JSONSchema7 } from "https://esm.sh/v92/@types/json-schema@7.0.11/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjEwLjY/index.d.ts";
+import type { JSONSchema7 } from "json-schema";
 import { forwardRef } from "preact/compat";
-import type { h, Ref } from "preact";
+import type {  Ref } from "preact";
 import { useRef } from "preact/hooks";
+import VTEXSearchLoader from "../loaders/vtex/searchCollections.ts";
 
 const Panel = forwardRef((props: Product, ref: Ref<HTMLDivElement>) => {
   return (
@@ -24,9 +25,9 @@ export const schema: JSONSchema7 = {
       "type": "string",
       title: "Título",
     },
-    collection: {
-      "type": "string",
-      title: "Coleção",
+    products: {
+      $ref: "searchCollections",
+      ...VTEXSearchLoader.inputSchema,
     },
   },
 };
@@ -34,15 +35,13 @@ export const schema: JSONSchema7 = {
 interface Props {
   collection: string;
   title: string;
-  loaderData?: Product[];
+  products: Product[];
 }
 
 export default function ProductShelf({
   title,
-  loaderData: products,
+  products,
 }: Props) {
-  const flickingRef = useRef<{ prev: () => void; next: () => void }>(null);
-
   return (
     <section class="md:mx-auto px-2 md:px-4 py-8 md:py-20">
       <h2 class="text-center mb-8 text-sm md:text-2xl font-heavy">{title}</h2>
@@ -50,20 +49,6 @@ export default function ProductShelf({
         {products?.map((product, index) => {
           return <Panel {...product} />;
         })}
-        {/* <div class="hidden md:block">
-          <button
-            class="absolute left-0 z-10 rounded-full border bg-white h-16 w-16"
-            onClick={() => flickingRef.current?.prev()}
-          >
-            <ArrowRightIcon class="rotate-180" />
-          </button>
-          <button
-            class="absolute right-0 z-10 rounded-full border bg-white h-16 w-16"
-            onClick={() => flickingRef.current?.next()}
-          >
-            <ArrowRightIcon />
-          </button>
-        </div> */}
       </div>
     </section>
   );

@@ -4,10 +4,29 @@ import Image from "./ui/Image.tsx";
 import AddToCart from "../islands/AddToCart.tsx";
 import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";
+import { JSONSchema7 } from "json-schema"
 
-type LoaderData = { loaderData: Product };
+export const schema: JSONSchema7 = {
+  title: "Product Details",
+  type: "object",
+  properties: {
+    products: {
+      $ref: "searchCollections",
+    },
+  },
+};
 
-export default function ProductDetails({ loaderData: product }: LoaderData) {
+interface Props {
+  products: Product[];
+}
+
+export default function ProductDetails({ products = [] }: Props) {
+  const [product] = products;
+
+  if (!product) {
+    return;
+  }
+
   return (
     <>
       <Head
