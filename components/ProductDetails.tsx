@@ -118,7 +118,6 @@ export default function ProductDetails({ products = [] }: Props) {
             </button>
             <ProductInformation
               description={product.description}
-              detalhes={product.atributos}
             />
             <div className="bg-gray-100 rounded-3xl py-10 flex flex-col justify-center items-center w-full mt-6">
               <span class="pb-8">Precisa de ajuda?</span>

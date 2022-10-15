@@ -513,27 +513,31 @@ export interface Installment {
 interface CommertialOffer {
   Price: number;
   spotPrice: number;
+  ListPrice: number;
   Installments: Installment[];
 }
 
 // Catalog Interfaces
 // Partial Item
 export interface Item {
+  // SKU
   itemId: string;
-  images: Array<{ imageUrl: string; imageLabel: string }>;
+  complementName: string;
+  images: Array<{ imageUrl: string; imageLabel: string; imageText: string }>;
   sellers?: Array<{ sellerId: string; commertialOffer: CommertialOffer }>;
 }
 
 // Partial Product
 export interface Product {
+  productId: string;
   productName: string;
   description: string;
   brand: string;
-  items: Item[];
   productReference: number;
   linkText: string;
-  nome_produto: string[];
-  Atributos_Especiais: string[];
+// nome_produto: string[];
+// Atributos_Especiais: string[];
   categories: string[]
-  Descricao_Produto: string[]
+// Descricao_Produto: string[]
+  items: Item[];
 }

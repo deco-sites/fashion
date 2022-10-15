@@ -22,21 +22,31 @@ export default {
     { collection }: { collection: string },
   ) {
     const url = new URL(req.url);
-    const searchParams = new URLSearchParams();
-    searchParams.set("_to", "4");
-    searchParams.set("_from", "0");
+    const isProductSearch = Boolean(ctx.params.slug);
+    let query: string;
 
-    let facets: string;
-
-    if (ctx.params.slug) {
-      facets = `${ctx.params.slug}/p`;
+    // search for PDP
+    if (isProductSearch) {
+      const skuId = ctx.params.slug.split("-").pop();
+      query = `sku:${skuId}`;
     } else {
-      facets = url.searchParams.get("q") ?? collection;
+      // search for PLP
+      if (url.pathname === "/search") {
+        query = url.searchParams.get("q") ?? "";
+        if (query) {
+          query = encodeURIComponent(query);
+        }
+      } else {
+        query = encodeURIComponent(collection);
+      }
     }
 
-    const products = await VTEXSearch({
-      facets,
-      searchParams: searchParams,
+    const { products } = await VTEXSearch({
+      query,
+      type: "product_search",
+      page: 0,
+      count: 4,
+      hideUnavailableItems: true,
     });
 
     return { products: products.map(mapVTEXProduct) };

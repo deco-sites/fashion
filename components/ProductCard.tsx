@@ -29,8 +29,8 @@ export interface Product {
   slug: string;
   brand: string;
   description: string;
-  atributos: string;
-  nome_produto: string;
+// atributos: string;
+  // nome_produto: string;
   breadcrumb: Array<{ label: string; url: string }>;
 }
 
@@ -41,7 +41,7 @@ export default function ProductCard({
   image,
   imageHover,
   slug,
-  nome_produto,
+  // nome_produto,
 }: Product) {
   const imgSrc = convertImageSrc(image.src);
   const imgHoverSrc = imageHover ? convertImageSrc(imageHover?.src) : "";
@@ -73,12 +73,15 @@ export default function ProductCard({
         )}
       </a>
       <div class="text-[#777] p-4">
-        <h3 class="text-xs max-h-[80px] overflow-hidden whitespace-nowrap" style={{ textOverflow: "ellipsis"}}>
+        <h3
+          class="text-xs max-h-[80px] overflow-hidden whitespace-nowrap"
+          style={{ textOverflow: "ellipsis" }}
+        >
           {name.replace(/(.*)(\-).*$/, "$1$2")}
         </h3>
-        <h4 class="text-xs mb-6 max-h-[80px] font-bold overflow-hidden whitespace-nowrap" style={{ textOverflow: "ellipsis"}}>
-          {nome_produto}
-        </h4>
+        {/* <h4 class="text-xs mb-6 max-h-[80px] font-bold overflow-hidden whitespace-nowrap" style={{ textOverflow: "ellipsis"}}> */}
+        {/* {nome_produto} */}
+        {/* </h4> */}
         <div class="fold-medium">
           R$ {typeof price === "number" ? price.toFixed(2) : price}
         </div>
