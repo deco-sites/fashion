@@ -1,4 +1,4 @@
-import { JSONSchema7 } from "json-schema"
+import { JSONSchema7 } from "json-schema";
 import Image from "./ui/Image.tsx";
 
 export const schema: JSONSchema7 = {

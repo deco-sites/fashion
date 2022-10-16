@@ -1,1 +1,2 @@
-Generated with [https://realfavicongenerator.net/](https://realfavicongenerator.net/)
+Generated with
+[https://realfavicongenerator.net/](https://realfavicongenerator.net/)

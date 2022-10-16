@@ -14,7 +14,8 @@ export default function QuantitySelector({ initialQuantity, itemId }: Props) {
   const [quantity, setQuantity] = useState(initialQuantity);
   const { updateItem } = useCart();
 
-  const inputClass = tw`text-center p-2 block max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`;
+  const inputClass =
+    tw`text-center p-2 block max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`;
 
   const onDecrement = () => onChangeQuantity(Math.max(0, quantity - 1));
 
@@ -33,7 +34,7 @@ export default function QuantitySelector({ initialQuantity, itemId }: Props) {
       updateItem(itemId, newQuantity);
     },
     ONE_SECOND,
-    [itemId]
+    [itemId],
   );
 
   return (

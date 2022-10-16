@@ -1,4 +1,4 @@
-import { JSONSchema7 } from "json-schema"
+import { JSONSchema7 } from "json-schema";
 import Image from "./ui/Image.tsx";
 
 export const schema: JSONSchema7 = {
@@ -60,15 +60,20 @@ interface Props {
   title?: string;
   subtitle?: string;
   link?: string;
-  CTA?: string
+  CTA?: string;
 }
 
 const imgSrcDefault = {
-  mobile: "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-768x950-kitchen.jpg?v=637949787190870000",
-  desktop: "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-1920x700-kitchen.jpg?v=637949787206370000"
-}
+  mobile:
+    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-768x950-kitchen.jpg?v=637949787190870000",
+  desktop:
+    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-1920x700-kitchen.jpg?v=637949787206370000",
+};
 
-export default function Banner({ imgSrc=imgSrcDefault, alt, text, title, subtitle, link, CTA, textColor }: Props) {
+export default function Banner(
+  { imgSrc = imgSrcDefault, alt, text, title, subtitle, link, CTA, textColor }:
+    Props,
+) {
   return (
     <section class="w-full mt-8">
       <div class="relative">
@@ -91,8 +96,13 @@ export default function Banner({ imgSrc=imgSrcDefault, alt, text, title, subtitl
           />
         </picture>
 
-        <div class={`absolute inset-0 md:flex md:flex-col md:items-center md:justify-center text-[${textColor}] m-[4vh] md:m-auto md:text-[${textColor}] md:w-[28vw]`}>
-          <a href="" class="md:flex md:flex-col md:items-center md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto">
+        <div
+          class={`absolute inset-0 md:flex md:flex-col md:items-center md:justify-center text-[${textColor}] m-[4vh] md:m-auto md:text-[${textColor}] md:w-[28vw]`}
+        >
+          <a
+            href=""
+            class="md:flex md:flex-col md:items-center md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto"
+          >
             <div class="font-sans text-xs md:text-sm leading-4 w-[37.68vw] md:w-auto md:text-center">
               <span>{text}</span>
             </div>

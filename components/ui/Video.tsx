@@ -3,11 +3,13 @@ import { h } from "preact";
 const FACTORS = [1, 2, 3];
 function getVideoSrcSet(
   videoUrl: string,
-  { width, height }: { width: number; height: number }
+  { width, height }: { width: number; height: number },
 ) {
   const srcSetList = FACTORS.map((factor) => {
     const reiscaledWidth = width * factor;
-    return `${videoUrl}-${reiscaledWidth}-${height * factor} ${reiscaledWidth}w`;
+    return `${videoUrl}-${reiscaledWidth}-${
+      height * factor
+    } ${reiscaledWidth}w`;
   });
 
   return srcSetList.join(", ");

@@ -1,7 +1,7 @@
 import ProductCard, { Product } from "../components/ProductCard.tsx";
 import type { JSONSchema7 } from "json-schema";
 import { forwardRef } from "preact/compat";
-import type {  Ref } from "preact";
+import type { Ref } from "preact";
 import { useRef } from "preact/hooks";
 import VTEXSearchLoader from "../loaders/vtex/searchCollections.ts";
 

@@ -13,7 +13,7 @@ export class VTEXCheckoutClient {
 
   public async getOrderForm(orderFormId = "") {
     const orderForm = await fetch(
-      `${this.baseUrl}/api/checkout/pub/orderForm/${orderFormId}`
+      `${this.baseUrl}/api/checkout/pub/orderForm/${orderFormId}`,
     ).then((r) => r.json());
     return orderForm as OrderForm;
   }
@@ -42,7 +42,7 @@ export class VTEXCheckoutClient {
           allowedOutdatedData,
           noSplitItem: !splitItem,
         }),
-      }
+      },
     ).then((r) => r.json());
 
     return orderForm as OrderForm;
@@ -63,7 +63,7 @@ export class VTEXCheckoutClient {
       {
         method: "PATCH",
         body: JSON.stringify(value),
-      }
+      },
     ).then((r) => r.json());
 
     return orderForm as OrderForm;

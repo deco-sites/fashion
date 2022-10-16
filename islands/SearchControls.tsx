@@ -46,7 +46,7 @@ export default function SearchControls({}: Props) {
             onInput={(e) => {
               // TODO: Replace with "search utils"
               const urlSearchParams = new URLSearchParams(
-                window.location.search
+                window.location.search,
               );
               urlSearchParams.set(SORT_QUERY_PARAM, e.currentTarget.value);
               window.location.search = urlSearchParams.toString();

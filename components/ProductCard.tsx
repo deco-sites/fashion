@@ -29,7 +29,7 @@ export interface Product {
   slug: string;
   brand: string;
   description: string;
-// atributos: string;
+  // atributos: string;
   // nome_produto: string;
   breadcrumb: Array<{ label: string; url: string }>;
 }

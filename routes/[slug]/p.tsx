@@ -1,7 +1,4 @@
-import {
-  createLiveHandler,
-  LivePage,
-} from "$live/live.tsx";
+import { createLiveHandler, LivePage } from "$live/live.tsx";
 
 export const handler = createLiveHandler({
   template: "/:slug/p",

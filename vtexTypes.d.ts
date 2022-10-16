@@ -535,9 +535,9 @@ export interface Product {
   brand: string;
   productReference: number;
   linkText: string;
-// nome_produto: string[];
-// Atributos_Especiais: string[];
-  categories: string[]
-// Descricao_Produto: string[]
+  // nome_produto: string[];
+  // Atributos_Especiais: string[];
+  categories: string[];
+  // Descricao_Produto: string[]
   items: Item[];
 }

@@ -14,7 +14,7 @@ interface AddItemInputData {
       options: any;
       index: number;
       uniqueId: string;
-    }
+    },
   ];
 }
 
@@ -23,7 +23,7 @@ const ORDER_FORM_ID_COOKIE = "ofid";
 // TODO: Deal with orderForms for placed orders
 export const getOrCreateOrderForm = async (
   req: Request,
-  nextHeaders: Headers
+  nextHeaders: Headers,
 ): Promise<OrderForm> => {
   const checkout = new VTEXCheckoutClient();
   const cookies = getCookies(req.headers);
@@ -46,7 +46,10 @@ export const getOrCreateOrderForm = async (
     //   },
     // });
 
-    setCookie(nextHeaders, { name: ORDER_FORM_ID_COOKIE, value: orderForm.orderFormId });
+    setCookie(nextHeaders, {
+      name: ORDER_FORM_ID_COOKIE,
+      value: orderForm.orderFormId,
+    });
     return orderForm;
   }
 
@@ -59,13 +62,14 @@ export const handler: Handlers = {
     const headers = new Headers();
     const orderForm = await getOrCreateOrderForm(req, headers);
     const { items } = (await req.json()) as {
-      items: [{ uniqueId: string; quantity: number; id?: string, index?: number }];
+      items: [
+        { uniqueId: string; quantity: number; id?: string; index?: number },
+      ];
     };
 
     const cleanItems = items.map(({ id, ...rest }) => rest);
 
     if (cleanItems.some((item) => !item.index)) {
-
       const idToIndex = orderForm.items.reduce(
         (acc: Record<string, number>, item, index: number) => {
           if (acc[item.uniqueId] === undefined) {
@@ -73,7 +77,7 @@ export const handler: Handlers = {
           }
           return acc;
         },
-        {} as Record<string, number>
+        {} as Record<string, number>,
       );
 
       cleanItems.forEach((item) => {
@@ -106,7 +110,7 @@ export const handler: Handlers = {
         id: parseInt(skuId, 10),
         quantity,
         seller,
-      })
+      }),
     );
 
     const updatedOrderForm = await checkout.updateItems({

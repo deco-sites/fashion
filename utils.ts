@@ -1,9 +1,9 @@
-import { useRef, useCallback } from "preact/hooks";
+import { useCallback, useRef } from "preact/hooks";
 
 export const useDebouncedCallback = (
   callback: Function,
   delay: number,
-  dependencies?: any[]
+  dependencies?: any[],
 ) => {
   const timeout = useRef<number>();
 

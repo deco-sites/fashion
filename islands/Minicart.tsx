@@ -1,4 +1,5 @@
 import { useRef } from "preact/hooks";
+import { ShoppingCartIcon } from "heroicons";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { apply, tw } from "twind";
 import { animation, css } from "twind/css";
@@ -63,8 +64,7 @@ export default function Cart() {
         onClick={() => ref.current!.showModal()}
         class={tw`h-full flex items-center gap-2 px-5 py-1`}
       >
-        <IconCart />
-        <div class="w-3 h-6">{loading ? <Spinner /> : cartItemsLengh}</div>
+        <ShoppingCartIcon className="w-8 h-8" />
       </button>
       <dialog
         ref={ref}
@@ -85,7 +85,8 @@ function CartInner({
   updateItem(u: string, q: number): void;
 }) {
   const corners = apply`rounded(tl-2xl tr-2xl sm:(tr-none bl-2xl))`;
-  const card = tw`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between`;
+  const card =
+    tw`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between`;
 
   const isCartEmpty = cart?.items?.length === 0;
 
@@ -114,71 +115,71 @@ function CartInner({
       </div>
       {cart && (
         <div class={tw`flex-grow-1 my-4`}>
-          {isCartEmpty ? (
-            <p class={tw`text-gray-700`}>Não há itens no carrinho</p>
-          ) : (
-            <ul role="list" class={tw`-my-6 divide-y divide-gray-200`}>
-              {cart?.items?.map(
-                ({
-                  imageUrl,
-                  name,
-                  skuName,
-                  quantity,
-                  price,
-                  detailUrl,
-                  uniqueId,
-                }) => (
-                  <li class={tw`flex py-6`}>
-                    <div
-                      class={tw`h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200`}
-                    >
-                      <img
-                        src={imageUrl}
-                        alt={skuName}
-                        class={tw`h-full w-full object-cover object-center`}
-                      />
-                    </div>
-                    <div class={tw`ml-4 flex flex-1 flex-col`}>
-                      <div>
-                        <div
-                          class={tw`flex justify-between text-base font-medium text-gray-900`}
-                        >
-                          <a href={detailUrl}>
-                            <h3>{name}</h3>
-                          </a>
-                          <p class={tw`ml-4`}>{formatPrice(price)}</p>
-                        </div>
-                        <p class={tw`mt-1 text-sm text-gray-500`}>
-                          {skuName === name ? "" : skuName}
-                        </p>
-                      </div>
+          {isCartEmpty
+            ? <p class={tw`text-gray-700`}>Não há itens no carrinho</p>
+            : (
+              <ul role="list" class={tw`-my-6 divide-y divide-gray-200`}>
+                {cart?.items?.map(
+                  ({
+                    imageUrl,
+                    name,
+                    skuName,
+                    quantity,
+                    price,
+                    detailUrl,
+                    uniqueId,
+                  }) => (
+                    <li class={tw`flex py-6`}>
                       <div
-                        class={tw`flex flex-1 items-end justify-between text-sm`}
+                        class={tw`h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200`}
                       >
-                        <p class={tw`text-gray-500`}>
-                          Quantidade:
-                          <QuantitySelector
-                            initialQuantity={quantity}
-                            itemId={uniqueId}
-                          />
-                        </p>
-
-                        <div class={tw`flex`}>
-                          <button
-                            type="button"
-                            class={tw`font-medium`}
-                            onClick={() => remove(uniqueId)}
+                        <img
+                          src={imageUrl}
+                          alt={skuName}
+                          class={tw`h-full w-full object-cover object-center`}
+                        />
+                      </div>
+                      <div class={tw`ml-4 flex flex-1 flex-col`}>
+                        <div>
+                          <div
+                            class={tw`flex justify-between text-base font-medium text-gray-900`}
                           >
-                            Remove
-                          </button>
+                            <a href={detailUrl}>
+                              <h3>{name}</h3>
+                            </a>
+                            <p class={tw`ml-4`}>{formatPrice(price)}</p>
+                          </div>
+                          <p class={tw`mt-1 text-sm text-gray-500`}>
+                            {skuName === name ? "" : skuName}
+                          </p>
+                        </div>
+                        <div
+                          class={tw`flex flex-1 items-end justify-between text-sm`}
+                        >
+                          <p class={tw`text-gray-500`}>
+                            Quantidade:
+                            <QuantitySelector
+                              initialQuantity={quantity}
+                              itemId={uniqueId}
+                            />
+                          </p>
+
+                          <div class={tw`flex`}>
+                            <button
+                              type="button"
+                              class={tw`font-medium`}
+                              onClick={() => remove(uniqueId)}
+                            >
+                              Remove
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </li>
-                )
-              )}
-            </ul>
-          )}
+                    </li>
+                  ),
+                )}
+              </ul>
+            )}
         </div>
       )}
       {cart && (
@@ -187,7 +188,7 @@ function CartInner({
             <p>Subtotal</p>
             <p>
               {formatPrice(
-                cart?.totalizers?.find(({ id }) => id === "Items")?.value ?? 0
+                cart?.totalizers?.find(({ id }) => id === "Items")?.value ?? 0,
               )}
             </p>
           </div>

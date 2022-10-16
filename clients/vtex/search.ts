@@ -1,7 +1,11 @@
 import { Product } from "../../components/ProductCard.tsx";
-import { Installment, Item, Product as VTEXProduct } from "../../vtexTypes.d.ts";
+import {
+  Installment,
+  Item,
+  Product as VTEXProduct,
+} from "../../vtexTypes.d.ts";
 
-const ACCOUNT_NAME = "lojaoffpremium"
+const ACCOUNT_NAME = "lojaoffpremium";
 
 export interface SelectedFacet {
   key: string;
@@ -36,7 +40,7 @@ export interface SearchArgs {
 }
 
 function addDefaultFacets(facets: SelectedFacet[]): SelectedFacet[] {
-  return [...facets, { key: "trade-policy", value: "1" }]
+  return [...facets, { key: "trade-policy", value: "1" }];
 }
 
 export default async function VTEXSearch(
@@ -63,7 +67,9 @@ export default async function VTEXSearch(
     params.append("hideUnavailableItems", hideUnavailableItems.toString());
   }
 
-  const pathname = addDefaultFacets(selectedFacets).map(({ key, value }) => `${key}/${value}`)
+  const pathname = addDefaultFacets(selectedFacets).map(({ key, value }) =>
+    `${key}/${value}`
+  )
     .join("/");
 
   const _res = await fetch(
@@ -75,7 +81,8 @@ export default async function VTEXSearch(
   return await _res.json();
 }
 
-const isSellerAvailable = (seller: Item["sellers"][0]) => seller.commertialOffer.Price > 0
+const isSellerAvailable = (seller: Item["sellers"][0]) =>
+  seller.commertialOffer.Price > 0;
 
 export const mapVTEXProduct = ({
   productName: name,
@@ -85,8 +92,10 @@ export const mapVTEXProduct = ({
   categories,
   description,
 }: VTEXProduct): Product => {
-  const firstItem = items.find((item) => item.sellers?.find(isSellerAvailable)) as Item;
-  const seller = firstItem.sellers?.find(isSellerAvailable)!
+  const firstItem = items.find((item) =>
+    item.sellers?.find(isSellerAvailable)
+  ) as Item;
+  const seller = firstItem.sellers?.find(isSellerAvailable)!;
   const installment = seller.commertialOffer?.Installments
     .reduce(
       (result, installment) =>

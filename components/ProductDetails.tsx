@@ -1,10 +1,10 @@
-import { TruckIcon, ChatBubbleLeftIcon } from "heroicons";
+import { ChatBubbleLeftIcon, TruckIcon } from "heroicons";
 import { Product } from "../components/ProductCard.tsx";
 import Image from "./ui/Image.tsx";
 import AddToCart from "../islands/AddToCart.tsx";
 import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";
-import { JSONSchema7 } from "json-schema"
+import { JSONSchema7 } from "json-schema";
 
 export const schema: JSONSchema7 = {
   title: "Product Details",
@@ -102,7 +102,9 @@ export default function ProductDetails({ products = [] }: Props) {
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
             <div class="flex flex-col">
               <span class="font-bold">{`R$ 199,00`}</span>
-              <span className="text-gray-600">{`(até 3x de R$ 66,33 s/ juros)`}</span>
+              <span className="text-gray-600">
+                {`(até 3x de R$ 66,33 s/ juros)`}
+              </span>
             </div>
             <AddToCart skuId={product.id} sellerId={product.sellerId} />
           </div>
@@ -114,7 +116,8 @@ export default function ProductDetails({ products = [] }: Props) {
                 width="130"
                 alt="image"
                 src="https://user-images.githubusercontent.com/18706156/194561155-ea3abac9-0c42-4b4e-8920-890965ffad45.png"
-              ></img>
+              >
+              </img>
             </button>
             <ProductInformation
               description={product.description}

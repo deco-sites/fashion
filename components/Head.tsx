@@ -70,25 +70,29 @@ export default function HeadComponent(props: HeadProps) {
         rel="apple-touch-icon"
         sizes="180x180"
         href="/apple-touch-icon.png"
-      ></link>
+      >
+      </link>
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
         href="/favicon-32x32.png"
-      ></link>
+      >
+      </link>
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
         href="/favicon-16x16.png"
-      ></link>
+      >
+      </link>
       <link rel="manifest" href="/site.webmanifest"></link>
       <link
         rel="mask-icon"
         href="/safari-pinned-tab.svg"
         data-color="#003232"
-      ></link>
+      >
+      </link>
       <meta name="theme-color" content="#003232"></meta>
       <meta name="msapplication-TileColor" content="#003232"></meta>
       {styleUrls?.map((styleUrl: string) => (

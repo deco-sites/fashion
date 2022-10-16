@@ -17,7 +17,7 @@
     "swr": "https://esm.sh/swr@2.0.0-beta.6?alias=react:preact/compat&external=preact/compat",
     "@egjs/preact-flicking": "https://esm.sh/*@egjs/preact-flicking@4.9.0",
     "headlessui": "https://esm.sh/@headlessui/react?alias=react:preact/compat&external=preact/compat",
-    "heroicons": "https://esm.sh/@heroicons/react/20/solid?alias=react:preact/compat&external=preact/compat",
+    "heroicons": "https://esm.sh/@heroicons/react/24/outline?alias=react:preact/compat&external=preact/compat",
     "json-schema": "https://esm.sh/v92/@types/json-schema@7.0.11/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjEwLjY/index.d.ts"
   }
 }

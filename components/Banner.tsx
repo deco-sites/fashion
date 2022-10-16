@@ -45,7 +45,7 @@ export const schema: JSONSchema7 = {
     link: {
       "type": "string",
       title: "Link",
-    }
+    },
   },
 };
 
@@ -60,11 +60,15 @@ interface Props {
 }
 
 const imgSrcDefault = {
-  mobile: "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-768x950-kitchen.jpg?v=637949787190870000",
-  desktop: "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-1920x700-kitchen.jpg?v=637949787206370000"
-}
+  mobile:
+    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-768x950-kitchen.jpg?v=637949787190870000",
+  desktop:
+    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-1920x700-kitchen.jpg?v=637949787206370000",
+};
 
-export default function Banner({ imgSrc=imgSrcDefault, alt, text, title, subtitle, link, CTA }: Props) {
+export default function Banner(
+  { imgSrc = imgSrcDefault, alt, text, title, subtitle, link, CTA }: Props,
+) {
   return (
     <section class="w-full my-8">
       <div class="relative">
@@ -88,7 +92,10 @@ export default function Banner({ imgSrc=imgSrcDefault, alt, text, title, subtitl
         </picture>
 
         <div class="absolute inset-0 md:flex md:flex-col md:items-center md:justify-center text-[#4d5b31] m-[4vh] md:m-auto md:text-[#f2e9d8] md:w-[28vw]">
-          <a href="" class="md:flex md:flex-col md:items-center md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto">
+          <a
+            href=""
+            class="md:flex md:flex-col md:items-center md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto"
+          >
             <LogoZeeDog class="w-[37.68vw] md:w-[15.62vw] lg:w-auto" />
             <div class="font-sans text-xs md:text-sm leading-4 w-[37.68vw] md:w-auto md:text-center">
               <span>{text}</span>

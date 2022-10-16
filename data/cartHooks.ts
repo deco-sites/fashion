@@ -11,7 +11,7 @@ export function useCart() {
   const { data, isLoading, mutate } = useSWR<OrderForm, Error>(
     CART_SWR_KEY,
     cartFetcher,
-    {}
+    {},
   );
   const [mutationLoading, setLoading] = useState(true);
 
@@ -31,7 +31,7 @@ export function useCart() {
   };
 
   const addItems = (
-    items: Array<{ skuId: string; quantity: number; seller: string }>
+    items: Array<{ skuId: string; quantity: number; seller: string }>,
   ) => {
     return fetch("/api/cart/items", {
       method: "POST",

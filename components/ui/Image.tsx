@@ -3,7 +3,7 @@ import { h } from "preact";
 const FACTORS = [1, 2, 3];
 function getImageSrcSet(
   imgUrl: string,
-  { width, height }: { width: number; height: number }
+  { width, height }: { width: number; height: number },
 ) {
   const srcSetList = FACTORS.map((factor) => {
     const reiscaledWidth = width * factor;

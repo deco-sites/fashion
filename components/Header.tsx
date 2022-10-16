@@ -1,18 +1,8 @@
-import Alert, {
-  Props as AlertProps,
-  schema as alertSchema,
-} from "./ui/Alert.tsx";
 import type { h } from "preact";
 import type { JSONSchema7 } from "json-schema";
-import ZeedogLogoTitle from "./icons/ZeedogLogoTitle.tsx";
-import ZeedodKitchenLogo from "./icons/ZeedogKitchenLogo.tsx";
-import ZeedogHumanLogo from "./icons/ZeedogHumanLogo.tsx";
-import TimeLapseIcon from "./icons/TimeLapseIcon.tsx";
-import PercentageCircle from "./icons/PercentageCircle.tsx";
-import ZeedogLogo from "./icons/ZeedogLogo.tsx";
-import MagnifyingGlassIcon from "./icons/MagnifyingGlassIcon.tsx";
-import PersonIcon from "./icons/PersonIcon.tsx";
-import HeartIcon from "./icons/HeartIcon.tsx";
+import Alert from "../islands/Alert.tsx";
+import DecoFashionLogo from "./icons/DecoFashionLogo.tsx";
+import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserIcon } from "heroicons";
 import Minicart from "../islands/Minicart.tsx";
 
 function StoreAnchor({
@@ -41,33 +31,6 @@ function Button({
   );
 }
 
-function StoreNavbar() {
-  return (
-    <section class="bg-custom-gray w-full flex justify-between h-10 md:border-b border-[#d3d5db] text-sm text-[#353535]">
-      <div class="w-full md:w-auto flex items-center">
-        <StoreAnchor class="bg-white">
-          <ZeedogLogoTitle />
-        </StoreAnchor>
-        <StoreAnchor>
-          <ZeedodKitchenLogo />
-        </StoreAnchor>
-        <StoreAnchor class="border-r-0">
-          <ZeedogHumanLogo />
-        </StoreAnchor>
-      </div>
-      <div class="hidden md:flex items-center mr-8">
-        <Button>
-          <TimeLapseIcon /> <span>assinaturas</span>
-        </Button>
-        <Button>
-          <PercentageCircle /> <span>10% off na primeira compra</span>
-        </Button>
-        <Button>Ganhe 25R$</Button>
-      </div>
-    </section>
-  );
-}
-
 function NavItem({
   children,
   class: className,
@@ -75,7 +38,7 @@ function NavItem({
   return (
     <a
       href={`/search?q=${children}`}
-      class={`flex items-center text-sm px-5 ${className ?? ""}`}
+      class={`flex items-center text-[16px] font-bold uppercase px-8 lg:px-12 hover:border-black border-solid border-b border-white `}
     >
       {children}
     </a>
@@ -84,65 +47,59 @@ function NavItem({
 
 function Navbar() {
   return (
-    <section class="bg-white flex h-[70px] md:border-b border-[#d3d5db]">
-      <div class="pl-6 pr-4 flex items-center">
-        <a href="/">
-          <ZeedogLogo />
+    <div>
+      <section class="md:hidden flex p-2 justify-between items-center px-12">
+        <button>
+          <Bars3Icon className="w-8 h-8" />
+        </button>
+        <a href="#" class="mr-6">
+          <MagnifyingGlassIcon className="w-8 h-8" />
         </a>
-      </div>
-      <nav class="w-full flex justify-end md:justify-between">
-        <ul class="hidden md:flex list-none">
-          <NavItem>Blusas</NavItem>
-          <NavItem>Calçados</NavItem>
-          <NavItem>Casacos</NavItem>
-          <NavItem>Joías</NavItem>
-          <NavItem>Shorts</NavItem>
-        </ul>
-        <div class="flex justify-end md-5 md:mr-8">
-          <ul class="hidden md:flex list-none">
-            <NavItem class="mr-[2.125rem]">
-              <span class="flex items-center">
-                <MagnifyingGlassIcon class="mr-3" />
-                buscar
-              </span>
-            </NavItem>
-          </ul>
-          <ul class="list-none flex">
-            <NavItem>
-              <HeartIcon />
-            </NavItem>
-            <NavItem>
-              <PersonIcon />
-            </NavItem>
-            <Minicart />
-          </ul>
+        <a href="/">
+          <DecoFashionLogo classes="w-40" />
+        </a>
+        <a href="#">
+          <UserIcon className="w-6 h-6" />
+        </a>
+        <Minicart />
+      </section>
+      <section class="hidden md:flex bg-white flex-row h-[80px] justify-between md:border-b border-[#d3d5db]">
+        <div class="flex items-center justify-center flex-1 min-w-[200px]">
+          <a href="/">
+            <DecoFashionLogo classes="w-60" />
+          </a>
         </div>
-      </nav>
-    </section>
+        <div class="flex justify-center md:justify-between pl-12">
+          <NavItem>Marcas</NavItem>
+          <NavItem>Feminino</NavItem>
+          <NavItem>Masculino</NavItem>
+          <NavItem>Infantil</NavItem>
+        </div>
+        <div class="flex-1 flex items-center justify-end md:mr-8">
+          <a href="#" class="mr-6">
+            <MagnifyingGlassIcon className="w-8 h-8" />
+          </a>
+          <a href="#">
+            <HeartIcon className="w-8 h-8" />
+          </a>
+          <Minicart />
+        </div>
+      </section>
+    </div>
   );
 }
 
 export const schema: JSONSchema7 = {
   title: "Header",
   type: "object",
-  properties: {
-    alert: alertSchema,
-  },
+  properties: {},
 };
 
-interface Props {
-  alert: AlertProps;
-}
-
-export default function Header({
-  alert = { message: "Frete gratis a partir de 1000 reais" },
-}: Props) {
+export default function Header() {
   return (
     <header>
-      <Alert {...alert} class="hidden md:flex" />
-      <StoreNavbar />
+      <Alert />
       <Navbar />
-      <Alert {...alert} class="flex md:hidden h-7" />
     </header>
   );
 }

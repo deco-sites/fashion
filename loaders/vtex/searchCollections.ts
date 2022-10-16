@@ -19,7 +19,7 @@ export default {
   loader: async function VTEXSearchLoader(
     req: Request,
     ctx: HandlerContext,
-    { collection }: { collection: string }
+    { collection }: { collection: string },
   ) {
     const url = new URL(req.url);
     const isProductPage = Boolean(ctx.params.slug);
