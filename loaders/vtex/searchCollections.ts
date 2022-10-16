@@ -1,6 +1,6 @@
 import type { Loader } from "$live/types.ts";
 import { HandlerContext } from "$fresh/server.ts";
-import VTEXSearch, { mapVTEXProduct } from "../../clients/vtex/search.ts";
+import VTEXSearch, { mapVTEXProduct, Sort } from "../../clients/vtex/search.ts";
 
 export default {
   inputSchema: {
@@ -19,20 +19,22 @@ export default {
   loader: async function VTEXSearchLoader(
     req: Request,
     ctx: HandlerContext,
-    { collection }: { collection: string },
+    { collection }: { collection: string }
   ) {
     const url = new URL(req.url);
-    const isProductSearch = Boolean(ctx.params.slug);
+    const isProductPage = Boolean(ctx.params.slug);
     let query: string;
 
+    // TODO: Search and Product should have different loaders
     // search for PDP
-    if (isProductSearch) {
+    if (isProductPage) {
       const skuId = ctx.params.slug.split("-").pop();
       query = `sku:${skuId}`;
     } else {
       // search for PLP
       if (url.pathname === "/search") {
         query = url.searchParams.get("q") ?? "";
+
         if (query) {
           query = encodeURIComponent(query);
         }
@@ -41,9 +43,21 @@ export default {
       }
     }
 
+    // TODO: This info should be accessed by common commerce schema
+    const sort = (function getSortValue() {
+      const sortFromUrl = url.searchParams.get("sort");
+
+      if (!sortFromUrl) {
+        return "";
+      } else {
+        return sortFromUrl as Sort;
+      }
+    })();
+
     const { products } = await VTEXSearch({
       query,
       type: "product_search",
+      sort,
       page: 0,
       count: 4,
       hideUnavailableItems: true,

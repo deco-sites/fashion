@@ -24,6 +24,7 @@ import * as $$4 from "./islands/LoginButtons.tsx";
 import * as $$5 from "./islands/Minicart.tsx";
 import * as $$6 from "./islands/ProductInformation.tsx";
 import * as $$7 from "./islands/SearchBar.tsx";
+import * as $$8 from "./islands/SearchControls.tsx";
 import * as $$$0 from "./components/Banner.tsx";
 import * as $$$1 from "./components/BannerGridImages.tsx";
 import * as $$$2 from "./components/BannerImg.tsx";
@@ -105,6 +106,7 @@ const manifest: DecoManifest = {
     "./islands/Minicart.tsx": $$5,
     "./islands/ProductInformation.tsx": $$6,
     "./islands/SearchBar.tsx": $$7,
+    "./islands/SearchControls.tsx": $$8,
   },
   components: {
     "./components/Banner.tsx": $$$0,
@@ -165,6 +167,11 @@ const manifest: DecoManifest = {
   },
   loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
   schemas: {
+    "SearchControls": {
+      "title": "SearchControls",
+      "type": "object",
+      "properties": {},
+    },
     "Banner": {
       "title": "Main Banner",
       "type": "object",

@@ -3,7 +3,7 @@ import Alert, {
   schema as alertSchema,
 } from "./ui/Alert.tsx";
 import type { h } from "preact";
-import type { JSONSchema7 } from "json-schema"
+import type { JSONSchema7 } from "json-schema";
 import ZeedogLogoTitle from "./icons/ZeedogLogoTitle.tsx";
 import ZeedodKitchenLogo from "./icons/ZeedogKitchenLogo.tsx";
 import ZeedogHumanLogo from "./icons/ZeedogHumanLogo.tsx";
@@ -92,14 +92,11 @@ function Navbar() {
       </div>
       <nav class="w-full flex justify-end md:justify-between">
         <ul class="hidden md:flex list-none">
-          <NavItem>Novidades</NavItem>
-          <NavItem>Cachorros</NavItem>
-          <NavItem>Gatos</NavItem>
-          <NavItem>Human</NavItem>
-          <NavItem>Coleções</NavItem>
-          <NavItem>Zee.Now</NavItem>
-          <NavItem>Sobre</NavItem>
-          <NavItem>Black Friday</NavItem>
+          <NavItem>Blusas</NavItem>
+          <NavItem>Calçados</NavItem>
+          <NavItem>Casacos</NavItem>
+          <NavItem>Joías</NavItem>
+          <NavItem>Shorts</NavItem>
         </ul>
         <div class="flex justify-end md-5 md:mr-8">
           <ul class="hidden md:flex list-none">
