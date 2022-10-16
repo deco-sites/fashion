@@ -87,7 +87,7 @@ export default function Banner(
             srcset={imgSrc.desktop}
           />
           <Image
-            class="object-cover pb-5 w-full"
+            class="object-cover pb-3 w-full"
             sizes="(max-width: 640px) 75vw, 50vw"
             src={imgSrc.mobile}
             alt={alt}
