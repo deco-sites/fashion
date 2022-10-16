@@ -11,6 +11,10 @@ export default {
         type: "string",
         title: "Coleção",
       },
+      count: {
+        type: "number",
+        title: "Num. de itens",
+      },
     },
   },
   outputSchema: {
@@ -19,7 +23,7 @@ export default {
   loader: async function VTEXSearchLoader(
     req: Request,
     ctx: HandlerContext,
-    { collection }: { collection: string },
+    { collection, count = 4 }: { collection: string; count: number },
   ) {
     const url = new URL(req.url);
     const isProductPage = Boolean(ctx.params.slug);
@@ -59,7 +63,7 @@ export default {
       type: "product_search",
       sort,
       page: 0,
-      count: 4,
+      count,
       hideUnavailableItems: true,
     });
 

@@ -344,6 +344,22 @@ const manifest: DecoManifest = {
       "type": "object",
       "properties": { "products": { "$ref": "searchCollections" } },
     },
+    "ProductGallery": {
+      "title": "Product Gallery",
+      "type": "object",
+      "required": ["collection"],
+      "properties": {
+        "products": {
+          "$ref": "searchCollections",
+          "type": "object",
+          "title": "Products",
+          "properties": {
+            "collection": { "type": "string", "title": "Coleção" },
+            "count": { "type": "number", "title": "Num. de itens" },
+          },
+        },
+      },
+    },
     "ProductShelf": {
       "title": "Product Shelf",
       "type": "object",
@@ -356,6 +372,7 @@ const manifest: DecoManifest = {
           "title": "Products",
           "properties": {
             "collection": { "type": "string", "title": "Coleção" },
+            "count": { "type": "number", "title": "Num. de itens" },
           },
         },
       },
