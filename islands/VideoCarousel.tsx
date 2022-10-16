@@ -89,7 +89,7 @@ function VideoLink({ desktop, mobile, alt, link }: VideoProps) {
           muted
           height="465"
           width="310"
-          class="object-cover min-h-[465px] w-screen md:hidden"
+          class="object-cover min-h-[465px] w-full md:hidden"
           alt={alt}
         >
           <source
@@ -103,7 +103,7 @@ function VideoLink({ desktop, mobile, alt, link }: VideoProps) {
           muted
           height="465"
           width="310"
-          class="object-cover min-h-[465px] w-screen hidden md:block"
+          class="object-cover min-h-[465px] w-full hidden md:block"
           alt={alt}
         >
           <source
@@ -129,19 +129,21 @@ const videoDefault = {
   alt: "Até 70% off em FARM",
 };
 
-const selectedCarousel = signal(0)
+const selectedCarousel = signal(0);
 
 export default function VideoCarousel(
   { video1 = videoDefault, video2, video3 }: Props,
 ) {
-  let width = 0;
-  if (video1) width += 100;
-  if (video2) width += 100;
-  if (video3) width += 100;
+  let quantity = 0;
+  if (video1) quantity += 1;
+  if (video2) quantity+= 1;
+  if (video3)  quantity += 1;
 
   return (
     <div class="relative w-full overflow-hidden">
-      <div class={`flex w-[${width}%] translate-x-[${-(selectedCarousel.value * 100)}%]`}>
+      <div
+        class={`flex w-[${quantity* 100}%] translate-x-[-${(100 / quantity) * selectedCarousel.value}%]`}
+      >
         <VideoLink {...video1} />
         {video2 && <VideoLink {...video2} />}
         {video3 && <VideoLink {...video3} />}
@@ -151,30 +153,23 @@ export default function VideoCarousel(
         <button
           type="button"
           class="w-3 h-3 rounded-full bg-white dark:bg-gray-800"
-          aria-current="true"
-          aria-label={video1.alt}
-          data-carousel-slide-to="0"
+          onClick={() => selectedCarousel.value = 0}
         >
         </button>
 
         {video2 && (
-          <a
+          <button
             type="button"
             class="w-3 h-3 rounded-full bg-white dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-800"
-            aria-current="false"
-            aria-label={video2.alt}
-            data-carousel-slide-to="1"
-            href="vd-2"
+            onClick={() => selectedCarousel.value = 1}
           >
-          </a>
+          </button>
         )}
         {video3 && (
           <button
             type="button"
             class="w-3 h-3 rounded-full bg-white dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-800"
-            aria-current="false"
-            aria-label={video3.alt}
-            data-carousel-slide-to="2"
+            onClick={() => selectedCarousel.value = 2}
           >
           </button>
         )}

@@ -26,6 +26,7 @@ import * as $$6 from "./islands/Minicart.tsx";
 import * as $$7 from "./islands/ProductInformation.tsx";
 import * as $$8 from "./islands/SearchBar.tsx";
 import * as $$9 from "./islands/SearchControls.tsx";
+import * as $$10 from "./islands/VideoCarousel.tsx";
 import * as $$$0 from "./components/Banner.tsx";
 import * as $$$1 from "./components/BannerGridImages.tsx";
 import * as $$$2 from "./components/BannerImg.tsx";
@@ -110,6 +111,7 @@ const manifest: DecoManifest = {
     "./islands/ProductInformation.tsx": $$7,
     "./islands/SearchBar.tsx": $$8,
     "./islands/SearchControls.tsx": $$9,
+    "./islands/VideoCarousel.tsx": $$10,
   },
   components: {
     "./components/Banner.tsx": $$$0,
@@ -175,6 +177,40 @@ const manifest: DecoManifest = {
       "title": "SearchControls",
       "type": "object",
       "properties": {},
+    },
+    "VideoCarousel": {
+      "title": "Carousel de Vídeos",
+      "type": "object",
+      "required": ["video1"],
+      "properties": {
+        "video1": {
+          "type": "object",
+          "properties": {
+            "mobile": { "type": "string", "title": "Vídeo Mobile" },
+            "desktop": { "type": "string", "title": "Vídeo Desktop" },
+            "alt": { "type": "string", "title": "Texto alternativo" },
+            "link": { "type": "string", "title": "Link" },
+          },
+        },
+        "video2": {
+          "type": "object",
+          "properties": {
+            "mobile": { "type": "string", "title": "Vídeo Mobile" },
+            "desktop": { "type": "string", "title": "Vídeo Desktop" },
+            "alt": { "type": "string", "title": "Texto alternativo" },
+            "link": { "type": "string", "title": "Link" },
+          },
+        },
+        "video3": {
+          "type": "object",
+          "properties": {
+            "mobile": { "type": "string", "title": "Vídeo Mobile" },
+            "desktop": { "type": "string", "title": "Vídeo Desktop" },
+            "alt": { "type": "string", "title": "Texto alternativo" },
+            "link": { "type": "string", "title": "Link" },
+          },
+        },
+      },
     },
     "Banner": {
       "title": "Main Banner",
@@ -381,40 +417,6 @@ const manifest: DecoManifest = {
       "title": "StoreFeatures",
       "type": "object",
       "properties": {},
-    },
-    "VideoCarousel": {
-      "title": "Carousel de Vídeos",
-      "type": "object",
-      "required": ["video1"],
-      "properties": {
-        "video1": {
-          "type": "object",
-          "properties": {
-            "mobile": { "type": "string", "title": "Vídeo Mobile" },
-            "desktop": { "type": "string", "title": "Vídeo Desktop" },
-            "alt": { "type": "string", "title": "Texto alternativo" },
-            "link": { "type": "string", "title": "Link" },
-          },
-        },
-        "video2": {
-          "type": "object",
-          "properties": {
-            "mobile": { "type": "string", "title": "Vídeo Mobile" },
-            "desktop": { "type": "string", "title": "Vídeo Desktop" },
-            "alt": { "type": "string", "title": "Texto alternativo" },
-            "link": { "type": "string", "title": "Link" },
-          },
-        },
-        "video3": {
-          "type": "object",
-          "properties": {
-            "mobile": { "type": "string", "title": "Vídeo Mobile" },
-            "desktop": { "type": "string", "title": "Vídeo Desktop" },
-            "alt": { "type": "string", "title": "Texto alternativo" },
-            "link": { "type": "string", "title": "Link" },
-          },
-        },
-      },
     },
   },
   baseUrl: import.meta.url,
