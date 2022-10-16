@@ -203,60 +203,59 @@ const manifest: DecoManifest = {
       },
     },
     "BannerGridImages": {
-      "title": "Banner Duplo",
+      "title": "Banner Grid",
       "type": "object",
-      "required": ["imgSrc"],
+      "required": ["title"],
       "properties": {
-        "imgSrcBanner1": {
+        "title": { "type": "string", "title": "Título do grid" },
+        "imgBanner1": {
           "type": "object",
           "properties": {
-            "mobile": {
-              "type": "string",
-              "title": "Imagem Mobile",
-              "format": "uri",
-            },
-            "desktop": {
-              "type": "string",
-              "title": "Imagem Desktop",
-              "format": "uri",
-            },
+            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
+            "alt": { "type": "string", "title": "alternate" },
+            "link": { "type": "string", "title": "Link da imagem" },
           },
         },
-        "altImgBanner1": { "type": "string", "title": "alternate" },
-        "textColor1": {
-          "type": "string",
-          "title": "Cor do texto da primeira imagem",
-        },
-        "textBanner1": { "type": "string", "title": "Primeiro texto" },
-        "titleBanner1": { "type": "string", "title": "Título" },
-        "subtitleBanner1": { "type": "string", "title": "Subtítulo" },
-        "CTA1": { "type": "string", "title": "Texto do CTA" },
-        "link1": { "type": "string", "title": "Link vinculado ao CTA" },
-        "imgSrcBanner2": {
+        "imgBanner2": {
           "type": "object",
           "properties": {
-            "mobile": {
-              "type": "string",
-              "title": "Imagem Mobile",
-              "format": "uri",
-            },
-            "desktop": {
-              "type": "string",
-              "title": "Imagem Desktop",
-              "format": "uri",
-            },
+            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
+            "alt": { "type": "string", "title": "alternate" },
+            "link": { "type": "string", "title": "Link da imagem" },
           },
         },
-        "altImgBanner2": { "type": "string", "title": "alternate" },
-        "textColor2": {
-          "type": "string",
-          "title": "Cor do texto da segunda imagem",
+        "imgBanner3": {
+          "type": "object",
+          "properties": {
+            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
+            "alt": { "type": "string", "title": "alternate" },
+            "link": { "type": "string", "title": "Link da imagem" },
+          },
         },
-        "textBanner2": { "type": "string", "title": "Primeiro texto" },
-        "titleBanner2": { "type": "string", "title": "Título" },
-        "subtitleBanner2": { "type": "string", "title": "Subtítulo" },
-        "link2": { "type": "string", "title": "Link vinculado ao CTA" },
-        "CTA2": { "type": "string", "title": "Texto do CTA" },
+        "imgBanner4": {
+          "type": "object",
+          "properties": {
+            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
+            "alt": { "type": "string", "title": "alternate" },
+            "link": { "type": "string", "title": "Link da imagem" },
+          },
+        },
+        "imgBanner5": {
+          "type": "object",
+          "properties": {
+            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
+            "alt": { "type": "string", "title": "alternate" },
+            "link": { "type": "string", "title": "Link da imagem" },
+          },
+        },
+        "imgBanner6": {
+          "type": "object",
+          "properties": {
+            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
+            "alt": { "type": "string", "title": "alternate" },
+            "link": { "type": "string", "title": "Link da imagem" },
+          },
+        },
       },
     },
     "BannerImg": {
