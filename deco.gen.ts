@@ -41,42 +41,43 @@ import * as $$$11 from "./components/ProductGallery.tsx";
 import * as $$$12 from "./components/ProductShelf.tsx";
 import * as $$$13 from "./components/QuantitySelector.tsx";
 import * as $$$14 from "./components/Search.tsx";
-import * as $$$15 from "./components/icons/AmeIcon.tsx";
-import * as $$$16 from "./components/icons/AmericanExpressIcon.tsx";
-import * as $$$17 from "./components/icons/BoletoIcon.tsx";
-import * as $$$18 from "./components/icons/CartIcon.tsx";
-import * as $$$19 from "./components/icons/ChatIcon.tsx";
-import * as $$$20 from "./components/icons/CloseIcon.tsx";
-import * as $$$21 from "./components/icons/DecoFashionLogo.tsx";
-import * as $$$22 from "./components/icons/EloIcon.tsx";
-import * as $$$23 from "./components/icons/EmailIcon.tsx";
-import * as $$$24 from "./components/icons/FacebookIcon.tsx";
-import * as $$$25 from "./components/icons/HeartIcon.tsx";
-import * as $$$26 from "./components/icons/InstagramIcon.tsx";
-import * as $$$27 from "./components/icons/LeftArrow.tsx";
-import * as $$$28 from "./components/icons/LogoZeeDog.tsx";
-import * as $$$29 from "./components/icons/MagnifyingGlassIcon.tsx";
-import * as $$$30 from "./components/icons/MastercardIcon.tsx";
-import * as $$$31 from "./components/icons/MenuIcon.tsx";
-import * as $$$32 from "./components/icons/PercentageCircle.tsx";
-import * as $$$33 from "./components/icons/PersonIcon.tsx";
-import * as $$$34 from "./components/icons/PicpayIcon.tsx";
-import * as $$$35 from "./components/icons/PixIcon.tsx";
-import * as $$$36 from "./components/icons/SearchIcon.tsx";
-import * as $$$37 from "./components/icons/SpotifyIcon.tsx";
-import * as $$$38 from "./components/icons/TimeLapseIcon.tsx";
-import * as $$$39 from "./components/icons/TruckIcon.tsx";
-import * as $$$40 from "./components/icons/TwitterIcon.tsx";
-import * as $$$41 from "./components/icons/UserIcon.tsx";
-import * as $$$42 from "./components/icons/VisaIcon.tsx";
-import * as $$$43 from "./components/icons/WhatsappIcon.tsx";
-import * as $$$44 from "./components/icons/YoutubeIcon.tsx";
-import * as $$$45 from "./components/icons/ZeecatLogo.tsx";
-import * as $$$46 from "./components/icons/ZeedogConnectsLogo.tsx";
-import * as $$$47 from "./components/icons/ZeenowLogo.tsx";
-import * as $$$48 from "./components/ui/Image.tsx";
-import * as $$$49 from "./components/ui/Spinner.tsx";
-import * as $$$50 from "./components/ui/Video.tsx";
+import * as $$$15 from "./components/VideoCarousel.tsx";
+import * as $$$16 from "./components/icons/AmeIcon.tsx";
+import * as $$$17 from "./components/icons/AmericanExpressIcon.tsx";
+import * as $$$18 from "./components/icons/BoletoIcon.tsx";
+import * as $$$19 from "./components/icons/CartIcon.tsx";
+import * as $$$20 from "./components/icons/ChatIcon.tsx";
+import * as $$$21 from "./components/icons/CloseIcon.tsx";
+import * as $$$22 from "./components/icons/DecoFashionLogo.tsx";
+import * as $$$23 from "./components/icons/EloIcon.tsx";
+import * as $$$24 from "./components/icons/EmailIcon.tsx";
+import * as $$$25 from "./components/icons/FacebookIcon.tsx";
+import * as $$$26 from "./components/icons/HeartIcon.tsx";
+import * as $$$27 from "./components/icons/InstagramIcon.tsx";
+import * as $$$28 from "./components/icons/LeftArrow.tsx";
+import * as $$$29 from "./components/icons/LogoZeeDog.tsx";
+import * as $$$30 from "./components/icons/MagnifyingGlassIcon.tsx";
+import * as $$$31 from "./components/icons/MastercardIcon.tsx";
+import * as $$$32 from "./components/icons/MenuIcon.tsx";
+import * as $$$33 from "./components/icons/PercentageCircle.tsx";
+import * as $$$34 from "./components/icons/PersonIcon.tsx";
+import * as $$$35 from "./components/icons/PicpayIcon.tsx";
+import * as $$$36 from "./components/icons/PixIcon.tsx";
+import * as $$$37 from "./components/icons/SearchIcon.tsx";
+import * as $$$38 from "./components/icons/SpotifyIcon.tsx";
+import * as $$$39 from "./components/icons/TimeLapseIcon.tsx";
+import * as $$$40 from "./components/icons/TruckIcon.tsx";
+import * as $$$41 from "./components/icons/TwitterIcon.tsx";
+import * as $$$42 from "./components/icons/UserIcon.tsx";
+import * as $$$43 from "./components/icons/VisaIcon.tsx";
+import * as $$$44 from "./components/icons/WhatsappIcon.tsx";
+import * as $$$45 from "./components/icons/YoutubeIcon.tsx";
+import * as $$$46 from "./components/icons/ZeecatLogo.tsx";
+import * as $$$47 from "./components/icons/ZeedogConnectsLogo.tsx";
+import * as $$$48 from "./components/icons/ZeenowLogo.tsx";
+import * as $$$49 from "./components/ui/Image.tsx";
+import * as $$$50 from "./components/ui/Spinner.tsx";
+import * as $$$51 from "./components/ui/Video.tsx";
 import * as $$$$0 from "./loaders/vtex/searchCollections.ts";
 
 const manifest: DecoManifest = {
@@ -122,42 +123,43 @@ const manifest: DecoManifest = {
     "./components/ProductShelf.tsx": $$$12,
     "./components/QuantitySelector.tsx": $$$13,
     "./components/Search.tsx": $$$14,
-    "./components/icons/AmeIcon.tsx": $$$15,
-    "./components/icons/AmericanExpressIcon.tsx": $$$16,
-    "./components/icons/BoletoIcon.tsx": $$$17,
-    "./components/icons/CartIcon.tsx": $$$18,
-    "./components/icons/ChatIcon.tsx": $$$19,
-    "./components/icons/CloseIcon.tsx": $$$20,
-    "./components/icons/DecoFashionLogo.tsx": $$$21,
-    "./components/icons/EloIcon.tsx": $$$22,
-    "./components/icons/EmailIcon.tsx": $$$23,
-    "./components/icons/FacebookIcon.tsx": $$$24,
-    "./components/icons/HeartIcon.tsx": $$$25,
-    "./components/icons/InstagramIcon.tsx": $$$26,
-    "./components/icons/LeftArrow.tsx": $$$27,
-    "./components/icons/LogoZeeDog.tsx": $$$28,
-    "./components/icons/MagnifyingGlassIcon.tsx": $$$29,
-    "./components/icons/MastercardIcon.tsx": $$$30,
-    "./components/icons/MenuIcon.tsx": $$$31,
-    "./components/icons/PercentageCircle.tsx": $$$32,
-    "./components/icons/PersonIcon.tsx": $$$33,
-    "./components/icons/PicpayIcon.tsx": $$$34,
-    "./components/icons/PixIcon.tsx": $$$35,
-    "./components/icons/SearchIcon.tsx": $$$36,
-    "./components/icons/SpotifyIcon.tsx": $$$37,
-    "./components/icons/TimeLapseIcon.tsx": $$$38,
-    "./components/icons/TruckIcon.tsx": $$$39,
-    "./components/icons/TwitterIcon.tsx": $$$40,
-    "./components/icons/UserIcon.tsx": $$$41,
-    "./components/icons/VisaIcon.tsx": $$$42,
-    "./components/icons/WhatsappIcon.tsx": $$$43,
-    "./components/icons/YoutubeIcon.tsx": $$$44,
-    "./components/icons/ZeecatLogo.tsx": $$$45,
-    "./components/icons/ZeedogConnectsLogo.tsx": $$$46,
-    "./components/icons/ZeenowLogo.tsx": $$$47,
-    "./components/ui/Image.tsx": $$$48,
-    "./components/ui/Spinner.tsx": $$$49,
-    "./components/ui/Video.tsx": $$$50,
+    "./components/VideoCarousel.tsx": $$$15,
+    "./components/icons/AmeIcon.tsx": $$$16,
+    "./components/icons/AmericanExpressIcon.tsx": $$$17,
+    "./components/icons/BoletoIcon.tsx": $$$18,
+    "./components/icons/CartIcon.tsx": $$$19,
+    "./components/icons/ChatIcon.tsx": $$$20,
+    "./components/icons/CloseIcon.tsx": $$$21,
+    "./components/icons/DecoFashionLogo.tsx": $$$22,
+    "./components/icons/EloIcon.tsx": $$$23,
+    "./components/icons/EmailIcon.tsx": $$$24,
+    "./components/icons/FacebookIcon.tsx": $$$25,
+    "./components/icons/HeartIcon.tsx": $$$26,
+    "./components/icons/InstagramIcon.tsx": $$$27,
+    "./components/icons/LeftArrow.tsx": $$$28,
+    "./components/icons/LogoZeeDog.tsx": $$$29,
+    "./components/icons/MagnifyingGlassIcon.tsx": $$$30,
+    "./components/icons/MastercardIcon.tsx": $$$31,
+    "./components/icons/MenuIcon.tsx": $$$32,
+    "./components/icons/PercentageCircle.tsx": $$$33,
+    "./components/icons/PersonIcon.tsx": $$$34,
+    "./components/icons/PicpayIcon.tsx": $$$35,
+    "./components/icons/PixIcon.tsx": $$$36,
+    "./components/icons/SearchIcon.tsx": $$$37,
+    "./components/icons/SpotifyIcon.tsx": $$$38,
+    "./components/icons/TimeLapseIcon.tsx": $$$39,
+    "./components/icons/TruckIcon.tsx": $$$40,
+    "./components/icons/TwitterIcon.tsx": $$$41,
+    "./components/icons/UserIcon.tsx": $$$42,
+    "./components/icons/VisaIcon.tsx": $$$43,
+    "./components/icons/WhatsappIcon.tsx": $$$44,
+    "./components/icons/YoutubeIcon.tsx": $$$45,
+    "./components/icons/ZeecatLogo.tsx": $$$46,
+    "./components/icons/ZeedogConnectsLogo.tsx": $$$47,
+    "./components/icons/ZeenowLogo.tsx": $$$48,
+    "./components/ui/Image.tsx": $$$49,
+    "./components/ui/Spinner.tsx": $$$50,
+    "./components/ui/Video.tsx": $$$51,
   },
   loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
   schemas: {
@@ -340,6 +342,40 @@ const manifest: DecoManifest = {
           "title": "Products",
           "properties": {
             "collection": { "type": "string", "title": "Coleção" },
+          },
+        },
+      },
+    },
+    "VideoCarousel": {
+      "title": "Carousel de Vídeos",
+      "type": "object",
+      "required": ["video1"],
+      "properties": {
+        "video1": {
+          "type": "object",
+          "properties": {
+            "mobile": { "type": "string", "title": "Vídeo Mobile" },
+            "desktop": { "type": "string", "title": "Vídeo Desktop" },
+            "alt": { "type": "string", "title": "Texto alternativo" },
+            "link": { "type": "string", "title": "Link" },
+          },
+        },
+        "video2": {
+          "type": "object",
+          "properties": {
+            "mobile": { "type": "string", "title": "Vídeo Mobile" },
+            "desktop": { "type": "string", "title": "Vídeo Desktop" },
+            "alt": { "type": "string", "title": "Texto alternativo" },
+            "link": { "type": "string", "title": "Link" },
+          },
+        },
+        "video3": {
+          "type": "object",
+          "properties": {
+            "mobile": { "type": "string", "title": "Vídeo Mobile" },
+            "desktop": { "type": "string", "title": "Vídeo Desktop" },
+            "alt": { "type": "string", "title": "Texto alternativo" },
+            "link": { "type": "string", "title": "Link" },
           },
         },
       },
