@@ -88,47 +88,58 @@ export default function VideoCarousel(
   { video1 = videoDefault, video2, video3 }: Props,
 ) {
   return (
-    <div id="default-carousel" class="relative" data-carousel="static">
-      <div class="relative h-56 overflow-hidden md:h-96">
-        <div
-          class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-0 z-20"
-          data-carousel-item=""
-        >
-          <video
-            loop
-            autoPlay
-            src={video1.desktop}
-            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-            alt={video1.alt}
-          />
-        </div>
-        {video2 && (
-          <div
-            class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10"
-            data-carousel-item=""
-          >
+    <div class="relative inline-block w-full">
+      <div class="relative inline-block w-full">
+        <a href={video1.link}>
+          <div class="min-h-[465px] overflow-hidden w-full ease-in-out relative transition-all transform translate-x-0 z-20">
             <video
-              loop
               autoPlay
-              src={video2.desktop}
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt={video2.alt}
-            />
+              loop
+              muted
+              height="465"
+              width="310"
+              class="block object-cover min-h-[465px] w-auto"
+              alt={video1.alt}
+            >
+              <source
+                src={video1.desktop}
+                type="video/mp4"
+              />
+              <source
+                media="all and (max-width: 767px)"
+                src={video1.mobile}
+                type="video/mp4"
+              />
+            </video>
           </div>
+        </a>
+        {video2 && (
+          <a href={video2.link}>
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10">
+              <video
+                autoPlay
+                loop
+                muted
+                src={video2.desktop}
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt={video2.alt}
+              />
+            </div>
+          </a>
         )}
         {video3 && (
-          <div
-            class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10"
-            data-carousel-item=""
-          >
-            <video
-              loop
-              autoPlay
-              src={video3.desktop}
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt={video3.alt}
-            />
-          </div>
+          <a href={video3.link}>
+            <div class="duration-700 ease-in-out absolute inset-0 transition-all transform translate-x-full z-10">
+              <video
+                autoPlay
+                loop
+                muted
+                src={video3.desktop}
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt={video3.alt}
+              />
+            </div>
+          </a>
         )}
       </div>
 
