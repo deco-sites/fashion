@@ -20,13 +20,14 @@ import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/Alert.tsx";
 import * as $$2 from "./islands/AuthListener.tsx";
 import * as $$3 from "./islands/Editor.tsx";
-import * as $$4 from "./islands/InspectVSCode.tsx";
-import * as $$5 from "./islands/LoginButtons.tsx";
-import * as $$6 from "./islands/Minicart.tsx";
-import * as $$7 from "./islands/ProductInformation.tsx";
-import * as $$8 from "./islands/SearchBar.tsx";
-import * as $$9 from "./islands/SearchControls.tsx";
-import * as $$10 from "./islands/VideoCarousel.tsx";
+import * as $$4 from "./islands/FooterAccordion.tsx";
+import * as $$5 from "./islands/InspectVSCode.tsx";
+import * as $$6 from "./islands/LoginButtons.tsx";
+import * as $$7 from "./islands/Minicart.tsx";
+import * as $$8 from "./islands/ProductInformation.tsx";
+import * as $$9 from "./islands/SearchBar.tsx";
+import * as $$10 from "./islands/SearchControls.tsx";
+import * as $$11 from "./islands/VideoCarousel.tsx";
 import * as $$$0 from "./components/Banner.tsx";
 import * as $$$1 from "./components/BannerGridImages.tsx";
 import * as $$$2 from "./components/BannerImg.tsx";
@@ -104,13 +105,14 @@ const manifest: DecoManifest = {
     "./islands/Alert.tsx": $$1,
     "./islands/AuthListener.tsx": $$2,
     "./islands/Editor.tsx": $$3,
-    "./islands/InspectVSCode.tsx": $$4,
-    "./islands/LoginButtons.tsx": $$5,
-    "./islands/Minicart.tsx": $$6,
-    "./islands/ProductInformation.tsx": $$7,
-    "./islands/SearchBar.tsx": $$8,
-    "./islands/SearchControls.tsx": $$9,
-    "./islands/VideoCarousel.tsx": $$10,
+    "./islands/FooterAccordion.tsx": $$4,
+    "./islands/InspectVSCode.tsx": $$5,
+    "./islands/LoginButtons.tsx": $$6,
+    "./islands/Minicart.tsx": $$7,
+    "./islands/ProductInformation.tsx": $$8,
+    "./islands/SearchBar.tsx": $$9,
+    "./islands/SearchControls.tsx": $$10,
+    "./islands/VideoCarousel.tsx": $$11,
   },
   components: {
     "./components/Banner.tsx": $$$0,
@@ -323,37 +325,7 @@ const manifest: DecoManifest = {
         "CTA": { "type": "string", "title": "Texto do CTA" },
       },
     },
-    "Footer": {
-      "title": "Footer",
-      "type": "object",
-      "properties": {
-        "paragraph1": { "type": "string", "title": "Título 1" },
-        "menuitem1": { "type": "string", "title": "Menu Item 1" },
-        "menuitem2": { "type": "string", "title": "Menu Item 2" },
-        "menuitem3": { "type": "string", "title": "Menu Item 3" },
-        "menuitem4": { "type": "string", "title": "Menu Item 4" },
-        "menuitem5": { "type": "string", "title": "Menu Item 5" },
-        "menuitem6": { "type": "string", "title": "Menu Item 6" },
-        "menuitem7": { "type": "string", "title": "Menu Item 7" },
-        "menuitem8": { "type": "string", "title": "Menu Item 8" },
-        "menuitem9": { "type": "string", "title": "Menu Item 9" },
-        "menuitem10": { "type": "string", "title": "Menu Item 10" },
-        "paragraph2": { "type": "string", "title": "Título 2" },
-        "menuitem11": { "type": "string", "title": "Menu Item 11" },
-        "menuitem12": { "type": "string", "title": "Menu Item 12" },
-        "menuitem13": { "type": "string", "title": "Menu Item 13" },
-        "menuitem14": { "type": "string", "title": "Menu Item 14" },
-        "menuitem15": { "type": "string", "title": "Menu Item 15" },
-        "menuitem16": { "type": "string", "title": "Menu Item 16" },
-        "paragraph3": { "type": "string", "title": "Título 3" },
-        "menuitem17": { "type": "string", "title": "Menu Item 17" },
-        "menuitem18": { "type": "string", "title": "Menu Item 18" },
-        "menuitem19": { "type": "string", "title": "Menu Item 19" },
-        "paragraph4": { "type": "string", "title": "Título 4" },
-        "paragraph5": { "type": "string", "title": "Título 5" },
-        "paragraph6": { "type": "string", "title": "Título 6" },
-      },
-    },
+    "Footer": { "title": "Footer", "type": "object", "properties": {} },
     "Head": {
       "type": "object",
       "properties": {
