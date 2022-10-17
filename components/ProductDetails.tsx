@@ -82,6 +82,14 @@ export default function ProductDetails({ products = [] }: Props) {
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
             <div class="flex flex-col">
               <div>
+                <span class="line-through">
+                  De: {new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  }).format(product.listPrice)}
+                </span>
+              </div>
+              <div>
                 <span class="">
                   Por:{" "}
                 </span>
