@@ -38,14 +38,14 @@ export const initialProps: HeadProps = {
   title: "OFF Premium | Outlet Farm, Animale, e mais, até 70% off",
   description: "Outlet Farm, Animale, e mais, até 70% off",
   url: new URL("https://fashion.deco.page"),
-  imageUrl: "https://fashion.deco.page/android-chrome-384x384.png",
-  faviconUrl: "https://fashion.deco.page/favicon-32x32.png",
+  imageUrl: "https://fashion.deco.page/android-chrome-384x384.png?v=1",
+  faviconUrl: "https://fashion.deco.page/favicon-32x32.png?v=1",
   styleUrls: [],
   themeColor: "#221E1F",
 };
 
 export default function HeadComponent(props: HeadProps) {
-  const {
+  let {
     title,
     description,
     url,
@@ -54,6 +54,12 @@ export default function HeadComponent(props: HeadProps) {
     styleUrls,
     themeColor,
   } = props?.title ? props : initialProps;
+  if (!imageUrl) {
+    imageUrl = initialProps.imageUrl;
+  }
+  if (!faviconUrl) {
+    faviconUrl = initialProps.faviconUrl;
+  }
   return (
     <Head>
       <title>{title}</title>
