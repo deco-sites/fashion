@@ -23,7 +23,7 @@ export interface Product {
   // atributos: string;
   // nome_produto: string;
   breadcrumb: Array<{ label: string; url: string }>;
-  specifications: Record<string, string>
+  specifications: Record<string, string>;
 }
 
 export default function ProductCard({
@@ -38,13 +38,23 @@ export default function ProductCard({
   listPrice,
   id,
   sellerId,
-  specifications
+  specifications,
 }: Product) {
   const discountPercentage = Math.trunc(
-    Math.max(1 - price / listPrice, 0) * 100
+    Math.max(1 - price / listPrice, 0) * 100,
   );
   return (
-    <div class="w-full p-2 group relative border border-white hover:border-black">
+    <div
+      id={`product-${id}`}
+      class="w-full p-2 group relative border border-white hover:border-black"
+    >
+      <style
+        dangerouslySetInnerHTML={{
+          "__html":
+            `#product-${id}::after{position:absolute; width:0; height:0; overflow:hidden; z-index:-1; content:url("https://assets.vtex.app/unsafe/1002x1503/center/middle/${imageHover?.src}")}`,
+        }}
+      >
+      </style>
       {/* <div class="absolute inset-0 before:p-2 hidden group-hover:block group-hover:border border-[#000]" /> */}
 
       <div class="h-full z-10">
@@ -86,7 +96,7 @@ export default function ProductCard({
           <div class="text-xs font-semibold mt-2">
             <div class="border-y border-[#000] py-2 px-1 flex flex-row justify-between">
               <span>Tamanho</span>
-              <span class="font-bold">{specifications['Tamanho']}</span>
+              <span class="font-bold">{specifications["Tamanho"]}</span>
             </div>
           </div>
           <div class="m-2">
