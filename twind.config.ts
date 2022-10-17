@@ -15,7 +15,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ["Lato"],
+      sans: ["Lato", "sans-serif"],
       serif: ["inherit"],
     },
     screens: {

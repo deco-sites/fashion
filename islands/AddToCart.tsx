@@ -26,7 +26,7 @@ export default function AddToCart(
   return (
     <button
       class={tw`${loading ? "bg-gray-500" : "bg-black"} text-white ${
-        large ? "px-14 py-4 text-lg" : "px-6 py-2 text w-full"
+        large ? "px-14 py-4 md:text-lg" : "px-6 py-2 w-full"
       } uppercase bg-primary-red hover:bg-primary-red-dark`}
       onClick={onAddItem}
     >

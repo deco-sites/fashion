@@ -47,6 +47,16 @@ export default function ProductDetails({ products = [] }: Props) {
             width={300}
             height={300}
           />
+          {product.imageHover && (
+            <Image
+              class="object-cover col-span-4 lg:w-[600px] pb-5 w-full"
+              sizes="(max-width: 640px) 75vw, 50vw"
+              src={product.imageHover.src}
+              alt={product.imageHover.alt}
+              width={300}
+              height={300}
+            />
+          )}
         </div>
         <div class="w-full lg:w-2/5 bg-white border border-solid border-gray-300 flex flex-col">
           <div class="flex flex-col px-10 mt-10">
@@ -150,13 +160,15 @@ export default function ProductDetails({ products = [] }: Props) {
                 description={product.description}
               />
             )}
-            <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
+            {
+              /* <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
               <span class="pb-8">Precisa de ajuda?</span>
               <button class="border border-solid border-black py-3 w-1/2 flex flex-row justify-center items-center">
                 <ChatBubbleLeftIcon className="w-5 h-5 mr-2" />
                 Fale com a gente
               </button>
-            </div>
+            </div> */
+            }
           </div>
         </div>
       </section>
