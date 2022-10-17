@@ -19,7 +19,7 @@ export default {
     },
     fontFamily: {
       sans: ["Lato", "sans-serif"],
-      serif: ["inherit"],
+      serif: ["inherit", "serif"],
     },
     screens: {
       sm: "640px",
