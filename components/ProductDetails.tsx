@@ -52,7 +52,7 @@ export default function ProductDetails({ products = [] }: Props) {
           />
           {product.imageHover && (
             <Image
-              class="object-cover col-span-4 lg:w-[600px] pb-5 w-full"
+              class="object-cover col-span-4 lg:w-[600px] pb-5 w-full hidden md:block"
               sizes="(max-width: 640px) 75vw, 50vw"
               src={product.imageHover.src}
               alt={product.imageHover.alt}
@@ -137,7 +137,8 @@ export default function ProductDetails({ products = [] }: Props) {
           </div>
           {/* Avaliações + detalhes */}
           <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
-            {/* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
+            {
+              /* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
               <span class="font-bold">{`Avaliações (25)`}</span>
               <img
                 width="130"
@@ -145,7 +146,8 @@ export default function ProductDetails({ products = [] }: Props) {
                 src="https://user-images.githubusercontent.com/18706156/194561155-ea3abac9-0c42-4b4e-8920-890965ffad45.png"
               >
               </img>
-            </button> */}
+            </button> */
+            }
             {product?.description && (
               <ProductInformation description={product.description} />
             )}
