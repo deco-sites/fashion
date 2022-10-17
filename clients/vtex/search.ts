@@ -109,14 +109,15 @@ export const mapVTEXProduct = ({
         Value: Infinity,
       } as Installment,
     );
+
   const breadcrumb = [
-    { label: "Zee.Dog", url: "https://zeedog.deco.page" },
+    { label: brand, url: `/${brand.toLocaleLowerCase()}` },
     ...categories[0]
       .split("/")
       .filter(Boolean)
       .map((label) => ({
         label,
-        url: `https://zeedog.deco.page/search?q=${label}`,
+        url: `/search?q=${label}`,
       })),
   ];
 

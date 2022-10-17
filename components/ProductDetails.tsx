@@ -27,13 +27,15 @@ export default function ProductDetails({ products = [] }: Props) {
     return;
   }
 
+  const brand = product?.brand;
+
   return (
     <>
       <Head
-        title={`${product.name} - Zee.Dog`}
-        faviconUrl="https://www.zeedog.com.br/arquivos/favicon.png?v=635804457195470000"
-        description={product.description}
-        url={new URL(`https://www.zeedog.com.br/${product.slug}`)}
+        title={`${product.name} — ${brand} — OFF Premium`}
+        faviconUrl="https://www.offpremium.com.br/favicon-32x32.png"
+        description={product.description + `— OFF Premium`}
+        url={new URL(`https://fashion.deco.page/${product.slug}/p`)}
       />
       <section class="w-full bg-gray-100 flex flex-col lg:flex-row">
         <div class="w-full lg:w-3/5 bg-gray-100 flex justify-center items-center">
@@ -69,14 +71,15 @@ export default function ProductDetails({ products = [] }: Props) {
                     </>
                   ))}
               </div>
-              <div>{"<3"}</div>
+              {/* <div>{"<3"}</div> */}
             </div>
             <h1 class="lg:text-2xl text-xl mb-2 font-semibold text-gray-800">
               {product.name}
             </h1>
-            <div>SKU Selector</div>
+            {/* <div>SKU Selector</div> */}
           </div>
-          <div class="flex flex-col items-center">
+          {
+            /* <div class="flex flex-col items-center">
             <div class="flex flex-row items-center">
               <TruckIcon className="w-6 h-6 mr-3" />
               <span>Adicione e garanta frete grátis</span>
@@ -84,7 +87,8 @@ export default function ProductDetails({ products = [] }: Props) {
             <div class="flex flex-row w-full mt-2">
               <div class="bg-blue-500 w-3/4 h-1"></div>
             </div>
-          </div>
+          </div> */
+          }
           {/* Quantity Selector */}
           <div class="border-y border-solid border-gray-300 py-6 px-10 flex flex-row justify-between items-center">
             <span>Quantidade:</span>
