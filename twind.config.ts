@@ -5,6 +5,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: "#2FD180",
+        "primary-green-light": "#2EAE80",
+        "primary-green-dark": "#177151",
         "primary-dark": "#221E1F",
         "primary-light": "#f4f4f4",
         "custom-brown": "#f8f5f1",
