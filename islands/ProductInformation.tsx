@@ -17,31 +17,31 @@ export default function ProductInformation({ description }: Props) {
       label: "Descrição",
       content: <p>{description}</p>,
     },
-    {
-      label: "Troca fácil",
-      content: (
-        <div class="">
-          <p class="text-gray-800 mb-2">
-            Para trocar é muito fácil e rápido. Escolha entre trocar normalmente
-            {" "}
-            <b>via correios</b>, ou troque
-            <b>sem precisar sair de casa</b>, e você receberá um vale presente
-            no valor referente à sua compra para realizar sua troca.
-          </p>
-          <p>
-            <a
-              href="https://zeedog.troquefacil.com.br/"
-              class="underline text-black"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Clique aqui
-            </a>{" "}
-            e realize a troca.
-          </p>
-        </div>
-      ),
-    },
+    // {
+    //   label: "Troca fácil",
+    //   content: (
+    //     <div class="">
+    //       <p class="text-gray-800 mb-2">
+    //         Para trocar é muito fácil e rápido. Escolha entre trocar normalmente
+    //         {" "}
+    //         <b>via correios</b>, ou troque
+    //         <b>sem precisar sair de casa</b>, e você receberá um vale presente
+    //         no valor referente à sua compra para realizar sua troca.
+    //       </p>
+    //       <p>
+    //         <a
+    //           href="https://offpremium.troquefacil.com.br/"
+    //           class="underline text-black"
+    //           target="_blank"
+    //           rel="noopener noreferrer"
+    //         >
+    //           Clique aqui
+    //         </a>{" "}
+    //         e realize a troca.
+    //       </p>
+    //     </div>
+    //   ),
+    // },
   ];
   return (
     <div className="w-full border-b border-t border-solid border-black mt-8">

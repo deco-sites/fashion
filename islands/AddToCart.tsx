@@ -23,10 +23,10 @@ export default function AddToCart({ skuId, sellerId }: Props) {
     <button
       class={tw`${
         loading ? "bg-gray-500" : "bg-black"
-      } text-white font-bold px-14 py-4 uppercase rounded-3xl text-sm hover:bg-zeeblue`}
+      } text-white px-14 py-4 uppercase text-xl bg-primary-red hover:bg-primary-red-dark`}
       onClick={onAddItem}
     >
-      Adicionar
+      Adicionar à sacola
     </button>
   );
 }

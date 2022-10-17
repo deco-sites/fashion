@@ -78,6 +78,15 @@ export default function ProductDetails({ products = [] }: Props) {
             </h1>
             {/* <div>SKU Selector</div> */}
           </div>
+          {/* Price */}
+          <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
+            <div class="flex flex-col">
+              <span class="font-bold">{`R$ 199,00`}</span>
+              <span className="text-gray-600">
+                {`(até 3x de R$ 66,33 s/ juros)`}
+              </span>
+            </div>
+          </div>
           {
             /* <div class="flex flex-col items-center">
             <div class="flex flex-row items-center">
@@ -102,19 +111,13 @@ export default function ProductDetails({ products = [] }: Props) {
               </button>
             </div>
           </div>
-          {/* Price + Add To Cart */}
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-            <div class="flex flex-col">
-              <span class="font-bold">{`R$ 199,00`}</span>
-              <span className="text-gray-600">
-                {`(até 3x de R$ 66,33 s/ juros)`}
-              </span>
-            </div>
             <AddToCart skuId={product.id} sellerId={product.sellerId} />
           </div>
           {/* Avaliações + detalhes */}
           <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
-            <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
+            {
+              /* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
               <span class="font-bold">{`Avaliações (25)`}</span>
               <img
                 width="130"
@@ -122,13 +125,16 @@ export default function ProductDetails({ products = [] }: Props) {
                 src="https://user-images.githubusercontent.com/18706156/194561155-ea3abac9-0c42-4b4e-8920-890965ffad45.png"
               >
               </img>
-            </button>
-            <ProductInformation
-              description={product.description}
-            />
-            <div className="bg-gray-100 rounded-3xl py-10 flex flex-col justify-center items-center w-full mt-6">
+            </button> */
+            }
+            {product?.description && (
+              <ProductInformation
+                description={product.description}
+              />
+            )}
+            <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
               <span class="pb-8">Precisa de ajuda?</span>
-              <button class="border border-solid border-black rounded-2xl py-3 w-1/2 flex flex-row justify-center items-center">
+              <button class="border border-solid border-black py-3 w-1/2 flex flex-row justify-center items-center">
                 <ChatBubbleLeftIcon className="w-5 h-5 mr-2" />
                 Fale com a gente
               </button>
