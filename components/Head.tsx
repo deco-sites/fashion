@@ -104,6 +104,10 @@ export default function HeadComponent(props: HeadProps) {
       {styleUrls?.map((styleUrl: string) => (
         <link rel="stylesheet" href={asset(styleUrl)}></link>
       ))}
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+      </style>
     </Head>
   );
 }

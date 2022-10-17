@@ -49,8 +49,8 @@ export default function ProductDetails({ products = [] }: Props) {
           />
         </div>
         <div class="w-full lg:w-2/5 bg-white border border-solid border-gray-300 flex flex-col">
-          <div class="flex flex-col p-10">
-            <div class="pb-6 flex justify-between">
+          <div class="flex flex-col px-10 mt-10">
+            <div class="pb-2 flex justify-between">
               <div>
                 {product.breadcrumb
                   .map((_, i) => ({
@@ -73,7 +73,7 @@ export default function ProductDetails({ products = [] }: Props) {
               </div>
               {/* <div>{"<3"}</div> */}
             </div>
-            <h1 class="lg:text-2xl text-xl mb-2 font-semibold text-gray-800">
+            <h1 class="lg:text-2xl text-xl  uppercase text-gray-800">
               {product.name}
             </h1>
             {/* <div>SKU Selector</div> */}
@@ -81,9 +81,19 @@ export default function ProductDetails({ products = [] }: Props) {
           {/* Price */}
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
             <div class="flex flex-col">
-              <span class="font-bold">{`R$ 199,00`}</span>
+              <div>
+                <span class="">
+                  Por:{" "}
+                </span>
+                <span class="text-primary-red">
+                  {new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  }).format(product.price)}
+                </span>
+              </div>
               <span className="text-gray-600">
-                {`(até 3x de R$ 66,33 s/ juros)`}
+                {product?.installments}
               </span>
             </div>
           </div>

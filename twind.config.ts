@@ -14,6 +14,10 @@ export default {
         "primary-red-dark": "#A1061A",
       },
     },
+    fontFamily: {
+      sans: ["Lato"],
+      serif: ["inherit"],
+    },
     screens: {
       sm: "640px",
       md: "768px",
