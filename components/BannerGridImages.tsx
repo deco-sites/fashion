@@ -136,11 +136,11 @@ export default function BannerGridImages(
   return (
     <section class="max-w-[1400px] w-full px-4 md:px-0 mx-auto">
       <div class="py-6 md:py-0 md:pb-[40px] flex items-center">
-        <p
+        <h2
           class={"text-lg leading-5 font-semibold uppercase "}
         >
           {title}
-        </p>
+        </h2>
 
         <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
       </div>

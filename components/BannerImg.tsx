@@ -65,9 +65,9 @@ interface Props {
 
 const imgSrcDefault = {
   mobile:
-    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-768x950-kitchen.jpg?v=637949787190870000",
+    "https://images.prismic.io/offpremium-web/3b90e599-993a-40bd-861c-7730abef670a_10_banner_terciario_maior_morena_iodice_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425",
   desktop:
-    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-1920x700-kitchen.jpg?v=637949787206370000",
+    "https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650",
 };
 
 export default function Banner(
