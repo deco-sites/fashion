@@ -1,5 +1,4 @@
 import { JSONSchema7 } from "json-schema";
-import LogoZeeDog from "./icons/LogoZeeDog.tsx";
 import Image from "./ui/Image.tsx";
 
 export const schema: JSONSchema7 = {
@@ -96,7 +95,6 @@ export default function Banner(
             href=""
             class="md:flex md:flex-col md:items-center md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto"
           >
-            <LogoZeeDog class="w-[37.68vw] md:w-[15.62vw] lg:w-auto" />
             <div class="font-sans text-xs md:text-sm leading-4 w-[37.68vw] md:w-auto md:text-center">
               <span>{text}</span>
             </div>

@@ -3,13 +3,12 @@ import { ShoppingCartIcon } from "heroicons";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { apply, tw } from "twind";
 import { animation, css } from "twind/css";
-import IconCart from "../components/icons/CartIcon.tsx";
 import { useCart } from "../data/cartHooks.ts";
 import { OrderForm } from "../clients/vtex/checkout.ts";
 import QuantitySelector from "../components/QuantitySelector.tsx";
-import Spinner from "../components/ui/Spinner.tsx";
 
-const CHECKOUT_URL = "https://zeedog.com.br/checkout";
+const CHECKOUT_URL = "https://secure.offpremium.com.br/checkout";
+
 // Lazy load a <dialog> polyfill.
 // @ts-expect-error HTMLDialogElement is not just a type!
 if (IS_BROWSER && window.HTMLDialogElement === "undefined") {
@@ -200,7 +199,7 @@ function CartInner({
               class={tw`w-full bg-gray-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700`}
               disabled={isCartEmpty}
               target="_blank"
-              href={`https://www.zeedog.com.br/checkout?orderFormId=${cart.orderFormId}`}
+              href={`${CHECKOUT_URL}?orderFormId=${cart.orderFormId}`}
             >
               Finalizar Compra
             </a>

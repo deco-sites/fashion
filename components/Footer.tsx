@@ -1,23 +1,4 @@
 import type { JSONSchema7 } from "json-schema";
-import ZeecatLogo from "./icons/ZeecatLogo.tsx";
-import DecoFashionLogo from "./icons/DecoFashionLogo.tsx";
-import ZeedogConnectsLogo from "./icons/ZeedogConnectsLogo.tsx";
-import ZeenowLogo from "./icons/ZeenowLogo.tsx";
-import VisaIcon from "./icons/VisaIcon.tsx";
-import EloIcon from "./icons/EloIcon.tsx";
-import MastercardIcon from "./icons/MastercardIcon.tsx";
-import AmericanExpressIcon from "./icons/AmericanExpressIcon.tsx";
-import AmeIcon from "./icons/AmeIcon.tsx";
-import PicpayIcon from "./icons/PicpayIcon.tsx";
-import BoletoIcon from "./icons/BoletoIcon.tsx";
-import InstagramIcon from "./icons/InstagramIcon.tsx";
-import FacebookIcon from "./icons/FacebookIcon.tsx";
-import SpotifyIcon from "./icons/SpotifyIcon.tsx";
-import TwitterIcon from "./icons/TwitterIcon.tsx";
-import YoutubeIcon from "./icons/YoutubeIcon.tsx";
-import ChatIcon from "./icons/ChatIcon.tsx";
-import WhatsappIcon from "./icons/WhatsappIcon.tsx";
-import EmailIcon from "./icons/EmailIcon.tsx";
 
 import FooterAccordion, { sections } from "../islands/FooterAccordion.tsx";
 
