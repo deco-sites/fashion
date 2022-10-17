@@ -31,10 +31,6 @@ export default function SearchControls({}: Props) {
   return (
     <div class="flex flex-row justify-between items-center pt-4">
       <div class="flex-1"></div>
-      <div>
-        <h2>Search Results</h2>
-      </div>
-
       <div class="p-4 flex-1 flex flex-row justify-end">
         <div>
           <label for="location" class="block text-sm font-medium text-gray-700">
