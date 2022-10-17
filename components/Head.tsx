@@ -35,13 +35,13 @@ export const schema = {
 };
 
 export const initialProps: HeadProps = {
-  title: "Deco Live Template Site — edit this!",
-  description: "",
-  url: new URL("https://deco.cx"),
-  imageUrl: "https://via.placeholder.com/300",
-  faviconUrl: "",
+  title: "OFF Premium | Outlet Farm, Animale, e mais, até 70% off",
+  description: "Outlet Farm, Animale, e mais, até 70% off",
+  url: new URL("https://fashion.deco.page"),
+  imageUrl: "https://fashion.deco.page/android-chrome-384x384.png",
+  faviconUrl: "https://fashion.deco.page/favicon-32x32.png",
   styleUrls: [],
-  themeColor: "#003232",
+  themeColor: "#221E1F",
 };
 
 export default function HeadComponent(props: HeadProps) {
@@ -90,11 +90,11 @@ export default function HeadComponent(props: HeadProps) {
       <link
         rel="mask-icon"
         href="/safari-pinned-tab.svg"
-        data-color="#003232"
+        data-color="#221E1F"
       >
       </link>
-      <meta name="theme-color" content="#003232"></meta>
-      <meta name="msapplication-TileColor" content="#003232"></meta>
+      <meta name="theme-color" content="#221E1F"></meta>
+      <meta name="msapplication-TileColor" content="#221E1F"></meta>
       {styleUrls?.map((styleUrl: string) => (
         <link rel="stylesheet" href={asset(styleUrl)}></link>
       ))}
