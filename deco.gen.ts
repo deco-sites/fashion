@@ -24,9 +24,10 @@ import * as $$5 from "./islands/InspectVSCode.tsx";
 import * as $$6 from "./islands/LoginButtons.tsx";
 import * as $$7 from "./islands/Minicart.tsx";
 import * as $$8 from "./islands/ProductInformation.tsx";
-import * as $$9 from "./islands/SearchBar.tsx";
-import * as $$10 from "./islands/SearchControls.tsx";
-import * as $$11 from "./islands/VideoCarousel.tsx";
+import * as $$9 from "./islands/SKUSelector.tsx";
+import * as $$10 from "./islands/SearchBar.tsx";
+import * as $$11 from "./islands/SearchControls.tsx";
+import * as $$12 from "./islands/VideoCarousel.tsx";
 import * as $$$0 from "./components/Banner.tsx";
 import * as $$$1 from "./components/BannerGridImages.tsx";
 import * as $$$2 from "./components/BannerImg.tsx";
@@ -77,9 +78,10 @@ const manifest: DecoManifest = {
     "./islands/LoginButtons.tsx": $$6,
     "./islands/Minicart.tsx": $$7,
     "./islands/ProductInformation.tsx": $$8,
-    "./islands/SearchBar.tsx": $$9,
-    "./islands/SearchControls.tsx": $$10,
-    "./islands/VideoCarousel.tsx": $$11,
+    "./islands/SKUSelector.tsx": $$9,
+    "./islands/SearchBar.tsx": $$10,
+    "./islands/SearchControls.tsx": $$11,
+    "./islands/VideoCarousel.tsx": $$12,
   },
   components: {
     "./components/Banner.tsx": $$$0,

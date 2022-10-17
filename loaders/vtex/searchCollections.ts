@@ -23,16 +23,17 @@ export default {
   loader: async function VTEXSearchLoader(
     req: Request,
     ctx: HandlerContext,
-    { collection, count = 4 }: { collection: string; count: number },
+    { collection, count = 4 }: { collection: string; count: number }
   ) {
     const url = new URL(req.url);
     const isProductPage = Boolean(ctx.params.slug);
     let query: string;
+    let skuId: string | undefined;
 
     // TODO: Search and Product should have different loaders
     // search for PDP
     if (isProductPage) {
-      const skuId = ctx.params.slug.split("-").pop();
+      skuId = ctx.params.slug.split("-").pop();
       query = `sku:${skuId}`;
     } else {
       // search for PLP
@@ -67,6 +68,6 @@ export default {
       hideUnavailableItems: true,
     });
 
-    return { products: products.map(mapVTEXProduct) };
+    return { products: products.map(mapVTEXProduct(skuId)) };
   },
 } as Loader;

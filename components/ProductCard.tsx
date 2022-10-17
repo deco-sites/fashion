@@ -23,7 +23,8 @@ export interface Product {
   // atributos: string;
   // nome_produto: string;
   breadcrumb: Array<{ label: string; url: string }>;
-  specifications: Record<string, string>;
+  specifications: Record<string, string>,
+  skuOptions: Array<{variationValue: string, skuUrl: string}>
 }
 
 export default function ProductCard({

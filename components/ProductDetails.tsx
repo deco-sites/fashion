@@ -5,6 +5,7 @@ import AddToCart from "../islands/AddToCart.tsx";
 import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";
 import { JSONSchema7 } from "json-schema";
+import SKUSelector from "../islands/SKUSelector.tsx";
 
 export const schema: JSONSchema7 = {
   title: "Product Details",
@@ -22,6 +23,8 @@ interface Props {
 
 export default function ProductDetails({ products = [] }: Props) {
   const [product] = products;
+
+  console.log({ products });
 
   if (!product) {
     return;
@@ -86,11 +89,9 @@ export default function ProductDetails({ products = [] }: Props) {
             <h1 class="lg:text-2xl text-xl  uppercase text-gray-800">
               {product.name}
             </h1>
-            {/* <div>SKU Selector</div> */}
           </div>
-          {/* Price */}
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-            <div class="flex flex-col">
+            <div class="flex flex-col w-full">
               <div>
                 <span class="line-through">
                   De: {new Intl.NumberFormat("pt-BR", {
@@ -110,33 +111,25 @@ export default function ProductDetails({ products = [] }: Props) {
                   }).format(product.price)}
                 </span>
               </div>
-              <span className="text-gray-600">
-                {product?.installments}
-              </span>
-            </div>
-          </div>
-          {
-            /* <div class="flex flex-col items-center">
-            <div class="flex flex-row items-center">
-              <TruckIcon className="w-6 h-6 mr-3" />
-              <span>Adicione e garanta frete grátis</span>
-            </div>
-            <div class="flex flex-row w-full mt-2">
-              <div class="bg-blue-500 w-3/4 h-1"></div>
-            </div>
-          </div> */
-          }
-          {/* Quantity Selector */}
-          <div class="border-y border-solid border-gray-300 py-6 px-10 flex flex-row justify-between items-center">
-            <span>Quantidade:</span>
-            <div class="flex flex-row items-center">
-              <button class="px-3 bg-gray-200 hover:bg-gray-300 rounded-1/2 w-8 h-8">
-                -
-              </button>
-              <span class="px-5">1</span>
-              <button class="px-3 bg-gray-200 hover:bg-gray-300 rounded-1/2 w-8 h-8">
-                +
-              </button>
+              <span className="text-gray-600">{product?.installments}</span>
+              <div class="flex flex-row justify-between py-3 w-full">
+                <SKUSelector
+                  options={product.skuOptions}
+                  current={product.specifications["Tamanho"]}
+                />
+                <div class="border border-gray-300 flex flex-row justify-between items-center px-3 py-1 md:w-1/4">
+                  <span class="font-bold">Qtd</span>
+                  <div class="flex flex-row items-center">
+                    <button class="px-1 rounded-1/2 w-8 h-8">
+                      -
+                    </button>
+                    <span class="px-2">1</span>
+                    <button class="px-1 hover:bg-gray-300 rounded-1/2 w-8 h-8">
+                      +
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
@@ -144,8 +137,7 @@ export default function ProductDetails({ products = [] }: Props) {
           </div>
           {/* Avaliações + detalhes */}
           <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
-            {
-              /* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
+            {/* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
               <span class="font-bold">{`Avaliações (25)`}</span>
               <img
                 width="130"
@@ -153,12 +145,9 @@ export default function ProductDetails({ products = [] }: Props) {
                 src="https://user-images.githubusercontent.com/18706156/194561155-ea3abac9-0c42-4b4e-8920-890965ffad45.png"
               >
               </img>
-            </button> */
-            }
+            </button> */}
             {product?.description && (
-              <ProductInformation
-                description={product.description}
-              />
+              <ProductInformation description={product.description} />
             )}
             {
               /* <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">

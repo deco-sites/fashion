@@ -81,75 +81,87 @@ export default async function VTEXSearch({
 const isSellerAvailable = (seller: Item["sellers"][0]) =>
   seller.commertialOffer.Price > 0;
 
-export const mapVTEXProduct = ({
-  productName: name,
-  linkText,
-  items,
-  brand,
-  categories,
-  description,
-  priceRange,
-}: VTEXProduct): Product => {
-  const firstItem = items.find((item) =>
-    item.sellers?.find(isSellerAvailable)
-  ) as Item;
-  const seller = firstItem.sellers?.find(isSellerAvailable)!;
-  const installment = seller.commertialOffer?.Installments.reduce(
-    (result, installment) =>
-      installment.Value <= result.Value &&
-      installment.NumberOfInstallments >= result.NumberOfInstallments
-        ? installment
-        : result,
-    {
-      interestRate: 100.0,
-      NumberOfInstallments: 0,
-      Value: Infinity,
-    } as Installment
-  );
-
-  const breadcrumb = [
-    { label: brand, url: `/${brand.toLocaleLowerCase()}` },
-    ...categories[0]
-      .split("/")
-      .filter(Boolean)
-      .map((label) => ({
-        label,
-        url: `/search?q=${label}`,
-      })),
-  ];
-
-  const specifications = firstItem?.variations?.reduce(
-    (acc, cur) => ({ ...acc, [cur.name]: cur.values[0] }),
-    {}
-  );
-
-  return {
-    name,
-    id: firstItem.itemId,
-    sellerId: seller.sellerId ?? "1",
-    slug: `${linkText}-${firstItem.itemId}/p`,
-    image: {
-      src: firstItem.images[0].imageUrl,
-      alt: firstItem.images[0].imageLabel,
-    },
-    imageHover: firstItem.images[1]
-      ? {
-          src: firstItem.images[1].imageUrl,
-          alt: firstItem.images[1].imageLabel,
-        }
-      : undefined,
-    price: priceRange.sellingPrice.lowPrice,
-    listPrice: priceRange.listPrice.highPrice,
+export const mapVTEXProduct =
+  (skuId?: string) =>
+  ({
+    productName: name,
+    linkText,
+    items,
     brand,
+    categories,
     description,
-    installments: installment
-      ? `${
-          installment.NumberOfInstallments ?? 0
-        } de R$ ${installment.Value.toFixed(2)} ${
-          installment.InterestRate >= 0.0 ? "s/ juros" : "com juros"
-        }`
-      : "",
-    breadcrumb,
-    specifications
+    priceRange,
+  }: VTEXProduct): Product => {
+    const selectedItem = items.find((item) =>
+      skuId ? item.itemId === skuId : item.sellers?.some(isSellerAvailable)
+    ) as Item;
+    const seller = selectedItem.sellers?.find(isSellerAvailable)!;
+    const installment = seller.commertialOffer?.Installments.reduce(
+      (result, installment) =>
+        installment.Value <= result.Value &&
+        installment.NumberOfInstallments >= result.NumberOfInstallments
+          ? installment
+          : result,
+      {
+        interestRate: 100.0,
+        NumberOfInstallments: 0,
+        Value: Infinity,
+      } as Installment
+    );
+
+    const breadcrumb = [
+      { label: brand, url: `/${brand.toLocaleLowerCase()}` },
+      ...categories[0]
+        .split("/")
+        .filter(Boolean)
+        .map((label) => ({
+          label,
+          url: `/search?q=${label}`,
+        })),
+    ];
+
+    const specifications = selectedItem?.variations?.reduce(
+      (acc, cur) => ({ ...acc, [cur.name]: cur.values[0] }),
+      {}
+    );
+
+    // This is hardcoded for "Tamanho" variations
+    const skuOptions = items
+      .filter((item) => item.sellers?.some(isSellerAvailable))
+      .map((item) => ({
+        variationValue: item?.["Tamanho"]?.[0],
+        skuUrl: `/${linkText}-${item.itemId}/p`,
+      }))
+      .sort((a, z) => a.variationValue - z.variationValue);
+
+    return {
+      name,
+      id: selectedItem.itemId,
+      sellerId: seller.sellerId ?? "1",
+      slug: `${linkText}-${selectedItem.itemId}/p`,
+      image: {
+        src: selectedItem.images[0].imageUrl,
+        alt: selectedItem.images[0].imageLabel,
+      },
+      imageHover: selectedItem.images[1]
+        ? {
+            src: selectedItem.images[1].imageUrl,
+            alt: selectedItem.images[1].imageLabel,
+          }
+        : undefined,
+      price: priceRange.sellingPrice.lowPrice,
+      listPrice: priceRange.listPrice.highPrice,
+      brand,
+      description,
+      installments: installment
+        ? `${
+            installment.NumberOfInstallments ?? 0
+          } de R$ ${installment.Value.toFixed(2)} ${
+            installment.InterestRate >= 0.0 ? "s/ juros" : "com juros"
+          }`
+        : "",
+      breadcrumb,
+      specifications,
+      skuOptions,
+    };
   };
-};
