@@ -6,9 +6,13 @@ import { useCart } from "../data/cartHooks.ts";
 interface Props {
   skuId: string;
   sellerId: string;
+  class?: string;
+  large?: boolean;
 }
 
-export default function AddToCart({ skuId, sellerId }: Props) {
+export default function AddToCart(
+  { skuId, sellerId, large, class: className }: Props,
+) {
   const [loading, setLoading] = useState(false);
   const { addItem } = useCart();
 
@@ -23,7 +27,7 @@ export default function AddToCart({ skuId, sellerId }: Props) {
     <button
       class={tw`${
         loading ? "bg-gray-500" : "bg-black"
-      } text-white px-14 py-4 uppercase text-xl bg-primary-red hover:bg-primary-red-dark`}
+      } text-white ${large ? 'px-14 py-4 text-lg' : 'px-6 py-2 text w-full'} uppercase bg-primary-red hover:bg-primary-red-dark`}
       onClick={onAddItem}
     >
       Adicionar à sacola

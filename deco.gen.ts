@@ -305,7 +305,7 @@ const manifest: DecoManifest = {
     "ProductShelf": {
       "title": "Product Shelf",
       "type": "object",
-      "required": ["title", "collection"],
+      "required": ["collection"],
       "properties": {
         "title": { "type": "string", "title": "Título" },
         "products": {

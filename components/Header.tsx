@@ -5,39 +5,14 @@ import DecoFashionLogo from "./icons/DecoFashionLogo.tsx";
 import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserIcon } from "heroicons";
 import Minicart from "../islands/Minicart.tsx";
 
-function StoreAnchor({
-  children,
-  class: className,
-}: h.JSX.HTMLAttributes<HTMLAnchorElement>) {
-  return (
-    <a
-      class={`h-full w-1/3 md:w-[8.75rem] flex items-center justify-center border-r border-[#d3d5db] ${
-        className ?? ""
-      }`}
-    >
-      {children}
-    </a>
-  );
-}
-
-function Button({
-  children,
-  class: className,
-}: h.JSX.HTMLAttributes<HTMLButtonElement>) {
-  return (
-    <button class="flex gap-2 items-center h-10 px-[0.625rem] font-bold transition duration-150 ease-in hover:bg-[#e2e2e2]">
-      {children}
-    </button>
-  );
-}
-
 function NavItem({
+  href,
   children,
   class: className,
 }: h.JSX.HTMLAttributes<HTMLLIElement>) {
   return (
     <a
-      href={`/search?q=${children}`}
+      href={href ?? `/search?q=${children}`}
       class={`flex items-center text-[16px] font-bold uppercase px-8 lg:px-12 hover:border-black border-solid border-b border-white `}
     >
       {children}
@@ -70,7 +45,7 @@ function Navbar() {
           </a>
         </div>
         <div class="flex justify-center md:justify-between pl-12">
-          <NavItem>Marcas</NavItem>
+          <NavItem href="/farm">Marcas</NavItem>
           <NavItem>Feminino</NavItem>
           <NavItem>Masculino</NavItem>
           <NavItem>Infantil</NavItem>

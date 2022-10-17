@@ -112,7 +112,7 @@ export default function ProductDetails({ products = [] }: Props) {
             </div>
           </div>
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-            <AddToCart skuId={product.id} sellerId={product.sellerId} />
+            <AddToCart skuId={product.id} sellerId={product.sellerId} large />
           </div>
           {/* Avaliações + detalhes */}
           <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">

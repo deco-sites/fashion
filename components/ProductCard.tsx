@@ -1,15 +1,5 @@
+import AddToCart from "../islands/AddToCart.tsx";
 import Image from "./ui/Image.tsx";
-
-function convertImageSrc(imgUrl: string) {
-  const url = new URL(imgUrl);
-  const pathnameList = url.pathname.split("/");
-  pathnameList.pop();
-
-  url.pathname = pathnameList.join("/");
-  url.searchParams.delete("v");
-
-  return url.toString();
-}
 
 interface Image {
   src: string;
@@ -23,6 +13,7 @@ export interface Product {
   name: string;
   sellerId: string;
   price: number;
+  listPrice: number;
   installments: string;
   image: Image;
   imageHover?: Image;
@@ -32,6 +23,7 @@ export interface Product {
   // atributos: string;
   // nome_produto: string;
   breadcrumb: Array<{ label: string; url: string }>;
+  specifications: Record<string, string>
 }
 
 export default function ProductCard({
@@ -41,51 +33,70 @@ export default function ProductCard({
   image,
   imageHover,
   slug,
+  brand,
   // nome_produto,
+  listPrice,
+  id,
+  sellerId,
+  specifications
 }: Product) {
-  const imgSrc = convertImageSrc(image.src);
-  const imgHoverSrc = imageHover ? convertImageSrc(imageHover?.src) : "";
+  const discountPercentage = Math.trunc(
+    Math.max(1 - price / listPrice, 0) * 100
+  );
   return (
-    <div class="bg-custom-brown rounded-lg h-full">
-      {/** todo hover img with group */}
-      <a class="block mb-2 group" href={slug}>
-        <Image
-          class={`mb-4 mx-auto w-[21rem] md:w-full object-contain rounded-t-lg ${
-            imgHoverSrc ? "group-hover:hidden" : ""
-          }`}
-          src={imgSrc}
-          alt={image.alt}
-          height={360}
-          width={360}
-          sizes="(max-width: 640px) 50vw, 25vw"
-          loading="lazy"
-        />
-        {imgHoverSrc && (
+    <div class="w-full p-2 group relative border border-white hover:border-black">
+      {/* <div class="absolute inset-0 before:p-2 hidden group-hover:block group-hover:border border-[#000]" /> */}
+
+      <div class="h-full z-10">
+        <a class="block w-full" href={slug}>
           <Image
-            class="mb-4 mx-auto w-[21rem] md:w-full object-contain rounded-t-lg hidden group-hover:block"
-            src={imgHoverSrc}
-            alt={imageHover?.alt}
-            height={360}
-            width={360}
+            class="w-full max-w-full h-auto"
+            src={image.src}
+            alt={image.alt}
+            height={492}
+            width={328}
             sizes="(max-width: 640px) 50vw, 25vw"
             loading="lazy"
           />
-        )}
-      </a>
-      <div class="text-[#777] p-4">
-        <h3
-          class="text-xs max-h-[80px] overflow-hidden whitespace-nowrap"
-          style={{ textOverflow: "ellipsis" }}
-        >
-          {name.replace(/(.*)(\-).*$/, "$1$2")}
-        </h3>
-        {/* <h4 class="text-xs mb-6 max-h-[80px] font-bold overflow-hidden whitespace-nowrap" style={{ textOverflow: "ellipsis"}}> */}
-        {/* {nome_produto} */}
-        {/* </h4> */}
-        <div class="fold-medium">
-          R$ {typeof price === "number" ? price.toFixed(2) : price}
+        </a>
+        <div class="mt-3">
+          <div class="flex justify-between text-xs uppercase">
+            <span class="text-[#737378] ">{brand}</span>
+            <span class="text-white bg-black px-2">
+              {discountPercentage}% OFF
+            </span>
+          </div>
+          <a
+            class="block text-base overflow-hidden whitespace-nowrap uppercase"
+            style={{ textOverflow: "ellipsis" }}
+            href={slug}
+          >
+            {name.replace(/(.*)(\-).*$/, "$1$2")}
+          </a>
+          <div class="text-xs flex justify-between md:justify-start gap-2">
+            <span class="line-through">R$ {listPrice.toFixed(2)}</span>
+            <span class="text-[#D10923] ">
+              R$ {typeof price === "number" ? price.toFixed(2) : price}
+            </span>
+          </div>
+          <div class="text-xs text-[#737378] font-bold">ou {installments}</div>
         </div>
-        <div class="text-xs fold-bold text-gray-400">({installments})</div>
+
+        <div class="absolute group-hover:border border-black bottom-0 inset-x-0 z-10 opacity-0 group-hover:opacity-100 bg-white group-hover:translate-y-full transition ease-in duration-300">
+          <div class="text-xs font-semibold mt-2">
+            <div class="border-y border-[#000] py-2 px-1 flex flex-row justify-between">
+              <span>Tamanho</span>
+              <span class="font-bold">{specifications['Tamanho']}</span>
+            </div>
+          </div>
+          <div class="m-2">
+            <AddToCart
+              class="bg-[#D10923] w-full text-white text-xs uppercase py-2 cursor-pointer"
+              skuId={id}
+              sellerId={sellerId}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

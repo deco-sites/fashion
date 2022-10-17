@@ -43,18 +43,16 @@ function addDefaultFacets(facets: SelectedFacet[]): SelectedFacet[] {
   return [...facets, { key: "trade-policy", value: "1" }];
 }
 
-export default async function VTEXSearch(
-  {
-    page,
-    query = "",
-    count,
-    type,
-    sort = "",
-    selectedFacets = [],
-    fuzzy = "auto",
-    hideUnavailableItems,
-  }: SearchArgs,
-): Promise<{ products: VTEXProduct[] }> {
+export default async function VTEXSearch({
+  page,
+  query = "",
+  count,
+  type,
+  sort = "",
+  selectedFacets = [],
+  fuzzy = "auto",
+  hideUnavailableItems,
+}: SearchArgs): Promise<{ products: VTEXProduct[] }> {
   const params = new URLSearchParams({
     page: (page + 1).toString(),
     count: count.toString(),
@@ -67,15 +65,14 @@ export default async function VTEXSearch(
     params.append("hideUnavailableItems", hideUnavailableItems.toString());
   }
 
-  const pathname = addDefaultFacets(selectedFacets).map(({ key, value }) =>
-    `${key}/${value}`
-  )
+  const pathname = addDefaultFacets(selectedFacets)
+    .map(({ key, value }) => `${key}/${value}`)
     .join("/");
 
   const _res = await fetch(
     `https://vtex-search-proxy.global.ssl.fastly.net/${ACCOUNT_NAME}/intelligent-search/${type}/${pathname}?${
       params.toString() ?? ""
-    }`,
+    }`
   );
 
   return await _res.json();
@@ -91,24 +88,24 @@ export const mapVTEXProduct = ({
   brand,
   categories,
   description,
+  priceRange,
 }: VTEXProduct): Product => {
   const firstItem = items.find((item) =>
     item.sellers?.find(isSellerAvailable)
   ) as Item;
   const seller = firstItem.sellers?.find(isSellerAvailable)!;
-  const installment = seller.commertialOffer?.Installments
-    .reduce(
-      (result, installment) =>
-        installment.Value <= result.Value &&
-          installment.NumberOfInstallments >= result.NumberOfInstallments
-          ? installment
-          : result,
-      {
-        interestRate: 100.0,
-        NumberOfInstallments: 0,
-        Value: Infinity,
-      } as Installment,
-    );
+  const installment = seller.commertialOffer?.Installments.reduce(
+    (result, installment) =>
+      installment.Value <= result.Value &&
+      installment.NumberOfInstallments >= result.NumberOfInstallments
+        ? installment
+        : result,
+    {
+      interestRate: 100.0,
+      NumberOfInstallments: 0,
+      Value: Infinity,
+    } as Installment
+  );
 
   const breadcrumb = [
     { label: brand, url: `/${brand.toLocaleLowerCase()}` },
@@ -121,6 +118,11 @@ export const mapVTEXProduct = ({
       })),
   ];
 
+  const specifications = firstItem?.variations?.reduce(
+    (acc, cur) => ({ ...acc, [cur.name]: cur.values[0] }),
+    {}
+  );
+
   return {
     name,
     id: firstItem.itemId,
@@ -132,18 +134,22 @@ export const mapVTEXProduct = ({
     },
     imageHover: firstItem.images[1]
       ? {
-        src: firstItem.images[1].imageUrl,
-        alt: firstItem.images[1].imageLabel,
-      }
+          src: firstItem.images[1].imageUrl,
+          alt: firstItem.images[1].imageLabel,
+        }
       : undefined,
-    price: seller.commertialOffer.Price ?? 0,
+    price: priceRange.sellingPrice.lowPrice,
+    listPrice: priceRange.listPrice.highPrice,
     brand,
     description,
     installments: installment
-      ? `até ${installment.NumberOfInstallments ?? 0} ${
-        installment.InterestRate >= 0.0 ? "s/ juros" : "com juros"
-      }`
+      ? `${
+          installment.NumberOfInstallments ?? 0
+        } de R$ ${installment.Value.toFixed(2)} ${
+          installment.InterestRate >= 0.0 ? "s/ juros" : "com juros"
+        }`
       : "",
     breadcrumb,
+    specifications
   };
 };

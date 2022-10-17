@@ -527,6 +527,11 @@ export interface Item {
   sellers?: Array<{ sellerId: string; commertialOffer: CommertialOffer }>;
 }
 
+interface PriceRange {
+  highPrice: number;
+  lowPrice: number;
+}
+
 // Partial Product
 export interface Product {
   productId: string;
@@ -540,4 +545,8 @@ export interface Product {
   categories: string[];
   // Descricao_Produto: string[]
   items: Item[];
+  priceRange: {
+    sellingPrice: PriceRange;
+    listPrice: PriceRange;
+  };
 }
