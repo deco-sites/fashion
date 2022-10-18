@@ -53,7 +53,7 @@ export default function ProductCard({
       <script
         dangerouslySetInnerHTML={{
           __html:
-            `mobile && quicklink.listen({el: document.getElementById('product-card-${id}')});`,
+            `mobile && document.getElementById('quicklink').addEventListener('load', function(){quicklink.listen({el: document.getElementById('product-card-${id}')})});`,
         }}
       >
       </script>
