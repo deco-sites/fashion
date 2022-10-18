@@ -36,23 +36,23 @@ export default function MarcasConvidadas() {
         <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-        <picture class="md:col-span-3">
-          <source
-            media="(max-width: 767px)"
-            srcset="https://images.prismic.io/offpremium-web/3b90e599-993a-40bd-861c-7730abef670a_10_banner_terciario_maior_morena_iodice_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcset="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650"
-          />
-          <a href="/search?q=morena+rosa">
+        <a class="md:col-span-3" href="/search?q=morena+rosa">
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="https://images.prismic.io/offpremium-web/3b90e599-993a-40bd-861c-7730abef670a_10_banner_terciario_maior_morena_iodice_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650"
+            />
             <img
               class="object-cover w-full"
               src="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650"
               alt="Morena iodice"
             />
-          </a>
-        </picture>
+          </picture>
+        </a>
         {banners.map(({ href, imgSrc }) => (
           <div>
             <a href={href} key={href}>
