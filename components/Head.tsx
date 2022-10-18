@@ -146,7 +146,7 @@ export default function HeadComponent(props: HeadProps) {
         }}
       >
       </style>
-      <script async src="/scripts/quicklink.umd.js"></script>
+      <script src="/scripts/quicklink.umd.js"></script>
       <script
         dangerouslySetInnerHTML={{
           __html:
