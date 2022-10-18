@@ -23,8 +23,8 @@ export interface Product {
   // atributos: string;
   // nome_produto: string;
   breadcrumb: Array<{ label: string; url: string }>;
-  specifications: Record<string, string>,
-  skuOptions: Array<{variationValue: string, skuUrl: string}>
+  specifications: Record<string, string>;
+  skuOptions: Array<{ variationValue: string; skuUrl: string }>;
 }
 
 export default function ProductCard({
@@ -45,17 +45,7 @@ export default function ProductCard({
     Math.max(1 - price / listPrice, 0) * 100,
   );
   return (
-    <div
-      id={`product-${id}`}
-      class="w-full p-2 group relative border border-white hover:border-black"
-    >
-      <style
-        dangerouslySetInnerHTML={{
-          "__html":
-            `#product-${id}::after{position:absolute; width:0; height:0; overflow:hidden; z-index:-1; content:url("https://assets.vtex.app/unsafe/1002x1503/center/middle/${imageHover?.src}")}`,
-        }}
-      >
-      </style>
+    <div class="w-full p-2 group relative border border-white hover:border-black">
       {/* <div class="absolute inset-0 before:p-2 hidden group-hover:block group-hover:border border-[#000]" /> */}
 
       <div class="h-full z-10">
