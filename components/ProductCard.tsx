@@ -94,7 +94,7 @@ export default function ProductCard({
           <div class="text-xs text-[#737378] font-bold">ou {installments}</div>
         </div>
 
-        <div class="absolute group-hover:border border-black bottom-0 inset-x-0 z-10 opacity-0 group-hover:opacity-100 bg-white group-hover:translate-y-full transition ease-in duration-300">
+        <div class="absolute group-hover:border border-black bottom-0 inset-x-0 z-10 opacity-0 group-hover:md:opacity-100 bg-white group-hover:translate-y-full transition ease-in duration-300">
           <div class="text-xs font-semibold mt-2">
             <div class="border-y border-[#000] py-2 px-1 flex flex-row justify-between">
               <span>Tamanho</span>
