@@ -45,7 +45,10 @@ export default function ProductCard({
     Math.max(1 - price / listPrice, 0) * 100,
   );
   return (
-    <div class="w-full p-2 group relative border border-white hover:border-black">
+    <div
+      class="w-full p-2 group relative border border-white hover:border-black"
+      onMouseOver={`linkTag = document.createElement('link'); linkTag.rel = 'prefetch'; linkTag.href = "${slug}"; linkTag.as = 'document';document.head.appendChild(linkTag);`}
+    >
       {/* <div class="absolute inset-0 before:p-2 hidden group-hover:block group-hover:border border-[#000]" /> */}
 
       <div class="h-full z-10">
