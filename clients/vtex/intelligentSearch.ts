@@ -43,7 +43,7 @@ function addDefaultFacets(facets: SelectedFacet[]): SelectedFacet[] {
   return [...facets, { key: "trade-policy", value: "1" }];
 }
 
-export default async function VTEXSearch({
+export default async function VTEXIntelligentSearch({
   page,
   query = "",
   count,
@@ -78,12 +78,13 @@ export default async function VTEXSearch({
   return await _res.json();
 }
 
-const isSellerAvailable = (seller: Item["sellers"][0]) =>
+export const isSellerAvailable = (seller: Item["sellers"][0]) =>
   seller.commertialOffer.Price > 0;
 
-export const mapVTEXProduct =
+export const mapVTEXIntelligentSearchProduct =
   (skuId?: string) =>
   ({
+    productId,
     productName: name,
     linkText,
     items,
@@ -91,6 +92,7 @@ export const mapVTEXProduct =
     categories,
     description,
     priceRange,
+    Cor,
   }: VTEXProduct): Product => {
     const selectedItem = items.find((item) =>
       skuId ? item.itemId === skuId : item.sellers?.some(isSellerAvailable)
@@ -111,7 +113,7 @@ export const mapVTEXProduct =
 
     const breadcrumb = [
       { label: brand, url: `/${brand.toLocaleLowerCase()}` },
-      ...categories[0]
+      ...categories?.[0]
         .split("/")
         .filter(Boolean)
         .map((label) => ({
@@ -121,7 +123,7 @@ export const mapVTEXProduct =
     ];
 
     const specifications = selectedItem?.variations?.reduce(
-      (acc, cur) => ({ ...acc, [cur.name]: cur.values[0] }),
+      (acc, cur) => ({ ...acc, [cur.name]: cur.values?.[0] }),
       {}
     );
 
@@ -132,25 +134,45 @@ export const mapVTEXProduct =
         variationValue: item?.["Tamanho"]?.[0],
         skuUrl: `/${linkText}-${item.itemId}/p`,
       }))
-      .sort((a, z) => a.variationValue - z.variationValue);
+      .sort(
+        (a, z) => parseInt(a.variationValue, 10) - parseInt(z.variationValue)
+      );
+
+    const prices = priceRange
+      ? {
+          price: priceRange?.sellingPrice?.lowPrice,
+          listPrice: priceRange?.listPrice?.highPrice,
+        }
+      : {
+          price: seller.commertialOffer.Price,
+          listPrice: seller.commertialOffer.ListPrice,
+        };
 
     return {
       name,
+      // TODO: This is itemId/skuId. Solve this ambiguity.
       id: selectedItem.itemId,
+      productId,
       sellerId: seller.sellerId ?? "1",
       slug: `${linkText}-${selectedItem.itemId}/p`,
       image: {
         src: selectedItem.images[0].imageUrl,
         alt: selectedItem.images[0].imageLabel,
       },
+      images: selectedItem.images.map(
+        ({ imageUrl, imageLabel, imageText }) => ({
+          src: imageUrl,
+          alt: imageText,
+          label: imageLabel,
+        })
+      ),
       imageHover: selectedItem.images[1]
         ? {
             src: selectedItem.images[1].imageUrl,
             alt: selectedItem.images[1].imageLabel,
           }
         : undefined,
-      price: priceRange.sellingPrice.lowPrice,
-      listPrice: priceRange.listPrice.highPrice,
+      ...prices,
       brand,
       description,
       installments: installment
@@ -163,5 +185,6 @@ export const mapVTEXProduct =
       breadcrumb,
       specifications,
       skuOptions,
+      color: Cor?.[0],
     };
   };

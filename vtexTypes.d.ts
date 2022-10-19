@@ -517,16 +517,6 @@ interface CommertialOffer {
   Installments: Installment[];
 }
 
-// Catalog Interfaces
-// Partial Item
-export interface Item {
-  // SKU
-  itemId: string;
-  complementName: string;
-  images: Array<{ imageUrl: string; imageLabel: string; imageText: string }>;
-  sellers?: Array<{ sellerId: string; commertialOffer: CommertialOffer }>;
-}
-
 interface PriceRange {
   highPrice: number;
   lowPrice: number;
@@ -549,4 +539,85 @@ export interface Product {
     sellingPrice: PriceRange;
     listPrice: PriceRange;
   };
+  // Custom/Common attrs
+  Cor?: string[]
+}
+
+export interface Item {
+  sellers: Seller[];
+  images: Image[];
+  itemId: string;
+  name: string;
+  nameComplete: string;
+  complementName: string;
+  referenceId: ReferenceID[];
+  measurementUnit: string;
+  unitMultiplier: number;
+  variations: Variation[];
+  ean: string;
+  modalType: string;
+  videos: any[];
+  attachments: any[];
+  isKit: boolean;
+  Tamanho: string[];
+}
+
+export interface Image {
+  imageId: string;
+  cacheId: string;
+  imageTag: string;
+  imageLabel: string;
+  imageText: string;
+  imageUrl: string;
+}
+
+export interface ReferenceID {
+  Key: string;
+  Value: string;
+}
+
+export interface Seller {
+  sellerId: string;
+  sellerName: string;
+  addToCartLink: string;
+  sellerDefault: boolean;
+  commertialOffer: CommertialOffer;
+}
+
+export interface CommertialOffer {
+  DeliverySlaSamplesPerRegion: DeliverySlaSamplesPerRegion;
+  DeliverySlaSamples: any[];
+  AvailableQuantity: number;
+  discountHighlights: any[];
+  Installments: Installment[];
+  Price: number;
+  ListPrice: number;
+  spotPrice: number;
+  taxPercentage: number;
+  PriceWithoutDiscount: number;
+  Tax: number;
+  GiftSkuIds: any[];
+  BuyTogether: any[];
+  ItemMetadataAttachment: any[];
+  RewardValue: number;
+  PriceValidUntil: Date;
+  GetInfoErrorMessage: null;
+  CacheVersionUsedToCallCheckout: string;
+  teasers: any[];
+}
+
+export interface DeliverySlaSamplesPerRegion {}
+
+export interface Installment {
+  PaymentSystemName: string;
+  Value: number;
+  InterestRate: number;
+  TotalValuePlusInterestRate: number;
+  NumberOfInstallments: number;
+  Name: string;
+}
+
+export interface Variation {
+  name: string;
+  values: string[];
 }

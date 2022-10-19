@@ -1,6 +1,6 @@
 import type { Loader } from "$live/types.ts";
 import { HandlerContext } from "$fresh/server.ts";
-import VTEXSearch, { mapVTEXProduct, Sort } from "../../clients/vtex/search.ts";
+import VTEXIntelligentSearch, { mapVTEXIntelligentSearchProduct, Sort } from "../../clients/vtex/intelligentSearch.ts";
 
 export default {
   inputSchema: {
@@ -59,7 +59,7 @@ export default {
       }
     })();
 
-    const { products } = await VTEXSearch({
+    const { products } = await VTEXIntelligentSearch({
       query,
       type: "product_search",
       sort,
@@ -68,6 +68,6 @@ export default {
       hideUnavailableItems: true,
     });
 
-    return { products: products.map(mapVTEXProduct(skuId)) };
+    return { products: products.map(mapVTEXIntelligentSearchProduct(skuId)) };
   },
 } as Loader;

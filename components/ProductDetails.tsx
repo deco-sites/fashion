@@ -6,6 +6,7 @@ import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";
 import { JSONSchema7 } from "json-schema";
 import SKUSelector from "../islands/SKUSelector.tsx";
+import ColorSelector from "../islands/ColorSelector.tsx";
 
 export const schema: JSONSchema7 = {
   title: "Product Details",
@@ -23,8 +24,6 @@ interface Props {
 
 export default function ProductDetails({ products = [] }: Props) {
   const [product] = products;
-
-  console.log({ products });
 
   if (!product) {
     return;
@@ -94,16 +93,15 @@ export default function ProductDetails({ products = [] }: Props) {
             <div class="flex flex-col w-full">
               <div>
                 <span class="line-through">
-                  De: {new Intl.NumberFormat("pt-BR", {
+                  De:{" "}
+                  {new Intl.NumberFormat("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   }).format(product.listPrice)}
                 </span>
               </div>
               <div>
-                <span class="">
-                  Por:{" "}
-                </span>
+                <span class="">Por: </span>
                 <span class="text-primary-red">
                   {new Intl.NumberFormat("pt-BR", {
                     style: "currency",
@@ -120,9 +118,7 @@ export default function ProductDetails({ products = [] }: Props) {
                 <div class="border border-gray-300 flex flex-row justify-between items-center px-3 py-1 md:w-1/4">
                   <span class="font-bold">Qtd</span>
                   <div class="flex flex-row items-center">
-                    <button class="px-1 rounded-1/2 w-8 h-8">
-                      -
-                    </button>
+                    <button class="px-1 rounded-1/2 w-8 h-8">-</button>
                     <span class="px-2">1</span>
                     <button class="px-1 hover:bg-gray-300 rounded-1/2 w-8 h-8">
                       +
@@ -130,6 +126,7 @@ export default function ProductDetails({ products = [] }: Props) {
                   </div>
                 </div>
               </div>
+              <ColorSelector product={product} />
             </div>
           </div>
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
@@ -137,8 +134,7 @@ export default function ProductDetails({ products = [] }: Props) {
           </div>
           {/* Avaliações + detalhes */}
           <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
-            {
-              /* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
+            {/* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
               <span class="font-bold">{`Avaliações (25)`}</span>
               <img
                 width="130"
@@ -146,20 +142,17 @@ export default function ProductDetails({ products = [] }: Props) {
                 src="https://user-images.githubusercontent.com/18706156/194561155-ea3abac9-0c42-4b4e-8920-890965ffad45.png"
               >
               </img>
-            </button> */
-            }
+            </button> */}
             {product?.description && (
               <ProductInformation description={product.description} />
             )}
-            {
-              /* <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
+            {/* <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
               <span class="pb-8">Precisa de ajuda?</span>
               <button class="border border-solid border-black py-3 w-1/2 flex flex-row justify-center items-center">
                 <ChatBubbleLeftIcon className="w-5 h-5 mr-2" />
                 Fale com a gente
               </button>
-            </div> */
-            }
+            </div> */}
           </div>
         </div>
       </section>
