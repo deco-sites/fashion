@@ -6,7 +6,7 @@ export default function SearchBar() {
   const onSearch = (e: h.JSX.TargetedEvent<HTMLFormElement>) => {
     e.preventDefault();
     // @ts-expect-error
-    window.location = `/search?q=${query}`;
+    window.location = `/search?ft=${query}`;
   };
 
   useEffect(() => {

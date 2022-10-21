@@ -1,17 +1,10 @@
-import { useMemo } from "preact/hooks";
+import { useRef } from "preact/hooks";
+import useSWR from "swr";
 import { JSONSchema7 } from "json-schema";
-
-// TODO: The search query should also be from a commerce schema
-const sortOptions = [
-  { value: "price:desc", label: "Maior Preço" },
-  { value: "price:asc", label: "Menor Preço" },
-  { value: "orders:desc", label: "Mais Pedidos" },
-  { value: "name:desc", label: "Nome (A -> Z)" },
-  { value: "name:asc", label: "Nome (Z -> A)" },
-  { value: "release:desc", label: "Lançamentos Recentes" },
-  { value: "discount:desc", label: "Maior Desconto" },
-  { value: "", label: "Relevância" },
-];
+import { FacetsResponse } from "../clients/vtex/intelligentSearch.ts";
+import FacetsTree from "../components/search/FacetsTree.tsx";
+import SortSelector from "../components/search/SortSelector.tsx";
+import Modal from "../components/ui/Modal.tsx";
 
 export const schema: JSONSchema7 = {
   title: "SearchControls",
@@ -19,48 +12,50 @@ export const schema: JSONSchema7 = {
   properties: {},
 };
 
-interface Props {}
 
-const SORT_QUERY_PARAM = "sort";
+export default function SearchControls() {
+  const modalRef = useRef<HTMLDialogElement | null>(null);
 
-export default function SearchControls({}: Props) {
-  const selectedSort = useMemo(() => {
+  // Fetching facets
+  const facetsFetcher = () => {
     const urlSearchParams = new URLSearchParams(window.location?.search);
-    return urlSearchParams.get(SORT_QUERY_PARAM) ?? "";
-  }, []);
+
+    return fetch(`/api/searchFacets?${urlSearchParams.toString()}`).then((r) =>
+      r.json()
+    );
+  };
+
+  const { data } = useSWR<FacetsResponse, Error>(
+    `facets-TODO`,
+    facetsFetcher,
+    {}
+  );
+
+  // TODO: Standardize max-width (1400px)
   return (
-    <div class="flex flex-row justify-between items-center pt-4">
-      <div class="flex-1"></div>
-      <div class="p-4 flex-1 flex flex-row justify-end">
+    <div class="flex justify-center flex-row">
+      <div class="flex justify-around md:justify-between items-center px-4 py-2 max-w-[1400px] flex-1">
         <div>
-          <label for="location" class="block text-sm font-medium text-gray-700">
-            Ordenar Por
-          </label>
-          <select
-            id="sort"
-            name="sort"
-            onInput={(e) => {
-              // TODO: Replace with "search utils"
-              const urlSearchParams = new URLSearchParams(
-                window.location.search,
-              );
-              urlSearchParams.set(SORT_QUERY_PARAM, e.currentTarget.value);
-              window.location.search = urlSearchParams.toString();
-            }}
-            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          <button
+            onClick={() => modalRef.current!.showModal()}
+            type="button"
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-green-light"
           >
-            {sortOptions.map(({ value, label }) => (
-              <option
-                key={value}
-                value={value}
-                selected={value === selectedSort}
-              >
-                {label}
-              </option>
-            ))}
-          </select>
+            Filtros
+          </button>
+        </div>
+        <div class="md:flex flex-col justify-center hidden">
+          <h2 class="text-center text-sm md:text-2xl">
+            Resultados da Busca
+          </h2>
+        </div>
+        <div class="flex flex-row justify-end">
+          <SortSelector />
         </div>
       </div>
+      <Modal title="Selecione os filtros" mode="sidebar-left" ref={modalRef}>
+        {data ? <FacetsTree data={data} /> : "loading..."}
+      </Modal>
     </div>
   );
 }

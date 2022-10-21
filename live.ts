@@ -6,5 +6,10 @@ import twindConfig from "./twind.config.ts";
 await start(manifest, {
   site: "fashion",
   domains: [],
-  plugins: [twindPlugin(twindConfig)],
+  plugins: [
+    twindPlugin({
+      selfURL: new URL("./twind.config.ts", import.meta.url).href,
+      ...twindConfig,
+    }),
+  ],
 });

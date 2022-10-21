@@ -1,6 +1,10 @@
 import type { Loader } from "$live/types.ts";
 import { HandlerContext } from "$fresh/server.ts";
-import VTEXIntelligentSearch, { mapVTEXIntelligentSearchProduct, Sort } from "../../clients/vtex/intelligentSearch.ts";
+import VTEXIntelligentSearch, {
+  mapVTEXIntelligentSearchProduct,
+  Sort,
+} from "../../clients/vtex/intelligentSearch.ts";
+import { getFacetsFromUrl } from "../../routes/api/searchFacets.ts";
 
 export default {
   inputSchema: {
@@ -38,7 +42,7 @@ export default {
     } else {
       // search for PLP
       if (url.pathname === "/search") {
-        query = url.searchParams.get("q") ?? "";
+        query = url.searchParams.get("ft") ?? "";
 
         if (query) {
           query = encodeURIComponent(query);
@@ -59,12 +63,15 @@ export default {
       }
     })();
 
-    const { products } = await VTEXIntelligentSearch({
+    const selectedFacets = getFacetsFromUrl(url);
+
+    const vtexIs = new VTEXIntelligentSearch();
+    const { products } = await vtexIs.search({
       query,
-      type: "product_search",
       sort,
       page: 0,
       count,
+      selectedFacets,
       hideUnavailableItems: true,
     });
 

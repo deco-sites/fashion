@@ -9,13 +9,14 @@ import * as $1 from "./routes/[slug]/p.tsx";
 import * as $2 from "./routes/admin.tsx";
 import * as $3 from "./routes/api/cart/index.ts";
 import * as $4 from "./routes/api/cart/items.ts";
-import * as $5 from "./routes/api/similarProducts.ts";
-import * as $6 from "./routes/index.tsx";
-import * as $7 from "./routes/inspect-vscode.ts";
-import * as $8 from "./routes/live/login.tsx";
-import * as $9 from "./routes/live/login/success.tsx";
-import * as $10 from "./routes/search.tsx";
-import * as $11 from "./routes/start.tsx";
+import * as $5 from "./routes/api/searchFacets.ts";
+import * as $6 from "./routes/api/similarProducts.ts";
+import * as $7 from "./routes/index.tsx";
+import * as $8 from "./routes/inspect-vscode.ts";
+import * as $9 from "./routes/live/login.tsx";
+import * as $10 from "./routes/live/login/success.tsx";
+import * as $11 from "./routes/search.tsx";
+import * as $12 from "./routes/start.tsx";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/Alert.tsx";
 import * as $$2 from "./islands/AuthListener.tsx";
@@ -51,9 +52,13 @@ import * as $$$17 from "./components/Search.tsx";
 import * as $$$18 from "./components/StoreFeatures.tsx";
 import * as $$$19 from "./components/icons/DecoFashionLogo.tsx";
 import * as $$$20 from "./components/icons/SearchIcon.tsx";
-import * as $$$21 from "./components/ui/Image.tsx";
-import * as $$$22 from "./components/ui/Spinner.tsx";
-import * as $$$23 from "./components/ui/Video.tsx";
+import * as $$$21 from "./components/minicart/CartItem.tsx";
+import * as $$$22 from "./components/search/FacetsTree.tsx";
+import * as $$$23 from "./components/search/SortSelector.tsx";
+import * as $$$24 from "./components/ui/Image.tsx";
+import * as $$$25 from "./components/ui/Modal.tsx";
+import * as $$$26 from "./components/ui/Spinner.tsx";
+import * as $$$27 from "./components/ui/Video.tsx";
 import * as $$$$0 from "./loaders/vtex/searchCollections.ts";
 
 const manifest: DecoManifest = {
@@ -63,13 +68,14 @@ const manifest: DecoManifest = {
     "./routes/admin.tsx": $2,
     "./routes/api/cart/index.ts": $3,
     "./routes/api/cart/items.ts": $4,
-    "./routes/api/similarProducts.ts": $5,
-    "./routes/index.tsx": $6,
-    "./routes/inspect-vscode.ts": $7,
-    "./routes/live/login.tsx": $8,
-    "./routes/live/login/success.tsx": $9,
-    "./routes/search.tsx": $10,
-    "./routes/start.tsx": $11,
+    "./routes/api/searchFacets.ts": $5,
+    "./routes/api/similarProducts.ts": $6,
+    "./routes/index.tsx": $7,
+    "./routes/inspect-vscode.ts": $8,
+    "./routes/live/login.tsx": $9,
+    "./routes/live/login/success.tsx": $10,
+    "./routes/search.tsx": $11,
+    "./routes/start.tsx": $12,
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
@@ -109,9 +115,13 @@ const manifest: DecoManifest = {
     "./components/StoreFeatures.tsx": $$$18,
     "./components/icons/DecoFashionLogo.tsx": $$$19,
     "./components/icons/SearchIcon.tsx": $$$20,
-    "./components/ui/Image.tsx": $$$21,
-    "./components/ui/Spinner.tsx": $$$22,
-    "./components/ui/Video.tsx": $$$23,
+    "./components/minicart/CartItem.tsx": $$$21,
+    "./components/search/FacetsTree.tsx": $$$22,
+    "./components/search/SortSelector.tsx": $$$23,
+    "./components/ui/Image.tsx": $$$24,
+    "./components/ui/Modal.tsx": $$$25,
+    "./components/ui/Spinner.tsx": $$$26,
+    "./components/ui/Video.tsx": $$$27,
   },
   loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
   schemas: {

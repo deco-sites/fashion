@@ -12,7 +12,7 @@ function NavItem({
 }: h.JSX.HTMLAttributes<HTMLLIElement>) {
   return (
     <a
-      href={href ?? `/search?q=${children}`}
+      href={href ?? `/search?ft=${children}`}
       class={`flex items-center text-[16px] font-bold uppercase px-8 lg:px-12 hover:border-black border-solid border-b border-white `}
     >
       {children}
@@ -46,9 +46,9 @@ function Navbar() {
         </div>
         <div class="flex justify-center md:justify-between pl-12">
           <NavItem href="/farm">Marcas</NavItem>
-          <NavItem>Feminino</NavItem>
-          <NavItem>Masculino</NavItem>
-          <NavItem>Infantil</NavItem>
+          <NavItem href="search?trade-policy=1&departamento=feminino">Feminino</NavItem>
+          <NavItem href="/search?trade-policy=1&departamento=masculino">Masculino</NavItem>
+          <NavItem href="/search?trade-policy=1&departamento=infantil">Infantil</NavItem>
         </div>
         <div class="flex-1 flex items-center justify-end md:mr-8">
           <a href="#" class="mr-6">

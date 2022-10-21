@@ -8,17 +8,17 @@ export const schema: JSONSchema7 = {
 
 const banners = [
   {
-    href: "/search?q=cantao",
+    href: "/search?ft=cantao",
     imgSrc:
       "https://images.prismic.io/offpremium-web/98557ce5-b544-4367-8584-bb86d1b9416a_07_banner_terci%C3%A1rio_menor_cantao_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425",
   },
   {
-    href: "/search?q=lucidez",
+    href: "/search?ft=lucidez",
     imgSrc:
       "https://images.prismic.io/offpremium-web/66f005e9-b0e3-4112-a9b3-99d49f63a023_07_banner_terci%C3%A1rio_menor_lucidez_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425",
   },
   {
-    href: "/search?q=loja-3",
+    href: "/search?ft=loja-3",
     imgSrc:
       "https://images.prismic.io/offpremium-web/30859267-1b65-4376-884f-4e846c868ad4_07_banner_terci%C3%A1rio_menor_loja_3_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425",
   },
@@ -36,7 +36,7 @@ export default function MarcasConvidadas() {
         <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-        <a class="md:col-span-3" href="/search?q=morena+rosa">
+        <a class="md:col-span-3" href="/search?ft=morena+rosa">
           <picture>
             <source
               media="(max-width: 767px)"

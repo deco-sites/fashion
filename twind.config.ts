@@ -1,7 +1,5 @@
-import { Options } from "$fresh/plugins/twind.ts";
-
+/** @type {import('$fresh/plugins/twind').Options} */
 export default {
-  selfURL: import.meta.url,
   theme: {
     extend: {
       colors: {
@@ -29,4 +27,4 @@ export default {
       "2xl": "1536px",
     },
   },
-} as Options;
+};

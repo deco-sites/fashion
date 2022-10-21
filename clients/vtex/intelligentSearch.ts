@@ -4,8 +4,62 @@ import {
   Item,
   Product as VTEXProduct,
 } from "../../vtexTypes.d.ts";
+import { VTEX_ACCOUNT } from "./checkout.ts";
 
-const ACCOUNT_NAME = "lojaoffpremium";
+export default class VTEXIntelligentSearchClient {
+  private baseUrl: string;
+
+  constructor(account?: string) {
+    this.baseUrl = `https://vtex-search-proxy.global.ssl.fastly.net/${
+      account ?? VTEX_ACCOUNT
+    }/intelligent-search`;
+  }
+
+  private async _search<T>({
+    page,
+    query = "",
+    count,
+    type,
+    sort = "",
+    selectedFacets = [],
+    fuzzy = "auto",
+    hideUnavailableItems,
+  }: SearchArgs): Promise<T> {
+    const params = new URLSearchParams({
+      page: (page + 1).toString(),
+      count: count.toString(),
+      query,
+      sort,
+      fuzzy,
+    });
+
+    if (hideUnavailableItems !== undefined) {
+      params.append("hideUnavailableItems", hideUnavailableItems.toString());
+    }
+
+    const pathname = addDefaultFacets(selectedFacets)
+      .map(({ key, value }) => `${key}/${value}`)
+      .join("/");
+
+    console.log(
+      `${this.baseUrl}/${type}/${pathname}?${params.toString() ?? ""}`
+    );
+
+    const data = await fetch(
+      `${this.baseUrl}/${type}/${pathname}?${params.toString() ?? ""}`
+    ).then((r) => r.json());
+
+    return data as T;
+  }
+
+  public search(args: Omit<SearchArgs, "type">) {
+    return this._search<ProductsResponse>({ ...args, type: "product_search" });
+  }
+
+  public facets(args: Omit<SearchArgs, "type">) {
+    return this._search<FacetsResponse>({ ...args, type: "facets" });
+  }
+}
 
 export interface SelectedFacet {
   key: string;
@@ -41,41 +95,6 @@ export interface SearchArgs {
 
 function addDefaultFacets(facets: SelectedFacet[]): SelectedFacet[] {
   return [...facets, { key: "trade-policy", value: "1" }];
-}
-
-export default async function VTEXIntelligentSearch({
-  page,
-  query = "",
-  count,
-  type,
-  sort = "",
-  selectedFacets = [],
-  fuzzy = "auto",
-  hideUnavailableItems,
-}: SearchArgs): Promise<{ products: VTEXProduct[] }> {
-  const params = new URLSearchParams({
-    page: (page + 1).toString(),
-    count: count.toString(),
-    query,
-    sort,
-    fuzzy,
-  });
-
-  if (hideUnavailableItems !== undefined) {
-    params.append("hideUnavailableItems", hideUnavailableItems.toString());
-  }
-
-  const pathname = addDefaultFacets(selectedFacets)
-    .map(({ key, value }) => `${key}/${value}`)
-    .join("/");
-
-  const _res = await fetch(
-    `https://vtex-search-proxy.global.ssl.fastly.net/${ACCOUNT_NAME}/intelligent-search/${type}/${pathname}?${
-      params.toString() ?? ""
-    }`
-  );
-
-  return await _res.json();
 }
 
 export const isSellerAvailable = (seller: Item["sellers"][0]) =>
@@ -118,7 +137,7 @@ export const mapVTEXIntelligentSearchProduct =
         .filter(Boolean)
         .map((label) => ({
           label,
-          url: `/search?q=${label}`,
+          url: `/search?ft=${label}`,
         })),
     ];
 
@@ -188,3 +207,75 @@ export const mapVTEXIntelligentSearchProduct =
       color: Cor?.[0],
     };
   };
+
+export interface ProductsResponse {
+  products: VTEXProduct[];
+}
+export interface FacetsResponse {
+  facets: Facet[];
+  sampling: boolean;
+  breadcrumb: Breadcrumb[];
+  queryArgs: QueryArgs;
+  translated: boolean;
+}
+
+export interface Breadcrumb {
+  name: string;
+  href: string;
+}
+
+export interface Facet {
+  values: Value[];
+  type: Type;
+  name: string;
+  hidden: boolean;
+  key: Key;
+  quantity: number;
+}
+
+export enum Key {
+  Brand = "brand",
+  Category1 = "category-1",
+  Category2 = "category-2",
+  Category3 = "category-3",
+  Colecao = "colecao",
+  Cor = "cor",
+  CoresFiltraveis = "cores-filtraveis",
+  Genero = "genero",
+  IDColecao = "id-colecao",
+  Marca = "marca",
+  Price = "price",
+  Sale = "sale",
+  Tamanho = "tamanho",
+}
+
+export enum Type {
+  Pricerange = "PRICERANGE",
+  Text = "TEXT",
+}
+
+export interface Value {
+  quantity: number;
+  name: string;
+  key: Key;
+  selected: boolean;
+  range?: Range;
+  id?: string;
+  value?: string;
+  href?: string;
+}
+
+export interface Range {
+  from: number;
+  to: number;
+}
+
+export interface QueryArgs {
+  query: string;
+  selectedFacets: SelectedFacet[];
+}
+
+export interface SelectedFacet {
+  key: string;
+  value: string;
+}

@@ -41,7 +41,7 @@ const imgBannerDefault = {
   desktop:
     "https://images.prismic.io/offpremium-web/47f478d1-c2e0-4fc4-a564-71138143df1d_03_banner_secundario_maria_filo_desk.jpg",
   alt: "Imagem de teste",
-  link: "/",
+  link: "/search?trade-policy=1&marca=maria-filo",
 };
 
 const widths = [
