@@ -93,7 +93,7 @@ export default function ProductDetails({ products = [] }: Props) {
             <div class="flex flex-col w-full">
               <div>
                 <span class="line-through">
-                  De:{" "}
+                  De:
                   {new Intl.NumberFormat("pt-BR", {
                     style: "currency",
                     currency: "BRL",

@@ -54,7 +54,7 @@ export default function SearchControls() {
         </div>
       </div>
       <Modal title="Selecione os filtros" mode="sidebar-left" ref={modalRef}>
-        {data ? <FacetsTree data={data} /> : "loading..."}
+        {data ? <FacetsTree facetsResponse={data} /> : "loading..."}
       </Modal>
     </div>
   );

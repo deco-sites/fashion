@@ -33,29 +33,27 @@ export default function ColorSelector({ product }: Props) {
     {}
   );
 
-  return (
-    showColorsSelector && (
-      <div class="flex flex-row items-center">
-        <span class="mr-3">Cor: </span>
-        <img
-          alt={currentOption.image?.alt}
-          src={currentOption.image.src}
-          width="30"
-          height="30"
-          class="rounded-1/2 border border-black border-2"
-        />
-        {options?.map((option) => (
-          <a href={option.link}>
-            <img
-              alt={option.image?.alt}
-              src={option.image.src}
-              width="30"
-              height="30"
-              class="rounded-1/2 ml-2"
-            />
-          </a>
-        ))}
-      </div>
-    )
-  );
+  return showColorsSelector ? (
+    <div class="flex flex-row items-center">
+      <span class="mr-3">Cor: </span>
+      <img
+        alt={currentOption.image?.alt}
+        src={currentOption.image.src}
+        width="30"
+        height="30"
+        class="rounded-1/2 border border-black border-2"
+      />
+      {options?.map((option) => (
+        <a href={option.link}>
+          <img
+            alt={option.image?.alt}
+            src={option.image.src}
+            width="30"
+            height="30"
+            class="rounded-1/2 ml-2"
+          />
+        </a>
+      ))}
+    </div>
+  ) : <div></div>;
 }

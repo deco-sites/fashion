@@ -55,10 +55,11 @@ import * as $$$20 from "./components/icons/SearchIcon.tsx";
 import * as $$$21 from "./components/minicart/CartItem.tsx";
 import * as $$$22 from "./components/search/FacetsTree.tsx";
 import * as $$$23 from "./components/search/SortSelector.tsx";
-import * as $$$24 from "./components/ui/Image.tsx";
-import * as $$$25 from "./components/ui/Modal.tsx";
-import * as $$$26 from "./components/ui/Spinner.tsx";
-import * as $$$27 from "./components/ui/Video.tsx";
+import * as $$$24 from "./components/ui/Button.tsx";
+import * as $$$25 from "./components/ui/Image.tsx";
+import * as $$$26 from "./components/ui/Modal.tsx";
+import * as $$$27 from "./components/ui/Spinner.tsx";
+import * as $$$28 from "./components/ui/Video.tsx";
 import * as $$$$0 from "./loaders/vtex/searchCollections.ts";
 
 const manifest: DecoManifest = {
@@ -118,10 +119,11 @@ const manifest: DecoManifest = {
     "./components/minicart/CartItem.tsx": $$$21,
     "./components/search/FacetsTree.tsx": $$$22,
     "./components/search/SortSelector.tsx": $$$23,
-    "./components/ui/Image.tsx": $$$24,
-    "./components/ui/Modal.tsx": $$$25,
-    "./components/ui/Spinner.tsx": $$$26,
-    "./components/ui/Video.tsx": $$$27,
+    "./components/ui/Button.tsx": $$$24,
+    "./components/ui/Image.tsx": $$$25,
+    "./components/ui/Modal.tsx": $$$26,
+    "./components/ui/Spinner.tsx": $$$27,
+    "./components/ui/Video.tsx": $$$28,
   },
   loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
   schemas: {

@@ -1,4 +1,4 @@
-import { useRef } from "preact/hooks";
+import { useRef, useEffect } from "preact/hooks";
 import { ShoppingCartIcon } from "heroicons";
 import { tw } from "twind";
 import { useCart } from "../data/cartHooks.ts";
@@ -14,13 +14,26 @@ declare global {
     close(): void;
   }
 }
+export const OPEN_CART_EVENT_NAME = "openCart";
+
+// TODO: Figure out why effect is triggered twice (Preact's dev mode?)
+let eventListenerAdded = false;
 
 export default function Cart() {
-  const { cart, loading, updateItem } = useCart();
+  const { cart, updateItem } = useCart();
 
   const modalRef = useRef<HTMLDialogElement | null>(null);
 
-  const cartItemsLengh = `${cart?.items?.length ?? 0}`;
+  useEffect(() => {
+    if (!eventListenerAdded) {
+      addEventListener(OPEN_CART_EVENT_NAME, (e) => {
+        console.log("showing modal");
+        modalRef?.current?.showModal();
+        e.stopPropagation();
+      });
+      eventListenerAdded = true;
+    }
+  }, []);
 
   return (
     <div>
