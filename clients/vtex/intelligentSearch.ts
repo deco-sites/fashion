@@ -113,11 +113,17 @@ export const mapVTEXIntelligentSearchProduct =
     priceRange,
     Cor,
   }: VTEXProduct): Product => {
-    const selectedItem = items.find((item) =>
-      skuId ? item.itemId === skuId : item.sellers?.some(isSellerAvailable)
-    ) as Item;
+    const selectedItem =
+      items.find((item) =>
+        skuId ? item.itemId === skuId : item.sellers?.some(isSellerAvailable)
+      ) || (items[0] as Item);
+
+    if (!selectedItem) {
+      throw new Error("Trying to map a product that doesnt have SKUs");
+    }
+
     const seller = selectedItem.sellers?.find(isSellerAvailable)!;
-    const installment = seller.commertialOffer?.Installments.reduce(
+    const installment = seller?.commertialOffer?.Installments.reduce(
       (result, installment) =>
         installment.Value <= result.Value &&
         installment.NumberOfInstallments >= result.NumberOfInstallments
@@ -172,7 +178,7 @@ export const mapVTEXIntelligentSearchProduct =
       // TODO: This is itemId/skuId. Solve this ambiguity.
       id: selectedItem.itemId,
       productId,
-      sellerId: seller.sellerId ?? "1",
+      sellerId: seller?.sellerId ?? "1",
       slug: `${linkText}-${selectedItem.itemId}/p`,
       image: {
         src: selectedItem.images[0].imageUrl,
