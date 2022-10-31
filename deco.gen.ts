@@ -6,31 +6,29 @@ import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./routes/[...catchall].tsx";
 import * as $1 from "./routes/[slug]/p.tsx";
-import * as $2 from "./routes/admin.tsx";
-import * as $3 from "./routes/api/cart/index.ts";
-import * as $4 from "./routes/api/cart/items.ts";
-import * as $5 from "./routes/api/searchFacets.ts";
-import * as $6 from "./routes/api/similarProducts.ts";
-import * as $7 from "./routes/index.tsx";
-import * as $8 from "./routes/inspect-vscode.ts";
-import * as $9 from "./routes/live/login.tsx";
-import * as $10 from "./routes/live/login/success.tsx";
-import * as $11 from "./routes/search.tsx";
-import * as $12 from "./routes/start.tsx";
+import * as $2 from "./routes/api/cart/index.ts";
+import * as $3 from "./routes/api/cart/items.ts";
+import * as $4 from "./routes/api/searchFacets.ts";
+import * as $5 from "./routes/api/similarProducts.ts";
+import * as $6 from "./routes/index.tsx";
+import * as $7 from "./routes/inspect-vscode.ts";
+import * as $8 from "./routes/live/login.tsx";
+import * as $9 from "./routes/live/login/success.tsx";
+import * as $10 from "./routes/search.tsx";
+import * as $11 from "./routes/start.tsx";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/Alert.tsx";
 import * as $$2 from "./islands/AuthListener.tsx";
 import * as $$3 from "./islands/ColorSelector.tsx";
-import * as $$4 from "./islands/Editor.tsx";
-import * as $$5 from "./islands/FooterAccordion.tsx";
-import * as $$6 from "./islands/InspectVSCode.tsx";
-import * as $$7 from "./islands/LoginButtons.tsx";
-import * as $$8 from "./islands/Minicart.tsx";
-import * as $$9 from "./islands/ProductInformation.tsx";
-import * as $$10 from "./islands/SKUSelector.tsx";
-import * as $$11 from "./islands/SearchBar.tsx";
-import * as $$12 from "./islands/SearchControls.tsx";
-import * as $$13 from "./islands/VideoCarousel.tsx";
+import * as $$4 from "./islands/FooterAccordion.tsx";
+import * as $$5 from "./islands/InjectLiveScripts.tsx";
+import * as $$6 from "./islands/LoginButtons.tsx";
+import * as $$7 from "./islands/Minicart.tsx";
+import * as $$8 from "./islands/ProductInformation.tsx";
+import * as $$9 from "./islands/SKUSelector.tsx";
+import * as $$10 from "./islands/SearchBar.tsx";
+import * as $$11 from "./islands/SearchControls.tsx";
+import * as $$12 from "./islands/VideoCarousel.tsx";
 import * as $$$0 from "./components/Banner.tsx";
 import * as $$$1 from "./components/BannerGridImages.tsx";
 import * as $$$2 from "./components/BannerImg.tsx";
@@ -66,33 +64,31 @@ const manifest: DecoManifest = {
   routes: {
     "./routes/[...catchall].tsx": $0,
     "./routes/[slug]/p.tsx": $1,
-    "./routes/admin.tsx": $2,
-    "./routes/api/cart/index.ts": $3,
-    "./routes/api/cart/items.ts": $4,
-    "./routes/api/searchFacets.ts": $5,
-    "./routes/api/similarProducts.ts": $6,
-    "./routes/index.tsx": $7,
-    "./routes/inspect-vscode.ts": $8,
-    "./routes/live/login.tsx": $9,
-    "./routes/live/login/success.tsx": $10,
-    "./routes/search.tsx": $11,
-    "./routes/start.tsx": $12,
+    "./routes/api/cart/index.ts": $2,
+    "./routes/api/cart/items.ts": $3,
+    "./routes/api/searchFacets.ts": $4,
+    "./routes/api/similarProducts.ts": $5,
+    "./routes/index.tsx": $6,
+    "./routes/inspect-vscode.ts": $7,
+    "./routes/live/login.tsx": $8,
+    "./routes/live/login/success.tsx": $9,
+    "./routes/search.tsx": $10,
+    "./routes/start.tsx": $11,
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
     "./islands/Alert.tsx": $$1,
     "./islands/AuthListener.tsx": $$2,
     "./islands/ColorSelector.tsx": $$3,
-    "./islands/Editor.tsx": $$4,
-    "./islands/FooterAccordion.tsx": $$5,
-    "./islands/InspectVSCode.tsx": $$6,
-    "./islands/LoginButtons.tsx": $$7,
-    "./islands/Minicart.tsx": $$8,
-    "./islands/ProductInformation.tsx": $$9,
-    "./islands/SKUSelector.tsx": $$10,
-    "./islands/SearchBar.tsx": $$11,
-    "./islands/SearchControls.tsx": $$12,
-    "./islands/VideoCarousel.tsx": $$13,
+    "./islands/FooterAccordion.tsx": $$4,
+    "./islands/InjectLiveScripts.tsx": $$5,
+    "./islands/LoginButtons.tsx": $$6,
+    "./islands/Minicart.tsx": $$7,
+    "./islands/ProductInformation.tsx": $$8,
+    "./islands/SKUSelector.tsx": $$9,
+    "./islands/SearchBar.tsx": $$10,
+    "./islands/SearchControls.tsx": $$11,
+    "./islands/VideoCarousel.tsx": $$12,
   },
   components: {
     "./components/Banner.tsx": $$$0,
@@ -126,223 +122,6 @@ const manifest: DecoManifest = {
     "./components/ui/Video.tsx": $$$28,
   },
   loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
-  schemas: {
-    "SearchControls": {
-      "title": "SearchControls",
-      "type": "object",
-      "properties": {},
-    },
-    "VideoCarousel": {
-      "title": "Carousel de Vídeos",
-      "type": "object",
-      "required": ["video1"],
-      "properties": {
-        "video1": {
-          "type": "object",
-          "properties": {
-            "mobile": { "type": "string", "title": "Vídeo Mobile" },
-            "desktop": { "type": "string", "title": "Vídeo Desktop" },
-            "alt": { "type": "string", "title": "Texto alternativo" },
-            "link": { "type": "string", "title": "Link" },
-          },
-        },
-        "video2": {
-          "type": "object",
-          "properties": {
-            "mobile": { "type": "string", "title": "Vídeo Mobile" },
-            "desktop": { "type": "string", "title": "Vídeo Desktop" },
-            "alt": { "type": "string", "title": "Texto alternativo" },
-            "link": { "type": "string", "title": "Link" },
-          },
-        },
-        "video3": {
-          "type": "object",
-          "properties": {
-            "mobile": { "type": "string", "title": "Vídeo Mobile" },
-            "desktop": { "type": "string", "title": "Vídeo Desktop" },
-            "alt": { "type": "string", "title": "Texto alternativo" },
-            "link": { "type": "string", "title": "Link" },
-          },
-        },
-      },
-    },
-    "Banner": {
-      "title": "Main Banner",
-      "type": "object",
-      "required": ["imgSrc", "bannerTexts"],
-      "properties": {
-        "imgSrc": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "type": "string",
-              "title": "Imagem Mobile",
-              "format": "uri",
-            },
-            "desktop": {
-              "type": "string",
-              "title": "Imagem Desktop",
-              "format": "uri",
-            },
-          },
-        },
-        "alt": { "type": "string", "title": "alternate" },
-        "text": { "type": "string", "title": "Primeiro texto" },
-        "title": { "type": "string", "title": "Título" },
-        "subtitle": { "type": "string", "title": "Subtítulo" },
-        "CTA": { "type": "string", "title": "Texto CTA do link" },
-        "link": { "type": "string", "title": "Link" },
-      },
-    },
-    "BannerGridImages": {
-      "title": "Banner Grid",
-      "type": "object",
-      "required": ["title"],
-      "properties": {
-        "title": { "type": "string", "title": "Título do grid" },
-        "imgBanner1": {
-          "type": "object",
-          "properties": {
-            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
-            "alt": { "type": "string", "title": "alternate" },
-            "link": { "type": "string", "title": "Link da imagem" },
-          },
-        },
-        "imgBanner2": {
-          "type": "object",
-          "properties": {
-            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
-            "alt": { "type": "string", "title": "alternate" },
-            "link": { "type": "string", "title": "Link da imagem" },
-          },
-        },
-        "imgBanner3": {
-          "type": "object",
-          "properties": {
-            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
-            "alt": { "type": "string", "title": "alternate" },
-            "link": { "type": "string", "title": "Link da imagem" },
-          },
-        },
-        "imgBanner4": {
-          "type": "object",
-          "properties": {
-            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
-            "alt": { "type": "string", "title": "alternate" },
-            "link": { "type": "string", "title": "Link da imagem" },
-          },
-        },
-        "imgBanner5": {
-          "type": "object",
-          "properties": {
-            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
-            "alt": { "type": "string", "title": "alternate" },
-            "link": { "type": "string", "title": "Link da imagem" },
-          },
-        },
-        "imgBanner6": {
-          "type": "object",
-          "properties": {
-            "desktop": { "type": "string", "title": "Imagem", "format": "uri" },
-            "alt": { "type": "string", "title": "alternate" },
-            "link": { "type": "string", "title": "Link da imagem" },
-          },
-        },
-      },
-    },
-    "BannerImg": {
-      "title": "Banner Imagem",
-      "type": "object",
-      "required": ["imgSrc", "bannerTexts"],
-      "properties": {
-        "imgSrc": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "type": "string",
-              "title": "Imagem Mobile",
-              "format": "uri",
-            },
-            "desktop": {
-              "type": "string",
-              "title": "Imagem Desktop",
-              "format": "uri",
-            },
-          },
-        },
-        "alt": { "type": "string", "title": "alternate" },
-        "textColor": { "type": "string", "title": "Cor do texto" },
-        "text": { "type": "string", "title": "Primeiro texto" },
-        "title": { "type": "string", "title": "Título" },
-        "subtitle": { "type": "string", "title": "Subtítulo" },
-        "link": { "type": "string", "title": "Link vinculado ao CTA" },
-        "CTA": { "type": "string", "title": "Texto do CTA" },
-      },
-    },
-    "Footer": { "title": "Footer", "type": "object", "properties": {} },
-    "Head": {
-      "type": "object",
-      "properties": {
-        "title": { "title": "Título da Página", "type": "string" },
-        "description": { "title": "Descrição", "type": "string" },
-        "faviconUrl": { "title": "Favicon URL", "type": "string" },
-        "url": { "title": "URL", "type": "string" },
-      },
-      "required": ["description", "faviconUrl", "title", "url"],
-      "title": "Head (SEO)",
-    },
-    "Header": { "title": "Header", "type": "object", "properties": {} },
-    "HomeFilter": { "title": "HomeFilter", "type": "object", "properties": {} },
-    "MarcasConvidadas": {
-      "title": "Marcas Convidadas",
-      "type": "object",
-      "properties": {},
-    },
-    "Newsletter": { "title": "Newsletter", "type": "object", "properties": {} },
-    "ProductDetails": {
-      "title": "Product Details",
-      "type": "object",
-      "properties": { "products": { "$ref": "searchCollections" } },
-    },
-    "ProductGallery": {
-      "title": "Product Gallery",
-      "type": "object",
-      "required": ["collection"],
-      "properties": {
-        "products": {
-          "$ref": "searchCollections",
-          "type": "object",
-          "title": "Products",
-          "properties": {
-            "collection": { "type": "string", "title": "Coleção" },
-            "count": { "type": "number", "title": "Num. de itens" },
-          },
-        },
-      },
-    },
-    "ProductShelf": {
-      "title": "Product Shelf",
-      "type": "object",
-      "required": ["collection"],
-      "properties": {
-        "title": { "type": "string", "title": "Título" },
-        "products": {
-          "$ref": "searchCollections",
-          "type": "object",
-          "title": "Products",
-          "properties": {
-            "collection": { "type": "string", "title": "Coleção" },
-            "count": { "type": "number", "title": "Num. de itens" },
-          },
-        },
-      },
-    },
-    "StoreFeatures": {
-      "title": "StoreFeatures",
-      "type": "object",
-      "properties": {},
-    },
-  },
   baseUrl: import.meta.url,
   config,
 };

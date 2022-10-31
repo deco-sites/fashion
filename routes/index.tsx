@@ -1,5 +1,5 @@
-import { createLiveHandler, LivePage } from "$live/live.tsx";
+import { live, LivePage } from "$live/live.tsx";
 
-export const handler = createLiveHandler();
+export const handler = live();
 
 export default LivePage;

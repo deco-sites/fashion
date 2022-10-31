@@ -31,6 +31,7 @@ export default {
   ) {
     const url = new URL(req.url);
     const isProductPage = Boolean(ctx.params.slug);
+    const isSearchPage = url.pathname === "/search";
     let query: string;
     let skuId: string | undefined;
 
@@ -41,7 +42,7 @@ export default {
       query = `sku:${skuId}`;
     } else {
       // search for PLP
-      if (url.pathname === "/search") {
+      if (isSearchPage) {
         query = url.searchParams.get("ft") ?? "";
 
         if (query) {
@@ -63,7 +64,7 @@ export default {
       }
     })();
 
-    const selectedFacets = getFacetsFromUrl(url);
+    const selectedFacets = isSearchPage ? getFacetsFromUrl(url) : [];
 
     const vtexIs = new VTEXIntelligentSearch();
     const { products } = await vtexIs.search({
@@ -75,6 +76,6 @@ export default {
       hideUnavailableItems: true,
     });
 
-    return { products: products.map(mapVTEXIntelligentSearchProduct(skuId)) };
+    return products.map(mapVTEXIntelligentSearchProduct(skuId));
   },
 } as Loader;
