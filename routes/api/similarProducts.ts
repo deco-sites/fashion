@@ -1,8 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 import { VTEXCatalogClient } from "../../clients/vtex/catalog.ts";
-import {
-  isSellerAvailable,
-} from "../../clients/vtex/intelligentSearch.ts";
+import { isSellerAvailable } from "../../clients/vtex/intelligentSearch.ts";
 import { Product } from "../../vtexTypes.d.ts";
 
 export interface RelatedProductsAsVariations {
@@ -23,7 +21,7 @@ export const handler: Handlers = {
     if (typeof productId !== "string") {
       return Response.json(
         { error: "Informe um 'productId' para buscar produtos similares" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 

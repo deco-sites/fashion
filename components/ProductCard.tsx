@@ -46,7 +46,7 @@ export default function ProductCard({
   specifications,
 }: Product) {
   const discountPercentage = Math.trunc(
-    Math.max(1 - price / listPrice, 0) * 100
+    Math.max(1 - price / listPrice, 0) * 100,
   );
 
   return (
@@ -57,9 +57,11 @@ export default function ProductCard({
     >
       <script
         dangerouslySetInnerHTML={{
-          __html: `mobile && document.getElementById('quicklink').addEventListener('load', function(){quicklink.listen({el: document.getElementById('product-card-${id}')})});`,
+          __html:
+            `mobile && document.getElementById('quicklink').addEventListener('load', function(){quicklink.listen({el: document.getElementById('product-card-${id}')})});`,
         }}
-      ></script>
+      >
+      </script>
       {/* <div class="absolute inset-0 before:p-2 hidden group-hover:block group-hover:border border-[#000]" /> */}
 
       <div class="h-full z-10">

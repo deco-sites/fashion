@@ -9,7 +9,7 @@ interface Props {
 export default function ColorSelector({ product }: Props) {
   const cartFetcher = () => {
     return fetch(`/api/similarProducts?productId=${product.productId}`).then(
-      (r) => r.json()
+      (r) => r.json(),
     );
   };
 
@@ -30,30 +30,32 @@ export default function ColorSelector({ product }: Props) {
   const { data: options } = useSWR<RelatedProductsAsVariations[], Error>(
     `variations-${product.id}`,
     cartFetcher,
-    {}
+    {},
   );
 
-  return showColorsSelector ? (
-    <div class="flex flex-row items-center">
-      <span class="mr-3">Cor: </span>
-      <img
-        alt={currentOption.image?.alt}
-        src={currentOption.image.src}
-        width="30"
-        height="30"
-        class="rounded-1/2 border border-black border-2"
-      />
-      {options?.map((option) => (
-        <a href={option.link}>
-          <img
-            alt={option.image?.alt}
-            src={option.image.src}
-            width="30"
-            height="30"
-            class="rounded-1/2 ml-2"
-          />
-        </a>
-      ))}
-    </div>
-  ) : <div></div>;
+  return showColorsSelector
+    ? (
+      <div class="flex flex-row items-center">
+        <span class="mr-3">Cor:</span>
+        <img
+          alt={currentOption.image?.alt}
+          src={currentOption.image.src}
+          width="30"
+          height="30"
+          class="rounded-1/2 border border-black border-2"
+        />
+        {options?.map((option) => (
+          <a href={option.link}>
+            <img
+              alt={option.image?.alt}
+              src={option.image.src}
+              width="30"
+              height="30"
+              class="rounded-1/2 ml-2"
+            />
+          </a>
+        ))}
+      </div>
+    )
+    : <div></div>;
 }

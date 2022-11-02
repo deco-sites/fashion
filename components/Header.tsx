@@ -46,9 +46,15 @@ function Navbar() {
         </div>
         <div class="flex justify-center md:justify-between pl-12">
           <NavItem href="/farm">Marcas</NavItem>
-          <NavItem href="/search?trade-policy=1&departamento=feminino">Feminino</NavItem>
-          <NavItem href="/search?trade-policy=1&departamento=masculino">Masculino</NavItem>
-          <NavItem href="/search?trade-policy=1&departamento=infantil">Infantil</NavItem>
+          <NavItem href="/search?trade-policy=1&departamento=feminino">
+            Feminino
+          </NavItem>
+          <NavItem href="/search?trade-policy=1&departamento=masculino">
+            Masculino
+          </NavItem>
+          <NavItem href="/search?trade-policy=1&departamento=infantil">
+            Infantil
+          </NavItem>
         </div>
         <div class="flex-1 flex items-center justify-end md:mr-8">
           <a href="#" class="mr-6">

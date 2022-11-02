@@ -43,11 +43,11 @@ interface Props {
 const Modal = forwardRef(
   (
     { children, title, mode = "sidebar-right" }: PropsWithChildren<Props>,
-    ref: Ref<HTMLDialogElement>
+    ref: Ref<HTMLDialogElement>,
   ) => {
     const onDialogClick = (e: MouseEvent) => {
       const isRefObject = (
-        ref: Ref<HTMLDialogElement>
+        ref: Ref<HTMLDialogElement>,
       ): ref is RefObject<HTMLDialogElement> => Boolean("current" in ref);
 
       if (!isRefObject(ref)) {
@@ -63,20 +63,23 @@ const Modal = forwardRef(
       switch (mode) {
         case "sidebar-right":
           return {
-            dialog: tw`bg-transparent p-0 m-0 pt-[50%] sm:pt-0 sm:ml-auto max-w-full sm:max-w-lg w-full max-h-full h-full ${slideBottom} sm:${slideRight} ${backdrop}`,
+            dialog:
+              tw`bg-transparent p-0 m-0 pt-[50%] sm:pt-0 sm:ml-auto max-w-full sm:max-w-lg w-full max-h-full h-full ${slideBottom} sm:${slideRight} ${backdrop}`,
             corners: apply`rounded(tl-2xl tr-2xl sm:(tr-none bl-2xl))`,
           };
         default:
         case "sidebar-left": {
           return {
-            dialog: tw`bg-transparent p-0 m-0 pt-[50%] sm:pt-0 sm:mr-auto max-w-full sm:max-w-lg w-full max-h-full h-full ${slideBottom} sm:${slideLeft} ${backdrop}`,
+            dialog:
+              tw`bg-transparent p-0 m-0 pt-[50%] sm:pt-0 sm:mr-auto max-w-full sm:max-w-lg w-full max-h-full h-full ${slideBottom} sm:${slideLeft} ${backdrop}`,
             corners: apply`rounded(tr-2xl tl-2xl sm:(tl-none br-2xl))`,
           };
         }
       }
     }, [mode]);
 
-    const dialogContentClasses = tw`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between`;
+    const dialogContentClasses =
+      tw`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between`;
 
     return (
       <dialog ref={ref} class={dialogClasses} onClick={onDialogClick}>
@@ -104,7 +107,7 @@ const Modal = forwardRef(
         </div>
       </dialog>
     );
-  }
+  },
 );
 
 export default Modal;

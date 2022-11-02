@@ -12,7 +12,6 @@ export const schema: JSONSchema7 = {
   properties: {},
 };
 
-
 export default function SearchControls() {
   const modalRef = useRef<HTMLDialogElement | null>(null);
 
@@ -28,7 +27,7 @@ export default function SearchControls() {
   const { data } = useSWR<FacetsResponse, Error>(
     `facets-TODO`,
     facetsFetcher,
-    {}
+    {},
   );
 
   // TODO: Standardize max-width (1400px)

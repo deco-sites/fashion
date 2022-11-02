@@ -540,7 +540,7 @@ export interface Product {
     listPrice: PriceRange;
   };
   // Custom/Common attrs
-  Cor?: string[]
+  Cor?: string[];
 }
 
 export interface Item {

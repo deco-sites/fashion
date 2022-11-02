@@ -27,7 +27,7 @@ export default {
   loader: async function VTEXSearchLoader(
     req: Request,
     ctx: HandlerContext,
-    { collection, count = 4 }: { collection: string; count: number }
+    { collection, count = 4 }: { collection: string; count: number },
   ) {
     const url = new URL(req.url);
     const isProductPage = Boolean(ctx.params.slug);

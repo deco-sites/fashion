@@ -42,11 +42,11 @@ export default class VTEXIntelligentSearchClient {
       .join("/");
 
     console.log(
-      `${this.baseUrl}/${type}/${pathname}?${params.toString() ?? ""}`
+      `${this.baseUrl}/${type}/${pathname}?${params.toString() ?? ""}`,
     );
 
     const data = await fetch(
-      `${this.baseUrl}/${type}/${pathname}?${params.toString() ?? ""}`
+      `${this.baseUrl}/${type}/${pathname}?${params.toString() ?? ""}`,
     ).then((r) => r.json());
 
     return data as T;
@@ -100,119 +100,116 @@ function addDefaultFacets(facets: SelectedFacet[]): SelectedFacet[] {
 export const isSellerAvailable = (seller: Item["sellers"][0]) =>
   seller.commertialOffer.Price > 0;
 
-export const mapVTEXIntelligentSearchProduct =
-  (skuId?: string) =>
-  ({
-    productId,
-    productName: name,
-    linkText,
-    items,
-    brand,
-    categories,
-    description,
-    priceRange,
-    Cor,
-  }: VTEXProduct): Product => {
-    const selectedItem =
-      items.find((item) =>
-        skuId ? item.itemId === skuId : item.sellers?.some(isSellerAvailable)
-      ) || (items[0] as Item);
+export const mapVTEXIntelligentSearchProduct = (skuId?: string) =>
+({
+  productId,
+  productName: name,
+  linkText,
+  items,
+  brand,
+  categories,
+  description,
+  priceRange,
+  Cor,
+}: VTEXProduct): Product => {
+  const selectedItem =
+    items.find((item) =>
+      skuId ? item.itemId === skuId : item.sellers?.some(isSellerAvailable)
+    ) || (items[0] as Item);
 
-    if (!selectedItem) {
-      throw new Error("Trying to map a product that doesnt have SKUs");
-    }
+  if (!selectedItem) {
+    throw new Error("Trying to map a product that doesnt have SKUs");
+  }
 
-    const seller = selectedItem.sellers?.find(isSellerAvailable)!;
-    const installment = seller?.commertialOffer?.Installments.reduce(
-      (result, installment) =>
-        installment.Value <= result.Value &&
+  const seller = selectedItem.sellers?.find(isSellerAvailable)!;
+  const installment = seller?.commertialOffer?.Installments.reduce(
+    (result, installment) =>
+      installment.Value <= result.Value &&
         installment.NumberOfInstallments >= result.NumberOfInstallments
-          ? installment
-          : result,
-      {
-        interestRate: 100.0,
-        NumberOfInstallments: 0,
-        Value: Infinity,
-      } as Installment
+        ? installment
+        : result,
+    {
+      interestRate: 100.0,
+      NumberOfInstallments: 0,
+      Value: Infinity,
+    } as Installment,
+  );
+
+  const breadcrumb = [
+    { label: brand, url: `/${brand.toLocaleLowerCase()}` },
+    ...categories?.[0]
+      .split("/")
+      .filter(Boolean)
+      .map((label) => ({
+        label,
+        url: `/search?ft=${label}`,
+      })),
+  ];
+
+  const specifications = selectedItem?.variations?.reduce(
+    (acc, cur) => ({ ...acc, [cur.name]: cur.values?.[0] }),
+    {},
+  );
+
+  // This is hardcoded for "Tamanho" variations
+  const skuOptions = items
+    .filter((item) => item.sellers?.some(isSellerAvailable))
+    .map((item) => ({
+      variationValue: item?.["Tamanho"]?.[0],
+      skuUrl: `/${linkText}-${item.itemId}/p`,
+    }))
+    .sort(
+      (a, z) => parseInt(a.variationValue, 10) - parseInt(z.variationValue),
     );
 
-    const breadcrumb = [
-      { label: brand, url: `/${brand.toLocaleLowerCase()}` },
-      ...categories?.[0]
-        .split("/")
-        .filter(Boolean)
-        .map((label) => ({
-          label,
-          url: `/search?ft=${label}`,
-        })),
-    ];
-
-    const specifications = selectedItem?.variations?.reduce(
-      (acc, cur) => ({ ...acc, [cur.name]: cur.values?.[0] }),
-      {}
-    );
-
-    // This is hardcoded for "Tamanho" variations
-    const skuOptions = items
-      .filter((item) => item.sellers?.some(isSellerAvailable))
-      .map((item) => ({
-        variationValue: item?.["Tamanho"]?.[0],
-        skuUrl: `/${linkText}-${item.itemId}/p`,
-      }))
-      .sort(
-        (a, z) => parseInt(a.variationValue, 10) - parseInt(z.variationValue)
-      );
-
-    const prices = priceRange
-      ? {
-          price: priceRange?.sellingPrice?.lowPrice,
-          listPrice: priceRange?.listPrice?.highPrice,
-        }
-      : {
-          price: seller.commertialOffer.Price,
-          listPrice: seller.commertialOffer.ListPrice,
-        };
-
-    return {
-      name,
-      // TODO: This is itemId/skuId. Solve this ambiguity.
-      id: selectedItem.itemId,
-      productId,
-      sellerId: seller?.sellerId ?? "1",
-      slug: `${linkText}-${selectedItem.itemId}/p`,
-      image: {
-        src: selectedItem.images[0].imageUrl,
-        alt: selectedItem.images[0].imageLabel,
-      },
-      images: selectedItem.images.map(
-        ({ imageUrl, imageLabel, imageText }) => ({
-          src: imageUrl,
-          alt: imageText,
-          label: imageLabel,
-        })
-      ),
-      imageHover: selectedItem.images[1]
-        ? {
-            src: selectedItem.images[1].imageUrl,
-            alt: selectedItem.images[1].imageLabel,
-          }
-        : undefined,
-      ...prices,
-      brand,
-      description,
-      installments: installment
-        ? `${
-            installment.NumberOfInstallments ?? 0
-          } de R$ ${installment.Value.toFixed(2)} ${
-            installment.InterestRate >= 0.0 ? "s/ juros" : "com juros"
-          }`
-        : "",
-      breadcrumb,
-      specifications,
-      skuOptions,
-      color: Cor?.[0],
+  const prices = priceRange
+    ? {
+      price: priceRange?.sellingPrice?.lowPrice,
+      listPrice: priceRange?.listPrice?.highPrice,
+    }
+    : {
+      price: seller.commertialOffer.Price,
+      listPrice: seller.commertialOffer.ListPrice,
     };
+
+  return {
+    name,
+    // TODO: This is itemId/skuId. Solve this ambiguity.
+    id: selectedItem.itemId,
+    productId,
+    sellerId: seller?.sellerId ?? "1",
+    slug: `${linkText}-${selectedItem.itemId}/p`,
+    image: {
+      src: selectedItem.images[0].imageUrl,
+      alt: selectedItem.images[0].imageLabel,
+    },
+    images: selectedItem.images.map(
+      ({ imageUrl, imageLabel, imageText }) => ({
+        src: imageUrl,
+        alt: imageText,
+        label: imageLabel,
+      }),
+    ),
+    imageHover: selectedItem.images[1]
+      ? {
+        src: selectedItem.images[1].imageUrl,
+        alt: selectedItem.images[1].imageLabel,
+      }
+      : undefined,
+    ...prices,
+    brand,
+    description,
+    installments: installment
+      ? `${installment.NumberOfInstallments ?? 0} de R$ ${
+        installment.Value.toFixed(2)
+      } ${installment.InterestRate >= 0.0 ? "s/ juros" : "com juros"}`
+      : "",
+    breadcrumb,
+    specifications,
+    skuOptions,
+    color: Cor?.[0],
   };
+};
 
 export interface ProductsResponse {
   products: VTEXProduct[];

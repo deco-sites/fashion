@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { ShoppingCartIcon } from "heroicons";
 import { tw } from "twind";
 import { useCart } from "../data/cartHooks.ts";
@@ -67,19 +67,19 @@ function CartInner({
     <>
       {cart && (
         <div class={tw`flex-grow-1 my-4`}>
-          {isCartEmpty ? (
-            <p class={tw`text-gray-700`}>Não há itens no carrinho</p>
-          ) : (
-            <ul role="list" class={tw`-my-6 divide-y divide-gray-200`}>
-              {cart?.items?.map((item) => (
-                <CartItem
-                  key={item.uniqueId}
-                  item={item}
-                  onRemove={() => remove(item.uniqueId)}
-                />
-              ))}
-            </ul>
-          )}
+          {isCartEmpty
+            ? <p class={tw`text-gray-700`}>Não há itens no carrinho</p>
+            : (
+              <ul role="list" class={tw`-my-6 divide-y divide-gray-200`}>
+                {cart?.items?.map((item) => (
+                  <CartItem
+                    key={item.uniqueId}
+                    item={item}
+                    onRemove={() => remove(item.uniqueId)}
+                  />
+                ))}
+              </ul>
+            )}
         </div>
       )}
       {cart && (
@@ -88,7 +88,7 @@ function CartInner({
             <p>Subtotal</p>
             <p>
               {formatPrice(
-                cart?.totalizers?.find(({ id }) => id === "Items")?.value ?? 0
+                cart?.totalizers?.find(({ id }) => id === "Items")?.value ?? 0,
               )}
             </p>
           </div>

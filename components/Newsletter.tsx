@@ -10,7 +10,9 @@ export default function Newsletter() {
   return (
     <div class="bg-gray-100 flex flex-row flex-wrap p-6 md:p-10 items-center justify-center">
       <div class="flex flex-col md:w-1/4 px-5">
-        <span class="font-bold uppercase text-center md:text-left">Cadastre-se</span>
+        <span class="font-bold uppercase text-center md:text-left">
+          Cadastre-se
+        </span>
         <span class="text-sm text-gray-700 py-2">
           E receba antecipadamente as nossas novidades e promoções. Aproveite e
           ganhe 15% de desconto na sua primeira compra.
@@ -41,7 +43,9 @@ export default function Newsletter() {
             class="bg-white h-9 text-sm border border-gray-100 flex-1 mb-3 w-5/6 px-2 py-1 text-gray-600"
             placeholder="Email"
           />
-          <button class="bg-white h-9 border border-gray-300 px-2 py-1 ml-2">Enviar</button>
+          <button class="bg-white h-9 border border-gray-300 px-2 py-1 ml-2">
+            Enviar
+          </button>
         </div>
       </div>
     </div>

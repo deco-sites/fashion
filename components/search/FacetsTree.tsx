@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "preact/hooks";
+import { useEffect, useMemo, useState } from "preact/hooks";
 import { FacetsResponse } from "../../clients/vtex/intelligentSearch.ts";
 import { SORT_QUERY_PARAM } from "./SortSelector.tsx";
 
@@ -28,20 +28,20 @@ export default function FacetsTree({ facetsResponse }: Props) {
   // TODO: Check performace
   // If problematic, store selected values in an object
   const [localSelectedFacets, setLocalSelectedFacets] = useState(
-    queryArgs.selectedFacets
+    queryArgs.selectedFacets,
   );
 
   const numberOfSelectedFacetsForKey = (facet: FacetsResponse["facets"][0]) => {
     // TODO: Better way to do this
     return localSelectedFacets?.filter(
-      ({ key }) => key === facet.name.toLowerCase() || key == facet.key
+      ({ key }) => key === facet.name.toLowerCase() || key == facet.key,
     ).length;
   };
 
   const isFacetSelected = (facetValue: FacetValue) => {
     const translatedKey = getTranslatedKeyForFacetValue(facetValue);
     const isFacetSelected = localSelectedFacets.some(
-      ({ key, value }) => key === translatedKey && value === facetValue.value
+      ({ key, value }) => key === translatedKey && value === facetValue.value,
     );
     return isFacetSelected;
   };
@@ -52,8 +52,8 @@ export default function FacetsTree({ facetsResponse }: Props) {
     const uniqueParis = [
       ...new Set(
         localSelectedFacets.map(
-          ({ key, value }) => `${key}${SEPARATOR}${value}`
-        )
+          ({ key, value }) => `${key}${SEPARATOR}${value}`,
+        ),
       ),
     ];
     uniqueParis
@@ -74,8 +74,7 @@ export default function FacetsTree({ facetsResponse }: Props) {
     return url;
   }, [localSelectedFacets]);
 
-  const isNextSearchDifferent =
-    urlForLocalSelectedFacets !==
+  const isNextSearchDifferent = urlForLocalSelectedFacets !==
     `${window.location?.pathname}${window.location?.search}`;
 
   useEffect(
@@ -83,7 +82,7 @@ export default function FacetsTree({ facetsResponse }: Props) {
       // TODO: Get the facetsResponse regarding the returned products and add that to the UI
       fetch(urlForLocalSelectedFacets);
     },
-    [urlForLocalSelectedFacets]
+    [urlForLocalSelectedFacets],
   );
 
   const onToggleFacet = (facetValue: FacetValue) => {
@@ -96,8 +95,8 @@ export default function FacetsTree({ facetsResponse }: Props) {
       setLocalSelectedFacets(
         localSelectedFacets.filter(
           ({ key, value }) =>
-            key !== translatedKey || value !== facetValue.value
-        )
+            key !== translatedKey || value !== facetValue.value,
+        ),
       );
     } else {
       setLocalSelectedFacets([
@@ -116,24 +115,27 @@ export default function FacetsTree({ facetsResponse }: Props) {
             <div class="flex flex-col mt-2 w-full" key={name}>
               <span>
                 <span class="text-lg font-bold mt-2">{facet.name}</span>
-                <span class="text-gray-500 ml-1">{`${
-                  numberOfSelectedFacetsForKey(facet) > 0
-                    ? `${numberOfSelectedFacetsForKey(facet)} selecionado(s)`
-                    : ""
-                }`}</span>
+                <span class="text-gray-500 ml-1">
+                  {`${
+                    numberOfSelectedFacetsForKey(facet) > 0
+                      ? `${numberOfSelectedFacetsForKey(facet)} selecionado(s)`
+                      : ""
+                  }`}
+                </span>
               </span>
               <div
-                style={
-                  facet.values.length > 7
-                    ? {
-                        boxShadow: "inset 0 -10px 10px -10px #b2b2b2",
-                      }
-                    : {}
-                }
+                style={facet.values.length > 7
+                  ? {
+                    boxShadow: "inset 0 -10px 10px -10px #b2b2b2",
+                  }
+                  : {}}
                 class="max-h-40 overflow-scroll"
               >
                 {facet.values.map((facetValue) => (
-                  <div key={`${facet.name}-${facetValue.name}`} class="flex flex-row">
+                  <div
+                    key={`${facet.name}-${facetValue.name}`}
+                    class="flex flex-row"
+                  >
                     <input
                       id={`${facetValue.key}/${facetValue.value}`}
                       type="checkbox"
@@ -147,7 +149,9 @@ export default function FacetsTree({ facetsResponse }: Props) {
                       for={`${facetValue.key}/${facetValue.value}`}
                     >
                       <span>{facetValue.name}</span>
-                      <span class="font-italic ml-2">{`(${facetValue.quantity})`}</span>
+                      <span class="font-italic ml-2">
+                        {`(${facetValue.quantity})`}
+                      </span>
                     </label>
                   </div>
                 ))}
