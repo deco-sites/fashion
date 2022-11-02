@@ -12,23 +12,19 @@ import * as $4 from "./routes/api/searchFacets.ts";
 import * as $5 from "./routes/api/similarProducts.ts";
 import * as $6 from "./routes/index.tsx";
 import * as $7 from "./routes/inspect-vscode.ts";
-import * as $8 from "./routes/live/login.tsx";
-import * as $9 from "./routes/live/login/success.tsx";
-import * as $10 from "./routes/search.tsx";
-import * as $11 from "./routes/start.tsx";
+import * as $8 from "./routes/search.tsx";
+import * as $9 from "./routes/start.tsx";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/Alert.tsx";
-import * as $$2 from "./islands/AuthListener.tsx";
-import * as $$3 from "./islands/ColorSelector.tsx";
-import * as $$4 from "./islands/FooterAccordion.tsx";
-import * as $$5 from "./islands/InjectLiveScripts.tsx";
-import * as $$6 from "./islands/LoginButtons.tsx";
-import * as $$7 from "./islands/Minicart.tsx";
-import * as $$8 from "./islands/ProductInformation.tsx";
-import * as $$9 from "./islands/SKUSelector.tsx";
-import * as $$10 from "./islands/SearchBar.tsx";
-import * as $$11 from "./islands/SearchControls.tsx";
-import * as $$12 from "./islands/VideoCarousel.tsx";
+import * as $$2 from "./islands/ColorSelector.tsx";
+import * as $$3 from "./islands/FooterAccordion.tsx";
+import * as $$4 from "./islands/InjectLiveScripts.tsx";
+import * as $$5 from "./islands/Minicart.tsx";
+import * as $$6 from "./islands/ProductInformation.tsx";
+import * as $$7 from "./islands/SKUSelector.tsx";
+import * as $$8 from "./islands/SearchBar.tsx";
+import * as $$9 from "./islands/SearchControls.tsx";
+import * as $$10 from "./islands/VideoCarousel.tsx";
 import * as $$$0 from "./components/Banner.tsx";
 import * as $$$1 from "./components/BannerGridImages.tsx";
 import * as $$$2 from "./components/BannerImg.tsx";
@@ -70,25 +66,21 @@ const manifest: DecoManifest = {
     "./routes/api/similarProducts.ts": $5,
     "./routes/index.tsx": $6,
     "./routes/inspect-vscode.ts": $7,
-    "./routes/live/login.tsx": $8,
-    "./routes/live/login/success.tsx": $9,
-    "./routes/search.tsx": $10,
-    "./routes/start.tsx": $11,
+    "./routes/search.tsx": $8,
+    "./routes/start.tsx": $9,
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
     "./islands/Alert.tsx": $$1,
-    "./islands/AuthListener.tsx": $$2,
-    "./islands/ColorSelector.tsx": $$3,
-    "./islands/FooterAccordion.tsx": $$4,
-    "./islands/InjectLiveScripts.tsx": $$5,
-    "./islands/LoginButtons.tsx": $$6,
-    "./islands/Minicart.tsx": $$7,
-    "./islands/ProductInformation.tsx": $$8,
-    "./islands/SKUSelector.tsx": $$9,
-    "./islands/SearchBar.tsx": $$10,
-    "./islands/SearchControls.tsx": $$11,
-    "./islands/VideoCarousel.tsx": $$12,
+    "./islands/ColorSelector.tsx": $$2,
+    "./islands/FooterAccordion.tsx": $$3,
+    "./islands/InjectLiveScripts.tsx": $$4,
+    "./islands/Minicart.tsx": $$5,
+    "./islands/ProductInformation.tsx": $$6,
+    "./islands/SKUSelector.tsx": $$7,
+    "./islands/SearchBar.tsx": $$8,
+    "./islands/SearchControls.tsx": $$9,
+    "./islands/VideoCarousel.tsx": $$10,
   },
   components: {
     "./components/Banner.tsx": $$$0,
