@@ -5,15 +5,13 @@
 import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./routes/[...catchall].tsx";
-import * as $1 from "./routes/[slug]/p.tsx";
-import * as $2 from "./routes/api/cart/index.ts";
-import * as $3 from "./routes/api/cart/items.ts";
-import * as $4 from "./routes/api/searchFacets.ts";
-import * as $5 from "./routes/api/similarProducts.ts";
-import * as $6 from "./routes/index.tsx";
-import * as $7 from "./routes/inspect-vscode.ts";
-import * as $8 from "./routes/search.tsx";
-import * as $9 from "./routes/start.tsx";
+import * as $1 from "./routes/api/cart/index.ts";
+import * as $2 from "./routes/api/cart/items.ts";
+import * as $3 from "./routes/api/searchFacets.ts";
+import * as $4 from "./routes/api/similarProducts.ts";
+import * as $5 from "./routes/index.tsx";
+import * as $6 from "./routes/inspect-vscode.ts";
+import * as $7 from "./routes/start.tsx";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/Alert.tsx";
 import * as $$2 from "./islands/ColorSelector.tsx";
@@ -59,15 +57,13 @@ import * as $$$$0 from "./loaders/vtex/searchCollections.ts";
 const manifest: DecoManifest = {
   routes: {
     "./routes/[...catchall].tsx": $0,
-    "./routes/[slug]/p.tsx": $1,
-    "./routes/api/cart/index.ts": $2,
-    "./routes/api/cart/items.ts": $3,
-    "./routes/api/searchFacets.ts": $4,
-    "./routes/api/similarProducts.ts": $5,
-    "./routes/index.tsx": $6,
-    "./routes/inspect-vscode.ts": $7,
-    "./routes/search.tsx": $8,
-    "./routes/start.tsx": $9,
+    "./routes/api/cart/index.ts": $1,
+    "./routes/api/cart/items.ts": $2,
+    "./routes/api/searchFacets.ts": $3,
+    "./routes/api/similarProducts.ts": $4,
+    "./routes/index.tsx": $5,
+    "./routes/inspect-vscode.ts": $6,
+    "./routes/start.tsx": $7,
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
