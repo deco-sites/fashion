@@ -16,7 +16,7 @@ import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/Alert.tsx";
 import * as $$2 from "./islands/ColorSelector.tsx";
 import * as $$3 from "./islands/FooterAccordion.tsx";
-import * as $$4 from "./islands/InjectLiveScripts.tsx";
+import * as $$4 from "./islands/LiveControls.tsx";
 import * as $$5 from "./islands/Minicart.tsx";
 import * as $$6 from "./islands/ProductInformation.tsx";
 import * as $$7 from "./islands/SKUSelector.tsx";
@@ -70,7 +70,7 @@ const manifest: DecoManifest = {
     "./islands/Alert.tsx": $$1,
     "./islands/ColorSelector.tsx": $$2,
     "./islands/FooterAccordion.tsx": $$3,
-    "./islands/InjectLiveScripts.tsx": $$4,
+    "./islands/LiveControls.tsx": $$4,
     "./islands/Minicart.tsx": $$5,
     "./islands/ProductInformation.tsx": $$6,
     "./islands/SKUSelector.tsx": $$7,
