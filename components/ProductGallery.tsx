@@ -4,8 +4,6 @@ import type { JSONSchema7 } from "json-schema";
 import { forwardRef } from "preact/compat";
 import type { Ref } from "preact";
 
-import VTEXSearchLoader from "../loaders/vtex/searchCollections.ts";
-
 const Panel = forwardRef((props: Product, ref: Ref<HTMLDivElement>) => {
   return (
     <div
@@ -24,7 +22,6 @@ export const schema: JSONSchema7 = {
   properties: {
     products: {
       $ref: "searchCollections",
-      ...VTEXSearchLoader.inputSchema,
     },
   },
 };
