@@ -1,3 +1,3 @@
-import LiveControls from "$live/islands/LiveControls.tsx";
+import LiveControls from "$live/components/LiveControls.tsx";
 
 export default LiveControls;
