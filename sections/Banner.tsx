@@ -1,10 +1,10 @@
 import { JSONSchema7 } from "json-schema";
-import Image from "./ui/Image.tsx";
+import Image from "$components/ui/Image.tsx";
 
 export const schema: JSONSchema7 = {
   title: "Main Banner",
   "type": "object",
-  required: ["imgSrc", "bannerTexts"],
+  required: ["imgSrc"],
   properties: {
     imgSrc: {
       "type": "object",

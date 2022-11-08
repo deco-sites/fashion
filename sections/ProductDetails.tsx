@@ -1,6 +1,6 @@
 import { ChatBubbleLeftIcon, TruckIcon } from "heroicons";
-import { Product } from "../components/ProductCard.tsx";
-import Image from "./ui/Image.tsx";
+import { Product } from "$components/ProductCard.tsx";
+import Image from "$components/ui/Image.tsx";
 import AddToCart from "../islands/AddToCart.tsx";
 import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";

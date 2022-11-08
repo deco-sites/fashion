@@ -23,35 +23,24 @@ import * as $$7 from "./islands/SKUSelector.tsx";
 import * as $$8 from "./islands/SearchBar.tsx";
 import * as $$9 from "./islands/SearchControls.tsx";
 import * as $$10 from "./islands/VideoCarousel.tsx";
-import * as $$$0 from "./components/Banner.tsx";
-import * as $$$1 from "./components/BannerGridImages.tsx";
-import * as $$$2 from "./components/BannerImg.tsx";
-import * as $$$3 from "./components/Footer.tsx";
-import * as $$$4 from "./components/GetStarted.tsx";
-import * as $$$5 from "./components/Head.tsx";
-import * as $$$6 from "./components/Header.tsx";
-import * as $$$7 from "./components/HomeFilter.tsx";
-import * as $$$8 from "./components/IconCart.tsx";
-import * as $$$9 from "./components/ListLinks.tsx";
-import * as $$$10 from "./components/MarcasConvidadas.tsx";
-import * as $$$11 from "./components/Newsletter.tsx";
-import * as $$$12 from "./components/ProductCard.tsx";
-import * as $$$13 from "./components/ProductDetails.tsx";
-import * as $$$14 from "./components/ProductGallery.tsx";
-import * as $$$15 from "./components/ProductShelf.tsx";
-import * as $$$16 from "./components/QuantitySelector.tsx";
-import * as $$$17 from "./components/Search.tsx";
-import * as $$$18 from "./components/StoreFeatures.tsx";
-import * as $$$19 from "./components/icons/DecoFashionLogo.tsx";
-import * as $$$20 from "./components/icons/SearchIcon.tsx";
-import * as $$$21 from "./components/minicart/CartItem.tsx";
-import * as $$$22 from "./components/search/FacetsTree.tsx";
-import * as $$$23 from "./components/search/SortSelector.tsx";
-import * as $$$24 from "./components/ui/Button.tsx";
-import * as $$$25 from "./components/ui/Image.tsx";
-import * as $$$26 from "./components/ui/Modal.tsx";
-import * as $$$27 from "./components/ui/Spinner.tsx";
-import * as $$$28 from "./components/ui/Video.tsx";
+import * as $$$0 from "./sections/Banner.tsx";
+import * as $$$1 from "./sections/BannerGridImages.tsx";
+import * as $$$2 from "./sections/BannerImg.tsx";
+import * as $$$3 from "./sections/Footer.tsx";
+import * as $$$4 from "./sections/GetStarted.tsx";
+import * as $$$5 from "./sections/Head.tsx";
+import * as $$$6 from "./sections/Header.tsx";
+import * as $$$7 from "./sections/HomeFilter.tsx";
+import * as $$$8 from "./sections/IconCart.tsx";
+import * as $$$9 from "./sections/ListLinks.tsx";
+import * as $$$10 from "./sections/MarcasConvidadas.tsx";
+import * as $$$11 from "./sections/Newsletter.tsx";
+import * as $$$12 from "./sections/ProductDetails.tsx";
+import * as $$$13 from "./sections/ProductGallery.tsx";
+import * as $$$14 from "./sections/ProductShelf.tsx";
+import * as $$$15 from "./sections/QuantitySelector.tsx";
+import * as $$$16 from "./sections/Search.tsx";
+import * as $$$17 from "./sections/StoreFeatures.tsx";
 import * as $$$$0 from "./loaders/vtex/searchCollections.ts";
 
 const manifest: DecoManifest = {
@@ -78,36 +67,25 @@ const manifest: DecoManifest = {
     "./islands/SearchControls.tsx": $$9,
     "./islands/VideoCarousel.tsx": $$10,
   },
-  components: {
-    "./components/Banner.tsx": $$$0,
-    "./components/BannerGridImages.tsx": $$$1,
-    "./components/BannerImg.tsx": $$$2,
-    "./components/Footer.tsx": $$$3,
-    "./components/GetStarted.tsx": $$$4,
-    "./components/Head.tsx": $$$5,
-    "./components/Header.tsx": $$$6,
-    "./components/HomeFilter.tsx": $$$7,
-    "./components/IconCart.tsx": $$$8,
-    "./components/ListLinks.tsx": $$$9,
-    "./components/MarcasConvidadas.tsx": $$$10,
-    "./components/Newsletter.tsx": $$$11,
-    "./components/ProductCard.tsx": $$$12,
-    "./components/ProductDetails.tsx": $$$13,
-    "./components/ProductGallery.tsx": $$$14,
-    "./components/ProductShelf.tsx": $$$15,
-    "./components/QuantitySelector.tsx": $$$16,
-    "./components/Search.tsx": $$$17,
-    "./components/StoreFeatures.tsx": $$$18,
-    "./components/icons/DecoFashionLogo.tsx": $$$19,
-    "./components/icons/SearchIcon.tsx": $$$20,
-    "./components/minicart/CartItem.tsx": $$$21,
-    "./components/search/FacetsTree.tsx": $$$22,
-    "./components/search/SortSelector.tsx": $$$23,
-    "./components/ui/Button.tsx": $$$24,
-    "./components/ui/Image.tsx": $$$25,
-    "./components/ui/Modal.tsx": $$$26,
-    "./components/ui/Spinner.tsx": $$$27,
-    "./components/ui/Video.tsx": $$$28,
+  sections: {
+    "./sections/Banner.tsx": $$$0,
+    "./sections/BannerGridImages.tsx": $$$1,
+    "./sections/BannerImg.tsx": $$$2,
+    "./sections/Footer.tsx": $$$3,
+    "./sections/GetStarted.tsx": $$$4,
+    "./sections/Head.tsx": $$$5,
+    "./sections/Header.tsx": $$$6,
+    "./sections/HomeFilter.tsx": $$$7,
+    "./sections/IconCart.tsx": $$$8,
+    "./sections/ListLinks.tsx": $$$9,
+    "./sections/MarcasConvidadas.tsx": $$$10,
+    "./sections/Newsletter.tsx": $$$11,
+    "./sections/ProductDetails.tsx": $$$12,
+    "./sections/ProductGallery.tsx": $$$13,
+    "./sections/ProductShelf.tsx": $$$14,
+    "./sections/QuantitySelector.tsx": $$$15,
+    "./sections/Search.tsx": $$$16,
+    "./sections/StoreFeatures.tsx": $$$17,
   },
   loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
   baseUrl: import.meta.url,

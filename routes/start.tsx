@@ -1,6 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
-import GetStarted from "../components/GetStarted.tsx";
-import Head from "../components/Head.tsx";
+import GetStarted from "../sections/GetStarted.tsx";
+import Head from "../sections/Head.tsx";
 
 export default function TestRoute({ url }: PageProps<any>) {
   return (

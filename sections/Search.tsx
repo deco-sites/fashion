@@ -1,4 +1,4 @@
-import SearchIcon from "./icons/SearchIcon.tsx";
+import SearchIcon from "$components/icons/SearchIcon.tsx";
 
 interface Props {
   query?: string;
