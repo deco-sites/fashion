@@ -1,11 +1,11 @@
-import ProductCard, { Product } from "../components/ProductCard.tsx";
+import ProductCard, { Product } from "$components/ProductCard.tsx";
 import type { JSONSchema7 } from "json-schema";
 import VTEXSearchLoader from "../loaders/vtex/searchCollections.ts";
 
 export const schema: JSONSchema7 = {
   title: "Product Shelf",
   type: "object",
-  required: ["collection"],
+  required: [],
   properties: {
     title: {
       type: "string",

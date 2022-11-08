@@ -1,7 +1,7 @@
 import type { h } from "preact";
 import type { JSONSchema7 } from "json-schema";
 import Alert from "../islands/Alert.tsx";
-import DecoFashionLogo from "./icons/DecoFashionLogo.tsx";
+import DecoFashionLogo from "$components/icons/DecoFashionLogo.tsx";
 import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserIcon } from "heroicons";
 import Minicart from "../islands/Minicart.tsx";
 

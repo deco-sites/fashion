@@ -1,7 +1,9 @@
 {
   "imports": {
+    "$components/": "./components/",
+    "$sections/": "./sections/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
-    "$live/": "https://deno.land/x/live@0.1.13/",
+    "$live/": "https://deno.land/x/live@0.1.15/",
     "$fresh/": "https://deno.land/x/fresh@1.1.2/",
     "preact": "https://esm.sh/preact@10.11.0",
     "preact/": "https://esm.sh/preact@10.11.0/",

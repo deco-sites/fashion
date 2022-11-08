@@ -1,5 +1,4 @@
-import { Product } from "../vtexTypes.d.ts";
-import ProductCard from "./ProductCard.tsx";
+import ProductCard, { Product } from "$components/ProductCard.tsx";
 import type { JSONSchema7 } from "json-schema";
 import { forwardRef } from "preact/compat";
 import type { Ref } from "preact";

@@ -1,5 +1,5 @@
 import { JSONSchema7 } from "json-schema";
-import Image from "./ui/Image.tsx";
+import Image from "$components/ui/Image.tsx";
 
 export const schema: JSONSchema7 = {
   title: "Banner Imagem",
