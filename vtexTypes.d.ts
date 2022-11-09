@@ -11,9 +11,9 @@ export interface OrderForm {
   userType: null;
   ignoreProfileData: boolean;
   value: number;
-  messages: any[];
+  messages: unknown[];
   items: OrderFormItem[];
-  selectableGifts: any[];
+  selectableGifts: unknown[];
   totalizers: Totalizer[];
   shippingData: ShippingData;
   clientProfileData: null;
@@ -77,7 +77,7 @@ export interface Schema {
 
 export interface Ean {
   maximumNumberOfCharacters: number;
-  domain: any[];
+  domain: unknown[];
 }
 
 export interface OrderFormItem {
@@ -92,7 +92,7 @@ export interface OrderFormItem {
   modalType: null | string;
   parentItemIndex: null;
   parentAssemblyBinding: null;
-  assemblies: any[];
+  assemblies: unknown[];
   priceValidUntil: Date;
   tax: number;
   price: number;
@@ -112,10 +112,10 @@ export interface OrderFormItem {
   imageUrl: string;
   detailUrl: string;
   components: Component[];
-  bundleItems: any[];
-  attachments: any[];
+  bundleItems: unknown[];
+  attachments: unknown[];
   attachmentOfferings: AttachmentOffering[];
-  offerings: any[];
+  offerings: unknown[];
   priceTags: PriceTag[];
   availability: string;
   measurementUnit: string;
@@ -151,7 +151,7 @@ export interface Component {
   modalType: null;
   parentItemIndex: null;
   parentAssemblyBinding: null;
-  assemblies: any[];
+  assemblies: unknown[];
   priceValidUntil: null;
   tax: number;
   price: number;
@@ -170,11 +170,11 @@ export interface Component {
   sellerChain: null[];
   imageUrl: null;
   detailUrl: null;
-  components: any[];
-  bundleItems: any[];
-  attachments: any[];
-  attachmentOfferings: any[];
-  offerings: any[];
+  components: unknown[];
+  bundleItems: unknown[];
+  attachments: unknown[];
+  attachmentOfferings: unknown[];
+  offerings: unknown[];
   priceTags: PriceTag[];
   availability: null;
   measurementUnit: string;
@@ -202,7 +202,7 @@ export interface PriceTag {
   identifier: string;
 }
 
-export interface AvailableAssociations {}
+export type AvailableAssociations = Record<string, unknown>;
 
 export interface MarketingData {
   utmSource: string;
@@ -219,11 +219,11 @@ export interface PaymentData {
   updateStatus: string;
   installmentOptions: InstallmentOption[];
   paymentSystems: PaymentSystem[];
-  payments: any[];
-  giftCards: any[];
-  giftCardMessages: any[];
-  availableAccounts: any[];
-  availableTokens: any[];
+  payments: unknown[];
+  giftCards: unknown[];
+  giftCardMessages: unknown[];
+  availableAccounts: unknown[];
+  availableTokens: unknown[];
   availableAssociations: AvailableAssociations;
 }
 
@@ -285,7 +285,7 @@ export enum CardCodeRegex {
 
 export interface RatesAndBenefitsData {
   rateAndBenefitsIdentifiers: RateAndBenefitsIdentifier[];
-  teaser: any[];
+  teaser: unknown[];
 }
 
 export interface RateAndBenefitsIdentifier {
@@ -426,7 +426,7 @@ export interface DeliveryID {
   dockId: DockID;
   courierName: CourierName;
   quantity: number;
-  kitItemDetails: any[];
+  kitItemDetails: unknown[];
 }
 
 export enum CourierID {
@@ -556,8 +556,8 @@ export interface Item {
   variations: Variation[];
   ean: string;
   modalType: string;
-  videos: any[];
-  attachments: any[];
+  videos: unknown[];
+  attachments: unknown[];
   isKit: boolean;
   Tamanho: string[];
 }
@@ -586,9 +586,9 @@ export interface Seller {
 
 export interface CommertialOffer {
   DeliverySlaSamplesPerRegion: DeliverySlaSamplesPerRegion;
-  DeliverySlaSamples: any[];
+  DeliverySlaSamples: unknown[];
   AvailableQuantity: number;
-  discountHighlights: any[];
+  discountHighlights: unknown[];
   Installments: Installment[];
   Price: number;
   ListPrice: number;
@@ -596,17 +596,17 @@ export interface CommertialOffer {
   taxPercentage: number;
   PriceWithoutDiscount: number;
   Tax: number;
-  GiftSkuIds: any[];
-  BuyTogether: any[];
-  ItemMetadataAttachment: any[];
+  GiftSkuIds: unknown[];
+  BuyTogether: unknown[];
+  ItemMetadataAttachment: unknown[];
   RewardValue: number;
   PriceValidUntil: Date;
   GetInfoErrorMessage: null;
   CacheVersionUsedToCallCheckout: string;
-  teasers: any[];
+  teasers: unknown[];
 }
 
-export interface DeliverySlaSamplesPerRegion {}
+export type DeliverySlaSamplesPerRegion = Record<string, unknown>;
 
 export interface Installment {
   PaymentSystemName: string;

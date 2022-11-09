@@ -26,7 +26,7 @@ export default function ProductDetails({ products = [] }: Props) {
   const [product] = products;
 
   if (!product) {
-    return;
+    return null;
   }
 
   const brand = product?.brand;

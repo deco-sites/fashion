@@ -269,6 +269,7 @@ export default function FooterAccordion() {
             {/* @ts-expect-error */}
             {({ open }) => (
               <>
+              {/* @ts-expect-error */}
                 <Disclosure.Button className="w-full p-6 px-3 cursor-pointer flex flex-row justify-between focus:outline-none">
                   <span class="text-white">{label}</span>
                   <ChevronUpIcon
@@ -278,6 +279,7 @@ export default function FooterAccordion() {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="p-4 pt-4 pb-2 text-sm text-gray-100 bg-[#222]">
+                  {/* @ts-expect-error */}
                   {content}
                 </Disclosure.Panel>
               </>

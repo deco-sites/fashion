@@ -11,7 +11,7 @@ interface AddItemInputData {
       skuId: string;
       seller: string;
       quantity: number;
-      options: any;
+      options: unknown;
       index: number;
       uniqueId: string;
     },
@@ -67,7 +67,7 @@ export const handler: Handlers = {
       ];
     };
 
-    const cleanItems = items.map(({ id, ...rest }) => rest);
+    const cleanItems = items.map(({ id: _, ...rest }) => rest);
 
     if (cleanItems.some((item) => !item.index)) {
       const idToIndex = orderForm.items.reduce(
@@ -105,7 +105,17 @@ export const handler: Handlers = {
     const { orderFormId } = await getOrCreateOrderForm(req, headers);
 
     const cleanItems = items.map(
-      ({ options, index, uniqueId, skuId, quantity, seller, ...rest }) => ({
+      (
+        {
+          options: _,
+          index: __,
+          uniqueId: ___,
+          skuId,
+          quantity,
+          seller,
+          ...rest
+        },
+      ) => ({
         ...rest,
         id: parseInt(skuId, 10),
         quantity,

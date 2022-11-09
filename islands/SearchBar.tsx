@@ -5,8 +5,8 @@ export default function SearchBar() {
   const [query, setQuery] = useState("");
   const onSearch = (e: h.JSX.TargetedEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // @ts-expect-error
-    window.location = `/search?ft=${query}`;
+
+    window.location.href = `/search?ft=${query}`;
   };
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 import { useCallback, useRef } from "preact/hooks";
 
-export const useDebouncedCallback = (
-  callback: Function,
+export const useDebouncedCallback = <T>(
+  callback: (...args: T[]) => void,
   delay: number,
-  dependencies?: any[],
+  dependencies?: unknown[],
 ) => {
   const timeout = useRef<number>();
 
@@ -12,7 +12,7 @@ export const useDebouncedCallback = (
     ? [callback, delay, ...dependencies]
     : [callback, delay];
 
-  return useCallback((...args: any[]) => {
+  return useCallback((...args: T[]) => {
     if (timeout.current != null) {
       clearTimeout(timeout.current);
     }
