@@ -51,6 +51,7 @@ export default function ProductInformation({ description }: Props) {
             {/* @ts-expect-error */}
             {({ open }) => (
               <>
+                {/* @ts-expect-error */}
                 <Disclosure.Button className="w-full p-4 px-2 cursor-pointer flex flex-row justify-between">
                   <span class="font-bold">{label}</span>
                   <ChevronUpIcon
@@ -58,6 +59,7 @@ export default function ProductInformation({ description }: Props) {
                   />
                 </Disclosure.Button>
                 <Disclosure.Panel className="p-4 pt-4 pb-2 text-sm text-gray-500">
+                  {/* @ts-expect-error */}
                   {content}
                 </Disclosure.Panel>
               </>

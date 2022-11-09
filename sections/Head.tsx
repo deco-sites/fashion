@@ -1,4 +1,5 @@
 import { asset, Head } from "$fresh/runtime.ts";
+import type { JSONSchema7 } from "json-schema";
 
 export interface HeadProps {
   title?: string;
@@ -10,7 +11,7 @@ export interface HeadProps {
   themeColor?: string;
 }
 
-export const schema = {
+export const schema: JSONSchema7 = {
   type: "object",
   properties: {
     title: {

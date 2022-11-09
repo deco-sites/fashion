@@ -2,23 +2,27 @@
   "imports": {
     "$components/": "./components/",
     "$sections/": "./sections/",
+
+    "$live/": "https://deno.land/x/live@0.1.17/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
-    "$live/": "https://deno.land/x/live@0.1.15/",
+    "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
+    "heroicons": "https://esm.sh/@heroicons/react/24/outline?alias=react:preact/compat&external=preact/compat",
+    "json-schema": "https://esm.sh/v92/@types/json-schema@7.0.11/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjEwLjY/index.d.ts",
+
     "$fresh/": "https://deno.land/x/fresh@1.1.2/",
     "preact": "https://esm.sh/preact@10.11.0",
     "preact/": "https://esm.sh/preact@10.11.0/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@5.2.4",
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
-    "std/": "https://deno.land/std@0.147.0/",
-    "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
-    "tabbable": "https://esm.sh/v91/tabbable@5.3.3/",
+
+    "std/": "https://deno.land/std@0.162.0/",
+
     "@preact/signals": "https://esm.sh/*@preact/signals@1.0.3",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
+
     "swr": "https://esm.sh/swr@2.0.0-beta.6?alias=react:preact/compat&external=preact/compat",
-    "@egjs/preact-flicking": "https://esm.sh/*@egjs/preact-flicking@4.9.0",
-    "headlessui": "https://esm.sh/@headlessui/react?alias=react:preact/compat&external=preact/compat",
-    "heroicons": "https://esm.sh/@heroicons/react/24/outline?alias=react:preact/compat&external=preact/compat",
-    "json-schema": "https://esm.sh/v92/@types/json-schema@7.0.11/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjEwLjY/index.d.ts"
+
+    "headlessui": "https://esm.sh/@headlessui/react?alias=react:preact/compat&external=preact/compat"
   }
 }

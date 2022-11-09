@@ -56,7 +56,7 @@ export class VTEXCheckoutClient {
     orderFormId: string;
     field: "shippingData";
     // TODO: Determine shippingData type
-    value: any;
+    value: unknown;
   }) {
     const orderForm = await fetch(
       `${this.baseUrl}/api/checkout/pub/orderForm/${orderFormId}/attachments/${field}`,
@@ -85,7 +85,7 @@ export interface OrderForm {
   value: number;
   messages: Message[];
   items: OrderFormItem[];
-  selectableGifts: any[];
+  selectableGifts: unknown[];
   totalizers: Totalizer[];
   shippingData: ShippingData;
   clientProfileData: null;
@@ -154,7 +154,7 @@ export interface Schema {
 
 export interface Ean {
   maximumNumberOfCharacters: number;
-  domain: any[];
+  domain: unknown[];
 }
 
 export interface OrderFormItem {
@@ -169,7 +169,7 @@ export interface OrderFormItem {
   modalType: null | string;
   parentItemIndex: null;
   parentAssemblyBinding: null;
-  assemblies: any[];
+  assemblies: unknown[];
   priceValidUntil: Date;
   tax: number;
   price: number;
@@ -189,10 +189,10 @@ export interface OrderFormItem {
   imageUrl: string;
   detailUrl: string;
   components: Component[];
-  bundleItems: any[];
-  attachments: any[];
+  bundleItems: unknown[];
+  attachments: unknown[];
   attachmentOfferings: AttachmentOffering[];
-  offerings: any[];
+  offerings: unknown[];
   priceTags: PriceTag[];
   availability: string;
   measurementUnit: string;
@@ -228,7 +228,7 @@ export interface Component {
   modalType: null;
   parentItemIndex: null;
   parentAssemblyBinding: null;
-  assemblies: any[];
+  assemblies: unknown[];
   priceValidUntil: null;
   tax: number;
   price: number;
@@ -247,11 +247,11 @@ export interface Component {
   sellerChain: null[];
   imageUrl: null;
   detailUrl: null;
-  components: any[];
-  bundleItems: any[];
-  attachments: any[];
-  attachmentOfferings: any[];
-  offerings: any[];
+  components: unknown[];
+  bundleItems: unknown[];
+  attachments: unknown[];
+  attachmentOfferings: unknown[];
+  offerings: unknown[];
   priceTags: PriceTag[];
   availability: null;
   measurementUnit: string;
@@ -280,7 +280,7 @@ export interface PriceTag {
   owner: string;
 }
 
-export interface AvailableAssociations {}
+export type AvailableAssociations = Record<string, string>;
 
 export interface MarketingData {
   utmSource: string;
@@ -310,11 +310,11 @@ export interface PaymentData {
   updateStatus: string;
   installmentOptions: InstallmentOption[];
   paymentSystems: PaymentSystem[];
-  payments: any[];
-  giftCards: any[];
-  giftCardMessages: any[];
-  availableAccounts: any[];
-  availableTokens: any[];
+  payments: unknown[];
+  giftCards: unknown[];
+  giftCardMessages: unknown[];
+  availableAccounts: unknown[];
+  availableTokens: unknown[];
   availableAssociations: AvailableAssociations;
 }
 
@@ -376,7 +376,7 @@ export enum CardCodeRegex {
 
 export interface RatesAndBenefitsData {
   rateAndBenefitsIdentifiers: RateAndBenefitsIdentifier[];
-  teaser: any[];
+  teaser: unknown[];
 }
 
 export interface RateAndBenefitsIdentifier {
@@ -485,7 +485,7 @@ export interface DeliveryID {
   dockId: DockID;
   courierName: CourierName;
   quantity: number;
-  kitItemDetails: any[];
+  kitItemDetails: unknown[];
 }
 
 export enum CourierID {

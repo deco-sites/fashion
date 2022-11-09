@@ -53,7 +53,8 @@ export default function ProductCard({
     <div
       id={`product-card-${id}`}
       class="w-full p-2 group relative border border-white hover:border-black"
-      onMouseOver={`quicklink.prefetch("${slug}");`}
+      // deno-lint-ignore no-explicit-any
+      onMouseOver={() => (window as any).quicklink.prefetch("${slug}")}
     >
       <script
         dangerouslySetInnerHTML={{
