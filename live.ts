@@ -25,7 +25,6 @@ const prodPlugins = [
 await start(manifest, {
   siteId: 239,
   site: "fashion",
-  domains: ["zeedog.com.br"],
-  loginUrl: "/login",
+  domains: [],
   plugins: isDeployment ? prodPlugins : plugins,
 });
