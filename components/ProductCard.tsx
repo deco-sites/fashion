@@ -52,17 +52,8 @@ export default function ProductCard({
   return (
     <div
       id={`product-card-${id}`}
-      class="w-full p-2 group relative border border-white hover:border-black"
-      // deno-lint-ignore no-explicit-any
-      onMouseOver={() => (window as any).quicklink.prefetch("${slug}")}
+      class="w-full p-2 group relative border border-white hover:border-black"      
     >
-      <script
-        dangerouslySetInnerHTML={{
-          __html:
-            `mobile && document.getElementById('quicklink').addEventListener('load', function(){quicklink.listen({el: document.getElementById('product-card-${id}')})});`,
-        }}
-      >
-      </script>
       {/* <div class="absolute inset-0 before:p-2 hidden group-hover:block group-hover:border border-[#000]" /> */}
 
       <div class="h-full z-10">
