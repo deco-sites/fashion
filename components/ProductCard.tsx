@@ -52,7 +52,7 @@ export default function ProductCard({
   return (
     <div
       id={`product-card-${id}`}
-      class="w-full p-2 group relative border border-white hover:border-black"      
+      class="w-full p-2 group relative border border-white hover:border-black"
     >
       {/* <div class="absolute inset-0 before:p-2 hidden group-hover:block group-hover:border border-[#000]" /> */}
 
