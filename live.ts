@@ -10,7 +10,7 @@ await start(manifest, {
   site: "fashion",
   domains: [],
   plugins: [
-    await partytownPlugin(),
+    partytownPlugin(),
     prefetchPlugin(),
     twindPlugin({
       selfURL: new URL("./twind.config.ts", import.meta.url).href,
