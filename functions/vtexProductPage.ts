@@ -11,7 +11,7 @@ import { VTEX_ACCOUNT } from "../routes/api/searchFacets.ts";
  */
 const VTEXProductPageLoader: LoaderFunction<null, Product> = async (
   _req,
-  ctx,
+  ctx
 ) => {
   const skuId = ctx.params.slug.split("-").pop();
   const query = `sku:${skuId}`;

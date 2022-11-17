@@ -120,8 +120,7 @@ export default function ProductDetails({ product }: Props) {
           </div>
           {/* Avaliações + detalhes */}
           <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
-            {
-              /* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
+            {/* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
               <span class="font-bold">{`Avaliações (25)`}</span>
               <img
                 width="130"
@@ -129,20 +128,17 @@ export default function ProductDetails({ product }: Props) {
                 src="https://user-images.githubusercontent.com/18706156/194561155-ea3abac9-0c42-4b4e-8920-890965ffad45.png"
               >
               </img>
-            </button> */
-            }
+            </button> */}
             {product?.description && (
               <ProductInformation description={product.description} />
             )}
-            {
-              /* <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
+            {/* <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
               <span class="pb-8">Precisa de ajuda?</span>
               <button class="border border-solid border-black py-3 w-1/2 flex flex-row justify-center items-center">
                 <ChatBubbleLeftIcon className="w-5 h-5 mr-2" />
                 Fale com a gente
               </button>
-            </div> */
-            }
+            </div> */}
           </div>
         </div>
       </section>

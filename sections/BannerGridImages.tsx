@@ -6,19 +6,7 @@ const imgBannerDefault = {
 };
 
 const widths = [
-  100,
-  116,
-  135,
-  156,
-  181,
-  210,
-  244,
-  283,
-  328,
-  380,
-  441,
-  512,
-  540,
+  100, 116, 135, 156, 181, 210, 244, 283, 328, 380, 441, 512, 540,
 ];
 
 interface UrlBuilderParams {
@@ -38,13 +26,11 @@ const buildImageProps = ({
   const srcset = widths
     .map(
       (w) =>
-        `${
-          imageUrlBuilder({
-            width: w,
-            height: Math.trunc((height * w) / width),
-            src,
-          })
-        } ${w}w`,
+        `${imageUrlBuilder({
+          width: w,
+          height: Math.trunc((height * w) / width),
+          src,
+        })} ${w}w`
     )
     .join(",");
 

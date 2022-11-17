@@ -17,7 +17,7 @@ export interface Props {
 const VTEXSearchLoader: LoaderFunction<Props, ProductList> = async (
   _req,
   _ctx,
-  { count, searchQuery },
+  { count, searchQuery }
 ) => {
   const query = encodeURIComponent(searchQuery);
 

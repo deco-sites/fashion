@@ -23,7 +23,7 @@ const VALID_FACETS_KEYS = [
 
 // TODO: Move this to search utils
 export const getFacetsFromUrl = (
-  url: URL,
+  url: URL
 ): Array<{ key: string; value: string }> => {
   const facets: Array<{ key: string; value: string }> = [];
 
