@@ -1,11 +1,3 @@
-import { JSONSchema7 } from "json-schema";
-
-export const schema: JSONSchema7 = {
-  title: "HomeFilter",
-  type: "object",
-  properties: {},
-};
-
 export default function HomeFilter() {
   return (
     <div class="flex justify-center bg-gray-100 min-h-[80px]">

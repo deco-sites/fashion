@@ -41,7 +41,6 @@ import * as $$$14 from "./sections/ProductShelf.tsx";
 import * as $$$15 from "./sections/QuantitySelector.tsx";
 import * as $$$16 from "./sections/Search.tsx";
 import * as $$$17 from "./sections/StoreFeatures.tsx";
-import * as $$$$0 from "./loaders/vtex/searchCollections.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -87,7 +86,153 @@ const manifest: DecoManifest = {
     "./sections/Search.tsx": $$$16,
     "./sections/StoreFeatures.tsx": $$$17,
   },
-  loaders: { "./loaders/vtex/searchCollections.ts": $$$$0 },
+  functions: {},
+  schemas: {
+    "./sections/Banner.tsx": {
+      "inputSchema": {
+        "title": "Banner",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/BannerGridImages.tsx": {
+      "inputSchema": {
+        "title": "BannerGridImages",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/BannerImg.tsx": {
+      "inputSchema": {
+        "title": "BannerImg",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/Footer.tsx": {
+      "inputSchema": {
+        "title": "Footer",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/GetStarted.tsx": {
+      "inputSchema": {
+        "title": "GetStarted",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/Head.tsx": {
+      "inputSchema": {
+        "title": "Head",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/Header.tsx": {
+      "inputSchema": {
+        "title": "Header",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/HomeFilter.tsx": {
+      "inputSchema": {
+        "title": "HomeFilter",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/IconCart.tsx": {
+      "inputSchema": {
+        "title": "IconCart",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/ListLinks.tsx": {
+      "inputSchema": {
+        "title": "ListLinks",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/MarcasConvidadas.tsx": {
+      "inputSchema": {
+        "title": "MarcasConvidadas",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/Newsletter.tsx": {
+      "inputSchema": {
+        "title": "Newsletter",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductDetails.tsx": {
+      "inputSchema": {
+        "title": "ProductDetails",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductGallery.tsx": {
+      "inputSchema": {
+        "title": "ProductGallery",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductShelf.tsx": {
+      "inputSchema": {
+        "title": "ProductShelf",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/QuantitySelector.tsx": {
+      "inputSchema": {
+        "title": "QuantitySelector",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/Search.tsx": {
+      "inputSchema": {
+        "title": "Search",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+    "./sections/StoreFeatures.tsx": {
+      "inputSchema": {
+        "title": "StoreFeatures",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": null,
+    },
+  },
   baseUrl: import.meta.url,
   config,
 };

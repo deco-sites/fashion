@@ -1,6 +1,7 @@
 import { Handlers } from "$fresh/server.ts";
-import VTEXIntelligentSearch from "../../clients/vtex/intelligentSearch.ts";
+import VTEXIntelligentSearch from "$live/std/commerce/clients/vtex.ts";
 
+export const VTEX_ACCOUNT = "lojaoffpremium";
 /**
  * Despite having a hidden param, there's a lot of "garbage" facets returned from the API.
  *
@@ -22,7 +23,7 @@ const VALID_FACETS_KEYS = [
 
 // TODO: Move this to search utils
 export const getFacetsFromUrl = (
-  url: URL,
+  url: URL
 ): Array<{ key: string; value: string }> => {
   const facets: Array<{ key: string; value: string }> = [];
 
@@ -43,7 +44,7 @@ export const handler: Handlers = {
     const url = new URL(req.url);
     const __facetsFromUrl = getFacetsFromUrl(url);
 
-    const vtexIs = new VTEXIntelligentSearch();
+    const vtexIs = new VTEXIntelligentSearch(VTEX_ACCOUNT);
 
     const facetsResponse = await vtexIs.facets({
       count: 4,
