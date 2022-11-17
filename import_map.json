@@ -3,7 +3,8 @@
     "$components/": "./components/",
     "$sections/": "./sections/",
 
-    "$live/": "https://deno.land/x/live@0.1.24/",
+    "$live/": "../live/",
+    "partytown/": "https://deno.land/x/partytown@0.0.8/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
     "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
     "heroicons": "https://esm.sh/@heroicons/react/24/outline?alias=react:preact/compat&external=preact/compat",
@@ -23,7 +24,6 @@
 
     "swr": "https://esm.sh/swr@2.0.0-beta.6?alias=react:preact/compat&external=preact/compat",
     "prefetch": "https://deno.land/x/prefetch@0.0.6/mod.ts",
-    "partytown": "https://esm.sh/@builder.io/partytown@0.7.0/integration",
 
     "headlessui": "https://esm.sh/@headlessui/react?alias=react:preact/compat&external=preact/compat"
   }
