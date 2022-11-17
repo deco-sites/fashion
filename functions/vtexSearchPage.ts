@@ -11,7 +11,7 @@ import { getFacetsFromUrl, VTEX_ACCOUNT } from "../routes/api/searchFacets.ts";
  */
 const VTEXSearchPageLoader: LoaderFunction<null, ProductList> = async (
   req,
-  _ctx
+  _ctx,
 ) => {
   const url = new URL(req.url);
   const selectedFacets = getFacetsFromUrl(url);
