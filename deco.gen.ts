@@ -406,7 +406,7 @@ const manifest: DecoManifest = {
         "properties": {
           "product": {
             "title": "Product",
-            "$id": "live/std/commerce/types/Product.ts",
+            "$id": "live@0.1.26/std/commerce/types/Product.ts",
           },
         },
       },
@@ -431,7 +431,7 @@ const manifest: DecoManifest = {
           },
           "productsResponse": {
             "title": "Products Response",
-            "$id": "live/std/commerce/types/ProductList.ts",
+            "$id": "live@0.1.26/std/commerce/types/ProductList.ts",
           },
         },
       },
@@ -473,7 +473,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "live/std/commerce/types/ProductList.ts",
+            "$id": "live@0.1.26/std/commerce/types/ProductList.ts",
           },
         },
         "additionalProperties": true,
@@ -490,7 +490,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "live/std/commerce/types/Product.ts",
+            "$id": "live@0.1.26/std/commerce/types/Product.ts",
           },
         },
         "additionalProperties": true,
@@ -507,7 +507,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "live/std/commerce/types/ProductList.ts",
+            "$id": "live@0.1.26/std/commerce/types/ProductList.ts",
           },
         },
         "additionalProperties": true,
