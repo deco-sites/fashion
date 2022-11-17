@@ -10,7 +10,6 @@ export interface Props {
   themeColor?: string;
 }
 
-
 export const initialProps: Props = {
   title: "OFF Premium | Outlet Farm, Animale, e mais, até 70% off",
   description: "Outlet Farm, Animale, e mais, até 70% off",
