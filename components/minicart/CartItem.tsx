@@ -1,6 +1,6 @@
 // TODO: Default schema
 import { OrderFormItem } from "../../clients/vtex/checkout.ts";
-import QuantitySelector from "$sections/QuantitySelector.tsx";
+import QuantitySelector from "../QuantitySelector.tsx";
 
 interface Props {
   item: OrderFormItem;

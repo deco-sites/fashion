@@ -11,7 +11,6 @@ import * as $3 from "./routes/api/searchFacets.ts";
 import * as $4 from "./routes/api/similarProducts.ts";
 import * as $5 from "./routes/index.tsx";
 import * as $6 from "./routes/inspect-vscode.ts";
-import * as $7 from "./routes/start.tsx";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/Alert.tsx";
 import * as $$2 from "./islands/ColorSelector.tsx";
@@ -27,20 +26,21 @@ import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannerGridImages.tsx";
 import * as $$$2 from "./sections/BannerImg.tsx";
 import * as $$$3 from "./sections/Footer.tsx";
-import * as $$$4 from "./sections/GetStarted.tsx";
-import * as $$$5 from "./sections/Head.tsx";
-import * as $$$6 from "./sections/Header.tsx";
-import * as $$$7 from "./sections/HomeFilter.tsx";
-import * as $$$8 from "./sections/IconCart.tsx";
-import * as $$$9 from "./sections/ListLinks.tsx";
-import * as $$$10 from "./sections/MarcasConvidadas.tsx";
-import * as $$$11 from "./sections/Newsletter.tsx";
-import * as $$$12 from "./sections/ProductDetails.tsx";
-import * as $$$13 from "./sections/ProductGallery.tsx";
-import * as $$$14 from "./sections/ProductShelf.tsx";
-import * as $$$15 from "./sections/QuantitySelector.tsx";
-import * as $$$16 from "./sections/Search.tsx";
-import * as $$$17 from "./sections/StoreFeatures.tsx";
+import * as $$$4 from "./sections/Head.tsx";
+import * as $$$5 from "./sections/Header.tsx";
+import * as $$$6 from "./sections/HomeFilter.tsx";
+import * as $$$7 from "./sections/IconCart.tsx";
+import * as $$$8 from "./sections/ListLinks.tsx";
+import * as $$$9 from "./sections/MarcasConvidadas.tsx";
+import * as $$$10 from "./sections/Newsletter.tsx";
+import * as $$$11 from "./sections/ProductDetails.tsx";
+import * as $$$12 from "./sections/ProductGallery.tsx";
+import * as $$$13 from "./sections/ProductShelf.tsx";
+import * as $$$14 from "./sections/Search.tsx";
+import * as $$$15 from "./sections/StoreFeatures.tsx";
+import * as $$$$0 from "./functions/vtexIntelligentSearch.ts";
+import * as $$$$1 from "./functions/vtexProductPage.ts";
+import * as $$$$2 from "./functions/vtexSearchPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -51,7 +51,6 @@ const manifest: DecoManifest = {
     "./routes/api/similarProducts.ts": $4,
     "./routes/index.tsx": $5,
     "./routes/inspect-vscode.ts": $6,
-    "./routes/start.tsx": $7,
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
@@ -71,28 +70,69 @@ const manifest: DecoManifest = {
     "./sections/BannerGridImages.tsx": $$$1,
     "./sections/BannerImg.tsx": $$$2,
     "./sections/Footer.tsx": $$$3,
-    "./sections/GetStarted.tsx": $$$4,
-    "./sections/Head.tsx": $$$5,
-    "./sections/Header.tsx": $$$6,
-    "./sections/HomeFilter.tsx": $$$7,
-    "./sections/IconCart.tsx": $$$8,
-    "./sections/ListLinks.tsx": $$$9,
-    "./sections/MarcasConvidadas.tsx": $$$10,
-    "./sections/Newsletter.tsx": $$$11,
-    "./sections/ProductDetails.tsx": $$$12,
-    "./sections/ProductGallery.tsx": $$$13,
-    "./sections/ProductShelf.tsx": $$$14,
-    "./sections/QuantitySelector.tsx": $$$15,
-    "./sections/Search.tsx": $$$16,
-    "./sections/StoreFeatures.tsx": $$$17,
+    "./sections/Head.tsx": $$$4,
+    "./sections/Header.tsx": $$$5,
+    "./sections/HomeFilter.tsx": $$$6,
+    "./sections/IconCart.tsx": $$$7,
+    "./sections/ListLinks.tsx": $$$8,
+    "./sections/MarcasConvidadas.tsx": $$$9,
+    "./sections/Newsletter.tsx": $$$10,
+    "./sections/ProductDetails.tsx": $$$11,
+    "./sections/ProductGallery.tsx": $$$12,
+    "./sections/ProductShelf.tsx": $$$13,
+    "./sections/Search.tsx": $$$14,
+    "./sections/StoreFeatures.tsx": $$$15,
   },
-  functions: {},
+  functions: {
+    "./functions/vtexIntelligentSearch.ts": $$$$0,
+    "./functions/vtexProductPage.ts": $$$$1,
+    "./functions/vtexSearchPage.ts": $$$$2,
+  },
   schemas: {
     "./sections/Banner.tsx": {
       "inputSchema": {
         "title": "Banner",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "imgSrc": {
+            "title": "Img Src",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "title": "Mobile",
+                "type": "string",
+              },
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+            },
+          },
+          "alt": {
+            "title": "Alt",
+            "type": "string",
+          },
+          "text": {
+            "title": "Text",
+            "type": "string",
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+          },
+          "subtitle": {
+            "title": "Subtitle",
+            "type": "string",
+          },
+          "link": {
+            "title": "Link",
+            "type": "string",
+          },
+          "CTA": {
+            "title": " C T A",
+            "type": "string",
+          },
+        },
       },
       "outputSchema": null,
     },
@@ -100,7 +140,120 @@ const manifest: DecoManifest = {
       "inputSchema": {
         "title": "BannerGridImages",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "imgBanner1": {
+            "title": "Img Banner1",
+            "type": "object",
+            "properties": {
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+              "alt": {
+                "title": "Alt",
+                "type": "string",
+              },
+              "link": {
+                "title": "Link",
+                "type": "string",
+              },
+            },
+          },
+          "imgBanner2": {
+            "title": "Img Banner2",
+            "type": "object",
+            "properties": {
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+              "alt": {
+                "title": "Alt",
+                "type": "string",
+              },
+              "link": {
+                "title": "Link",
+                "type": "string",
+              },
+            },
+          },
+          "imgBanner3": {
+            "title": "Img Banner3",
+            "type": "object",
+            "properties": {
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+              "alt": {
+                "title": "Alt",
+                "type": "string",
+              },
+              "link": {
+                "title": "Link",
+                "type": "string",
+              },
+            },
+          },
+          "imgBanner4": {
+            "title": "Img Banner4",
+            "type": "object",
+            "properties": {
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+              "alt": {
+                "title": "Alt",
+                "type": "string",
+              },
+              "link": {
+                "title": "Link",
+                "type": "string",
+              },
+            },
+          },
+          "imgBanner5": {
+            "title": "Img Banner5",
+            "type": "object",
+            "properties": {
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+              "alt": {
+                "title": "Alt",
+                "type": "string",
+              },
+              "link": {
+                "title": "Link",
+                "type": "string",
+              },
+            },
+          },
+          "imgBanner6": {
+            "title": "Img Banner6",
+            "type": "object",
+            "properties": {
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+              "alt": {
+                "title": "Alt",
+                "type": "string",
+              },
+              "link": {
+                "title": "Link",
+                "type": "string",
+              },
+            },
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+          },
+        },
       },
       "outputSchema": null,
     },
@@ -108,7 +261,50 @@ const manifest: DecoManifest = {
       "inputSchema": {
         "title": "BannerImg",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "imgSrc": {
+            "title": "Img Src",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "title": "Mobile",
+                "type": "string",
+              },
+              "desktop": {
+                "title": "Desktop",
+                "type": "string",
+              },
+            },
+          },
+          "alt": {
+            "title": "Alt",
+            "type": "string",
+          },
+          "textColor": {
+            "title": "Text Color",
+            "type": "string",
+          },
+          "text": {
+            "title": "Text",
+            "type": "string",
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+          },
+          "subtitle": {
+            "title": "Subtitle",
+            "type": "string",
+          },
+          "link": {
+            "title": "Link",
+            "type": "string",
+          },
+          "CTA": {
+            "title": " C T A",
+            "type": "string",
+          },
+        },
       },
       "outputSchema": null,
     },
@@ -120,19 +316,36 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/GetStarted.tsx": {
-      "inputSchema": {
-        "title": "GetStarted",
-        "type": "object",
-        "properties": {},
-      },
-      "outputSchema": null,
-    },
     "./sections/Head.tsx": {
       "inputSchema": {
         "title": "Head",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "title": {
+            "title": "Title",
+            "type": "string",
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+          },
+          "imageUrl": {
+            "title": "Image Url",
+            "type": "string",
+          },
+          "faviconUrl": {
+            "title": "Favicon Url",
+            "type": "string",
+          },
+          "styleUrls": {
+            "title": "Style Urls",
+            "type": "string",
+          },
+          "themeColor": {
+            "title": "Theme Color",
+            "type": "string",
+          },
+        },
       },
       "outputSchema": null,
     },
@@ -188,7 +401,12 @@ const manifest: DecoManifest = {
       "inputSchema": {
         "title": "ProductDetails",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "product": {
+            "title": "Product",
+            "$id": "live/std/commerce/types/Product.ts",
+          },
+        },
       },
       "outputSchema": null,
     },
@@ -204,15 +422,16 @@ const manifest: DecoManifest = {
       "inputSchema": {
         "title": "ProductShelf",
         "type": "object",
-        "properties": {},
-      },
-      "outputSchema": null,
-    },
-    "./sections/QuantitySelector.tsx": {
-      "inputSchema": {
-        "title": "QuantitySelector",
-        "type": "object",
-        "properties": {},
+        "properties": {
+          "title": {
+            "title": "Title",
+            "type": "string",
+          },
+          "productsResponse": {
+            "title": "Products Response",
+            "$id": "live/std/commerce/types/ProductList.ts",
+          },
+        },
       },
       "outputSchema": null,
     },
@@ -231,6 +450,66 @@ const manifest: DecoManifest = {
         "properties": {},
       },
       "outputSchema": null,
+    },
+    "./functions/vtexIntelligentSearch.ts": {
+      "inputSchema": {
+        "title": "VTEX - Intelligent Search",
+        "description": "Busque produtos com queries complexas",
+        "type": "object",
+        "properties": {
+          "searchQuery": {
+            "title": "Search Query",
+            "type": "string",
+          },
+          "count": {
+            "title": "Count",
+            "type": "number",
+          },
+        },
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "live/std/commerce/types/ProductList.ts",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexProductPage.ts": {
+      "inputSchema": {
+        "title": "VTEX - P��gina de Produto",
+        "description": "Para rotas /:slug/p",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "live/std/commerce/types/Product.ts",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexSearchPage.ts": {
+      "inputSchema": {
+        "title": "VTEX - Search Page",
+        "description": "Usa Intelligent Search",
+        "type": "object",
+        "properties": {},
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "live/std/commerce/types/ProductList.ts",
+          },
+        },
+        "additionalProperties": true,
+      },
     },
   },
   baseUrl: import.meta.url,
