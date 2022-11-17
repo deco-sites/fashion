@@ -1,15 +1,6 @@
-import { JSONSchema7 } from "json-schema";
-
-export const schema: JSONSchema7 = {
-  title: "StoreFeatures",
-  type: "object",
-  properties: {},
-};
-
 const features = [
   {
-    src:
-      "https://offpremium-web.cdn.prismic.io/offpremium-web/2a97b283-0ffd-4b32-86bb-155790b718d7_benefits-cupom.svg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;w=59&amp;h=31",
+    src: "https://offpremium-web.cdn.prismic.io/offpremium-web/2a97b283-0ffd-4b32-86bb-155790b718d7_benefits-cupom.svg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;w=59&amp;h=31",
     srcSet:
       "https://offpremium-web.cdn.prismic.io/offpremium-web/2a97b283-0ffd-4b32-86bb-155790b718d7_benefits-cupom.svg?ixlib=gatsbyFP&amp;auto=compress%2Cformat&amp;fit=max&amp;w=59&amp;h=31 59w",
     title: "15% na primeira compra",
@@ -17,8 +8,7 @@ const features = [
     showOnMobile: true,
   },
   {
-    src:
-      "https://offpremium-web.cdn.prismic.io/offpremium-web/d9a6bb83-23b9-4e40-8e73-b43524242e47_benefits-entrega.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=47&h=31",
+    src: "https://offpremium-web.cdn.prismic.io/offpremium-web/d9a6bb83-23b9-4e40-8e73-b43524242e47_benefits-entrega.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=47&h=31",
     srcSet:
       "https://offpremium-web.cdn.prismic.io/offpremium-web/d9a6bb83-23b9-4e40-8e73-b43524242e47_benefits-entrega.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=47&h=31 47w",
     title: "ENTREGA EM TODO BRASIL",
@@ -26,8 +16,7 @@ const features = [
     showOnMobile: true,
   },
   {
-    src:
-      "https://offpremium-web.cdn.prismic.io/offpremium-web/193e3cd7-7304-49a1-8e59-05161ed0c6e3_benefits-troca.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=37&h=37",
+    src: "https://offpremium-web.cdn.prismic.io/offpremium-web/193e3cd7-7304-49a1-8e59-05161ed0c6e3_benefits-troca.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=37&h=37",
     srcSet:
       "https://offpremium-web.cdn.prismic.io/offpremium-web/193e3cd7-7304-49a1-8e59-05161ed0c6e3_benefits-troca.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=37&h=37 37w",
     title: "DEVOLUÇÃO GRÁTIS",
@@ -35,8 +24,7 @@ const features = [
     showOnMobile: true,
   },
   {
-    src:
-      "https://offpremium-web.cdn.prismic.io/offpremium-web/e86b0871-7560-4da9-b071-02144cb686bd_benefits-pix.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=52&h=30",
+    src: "https://offpremium-web.cdn.prismic.io/offpremium-web/e86b0871-7560-4da9-b071-02144cb686bd_benefits-pix.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=52&h=30",
     srcSet:
       "https://offpremium-web.cdn.prismic.io/offpremium-web/e86b0871-7560-4da9-b071-02144cb686bd_benefits-pix.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=52&h=30 52w",
     title: "PAGAMENTO POR PIX",
@@ -44,8 +32,7 @@ const features = [
     showOnMobile: true,
   },
   {
-    src:
-      "https://offpremium-web.cdn.prismic.io/offpremium-web/679d723c-6195-46d8-b703-ca69cddd01e7_benefits-newsletter.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=29&h=29",
+    src: "https://offpremium-web.cdn.prismic.io/offpremium-web/679d723c-6195-46d8-b703-ca69cddd01e7_benefits-newsletter.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=29&h=29",
     srcSet:
       "https://offpremium-web.cdn.prismic.io/offpremium-web/679d723c-6195-46d8-b703-ca69cddd01e7_benefits-newsletter.svg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=29&h=29 29w",
     title: "NOSSA NEWSLETTER",

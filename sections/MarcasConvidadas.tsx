@@ -1,11 +1,3 @@
-import { JSONSchema7 } from "json-schema";
-
-export const schema: JSONSchema7 = {
-  title: "Marcas Convidadas",
-  type: "object",
-  properties: {},
-};
-
 const banners = [
   {
     href: "/search?trade-policy=1&marca=cantao",

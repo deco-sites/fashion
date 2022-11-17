@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { FacetsResponse } from "../../clients/vtex/intelligentSearch.ts";
+import { FacetsResponse } from "$live/std/commerce/clients/vtex.ts";
 import { SORT_QUERY_PARAM } from "./SortSelector.tsx";
 
 interface Props {

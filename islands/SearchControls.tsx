@@ -1,7 +1,7 @@
 import { useRef } from "preact/hooks";
 import useSWR from "swr";
 import { JSONSchema7 } from "json-schema";
-import { FacetsResponse } from "../clients/vtex/intelligentSearch.ts";
+import { FacetsResponse } from "$live/std/commerce/clients/vtex.ts";
 import FacetsTree from "../components/search/FacetsTree.tsx";
 import SortSelector from "../components/search/SortSelector.tsx";
 import Modal from "../components/ui/Modal.tsx";

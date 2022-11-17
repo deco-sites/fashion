@@ -1,12 +1,4 @@
-import type { JSONSchema7 } from "json-schema";
-
 import FooterAccordion, { sections } from "../islands/FooterAccordion.tsx";
-
-export const schema: JSONSchema7 = {
-  title: "Footer",
-  type: "object",
-  properties: {},
-};
 
 export default function Footer() {
   return (

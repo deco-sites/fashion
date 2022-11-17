@@ -1,11 +1,3 @@
-import { JSONSchema7 } from "json-schema";
-
-export const schema: JSONSchema7 = {
-  title: "Newsletter",
-  type: "object",
-  properties: {},
-};
-
 export default function Newsletter() {
   return (
     <div class="bg-gray-100 flex flex-row flex-wrap p-6 md:p-10 items-center justify-center">

@@ -1,54 +1,6 @@
-import { JSONSchema7 } from "json-schema";
 import Image from "$components/ui/Image.tsx";
 
-export const schema: JSONSchema7 = {
-  title: "Main Banner",
-  "type": "object",
-  required: ["imgSrc"],
-  properties: {
-    imgSrc: {
-      "type": "object",
-      properties: {
-        mobile: {
-          "type": "string",
-          title: "Imagem Mobile",
-          format: "uri",
-        },
-        desktop: {
-          "type": "string",
-          title: "Imagem Desktop",
-          format: "uri",
-        },
-      },
-    },
-    alt: {
-      type: "string",
-      title: "alternate",
-    },
-    text: {
-      "type": "string",
-      title: "Primeiro texto",
-    },
-    title: {
-      "type": "string",
-      title: "Título",
-    },
-    subtitle: {
-      "type": "string",
-      title: "Subtítulo",
-    },
-    CTA: {
-      "type": "string",
-      title: "Texto CTA do link",
-    },
-    link: {
-      "type": "string",
-      title: "Link",
-    },
-  },
-};
-
-interface Props {
+export interface Props {
   imgSrc: { mobile: string; desktop: string };
   alt?: string;
   text?: string;

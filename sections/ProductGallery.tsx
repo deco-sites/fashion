@@ -1,40 +1,24 @@
-import ProductCard, { Product } from "$components/ProductCard.tsx";
-import type { JSONSchema7 } from "json-schema";
+import ProductCard from "$components/ProductCard.tsx";
+import { ProductList } from "$live/std/commerce/types/ProductList.ts";
+import { Product } from "$live/std/commerce/types/Product.ts";
 import { forwardRef } from "preact/compat";
 import type { Ref } from "preact";
 
-import VTEXSearchLoader from "../loaders/vtex/searchCollections.ts";
-
 const Panel = forwardRef((props: Product, ref: Ref<HTMLDivElement>) => {
   return (
-    <div
-      class="w-full md:px-2 list-none"
-      ref={ref}
-    >
+    <div class="w-full md:px-2 list-none" ref={ref}>
       <ProductCard {...props} />
     </div>
   );
 });
 
-export const schema: JSONSchema7 = {
-  title: "Product Gallery",
-  "type": "object",
-  required: ["collection"],
-  properties: {
-    products: {
-      $ref: "searchCollections",
-      ...VTEXSearchLoader.inputSchema,
-    },
-  },
-};
-
 interface Props {
   collection: string;
-  products: Product[];
+  productsResponse: ProductList;
 }
 
 export default function ProductGallery({
-  products,
+  productsResponse: { products },
 }: Props) {
   return (
     <section class="md:mx-auto px-2 md:px-4 py-8 md:py-20">
