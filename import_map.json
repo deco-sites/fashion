@@ -4,7 +4,7 @@
     "$sections/": "./sections/",
 
     "$live/": "https://deno.land/x/live@0.1.27/",
-    "partytown/": "https://deno.land/x/partytown@0.0.10/",
+    "partytown/": "https://deno.land/x/partytown@0.1.0/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
     "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
     "heroicons": "https://esm.sh/@heroicons/react/24/outline?alias=react:preact/compat&external=preact/compat",
