@@ -1,6 +1,7 @@
 import { Product } from "$live/std/commerce/types/Product.ts";
-import Image from "$components/ui/Image.tsx";
 import { LoaderReturnType } from "$live/std/types.ts";
+import Image from "$live/std/ui/components/Image.tsx";
+
 import AddToCart from "../islands/AddToCart.tsx";
 import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";

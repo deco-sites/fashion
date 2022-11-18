@@ -1,5 +1,5 @@
 import AddToCart from "../islands/AddToCart.tsx";
-import Image from "$components/ui/Image.tsx";
+import Image from "$live/std/ui/components/Image.tsx";
 
 interface Image {
   src: string;
