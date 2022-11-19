@@ -11,6 +11,9 @@ const imgBannerDefault = {
 export interface BannerImageProps {
   desktop: LiveImage;
   alt: string;
+  /**
+   * @format url
+   */
   link: string;
 }
 
