@@ -95,7 +95,6 @@ const manifest: DecoManifest = {
   schemas: {
     "./sections/Banner.tsx": {
       "inputSchema": {
-        "title": "Banner",
         "type": "object",
         "properties": {
           "imgSrc": {
@@ -103,46 +102,52 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "mobile": {
-                "title": "Mobile",
                 "type": "string",
+                "title": "Mobile",
               },
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
             },
+            "required": [
+              "mobile",
+              "desktop",
+            ],
           },
           "alt": {
-            "title": "Alt",
             "type": "string",
+            "title": "Alt",
           },
           "text": {
-            "title": "Text",
             "type": "string",
+            "title": "Text",
           },
           "title": {
-            "title": "Title",
             "type": "string",
+            "title": "Title",
           },
           "subtitle": {
-            "title": "Subtitle",
             "type": "string",
+            "title": "Subtitle",
           },
           "link": {
-            "title": "Link",
             "type": "string",
+            "title": "Link",
           },
           "CTA": {
-            "title": " C T A",
             "type": "string",
+            "title": " C T A",
           },
         },
+        "required": [
+          "imgSrc",
+        ],
       },
       "outputSchema": null,
     },
     "./sections/BannerGridImages.tsx": {
       "inputSchema": {
-        "title": "BannerGridImages",
         "type": "object",
         "properties": {
           "imgBanner1": {
@@ -150,120 +155,158 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
               "alt": {
-                "title": "Alt",
                 "type": "string",
+                "title": "Alt",
               },
               "link": {
-                "title": "Link",
                 "type": "string",
+                "title": "Link",
               },
             },
+            "required": [
+              "desktop",
+              "alt",
+              "link",
+            ],
           },
           "imgBanner2": {
             "title": "Img Banner2",
             "type": "object",
             "properties": {
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
               "alt": {
-                "title": "Alt",
                 "type": "string",
+                "title": "Alt",
               },
               "link": {
-                "title": "Link",
                 "type": "string",
+                "title": "Link",
               },
             },
+            "required": [
+              "desktop",
+              "alt",
+              "link",
+            ],
           },
           "imgBanner3": {
             "title": "Img Banner3",
             "type": "object",
             "properties": {
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
               "alt": {
-                "title": "Alt",
                 "type": "string",
+                "title": "Alt",
               },
               "link": {
-                "title": "Link",
                 "type": "string",
+                "title": "Link",
               },
             },
+            "required": [
+              "desktop",
+              "alt",
+              "link",
+            ],
           },
           "imgBanner4": {
             "title": "Img Banner4",
             "type": "object",
             "properties": {
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
               "alt": {
-                "title": "Alt",
                 "type": "string",
+                "title": "Alt",
               },
               "link": {
-                "title": "Link",
                 "type": "string",
+                "title": "Link",
               },
             },
+            "required": [
+              "desktop",
+              "alt",
+              "link",
+            ],
           },
           "imgBanner5": {
             "title": "Img Banner5",
             "type": "object",
             "properties": {
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
               "alt": {
-                "title": "Alt",
                 "type": "string",
+                "title": "Alt",
               },
               "link": {
-                "title": "Link",
                 "type": "string",
+                "title": "Link",
               },
             },
+            "required": [
+              "desktop",
+              "alt",
+              "link",
+            ],
           },
           "imgBanner6": {
             "title": "Img Banner6",
             "type": "object",
             "properties": {
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
               "alt": {
-                "title": "Alt",
                 "type": "string",
+                "title": "Alt",
               },
               "link": {
-                "title": "Link",
                 "type": "string",
+                "title": "Link",
               },
             },
+            "required": [
+              "desktop",
+              "alt",
+              "link",
+            ],
           },
           "title": {
-            "title": "Title",
             "type": "string",
+            "title": "Title",
           },
         },
+        "required": [
+          "imgBanner1",
+          "imgBanner2",
+          "imgBanner3",
+          "imgBanner4",
+          "imgBanner5",
+          "imgBanner6",
+          "title",
+        ],
       },
       "outputSchema": null,
     },
     "./sections/BannerImg.tsx": {
       "inputSchema": {
-        "title": "BannerImg",
         "type": "object",
         "properties": {
           "imgSrc": {
@@ -271,211 +314,228 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "mobile": {
-                "title": "Mobile",
                 "type": "string",
+                "title": "Mobile",
               },
               "desktop": {
-                "title": "Desktop",
                 "type": "string",
+                "title": "Desktop",
               },
             },
+            "required": [
+              "mobile",
+              "desktop",
+            ],
           },
           "alt": {
-            "title": "Alt",
             "type": "string",
+            "title": "Alt",
           },
           "textColor": {
-            "title": "Text Color",
             "type": "string",
+            "title": "Text Color",
           },
           "text": {
-            "title": "Text",
             "type": "string",
+            "title": "Text",
           },
           "title": {
-            "title": "Title",
             "type": "string",
+            "title": "Title",
           },
           "subtitle": {
-            "title": "Subtitle",
             "type": "string",
+            "title": "Subtitle",
           },
           "link": {
-            "title": "Link",
             "type": "string",
+            "title": "Link",
           },
           "CTA": {
-            "title": " C T A",
             "type": "string",
+            "title": " C T A",
           },
         },
+        "required": [
+          "imgSrc",
+        ],
       },
       "outputSchema": null,
     },
     "./sections/Footer.tsx": {
-      "inputSchema": {
-        "title": "Footer",
-        "type": "object",
-        "properties": {},
-      },
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/Head.tsx": {
       "inputSchema": {
-        "title": "Head",
         "type": "object",
         "properties": {
           "title": {
-            "title": "Title",
             "type": "string",
+            "title": "Title",
           },
           "description": {
-            "title": "Description",
             "type": "string",
+            "title": "Description",
+          },
+          "url": {
+            "type": "string",
+            "title": "Url",
           },
           "imageUrl": {
-            "title": "Image Url",
             "type": "string",
+            "title": "Image Url",
           },
           "faviconUrl": {
-            "title": "Favicon Url",
             "type": "string",
+            "title": "Favicon Url",
           },
           "styleUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
             "title": "Style Urls",
-            "type": "string",
           },
           "themeColor": {
-            "title": "Theme Color",
             "type": "string",
+            "title": "Theme Color",
           },
         },
+        "required": [
+          "url",
+        ],
       },
       "outputSchema": null,
     },
     "./sections/Header.tsx": {
-      "inputSchema": {
-        "title": "Header",
-        "type": "object",
-        "properties": {},
-      },
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/HomeFilter.tsx": {
-      "inputSchema": {
-        "title": "HomeFilter",
-        "type": "object",
-        "properties": {},
-      },
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/IconCart.tsx": {
       "inputSchema": {
-        "title": "IconCart",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "size": {
+            "type": "number",
+            "title": "Size",
+          },
+        },
+        "required": [],
       },
       "outputSchema": null,
     },
     "./sections/ListLinks.tsx": {
-      "inputSchema": {
-        "title": "ListLinks",
-        "type": "object",
-        "properties": {},
-      },
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/MarcasConvidadas.tsx": {
-      "inputSchema": {
-        "title": "MarcasConvidadas",
-        "type": "object",
-        "properties": {},
-      },
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/Newsletter.tsx": {
-      "inputSchema": {
-        "title": "Newsletter",
-        "type": "object",
-        "properties": {},
-      },
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/ProductDetails.tsx": {
       "inputSchema": {
-        "title": "ProductDetails",
         "type": "object",
         "properties": {
           "product": {
+            "$id": "2a47c1b926cc578f97d2e1a1271f0e918689c483",
             "title": "Product",
-            "$id": "live@0.2.1/std/commerce/types/Product.ts",
           },
         },
+        "required": [
+          "product",
+        ],
       },
       "outputSchema": null,
     },
     "./sections/ProductGallery.tsx": {
       "inputSchema": {
-        "title": "ProductGallery",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "collection": {
+            "type": "string",
+            "title": "Collection",
+          },
+          "productsResponse": {
+            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
+            "title": "Products Response",
+          },
+        },
+        "required": [
+          "collection",
+          "productsResponse",
+        ],
       },
       "outputSchema": null,
     },
     "./sections/ProductShelf.tsx": {
       "inputSchema": {
-        "title": "ProductShelf",
         "type": "object",
         "properties": {
           "title": {
-            "title": "Title",
             "type": "string",
+            "title": "Title",
           },
           "productsResponse": {
+            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
             "title": "Products Response",
-            "$id": "live@0.2.1/std/commerce/types/ProductList.ts",
           },
         },
+        "required": [
+          "title",
+          "productsResponse",
+        ],
       },
       "outputSchema": null,
     },
     "./sections/Search.tsx": {
       "inputSchema": {
-        "title": "Search",
         "type": "object",
-        "properties": {},
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+          },
+        },
+        "required": [],
       },
       "outputSchema": null,
     },
     "./sections/StoreFeatures.tsx": {
-      "inputSchema": {
-        "title": "StoreFeatures",
-        "type": "object",
-        "properties": {},
-      },
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./functions/vtexIntelligentSearch.ts": {
       "inputSchema": {
-        "title": "VTEX - Intelligent Search",
-        "description": "Busque produtos com queries complexas",
         "type": "object",
         "properties": {
           "searchQuery": {
-            "title": "Search Query",
             "type": "string",
+            "title": "Search Query",
           },
           "count": {
-            "title": "Count",
             "type": "number",
+            "title": "Count",
           },
         },
+        "required": [
+          "searchQuery",
+          "count",
+        ],
       },
       "outputSchema": {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "live@0.2.1/std/commerce/types/ProductList.ts",
+            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
           },
         },
         "additionalProperties": true,
@@ -483,16 +543,13 @@ const manifest: DecoManifest = {
     },
     "./functions/vtexProductPage.ts": {
       "inputSchema": {
-        "title": "VTEX - P��gina de Produto",
-        "description": "Para rotas /:slug/p",
-        "type": "object",
-        "properties": {},
+        "type": "null",
       },
       "outputSchema": {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "live@0.2.1/std/commerce/types/Product.ts",
+            "$id": "2a47c1b926cc578f97d2e1a1271f0e918689c483",
           },
         },
         "additionalProperties": true,
@@ -500,16 +557,13 @@ const manifest: DecoManifest = {
     },
     "./functions/vtexSearchPage.ts": {
       "inputSchema": {
-        "title": "VTEX - Search Page",
-        "description": "Usa Intelligent Search",
-        "type": "object",
-        "properties": {},
+        "type": "null",
       },
       "outputSchema": {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "live@0.2.1/std/commerce/types/ProductList.ts",
+            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
           },
         },
         "additionalProperties": true,

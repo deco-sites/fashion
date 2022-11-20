@@ -3,7 +3,7 @@ import { asset, Head } from "$fresh/runtime.ts";
 export interface Props {
   title?: string;
   description?: string;
-  url: URL;
+  url: string;
   imageUrl?: string;
   faviconUrl?: string;
   styleUrls?: string[];
@@ -13,7 +13,7 @@ export interface Props {
 export const initialProps: Props = {
   title: "OFF Premium | Outlet Farm, Animale, e mais, até 70% off",
   description: "Outlet Farm, Animale, e mais, até 70% off",
-  url: new URL("https://fashion.deco.page"),
+  url: "https://fashion.deco.page",
   imageUrl: "https://fashion.deco.page/android-chrome-384x384.png?v=1",
   faviconUrl: "https://fashion.deco.page/favicon-32x32.png?v=1",
   styleUrls: [],
@@ -44,7 +44,7 @@ export default function HeadComponent(props: Props) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={url.href} />
+      <meta property="og:url" content={url} />
       <meta property="og:image" content={imageUrl} />
       <link rel="shortcut icon" href={faviconUrl} type="image/x-icon"></link>
 
