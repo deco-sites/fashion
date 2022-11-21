@@ -3,7 +3,7 @@
     "$components/": "./components/",
     "$sections/": "./sections/",
 
-    "$live/": "https://deno.land/x/live@0.1.27/",
+    "$live/": "https://deno.land/x/live@0.2.0/",
     "partytown/": "https://deno.land/x/partytown@0.1.0/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
     "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
