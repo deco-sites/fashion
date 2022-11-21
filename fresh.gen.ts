@@ -25,8 +25,8 @@ import * as $$8 from "./islands/SearchBar.tsx";
 import * as $$9 from "./islands/SearchControls.tsx";
 import * as $$10 from "./islands/VideoCarousel.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
-import * as $$$1 from "./sections/BannerGridImages.tsx";
-import * as $$$2 from "./sections/BannerImg.tsx";
+import * as $$$1 from "./sections/BannerImg.tsx";
+import * as $$$2 from "./sections/BannnerGrid.tsx";
 import * as $$$3 from "./sections/Footer.tsx";
 import * as $$$4 from "./sections/Head.tsx";
 import * as $$$5 from "./sections/Header.tsx";
@@ -71,8 +71,8 @@ const manifest: DecoManifest = {
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
-    "./sections/BannerGridImages.tsx": $$$1,
-    "./sections/BannerImg.tsx": $$$2,
+    "./sections/BannerImg.tsx": $$$1,
+    "./sections/BannnerGrid.tsx": $$$2,
     "./sections/Footer.tsx": $$$3,
     "./sections/Head.tsx": $$$4,
     "./sections/Header.tsx": $$$5,
@@ -146,171 +146,6 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/BannerGridImages.tsx": {
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "imgBanner1": {
-            "title": "Img Banner1",
-            "type": "object",
-            "properties": {
-              "desktop": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Desktop",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-              },
-              "link": {
-                "type": "string",
-                "title": "Link",
-              },
-            },
-            "required": [
-              "desktop",
-              "alt",
-              "link",
-            ],
-          },
-          "imgBanner2": {
-            "title": "Img Banner2",
-            "type": "object",
-            "properties": {
-              "desktop": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Desktop",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-              },
-              "link": {
-                "type": "string",
-                "title": "Link",
-              },
-            },
-            "required": [
-              "desktop",
-              "alt",
-              "link",
-            ],
-          },
-          "imgBanner3": {
-            "title": "Img Banner3",
-            "type": "object",
-            "properties": {
-              "desktop": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Desktop",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-              },
-              "link": {
-                "type": "string",
-                "title": "Link",
-              },
-            },
-            "required": [
-              "desktop",
-              "alt",
-              "link",
-            ],
-          },
-          "imgBanner4": {
-            "title": "Img Banner4",
-            "type": "object",
-            "properties": {
-              "desktop": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Desktop",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-              },
-              "link": {
-                "type": "string",
-                "title": "Link",
-              },
-            },
-            "required": [
-              "desktop",
-              "alt",
-              "link",
-            ],
-          },
-          "imgBanner5": {
-            "title": "Img Banner5",
-            "type": "object",
-            "properties": {
-              "desktop": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Desktop",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-              },
-              "link": {
-                "type": "string",
-                "title": "Link",
-              },
-            },
-            "required": [
-              "desktop",
-              "alt",
-              "link",
-            ],
-          },
-          "imgBanner6": {
-            "title": "Img Banner6",
-            "type": "object",
-            "properties": {
-              "desktop": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Desktop",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-              },
-              "link": {
-                "type": "string",
-                "title": "Link",
-              },
-            },
-            "required": [
-              "desktop",
-              "alt",
-              "link",
-            ],
-          },
-          "title": {
-            "type": "string",
-            "title": "Title",
-          },
-        },
-        "required": [
-          "imgBanner1",
-          "imgBanner2",
-          "imgBanner3",
-          "imgBanner4",
-          "imgBanner5",
-          "imgBanner6",
-          "title",
-        ],
-      },
-      "outputSchema": null,
-    },
     "./sections/BannerImg.tsx": {
       "inputSchema": {
         "type": "object",
@@ -364,6 +199,51 @@ const manifest: DecoManifest = {
         },
         "required": [
           "imgSrc",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/BannnerGrid.tsx": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image alt text",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description": "When you click you go to",
+                },
+              },
+              "required": [
+                "src",
+                "alt",
+                "href",
+              ],
+            },
+            "title": "Images",
+          },
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+        },
+        "required": [
+          "images",
+          "title",
         ],
       },
       "outputSchema": null,
