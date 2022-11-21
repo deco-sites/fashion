@@ -1,6 +1,6 @@
-import Image from "$components/ui/Image.tsx";
+import Image from "$live/std/ui/components/Image.tsx";
 
-export interface Props {
+export type Props = {
   imgSrc: { mobile: string; desktop: string };
   alt?: string;
   text?: string;
@@ -8,9 +8,9 @@ export interface Props {
   subtitle?: string;
   link?: string;
   CTA?: string;
-}
+};
 
-const imgSrcDefault = {
+export const imgSrcDefault = {
   mobile:
     "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-768x950-kitchen.jpg?v=637949787190870000",
   desktop:

@@ -155,6 +155,7 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "desktop": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Desktop",
               },
@@ -178,6 +179,7 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "desktop": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Desktop",
               },
@@ -201,6 +203,7 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "desktop": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Desktop",
               },
@@ -224,6 +227,7 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "desktop": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Desktop",
               },
@@ -247,6 +251,7 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "desktop": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Desktop",
               },
@@ -270,6 +275,7 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "desktop": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Desktop",
               },

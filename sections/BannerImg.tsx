@@ -1,4 +1,4 @@
-import Image from "$components/ui/Image.tsx";
+import Image from "$live/std/ui/components/Image.tsx";
 
 export interface Props {
   imgSrc: { mobile: string; desktop: string };
