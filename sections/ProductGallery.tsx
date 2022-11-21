@@ -1,6 +1,7 @@
 import ProductCard from "$components/ProductCard.tsx";
 import { ProductList } from "$live/std/commerce/types/ProductList.ts";
 import { Product } from "$live/std/commerce/types/Product.ts";
+import { LoaderReturnType } from "$live/std/types.ts";
 import { forwardRef } from "preact/compat";
 import type { Ref } from "preact";
 
@@ -12,9 +13,9 @@ const Panel = forwardRef((props: Product, ref: Ref<HTMLDivElement>) => {
   );
 });
 
-interface Props {
+export interface Props {
   collection: string;
-  productsResponse: ProductList;
+  productsResponse: LoaderReturnType<ProductList>;
 }
 
 export default function ProductGallery({

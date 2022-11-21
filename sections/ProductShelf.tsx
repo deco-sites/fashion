@@ -1,9 +1,11 @@
 import { ProductList } from "$live/std/commerce/types/ProductList.ts";
+import { LoaderReturnType } from "$live/std/types.ts";
+
 import ProductCard from "../components/ProductCard.tsx";
 
 export interface Props {
   title: string;
-  productsResponse: ProductList;
+  productsResponse: LoaderReturnType<ProductList>;
 }
 
 export default function ProductShelf({

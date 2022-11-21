@@ -1,5 +1,6 @@
 import { Product } from "$live/std/commerce/types/Product.ts";
 import Image from "$components/ui/Image.tsx";
+import { LoaderReturnType } from "$live/std/types.ts";
 import AddToCart from "../islands/AddToCart.tsx";
 import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";
@@ -7,7 +8,7 @@ import SKUSelector from "../islands/SKUSelector.tsx";
 import ColorSelector from "../islands/ColorSelector.tsx";
 
 export interface Props {
-  product: Product;
+  product: LoaderReturnType<Product>;
 }
 
 export default function ProductDetails({ product }: Props) {
@@ -23,7 +24,7 @@ export default function ProductDetails({ product }: Props) {
         title={`${product.name} — ${brand} — OFF Premium`}
         faviconUrl="https://www.offpremium.com.br/favicon-32x32.png"
         description={product.description + `— OFF Premium`}
-        url={new URL(`https://fashion.deco.page/${product.slug}/p`)}
+        url={`https://fashion.deco.page/${product.slug}/p`}
       />
       <section class="w-full bg-gray-100 flex flex-col lg:flex-row">
         <div class="w-full lg:w-3/5 bg-gray-100 flex justify-center items-center">
