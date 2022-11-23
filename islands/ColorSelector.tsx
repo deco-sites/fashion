@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { Product } from "../components/ProductCard.tsx";
+import { Product } from "$live/std/commerce/types/Product.ts";
 import { RelatedProductsAsVariations } from "../routes/api/similarProducts.ts";
 
 interface Props {
@@ -14,7 +14,7 @@ export default function ColorSelector({ product }: Props) {
   };
 
   // Condition copied from original implementation
-  const colorImage = product.images?.find(({ label }) => label === "10");
+  const colorImage = product.images?.find(({ alt }) => alt === "10");
 
   const showColorsSelector = Boolean(colorImage);
 
