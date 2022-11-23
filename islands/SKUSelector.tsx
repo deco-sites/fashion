@@ -1,4 +1,4 @@
-import { Product } from "../components/ProductCard.tsx";
+import { Product } from "$live/std/commerce/types/Product.ts";
 
 interface Props {
   current: string;
