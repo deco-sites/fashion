@@ -1,5 +1,6 @@
 import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import Image from "$live/std/ui/components/Image.tsx";
+import Picture from "$live/std/ui/components/Picture.tsx";
 
 const defaultBanners = [
   {
@@ -42,29 +43,40 @@ export default function MarcasConvidadas({ banners = defaultBanners }: Props) {
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
         <a class="md:col-span-3" href="/search?ft=morena+rosa">
-          <picture>
-            <source
-              media="(max-width: 767px)"
-              srcset="https://images.prismic.io/offpremium-web/3b90e599-993a-40bd-861c-7730abef670a_10_banner_terciario_maior_morena_iodice_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425"
-            />
-            <source
-              media="(min-width: 768px)"
-              srcset="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650"
-            />
-            <Image
+          <Picture>
+            <Picture.Source
               preload
               width={320}
               height={400}
+              media="(max-width: 767px)"
+              src="https://images.prismic.io/offpremium-web/3b90e599-993a-40bd-861c-7730abef670a_10_banner_terciario_maior_morena_iodice_mob.jpg"
+            />
+            <Picture.Source
+              preload
+              width={1280}
+              height={437}
+              media="(min-width: 768px)"
+              src="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg"
+            />
+            <Image
+              width={320}
+              height={400}
               class="object-cover w-full"
-              src="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650"
+              src="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg"
               alt="Morena iodice"
             />
-          </picture>
+          </Picture>
         </a>
         {banners.map(({ href, src }) => (
           <div>
             <a href={href} key={href}>
-              <Image width={320} height={400} src={src} alt={href} class="w-full" />
+              <Image
+                width={320}
+                height={400}
+                src={src}
+                alt={href}
+                class="w-full"
+              />
             </a>
           </div>
         ))}
