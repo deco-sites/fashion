@@ -350,14 +350,14 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Collection",
           },
-          "productsResponse": {
+          "productList": {
             "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
-            "title": "Products Response",
+            "title": "Product List",
           },
         },
         "required": [
           "collection",
-          "productsResponse",
+          "productList",
         ],
       },
       "outputSchema": null,
@@ -370,14 +370,14 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Title",
           },
-          "productsResponse": {
+          "productList": {
             "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
-            "title": "Products Response",
+            "title": "Product List",
           },
         },
         "required": [
           "title",
-          "productsResponse",
+          "productList",
         ],
       },
       "outputSchema": null,

@@ -15,11 +15,11 @@ const Panel = forwardRef((props: Product, ref: Ref<HTMLDivElement>) => {
 
 export interface Props {
   collection: string;
-  productsResponse: LoaderReturnType<ProductList>;
+  productList: LoaderReturnType<ProductList>;
 }
 
 export default function ProductGallery({
-  productsResponse: { products },
+  productList: { products },
 }: Props) {
   return (
     <section class="md:mx-auto px-2 md:px-4 py-8 md:py-20">
