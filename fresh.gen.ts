@@ -320,7 +320,36 @@ const manifest: DecoManifest = {
       "outputSchema": null,
     },
     "./sections/MarcasConvidadas.tsx": {
-      "inputSchema": null,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "banners": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                },
+                "src": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src",
+                },
+              },
+              "required": [
+                "href",
+                "src",
+              ],
+            },
+            "title": "Banners",
+          },
+        },
+        "required": [
+          "banners",
+        ],
+      },
       "outputSchema": null,
     },
     "./sections/Newsletter.tsx": {

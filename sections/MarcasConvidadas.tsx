@@ -1,21 +1,34 @@
-const banners = [
+import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
+import Image from "$live/std/ui/components/Image.tsx";
+
+const defaultBanners = [
   {
     href: "/search?trade-policy=1&marca=cantao",
-    imgSrc:
+    src:
       "https://images.prismic.io/offpremium-web/98557ce5-b544-4367-8584-bb86d1b9416a_07_banner_terci%C3%A1rio_menor_cantao_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425",
   },
   {
     href: "/search?trade-policy=1&marca=lucidez",
-    imgSrc:
+    src:
       "https://images.prismic.io/offpremium-web/66f005e9-b0e3-4112-a9b3-99d49f63a023_07_banner_terci%C3%A1rio_menor_lucidez_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425",
   },
   {
     href: "/search?trade-policy=1&marca=loja-3",
-    imgSrc:
+    src:
       "https://images.prismic.io/offpremium-web/30859267-1b65-4376-884f-4e846c868ad4_07_banner_terci%C3%A1rio_menor_loja_3_mob.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=342&h=425",
   },
 ];
-export default function MarcasConvidadas() {
+
+export interface Banner {
+  href: string;
+  src: LiveImage;
+}
+
+export interface Props {
+  banners: Banner[];
+}
+
+export default function MarcasConvidadas({ banners = defaultBanners }: Props) {
   return (
     <section class="max-w-[1400px] w-full px-4 md:px-0 mx-auto mt-[50px]">
       <div class="py-6 md:py-0 md:pb-[40px] flex items-center">
@@ -38,17 +51,20 @@ export default function MarcasConvidadas() {
               media="(min-width: 768px)"
               srcset="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650"
             />
-            <img
+            <Image
+              preload
+              width={320}
+              height={400}
               class="object-cover w-full"
               src="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg?ixlib=gatsbyFP&auto=compress%2Cformat&fit=max&w=1900&h=650"
               alt="Morena iodice"
             />
           </picture>
         </a>
-        {banners.map(({ href, imgSrc }) => (
+        {banners.map(({ href, src }) => (
           <div>
             <a href={href} key={href}>
-              <img src={imgSrc} alt={href} class="w-full" />
+              <Image width={320} height={400} src={src} alt={href} class="w-full" />
             </a>
           </div>
         ))}
