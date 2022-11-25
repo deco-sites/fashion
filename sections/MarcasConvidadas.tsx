@@ -49,6 +49,7 @@ export default function MarcasConvidadas({ banners = defaultBanners }: Props) {
               width={320}
               height={400}
               media="(max-width: 767px)"
+              sizes="25vw"
               src="https://images.prismic.io/offpremium-web/3b90e599-993a-40bd-861c-7730abef670a_10_banner_terciario_maior_morena_iodice_mob.jpg"
             />
             <Picture.Source
@@ -56,6 +57,7 @@ export default function MarcasConvidadas({ banners = defaultBanners }: Props) {
               width={1280}
               height={437}
               media="(min-width: 768px)"
+              sizes="50vw"
               src="https://images.prismic.io/offpremium-web/6c1b488a-a907-454f-8d3b-934b51623293_10_banner_terciario_maior_morena_iodice_desk.jpg"
             />
             <Image
@@ -71,6 +73,7 @@ export default function MarcasConvidadas({ banners = defaultBanners }: Props) {
           <div>
             <a href={href} key={href}>
               <Image
+                sizes="(max-width: 767px) 25vw, 30vw"
                 width={320}
                 height={400}
                 src={src}
