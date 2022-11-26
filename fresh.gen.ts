@@ -323,6 +323,43 @@ const manifest: DecoManifest = {
       "inputSchema": {
         "type": "object",
         "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "mainBanner": {
+            "title": "Main Banner",
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "title": "Href",
+              },
+              "smallSrc": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Small Src",
+                "description": "Image src for small screen devices (mobile)",
+              },
+              "largeSrc": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Large Src",
+                "description": "Image src for large screen devices (desktop)",
+              },
+              "alt": {
+                "type": "string",
+                "title": "Alt",
+                "description": "Image alt text",
+              },
+            },
+            "required": [
+              "href",
+              "smallSrc",
+              "largeSrc",
+              "alt",
+            ],
+          },
           "banners": {
             "type": "array",
             "items": {
@@ -337,16 +374,24 @@ const manifest: DecoManifest = {
                   "type": "string",
                   "title": "Src",
                 },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image alt text",
+                },
               },
               "required": [
                 "href",
                 "src",
+                "alt",
               ],
             },
             "title": "Banners",
           },
         },
         "required": [
+          "title",
+          "mainBanner",
           "banners",
         ],
       },
