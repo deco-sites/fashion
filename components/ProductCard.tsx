@@ -42,9 +42,9 @@ export default function ProductCard({
             class="w-full max-w-full h-auto"
             src={image.src}
             alt={image.alt}
-            height={492}
-            width={328}
-            sizes="(max-width: 640px) 50vw, 25vw"
+            height={231}
+            width={154}
+            sizes="(max-width: 640px) 25vw, 25vw"
             loading="lazy"
           />
           <div class="mt-3">
