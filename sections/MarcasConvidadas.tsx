@@ -8,7 +8,7 @@ export interface Banner {
   /**
    * @description Image alt text
    */
-   alt: string;
+  alt: string;
 }
 
 export interface BannerArt {
