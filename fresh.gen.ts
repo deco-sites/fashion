@@ -23,7 +23,6 @@ import * as $$6 from "./islands/ProductInformation.tsx";
 import * as $$7 from "./islands/SKUSelector.tsx";
 import * as $$8 from "./islands/SearchBar.tsx";
 import * as $$9 from "./islands/SearchControls.tsx";
-import * as $$10 from "./islands/VideoCarousel.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannerImg.tsx";
 import * as $$$2 from "./sections/BannnerGrid.tsx";
@@ -40,6 +39,7 @@ import * as $$$12 from "./sections/ProductGallery.tsx";
 import * as $$$13 from "./sections/ProductShelf.tsx";
 import * as $$$14 from "./sections/Search.tsx";
 import * as $$$15 from "./sections/StoreFeatures.tsx";
+import * as $$$16 from "./sections/VideoCarousel.tsx";
 import * as $$$$0 from "./functions/vtexIntelligentSearch.ts";
 import * as $$$$1 from "./functions/vtexProductPage.ts";
 import * as $$$$2 from "./functions/vtexSearchPage.ts";
@@ -67,7 +67,6 @@ const manifest: DecoManifest = {
     "./islands/SKUSelector.tsx": $$7,
     "./islands/SearchBar.tsx": $$8,
     "./islands/SearchControls.tsx": $$9,
-    "./islands/VideoCarousel.tsx": $$10,
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
@@ -86,6 +85,7 @@ const manifest: DecoManifest = {
     "./sections/ProductShelf.tsx": $$$13,
     "./sections/Search.tsx": $$$14,
     "./sections/StoreFeatures.tsx": $$$15,
+    "./sections/VideoCarousel.tsx": $$$16,
   },
   functions: {
     "./functions/vtexIntelligentSearch.ts": $$$$0,
@@ -471,6 +471,53 @@ const manifest: DecoManifest = {
     },
     "./sections/StoreFeatures.tsx": {
       "inputSchema": null,
+      "outputSchema": null,
+    },
+    "./sections/VideoCarousel.tsx": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "videos": {
+            "title": "Videos",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "type": "string",
+                  "title": "Mobile",
+                },
+                "desktop": {
+                  "type": "string",
+                  "title": "Desktop",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "mobile",
+                "desktop",
+                "link",
+              ],
+            },
+          },
+          "delay": {
+            "type": "number",
+            "title": "delay",
+            "description": "Time to switch slides in seconds",
+            "default": "3",
+          },
+        },
+        "required": [
+          "videos",
+        ],
+      },
       "outputSchema": null,
     },
     "./functions/vtexIntelligentSearch.ts": {
