@@ -73,6 +73,7 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
       <script
         dangerouslySetInnerHTML={{
           __html: `
+          function init () {
             let size = ${videos.length};
             let selected = 0;
             const root = document.getElementById("${id}");
@@ -89,9 +90,15 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
             }, ${delay * 1000});
 
             controls.forEach((control, index) => {
-              console.log(control, index)
               control.onclick = () => selectVideo(index);
             });
+          };
+
+          if (document.readyState === 'complete') {
+            init();
+          } else {
+            window.addEventListener('load', init);
+          };
           `,
         }}
       />
