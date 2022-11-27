@@ -68,6 +68,7 @@ export default function MarcasConvidadas(
               class="object-cover w-full"
               src={mainBanner.largeSrc}
               alt={mainBanner.alt}
+              loading="lazy"
             />
           </Picture>
         </a>
