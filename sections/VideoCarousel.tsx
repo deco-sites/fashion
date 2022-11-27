@@ -42,9 +42,9 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
                 preload="auto"
                 loading="lazy"
                 decoding="async"
-              >
-                <source src={mobile} type="video/mp4" />
-              </video>
+                src={mobile}
+                type="video/mp4"
+              />
               <video
                 autoPlay
                 loop
@@ -56,9 +56,9 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
                 preload="auto"
                 loading="lazy"
                 decoding="async"
-              >
-                <source src={desktop} type="video/mp4" />
-              </video>
+                src={desktop}
+                type="video/mp4"
+              />
             </div>
           </a>
         ))}
