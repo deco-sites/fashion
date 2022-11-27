@@ -40,6 +40,8 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
                 class="object-cover min-h-[465px] w-full md:hidden"
                 alt={alt}
                 preload="auto"
+                loading="lazy"
+                decoding="async"
               >
                 <source src={mobile} type="video/mp4" />
               </video>
@@ -52,6 +54,8 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
                 class="object-cover min-h-[465px] w-full hidden md:block"
                 alt={alt}
                 preload="auto"
+                loading="lazy"
+                decoding="async"
               >
                 <source src={desktop} type="video/mp4" />
               </video>
