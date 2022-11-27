@@ -69,6 +69,7 @@ export default function MarcasConvidadas(
               src={mainBanner.largeSrc}
               alt={mainBanner.alt}
               loading="lazy"
+              decoding="async"
             />
           </Picture>
         </a>
@@ -82,6 +83,7 @@ export default function MarcasConvidadas(
                 src={src}
                 alt={href}
                 class="w-full"
+                decoding="async"
               />
             </a>
           </div>
