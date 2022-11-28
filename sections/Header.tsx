@@ -23,23 +23,23 @@ function Navbar() {
   return (
     <div>
       <section class="md:hidden flex p-2 justify-between items-center px-12">
-        <button>
+        <button aria-label="open menu">
           <Bars3Icon className="w-8 h-8" />
         </button>
-        <a href="#" class="mr-6">
+        <a href="#" class="mr-6" aria-label="search">
           <MagnifyingGlassIcon className="w-8 h-8" />
         </a>
-        <a href="/">
+        <a href="/" aria-label="home link">
           <DecoFashionLogo classes="w-40" />
         </a>
-        <a href="#">
+        <a href="#" aria-label="my account">
           <UserIcon className="w-6 h-6" />
         </a>
         <Minicart />
       </section>
       <section class="hidden md:flex bg-white flex-row h-[80px] justify-between md:border-b border-[#d3d5db]">
         <div class="flex items-center justify-center flex-1 min-w-[200px]">
-          <a href="/">
+          <a href="/" aria-label="home linkn">
             <DecoFashionLogo classes="w-60" />
           </a>
         </div>

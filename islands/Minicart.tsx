@@ -40,6 +40,7 @@ export default function Cart() {
       <button
         onClick={() => modalRef.current!.showModal()}
         class={tw`h-full flex items-center gap-2 px-5 py-1`}
+        aria-label="open cart"
       >
         <ShoppingCartIcon className="w-8 h-8" />
       </button>
