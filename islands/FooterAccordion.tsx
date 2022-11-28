@@ -188,7 +188,7 @@ export const sections = [
       <div>
         <ul class="flex flex-row flex-wrap pb-6" style="margin-top: 8px;">
           <li class="">
-            <a href="#">
+            <a href="#" aria-label="certificado compromisso">
               <img
                 data-src="https://lojaoffpremium.vtexassets.com/arquivos/compromisso-logo-footer2-mini.png?v=637088123928200000"
                 src="https://lojaoffpremium.vtexassets.com/arquivos/compromisso-logo-footer2-mini.png?v=637088123928200000"
@@ -202,7 +202,7 @@ export const sections = [
             |
           </li>
           <li class="">
-            <a href="#">
+            <a href="#" aria-label="certifiicado logo oficial">
               <img
                 data-src="https://lojaoffpremium.vtexassets.com/arquivos/oficial-logo-footer-mini.png?v=637088123936870000"
                 src="https://lojaoffpremium.vtexassets.com/arquivos/oficial-logo-footer-mini.png?v=637088123936870000"
