@@ -14,15 +14,14 @@ import * as $6 from "./routes/api/similarProducts.ts";
 import * as $7 from "./routes/index.tsx";
 import * as $8 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCart.tsx";
-import * as $$1 from "./islands/Alert.tsx";
-import * as $$2 from "./islands/ColorSelector.tsx";
-import * as $$3 from "./islands/FooterAccordion.tsx";
-import * as $$4 from "./islands/LiveControls.tsx";
-import * as $$5 from "./islands/Minicart.tsx";
-import * as $$6 from "./islands/ProductInformation.tsx";
-import * as $$7 from "./islands/SKUSelector.tsx";
-import * as $$8 from "./islands/SearchBar.tsx";
-import * as $$9 from "./islands/SearchControls.tsx";
+import * as $$1 from "./islands/ColorSelector.tsx";
+import * as $$2 from "./islands/LiveControls.tsx";
+import * as $$3 from "./islands/Minicart.tsx";
+import * as $$4 from "./islands/ProductInformation.tsx";
+import * as $$5 from "./islands/SKUSelector.tsx";
+import * as $$6 from "./islands/SearchBar.tsx";
+import * as $$7 from "./islands/SearchControls.tsx";
+import * as $$8 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannerImg.tsx";
 import * as $$$2 from "./sections/BannnerGrid.tsx";
@@ -58,15 +57,14 @@ const manifest: DecoManifest = {
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
-    "./islands/Alert.tsx": $$1,
-    "./islands/ColorSelector.tsx": $$2,
-    "./islands/FooterAccordion.tsx": $$3,
-    "./islands/LiveControls.tsx": $$4,
-    "./islands/Minicart.tsx": $$5,
-    "./islands/ProductInformation.tsx": $$6,
-    "./islands/SKUSelector.tsx": $$7,
-    "./islands/SearchBar.tsx": $$8,
-    "./islands/SearchControls.tsx": $$9,
+    "./islands/ColorSelector.tsx": $$1,
+    "./islands/LiveControls.tsx": $$2,
+    "./islands/Minicart.tsx": $$3,
+    "./islands/ProductInformation.tsx": $$4,
+    "./islands/SKUSelector.tsx": $$5,
+    "./islands/SearchBar.tsx": $$6,
+    "./islands/SearchControls.tsx": $$7,
+    "./islands/Slider.tsx": $$8,
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
