@@ -1,6 +1,3 @@
-import { Disclosure } from "headlessui";
-import { ChevronUpIcon } from "heroicons";
-
 export const sections = [
   {
     label: "Minha Conta",
@@ -265,26 +262,12 @@ export default function FooterAccordion() {
     <div class="w-full">
       {sections.map(({ label, content }) => (
         <div class="bg-[#353535]" key={label}>
-          <Disclosure>
-            {/* @ts-expect-error */}
-            {({ open }) => (
-              <>
-                {/* @ts-expect-error */}
-                <Disclosure.Button className="w-full p-6 px-3 cursor-pointer flex flex-row justify-between focus:outline-none">
-                  <span class="text-white">{label}</span>
-                  <ChevronUpIcon
-                    className={`${
-                      !open ? "rotate-180 transform" : ""
-                    } h-6 w-6 text-white`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className="p-4 pt-4 pb-2 text-sm text-gray-100 bg-[#222]">
-                  {/* @ts-expect-error */}
-                  {content}
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
+          <details class="w-full cursor-pointer flex flex-row justify-between focus:outline-none">
+            <summary class="text-white p-6">{label}</summary>
+            <p class="p-4 pt-4 pb-2 text-sm text-gray-100 bg-[#222]">
+              {content}
+            </p>
+          </details>
         </div>
       ))}
     </div>
