@@ -1,5 +1,5 @@
 import type { h } from "preact";
-import Alert from "../islands/Alert.tsx";
+import Alert from "$components/Alert.tsx";
 import DecoFashionLogo from "$components/icons/DecoFashionLogo.tsx";
 import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserIcon } from "heroicons";
 import Minicart from "../islands/Minicart.tsx";
@@ -69,11 +69,17 @@ function Navbar() {
   );
 }
 
-export default function Header() {
+export interface Props {
+  alerts: string[];
+}
+
+function Header({ alerts }: Props) {
   return (
     <header>
-      <Alert />
+      <Alert alerts={alerts} />
       <Navbar />
     </header>
   );
 }
+
+export default Header;
