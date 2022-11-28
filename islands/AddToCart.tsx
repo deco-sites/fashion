@@ -1,4 +1,3 @@
-import { tw } from "twind";
 import { useState } from "preact/hooks";
 import { useCart } from "../data/cartHooks.ts";
 import Button from "../components/ui/Button.tsx";

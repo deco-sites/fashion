@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "preact/hooks";
 import { ShoppingCartIcon } from "heroicons";
-import { tw } from "twind";
 import { useCart } from "../data/cartHooks.ts";
 import { OrderForm } from "../clients/vtex/checkout.ts";
 import Modal from "../components/ui/Modal.tsx";
@@ -39,7 +38,7 @@ export default function Cart() {
     <div>
       <button
         onClick={() => modalRef.current!.showModal()}
-        class={tw`h-full flex items-center gap-2 px-5 py-1`}
+        class="h-full flex items-center gap-2 p-2"
         aria-label="open cart"
       >
         <ShoppingCartIcon className="w-8 h-8" />
@@ -67,11 +66,11 @@ function CartInner({
   return (
     <>
       {cart && (
-        <div class={tw`flex-grow-1 my-4`}>
+        <div class="flex-grow-1 my-4">
           {isCartEmpty
-            ? <p class={tw`text-gray-700`}>Não há itens no carrinho</p>
+            ? <p class="text-gray-700">Não há itens no carrinho</p>
             : (
-              <ul role="list" class={tw`-my-6 divide-y divide-gray-200`}>
+              <ul role="list" class="-my-6 divide-y divide-gray-200">
                 {cart?.items?.map((item) => (
                   <CartItem
                     key={item.uniqueId}
@@ -84,8 +83,8 @@ function CartInner({
         </div>
       )}
       {cart && (
-        <div class={tw`border-t border-gray-200 py-6 px-4 sm:px-6`}>
-          <div class={tw`flex justify-between text-lg font-medium`}>
+        <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
+          <div class="flex justify-between text-lg font-medium">
             <p>Subtotal</p>
             <p>
               {formatPrice(
@@ -93,12 +92,12 @@ function CartInner({
               )}
             </p>
           </div>
-          <p class={tw`mt-0.5 text-sm text-gray-500`}>
+          <p class="mt-0.5 text-sm text-gray-500">
             Frete será calculado no Checkout
           </p>
-          <div class={tw`mt-6`}>
+          <div class="mt-6">
             <a
-              class={tw`w-full bg-gray-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700`}
+              class="w-full bg-gray-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700"
               disabled={isCartEmpty}
               target="_blank"
               href={`${CHECKOUT_URL}?orderFormId=${cart.orderFormId}`}
@@ -106,14 +105,12 @@ function CartInner({
               Finalizar Compra
             </a>
           </div>
-          <div
-            class={tw`mt-6 flex justify-center text-center text-sm text-gray-500`}
-          >
+          <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
             <p>
               or&nbsp;
               <button
                 type="button"
-                class={tw`font-medium`}
+                class="font-medium"
                 onClick={(e) => {
                   (e.target as HTMLButtonElement).closest("dialog")!.close();
                 }}
