@@ -46,6 +46,7 @@ export default function ProductCard({
             width={154}
             sizes="(max-width: 640px) 25vw, 25vw"
             loading="lazy"
+            decoding="async"
           />
           <div class="mt-3">
             <div class="flex justify-between text-xs uppercase">

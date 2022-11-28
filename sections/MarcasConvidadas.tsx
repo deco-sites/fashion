@@ -49,7 +49,7 @@ export default function MarcasConvidadas(
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
         <a class="md:col-span-3" href={mainBanner.href}>
-          <Picture preload>
+          <Picture>
             <Source
               width={328}
               height={410}
@@ -68,6 +68,8 @@ export default function MarcasConvidadas(
               class="object-cover w-full"
               src={mainBanner.largeSrc}
               alt={mainBanner.alt}
+              loading="lazy"
+              decoding="async"
             />
           </Picture>
         </a>
@@ -81,6 +83,7 @@ export default function MarcasConvidadas(
                 src={src}
                 alt={href}
                 class="w-full"
+                decoding="async"
               />
             </a>
           </div>
