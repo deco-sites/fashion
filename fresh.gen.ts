@@ -295,7 +295,21 @@ const manifest: DecoManifest = {
       "outputSchema": null,
     },
     "./sections/Header.tsx": {
-      "inputSchema": null,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Alerts",
+          },
+        },
+        "required": [
+          "alerts",
+        ],
+      },
       "outputSchema": null,
     },
     "./sections/HomeFilter.tsx": {
