@@ -484,10 +484,12 @@ const manifest: DecoManifest = {
               "type": "object",
               "properties": {
                 "mobile": {
+                  "format": "video-uri",
                   "type": "string",
                   "title": "Mobile",
                 },
                 "desktop": {
+                  "format": "video-uri",
                   "type": "string",
                   "title": "Desktop",
                 },
