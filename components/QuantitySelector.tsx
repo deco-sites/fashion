@@ -1,5 +1,4 @@
 import { useState } from "preact/hooks";
-import { tw } from "twind";
 import { useDebouncedCallback } from "../utils.ts";
 import { useCart } from "../data/cartHooks.ts";
 
@@ -15,7 +14,7 @@ export default function QuantitySelector({ initialQuantity, itemId }: Props) {
   const { updateItem } = useCart();
 
   const inputClass =
-    tw`text-center p-2 block max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`;
+    "text-center p-2 block max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm";
 
   const onDecrement = () => onChangeQuantity(Math.max(0, quantity - 1));
 

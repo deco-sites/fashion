@@ -1,5 +1,5 @@
 import type { h } from "preact";
-import Alert from "../islands/Alert.tsx";
+import Alert from "$components/Alert.tsx";
 import DecoFashionLogo from "$components/icons/DecoFashionLogo.tsx";
 import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserIcon } from "heroicons";
 import Minicart from "../islands/Minicart.tsx";
@@ -23,23 +23,23 @@ function Navbar() {
   return (
     <div>
       <section class="md:hidden flex p-2 justify-between items-center px-12">
-        <button>
+        <button aria-label="open menu" class="p-2">
           <Bars3Icon className="w-8 h-8" />
         </button>
-        <a href="#" class="mr-6">
+        <a href="#" class="p-2" aria-label="search">
           <MagnifyingGlassIcon className="w-8 h-8" />
         </a>
-        <a href="/">
-          <DecoFashionLogo classes="w-40" />
+        <a href="/" aria-label="home link" class="flex-grow">
+          <DecoFashionLogo />
         </a>
-        <a href="#">
-          <UserIcon className="w-6 h-6" />
+        <a href="#" class="p-2" aria-label="my account">
+          <UserIcon className="w-8 h-8" />
         </a>
         <Minicart />
       </section>
       <section class="hidden md:flex bg-white flex-row h-[80px] justify-between md:border-b border-[#d3d5db]">
         <div class="flex items-center justify-center flex-1 min-w-[200px]">
-          <a href="/">
+          <a href="/" aria-label="home link">
             <DecoFashionLogo classes="w-60" />
           </a>
         </div>
@@ -69,11 +69,17 @@ function Navbar() {
   );
 }
 
-export default function Header() {
+export interface Props {
+  alerts: string[];
+}
+
+function Header({ alerts }: Props) {
   return (
     <header>
-      <Alert />
+      <Alert alerts={alerts} />
       <Navbar />
     </header>
   );
 }
+
+export default Header;

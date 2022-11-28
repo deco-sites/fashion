@@ -1,6 +1,3 @@
-import { Disclosure } from "headlessui";
-import { ChevronUpIcon } from "heroicons";
-
 interface Props {
   // html string
   // detalhes: string;
@@ -47,24 +44,14 @@ export default function ProductInformation({ description }: Props) {
     <div className="w-full border-b border-t border-solid border-black mt-8">
       {sections.map(({ label, content }) => (
         <div class="border-b border-gray-200" key={label}>
-          <Disclosure>
-            {/* @ts-expect-error */}
-            {({ open }) => (
-              <>
-                {/* @ts-expect-error */}
-                <Disclosure.Button className="w-full p-4 px-2 cursor-pointer flex flex-row justify-between">
-                  <span class="font-bold">{label}</span>
-                  <ChevronUpIcon
-                    className={`${!open ? "rotate-180 transform" : ""} h-6 w-6`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className="p-4 pt-4 pb-2 text-sm text-gray-500">
-                  {/* @ts-expect-error */}
-                  {content}
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
+          <details class="w-full p-4 px-2 cursor-pointer flex flex-row justify-between">
+            <summary>
+              <span class="font-bold">{label}</span>
+            </summary>
+            <p class="p-4 pt-4 pb-2 text-sm text-gray-500">
+              {content}
+            </p>
+          </details>
         </div>
       ))}
       {/* <div class="border-b border-gray-200 flex justify-between items-center p-4"> */}
