@@ -1,4 +1,4 @@
-import FooterAccordion, { sections } from "../islands/FooterAccordion.tsx";
+import FooterAccordion, { sections } from "../components/FooterAccordion.tsx";
 
 export default function Footer() {
   return (
