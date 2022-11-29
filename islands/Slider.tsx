@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 interface Props {
   items: number;
@@ -7,7 +7,6 @@ interface Props {
 }
 
 function Slider({ id, items, delay = 2_000 }: Props) {
-  const root = useRef(document.getElementById(id) as HTMLDivElement);
   const [index, setIndex] = useState(0);
 
   // Timer
@@ -21,7 +20,7 @@ function Slider({ id, items, delay = 2_000 }: Props) {
 
   // Focus the right content
   useEffect(() => {
-    const content = root.current?.querySelector(
+    const content = document.getElementById(id)?.querySelector(
       "[data-slider-content]",
     ) as HTMLDivElement;
 
@@ -32,10 +31,10 @@ function Slider({ id, items, delay = 2_000 }: Props) {
 
   // Handles next/prev elements
   useEffect(() => {
-    const prevElement = root.current?.querySelector(
+    const prevElement = document.getElementById(id)?.querySelector(
       "[data-slider-prev]",
     );
-    const nextElement = root.current?.querySelector(
+    const nextElement = document.getElementById(id)?.querySelector(
       "[data-slider-next]",
     );
 
@@ -53,7 +52,7 @@ function Slider({ id, items, delay = 2_000 }: Props) {
 
   // Handles button control elements (dots)
   useEffect(() => {
-    const dots = root.current.querySelectorAll("[data-dots]");
+    const dots = document.getElementById(id)?.querySelectorAll("[data-dots]");
 
     if (!dots) {
       return;
