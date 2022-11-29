@@ -25,7 +25,7 @@ function Alert({ alerts = messages }: Props) {
       >
         <div class="flex-1" />
         <div class="flex gap-2 items-center font-bold text-sm text-[#353535]">
-          <button data-slider-previous>
+          <button data-slider-prev>
             <Icon name="ChevronLeft" className="h-8 w-8" />
           </button>
           <div class="w-[300px] overflow-x-hidden">

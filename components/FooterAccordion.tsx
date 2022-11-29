@@ -135,6 +135,7 @@ export const sections = [
             width="44.39px"
             height="16px"
             loading="lazy"
+            decoding="async"
           />
         </div>
         <span class="text-white my-4 text-xs">Cartão de Crédito:</span>
@@ -146,6 +147,7 @@ export const sections = [
               width="20px"
               height="6.46px"
               loading="lazy"
+              decoding="async"
             />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
@@ -155,6 +157,7 @@ export const sections = [
               width="16px"
               height="13.83px"
               loading="lazy"
+              decoding="async"
             />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
@@ -164,6 +167,7 @@ export const sections = [
               width="20px"
               height="16.09px"
               loading="lazy"
+              decoding="async"
             />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
@@ -173,6 +177,7 @@ export const sections = [
               width="16px"
               height="10.57px"
               loading="lazy"
+              decoding="async"
             />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
@@ -182,6 +187,7 @@ export const sections = [
               width="20px"
               height="7.66px"
               loading="lazy"
+              decoding="async"
             />
           </li>
         </ul>
@@ -202,6 +208,7 @@ export const sections = [
                 width="80"
                 height="80"
                 loading="lazy"
+                decoding="async"
               />
             </a>
           </li>
@@ -217,6 +224,7 @@ export const sections = [
                 width="80"
                 height="80"
                 loading="lazy"
+                decoding="async"
               />
             </a>
           </li>
@@ -242,6 +250,7 @@ export const sections = [
                 width="9"
                 height="16"
                 loading="lazy"
+                decoding="async"
               />
             </a>
           </li>
@@ -258,6 +267,7 @@ export const sections = [
                 width="16"
                 height="16"
                 loading="lazy"
+                decoding="async"
               />
             </a>
           </li>

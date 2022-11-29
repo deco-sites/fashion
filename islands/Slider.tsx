@@ -1,17 +1,17 @@
 /**
  * This island animates and adds interactivity to sliders.
- * It works by adding interactivity to static markup. 
- * 
+ * It works by adding interactivity to static markup.
+ *
  * 1. Render all your content to html
- * 2. Add data attributes to specific parts of your html. These data attributes 
+ * 2. Add data attributes to specific parts of your html. These data attributes
  * wll be used by this component to hydrate and animate the slider on the browser
  * 3. create an id with `useId` hook and place it in a container containing your
  * slider
- * 
+ *
  * For an example, check out how the VideoCarousel and Alert use this component
- * 
+ *
  * Why not just add this logic to both VideoCarousel and Alert and make them an island?
- * When doing this, all code they depend on and their markup (html) will be included in 
+ * When doing this, all code they depend on and their markup (html) will be included in
  * the final JavaScript. This will increase the amount of JS shipped to the browser,
  * increasing TBT metric and making your website slow.
  */
