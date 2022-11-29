@@ -2,7 +2,7 @@ import { Product } from "$live/std/commerce/types/Product.ts";
 import { LoaderReturnType } from "$live/std/types.ts";
 import Image from "$live/std/ui/components/Image.tsx";
 
-import AddToCart from "$components/AddToCart.tsx";
+import AddToCart from "../islands/AddToCart.tsx";
 import Head from "./Head.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";
 import SKUSelector from "../islands/SKUSelector.tsx";

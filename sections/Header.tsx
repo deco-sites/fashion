@@ -1,8 +1,9 @@
 import type { h } from "preact";
 import Alert from "$components/Alert.tsx";
 import DecoFashionLogo from "$components/icons/DecoFashionLogo.tsx";
-import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserIcon } from "heroicons";
-import Minicart from "$components/Minicart.tsx";
+import Icon from "$components/ui/Icon.tsx";
+
+import Minicart from "../islands/Minicart.tsx";
 
 function NavItem({
   href,
@@ -24,16 +25,16 @@ function Navbar() {
     <div>
       <section class="md:hidden flex p-2 justify-between items-center px-12">
         <button aria-label="open menu" class="p-2">
-          <Bars3Icon className="w-8 h-8" />
+          <Icon name="Bars3" className="w-8 h-8" />
         </button>
         <a href="#" class="p-2" aria-label="search">
-          <MagnifyingGlassIcon className="w-8 h-8" />
+          <Icon name="MagnifyingGlass" className="w-8 h-8" />
         </a>
         <a href="/" aria-label="home link" class="flex-grow">
           <DecoFashionLogo />
         </a>
         <a href="#" class="p-2" aria-label="my account">
-          <UserIcon className="w-8 h-8" />
+          <Icon name="User" className="w-8 h-8" />
         </a>
         <Minicart />
       </section>
@@ -57,10 +58,10 @@ function Navbar() {
         </div>
         <div class="flex-1 flex items-center justify-end md:mr-8">
           <a href="#" class="mr-6">
-            <MagnifyingGlassIcon className="w-8 h-8" />
+            <Icon name="MagnifyingGlass" className="w-8 h-8" />
           </a>
           <a href="#">
-            <HeartIcon className="w-8 h-8" />
+            <Icon name="Heart" className="w-8 h-8" />
           </a>
           <Minicart />
         </div>

@@ -1,5 +1,5 @@
 import { Product } from "$live/std/commerce/types/Product.ts";
-import AddToCart from "$components/AddToCart.tsx";
+import AddToCart from "../islands/AddToCart.tsx";
 import Image from "$live/std/ui/components/Image.tsx";
 
 interface Image {

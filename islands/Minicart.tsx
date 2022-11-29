@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "preact/hooks";
-import { ShoppingCartIcon } from "heroicons";
+import Icon from '$components/ui/Icon.tsx'
 import { useCart } from "../data/cartHooks.ts";
 import { OrderForm } from "../clients/vtex/checkout.ts";
 import Modal from "../components/ui/Modal.tsx";
@@ -41,7 +41,7 @@ export default function Cart() {
         class="h-full flex items-center gap-2 p-2"
         aria-label="open cart"
       >
-        <ShoppingCartIcon className="w-8 h-8" />
+        <Icon name="ShoppingCart" className="w-8 h-8" />
       </button>
       <Modal title="Seu Carrinho" ref={modalRef}>
         {cart && <CartInner cart={cart} updateItem={updateItem} />}

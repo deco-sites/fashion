@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 import { useCart } from "../data/cartHooks.ts";
 import Button from "$components/ui/Button.tsx";
-import { OPEN_CART_EVENT_NAME } from "$components/Minicart.tsx";
+import { OPEN_CART_EVENT_NAME } from "./Minicart.tsx";
 
 // TODO: Is this really called skuId?
 interface Props {
