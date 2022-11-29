@@ -201,6 +201,7 @@ export const sections = [
                 alt=""
                 width="80"
                 height="80"
+                loading="lazy"
               />
             </a>
           </li>
@@ -215,6 +216,7 @@ export const sections = [
                 alt=""
                 width="80"
                 height="80"
+                loading="lazy"
               />
             </a>
           </li>
@@ -239,6 +241,7 @@ export const sections = [
                 alt="Ícone de acesso ao facebook"
                 width="9"
                 height="16"
+                loading="lazy"
               />
             </a>
           </li>
@@ -254,6 +257,7 @@ export const sections = [
                 alt="Ícone de acesso ao Instagram"
                 width="16"
                 height="16"
+                loading="lazy"
               />
             </a>
           </li>
