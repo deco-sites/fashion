@@ -267,19 +267,21 @@ export const sections = [
   },
 ];
 
-export default function FooterAccordion() {
+function FooterAccordion() {
   return (
     <div class="w-full">
       {sections.map(({ label, content }) => (
         <div class="bg-[#353535]" key={label}>
           <details class="w-full cursor-pointer flex flex-row justify-between focus:outline-none">
             <summary class="text-white p-6">{label}</summary>
-            <p class="p-4 pt-4 pb-2 text-sm text-gray-100 bg-[#222]">
+            <div class="p-4 pt-4 pb-2 text-sm text-gray-100 bg-[#222]">
               {content}
-            </p>
+            </div>
           </details>
         </div>
       ))}
     </div>
   );
 }
+
+export default FooterAccordion;
