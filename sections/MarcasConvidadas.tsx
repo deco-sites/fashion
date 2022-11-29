@@ -63,14 +63,14 @@ export default function MarcasConvidadas(
               src={mainBanner.largeSrc}
             />
             <img
-              width={220}
-              height={272}
+              width={328}
+              height={406}
               class="object-cover w-full"
               src={mainBanner.largeSrc}
               alt={mainBanner.alt}
               loading="lazy"
               decoding="async"
-              sizes="(max-width: 767px) 25w, 50w"
+              sizes="100vw"
             />
           </Picture>
         </a>
@@ -79,8 +79,8 @@ export default function MarcasConvidadas(
             <a href={href} key={href}>
               <Image
                 sizes="(max-width: 767px) 100vw, 30vw"
-                width={220}
-                height={272}
+                width={328}
+                height={406}
                 src={src}
                 alt={href}
                 class="w-full"

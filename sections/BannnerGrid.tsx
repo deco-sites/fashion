@@ -33,13 +33,13 @@ export default function BannnerGrid({
         {images.map(({ href, src, alt }) => (
           <a href={href}>
             <Image
-              width={160}
-              height={160}
+              width={320}
+              height={320}
               src={src}
               alt={alt}
               decoding="async"
               loading="lazy"
-              sizes="(max-width: 640px) 25vw, 30vw"
+              sizes="(max-width: 640px) 100vw, 30vw"
               class="w-full"
             />
           </a>
