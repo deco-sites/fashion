@@ -1,5 +1,4 @@
-import { ComponentChildren } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 interface Props {
   items: number;
@@ -8,8 +7,10 @@ interface Props {
 }
 
 function Slider({ id, items, delay = 2_000 }: Props) {
+  const root = useRef(document.getElementById(id) as HTMLDivElement);
   const [index, setIndex] = useState(0);
 
+  // Timer
   useEffect(() => {
     const id = setInterval(() => setIndex((index + 1) % items), delay);
 
@@ -18,8 +19,9 @@ function Slider({ id, items, delay = 2_000 }: Props) {
     };
   }, [index, delay, items]);
 
+  // Focus the right content
   useEffect(() => {
-    const content = document.getElementById(id)?.querySelector(
+    const content = root.current?.querySelector(
       "[data-slider-content]",
     ) as HTMLDivElement;
 
@@ -28,11 +30,12 @@ function Slider({ id, items, delay = 2_000 }: Props) {
     }
   }, [index]);
 
+  // Handles next/prev elements
   useEffect(() => {
-    const prevElement = document.getElementById(id)?.querySelector(
+    const prevElement = root.current?.querySelector(
       "[data-slider-prev]",
     );
-    const nextElement = document.getElementById(id)?.querySelector(
+    const nextElement = root.current?.querySelector(
       "[data-slider-next]",
     );
 
@@ -47,6 +50,30 @@ function Slider({ id, items, delay = 2_000 }: Props) {
       prevElement?.removeEventListener("click", prev);
     };
   }, [items]);
+
+  // Handles button control elements (dots)
+  useEffect(() => {
+    const dots = root.current.querySelectorAll("[data-dots]");
+
+    if (!dots) {
+      return;
+    }
+
+    const listeners: Array<() => void> = [];
+
+    dots.forEach((dot, index) => {
+      const set = () => setIndex(index);
+
+      listeners.push(set);
+      dot.addEventListener("click", set);
+    });
+
+    return () => {
+      dots.forEach((dot, index) =>
+        dot.removeEventListener("click", listeners[index])
+      );
+    };
+  }, []);
 
   return <div />;
 }
