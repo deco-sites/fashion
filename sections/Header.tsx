@@ -2,7 +2,7 @@ import type { h } from "preact";
 import Alert from "$components/Alert.tsx";
 import DecoFashionLogo from "$components/icons/DecoFashionLogo.tsx";
 import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserIcon } from "heroicons";
-import Minicart from "../islands/Minicart.tsx";
+import Minicart from "$components/Minicart.tsx";
 
 function NavItem({
   href,
