@@ -42,9 +42,9 @@ export default function ProductCard({
             class="w-full max-w-full h-auto"
             src={image.src}
             alt={image.alt}
-            height={231}
-            width={154}
-            sizes="(max-width: 640px) 25vw, 25vw"
+            width={326}
+            height={489}
+            sizes="(max-width: 640px) 40vw, 20vw"
             loading="lazy"
             decoding="async"
           />
