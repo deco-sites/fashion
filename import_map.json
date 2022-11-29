@@ -2,11 +2,11 @@
   "imports": {
     "$components/": "./components/",
     "$sections/": "./sections/",
-    "$live/": "https://deno.land/x/live@0.3.7/",
+    "$live/": "https://deno.land/x/live@0.3.10/",
     "partytown/": "https://deno.land/x/partytown@0.1.3/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
     "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
-    "heroicons": "https://esm.sh/@heroicons/react/24/outline?alias=react:preact/compat&external=preact/compat",
+    "heroicons": "https://esm.sh/@heroicons/react@2.0.12/24/outline?alias=react:preact/compat&external=preact/compat",
     "json-schema": "https://esm.sh/v92/@types/json-schema@7.0.11/X-YS9yZWFjdDpwcmVhY3QvY29tcGF0CmQvcHJlYWN0QDEwLjEwLjY/index.d.ts",
     "$fresh/": "https://deno.land/x/fresh@1.1.2/",
     "preact": "https://esm.sh/preact@10.11.0",
@@ -18,7 +18,6 @@
     "@preact/signals": "https://esm.sh/*@preact/signals@1.0.3",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
     "swr": "https://esm.sh/swr@2.0.0-beta.6?alias=react:preact/compat&external=preact/compat",
-    "prefetch": "https://deno.land/x/prefetch@0.0.6/mod.ts",
-    "headlessui": "https://esm.sh/@headlessui/react?alias=react:preact/compat&external=preact/compat"
+    "prefetch": "https://deno.land/x/prefetch@0.0.6/mod.ts"
   }
 }

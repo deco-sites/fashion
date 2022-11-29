@@ -14,16 +14,14 @@ import * as $6 from "./routes/api/similarProducts.ts";
 import * as $7 from "./routes/index.tsx";
 import * as $8 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCart.tsx";
-import * as $$1 from "./islands/Alert.tsx";
-import * as $$2 from "./islands/ColorSelector.tsx";
-import * as $$3 from "./islands/FooterAccordion.tsx";
-import * as $$4 from "./islands/LiveControls.tsx";
-import * as $$5 from "./islands/Minicart.tsx";
-import * as $$6 from "./islands/ProductInformation.tsx";
-import * as $$7 from "./islands/SKUSelector.tsx";
-import * as $$8 from "./islands/SearchBar.tsx";
-import * as $$9 from "./islands/SearchControls.tsx";
-import * as $$10 from "./islands/VideoCarousel.tsx";
+import * as $$1 from "./islands/ColorSelector.tsx";
+import * as $$2 from "./islands/LiveControls.tsx";
+import * as $$3 from "./islands/Minicart.tsx";
+import * as $$4 from "./islands/ProductInformation.tsx";
+import * as $$5 from "./islands/SKUSelector.tsx";
+import * as $$6 from "./islands/SearchBar.tsx";
+import * as $$7 from "./islands/SearchControls.tsx";
+import * as $$8 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannerImg.tsx";
 import * as $$$2 from "./sections/BannnerGrid.tsx";
@@ -40,6 +38,7 @@ import * as $$$12 from "./sections/ProductGallery.tsx";
 import * as $$$13 from "./sections/ProductShelf.tsx";
 import * as $$$14 from "./sections/Search.tsx";
 import * as $$$15 from "./sections/StoreFeatures.tsx";
+import * as $$$16 from "./sections/VideoCarousel.tsx";
 import * as $$$$0 from "./functions/vtexIntelligentSearch.ts";
 import * as $$$$1 from "./functions/vtexProductPage.ts";
 import * as $$$$2 from "./functions/vtexSearchPage.ts";
@@ -58,16 +57,14 @@ const manifest: DecoManifest = {
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
-    "./islands/Alert.tsx": $$1,
-    "./islands/ColorSelector.tsx": $$2,
-    "./islands/FooterAccordion.tsx": $$3,
-    "./islands/LiveControls.tsx": $$4,
-    "./islands/Minicart.tsx": $$5,
-    "./islands/ProductInformation.tsx": $$6,
-    "./islands/SKUSelector.tsx": $$7,
-    "./islands/SearchBar.tsx": $$8,
-    "./islands/SearchControls.tsx": $$9,
-    "./islands/VideoCarousel.tsx": $$10,
+    "./islands/ColorSelector.tsx": $$1,
+    "./islands/LiveControls.tsx": $$2,
+    "./islands/Minicart.tsx": $$3,
+    "./islands/ProductInformation.tsx": $$4,
+    "./islands/SKUSelector.tsx": $$5,
+    "./islands/SearchBar.tsx": $$6,
+    "./islands/SearchControls.tsx": $$7,
+    "./islands/Slider.tsx": $$8,
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
@@ -86,6 +83,7 @@ const manifest: DecoManifest = {
     "./sections/ProductShelf.tsx": $$$13,
     "./sections/Search.tsx": $$$14,
     "./sections/StoreFeatures.tsx": $$$15,
+    "./sections/VideoCarousel.tsx": $$$16,
   },
   functions: {
     "./functions/vtexIntelligentSearch.ts": $$$$0,
@@ -295,7 +293,21 @@ const manifest: DecoManifest = {
       "outputSchema": null,
     },
     "./sections/Header.tsx": {
-      "inputSchema": null,
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Alerts",
+          },
+        },
+        "required": [
+          "alerts",
+        ],
+      },
       "outputSchema": null,
     },
     "./sections/HomeFilter.tsx": {
@@ -471,6 +483,55 @@ const manifest: DecoManifest = {
     },
     "./sections/StoreFeatures.tsx": {
       "inputSchema": null,
+      "outputSchema": null,
+    },
+    "./sections/VideoCarousel.tsx": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "videos": {
+            "title": "Videos",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "format": "video-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                },
+                "desktop": {
+                  "format": "video-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "mobile",
+                "desktop",
+                "link",
+              ],
+            },
+          },
+          "delay": {
+            "type": "number",
+            "title": "delay",
+            "description": "Time to switch slides in seconds",
+            "default": "3",
+          },
+        },
+        "required": [
+          "videos",
+        ],
+      },
       "outputSchema": null,
     },
     "./functions/vtexIntelligentSearch.ts": {
