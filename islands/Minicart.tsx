@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "preact/hooks";
-import Icon from '$components/ui/Icon.tsx'
+import Icon from "$components/ui/Icon.tsx";
 import { useCart } from "../data/cartHooks.ts";
 import { OrderForm } from "../clients/vtex/checkout.ts";
 import Modal from "../components/ui/Modal.tsx";
