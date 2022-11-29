@@ -52,7 +52,7 @@ function Slider({ id, items, delay = 2_000 }: Props) {
 
   // Handles button control elements (dots)
   useEffect(() => {
-    const dots = document.getElementById(id)?.querySelectorAll("[data-dots]");
+    const dots = document.getElementById(id)?.querySelectorAll("[data-dot]");
 
     if (!dots) {
       return;

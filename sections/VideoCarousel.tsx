@@ -29,7 +29,7 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
     <>
       <div id={id} class="relative w-full overflow-hidden">
         <div
-          data-container
+          data-slider-content
           class={`flex transition w-[${videos.length * 100}%]`}
         >
           {videos.map(({ link, mobile, desktop, alt }, index) => (
@@ -73,17 +73,19 @@ function VideoCarousel({ videos = [], delay = 3 }: Props) {
           ))}
         </div>
 
-        <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2">
           {videos.map((_, index) => (
             <button
+              data-dot
               aria-label={`Focus slide carousel ${index}`}
-              class="w-3 h-3 rounded-full bg-white dark:bg-gray-800"
-              data-dot={index}
-            />
+              class="p-4"
+            >
+              <div class="w-4 h-4 rounded-full bg-white dark:bg-gray-800" />
+            </button>
           ))}
         </div>
       </div>
-      <Slider id={id} items={videos.length} delay={delay} />
+      <Slider id={id} items={videos.length} delay={delay * 1000} />
     </>
   );
 }
