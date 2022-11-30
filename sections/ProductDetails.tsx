@@ -30,21 +30,21 @@ export default function ProductDetails({ product }: Props) {
       <section class="w-full bg-gray-100 flex flex-col lg:flex-row">
         <div class="w-full lg:w-3/5 bg-gray-100 flex justify-center items-center">
           <Image
-            class="object-cover col-span-4 lg:w-[600px] pb-5 w-full"
-            sizes="(max-width: 640px) 75vw, 50vw"
+            class="object-contain col-span-4 lg:w-[600px] w-full h-full"
+            sizes="(max-width: 640px) 100vw, 25vw"
             src={product.image.src}
             alt={product.image.alt}
-            width={300}
-            height={300}
+            width={360}
+            height={540}
           />
           {product.imageHover && (
             <Image
-              class="object-cover col-span-4 lg:w-[600px] pb-5 w-full hidden md:block"
-              sizes="(max-width: 640px) 75vw, 50vw"
+              class="object-contain col-span-4 lg:w-[600px] w-full h-full hidden md:block"
+              sizes="(max-width: 640px) 100vw, 25vw"
               src={product.imageHover.src}
               alt={product.imageHover.alt}
-              width={300}
-              height={300}
+              width={360}
+              height={540}
             />
           )}
         </div>
