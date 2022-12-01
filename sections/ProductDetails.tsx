@@ -22,9 +22,9 @@ export default function ProductDetails({ product }: Props) {
   return (
     <>
       <Head
-        title={`${product.name} — ${brand} — OFF Premium`}
-        faviconUrl="https://www.offpremium.com.br/favicon-32x32.png"
-        description={product.description + `— OFF Premium`}
+        title={`${product.name} — ${brand} — Fashion`}
+        faviconUrl="https://deco.cx/favicon-32x32.png"
+        description={product.description + `— Fashion`}
         url={`https://fashion.deco.page/${product.slug}/p`}
       />
       <section class="w-full bg-gray-100 flex flex-col lg:flex-row">

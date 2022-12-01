@@ -31,7 +31,6 @@ function Navbar() {
           <Icon name="MagnifyingGlass" className="w-8 h-8" />
         </a>
         <a href="/" aria-label="home link" class="flex-grow">
-          <DecoFashionLogo />
         </a>
         <a href="#" class="p-2" aria-label="my account">
           <Icon name="User" className="w-8 h-8" />
@@ -41,7 +40,6 @@ function Navbar() {
       <section class="hidden md:flex bg-white flex-row h-[80px] justify-between md:border-b border-[#d3d5db]">
         <div class="flex items-center justify-center flex-1 min-w-[200px]">
           <a href="/" aria-label="home link">
-            <DecoFashionLogo classes="w-60" />
           </a>
         </div>
         <div class="flex justify-center md:justify-between pl-12">
