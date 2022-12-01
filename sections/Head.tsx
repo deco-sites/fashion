@@ -11,8 +11,8 @@ export interface Props {
 }
 
 export const initialProps: Props = {
-  title: "OFF Premium | Outlet Farm, Animale, e mais, até 70% off",
-  description: "Outlet Farm, Animale, e mais, até 70% off",
+  title: "Fashion | 70% Off",
+  description: "70% Off",
   url: "https://fashion.deco.page",
   imageUrl: "https://fashion.deco.page/android-chrome-384x384.png?v=1",
   faviconUrl: "https://fashion.deco.page/favicon-32x32.png?v=1",

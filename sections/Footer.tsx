@@ -8,8 +8,7 @@ export default function Footer() {
           <div class="flex flex-col w-3/5 md:w-full md:items-center">
             <span class="font-bold uppercase text-white">Baixe Nosso App</span>
             <p class="text-white text-xs mt-4 md:mb-6">
-              Conteúdo exclusivo, novidades e promoções da OFF PREMIUM para IOS
-              e Android
+              Conteúdo exclusivo, novidades e promoções da para IOS e Android
             </p>
           </div>
           <div class="flex flex-col justify-center items-end">
@@ -18,7 +17,7 @@ export default function Footer() {
                 loading="lazy"
                 decoding="async"
                 class="lg:w-[115px] lg:h-[39px]"
-                src="https://www.offpremium.com.br/static/app-store-badge-c0e6141e91f12abcd49c320c13ac60c5.svg"
+                src=""
                 alt="Badge de download na App Store"
                 width="109px"
                 height="36px"
@@ -26,7 +25,7 @@ export default function Footer() {
             </a>
             <a
               class="mt-2"
-              href="https://play.google.com/store/apps/details?id=com.mobfiq.offpremium&amp;hl=pt_BR&amp;gl=US"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -34,7 +33,7 @@ export default function Footer() {
                 loading="lazy"
                 decoding="async"
                 class="lg:w-[115px] lg:h-[37px]"
-                src="https://www.offpremium.com.br/static/play-store-badge-7fb07ab1eba76b4600644e424589e7ad.svg"
+                src=""
                 alt="Badge de download na Play Store"
                 width="109px"
                 height="33px"
@@ -48,7 +47,7 @@ export default function Footer() {
             <ul class="flex items-center justify-center mt-3">
               <li class="mr-[8px] last:m-0">
                 <a
-                  href="https://www.facebook.com/offpremium/"
+                  href="#"
                   class="flex items-center justify-center w-8 h-8"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -64,7 +63,7 @@ export default function Footer() {
               </li>
               <li class="mr-[8px] last:m-0">
                 <a
-                  href="https://www.instagram.com/offpremium/"
+                  href="https://www.instagram.com/deco.cx"
                   class="flex items-center justify-center w-8 h-8"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -96,7 +95,7 @@ export default function Footer() {
               </li>
               <li class="mr-[8px] last:m-0">
                 <a
-                  href="https://www.tiktok.com/@offpremium_?_t=8W5XEC4GW5G&amp;_r=1"
+                  href="#"
                   class="flex items-center justify-center w-8 h-8"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -137,10 +136,7 @@ export default function Footer() {
         <FooterAccordion />
         <div class="bg-[#222] flex justify-center px-3 py-6">
           <p class="text-xs text-center text-white">
-            OFF PREMIUM - GRUPO DE MODA SOMA S.A. Est Tenente Marques, 1818,
-            Sala 3-B - Parque Panorama II (Fazendinha), CEP: 06534-030 - Santana
-            de Parnaíba / SP - CNPJ: 10.285.590/0133-40 - E-MAIL:
-            atendimento@offpremium.com.br
+            Fashion - deco.cx
           </p>
         </div>
       </div>

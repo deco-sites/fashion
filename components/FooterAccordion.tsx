@@ -4,13 +4,13 @@ export const sections = [
     content: (
       <div class="flex flex-col">
         <a
-          href="https://secure.offpremium.com.br/api/io/login?returnUrl=https://fashion.deco.site"
+          href="#"
           class="mb-4 text-white text-xs"
         >
           Login/Cadastro
         </a>
         <a
-          href="https://secure.offpremium.com.br/login?returnUrl=%2Fapi%2Fio%2Faccount%23%2Forders"
+          href="#"
           class="mb-4 text-white text-xs"
         >
           Meus pedidos
@@ -26,7 +26,7 @@ export const sections = [
           target="_blank"
           rel="noopener noreferrer"
           class="mb-4 text-white text-xs"
-          href="https://www.offpremium.com.br/atendimento"
+          href="#"
         >
           Central de Atendimento
         </a>
@@ -34,7 +34,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://api.whatsapp.com/send?phone=552125036888"
+          href="#"
         >
           Fale conosco pelo WhatsApp
         </a>
@@ -42,7 +42,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.offpremium.com.br/politica/troca-e-devolucao"
+          href="#"
         >
           Troca e Devolução
         </a>
@@ -57,7 +57,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.offpremium.com.br/institucional/quem-somos"
+          href="#"
         >
           Quem somos
         </a>
@@ -66,7 +66,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.offpremium.com.br/institucional/lojas"
+          href="#"
         >
           Lojas
         </a>
@@ -74,7 +74,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://gruposoma.gupy.io/"
+          href="#"
         >
           Trabalhe Conosco
         </a>
@@ -82,7 +82,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.somagrupo.com.br/"
+          href="#"
         >
           Grupo Soma
         </a>
@@ -90,7 +90,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.offpremium.com.br/politica/privacidade-e-seguran%C3%A7a/"
+          href="#"
         >
           Privacidade e segurança
         </a>
@@ -98,7 +98,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.offpremium.com.br/aviso-de-privacidade"
+          href="#"
         >
           Aviso de privacidade
         </a>
@@ -106,7 +106,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.offpremium.com.br/politica/termos-de-uso"
+          href="#"
         >
           Termos de uso
         </a>
@@ -114,7 +114,7 @@ export const sections = [
           target="_blank"
           class="mb-4 text-white text-xs"
           rel="noopener noreferrer"
-          href="https://www.offpremium.com.br/mapa-do-site"
+          href="#"
         >
           Mapa do Site
         </a>
@@ -202,8 +202,8 @@ export const sections = [
           <li class="">
             <a href="#" aria-label="certificado compromisso">
               <img
-                data-src="https://lojaoffpremium.vtexassets.com/arquivos/compromisso-logo-footer2-mini.png?v=637088123928200000"
-                src="https://lojaoffpremium.vtexassets.com/arquivos/compromisso-logo-footer2-mini.png?v=637088123928200000"
+                data-src=""
+                src=""
                 alt=""
                 width="80"
                 height="80"
@@ -218,8 +218,8 @@ export const sections = [
           <li class="">
             <a href="#" aria-label="certifiicado logo oficial">
               <img
-                data-src="https://lojaoffpremium.vtexassets.com/arquivos/oficial-logo-footer-mini.png?v=637088123936870000"
-                src="https://lojaoffpremium.vtexassets.com/arquivos/oficial-logo-footer-mini.png?v=637088123936870000"
+                data-src=""
+                src=""
                 alt=""
                 width="80"
                 height="80"
@@ -240,7 +240,7 @@ export const sections = [
           <li class="mr-[8px] last:m-0">
             <a
               class="flex items-center justify-center w-8 h-8"
-              href="https://www.facebook.com/offpremium/"
+              href="#"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -257,7 +257,7 @@ export const sections = [
           <li class="mr-[8px] last:m-0">
             <a
               class="flex items-center justify-center w-8 h-8"
-              href="https://www.instagram.com/offpremium/"
+              href="#"
               rel="noopener noreferrer"
               target="_blank"
             >
