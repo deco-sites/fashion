@@ -25,20 +25,21 @@ import * as $$8 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannerImg.tsx";
 import * as $$$2 from "./sections/BannnerGrid.tsx";
-import * as $$$3 from "./sections/Footer.tsx";
-import * as $$$4 from "./sections/Head.tsx";
-import * as $$$5 from "./sections/Header.tsx";
-import * as $$$6 from "./sections/HomeFilter.tsx";
-import * as $$$7 from "./sections/IconCart.tsx";
-import * as $$$8 from "./sections/ListLinks.tsx";
-import * as $$$9 from "./sections/MarcasConvidadas.tsx";
-import * as $$$10 from "./sections/Newsletter.tsx";
-import * as $$$11 from "./sections/ProductDetails.tsx";
-import * as $$$12 from "./sections/ProductGallery.tsx";
-import * as $$$13 from "./sections/ProductShelf.tsx";
-import * as $$$14 from "./sections/Search.tsx";
-import * as $$$15 from "./sections/StoreFeatures.tsx";
-import * as $$$16 from "./sections/VideoCarousel.tsx";
+import * as $$$3 from "./sections/Button.story.tsx";
+import * as $$$4 from "./sections/Footer.tsx";
+import * as $$$5 from "./sections/Head.tsx";
+import * as $$$6 from "./sections/Header.tsx";
+import * as $$$7 from "./sections/HomeFilter.tsx";
+import * as $$$8 from "./sections/IconCart.tsx";
+import * as $$$9 from "./sections/ListLinks.tsx";
+import * as $$$10 from "./sections/MarcasConvidadas.tsx";
+import * as $$$11 from "./sections/Newsletter.tsx";
+import * as $$$12 from "./sections/ProductDetails.tsx";
+import * as $$$13 from "./sections/ProductGallery.tsx";
+import * as $$$14 from "./sections/ProductShelf.tsx";
+import * as $$$15 from "./sections/Search.tsx";
+import * as $$$16 from "./sections/StoreFeatures.tsx";
+import * as $$$17 from "./sections/VideoCarousel.tsx";
 import * as $$$$0 from "./functions/vtexIntelligentSearch.ts";
 import * as $$$$1 from "./functions/vtexProductPage.ts";
 import * as $$$$2 from "./functions/vtexSearchPage.ts";
@@ -70,20 +71,21 @@ const manifest: DecoManifest = {
     "./sections/Banner.tsx": $$$0,
     "./sections/BannerImg.tsx": $$$1,
     "./sections/BannnerGrid.tsx": $$$2,
-    "./sections/Footer.tsx": $$$3,
-    "./sections/Head.tsx": $$$4,
-    "./sections/Header.tsx": $$$5,
-    "./sections/HomeFilter.tsx": $$$6,
-    "./sections/IconCart.tsx": $$$7,
-    "./sections/ListLinks.tsx": $$$8,
-    "./sections/MarcasConvidadas.tsx": $$$9,
-    "./sections/Newsletter.tsx": $$$10,
-    "./sections/ProductDetails.tsx": $$$11,
-    "./sections/ProductGallery.tsx": $$$12,
-    "./sections/ProductShelf.tsx": $$$13,
-    "./sections/Search.tsx": $$$14,
-    "./sections/StoreFeatures.tsx": $$$15,
-    "./sections/VideoCarousel.tsx": $$$16,
+    "./sections/Button.story.tsx": $$$3,
+    "./sections/Footer.tsx": $$$4,
+    "./sections/Head.tsx": $$$5,
+    "./sections/Header.tsx": $$$6,
+    "./sections/HomeFilter.tsx": $$$7,
+    "./sections/IconCart.tsx": $$$8,
+    "./sections/ListLinks.tsx": $$$9,
+    "./sections/MarcasConvidadas.tsx": $$$10,
+    "./sections/Newsletter.tsx": $$$11,
+    "./sections/ProductDetails.tsx": $$$12,
+    "./sections/ProductGallery.tsx": $$$13,
+    "./sections/ProductShelf.tsx": $$$14,
+    "./sections/Search.tsx": $$$15,
+    "./sections/StoreFeatures.tsx": $$$16,
+    "./sections/VideoCarousel.tsx": $$$17,
   },
   functions: {
     "./functions/vtexIntelligentSearch.ts": $$$$0,
@@ -243,6 +245,31 @@ const manifest: DecoManifest = {
           "images",
           "title",
         ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Button.story.tsx": {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "variant": {
+            "type": "string",
+            "title": "Variant",
+          },
+          "size": {
+            "type": "string",
+            "title": "Size",
+          },
+          "stretch": {
+            "type": "string",
+            "title": "Stretch",
+          },
+          "loading": {
+            "type": "boolean",
+            "title": "Loading",
+          },
+        },
+        "required": [],
       },
       "outputSchema": null,
     },
