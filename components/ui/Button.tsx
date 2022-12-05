@@ -1,51 +1,61 @@
-import type { h } from "preact";
-import { PropsWithChildren } from "preact/compat";
+import { forwardRef } from "preact/compat";
 
-interface Props extends h.JSX.HTMLAttributes<HTMLButtonElement> {
-  isLoading?: boolean;
-}
+import type { ComponentType, JSX } from "preact";
 
-export default function Button({
-  isLoading,
-  class: classes,
+import Spinner from "./Spinner.tsx";
+
+type Props =
+  & Omit<JSX.IntrinsicElements["button"], "as" | "size" | "loading">
+  & {
+    as?: keyof JSX.IntrinsicElements | ComponentType;
+    size?: keyof typeof sizes;
+    variant?: keyof typeof variants;
+    fit?: keyof typeof fits;
+    loading?: boolean;
+  };
+
+const variants = {
+  primary: "text-white bg-primary-red",
+  secondary: "text-deco-black bg-custom-gray",
+  tertiary: "text-deco-black bg-transparent",
+  danger: "text-white bg-primary-red-dark",
+};
+
+const sizes = {
+  small: "font-medium text-sm px-3 py-2 h-9",
+  large: "font-medium text-lg px-4 py-3 h-12",
+};
+
+const fits = {
+  container: "w-full",
+  content: "",
+};
+
+const Button = forwardRef<HTMLButtonElement, Props>(({
+  variant = "primary",
+  size = "small",
+  fit = "content",
+  as = "button",
+  class: _class,
+  children,
+  loading,
   ...props
-}: PropsWithChildren<Props>) {
+}, ref) => {
+  const Component = as as ComponentType;
+
   return (
-    <button
-      class={`${
-        isLoading ? " bg-gray-500! cursor-not-allowed " : "cursor-pointer"
-      } inline-flex justify-center items-center text-sm font-light leading-6 text-white transition duration-150 ease-in-out rounded-md shadow 
-       ${classes}`}
+    <Component
+      className={`inline-flex items-center justify-center rounded cursor-pointer ${
+        sizes[size]
+      } ${variants[variant]} ${
+        fits[fit]
+      } flex items-center justify-center cursor-pointer rounded transition-colors duration-150 ease-in hover:bg-opacity-80 disabled:bg-gray-400 disabled:text-gray-800 disabled:cursor-not-allowed focus:outline-none`}
       {...props}
+      ref={ref}
     >
-      {isLoading
-        ? (
-          <svg
-            class="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              class="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              stroke-width="4"
-            >
-            </circle>
-            <path
-              class="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            >
-            </path>
-          </svg>
-        )
-        : (
-          props.children
-        )}
-    </button>
+      {loading === true ? <Spinner /> : children}
+    </Component>
   );
-}
+});
+
+export default Button;
