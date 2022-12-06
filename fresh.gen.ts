@@ -446,6 +446,8 @@ const manifest: DecoManifest = {
         "properties": {
           "product": {
             "$id": "2a47c1b926cc578f97d2e1a1271f0e918689c483",
+            "format": "live-function",
+            "type": "string",
             "title": "Product",
           },
         },
@@ -465,6 +467,8 @@ const manifest: DecoManifest = {
           },
           "productList": {
             "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
+            "format": "live-function",
+            "type": "string",
             "title": "Product List",
           },
         },
@@ -485,6 +489,8 @@ const manifest: DecoManifest = {
           },
           "productList": {
             "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
+            "format": "live-function",
+            "type": "string",
             "title": "Product List",
           },
         },
