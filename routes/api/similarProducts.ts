@@ -1,6 +1,6 @@
 import { Handlers } from "$fresh/server.ts";
 import { VTEXCatalogClient } from "../../clients/vtex/catalog.ts";
-import { isSellerAvailable } from "$live/std/commerce/clients/vtex.ts";
+// import { isSellerAvailable } from "$live/std/commerce/clients/vtex.ts";
 import { Product } from "../../vtexTypes.d.ts";
 
 export interface RelatedProductsAsVariations {

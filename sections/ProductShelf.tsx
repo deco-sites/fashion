@@ -1,7 +1,7 @@
-import { ProductList } from "$live/std/commerce/types/ProductList.ts";
 import { LoaderReturnType } from "$live/std/types.ts";
 
 import ProductCard from "../components/ProductCard.tsx";
+import { ProductList } from "../functions/vtexSearch.ts";
 
 export interface Props {
   title: string;

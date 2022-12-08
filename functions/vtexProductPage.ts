@@ -1,33 +1,41 @@
-import VTEXIntelligentSearch, {
-  mapVTEXIntelligentSearchProduct,
-} from "$live/std/commerce/clients/vtex.ts";
-import { Product } from "$live/std/commerce/types/Product.ts";
-import { LoaderFunction } from "$live/std/types.ts";
-import { VTEX_ACCOUNT } from "../routes/api/searchFacets.ts";
+import { toProductPage } from "$live/std/commerce/vtex/transform.ts";
+import { getClientPlatform } from "$live/std/commerce/live.ts";
+import type { LoaderFunction } from "$live/std/types.ts";
+import type { ProductPage } from "$live/std/commerce/types.ts";
+
+const DEFAULT_SKU = 1023372;
 
 /**
- * @label VTEX - Página de Produto
- * @description Para rotas /:slug/p
+ * @title VTEX Product Page Loader
+ * @description Works on routes of type /:slug/p
  */
-const VTEXProductPageLoader: LoaderFunction<null, Product> = async (
+const productPageLoaderVTEX: LoaderFunction<null, ProductPage | null> = async (
   _req,
   ctx,
 ) => {
-  const skuId = ctx.params.slug.split("-").pop();
+  // Use the VTEX client available on ctx.state instantiated at `_middleware.ts`
+  const vtex = getClientPlatform(ctx.state.clients, "vtex");
+
+  const skuId = Number(ctx.params.slug?.split("-").pop()) || DEFAULT_SKU;
   const query = `sku:${skuId}`;
 
-  const vtexIs = new VTEXIntelligentSearch(VTEX_ACCOUNT);
-  const { products: vtexProducts } = await vtexIs.search({
+  // search prodcuts on VTEX. Feel free to change any of these parameters
+  const { products: [product] } = await vtex.search.products({
     query,
     page: 0,
     count: 1,
-    hideUnavailableItems: true,
   });
 
-  const products = vtexProducts.map(mapVTEXIntelligentSearchProduct());
+  // Product not found, return the 404 status code
+  if (!product) {
+    return {
+      data: null,
+      status: 404,
+    };
+  }
 
-  const matchProduct = products[0];
-  return { data: matchProduct };
+  // Convert the VTEX product to schema.org format and return it
+  return { data: toProductPage(product, skuId.toString()) };
 };
 
-export default VTEXProductPageLoader;
+export default productPageLoaderVTEX;

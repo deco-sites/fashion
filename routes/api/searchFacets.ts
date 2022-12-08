@@ -1,5 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
-import VTEXIntelligentSearch from "$live/std/commerce/clients/vtex.ts";
+// import VTEXIntelligentSearch from "$live/std/commerce/clients/vtex.ts";
 
 export const VTEX_ACCOUNT = "lojaoffpremium";
 /**

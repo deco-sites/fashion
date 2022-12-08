@@ -26,7 +26,6 @@ export default function Cart() {
   useEffect(() => {
     if (!eventListenerAdded) {
       addEventListener(OPEN_CART_EVENT_NAME, (e) => {
-        console.log("showing modal");
         modalRef?.current?.showModal();
         e.stopPropagation();
       });

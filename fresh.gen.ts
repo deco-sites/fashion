@@ -14,14 +14,12 @@ import * as $6 from "./routes/api/similarProducts.ts";
 import * as $7 from "./routes/index.tsx";
 import * as $8 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCart.tsx";
-import * as $$1 from "./islands/ColorSelector.tsx";
-import * as $$2 from "./islands/LiveControls.tsx";
-import * as $$3 from "./islands/Minicart.tsx";
-import * as $$4 from "./islands/ProductInformation.tsx";
-import * as $$5 from "./islands/SKUSelector.tsx";
-import * as $$6 from "./islands/SearchBar.tsx";
-import * as $$7 from "./islands/SearchControls.tsx";
-import * as $$8 from "./islands/Slider.tsx";
+import * as $$1 from "./islands/LiveControls.tsx";
+import * as $$2 from "./islands/Minicart.tsx";
+import * as $$3 from "./islands/ProductInformation.tsx";
+import * as $$4 from "./islands/SearchBar.tsx";
+import * as $$5 from "./islands/SearchControls.tsx";
+import * as $$6 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannerImg.tsx";
 import * as $$$2 from "./sections/BannnerGrid.tsx";
@@ -43,7 +41,8 @@ import * as $$$17 from "./sections/StoreFeatures.tsx";
 import * as $$$18 from "./sections/VideoCarousel.tsx";
 import * as $$$$0 from "./functions/vtexIntelligentSearch.ts";
 import * as $$$$1 from "./functions/vtexProductPage.ts";
-import * as $$$$2 from "./functions/vtexSearchPage.ts";
+import * as $$$$2 from "./functions/vtexSearch.ts";
+import * as $$$$3 from "./functions/vtexSearchPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -59,14 +58,12 @@ const manifest: DecoManifest = {
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
-    "./islands/ColorSelector.tsx": $$1,
-    "./islands/LiveControls.tsx": $$2,
-    "./islands/Minicart.tsx": $$3,
-    "./islands/ProductInformation.tsx": $$4,
-    "./islands/SKUSelector.tsx": $$5,
-    "./islands/SearchBar.tsx": $$6,
-    "./islands/SearchControls.tsx": $$7,
-    "./islands/Slider.tsx": $$8,
+    "./islands/LiveControls.tsx": $$1,
+    "./islands/Minicart.tsx": $$2,
+    "./islands/ProductInformation.tsx": $$3,
+    "./islands/SearchBar.tsx": $$4,
+    "./islands/SearchControls.tsx": $$5,
+    "./islands/Slider.tsx": $$6,
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
@@ -90,9 +87,10 @@ const manifest: DecoManifest = {
     "./sections/VideoCarousel.tsx": $$$18,
   },
   functions: {
-    "./functions/vtexIntelligentSearch.ts": $$$$0,
+    "./functions/shopifyProductPage.ts": $$$$0,
     "./functions/vtexProductPage.ts": $$$$1,
-    "./functions/vtexSearchPage.ts": $$$$2,
+    "./functions/vtexSearch.ts": $$$$2,
+    "./functions/vtexSearchPage.ts": $$$$3,
   },
   schemas: {
     "./sections/Banner.tsx": {
@@ -446,15 +444,15 @@ const manifest: DecoManifest = {
       "inputSchema": {
         "type": "object",
         "properties": {
-          "product": {
-            "$id": "2a47c1b926cc578f97d2e1a1271f0e918689c483",
+          "page": {
+            "$id": "c7d2ba5aaadd1571df1f805bc2e39d9df774588f",
             "format": "live-function",
             "type": "string",
-            "title": "Product",
+            "title": "Page",
           },
         },
         "required": [
-          "product",
+          "page",
         ],
       },
       "outputSchema": null,
@@ -463,19 +461,14 @@ const manifest: DecoManifest = {
       "inputSchema": {
         "type": "object",
         "properties": {
-          "collection": {
-            "type": "string",
-            "title": "Collection",
-          },
           "productList": {
-            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
+            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
             "format": "live-function",
             "type": "string",
             "title": "Product List",
           },
         },
         "required": [
-          "collection",
           "productList",
         ],
       },
@@ -490,7 +483,7 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "productList": {
-            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
+            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
             "format": "live-function",
             "type": "string",
             "title": "Product List",
@@ -573,7 +566,35 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./functions/vtexIntelligentSearch.ts": {
+    "./functions/shopifyProductPage.ts": {
+      "inputSchema": {
+        "type": "null",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "c7d2ba5aaadd1571df1f805bc2e39d9df774588f",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexProductPage.ts": {
+      "inputSchema": {
+        "type": "null",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "c7d2ba5aaadd1571df1f805bc2e39d9df774588f",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexSearch.ts": {
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -595,21 +616,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexProductPage.ts": {
-      "inputSchema": {
-        "type": "null",
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "2a47c1b926cc578f97d2e1a1271f0e918689c483",
+            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
           },
         },
         "additionalProperties": true,
@@ -617,13 +624,20 @@ const manifest: DecoManifest = {
     },
     "./functions/vtexSearchPage.ts": {
       "inputSchema": {
-        "type": "null",
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number",
+            "title": "items per page",
+          },
+        },
+        "required": [],
       },
       "outputSchema": {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "5e904c2468468f304266ef1fdc40a6812825a83e",
+            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
           },
         },
         "additionalProperties": true,
