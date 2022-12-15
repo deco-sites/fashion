@@ -1,20 +1,16 @@
 import ProductCard from "$components/ProductCard.tsx";
-
-import { LoaderReturnType } from "$live/std/types.ts";
-import { ProductList } from "../functions/vtexSearch.ts";
+import type { LoaderReturnType } from "$live/std/types.ts";
+import type { ProductListingPage } from "$live/std/commerce/types.ts";
 
 export interface Props {
-  productList: LoaderReturnType<ProductList>;
+  page: LoaderReturnType<ProductListingPage>;
 }
 
-export default function ProductGallery({
-  productList,
-}: Props) {
-  const products = productList?.products;
+export default function ProductGallery({ page }: Props) {
   return (
     <section class="md:mx-auto px-2 md:px-4 py-8 md:py-20">
       <div class="relative grid grid-cols-2 md:grid-cols-4 gap-2 items-center">
-        {products?.map((product) => (
+        {page?.products?.map((product) => (
           <div class="w-full md:px-2 list-none">
             <ProductCard {...product} />
           </div>

@@ -1,18 +1,17 @@
-import { LoaderReturnType } from "$live/std/types.ts";
+import type { LoaderReturnType } from "$live/std/types.ts";
+import type { Product } from "$live/std/commerce/types.ts";
 
 import ProductCard from "../components/ProductCard.tsx";
-import { ProductList } from "../functions/vtexSearch.ts";
 
 export interface Props {
   title: string;
-  productList: LoaderReturnType<ProductList>;
+  products: LoaderReturnType<Product[]>;
 }
 
 export default function ProductShelf({
   title,
-  productList,
+  products,
 }: Props) {
-  const products = productList?.products;
   return (
     <section class="max-w-[1400px] w-full p-2 md:p-0 mx-auto">
       {title && <h2 class="text-center mb-8 text-sm md:text-2xl">{title}</h2>}

@@ -9,10 +9,8 @@ import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/api/cart/index.ts";
 import * as $4 from "./routes/api/cart/items.ts";
-import * as $5 from "./routes/api/searchFacets.ts";
-import * as $6 from "./routes/api/similarProducts.ts";
-import * as $7 from "./routes/index.tsx";
-import * as $8 from "./routes/inspect-vscode.ts";
+import * as $5 from "./routes/index.tsx";
+import * as $6 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/LiveControls.tsx";
 import * as $$2 from "./islands/Minicart.tsx";
@@ -51,10 +49,8 @@ const manifest: DecoManifest = {
     "./routes/_middleware.ts": $2,
     "./routes/api/cart/index.ts": $3,
     "./routes/api/cart/items.ts": $4,
-    "./routes/api/searchFacets.ts": $5,
-    "./routes/api/similarProducts.ts": $6,
-    "./routes/index.tsx": $7,
-    "./routes/inspect-vscode.ts": $8,
+    "./routes/index.tsx": $5,
+    "./routes/inspect-vscode.ts": $6,
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
@@ -87,14 +83,17 @@ const manifest: DecoManifest = {
     "./sections/VideoCarousel.tsx": $$$18,
   },
   functions: {
-    "./functions/shopifyProductPage.ts": $$$$0,
-    "./functions/vtexProductPage.ts": $$$$1,
-    "./functions/vtexSearch.ts": $$$$2,
-    "./functions/vtexSearchPage.ts": $$$$3,
+    "./functions/shopifyProductDetailsPage.ts": $$$$0,
+    "./functions/shopifyProductList.ts": $$$$1,
+    "./functions/shopifyProductListingPage.ts": $$$$2,
+    "./functions/vtexProductDetailsPage.ts": $$$$3,
+    "./functions/vtexProductList.ts": $$$$4,
+    "./functions/vtexProductListingPage.ts": $$$$5,
   },
   schemas: {
     "./sections/Banner.tsx": {
       "inputSchema": {
+        "title": " Banner",
         "type": "object",
         "properties": {
           "imgSrc": {
@@ -148,6 +147,7 @@ const manifest: DecoManifest = {
     },
     "./sections/BannerImg.tsx": {
       "inputSchema": {
+        "title": " Banner Img",
         "type": "object",
         "properties": {
           "imgSrc": {
@@ -205,11 +205,13 @@ const manifest: DecoManifest = {
     },
     "./sections/BannnerGrid.tsx": {
       "inputSchema": {
+        "title": " Bannner Grid",
         "type": "object",
         "properties": {
           "images": {
             "type": "array",
             "items": {
+              "title": "Banner",
               "type": "object",
               "properties": {
                 "src": {
@@ -250,6 +252,7 @@ const manifest: DecoManifest = {
     },
     "./sections/Button.story.tsx": {
       "inputSchema": {
+        "title": " Button.story",
         "type": "object",
         "properties": {
           "variant": {
@@ -279,6 +282,7 @@ const manifest: DecoManifest = {
     },
     "./sections/Head.tsx": {
       "inputSchema": {
+        "title": " Head",
         "type": "object",
         "properties": {
           "title": {
@@ -321,6 +325,7 @@ const manifest: DecoManifest = {
     },
     "./sections/Header.tsx": {
       "inputSchema": {
+        "title": " Header",
         "type": "object",
         "properties": {
           "alerts": {
@@ -343,6 +348,7 @@ const manifest: DecoManifest = {
     },
     "./sections/IconCart.tsx": {
       "inputSchema": {
+        "title": " Icon Cart",
         "type": "object",
         "properties": {
           "size": {
@@ -360,6 +366,7 @@ const manifest: DecoManifest = {
     },
     "./sections/MarcasConvidadas.tsx": {
       "inputSchema": {
+        "title": " Marcas Convidadas",
         "type": "object",
         "properties": {
           "title": {
@@ -402,6 +409,7 @@ const manifest: DecoManifest = {
           "banners": {
             "type": "array",
             "items": {
+              "title": "Banner",
               "type": "object",
               "properties": {
                 "href": {
@@ -442,10 +450,11 @@ const manifest: DecoManifest = {
     },
     "./sections/ProductDetails.tsx": {
       "inputSchema": {
+        "title": " Product Details",
         "type": "object",
         "properties": {
           "page": {
-            "$id": "c7d2ba5aaadd1571df1f805bc2e39d9df774588f",
+            "$id": "cbcb3fa04ede8a51d20e74d49ed372ff7b56fc33",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -459,45 +468,48 @@ const manifest: DecoManifest = {
     },
     "./sections/ProductGallery.tsx": {
       "inputSchema": {
+        "title": " Product Gallery",
         "type": "object",
         "properties": {
-          "productList": {
-            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
+          "page": {
+            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
             "format": "live-function",
             "type": "string",
-            "title": "Product List",
+            "title": "Page",
           },
         },
         "required": [
-          "productList",
+          "page",
         ],
       },
       "outputSchema": null,
     },
     "./sections/ProductShelf.tsx": {
       "inputSchema": {
+        "title": " Product Shelf",
         "type": "object",
         "properties": {
           "title": {
             "type": "string",
             "title": "Title",
           },
-          "productList": {
-            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
+          "products": {
+            "$id": "974a84d7f51f85a637e6a01e0813804cbcdfd7ac",
             "format": "live-function",
             "type": "string",
-            "title": "Product List",
+            "title": "Products",
           },
         },
         "required": [
           "title",
-          "productList",
+          "products",
         ],
       },
       "outputSchema": null,
     },
     "./sections/Search.tsx": {
       "inputSchema": {
+        "title": " Search",
         "type": "object",
         "properties": {
           "query": {
@@ -519,6 +531,7 @@ const manifest: DecoManifest = {
     },
     "./sections/VideoCarousel.tsx": {
       "inputSchema": {
+        "title": " Video Carousel",
         "type": "object",
         "properties": {
           "videos": {
@@ -566,49 +579,39 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./functions/shopifyProductPage.ts": {
+    "./functions/shopifyProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
+        "title": "Shopify Product Details Page",
       },
       "outputSchema": {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "c7d2ba5aaadd1571df1f805bc2e39d9df774588f",
+            "$id": "cbcb3fa04ede8a51d20e74d49ed372ff7b56fc33",
           },
         },
         "additionalProperties": true,
       },
     },
-    "./functions/vtexProductPage.ts": {
+    "./functions/shopifyProductList.ts": {
       "inputSchema": {
-        "type": "null",
-      },
-      "outputSchema": {
+        "title": "Shopify Product List",
         "type": "object",
         "properties": {
-          "data": {
-            "$id": "c7d2ba5aaadd1571df1f805bc2e39d9df774588f",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexSearch.ts": {
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "searchQuery": {
+          "query": {
             "type": "string",
-            "title": "Search Query",
+            "title": "Query",
+            "description": "search term to use on search",
           },
           "count": {
             "type": "number",
             "title": "Count",
+            "description": "total number of items to display",
           },
         },
         "required": [
-          "searchQuery",
+          "query",
           "count",
         ],
       },
@@ -616,28 +619,113 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
+            "$id": "974a84d7f51f85a637e6a01e0813804cbcdfd7ac",
           },
         },
         "additionalProperties": true,
       },
     },
-    "./functions/vtexSearchPage.ts": {
+    "./functions/shopifyProductListingPage.ts": {
       "inputSchema": {
+        "title": "Shopify Product Listing Page",
         "type": "object",
         "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "overides the query term",
+          },
           "count": {
             "type": "number",
-            "title": "items per page",
+            "title": "Items per page",
+            "description": "number of products per page to display",
           },
         },
-        "required": [],
+        "required": [
+          "count",
+        ],
       },
       "outputSchema": {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "ef9c483c89ac2a2812709847ca72de9ebf5a0cc8",
+            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vtex Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "cbcb3fa04ede8a51d20e74d49ed372ff7b56fc33",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexProductList.ts": {
+      "inputSchema": {
+        "title": "Vtex Product List",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "query to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "974a84d7f51f85a637e6a01e0813804cbcdfd7ac",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Vtex Product Listing Page",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "overides the query term",
+          },
+          "count": {
+            "type": "number",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+        },
+        "required": [
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
           },
         },
         "additionalProperties": true,

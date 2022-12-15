@@ -1,5 +1,5 @@
 import {
-  ProductPage,
+  ProductDetailsPage,
   UnitPriceSpecification,
 } from "$live/std/commerce/types.ts";
 import { LoaderReturnType } from "$live/std/types.ts";
@@ -12,7 +12,7 @@ import AddToCart from "../islands/AddToCart.tsx";
 import ProductInformation from "../islands/ProductInformation.tsx";
 
 export interface Props {
-  page: LoaderReturnType<ProductPage | null>;
+  page: LoaderReturnType<ProductDetailsPage | null>;
 }
 
 function ScriptLDJson<T extends Record<string, unknown>>(props: T) {
