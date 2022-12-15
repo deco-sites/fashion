@@ -4,7 +4,7 @@ import type { ComponentType, JSX } from "preact";
 
 import Spinner from "./Spinner.tsx";
 
-type Props =
+export type Props =
   & Omit<JSX.IntrinsicElements["button"], "as" | "size" | "loading">
   & {
     as?: keyof JSX.IntrinsicElements | ComponentType;

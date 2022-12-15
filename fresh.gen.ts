@@ -257,15 +257,53 @@ const manifest: DecoManifest = {
         "properties": {
           "variant": {
             "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "primary",
+              },
+              {
+                "type": "string",
+                "const": "secondary",
+              },
+              {
+                "type": "string",
+                "const": "tertiary",
+              },
+              {
+                "type": "string",
+                "const": "danger",
+              },
+            ],
             "title": "Variant",
           },
           "size": {
             "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "small",
+              },
+              {
+                "type": "string",
+                "const": "large",
+              },
+            ],
             "title": "Size",
           },
-          "stretch": {
+          "fit": {
             "type": "string",
-            "title": "Stretch",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "container",
+              },
+              {
+                "type": "string",
+                "const": "content",
+              },
+            ],
+            "title": "Fit",
           },
           "loading": {
             "type": "boolean",
