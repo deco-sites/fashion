@@ -21,6 +21,16 @@ const VALID_FACETS_KEYS = [
   "brand",
 ];
 
+// The actual query strings VTEX IS use are localized
+const ALLOW_LIST_QUERIES = [
+  "trade-policy",
+  "departamento",
+  "categoria",
+  "colecao",
+  "cores-filtraveis",
+  "genero",
+  "marca",
+];
 // TODO: Move this to search utils
 export const getFacetsFromUrl = (
   url: URL,
@@ -28,7 +38,7 @@ export const getFacetsFromUrl = (
   const facets: Array<{ key: string; value: string }> = [];
 
   url.searchParams.forEach((value, key) => {
-    if (key === "sort") {
+    if (!ALLOW_LIST_QUERIES.includes(key)) {
       return;
     }
 

@@ -38,8 +38,9 @@ import * as $$$12 from "./sections/ProductDetails.tsx";
 import * as $$$13 from "./sections/ProductGallery.tsx";
 import * as $$$14 from "./sections/ProductShelf.tsx";
 import * as $$$15 from "./sections/Search.tsx";
-import * as $$$16 from "./sections/StoreFeatures.tsx";
-import * as $$$17 from "./sections/VideoCarousel.tsx";
+import * as $$$16 from "./sections/SearchControls.tsx";
+import * as $$$17 from "./sections/StoreFeatures.tsx";
+import * as $$$18 from "./sections/VideoCarousel.tsx";
 import * as $$$$0 from "./functions/vtexIntelligentSearch.ts";
 import * as $$$$1 from "./functions/vtexProductPage.ts";
 import * as $$$$2 from "./functions/vtexSearchPage.ts";
@@ -84,8 +85,9 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$13,
     "./sections/ProductShelf.tsx": $$$14,
     "./sections/Search.tsx": $$$15,
-    "./sections/StoreFeatures.tsx": $$$16,
-    "./sections/VideoCarousel.tsx": $$$17,
+    "./sections/SearchControls.tsx": $$$16,
+    "./sections/StoreFeatures.tsx": $$$17,
+    "./sections/VideoCarousel.tsx": $$$18,
   },
   functions: {
     "./functions/vtexIntelligentSearch.ts": $$$$0,
@@ -512,6 +514,10 @@ const manifest: DecoManifest = {
         },
         "required": [],
       },
+      "outputSchema": null,
+    },
+    "./sections/SearchControls.tsx": {
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/StoreFeatures.tsx": {
