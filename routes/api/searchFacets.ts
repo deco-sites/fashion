@@ -31,7 +31,9 @@ const ALLOW_LIST_QUERIES = [
   "genero",
   "marca",
 ];
+
 // TODO: Move this to search utils
+// TODO: Keep pageId query param after navigation
 export const getFacetsFromUrl = (
   url: URL,
 ): Array<{ key: string; value: string }> => {
