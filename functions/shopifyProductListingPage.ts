@@ -1,7 +1,9 @@
 import { toProduct } from "$live/std/commerce/shopify/transform.ts";
-import { getClientPlatform } from "$live/std/commerce/live.ts";
+
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { ProductListingPage } from "$live/std/commerce/types.ts";
+
+import { shopify } from "./../clients/instances.ts";
 
 export interface Props {
   /**
@@ -21,19 +23,16 @@ export interface Props {
  */
 const searchLoader: LoaderFunction<Props, ProductListingPage> = async (
   req,
-  ctx,
+  _ctx,
   props,
 ) => {
-  // Use the VTEX client available on ctx.state instantiated at `_middleware.ts`
-  const client = getClientPlatform(ctx.state.clients, "shopify");
-
   const url = new URL(req.url);
 
   const count = props.count ?? 12;
   const query = props.query || url.searchParams.get("q") || "";
 
-  // search prodcuts on VTEX. Feel free to change any of these parameters
-  const data = await client.products({
+  // search prodcuts on Shopify. Feel free to change any of these parameters
+  const data = await shopify.products({
     first: count,
     query: query,
   });

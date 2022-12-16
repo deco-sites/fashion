@@ -1,7 +1,9 @@
 import { toProduct } from "$live/std/commerce/vtex/transform.ts";
-import { getClientPlatform } from "$live/std/commerce/live.ts";
+
 import type { Product } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
+
+import { vtex } from "../clients/instances.ts";
 
 export interface Props {
   /** @description query to use on search */
@@ -16,12 +18,9 @@ export interface Props {
  */
 const productListLoader: LoaderFunction<Props, Product[]> = async (
   _req,
-  ctx,
+  _ctx,
   props,
 ) => {
-  // Use the VTEX client available on ctx.state instantiated at `_middleware.ts`
-  const vtex = getClientPlatform(ctx.state.clients, "vtex");
-
   const count = props.count ?? 12;
   const query = props.query || "";
 

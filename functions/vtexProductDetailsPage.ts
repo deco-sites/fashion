@@ -1,7 +1,8 @@
 import { toProductPage } from "$live/std/commerce/vtex/transform.ts";
-import { getClientPlatform } from "$live/std/commerce/live.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
+
+import { vtex } from "../clients/instances.ts";
 
 const DEFAULT_SKU = 1023372;
 
@@ -14,9 +15,6 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
     _req,
     ctx,
   ) => {
-    // Use the VTEX client available on ctx.state instantiated at `_middleware.ts`
-    const vtex = getClientPlatform(ctx.state.clients, "vtex");
-
     const skuId = Number(ctx.params.slug?.split("-").pop()) || DEFAULT_SKU;
     const query = `sku:${skuId}`;
 

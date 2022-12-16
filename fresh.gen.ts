@@ -37,10 +37,12 @@ import * as $$$15 from "./sections/Search.tsx";
 import * as $$$16 from "./sections/SearchControls.tsx";
 import * as $$$17 from "./sections/StoreFeatures.tsx";
 import * as $$$18 from "./sections/VideoCarousel.tsx";
-import * as $$$$0 from "./functions/vtexIntelligentSearch.ts";
-import * as $$$$1 from "./functions/vtexProductPage.ts";
-import * as $$$$2 from "./functions/vtexSearch.ts";
-import * as $$$$3 from "./functions/vtexSearchPage.ts";
+import * as $$$$0 from "./functions/shopifyProductDetailsPage.ts";
+import * as $$$$1 from "./functions/shopifyProductList.ts";
+import * as $$$$2 from "./functions/shopifyProductListingPage.ts";
+import * as $$$$3 from "./functions/vtexProductDetailsPage.ts";
+import * as $$$$4 from "./functions/vtexProductList.ts";
+import * as $$$$5 from "./functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -560,7 +562,21 @@ const manifest: DecoManifest = {
       "outputSchema": null,
     },
     "./sections/SearchControls.tsx": {
-      "inputSchema": null,
+      "inputSchema": {
+        "title": " Search Controls",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+        },
+        "required": [
+          "page",
+        ],
+      },
       "outputSchema": null,
     },
     "./sections/StoreFeatures.tsx": {

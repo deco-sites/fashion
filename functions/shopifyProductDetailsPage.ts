@@ -1,7 +1,8 @@
-import { getClientPlatform } from "$live/std/commerce/live.ts";
 import { toProductPage } from "$live/std/commerce/shopify/transform.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
+
+import { shopify } from "./../clients/instances.ts";
 
 const SKU_FALLBACK = "aerodynamic-aluminum-clock-40306064097457";
 
@@ -14,15 +15,14 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
     _req,
     ctx,
   ) => {
-    const client = getClientPlatform(ctx.state.clients, "shopify");
-
     const slug = ctx.params.slug ?? SKU_FALLBACK;
     const splitted = slug.split("-");
     const maybeSkuId = Number(splitted[splitted.length - 1]);
 
     const handle = splitted.slice(0, maybeSkuId ? -1 : undefined).join("-");
 
-    const data = await client.product(handle);
+    // search prodcuts on Shopify. Feel free to change any of these parameters
+    const data = await shopify.product(handle);
 
     if (!data?.product) {
       return {

@@ -1,9 +1,10 @@
 import { toFilter, toProduct } from "$live/std/commerce/vtex/transform.ts";
-import { getClientPlatform } from "$live/std/commerce/live.ts";
 import type { Filter, ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 
 import { filtersFromSearchParams } from "../sdk/searchFilters.ts";
+
+import { vtex } from "../clients/instances.ts";
 
 export interface Props {
   /**
@@ -23,12 +24,9 @@ export interface Props {
  */
 const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
   req,
-  ctx,
+  _ctx,
   props,
 ) => {
-  // Use the VTEX client available on ctx.state instantiated at `_middleware.ts`
-  const vtex = getClientPlatform(ctx.state.clients, "vtex");
-
   const url = new URL(req.url);
 
   const count = props.count ?? 12;
