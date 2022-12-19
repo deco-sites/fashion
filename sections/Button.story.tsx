@@ -1,10 +1,9 @@
-// deno-lint-ignore-file no-explicit-any
 import UIButton from "$components/ui/Button.tsx";
 
 export interface Props {
-  variant?: string;
-  size?: string;
-  stretch?: string;
+  variant?: "primary" | "secondary" | "tertiary" | "danger";
+  size?: "small" | "large";
+  fit?: "container" | "content";
   loading?: boolean;
 }
 
@@ -16,7 +15,7 @@ function Buttons(props: Props) {
           Playground: Change the editor to play with the button props
         </h1>
         <div>
-          <UIButton {...props as any}>Playground</UIButton>
+          <UIButton {...props}>Playground</UIButton>
         </div>
       </div>
       <div>

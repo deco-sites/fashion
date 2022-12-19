@@ -1,34 +1,15 @@
 import { useRef } from "preact/hooks";
-import useSWR from "swr";
-import { JSONSchema7 } from "json-schema";
-import { FacetsResponse } from "$live/std/commerce/clients/vtex.ts";
-import FacetsTree from "../components/search/FacetsTree.tsx";
+import Filters from "../components/search/Filters.tsx";
 import SortSelector from "../components/search/SortSelector.tsx";
 import Modal from "../components/ui/Modal.tsx";
+import { ProductListingPage } from "$live/std/commerce/types.ts";
 
-export const schema: JSONSchema7 = {
-  title: "SearchControls",
-  type: "object",
-  properties: {},
-};
+export interface Props {
+  filters: ProductListingPage["filters"];
+}
 
-export default function SearchControls() {
+export default function SearchControls({ filters }: Props) {
   const modalRef = useRef<HTMLDialogElement | null>(null);
-
-  // Fetching facets
-  const facetsFetcher = () => {
-    const urlSearchParams = new URLSearchParams(window.location?.search);
-
-    return fetch(`/api/searchFacets?${urlSearchParams.toString()}`).then((r) =>
-      r.json()
-    );
-  };
-
-  const { data } = useSWR<FacetsResponse, Error>(
-    `facets-TODO`,
-    facetsFetcher,
-    {},
-  );
 
   // TODO: Standardize max-width (1400px)
   return (
@@ -53,7 +34,7 @@ export default function SearchControls() {
         </div>
       </div>
       <Modal title="Selecione os filtros" mode="sidebar-left" ref={modalRef}>
-        {data ? <FacetsTree facetsResponse={data} /> : "loading..."}
+        <Filters filters={filters} />
       </Modal>
     </div>
   );

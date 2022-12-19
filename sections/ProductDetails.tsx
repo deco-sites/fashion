@@ -1,48 +1,131 @@
-import { Product } from "$live/std/commerce/types/Product.ts";
+import {
+  ProductDetailsPage,
+  UnitPriceSpecification,
+} from "$live/std/commerce/types.ts";
 import { LoaderReturnType } from "$live/std/types.ts";
+import { Head } from "$fresh/runtime.ts";
 import Image from "$live/std/ui/components/Image.tsx";
+import SKUSelector from "$components/SKUSelector.tsx";
 
 import AddToCart from "../islands/AddToCart.tsx";
-import Head from "./Head.tsx";
+
 import ProductInformation from "../islands/ProductInformation.tsx";
-import SKUSelector from "../islands/SKUSelector.tsx";
-import ColorSelector from "../islands/ColorSelector.tsx";
 
 export interface Props {
-  product: LoaderReturnType<Product>;
+  page: LoaderReturnType<ProductDetailsPage | null>;
 }
 
-export default function ProductDetails({ product }: Props) {
-  if (!product) {
+function ScriptLDJson<T extends Record<string, unknown>>(props: T) {
+  const innerHtml = JSON.stringify({
+    "@context": "https://schema.org",
+    ...props,
+  });
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: innerHtml,
+      }}
+    />
+  );
+}
+
+export const bestInstallment = (
+  acc: UnitPriceSpecification | null,
+  curr: UnitPriceSpecification,
+) => {
+  if (curr.priceComponentType !== "https://schema.org/Installment") {
+    return acc;
+  }
+
+  if (!acc) {
+    return curr;
+  }
+
+  if (acc.price > curr.price) {
+    return curr;
+  }
+
+  if (acc.price < curr.price) {
+    return acc;
+  }
+
+  if (
+    acc.billingDuration && curr.billingDuration &&
+    acc.billingDuration < curr.billingDuration
+  ) {
+    return curr;
+  }
+
+  return acc;
+};
+
+export const installmentToString = (
+  installment: UnitPriceSpecification,
+  sellingPrice: number,
+) => {
+  const { billingDuration, billingIncrement, price } = installment;
+
+  if (!billingDuration || !billingIncrement) {
+    return "";
+  }
+
+  const withTaxes = sellingPrice < price;
+
+  return `${billingDuration} de R$ ${billingIncrement} ${
+    withTaxes ? "com juros" : "s/ juros"
+  }`;
+};
+
+export default function ProductDetails({ page }: Props) {
+  if (!page) {
     return null;
   }
 
-  const brand = product?.brand;
+  const {
+    product: {
+      image,
+      name,
+      productID,
+      offers: aggregateOffer,
+      description,
+      isVariantOf,
+    },
+    breadcrumbList: { numberOfItems, itemListElement },
+  } = page;
+  const offer = aggregateOffer?.offers[0];
+  const listPrice = offer?.priceSpecification.find((spec) =>
+    spec.priceType === "https://schema.org/ListPrice"
+  );
+  const installment = offer?.priceSpecification.reduce(bestInstallment, null);
+  const seller = offer?.seller;
+  const price = offer?.price;
 
   return (
     <>
-      <Head
-        title={`${product.name} — ${brand} — Fashion`}
-        faviconUrl="https://deco.cx/favicon-32x32.png"
-        description={product.description + `— Fashion`}
-        url={`https://fashion.deco.page/${product.slug}/p`}
-      />
+      <Head>
+        <ScriptLDJson {...page.product} />
+        <ScriptLDJson {...page.breadcrumbList} />
+      </Head>
       <section class="w-full bg-gray-100 flex flex-col lg:flex-row">
         <div class="w-full lg:w-3/5 bg-gray-100 flex justify-center items-center">
-          <Image
-            class="object-contain col-span-4 lg:w-[600px] w-full h-full"
-            sizes="(max-width: 640px) 100vw, 25vw"
-            src={product.image.src}
-            alt={product.image.alt}
-            width={360}
-            height={540}
-          />
-          {product.imageHover && (
+          {image && (
+            <Image
+              class="object-contain col-span-4 lg:w-[600px] w-full h-full"
+              sizes="(max-width: 640px) 100vw, 25vw"
+              src={image[0].url!}
+              alt={image[0].alternateName!}
+              width={360}
+              height={540}
+            />
+          )}
+          {image && image.length > 1 && (
             <Image
               class="object-contain col-span-4 lg:w-[600px] w-full h-full hidden md:block"
               sizes="(max-width: 640px) 100vw, 25vw"
-              src={product.imageHover.src}
-              alt={product.imageHover.alt}
+              src={image[1].url!}
+              alt={image[1].alternateName!}
               width={360}
               height={540}
             />
@@ -52,57 +135,62 @@ export default function ProductDetails({ product }: Props) {
           <div class="flex flex-col px-10 mt-10">
             <div class="pb-2 flex justify-between">
               <div>
-                {product.breadcrumb
-                  .map((_, i) => ({
-                    ..._,
-                    isLast: i === product.breadcrumb.length - 1,
-                  }))
-                  .map(({ label, url, isLast }) => (
-                    <>
-                      <a
-                        href={url}
-                        class={`${
-                          isLast ? "font-bold" : "text-gray-400"
-                        } hover:underline`}
-                      >
-                        {label}
-                      </a>
-                      {!isLast && <span class="px-2 text-gray-400">|</span>}
-                    </>
-                  ))}
+                {itemListElement.map(({ item, position, name }) => (
+                  <>
+                    <a
+                      href={item}
+                      class={`${
+                        position === numberOfItems
+                          ? "font-bold"
+                          : "text-gray-400"
+                      } hover:underline`}
+                    >
+                      {name}
+                    </a>
+                    {position !== numberOfItems && (
+                      <span class="px-2 text-gray-400">|</span>
+                    )}
+                  </>
+                ))}
               </div>
-              {/* <div>{"<3"}</div> */}
             </div>
             <h1 class="lg:text-2xl text-xl  uppercase text-gray-800">
-              {product.name}
+              {name?.includes(isVariantOf?.name ?? "")
+                ? name
+                : `${isVariantOf?.name ?? ""} - ${name}`}
             </h1>
           </div>
           <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
             <div class="flex flex-col w-full">
-              <div>
-                <span class="line-through">
-                  De:
-                  {new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(product.listPrice)}
+              {listPrice && (
+                <div>
+                  <span class="line-through">
+                    De:
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(listPrice.price)}
+                  </span>
+                </div>
+              )}
+              {price && (
+                <div>
+                  <span class="">Por:</span>
+                  <span class="text-primary-red">
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(price)}
+                  </span>
+                </div>
+              )}
+              {installment && price && (
+                <span className="text-gray-600">
+                  {installmentToString(installment, price)}
                 </span>
-              </div>
-              <div>
-                <span class="">Por:</span>
-                <span class="text-primary-red">
-                  {new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(product.price)}
-                </span>
-              </div>
-              <span className="text-gray-600">{product?.installments}</span>
+              )}
               <div class="flex flex-row justify-between py-3 w-full">
-                <SKUSelector
-                  options={product.skuOptions}
-                  current={product.specifications["Tamanho"]}
-                />
+                <SKUSelector product={page.product} />
                 <div class="border border-gray-300 flex flex-row justify-between items-center px-3 py-1 md:w-1/4">
                   <span class="font-bold">Qtd</span>
                   <div class="flex flex-row items-center">
@@ -114,38 +202,18 @@ export default function ProductDetails({ product }: Props) {
                   </div>
                 </div>
               </div>
-              <ColorSelector product={product} />
             </div>
           </div>
-          <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-            <AddToCart skuId={product.id} sellerId={product.sellerId} large />
-          </div>
-          {/* Avaliações + detalhes */}
-          <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
-            {
-              /* <button class="flex flex-row justify-between bg-gray-100 py-3 px-8 rounded-3xl w-full">
-              <span class="font-bold">{`Avaliações (25)`}</span>
-              <img
-                width="130"
-                alt="image"
-                src="https://user-images.githubusercontent.com/18706156/194561155-ea3abac9-0c42-4b4e-8920-890965ffad45.png"
-              >
-              </img>
-            </button> */
-            }
-            {product?.description && (
-              <ProductInformation description={product.description} />
-            )}
-            {
-              /* <div className="bg-gray-100 py-10 flex flex-col justify-center items-center w-full mt-6">
-              <span class="pb-8">Precisa de ajuda?</span>
-              <button class="border border-solid border-black py-3 w-1/2 flex flex-row justify-center items-center">
-                <ChatBubbleLeftIcon className="w-5 h-5 mr-2" />
-                Fale com a gente
-              </button>
-            </div> */
-            }
-          </div>
+          {seller && (
+            <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
+              <AddToCart skuId={productID} sellerId={seller} large />
+            </div>
+          )}
+          {description && (
+            <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
+              <ProductInformation description={description} />
+            </div>
+          )}
         </div>
       </section>
     </>
