@@ -47,6 +47,7 @@ const searchLoader: LoaderFunction<Props, ProductListingPage> = async (
 
   return {
     data: {
+      // TODO: Find out what's the right breadcrumb on shopify
       breadcrumb: {
         "@type": "BreadcrumbList",
         itemListElement: [],
