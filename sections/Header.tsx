@@ -44,13 +44,13 @@ function Navbar() {
         </div>
         <div class="flex justify-center md:justify-between pl-12">
           <NavItem href="/farm">Marcas</NavItem>
-          <NavItem href="/search?trade-policy=1&departamento=feminino">
+          <NavItem href="/search?trade-policy=1&filter.departamento=feminino">
             Feminino
           </NavItem>
-          <NavItem href="/search?trade-policy=1&departamento=masculino">
+          <NavItem href="/search?trade-policy=1&filter.departamento=masculino">
             Masculino
           </NavItem>
-          <NavItem href="/search?trade-policy=1&departamento=infantil">
+          <NavItem href="/search?trade-policy=1&filter.departamento=infantil">
             Infantil
           </NavItem>
         </div>
