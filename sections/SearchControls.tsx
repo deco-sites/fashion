@@ -8,6 +8,7 @@ export interface Props {
 }
 
 export default function SearchControls({ page }: Props) {
+  console.log({ page })
   const filters = page?.filters;
 
   if (!filters || filters.length === 0) {
