@@ -1,13 +1,13 @@
-import { toProductPage } from "$live/std/commerce/vtex/transform.ts";
+import { toProductPage } from "$live/std/commerce/occ/transform.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
 
-import { vtex } from "../clients/instances.ts";
+import { occ } from "../clients/instances.ts";
 
 const DEFAULT_SKU = 1023372;
 
 /**
- * @title VTEX Product Page Loader
+ * @title Oracle Commerce Cloud Product Page Loader
  * @description Works on routes of type /:slug/p
  */
 const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
@@ -15,18 +15,17 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
     _req,
     ctx,
   ) => {
-    const skuId = Number(ctx.params.slug?.split("-").pop()) || DEFAULT_SKU;
-    const query = `sku:${skuId}`;
+    // search prodcuts on Oracle. Feel free to change any of these parameters
+    const { data } = await occ.search.productBySlug(
+      "t-shirt-mc-colors-laranja-surfing-67504-08226",
+    );
 
-    // search prodcuts on VTEX. Feel free to change any of these parameters
-    const { products: [product] } = await vtex.search.products({
-      query,
-      page: 0,
-      count: 1,
-    });
+    const product = data.page.product;
+
+    console.log("OCC DATA", data);
 
     // Product not found, return the 404 status code
-    if (!product) {
+    if (!data) {
       return {
         data: null,
         status: 404,
@@ -34,7 +33,7 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
     }
 
     // Convert the VTEX product to schema.org format and return it
-    return { data: toProductPage(product, skuId.toString()) };
+    return { data: toProductPage(product) };
   };
 
 export default productPageLoader;
