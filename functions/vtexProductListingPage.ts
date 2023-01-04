@@ -33,7 +33,7 @@ const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
   const count = props.count ?? 12;
   const query = props.query || url.searchParams.get("q") || "";
   const page = Number(url.searchParams.get("page")) || 0;
-  const sort = String(url.searchParams.get("sort")) as Sort || "" as Sort;
+  const sort = url.searchParams.get("sort") as Sort || "" as Sort;
   const selectedFacets = filtersFromSearchParams(url.searchParams);
 
   const searchArgs = {
