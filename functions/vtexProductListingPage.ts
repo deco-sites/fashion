@@ -1,6 +1,7 @@
 import { toFilter, toProduct } from "$live/std/commerce/vtex/transform.ts";
 import type { Filter, ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
+import type { Sort } from "$live/std/commerce/vtex/types.ts";
 
 import { filtersFromSearchParams } from "../sdk/searchFilters.ts";
 
@@ -32,11 +33,13 @@ const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
   const count = props.count ?? 12;
   const query = props.query || url.searchParams.get("q") || "";
   const page = Number(url.searchParams.get("page")) || 0;
+  const sort = String(url.searchParams.get("sort")) as Sort || "" as Sort;
   const selectedFacets = filtersFromSearchParams(url.searchParams);
 
   const searchArgs = {
     query,
     page,
+    sort,
     count,
     selectedFacets,
   };
