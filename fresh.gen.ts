@@ -37,12 +37,13 @@ import * as $$$15 from "./sections/Search.tsx";
 import * as $$$16 from "./sections/SearchControls.tsx";
 import * as $$$17 from "./sections/StoreFeatures.tsx";
 import * as $$$18 from "./sections/VideoCarousel.tsx";
-import * as $$$$0 from "./functions/shopifyProductDetailsPage.ts";
-import * as $$$$1 from "./functions/shopifyProductList.ts";
-import * as $$$$2 from "./functions/shopifyProductListingPage.ts";
-import * as $$$$3 from "./functions/vtexProductDetailsPage.ts";
-import * as $$$$4 from "./functions/vtexProductList.ts";
-import * as $$$$5 from "./functions/vtexProductListingPage.ts";
+import * as $$$$0 from "./functions/occProductDetailsPage.ts";
+import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
+import * as $$$$2 from "./functions/shopifyProductList.ts";
+import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
+import * as $$$$4 from "./functions/vtexProductDetailsPage.ts";
+import * as $$$$5 from "./functions/vtexProductList.ts";
+import * as $$$$6 from "./functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -85,12 +86,13 @@ const manifest: DecoManifest = {
     "./sections/VideoCarousel.tsx": $$$18,
   },
   functions: {
-    "./functions/shopifyProductDetailsPage.ts": $$$$0,
-    "./functions/shopifyProductList.ts": $$$$1,
-    "./functions/shopifyProductListingPage.ts": $$$$2,
-    "./functions/vtexProductDetailsPage.ts": $$$$3,
-    "./functions/vtexProductList.ts": $$$$4,
-    "./functions/vtexProductListingPage.ts": $$$$5,
+    "./functions/occProductDetailsPage.ts": $$$$0,
+    "./functions/shopifyProductDetailsPage.ts": $$$$1,
+    "./functions/shopifyProductList.ts": $$$$2,
+    "./functions/shopifyProductListingPage.ts": $$$$3,
+    "./functions/vtexProductDetailsPage.ts": $$$$4,
+    "./functions/vtexProductList.ts": $$$$5,
+    "./functions/vtexProductListingPage.ts": $$$$6,
   },
   schemas: {
     "./sections/Banner.tsx": {
@@ -117,27 +119,45 @@ const manifest: DecoManifest = {
             ],
           },
           "alt": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Alt",
           },
           "text": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Text",
           },
           "title": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Title",
           },
           "subtitle": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Subtitle",
           },
           "link": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Link",
           },
           "CTA": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": " C T A",
           },
         },
@@ -171,31 +191,52 @@ const manifest: DecoManifest = {
             ],
           },
           "alt": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Alt",
           },
           "textColor": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Text Color",
           },
           "text": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Text",
           },
           "title": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Title",
           },
           "subtitle": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Subtitle",
           },
           "link": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Link",
           },
           "CTA": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": " C T A",
           },
         },
@@ -308,7 +349,10 @@ const manifest: DecoManifest = {
             "title": "Fit",
           },
           "loading": {
-            "type": "boolean",
+            "type": [
+              "boolean",
+              "null",
+            ],
             "title": "Loading",
           },
         },
@@ -326,11 +370,17 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "title": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Title",
           },
           "description": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Description",
           },
           "url": {
@@ -338,11 +388,17 @@ const manifest: DecoManifest = {
             "title": "Url",
           },
           "imageUrl": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Image Url",
           },
           "faviconUrl": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Favicon Url",
           },
           "styleUrls": {
@@ -353,7 +409,10 @@ const manifest: DecoManifest = {
             "title": "Style Urls",
           },
           "themeColor": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Theme Color",
           },
         },
@@ -392,7 +451,10 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "size": {
-            "type": "number",
+            "type": [
+              "number",
+              "null",
+            ],
             "title": "Size",
           },
         },
@@ -494,7 +556,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "cbcb3fa04ede8a51d20e74d49ed372ff7b56fc33",
+            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -512,7 +574,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
+            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -534,7 +596,7 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "products": {
-            "$id": "974a84d7f51f85a637e6a01e0813804cbcdfd7ac",
+            "$id": "546cbd7d0ccd06d3cfddd3184a52c465c9b5139a",
             "format": "live-function",
             "type": "string",
             "title": "Products",
@@ -553,7 +615,10 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "query": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Query",
           },
         },
@@ -567,7 +632,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
+            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -605,7 +670,10 @@ const manifest: DecoManifest = {
                   "title": "Desktop",
                 },
                 "alt": {
-                  "type": "string",
+                  "type": [
+                    "string",
+                    "null",
+                  ],
                   "title": "Alt",
                 },
                 "link": {
@@ -621,7 +689,10 @@ const manifest: DecoManifest = {
             },
           },
           "delay": {
-            "type": "number",
+            "type": [
+              "number",
+              "null",
+            ],
             "title": "delay",
             "description": "Time to switch slides in seconds",
             "default": "3",
@@ -633,6 +704,21 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./functions/occProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Occ Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
     "./functions/shopifyProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
@@ -642,7 +728,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "cbcb3fa04ede8a51d20e74d49ed372ff7b56fc33",
+            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
           },
         },
         "additionalProperties": true,
@@ -673,7 +759,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "974a84d7f51f85a637e6a01e0813804cbcdfd7ac",
+            "$id": "546cbd7d0ccd06d3cfddd3184a52c465c9b5139a",
           },
         },
         "additionalProperties": true,
@@ -685,7 +771,10 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "query": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Query",
             "description": "overides the query term",
           },
@@ -703,7 +792,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
+            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
           },
         },
         "additionalProperties": true,
@@ -718,7 +807,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "cbcb3fa04ede8a51d20e74d49ed372ff7b56fc33",
+            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
           },
         },
         "additionalProperties": true,
@@ -749,7 +838,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "974a84d7f51f85a637e6a01e0813804cbcdfd7ac",
+            "$id": "546cbd7d0ccd06d3cfddd3184a52c465c9b5139a",
           },
         },
         "additionalProperties": true,
@@ -761,7 +850,10 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "query": {
-            "type": "string",
+            "type": [
+              "string",
+              "null",
+            ],
             "title": "Query",
             "description": "overides the query term",
           },
@@ -779,7 +871,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d3b8054c8c701987fefabb7ac551f7621c3cd780",
+            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
           },
         },
         "additionalProperties": true,
