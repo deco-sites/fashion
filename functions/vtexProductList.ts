@@ -41,7 +41,6 @@ const productListLoader: LoaderFunction<Props, Product[]> = async (
 
   return {
     data: products,
-    maxAgeInSeconds: 10
   };
 };
 

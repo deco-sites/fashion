@@ -4,7 +4,7 @@ import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
 
 import { occ } from "../clients/instances.ts";
 
-const DEFAULT_SKU = 1023372;
+// const DEFAULT_SKU = 1023372;
 
 /**
  * @title Oracle Commerce Cloud Product Page Loader
@@ -13,7 +13,7 @@ const DEFAULT_SKU = 1023372;
 const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
   async (
     _req,
-    ctx,
+    _ctx,
   ) => {
     // search prodcuts on Oracle. Feel free to change any of these parameters
     const { data } = await occ.search.productBySlug(
