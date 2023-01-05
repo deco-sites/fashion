@@ -17,5 +17,5 @@ export const shopify = createShopifyClient({
 
 export const occ = createOccClient({
   platform: "occ",
-  baseUrl: "https://www.osklen.com.br",
+  baseUrl: "https://deco.cx.teste/",
 });
