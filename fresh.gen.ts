@@ -12,12 +12,13 @@ import * as $4 from "./routes/api/cart/items.ts";
 import * as $5 from "./routes/index.tsx";
 import * as $6 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCart.tsx";
-import * as $$1 from "./islands/LiveControls.tsx";
-import * as $$2 from "./islands/Minicart.tsx";
-import * as $$3 from "./islands/ProductInformation.tsx";
-import * as $$4 from "./islands/SearchBar.tsx";
-import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/Slider.tsx";
+import * as $$1 from "./islands/CartInner.tsx";
+import * as $$2 from "./islands/LiveControls.tsx";
+import * as $$3 from "./islands/Minicart.tsx";
+import * as $$4 from "./islands/ProductInformation.tsx";
+import * as $$5 from "./islands/SearchBar.tsx";
+import * as $$6 from "./islands/SearchControls.tsx";
+import * as $$7 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannerImg.tsx";
 import * as $$$2 from "./sections/BannnerGrid.tsx";
@@ -57,12 +58,13 @@ const manifest: DecoManifest = {
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
-    "./islands/LiveControls.tsx": $$1,
-    "./islands/Minicart.tsx": $$2,
-    "./islands/ProductInformation.tsx": $$3,
-    "./islands/SearchBar.tsx": $$4,
-    "./islands/SearchControls.tsx": $$5,
-    "./islands/Slider.tsx": $$6,
+    "./islands/CartInner.tsx": $$1,
+    "./islands/LiveControls.tsx": $$2,
+    "./islands/Minicart.tsx": $$3,
+    "./islands/ProductInformation.tsx": $$4,
+    "./islands/SearchBar.tsx": $$5,
+    "./islands/SearchControls.tsx": $$6,
+    "./islands/Slider.tsx": $$7,
   },
   sections: {
     "./sections/Banner.tsx": $$$0,

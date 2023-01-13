@@ -1,9 +1,9 @@
 import type { h } from "preact";
 import Alert from "$components/Alert.tsx";
-import DecoFashionLogo from "$components/icons/DecoFashionLogo.tsx";
 import Icon from "$components/ui/Icon.tsx";
-
-import Minicart from "../islands/Minicart.tsx";
+import Minicart, { CART_MODAL_NAME } from "../islands/Minicart.tsx";
+import Modal from "../components/ui/Modal.tsx";
+import CartInner from "../islands/CartInner.tsx";
 
 function NavItem({
   href,
@@ -62,6 +62,9 @@ function Navbar() {
             <Icon name="Heart" className="w-8 h-8" />
           </a>
           <Minicart />
+          <Modal title="Seu Carrinho" data-modal={CART_MODAL_NAME}>
+            <CartInner />
+          </Modal>
         </div>
       </section>
     </div>
@@ -72,7 +75,7 @@ export interface Props {
   alerts: string[];
 }
 
-function Header({ alerts }: Props) {
+export default function Header({ alerts }: Props) {
   return (
     <header>
       <Alert alerts={alerts} />
@@ -80,5 +83,3 @@ function Header({ alerts }: Props) {
     </header>
   );
 }
-
-export default Header;

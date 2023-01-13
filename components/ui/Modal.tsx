@@ -37,12 +37,14 @@ const backdrop = css({
 interface Props {
   title?: string;
   mode?: "sidebar-right" | "sidebar-left" | "center";
+  "data-modal"?: string;
 }
 
 // TODO: Right now, modal is a right-sidebar only
 const Modal = forwardRef(
   (
-    { children, title, mode = "sidebar-right" }: PropsWithChildren<Props>,
+    { children, title, mode = "sidebar-right", "data-modal": dataModal }:
+      PropsWithChildren<Props>,
     ref: Ref<HTMLDialogElement>,
   ) => {
     const onDialogClick = (e: MouseEvent) => {
@@ -82,16 +84,20 @@ const Modal = forwardRef(
       tw`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between`;
 
     return (
-      <dialog ref={ref} class={dialogClasses} onClick={onDialogClick}>
+      <dialog
+        ref={ref}
+        class={dialogClasses}
+        onClick={onDialogClick}
+        data-modal={dataModal}
+      >
         <div class={dialogContentClasses}>
           <>
             <div class={tw`flex justify-between`}>
               <h2 class={tw`text-lg font-medium text-gray-900`}>{title}</h2>
+              {/* create a hook to close this modal */}
               <button
                 class={tw`py-1`}
-                onClick={(e) => {
-                  (e.target as HTMLButtonElement).closest("dialog")!.close();
-                }}
+                data-close-modal
               >
                 <svg
                   class={tw`w-6 h-6 fill-current text-gray-600`}
