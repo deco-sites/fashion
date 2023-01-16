@@ -37,6 +37,7 @@ import * as $$$15 from "./sections/Search.tsx";
 import * as $$$16 from "./sections/SearchControls.tsx";
 import * as $$$17 from "./sections/StoreFeatures.tsx";
 import * as $$$18 from "./sections/VideoCarousel.tsx";
+import * as $$$19 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -84,6 +85,7 @@ const manifest: DecoManifest = {
     "./sections/SearchControls.tsx": $$$16,
     "./sections/StoreFeatures.tsx": $$$17,
     "./sections/VideoCarousel.tsx": $$$18,
+    "./sections/vtexconfig.global.tsx": $$$19,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -700,6 +702,24 @@ const manifest: DecoManifest = {
         },
         "required": [
           "videos",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/vtexconfig.global.tsx": {
+      "inputSchema": {
+        "title": "Vtexconfig.global",
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "title": "Account",
+            "description":
+              "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
+          },
+        },
+        "required": [
+          "account",
         ],
       },
       "outputSchema": null,

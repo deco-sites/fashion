@@ -2,7 +2,8 @@ import { toProductPage } from "$live/std/commerce/vtex/transform.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
 
-import { vtex } from "../clients/instances.ts";
+import { defaultVTEXAccount, vtex } from "../clients/instances.ts";
+import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 
 const DEFAULT_SKU = 1023372;
 
@@ -23,6 +24,8 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
       query,
       page: 0,
       count: 1,
+      account: defaultVTEXAccount,
+      ...((ctx.state.global.vtexconfig as undefined | VTEXConfig) ?? {}),
     });
 
     // Product not found, return the 404 status code

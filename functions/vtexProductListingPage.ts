@@ -5,7 +5,8 @@ import type { Sort } from "$live/std/commerce/vtex/types.ts";
 
 import { filtersFromSearchParams } from "../sdk/searchFilters.ts";
 
-import { vtex } from "../clients/instances.ts";
+import { defaultVTEXAccount, vtex } from "../clients/instances.ts";
+import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 
 export interface Props {
   /**
@@ -25,7 +26,7 @@ export interface Props {
  */
 const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
   req,
-  _ctx,
+  ctx,
   props,
 ) => {
   const url = new URL(req.url);
@@ -42,6 +43,8 @@ const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
     sort,
     count,
     selectedFacets,
+    account: defaultVTEXAccount,
+    ...((ctx.state.global.vtexconfig as undefined | VTEXConfig) ?? {}),
   };
 
   // search prodcuts on VTEX. Feel free to change any of these parameters
