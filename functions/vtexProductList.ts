@@ -18,7 +18,11 @@ export interface Props {
  * @title Product list loader
  * @description Usefull for shelves and static galleries.
  */
-const productListLoader: LoaderFunction<Props, Product[], LiveState> = async (
+const productListLoader: LoaderFunction<
+  Props,
+  Product[],
+  LiveState<{ vtexconfig: VTEXConfig | undefined }>
+> = async (
   _req,
   ctx,
   props,
@@ -31,7 +35,7 @@ const productListLoader: LoaderFunction<Props, Product[], LiveState> = async (
     page: 0,
     count,
     account: defaultVTEXAccount,
-    ...((ctx.state.global.vtexconfig as undefined | VTEXConfig) ?? {}),
+    ...(ctx.state.global.vtexconfig ?? {}),
   };
 
   // search prodcuts on VTEX. Feel free to change any of these parameters

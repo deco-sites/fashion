@@ -1,6 +1,7 @@
 import { toFilter, toProduct } from "$live/std/commerce/vtex/transform.ts";
 import type { Filter, ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
+import type { LiveState } from "$live/types.ts";
 import type { Sort } from "$live/std/commerce/vtex/types.ts";
 
 import { filtersFromSearchParams } from "../sdk/searchFilters.ts";
@@ -24,7 +25,11 @@ export interface Props {
  * @title Product listing page loader
  * @description Returns data ready for search pages like category,brand pages
  */
-const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
+const plpLoader: LoaderFunction<
+  Props,
+  ProductListingPage,
+  LiveState<{ vtexconfig?: VTEXConfig }>
+> = async (
   req,
   ctx,
   props,
@@ -44,7 +49,7 @@ const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
     count,
     selectedFacets,
     account: defaultVTEXAccount,
-    ...((ctx.state.global.vtexconfig as undefined | VTEXConfig) ?? {}),
+    ...(ctx.state.global.vtexconfig ?? {}),
   };
 
   // search prodcuts on VTEX. Feel free to change any of these parameters
