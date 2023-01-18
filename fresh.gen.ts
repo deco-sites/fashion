@@ -576,7 +576,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -634,7 +634,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -812,7 +812,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
           },
         },
         "additionalProperties": true,
@@ -891,7 +891,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
           },
         },
         "additionalProperties": true,
