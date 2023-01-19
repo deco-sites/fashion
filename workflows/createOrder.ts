@@ -1,6 +1,6 @@
 import { delay } from "https://deno.land/std@0.160.0/async/delay.ts";
 import { WorkflowContext } from "$workflows/context.ts";
-import { WorkflowFunction } from "../../live/std/types.ts";
+import { WorkflowFunction } from "$live/std/types.ts";
 
 interface OrderForm {
   items: string[];
