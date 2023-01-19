@@ -9,16 +9,12 @@
   },
   "lint": {
     "files": {
-      "exclude": [
-        "static/"
-      ]
+      "exclude": ["static/"]
     }
   },
   "fmt": {
     "files": {
-      "exclude": [
-        "static/"
-      ]
+      "exclude": ["static/"]
     }
   },
   "importMap": "./import_map.json",

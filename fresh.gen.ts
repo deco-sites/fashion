@@ -37,6 +37,7 @@ import * as $$$15 from "./sections/Search.tsx";
 import * as $$$16 from "./sections/SearchControls.tsx";
 import * as $$$17 from "./sections/StoreFeatures.tsx";
 import * as $$$18 from "./sections/VideoCarousel.tsx";
+import * as $$$19 from "./sections/WorkflowViewer.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -44,6 +45,8 @@ import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
 import * as $$$$4 from "./functions/vtexProductDetailsPage.ts";
 import * as $$$$5 from "./functions/vtexProductList.ts";
 import * as $$$$6 from "./functions/vtexProductListingPage.ts";
+import * as $$$$7 from "./functions/workflowRunner.ts";
+import * as $$$$$0 from "./workflows/createOrder.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -84,7 +87,9 @@ const manifest: DecoManifest = {
     "./sections/SearchControls.tsx": $$$16,
     "./sections/StoreFeatures.tsx": $$$17,
     "./sections/VideoCarousel.tsx": $$$18,
+    "./sections/WorkflowViewer.tsx": $$$19,
   },
+  workflows: { "./workflows/createOrder.ts": $$$$$0 },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
     "./functions/shopifyProductDetailsPage.ts": $$$$1,
@@ -93,6 +98,7 @@ const manifest: DecoManifest = {
     "./functions/vtexProductDetailsPage.ts": $$$$4,
     "./functions/vtexProductList.ts": $$$$5,
     "./functions/vtexProductListingPage.ts": $$$$6,
+    "./functions/workflowRunner.ts": $$$$7,
   },
   schemas: {
     "./sections/Banner.tsx": {
@@ -574,7 +580,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -632,7 +638,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -700,6 +706,24 @@ const manifest: DecoManifest = {
         },
         "required": [
           "videos",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/WorkflowViewer.tsx": {
+      "inputSchema": {
+        "title": " Workflow Viewer",
+        "type": "object",
+        "properties": {
+          "workflow": {
+            "$id": "204e3b9b3dff60be5d0379b04188c815ac5d63a5",
+            "format": "live-function",
+            "type": "string",
+            "title": "Workflow",
+          },
+        },
+        "required": [
+          "workflow",
         ],
       },
       "outputSchema": null,
@@ -792,7 +816,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
           },
         },
         "additionalProperties": true,
@@ -871,7 +895,84 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/workflowRunner.ts": {
+      "inputSchema": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "workflow": {
+                "type": "string",
+                "const": "createOrder",
+                "title": "Workflow",
+              },
+              "vtexAccountName": {
+                "type": "string",
+                "title": "Vtex Account Name",
+              },
+            },
+            "required": [
+              "workflow",
+              "vtexAccountName",
+            ],
+          },
+          {
+            "type": "object",
+            "properties": {
+              "workflow": {
+                "type": "string",
+                "const": "otherWorkflow",
+                "title": "Workflow",
+              },
+              "propa": {
+                "type": "string",
+                "title": "Propa",
+              },
+            },
+            "required": [
+              "workflow",
+              "propa",
+            ],
+          },
+        ],
+        "title": "Workflow Runner",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "204e3b9b3dff60be5d0379b04188c815ac5d63a5",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./workflows/createOrder.ts": {
+      "inputSchema": {
+        "title": "Create Order",
+        "type": "object",
+        "properties": {
+          "vtexAccountName": {
+            "type": "string",
+            "title": "Vtex Account Name",
+          },
+        },
+        "required": [
+          "vtexAccountName",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "e288c5486d76bf0ba1a6c593f9b5238eb42a99fa",
           },
         },
         "additionalProperties": true,
