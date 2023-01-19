@@ -717,9 +717,22 @@ const manifest: DecoManifest = {
             "description":
               "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
           },
+          "salesChannel": {
+            "type": "string",
+            "title": "Sales Channel",
+            "description":
+              "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
+          },
+          "locale": {
+            "type": "string",
+            "title": "Locale",
+            "description": "Locale used for VTEX Intelligent Search client.",
+          },
         },
         "required": [
           "account",
+          "salesChannel",
+          "locale",
         ],
       },
       "outputSchema": null,

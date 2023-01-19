@@ -6,7 +6,7 @@ import type { Sort } from "$live/std/commerce/vtex/types.ts";
 
 import { filtersFromSearchParams } from "../sdk/searchFilters.ts";
 
-import { defaultVTEXAccount, vtex } from "../clients/instances.ts";
+import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
 import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 
 export interface Props {
@@ -48,8 +48,7 @@ const plpLoader: LoaderFunction<
     sort,
     count,
     selectedFacets,
-    account: defaultVTEXAccount,
-    ...(ctx.state.global.vtexconfig ?? {}),
+    ...(ctx.state.global.vtexconfig ?? defaultVTEXSettings),
   };
 
   // search prodcuts on VTEX. Feel free to change any of these parameters

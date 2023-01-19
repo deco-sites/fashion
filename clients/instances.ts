@@ -2,11 +2,13 @@ import { createClient as createVTEXClient } from "$live/std/commerce/vtex/client
 import { createClient as createShopifyClient } from "$live/std/commerce/shopify/client.ts";
 import { createClient as createOccClient } from "$live/std/commerce/occ/client.ts";
 
-export const defaultVTEXAccount = "lojaoffpremium";
+export const defaultVTEXSettings = {
+  account: "lojaoffpremium",
+  locale: "pt-BR",
+  salesChannel: "1",
+};
 export const vtex = createVTEXClient({
   platform: "vtex",
-  defaultLocale: "pt-BR",
-  defaultSalesChannel: "1",
 });
 
 export const shopify = createShopifyClient({
