@@ -37,6 +37,7 @@ import * as $$$15 from "./sections/Search.tsx";
 import * as $$$16 from "./sections/SearchControls.tsx";
 import * as $$$17 from "./sections/StoreFeatures.tsx";
 import * as $$$18 from "./sections/VideoCarousel.tsx";
+import * as $$$19 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -84,6 +85,7 @@ const manifest: DecoManifest = {
     "./sections/SearchControls.tsx": $$$16,
     "./sections/StoreFeatures.tsx": $$$17,
     "./sections/VideoCarousel.tsx": $$$18,
+    "./sections/vtexconfig.global.tsx": $$$19,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -574,7 +576,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -632,7 +634,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -700,6 +702,37 @@ const manifest: DecoManifest = {
         },
         "required": [
           "videos",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/vtexconfig.global.tsx": {
+      "inputSchema": {
+        "title": "Vtexconfig.global",
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "title": "Account",
+            "description":
+              "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
+          },
+          "salesChannel": {
+            "type": "string",
+            "title": "Sales Channel",
+            "description":
+              "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
+          },
+          "locale": {
+            "type": "string",
+            "title": "Locale",
+            "description": "Locale used for VTEX Intelligent Search client.",
+          },
+        },
+        "required": [
+          "account",
+          "salesChannel",
+          "locale",
         ],
       },
       "outputSchema": null,
@@ -792,7 +825,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
           },
         },
         "additionalProperties": true,
@@ -871,7 +904,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "d1faa855d2a7c464adba37fc3fded9fe90e72561",
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
           },
         },
         "additionalProperties": true,
