@@ -1,5 +1,5 @@
 import { delay } from "https://deno.land/std@0.160.0/async/delay.ts";
-import { WorkflowContext } from "https://raw.githubusercontent.com/mcandeia/deno-workflows/durable/context.ts";
+import { WorkflowContext } from "https://raw.githubusercontent.com/mcandeia/deno-workflows/main/context.ts";
 
 interface OrderForm {
   items: string[];
