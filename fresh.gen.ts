@@ -25,20 +25,21 @@ import * as $$$3 from "./sections/Button.story.tsx";
 import * as $$$4 from "./sections/Footer.tsx";
 import * as $$$5 from "./sections/Head.tsx";
 import * as $$$6 from "./sections/Header.tsx";
-import * as $$$7 from "./sections/HomeFilter.tsx";
-import * as $$$8 from "./sections/IconCart.tsx";
-import * as $$$9 from "./sections/ListLinks.tsx";
-import * as $$$10 from "./sections/MarcasConvidadas.tsx";
-import * as $$$11 from "./sections/Newsletter.tsx";
-import * as $$$12 from "./sections/ProductDetails.tsx";
-import * as $$$13 from "./sections/ProductGallery.tsx";
-import * as $$$14 from "./sections/ProductShelf.tsx";
-import * as $$$15 from "./sections/Search.tsx";
-import * as $$$16 from "./sections/SearchControls.tsx";
-import * as $$$17 from "./sections/Spacer.tsx";
-import * as $$$18 from "./sections/StoreFeatures.tsx";
-import * as $$$19 from "./sections/VideoCarousel.tsx";
-import * as $$$20 from "./sections/vtexconfig.global.tsx";
+import * as $$$7 from "./sections/HighlightedFeatures.tsx";
+import * as $$$8 from "./sections/HomeFilter.tsx";
+import * as $$$9 from "./sections/IconCart.tsx";
+import * as $$$10 from "./sections/ListLinks.tsx";
+import * as $$$11 from "./sections/MarcasConvidadas.tsx";
+import * as $$$12 from "./sections/Newsletter.tsx";
+import * as $$$13 from "./sections/ProductDetails.tsx";
+import * as $$$14 from "./sections/ProductGallery.tsx";
+import * as $$$15 from "./sections/ProductShelf.tsx";
+import * as $$$16 from "./sections/Search.tsx";
+import * as $$$17 from "./sections/SearchControls.tsx";
+import * as $$$18 from "./sections/Spacer.tsx";
+import * as $$$19 from "./sections/StoreFeatures.tsx";
+import * as $$$20 from "./sections/VideoCarousel.tsx";
+import * as $$$21 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -74,20 +75,21 @@ const manifest: DecoManifest = {
     "./sections/Footer.tsx": $$$4,
     "./sections/Head.tsx": $$$5,
     "./sections/Header.tsx": $$$6,
-    "./sections/HomeFilter.tsx": $$$7,
-    "./sections/IconCart.tsx": $$$8,
-    "./sections/ListLinks.tsx": $$$9,
-    "./sections/MarcasConvidadas.tsx": $$$10,
-    "./sections/Newsletter.tsx": $$$11,
-    "./sections/ProductDetails.tsx": $$$12,
-    "./sections/ProductGallery.tsx": $$$13,
-    "./sections/ProductShelf.tsx": $$$14,
-    "./sections/Search.tsx": $$$15,
-    "./sections/SearchControls.tsx": $$$16,
-    "./sections/Spacer.tsx": $$$17,
-    "./sections/StoreFeatures.tsx": $$$18,
-    "./sections/VideoCarousel.tsx": $$$19,
-    "./sections/vtexconfig.global.tsx": $$$20,
+    "./sections/HighlightedFeatures.tsx": $$$7,
+    "./sections/HomeFilter.tsx": $$$8,
+    "./sections/IconCart.tsx": $$$9,
+    "./sections/ListLinks.tsx": $$$10,
+    "./sections/MarcasConvidadas.tsx": $$$11,
+    "./sections/Newsletter.tsx": $$$12,
+    "./sections/ProductDetails.tsx": $$$13,
+    "./sections/ProductGallery.tsx": $$$14,
+    "./sections/ProductShelf.tsx": $$$15,
+    "./sections/Search.tsx": $$$16,
+    "./sections/SearchControls.tsx": $$$17,
+    "./sections/Spacer.tsx": $$$18,
+    "./sections/StoreFeatures.tsx": $$$19,
+    "./sections/VideoCarousel.tsx": $$$20,
+    "./sections/vtexconfig.global.tsx": $$$21,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -443,6 +445,48 @@ const manifest: DecoManifest = {
         },
         "required": [
           "alerts",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/HighlightedFeatures.tsx": {
+      "inputSchema": {
+        "title": " Highlighted Features",
+        "type": "object",
+        "properties": {
+          "features": {
+            "type": "array",
+            "items": {
+              "title": "Feature",
+              "type": "object",
+              "properties": {
+                "src": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src",
+                  "src": "Image src",
+                },
+                "title": {
+                  "type": "string",
+                  "title": "Title",
+                },
+                "description": {
+                  "type": "string",
+                  "title": "Description",
+                  "description": "Description and Image alt text",
+                },
+              },
+              "required": [
+                "src",
+                "title",
+                "description",
+              ],
+            },
+            "title": "Features",
+          },
+        },
+        "required": [
+          "features",
         ],
       },
       "outputSchema": null,
