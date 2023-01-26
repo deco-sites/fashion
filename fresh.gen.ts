@@ -35,9 +35,10 @@ import * as $$$13 from "./sections/ProductGallery.tsx";
 import * as $$$14 from "./sections/ProductShelf.tsx";
 import * as $$$15 from "./sections/Search.tsx";
 import * as $$$16 from "./sections/SearchControls.tsx";
-import * as $$$17 from "./sections/StoreFeatures.tsx";
-import * as $$$18 from "./sections/VideoCarousel.tsx";
-import * as $$$19 from "./sections/vtexconfig.global.tsx";
+import * as $$$17 from "./sections/Spacer.tsx";
+import * as $$$18 from "./sections/StoreFeatures.tsx";
+import * as $$$19 from "./sections/VideoCarousel.tsx";
+import * as $$$20 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -83,9 +84,10 @@ const manifest: DecoManifest = {
     "./sections/ProductShelf.tsx": $$$14,
     "./sections/Search.tsx": $$$15,
     "./sections/SearchControls.tsx": $$$16,
-    "./sections/StoreFeatures.tsx": $$$17,
-    "./sections/VideoCarousel.tsx": $$$18,
-    "./sections/vtexconfig.global.tsx": $$$19,
+    "./sections/Spacer.tsx": $$$17,
+    "./sections/StoreFeatures.tsx": $$$18,
+    "./sections/VideoCarousel.tsx": $$$19,
+    "./sections/vtexconfig.global.tsx": $$$20,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -643,6 +645,30 @@ const manifest: DecoManifest = {
         "required": [
           "page",
         ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Spacer.tsx": {
+      "inputSchema": {
+        "title": " Spacer",
+        "type": "object",
+        "properties": {
+          "height": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Height",
+          },
+          "heightMobile": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Height Mobile",
+          },
+        },
+        "required": [],
       },
       "outputSchema": null,
     },

@@ -1,6 +1,6 @@
 import type { h } from "preact";
 import Alert from "$components/Alert.tsx";
-import DecoFashionLogo from "$components/icons/DecoFashionLogo.tsx";
+import StoreLogo from "$components/icons/StoreLogo.tsx";
 import Icon from "$components/ui/Icon.tsx";
 
 import Minicart from "../islands/Minicart.tsx";
@@ -13,9 +13,11 @@ function NavItem({
   return (
     <a
       href={href ?? `/search?ft=${children}`}
-      class={`flex items-center text-[16px] font-bold uppercase px-8 lg:px-12 hover:border-black border-solid border-b border-white `}
+      class={`flex items-center text-[15px] px-8 lg:px-6`}
     >
-      {children}
+      <span class="hover:border-black border-solid border-b border-white">
+        {children}
+      </span>
     </a>
   );
 }
@@ -24,25 +26,31 @@ function Navbar() {
   return (
     <div>
       <section class="md:hidden flex p-2 justify-between items-center px-12">
-        <button aria-label="open menu" class="p-2">
-          <Icon name="Bars3" className="w-8 h-8" />
-        </button>
-        <a href="#" class="p-2" aria-label="search">
-          <Icon name="MagnifyingGlass" className="w-8 h-8" />
-        </a>
-        <a href="/" aria-label="home link" class="flex-grow">
-        </a>
-        <a href="#" class="p-2" aria-label="my account">
-          <Icon name="User" className="w-8 h-8" />
-        </a>
-        <Minicart />
-      </section>
-      <section class="hidden md:flex bg-white flex-row h-[80px] justify-between md:border-b border-[#d3d5db]">
-        <div class="flex items-center justify-center flex-1 min-w-[200px]">
-          <a href="/" aria-label="home link">
-          </a>
+        <div class="w-24">
+          <button aria-label="open menu" class="p-2">
+            <Icon name="Bars3" className="w-8 h-8" />
+          </button>
         </div>
-        <div class="flex justify-center md:justify-between pl-12">
+        <a href="/" class="block min-w-[10rem] max-w-[12rem] p-3">
+          <StoreLogo />
+        </a>
+        <div class="flex mt-2 w-24 justify-end">
+          <a href="#" class="p-1" aria-label="search">
+            <Icon name="MagnifyingGlass" className="w-8 h-8" />
+          </a>
+          <a href="#" class="p-1 hidden" aria-label="my account">
+            <Icon name="User" className="w-8 h-8" />
+          </a>
+          <div class="p-1">
+            <Minicart />
+          </div>
+        </div>
+      </section>
+      <section class="hidden md:flex bg-white flex-row h-[80px] items-center md:border-b border-[#d3d5db]">
+        <a href="/" class="block min-w-[12rem] max-w-[14rem] p-3 ml-4">
+          <StoreLogo />
+        </a>
+        <div class="flex justify-center md:justify-between pl-12 h-14">
           <NavItem href="/farm">Marcas</NavItem>
           <NavItem href="/search?trade-policy=1&filter.departamento=feminino">
             Feminino
@@ -58,8 +66,8 @@ function Navbar() {
           <a href="#" class="mr-6">
             <Icon name="MagnifyingGlass" className="w-8 h-8" />
           </a>
-          <a href="#">
-            <Icon name="Heart" className="w-8 h-8" />
+          <a href="#" class="mr-6">
+            <Icon name="User" className="w-8 h-8" />
           </a>
           <Minicart />
         </div>
