@@ -887,6 +887,45 @@ const manifest: DecoManifest = {
             "title": "Count",
             "description": "total number of items to display",
           },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
+              {
+                "type": "string",
+                "const": "price:desc",
+              },
+              {
+                "type": "string",
+                "const": "price:asc",
+              },
+              {
+                "type": "string",
+                "const": "orders:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:asc",
+              },
+              {
+                "type": "string",
+                "const": "release:desc",
+              },
+              {
+                "type": "string",
+                "const": "discount:desc",
+              },
+            ],
+            "title": "Sort",
+            "description": "search sort parameter",
+          },
         },
         "required": [
           "query",
