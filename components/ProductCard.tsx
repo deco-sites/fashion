@@ -36,7 +36,7 @@ export default function ProductCard({
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full p-2 group relative border border-white hover:border-black"
+      class="w-full p-2 group relative mb-5"
     >
       <div class="h-full z-10">
         <a href={url}>
@@ -53,61 +53,43 @@ export default function ProductCard({
             />
           )}
           <div class="mt-3">
-            <div class="flex justify-between text-xs uppercase">
-              <span class="text-[#737378] ">{brand}</span>
-              {discountPercentage && (
-                <span class="text-white bg-black px-2">
-                  {discountPercentage}% OFF
-                </span>
-              )}
-            </div>
             {name && (
-              <span
-                class="block text-base overflow-hidden whitespace-nowrap uppercase"
+              <div
+                class="block text-sm overflow-hidden whitespace-nowrap uppercase mb-3"
                 style={{ textOverflow: "ellipsis" }}
                 href={url}
               >
                 {name.replace(/(.*)(\-).*$/, "$1$2")}
-              </span>
+              </div>
             )}
-            <div class="text-xs flex justify-between md:justify-start gap-2">
+            <div class="text-xs flex justify-start gap-2 mb-1">
               {listPrice && (
-                <span class="line-through">
+                <span class="text-gray-400 line-through">
                   R$ {listPrice.price.toFixed(2)}
                 </span>
               )}
               {price && (
-                <span class="text-[#D10923] ">
+                <span class="font-bold">
                   R$ {typeof price === "number" ? price.toFixed(2) : price}
                 </span>
               )}
             </div>
             {installment && price && (
-              <div class="text-xs text-[#737378] font-bold">
+              <div class="text-xs font-bold text-gray-500">
                 ou {installmentToString(installment, price)}
               </div>
             )}
           </div>
         </a>
-        <div class="absolute group-hover:md:block group-hover:md:border border-black bottom-0 left-[-1px] right-[-1px] z-10 opacity-0 group-hover:md:opacity-100 bg-white group-hover:md:translate-y-full transition ease-in duration-300">
-          {additionalProperty?.[0] && (
-            <div class="text-xs font-semibold mt-2">
-              <div class="border-y border-[#000] py-2 px-1 flex flex-row justify-between">
-                <span>Tamanho</span>
-                <span class="font-bold">{additionalProperty[0].value}</span>
-              </div>
-            </div>
-          )}
-          {seller && (
-            <div class="m-2">
-              <AddToCart
-                class="bg-[#D10923] w-full text-white text-xs uppercase py-2 cursor-pointer"
-                skuId={productID}
-                sellerId={seller}
-              />
-            </div>
-          )}
-        </div>
+        {seller && (
+          <div class="mt-2">
+            <AddToCart
+              class="w-full text-white text-xs uppercase py-2 cursor-pointer"
+              skuId={productID}
+              sellerId={seller}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

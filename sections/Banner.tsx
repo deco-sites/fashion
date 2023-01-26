@@ -21,7 +21,7 @@ export default function Banner(
   { imgSrc = imgSrcDefault, alt, text, title, subtitle, link, CTA }: Props,
 ) {
   return (
-    <section class="w-full my-8">
+    <section class="w-full mb-8">
       <div class="relative">
         <picture class="inset-0">
           <source
