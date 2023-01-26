@@ -1,7 +1,8 @@
+import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import Image from "$live/std/ui/components/Image.tsx";
 
 export type Props = {
-  imgSrc: { mobile: string; desktop: string };
+  imgSrc: { mobile: LiveImage; desktop: LiveImage };
   alt?: string;
   text?: string;
   title?: string;
@@ -10,15 +11,8 @@ export type Props = {
   CTA?: string;
 };
 
-export const imgSrcDefault = {
-  mobile:
-    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-768x950-kitchen.jpg?v=637949787190870000",
-  desktop:
-    "https://zeedog.vteximg.com.br/arquivos/banner-home-zeedog-1920x700-kitchen.jpg?v=637949787206370000",
-};
-
 export default function Banner(
-  { imgSrc = imgSrcDefault, alt, text, title, subtitle, link, CTA }: Props,
+  { imgSrc, alt, text, title, subtitle, link, CTA }: Props,
 ) {
   return (
     <section class="w-full mb-8">

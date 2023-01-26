@@ -109,10 +109,12 @@ const manifest: DecoManifest = {
             "type": "object",
             "properties": {
               "mobile": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Mobile",
               },
               "desktop": {
+                "format": "image-uri",
                 "type": "string",
                 "title": "Desktop",
               },
