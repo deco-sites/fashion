@@ -93,7 +93,7 @@ export default function ProductCard({
           {additionalProperty?.[0] && (
             <div class="text-xs font-semibold mt-2">
               <div class="border-y border-[#000] py-2 px-1 flex flex-row justify-between">
-                <span>Tamanho</span>
+                <span>Tamanhozzzzz</span>
                 <span class="font-bold">{additionalProperty[0].value}</span>
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function ProductCard({
           {seller && (
             <div class="m-2">
               <AddToCart
-                class="bg-[#D10923] w-full text-white text-xs uppercase py-2 cursor-pointer"
+                class="bg-[#006699] w-full text-white text-xs uppercase py-2 cursor-pointer"
                 skuId={productID}
                 sellerId={seller}
               />
