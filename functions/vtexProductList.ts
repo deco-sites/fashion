@@ -6,12 +6,26 @@ import type { LiveState } from "$live/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
 import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
+import { Sort } from "$live/std/commerce/vtex/types.ts";
 
 export interface Props {
   /** @description query to use on search */
   query: string;
   /** @description total number of items to display */
   count: number;
+  //* @enumNames ["relevance", "greater discount", "arrivals", "name asc", "name desc", "most ordered", "price asc", "price desc"]
+  /**
+   * @description search sort parameter
+   */
+  sort?:
+    | ""
+    | "price:desc"
+    | "price:asc"
+    | "orders:desc"
+    | "name:desc"
+    | "name:asc"
+    | "release:desc"
+    | "discount:desc";
 }
 
 /**
@@ -29,11 +43,13 @@ const productListLoader: LoaderFunction<
 ) => {
   const count = props.count ?? 12;
   const query = props.query || "";
+  const sort: Sort = props.sort || "";
 
   const searchArgs = {
     query,
     page: 0,
     count,
+    sort,
     ...(ctx.state.global.vtexconfig ?? defaultVTEXSettings),
   };
 
