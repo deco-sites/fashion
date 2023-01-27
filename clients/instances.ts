@@ -3,7 +3,7 @@ import { createClient as createShopifyClient } from "$live/std/commerce/shopify/
 import { createClient as createOccClient } from "$live/std/commerce/occ/client.ts";
 
 export const defaultVTEXSettings = {
-  account: "lojaoffpremium",
+  account: "bravtexfashionstore",
   locale: "pt-BR",
   salesChannel: "1",
 };
