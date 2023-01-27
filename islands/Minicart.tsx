@@ -5,7 +5,8 @@ import { OrderForm } from "../clients/vtex/checkout.ts";
 import Modal from "../components/ui/Modal.tsx";
 import CartItem, { formatPrice } from "../components/minicart/CartItem.tsx";
 
-const CHECKOUT_URL = "https://secure.offpremium.com.br/checkout";
+const CHECKOUT_URL =
+  "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
 
 declare global {
   interface HTMLDialogElement {
