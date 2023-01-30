@@ -2,41 +2,41 @@
  * Helpers to convert the change Payload into native JS types.
  */
 export declare enum PostgresTypes {
-  abstime = "abstime",
-  bool = "bool",
-  date = "date",
-  daterange = "daterange",
-  float4 = "float4",
-  float8 = "float8",
-  int2 = "int2",
-  int4 = "int4",
-  int4range = "int4range",
-  int8 = "int8",
-  int8range = "int8range",
-  json = "json",
-  jsonb = "jsonb",
-  money = "money",
-  numeric = "numeric",
-  oid = "oid",
-  reltime = "reltime",
-  text = "text",
-  time = "time",
-  timestamp = "timestamp",
-  timestamptz = "timestamptz",
-  timetz = "timetz",
-  tsrange = "tsrange",
-  tstzrange = "tstzrange",
+    abstime = "abstime",
+    bool = "bool",
+    date = "date",
+    daterange = "daterange",
+    float4 = "float4",
+    float8 = "float8",
+    int2 = "int2",
+    int4 = "int4",
+    int4range = "int4range",
+    int8 = "int8",
+    int8range = "int8range",
+    json = "json",
+    jsonb = "jsonb",
+    money = "money",
+    numeric = "numeric",
+    oid = "oid",
+    reltime = "reltime",
+    text = "text",
+    time = "time",
+    timestamp = "timestamp",
+    timestamptz = "timestamptz",
+    timetz = "timetz",
+    tsrange = "tsrange",
+    tstzrange = "tstzrange"
 }
 declare type Columns = {
-  name: string;
-  type: string;
-  flags?: string[];
-  type_modifier?: number;
+    name: string;
+    type: string;
+    flags?: string[];
+    type_modifier?: number;
 }[];
 declare type BaseValue = null | string | number | boolean;
 declare type RecordValue = BaseValue | BaseValue[];
 declare type Record = {
-  [key: string]: RecordValue;
+    [key: string]: RecordValue;
 };
 /**
  * Takes an array of columns and an object of string values then converts each string value
@@ -50,13 +50,9 @@ declare type Record = {
  * @example convertChangeData([{name: 'first_name', type: 'text'}, {name: 'age', type: 'int4'}], {first_name: 'Paul', age:'33'}, {})
  * //=>{ first_name: 'Paul', age: 33 }
  */
-export declare const convertChangeData: (
-  columns: Columns,
-  record: Record,
-  options?: {
+export declare const convertChangeData: (columns: Columns, record: Record, options?: {
     skipTypes?: string[];
-  },
-) => Record;
+}) => Record;
 /**
  * Converts the value of an individual column.
  *
@@ -71,12 +67,7 @@ export declare const convertChangeData: (
  * @example convertColumn('age', [{name: 'first_name', type: 'text'}, {name: 'age', type: 'int4'}], {first_name: 'Paul', age: '33'}, ['int4'])
  * //=> "33"
  */
-export declare const convertColumn: (
-  columnName: string,
-  columns: Columns,
-  record: Record,
-  skipTypes: string[],
-) => RecordValue;
+export declare const convertColumn: (columnName: string, columns: Columns, record: Record, skipTypes: string[]) => RecordValue;
 /**
  * If the value of the cell is `null`, returns null.
  * Otherwise converts the string value to the correct type.
@@ -90,10 +81,7 @@ export declare const convertColumn: (
  * @example convertCell('_int4', '{1,2,3,4}')
  * //=> [1,2,3,4]
  */
-export declare const convertCell: (
-  type: string,
-  value: RecordValue,
-) => RecordValue;
+export declare const convertCell: (type: string, value: RecordValue) => RecordValue;
 export declare const toBoolean: (value: RecordValue) => RecordValue;
 export declare const toNumber: (value: RecordValue) => RecordValue;
 export declare const toJson: (value: RecordValue) => RecordValue;

@@ -1,9 +1,4 @@
-import { PageOptions } from "./pages.ts";
-import {
-  HandlerContext,
-  Handlers,
-  MiddlewareHandlerContext,
-} from "$fresh/server.ts";
+import { Handlers, MiddlewareHandlerContext } from "$fresh/server.ts";
 import { inspectHandler } from "https://deno.land/x/inspect_vscode@0.2.0/mod.ts";
 import {
   DecoManifest,
@@ -11,19 +6,22 @@ import {
   LivePageData,
   LiveState,
 } from "$live/types.ts";
-import { generateEditorData, isPageOptions, loadPage } from "$live/pages.ts";
+import {
+  generateEditorData,
+  isPageOptions,
+  loadPage,
+  PageOptions,
+} from "$live/pages.ts";
 import { formatLog } from "$live/utils/log.ts";
 import { createServerTimings } from "$live/utils/timings.ts";
-import { verifyDomain } from "$live/utils/domains.ts";
 import { workbenchHandler } from "$live/utils/workbench.ts";
-import { loadFlags } from "$live/flags.ts";
+import { cookies, loadFlags } from "$live/flags.ts";
 
 // The global live context
 export type LiveContext = {
   manifest?: DecoManifest;
   deploymentId: string | undefined;
   isDeploy: boolean;
-  domains: string[];
   site: string;
   siteId: number;
   loginUrl?: string;
@@ -34,7 +32,6 @@ export type LiveContext = {
 export const context: LiveContext = {
   deploymentId: Deno.env.get("DENO_DEPLOYMENT_ID"),
   isDeploy: Boolean(Deno.env.get("DENO_DEPLOYMENT_ID")),
-  domains: ["localhost"],
   site: "",
   siteId: 0,
 };
@@ -62,22 +59,6 @@ export const withLive = (liveOptions: LiveOptions) => {
   context.site = liveOptions.site;
   context.siteId = liveOptions.siteId;
   context.loginUrl = liveOptions.loginUrl;
-  context.domains.push(
-    `${liveOptions.site}.deco.page`,
-    `${liveOptions.site}.deco.site`,
-    `deco-pages-${liveOptions.site}.deno.dev`,
-    `deco-sites-${liveOptions.site}.deno.dev`,
-  );
-  liveOptions.domains?.forEach((domain) => context.domains.push(domain));
-  // Support deploy preview domains
-  if (context.deploymentId !== undefined) {
-    context.domains.push(
-      `deco-pages-${context.site}-${context.deploymentId}.deno.dev`,
-    );
-    context.domains.push(
-      `deco-sites-${context.site}-${context.deploymentId}.deno.dev`,
-    );
-  }
 
   console.log(
     `Starting live middleware: siteId=${context.siteId} site=${context.site}`,
@@ -98,11 +79,6 @@ export const withLive = (liveOptions: LiveOptions) => {
     const { start, end, printTimings } = createServerTimings();
     ctx.state.t = { start, end };
 
-    const domainRes = verifyDomain(url.hostname);
-    if (domainRes) {
-      return domainRes;
-    }
-
     // TODO: Find a better way to embedded these routes on project routes.
     // Follow up here: https://github.com/denoland/fresh/issues/516
     if (
@@ -115,22 +91,6 @@ export const withLive = (liveOptions: LiveOptions) => {
 
     if (url.pathname === workbenchPath) {
       return workbenchHandler();
-    }
-
-    // Allow introspection of page by editor
-    if (url.searchParams.has("editorData")) {
-      const pageId = url.searchParams.get("pageId");
-      const editorData = await generateEditorData(
-        req,
-        ctx as unknown as HandlerContext<any, LiveState>,
-        pageId,
-      );
-
-      return Response.json(editorData, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
     }
 
     // Let rendering occur — handlers are responsible for calling ctx.state.loadPage
@@ -160,40 +120,58 @@ export const withLive = (liveOptions: LiveOptions) => {
   };
 };
 
-export const getLivePageData = async <Data>(
-  req: Request,
-  ctx: HandlerContext<Data, LiveState>,
-) => {
-  const flags = await loadFlags(req, ctx);
-
-  const pageOptions = flags.reduce(
-    (acc, curr) => {
-      if (isPageOptions(curr.value)) {
-        acc.selectedPageIds = [
-          ...acc.selectedPageIds,
-          ...curr.value.selectedPageIds,
-        ];
-      }
-
-      return acc;
-    },
-    { selectedPageIds: [] } as PageOptions,
-  );
-
-  return {
-    flags: ctx.state.flags,
-    page: await loadPage(req, ctx, pageOptions),
-  };
-};
-
 export const live: () => Handlers<LivePageData, LiveState> = () => ({
   GET: async (req, ctx) => {
-    const { page, flags } = await getLivePageData(req, ctx);
+    const url = new URL(req.url);
 
-    if (!page) {
-      return ctx.renderNotFound();
+    const { activeFlags, flagsToCookie } = await loadFlags(req, ctx);
+
+    ctx.state.flags = activeFlags;
+
+    const pageOptions = Object.values(ctx.state.flags).reduce(
+      (acc: PageOptions, curr) => {
+        if (isPageOptions(curr)) {
+          acc.selectedPageIds = [
+            ...acc.selectedPageIds,
+            ...curr.selectedPageIds,
+          ];
+        }
+
+        return acc;
+      },
+      { selectedPageIds: [] } as PageOptions,
+    );
+
+    const getResponse = async () => {
+      // Allow introspection of page by editor
+      if (url.searchParams.has("editorData")) {
+        const editorData = await generateEditorData(req, ctx, pageOptions);
+
+        return Response.json(editorData, {
+          headers: {
+            "Access-Control-Allow-Origin": req.headers.get("origin") || "*",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Methods": "GET, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, *"
+          },
+        });
+      }
+
+      const page = await loadPage(req, ctx, pageOptions);
+
+      if (!page) {
+        return ctx.renderNotFound();
+      }
+
+      return await ctx.render({ page, flags: ctx.state.flags });
+    };
+
+    const response = await getResponse();
+
+    if (flagsToCookie.length > 0) {
+      cookies.setFlags(response.headers, flagsToCookie);
     }
 
-    return ctx.render({ page, flags });
+    return response;
   },
 });

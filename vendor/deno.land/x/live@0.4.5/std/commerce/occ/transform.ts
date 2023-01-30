@@ -13,7 +13,7 @@ import {
 
 const setAvailabilityOffer = (
   stock: ProductSkuInventoryStatus,
-  productId: string,
+  productId: string
 ) => {
   const offer: Offer[] = [];
 
@@ -23,9 +23,10 @@ const setAvailabilityOffer = (
       price: 0,
       priceSpecification: [],
       additionalType: property.replace(productId, ""),
-      availability: stock[property] > 0
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
+      availability:
+        stock[property] > 0
+          ? "https://schema.org/InStock"
+          : "https://schema.org/OutOfStock",
       inventoryLevel: {
         value: stock[property],
       },
@@ -37,7 +38,7 @@ const setAvailabilityOffer = (
 
 export const toProductPage = (
   product: ProductOracle,
-  stock: ProductSkuInventoryStatus,
+  stock: ProductSkuInventoryStatus
 ): ProductDetailsPage => {
   return {
     breadcrumbList: toBreadcrumbList(product),
@@ -62,7 +63,7 @@ export const toBreadcrumbList = (product: ProductOracle): BreadcrumbList => {
 
 export const toProduct = (
   product: ProductOracle,
-  stock: ProductSkuInventoryStatus,
+  stock: ProductSkuInventoryStatus
 ): Product => {
   const {
     displayName,
@@ -114,7 +115,7 @@ export const toProduct = (
       (img): ImageObject => ({
         "@type": "ImageObject",
         url: `https://osklen.com.br/${img}`,
-      }),
+      })
     ),
   };
 };

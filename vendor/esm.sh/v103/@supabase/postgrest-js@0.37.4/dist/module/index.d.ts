@@ -1,21 +1,6 @@
-import PostgrestClient from "./PostgrestClient.d.ts";
-import PostgrestFilterBuilder from "./lib/PostgrestFilterBuilder.d.ts";
-import PostgrestQueryBuilder from "./lib/PostgrestQueryBuilder.d.ts";
-import {
-  PostgrestBuilder,
-  PostgrestError,
-  PostgrestMaybeSingleResponse,
-  PostgrestResponse,
-  PostgrestSingleResponse,
-} from "./lib/types.d.ts";
-export {
-  PostgrestBuilder,
-  PostgrestClient,
-  PostgrestError,
-  PostgrestFilterBuilder,
-  PostgrestMaybeSingleResponse,
-  PostgrestQueryBuilder,
-  PostgrestResponse,
-  PostgrestSingleResponse,
-};
+import PostgrestClient from './PostgrestClient.d.ts';
+import PostgrestFilterBuilder from './lib/PostgrestFilterBuilder.d.ts';
+import PostgrestQueryBuilder from './lib/PostgrestQueryBuilder.d.ts';
+import { PostgrestBuilder, PostgrestResponse, PostgrestSingleResponse, PostgrestMaybeSingleResponse, PostgrestError } from './lib/types.d.ts';
+export { PostgrestClient, PostgrestBuilder, PostgrestQueryBuilder, PostgrestFilterBuilder, PostgrestResponse, PostgrestSingleResponse, PostgrestMaybeSingleResponse, PostgrestError, };
 //# sourceMappingURL=index.d.ts.map

@@ -8,15 +8,15 @@ export default async function arch() {
   /**
    * The running binary is 64-bit, so the OS is clearly 64-bit.
    */
-  if (Deno.build.arch === "x86_64") {
-    return "x64";
+  if (Deno.build.arch === 'x86_64') {
+    return 'x64'
   }
 
   /**
    * All recent versions of Mac OS are 64-bit.
    */
-  if (Deno.build.os === "darwin") {
-    return "x64";
+  if (Deno.build.os === 'darwin') {
+    return 'x64'
   }
 
   /**
@@ -24,34 +24,30 @@ export default async function arch() {
    * app is based on the presence of a WOW64 file: %SystemRoot%\SysNative.
    * See: https://twitter.com/feross/status/776949077208510464
    */
-  if (Deno.build.os === "windows") {
+  if (Deno.build.os === 'windows') {
     let systemRoot = Deno.env.get("SystemRoot");
-    var sysRoot = systemRoot && Deno.statSync(systemRoot)
-      ? systemRoot
-      : "C:\\Windows";
+    var sysRoot = systemRoot && Deno.statSync(systemRoot) ? systemRoot : 'C:\\Windows'
 
     // If %SystemRoot%\SysNative exists, we are in a WOW64 FS Redirected application.
-    var isWOW64 = false;
+    var isWOW64 = false
     try {
-      isWOW64 = sysRoot
-        ? !!Deno.statSync(path.join(sysRoot, "sysnative"))
-        : false;
-    } catch (err) {}
+      isWOW64 = sysRoot ? !!Deno.statSync(path.join(sysRoot, 'sysnative')) : false
+    } catch (err) { }
 
-    return isWOW64 ? "x64" : "x86";
+    return isWOW64 ? 'x64' : 'x86'
   }
 
   /**
    * On Linux, use the `getconf` command to get the architecture.
    */
-  if (Deno.build.os === "linux") {
-    var process = Deno.run({ cmd: ["getconf", "LONG_BIT"], stdout: "piped" });
+  if (Deno.build.os === 'linux') {
+    var process = Deno.run({ cmd: ['getconf', 'LONG_BIT'], stdout: "piped" });
     var output = decoder.decode(await process.output());
-    return output === "64\n" ? "x64" : "x86";
+    return output === '64\n' ? 'x64' : 'x86'
   }
 
   /**
    * If none of the above, assume the architecture is 32-bit.
    */
-  return "x86";
+  return 'x86'
 }

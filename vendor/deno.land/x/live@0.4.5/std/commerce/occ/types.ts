@@ -89,8 +89,7 @@ export interface SiteState {
 }
 
 export enum SiteStateClass {
-  COMEndecaInfrontSiteModelSiteState =
-    "com.endeca.infront.site.model.SiteState",
+  COMEndecaInfrontSiteModelSiteState = "com.endeca.infront.site.model.SiteState",
 }
 
 export interface SiteStateProperties {}
@@ -141,8 +140,7 @@ export interface Refinement {
 }
 
 export enum RefinementClass {
-  COMEndecaInfrontCartridgeModelRefinement =
-    "com.endeca.infront.cartridge.model.Refinement",
+  COMEndecaInfrontCartridgeModelRefinement = "com.endeca.infront.cartridge.model.Refinement",
 }
 
 export interface RefinementProperties {
@@ -191,8 +189,7 @@ export interface ResultsListRecord {
 }
 
 export enum RecordClass {
-  COMEndecaInfrontCartridgeModelRecord =
-    "com.endeca.infront.cartridge.model.Record",
+  COMEndecaInfrontCartridgeModelRecord = "com.endeca.infront.cartridge.model.Record",
 }
 
 export interface Attributes {
@@ -213,8 +210,7 @@ export interface DetailsAction {
 }
 
 export enum DetailsActionClass {
-  COMEndecaInfrontCartridgeModelRecordAction =
-    "com.endeca.infront.cartridge.model.RecordAction",
+  COMEndecaInfrontCartridgeModelRecordAction = "com.endeca.infront.cartridge.model.RecordAction",
 }
 
 export enum DetailsActionContentPath {
@@ -321,8 +317,7 @@ export interface SiteInfoElement {
 }
 
 export enum Favicon {
-  FileV4170896362946869891GeneralFAVICONPNG =
-    "/file/v4170896362946869891/general/FAVICON.png",
+  FileV4170896362946869891GeneralFAVICONPNG = "/file/v4170896362946869891/general/FAVICON.png",
 }
 
 export enum ID {

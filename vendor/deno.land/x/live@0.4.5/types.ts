@@ -48,7 +48,6 @@ export interface LiveOptions {
   site: string;
   siteId: number;
   loginUrl?: string;
-  domains?: string[];
   inspectPath?: string;
   workbenchPath?: string;
 }
@@ -124,6 +123,7 @@ export interface Flag<T = unknown> {
   site: number;
   key: string;
   value: T;
+  updated_at: string
 }
 
 export interface Flags {

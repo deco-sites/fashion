@@ -1,8 +1,7 @@
 import { errors, StandardizedFilePath, ts } from "./common/mod.ts";
 
 /** Holds the compiler options. */
-export declare class CompilerOptionsContainer
-  extends SettingsContainer<ts.CompilerOptions> {
+export declare class CompilerOptionsContainer extends SettingsContainer<ts.CompilerOptions> {
   constructor();
   /**
    * Sets one or all of the compiler options.
@@ -125,25 +124,19 @@ export declare class InMemoryFileSystemHost implements FileSystemHost {
 /** Host for implementing custom module and/or type reference directive resolution. */
 export interface ResolutionHost {
   resolveModuleNames?: ts.LanguageServiceHost["resolveModuleNames"];
-  getResolvedModuleWithFailedLookupLocationsFromCache?: ts.LanguageServiceHost[
-    "getResolvedModuleWithFailedLookupLocationsFromCache"
-  ];
-  resolveTypeReferenceDirectives?:
-    ts.LanguageServiceHost["resolveTypeReferenceDirectives"];
+  getResolvedModuleWithFailedLookupLocationsFromCache?: ts.LanguageServiceHost["getResolvedModuleWithFailedLookupLocationsFromCache"];
+  resolveTypeReferenceDirectives?: ts.LanguageServiceHost["resolveTypeReferenceDirectives"];
 }
 
 /**
  * Factory used to create a resolution host.
  * @remarks The compiler options are retrieved via a function in order to get the project's current compiler options.
  */
-export declare type ResolutionHostFactory = (
-  moduleResolutionHost: ts.ModuleResolutionHost,
-  getCompilerOptions: () => ts.CompilerOptions,
-) => ResolutionHost;
+export declare type ResolutionHostFactory = (moduleResolutionHost: ts.ModuleResolutionHost, getCompilerOptions: () => ts.CompilerOptions) => ResolutionHost;
 /** Collection of reusable resolution hosts. */
 export declare const ResolutionHosts: {
-  deno: ResolutionHostFactory;
-};
+      deno: ResolutionHostFactory;
+  };
 
 export interface RuntimeDirEntry {
   name: string;
@@ -176,8 +169,7 @@ export declare abstract class SettingsContainer<T extends object> {
 }
 
 declare const ArgumentError: typeof errors.ArgumentError;
-declare const ArgumentNullOrWhitespaceError:
-  typeof errors.ArgumentNullOrWhitespaceError;
+declare const ArgumentNullOrWhitespaceError: typeof errors.ArgumentNullOrWhitespaceError;
 declare const ArgumentOutOfRangeError: typeof errors.ArgumentOutOfRangeError;
 declare const ArgumentTypeError: typeof errors.ArgumentTypeError;
 declare const BaseError: typeof errors.BaseError;
@@ -231,9 +223,7 @@ export declare class Directory {
    * Gets a child directory by the specified condition or undefined if not found.
    * @param condition - Condition to check the directory with.
    */
-  getDirectory(
-    condition: (directory: Directory) => boolean,
-  ): Directory | undefined;
+  getDirectory(condition: (directory: Directory) => boolean): Directory | undefined;
   /**
    * Gets a child source file with the specified path or throws if not found.
    * @param path - Relative or absolute path to the file.
@@ -243,9 +233,7 @@ export declare class Directory {
    * Gets a child source file by the specified condition or throws if not found.
    * @param condition - Condition to check the source file with.
    */
-  getSourceFileOrThrow(
-    condition: (sourceFile: SourceFile) => boolean,
-  ): SourceFile;
+  getSourceFileOrThrow(condition: (sourceFile: SourceFile) => boolean): SourceFile;
   /**
    * Gets a child source file with the specified path or undefined if not found.
    * @param path - Relative or absolute path to the file.
@@ -255,9 +243,7 @@ export declare class Directory {
    * Gets a child source file by the specified condition or undefined if not found.
    * @param condition - Condition to check the source file with.
    */
-  getSourceFile(
-    condition: (sourceFile: SourceFile) => boolean,
-  ): SourceFile | undefined;
+  getSourceFile(condition: (sourceFile: SourceFile) => boolean): SourceFile | undefined;
   /** Gets the child directories. */
   getDirectories(): Directory[];
   /** Gets the source files within this directory. */
@@ -281,9 +267,7 @@ export declare class Directory {
    * @param fileGlobs - File glob or globs to add files based on.
    * @returns The matched source files.
    */
-  addSourceFilesAtPaths(
-    fileGlobs: string | ReadonlyArray<string>,
-  ): SourceFile[];
+  addSourceFilesAtPaths(fileGlobs: string | ReadonlyArray<string>): SourceFile[];
   /**
    * Adds an existing directory from the relative path or directory name, or returns undefined if it doesn't exist.
    *
@@ -291,10 +275,7 @@ export declare class Directory {
    * @param relativeOrAbsoluteDirPath - Directory name or path to the directory that should be added.
    * @param options - Options.
    */
-  addDirectoryAtPathIfExists(
-    relativeOrAbsoluteDirPath: string,
-    options?: DirectoryAddOptions,
-  ): Directory | undefined;
+  addDirectoryAtPathIfExists(relativeOrAbsoluteDirPath: string, options?: DirectoryAddOptions): Directory | undefined;
   /**
    * Adds an existing directory from the relative path or directory name, or throws if it doesn't exist.
    *
@@ -302,10 +283,7 @@ export declare class Directory {
    * @param relativeOrAbsoluteDirPath - Directory name or path to the directory that should be added.
    * @throws DirectoryNotFoundError if the directory does not exist.
    */
-  addDirectoryAtPath(
-    relativeOrAbsoluteDirPath: string,
-    options?: DirectoryAddOptions,
-  ): Directory;
+  addDirectoryAtPath(relativeOrAbsoluteDirPath: string, options?: DirectoryAddOptions): Directory;
   /**
    * Creates a directory if it doesn't exist.
    * @param relativeOrAbsoluteDirPath - Relative or absolute path to the directory that should be created.
@@ -320,14 +298,7 @@ export declare class Directory {
    * @param options - Options.
    * @throws - InvalidOperationError if a source file already exists at the provided file name.
    */
-  createSourceFile(
-    relativeFilePath: string,
-    sourceFileText?:
-      | string
-      | OptionalKind<SourceFileStructure>
-      | WriterFunction,
-    options?: SourceFileCreateOptions,
-  ): SourceFile;
+  createSourceFile(relativeFilePath: string, sourceFileText?: string | OptionalKind<SourceFileStructure> | WriterFunction, options?: SourceFileCreateOptions): SourceFile;
   /**
    * Adds an existing source file, relative to this directory, or returns undefined.
    *
@@ -348,10 +319,10 @@ export declare class Directory {
    * @param options - Options for emitting.
    */
   emit(options?: {
-    emitOnlyDtsFiles?: boolean;
-    outDir?: string;
-    declarationDir?: string;
-  }): Promise<DirectoryEmitResult>;
+        emitOnlyDtsFiles?: boolean;
+        outDir?: string;
+        declarationDir?: string;
+    }): Promise<DirectoryEmitResult>;
   /**
    * Emits the files in the directory synchronously.
    *
@@ -359,59 +330,44 @@ export declare class Directory {
    * @param options - Options for emitting.
    */
   emitSync(options?: {
-    emitOnlyDtsFiles?: boolean;
-    outDir?: string;
-    declarationDir?: string;
-  }): DirectoryEmitResult;
+        emitOnlyDtsFiles?: boolean;
+        outDir?: string;
+        declarationDir?: string;
+    }): DirectoryEmitResult;
   /**
    * Copies the directory to a subdirectory of the specified directory.
    * @param dirPathOrDirectory Directory path or directory object to copy the directory to.
    * @param options Options for copying.
    * @returns The new copied directory.
    */
-  copyToDirectory(
-    dirPathOrDirectory: string | Directory,
-    options?: DirectoryCopyOptions,
-  ): Directory;
+  copyToDirectory(dirPathOrDirectory: string | Directory, options?: DirectoryCopyOptions): Directory;
   /**
    * Copies the directory to a new directory.
    * @param relativeOrAbsolutePath - The relative or absolute path to the new directory.
    * @param options - Options.
    * @returns The directory the copy was made to.
    */
-  copy(
-    relativeOrAbsolutePath: string,
-    options?: DirectoryCopyOptions,
-  ): Directory;
+  copy(relativeOrAbsolutePath: string, options?: DirectoryCopyOptions): Directory;
   /**
    * Immediately copies the directory to the specified path asynchronously.
    * @param relativeOrAbsolutePath - Directory path as an absolute or relative path.
    * @param options - Options for moving the directory.
    * @remarks If includeTrackedFiles is true, then it will execute the pending operations in the current directory.
    */
-  copyImmediately(
-    relativeOrAbsolutePath: string,
-    options?: DirectoryCopyOptions,
-  ): Promise<Directory>;
+  copyImmediately(relativeOrAbsolutePath: string, options?: DirectoryCopyOptions): Promise<Directory>;
   /**
    * Immediately copies the directory to the specified path synchronously.
    * @param relativeOrAbsolutePath - Directory path as an absolute or relative path.
    * @param options - Options for moving the directory.
    * @remarks If includeTrackedFiles is true, then it will execute the pending operations in the current directory.
    */
-  copyImmediatelySync(
-    relativeOrAbsolutePath: string,
-    options?: DirectoryCopyOptions,
-  ): Directory;
+  copyImmediatelySync(relativeOrAbsolutePath: string, options?: DirectoryCopyOptions): Directory;
   /**
    * Moves the directory to a subdirectory of the specified directory.
    * @param dirPathOrDirectory Directory path or directory object to move the directory to.
    * @param options Options for moving.
    */
-  moveToDirectory(
-    dirPathOrDirectory: string | Directory,
-    options?: DirectoryMoveOptions,
-  ): this;
+  moveToDirectory(dirPathOrDirectory: string | Directory, options?: DirectoryMoveOptions): this;
   /**
    * Moves the directory to a new path.
    * @param relativeOrAbsolutePath - Directory path as an absolute or relative path.
@@ -423,19 +379,13 @@ export declare class Directory {
    * @param relativeOrAbsolutePath - Directory path as an absolute or relative path.
    * @param options - Options for moving the directory.
    */
-  moveImmediately(
-    relativeOrAbsolutePath: string,
-    options?: DirectoryMoveOptions,
-  ): Promise<this>;
+  moveImmediately(relativeOrAbsolutePath: string, options?: DirectoryMoveOptions): Promise<this>;
   /**
    * Immediately moves the directory to a new path synchronously.
    * @param relativeOrAbsolutePath - Directory path as an absolute or relative path.
    * @param options - Options for moving the directory.
    */
-  moveImmediatelySync(
-    relativeOrAbsolutePath: string,
-    options?: DirectoryMoveOptions,
-  ): this;
+  moveImmediatelySync(relativeOrAbsolutePath: string, options?: DirectoryMoveOptions): this;
   /**
    * Recreates the directory.
    * @remarks This will delete all the descendant source files and directories in memory and queue a delete & mkdir to the file system.
@@ -542,12 +492,7 @@ export declare class ManipulationError extends errors.InvalidOperationError {
   readonly filePath: string;
   readonly oldText: string;
   readonly newText: string;
-  constructor(
-    filePath: string,
-    oldText: string,
-    newText: string,
-    errorMessage: string,
-  );
+  constructor(filePath: string, oldText: string, newText: string, errorMessage: string);
 }
 
 /** Project that holds source files. */
@@ -577,10 +522,7 @@ export declare class Project {
    * @param dirPath - Path to add the directory at.
    * @param options - Options.
    */
-  addDirectoryAtPathIfExists(
-    dirPath: string,
-    options?: DirectoryAddOptions,
-  ): Directory | undefined;
+  addDirectoryAtPathIfExists(dirPath: string, options?: DirectoryAddOptions): Directory | undefined;
   /**
    * Adds an existing directory from the path or throws if it doesn't exist.
    *
@@ -614,9 +556,7 @@ export declare class Project {
    * @param fileGlobs - File glob or globs to add files based on.
    * @returns The matched source files.
    */
-  addSourceFilesAtPaths(
-    fileGlobs: string | ReadonlyArray<string>,
-  ): SourceFile[];
+  addSourceFilesAtPaths(fileGlobs: string | ReadonlyArray<string>): SourceFile[];
   /**
    * Adds a source file from a file path if it exists or returns undefined.
    *
@@ -649,14 +589,7 @@ export declare class Project {
    * @param options - Options.
    * @throws - InvalidOperationError if a source file already exists at the provided file path.
    */
-  createSourceFile(
-    filePath: string,
-    sourceFileText?:
-      | string
-      | OptionalKind<SourceFileStructure>
-      | WriterFunction,
-    options?: SourceFileCreateOptions,
-  ): SourceFile;
+  createSourceFile(filePath: string, sourceFileText?: string | OptionalKind<SourceFileStructure> | WriterFunction, options?: SourceFileCreateOptions): SourceFile;
   /**
    * Removes a source file from the project.
    * @param sourceFile - Source file to remove.
@@ -672,9 +605,7 @@ export declare class Project {
    * Gets a source file by a search function. Throws an error if it doesn't exist.
    * @param searchFunction - Search function.
    */
-  getSourceFileOrThrow(
-    searchFunction: (file: SourceFile) => boolean,
-  ): SourceFile;
+  getSourceFileOrThrow(searchFunction: (file: SourceFile) => boolean): SourceFile;
   /**
    * Gets a source file by a file name or file path. Returns undefined if none exists.
    * @param fileNameOrPath - File name or path that the path could end with or equal.
@@ -684,9 +615,7 @@ export declare class Project {
    * Gets a source file by a search function. Returns undefined if none exists.
    * @param searchFunction - Search function.
    */
-  getSourceFile(
-    searchFunction: (file: SourceFile) => boolean,
-  ): SourceFile | undefined;
+  getSourceFile(searchFunction: (file: SourceFile) => boolean): SourceFile | undefined;
   /** Gets all the source files added to the project. */
   getSourceFiles(): SourceFile[];
   /**
@@ -764,29 +693,22 @@ export declare class Project {
    * This is an advanced method that can be used to easily "forget" all the nodes created within the scope of the block.
    * @param block - Block of code to run. Use the `remember` callback or return a node to remember it.
    */
-  forgetNodesCreatedInBlock<T = void>(
-    block: (remember: (...node: Node[]) => void) => T,
-  ): T;
+  forgetNodesCreatedInBlock<T = void>(block: (remember: (...node: Node[]) => void) => T): T;
   /**
    * Forgets the nodes created in the scope of the passed in block asynchronously.
    *
    * This is an advanced method that can be used to easily "forget" all the nodes created within the scope of the block.
    * @param block - Block of code to run. Use the `remember` callback or return a node to remember it.
    */
-  forgetNodesCreatedInBlock<T = void>(
-    block: (remember: (...node: Node[]) => void) => Promise<T>,
-  ): Promise<T>;
+  forgetNodesCreatedInBlock<T = void>(block: (remember: (...node: Node[]) => void) => Promise<T>): Promise<T>;
   /**
    * Formats an array of diagnostics with their color and context into a string.
    * @param diagnostics - Diagnostics to get a string of.
    * @param options - Collection of options. For example, the new line character to use (defaults to the OS' new line character).
    */
-  formatDiagnosticsWithColorAndContext(
-    diagnostics: ReadonlyArray<Diagnostic>,
-    opts?: {
-      newLineChar?: "\n" | "\r\n";
-    },
-  ): string;
+  formatDiagnosticsWithColorAndContext(diagnostics: ReadonlyArray<Diagnostic>, opts?: {
+        newLineChar?: "\n" | "\r\n";
+    }): string;
   /** Gets a ts.ModuleResolutionHost for the project. */
   getModuleResolutionHost(): ts.ModuleResolutionHost;
 }
@@ -836,19 +758,14 @@ export interface SourceFileCreateOptions {
 }
 
 export declare type Constructor<T> = new (...args: any[]) => T;
-export declare type InstanceOf<T> = T extends new (...args: any[]) => infer U
-  ? U
-  : never;
+export declare type InstanceOf<T> = T extends new (...args: any[]) => infer U ? U : never;
 export declare type WriterFunction = (writer: CodeBlockWriter) => void;
 /**
  * Creates a wrapped node from a compiler node.
  * @param node - Node to create a wrapped node from.
  * @param info - Info for creating the wrapped node.
  */
-export declare function createWrappedNode<T extends ts.Node = ts.Node>(
-  node: T,
-  opts?: CreateWrappedNodeOptions,
-): CompilerNodeToWrappedType<T>;
+export declare function createWrappedNode<T extends ts.Node = ts.Node>(node: T, opts?: CreateWrappedNodeOptions): CompilerNodeToWrappedType<T>;
 
 export interface CreateWrappedNodeOptions {
   /** Compiler options. */
@@ -866,21 +783,14 @@ export interface CreateWrappedNodeOptions {
  * @remarks If the node was not constructed with the compiler API factory methods and the node
  * does not have parents set, then use the other overload that accepts a source file.
  */
-export declare function printNode(
-  node: ts.Node,
-  options?: PrintNodeOptions,
-): string;
+export declare function printNode(node: ts.Node, options?: PrintNodeOptions): string;
 /**
  * Prints the provided node using the compiler's printer.
  * @param node - Compiler node.
  * @param sourceFile - Compiler source file.
  * @param options - Options.
  */
-export declare function printNode(
-  node: ts.Node,
-  sourceFile: ts.SourceFile,
-  options?: PrintNodeOptions,
-): string;
+export declare function printNode(node: ts.Node, sourceFile: ts.SourceFile, options?: PrintNodeOptions): string;
 
 /** Options for printing a node. */
 export interface PrintNodeOptions {
@@ -912,11 +822,7 @@ export interface PrintNodeOptions {
   scriptKind?: ScriptKind;
 }
 
-export declare type SourceFileReferencingNodes =
-  | ImportDeclaration
-  | ExportDeclaration
-  | ImportEqualsDeclaration
-  | CallExpression;
+export declare type SourceFileReferencingNodes = ImportDeclaration | ExportDeclaration | ImportEqualsDeclaration | CallExpression;
 
 export interface CompilerOptionsFromTsConfigOptions {
   encoding?: string;
@@ -933,10 +839,7 @@ export interface CompilerOptionsFromTsConfigResult {
  * @param filePath - File path to the tsconfig.json.
  * @param options - Options.
  */
-export declare function getCompilerOptionsFromTsConfig(
-  filePath: string,
-  options?: CompilerOptionsFromTsConfigOptions,
-): CompilerOptionsFromTsConfigResult;
+export declare function getCompilerOptionsFromTsConfig(filePath: string, options?: CompilerOptionsFromTsConfigOptions): CompilerOptionsFromTsConfigResult;
 
 /** Functions for writing code. */
 export declare class Writers {
@@ -946,29 +849,16 @@ export declare class Writers {
    * @param obj - Object to write.
    */
   static object(obj: {
-    [key: string]: WriterFunctionOrValue | undefined;
-  }): WriterFunction;
+        [key: string]: WriterFunctionOrValue | undefined;
+    }): WriterFunction;
   /** Gets a writer function for writing an object type. */
-  static objectType(
-    structure: TypeElementMemberedNodeStructure,
-  ): WriterFunction;
+  static objectType(structure: TypeElementMemberedNodeStructure): WriterFunction;
   /** Gets a writer function for writing a union type (ex. `FirstType | SecondType`). */
-  static unionType(
-    firstType: WriterFunctionOrValue,
-    secondType: WriterFunctionOrValue,
-    ...additionalTypes: WriterFunctionOrValue[]
-  ): (writer: CodeBlockWriter) => void;
+  static unionType(firstType: WriterFunctionOrValue, secondType: WriterFunctionOrValue, ...additionalTypes: WriterFunctionOrValue[]): (writer: CodeBlockWriter) => void;
   /** Gets a writer function for writing an intersection type (ex. `FirstType & SecondType`). */
-  static intersectionType(
-    firstType: WriterFunctionOrValue,
-    secondType: WriterFunctionOrValue,
-    ...additionalTypes: WriterFunctionOrValue[]
-  ): (writer: CodeBlockWriter) => void;
+  static intersectionType(firstType: WriterFunctionOrValue, secondType: WriterFunctionOrValue, ...additionalTypes: WriterFunctionOrValue[]): (writer: CodeBlockWriter) => void;
   /** Gets a writer function for writing a type assertion (ex. `type as assertionType`). */
-  static assertion(
-    type: WriterFunctionOrValue,
-    assertionType: WriterFunctionOrValue,
-  ): (writer: CodeBlockWriter) => void;
+  static assertion(type: WriterFunctionOrValue, assertionType: WriterFunctionOrValue): (writer: CodeBlockWriter) => void;
   /**
    * Gets a writer function for writing a return statement returning the provided value (ex. `return value;`).
    * @param value - Value to be returned.
@@ -978,109 +868,43 @@ export declare class Writers {
 
 export declare type WriterFunctionOrValue = string | number | WriterFunction;
 export declare type AssertionKey = Identifier | StringLiteral;
-export declare type PropertyName =
-  | Identifier
-  | StringLiteral
-  | NumericLiteral
-  | ComputedPropertyName
-  | PrivateIdentifier;
+export declare type PropertyName = Identifier | StringLiteral | NumericLiteral | ComputedPropertyName | PrivateIdentifier;
 export declare type ModuleName = Identifier | StringLiteral;
-export declare type AccessorDeclaration =
-  | GetAccessorDeclaration
-  | SetAccessorDeclaration;
+export declare type AccessorDeclaration = GetAccessorDeclaration | SetAccessorDeclaration;
 export declare type ArrayBindingElement = BindingElement | OmittedExpression;
 export declare type BindingName = Identifier | BindingPattern;
 export declare type BindingPattern = ObjectBindingPattern | ArrayBindingPattern;
 export declare type BooleanLiteral = TrueLiteral | FalseLiteral;
-export declare type CallLikeExpression =
-  | CallExpression
-  | NewExpression
-  | TaggedTemplateExpression
-  | Decorator
-  | JsxOpeningLikeElement;
-export declare type EntityNameExpression =
-  | Identifier
-  | PropertyAccessExpression;
-export declare type DeclarationName =
-  | Identifier
-  | PrivateIdentifier
-  | StringLiteralLike
-  | NumericLiteral
-  | ComputedPropertyName
-  | ElementAccessExpression
-  | BindingPattern
-  | EntityNameExpression;
+export declare type CallLikeExpression = CallExpression | NewExpression | TaggedTemplateExpression | Decorator | JsxOpeningLikeElement;
+export declare type EntityNameExpression = Identifier | PropertyAccessExpression;
+export declare type DeclarationName = Identifier | PrivateIdentifier | StringLiteralLike | NumericLiteral | ComputedPropertyName | ElementAccessExpression | BindingPattern | EntityNameExpression;
 export declare type EntityName = Identifier | QualifiedName;
-export declare type JsxChild =
-  | JsxText
-  | JsxExpression
-  | JsxElement
-  | JsxSelfClosingElement
-  | JsxFragment;
+export declare type JsxChild = JsxText | JsxExpression | JsxElement | JsxSelfClosingElement | JsxFragment;
 export declare type JsxAttributeLike = JsxAttribute | JsxSpreadAttribute;
-export declare type JsxOpeningLikeElement =
-  | JsxSelfClosingElement
-  | JsxOpeningElement;
-export declare type JsxTagNameExpression =
-  | Identifier
-  | ThisExpression
-  | JsxTagNamePropertyAccess;
+export declare type JsxOpeningLikeElement = JsxSelfClosingElement | JsxOpeningElement;
+export declare type JsxTagNameExpression = Identifier | ThisExpression | JsxTagNamePropertyAccess;
 
 export interface JsxTagNamePropertyAccess extends PropertyAccessExpression {
   getExpression(): JsxTagNameExpression;
 }
 
-export declare type ObjectLiteralElementLike =
-  | PropertyAssignment
-  | ShorthandPropertyAssignment
-  | SpreadAssignment
-  | MethodDeclaration
-  | AccessorDeclaration;
+export declare type ObjectLiteralElementLike = PropertyAssignment | ShorthandPropertyAssignment | SpreadAssignment | MethodDeclaration | AccessorDeclaration;
 export declare type CaseOrDefaultClause = CaseClause | DefaultClause;
 export declare type ModuleReference = EntityName | ExternalModuleReference;
-export declare type StringLiteralLike =
-  | StringLiteral
-  | NoSubstitutionTemplateLiteral;
-export declare type TypeElementTypes =
-  | PropertySignature
-  | MethodSignature
-  | ConstructSignatureDeclaration
-  | CallSignatureDeclaration
-  | IndexSignatureDeclaration;
-export declare type TemplateLiteral =
-  | TemplateExpression
-  | NoSubstitutionTemplateLiteral;
+export declare type StringLiteralLike = StringLiteral | NoSubstitutionTemplateLiteral;
+export declare type TypeElementTypes = PropertySignature | MethodSignature | ConstructSignatureDeclaration | CallSignatureDeclaration | IndexSignatureDeclaration;
+export declare type TemplateLiteral = TemplateExpression | NoSubstitutionTemplateLiteral;
 /**
  * Local target declarations.
  * @remarks This may be missing some types. Please open an issue if this returns a type not listed here.
  */
-export declare type LocalTargetDeclarations =
-  | SourceFile
-  | ClassDeclaration
-  | InterfaceDeclaration
-  | EnumDeclaration
-  | FunctionDeclaration
-  | VariableDeclaration
-  | TypeAliasDeclaration
-  | ModuleDeclaration
-  | ExportAssignment;
+export declare type LocalTargetDeclarations = SourceFile | ClassDeclaration | InterfaceDeclaration | EnumDeclaration | FunctionDeclaration | VariableDeclaration | TypeAliasDeclaration | ModuleDeclaration | ExportAssignment;
 /**
  * Declarations that can be exported from a module.
  * @remarks This may be missing some types. Please open an issue if this returns a type not listed here.
  */
-export declare type ExportedDeclarations =
-  | ClassDeclaration
-  | InterfaceDeclaration
-  | EnumDeclaration
-  | FunctionDeclaration
-  | VariableDeclaration
-  | TypeAliasDeclaration
-  | ModuleDeclaration
-  | Expression
-  | SourceFile;
-export declare function AmbientableNode<
-  T extends Constructor<AmbientableNodeExtensionType>,
->(Base: T): Constructor<AmbientableNode> & T;
+export declare type ExportedDeclarations = ClassDeclaration | InterfaceDeclaration | EnumDeclaration | FunctionDeclaration | VariableDeclaration | TypeAliasDeclaration | ModuleDeclaration | Expression | SourceFile;
+export declare function AmbientableNode<T extends Constructor<AmbientableNodeExtensionType>>(Base: T): Constructor<AmbientableNode> & T;
 
 export interface AmbientableNode {
   /** If the node has the declare keyword. */
@@ -1099,9 +923,7 @@ export interface AmbientableNode {
 }
 
 declare type AmbientableNodeExtensionType = Node & ModifierableNode;
-export declare function ArgumentedNode<
-  T extends Constructor<ArgumentedNodeExtensionType>,
->(Base: T): Constructor<ArgumentedNode> & T;
+export declare function ArgumentedNode<T extends Constructor<ArgumentedNodeExtensionType>>(Base: T): Constructor<ArgumentedNode> & T;
 
 export interface ArgumentedNode {
   /** Gets all the arguments of the node. */
@@ -1115,9 +937,7 @@ export interface ArgumentedNode {
    * Adds arguments.
    * @param argumentTexts - Argument texts to add.
    */
-  addArguments(
-    argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): Node[];
+  addArguments(argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction): Node[];
   /**
    * Inserts an argument.
    * @param index - Child index to insert at.
@@ -1129,10 +949,7 @@ export interface ArgumentedNode {
    * @param index - Child index to insert at.
    * @param argumentTexts - Argument texts to insert.
    */
-  insertArguments(
-    index: number,
-    argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): Node[];
+  insertArguments(index: number, argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction): Node[];
   /**
    * Removes an argument.
    * @param arg - Argument to remove.
@@ -1145,14 +962,10 @@ export interface ArgumentedNode {
   removeArgument(index: number): this;
 }
 
-declare type ArgumentedNodeExtensionType = Node<
-  ts.Node & {
-    arguments?: ts.NodeArray<ts.Node>;
-  }
->;
-export declare function AsyncableNode<
-  T extends Constructor<AsyncableNodeExtensionType>,
->(Base: T): Constructor<AsyncableNode> & T;
+declare type ArgumentedNodeExtensionType = Node<ts.Node & {
+      arguments?: ts.NodeArray<ts.Node>;
+  }>;
+export declare function AsyncableNode<T extends Constructor<AsyncableNodeExtensionType>>(Base: T): Constructor<AsyncableNode> & T;
 
 export interface AsyncableNode {
   /** If it's async. */
@@ -1169,9 +982,7 @@ export interface AsyncableNode {
 }
 
 declare type AsyncableNodeExtensionType = Node & ModifierableNode;
-export declare function AwaitableNode<
-  T extends Constructor<AwaitableNodeExtensionType>,
->(Base: T): Constructor<AwaitableNode> & T;
+export declare function AwaitableNode<T extends Constructor<AwaitableNodeExtensionType>>(Base: T): Constructor<AwaitableNode> & T;
 
 export interface AwaitableNode {
   /** If it's an awaited node. */
@@ -1187,14 +998,10 @@ export interface AwaitableNode {
   setIsAwaited(value: boolean): this;
 }
 
-declare type AwaitableNodeExtensionType = Node<
-  ts.Node & {
-    awaitModifier?: ts.AwaitKeywordToken;
-  }
->;
-export declare function BodiedNode<
-  T extends Constructor<BodiedNodeExtensionType>,
->(Base: T): Constructor<BodiedNode> & T;
+declare type AwaitableNodeExtensionType = Node<ts.Node & {
+      awaitModifier?: ts.AwaitKeywordToken;
+  }>;
+export declare function BodiedNode<T extends Constructor<BodiedNodeExtensionType>>(Base: T): Constructor<BodiedNode> & T;
 
 export interface BodiedNode {
   /** Gets the body. */
@@ -1208,14 +1015,10 @@ export interface BodiedNode {
   getBodyText(): string;
 }
 
-declare type BodiedNodeExtensionType = Node<
-  ts.Node & {
-    body: ts.Node;
-  }
->;
-export declare function BodyableNode<
-  T extends Constructor<BodyableNodeExtensionType>,
->(Base: T): Constructor<BodyableNode> & T;
+declare type BodiedNodeExtensionType = Node<ts.Node & {
+      body: ts.Node;
+  }>;
+export declare function BodyableNode<T extends Constructor<BodyableNodeExtensionType>>(Base: T): Constructor<BodyableNode> & T;
 
 export interface BodyableNode {
   /** Gets the body or throws an error if it doesn't exist. */
@@ -1237,14 +1040,10 @@ export interface BodyableNode {
   removeBody(): this;
 }
 
-declare type BodyableNodeExtensionType = Node<
-  ts.Node & {
-    body?: ts.Node;
-  }
->;
-export declare function ChildOrderableNode<
-  T extends Constructor<ChildOrderableNodeExtensionType>,
->(Base: T): Constructor<ChildOrderableNode> & T;
+declare type BodyableNodeExtensionType = Node<ts.Node & {
+      body?: ts.Node;
+  }>;
+export declare function ChildOrderableNode<T extends Constructor<ChildOrderableNodeExtensionType>>(Base: T): Constructor<ChildOrderableNode> & T;
 
 export interface ChildOrderableNode {
   /** Sets the child order of the node within the parent. */
@@ -1252,9 +1051,7 @@ export interface ChildOrderableNode {
 }
 
 declare type ChildOrderableNodeExtensionType = Node;
-export declare function DecoratableNode<
-  T extends Constructor<DecoratableNodeExtensionType>,
->(Base: T): Constructor<DecoratableNode> & T;
+export declare function DecoratableNode<T extends Constructor<DecoratableNodeExtensionType>>(Base: T): Constructor<DecoratableNode> & T;
 
 export interface DecoratableNode {
   /**
@@ -1266,9 +1063,7 @@ export interface DecoratableNode {
    * Gets a decorator or undefined if it doesn't exist.
    * @param findFunction - Function to use to find the parameter.
    */
-  getDecorator(
-    findFunction: (declaration: Decorator) => boolean,
-  ): Decorator | undefined;
+  getDecorator(findFunction: (declaration: Decorator) => boolean): Decorator | undefined;
   /**
    * Gets a decorator or throws if it doesn't exist.
    * @param name - Name of the parameter.
@@ -1278,9 +1073,7 @@ export interface DecoratableNode {
    * Gets a decorator or throws if it doesn't exist.
    * @param findFunction - Function to use to find the parameter.
    */
-  getDecoratorOrThrow(
-    findFunction: (declaration: Decorator) => boolean,
-  ): Decorator;
+  getDecoratorOrThrow(findFunction: (declaration: Decorator) => boolean): Decorator;
   /** Gets all the decorators of the node. */
   getDecorators(): Decorator[];
   /**
@@ -1292,33 +1085,23 @@ export interface DecoratableNode {
    * Adds decorators.
    * @param structures - Structures of the decorators.
    */
-  addDecorators(
-    structures: ReadonlyArray<OptionalKind<DecoratorStructure>>,
-  ): Decorator[];
+  addDecorators(structures: ReadonlyArray<OptionalKind<DecoratorStructure>>): Decorator[];
   /**
    * Inserts a decorator.
    * @param index - Child index to insert at. Specify a negative index to insert from the reverse.
    * @param structure - Structure of the decorator.
    */
-  insertDecorator(
-    index: number,
-    structure: OptionalKind<DecoratorStructure>,
-  ): Decorator;
+  insertDecorator(index: number, structure: OptionalKind<DecoratorStructure>): Decorator;
   /**
    * Insert decorators.
    * @param index - Child index to insert at.
    * @param structures - Structures to insert.
    */
-  insertDecorators(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<DecoratorStructure>>,
-  ): Decorator[];
+  insertDecorators(index: number, structures: ReadonlyArray<OptionalKind<DecoratorStructure>>): Decorator[];
 }
 
 declare type DecoratableNodeExtensionType = Node<ts.Node> & ModifierableNode;
-export declare function DotDotDotTokenableNode<
-  T extends Constructor<DotDotDotTokenableNodeExtensionType>,
->(Base: T): Constructor<DotDotDotTokenableNode> & T;
+export declare function DotDotDotTokenableNode<T extends Constructor<DotDotDotTokenableNodeExtensionType>>(Base: T): Constructor<DotDotDotTokenableNode> & T;
 
 export interface DotDotDotTokenableNode {
   /** Gets the dot dot dot token (...) if it exists or returns undefined */
@@ -1327,14 +1110,10 @@ export interface DotDotDotTokenableNode {
   getDotDotDotTokenOrThrow(): Node<ts.DotDotDotToken>;
 }
 
-declare type DotDotDotTokenableNodeExtensionType = Node<
-  ts.Node & {
-    dotDotDotToken?: ts.DotDotDotToken;
-  }
->;
-export declare function ExclamationTokenableNode<
-  T extends Constructor<ExclamationTokenableNodeExtensionType>,
->(Base: T): Constructor<ExclamationTokenableNode> & T;
+declare type DotDotDotTokenableNodeExtensionType = Node<ts.Node & {
+      dotDotDotToken?: ts.DotDotDotToken;
+  }>;
+export declare function ExclamationTokenableNode<T extends Constructor<ExclamationTokenableNodeExtensionType>>(Base: T): Constructor<ExclamationTokenableNode> & T;
 
 export interface ExclamationTokenableNode {
   /** If it has a exclamation token. */
@@ -1350,14 +1129,10 @@ export interface ExclamationTokenableNode {
   setHasExclamationToken(value: boolean): this;
 }
 
-declare type ExclamationTokenableNodeExtensionType = Node<
-  ts.Node & {
-    exclamationToken?: ts.ExclamationToken;
-  }
->;
-export declare function ExportableNode<
-  T extends Constructor<ExportableNodeExtensionType>,
->(Base: T): Constructor<ExportableNode> & T;
+declare type ExclamationTokenableNodeExtensionType = Node<ts.Node & {
+      exclamationToken?: ts.ExclamationToken;
+  }>;
+export declare function ExportableNode<T extends Constructor<ExportableNodeExtensionType>>(Base: T): Constructor<ExportableNode> & T;
 
 export interface ExportableNode extends ExportGetableNode {
   /**
@@ -1375,9 +1150,7 @@ export interface ExportableNode extends ExportGetableNode {
 }
 
 declare type ExportableNodeExtensionType = Node & ModifierableNode;
-export declare function ExportGetableNode<
-  T extends Constructor<ExportGetableNodeExtensionType>,
->(Base: T): Constructor<ExportGetableNode> & T;
+export declare function ExportGetableNode<T extends Constructor<ExportGetableNodeExtensionType>>(Base: T): Constructor<ExportGetableNode> & T;
 
 export interface ExportGetableNode {
   /** If the node has the export keyword. */
@@ -1401,9 +1174,7 @@ export interface ExportGetableNode {
 }
 
 declare type ExportGetableNodeExtensionType = Node;
-export declare function ExtendsClauseableNode<
-  T extends Constructor<ExtendsClauseableNodeExtensionType>,
->(Base: T): Constructor<ExtendsClauseableNode> & T;
+export declare function ExtendsClauseableNode<T extends Constructor<ExtendsClauseableNodeExtensionType>>(Base: T): Constructor<ExtendsClauseableNode> & T;
 
 export interface ExtendsClauseableNode {
   /** Gets the extends clauses. */
@@ -1412,9 +1183,7 @@ export interface ExtendsClauseableNode {
    * Adds multiple extends clauses.
    * @param texts - Texts to add for the extends clause.
    */
-  addExtends(
-    texts: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): ExpressionWithTypeArguments[];
+  addExtends(texts: ReadonlyArray<string | WriterFunction> | WriterFunction): ExpressionWithTypeArguments[];
   /**
    * Adds an extends clause.
    * @param text - Text to add for the extends clause.
@@ -1424,10 +1193,7 @@ export interface ExtendsClauseableNode {
    * Inserts multiple extends clauses.
    * @param texts - Texts to insert for the extends clause.
    */
-  insertExtends(
-    index: number,
-    texts: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): ExpressionWithTypeArguments[];
+  insertExtends(index: number, texts: ReadonlyArray<string | WriterFunction> | WriterFunction): ExpressionWithTypeArguments[];
   /**
    * Inserts an extends clause.
    * @param text - Text to insert for the extends clause.
@@ -1446,9 +1212,7 @@ export interface ExtendsClauseableNode {
 }
 
 declare type ExtendsClauseableNodeExtensionType = Node & HeritageClauseableNode;
-export declare function GeneratorableNode<
-  T extends Constructor<GeneratorableNodeExtensionType>,
->(Base: T): Constructor<GeneratorableNode> & T;
+export declare function GeneratorableNode<T extends Constructor<GeneratorableNodeExtensionType>>(Base: T): Constructor<GeneratorableNode> & T;
 
 export interface GeneratorableNode {
   /** If it's a generator function. */
@@ -1464,14 +1228,10 @@ export interface GeneratorableNode {
   setIsGenerator(value: boolean): this;
 }
 
-declare type GeneratorableNodeExtensionType = Node<
-  ts.Node & {
-    asteriskToken?: ts.AsteriskToken;
-  }
->;
-export declare function HeritageClauseableNode<
-  T extends Constructor<HeritageClauseableNodeExtensionType>,
->(Base: T): Constructor<HeritageClauseableNode> & T;
+declare type GeneratorableNodeExtensionType = Node<ts.Node & {
+      asteriskToken?: ts.AsteriskToken;
+  }>;
+export declare function HeritageClauseableNode<T extends Constructor<HeritageClauseableNodeExtensionType>>(Base: T): Constructor<HeritageClauseableNode> & T;
 
 export interface HeritageClauseableNode {
   /** Gets the heritage clauses of the node. */
@@ -1480,26 +1240,18 @@ export interface HeritageClauseableNode {
    * Gets the heritage clause by kind.
    * @kind - Kind of heritage clause.
    */
-  getHeritageClauseByKind(
-    kind: SyntaxKind.ExtendsKeyword | SyntaxKind.ImplementsKeyword,
-  ): HeritageClause | undefined;
+  getHeritageClauseByKind(kind: SyntaxKind.ExtendsKeyword | SyntaxKind.ImplementsKeyword): HeritageClause | undefined;
   /**
    * Gets the heritage clause by kind or throws if it doesn't exist.
    * @kind - Kind of heritage clause.
    */
-  getHeritageClauseByKindOrThrow(
-    kind: SyntaxKind.ExtendsKeyword | SyntaxKind.ImplementsKeyword,
-  ): HeritageClause;
+  getHeritageClauseByKindOrThrow(kind: SyntaxKind.ExtendsKeyword | SyntaxKind.ImplementsKeyword): HeritageClause;
 }
 
-declare type HeritageClauseableNodeExtensionType = Node<
-  ts.Node & {
-    heritageClauses?: ts.NodeArray<ts.HeritageClause>;
-  }
->;
-export declare function ImplementsClauseableNode<
-  T extends Constructor<ImplementsClauseableNodeExtensionType>,
->(Base: T): Constructor<ImplementsClauseableNode> & T;
+declare type HeritageClauseableNodeExtensionType = Node<ts.Node & {
+      heritageClauses?: ts.NodeArray<ts.HeritageClause>;
+  }>;
+export declare function ImplementsClauseableNode<T extends Constructor<ImplementsClauseableNodeExtensionType>>(Base: T): Constructor<ImplementsClauseableNode> & T;
 
 export interface ImplementsClauseableNode {
   /** Gets the implements clauses. */
@@ -1513,17 +1265,12 @@ export interface ImplementsClauseableNode {
    * Adds multiple implements clauses.
    * @param text - Texts to add for the implements clause.
    */
-  addImplements(
-    text: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): ExpressionWithTypeArguments[];
+  addImplements(text: ReadonlyArray<string | WriterFunction> | WriterFunction): ExpressionWithTypeArguments[];
   /**
    * Inserts an implements clause.
    * @param text - Text to insert for the implements clause.
    */
-  insertImplements(
-    index: number,
-    texts: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): ExpressionWithTypeArguments[];
+  insertImplements(index: number, texts: ReadonlyArray<string | WriterFunction> | WriterFunction): ExpressionWithTypeArguments[];
   /**
    * Inserts multiple implements clauses.
    * @param text - Texts to insert for the implements clause.
@@ -1541,15 +1288,10 @@ export interface ImplementsClauseableNode {
   removeImplements(implementsNode: ExpressionWithTypeArguments): this;
 }
 
-declare type ImplementsClauseableNodeExtensionType =
-  & Node
-  & HeritageClauseableNode;
-export declare function InitializerExpressionableNode<
-  T extends Constructor<InitializerExpressionableNodeExtensionType>,
->(Base: T): Constructor<InitializerExpressionableNode> & T;
+declare type ImplementsClauseableNodeExtensionType = Node & HeritageClauseableNode;
+export declare function InitializerExpressionableNode<T extends Constructor<InitializerExpressionableNodeExtensionType>>(Base: T): Constructor<InitializerExpressionableNode> & T;
 
-export interface InitializerExpressionableNode
-  extends InitializerExpressionGetableNode {
+export interface InitializerExpressionableNode extends InitializerExpressionGetableNode {
   /** Removes the initializer. */
   removeInitializer(): this;
   /**
@@ -1559,14 +1301,10 @@ export interface InitializerExpressionableNode
   setInitializer(textOrWriterFunction: string | WriterFunction): this;
 }
 
-declare type InitializerExpressionableNodeExtensionType = Node<
-  ts.Node & {
-    initializer?: ts.Expression;
-  }
->;
-export declare function InitializerExpressionGetableNode<
-  T extends Constructor<InitializerExpressionGetableNodeExtensionType>,
->(Base: T): Constructor<InitializerExpressionGetableNode> & T;
+declare type InitializerExpressionableNodeExtensionType = Node<ts.Node & {
+      initializer?: ts.Expression;
+  }>;
+export declare function InitializerExpressionGetableNode<T extends Constructor<InitializerExpressionGetableNodeExtensionType>>(Base: T): Constructor<InitializerExpressionGetableNode> & T;
 
 export interface InitializerExpressionGetableNode {
   /** Gets if node has an initializer. */
@@ -1574,25 +1312,17 @@ export interface InitializerExpressionGetableNode {
   /** Gets the initializer. */
   getInitializer(): Expression | undefined;
   /** Gets the initializer if it's a certain kind or throws. */
-  getInitializerIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToExpressionMappings[TKind];
+  getInitializerIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToExpressionMappings[TKind];
   /** Gets the initializer if it's a certain kind. */
-  getInitializerIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToExpressionMappings[TKind] | undefined;
+  getInitializerIfKind<TKind extends SyntaxKind>(kind: TKind): KindToExpressionMappings[TKind] | undefined;
   /** Gets the initializer or throw. */
   getInitializerOrThrow(): Expression;
 }
 
-declare type InitializerExpressionGetableNodeExtensionType = Node<
-  ts.Node & {
-    initializer?: ts.Expression;
-  }
->;
-export declare function JSDocableNode<
-  T extends Constructor<JSDocableNodeExtensionType>,
->(Base: T): Constructor<JSDocableNode> & T;
+declare type InitializerExpressionGetableNodeExtensionType = Node<ts.Node & {
+      initializer?: ts.Expression;
+  }>;
+export declare function JSDocableNode<T extends Constructor<JSDocableNodeExtensionType>>(Base: T): Constructor<JSDocableNode> & T;
 
 export interface JSDocableNode {
   /** Gets the JS doc nodes. */
@@ -1601,48 +1331,30 @@ export interface JSDocableNode {
    * Adds a JS doc.
    * @param structure - Structure to add.
    */
-  addJsDoc(
-    structure: OptionalKind<JSDocStructure> | string | WriterFunction,
-  ): JSDoc;
+  addJsDoc(structure: OptionalKind<JSDocStructure> | string | WriterFunction): JSDoc;
   /**
    * Adds JS docs.
    * @param structures - Structures to add.
    */
-  addJsDocs(
-    structures: ReadonlyArray<
-      OptionalKind<JSDocStructure> | string | WriterFunction
-    >,
-  ): JSDoc[];
+  addJsDocs(structures: ReadonlyArray<OptionalKind<JSDocStructure> | string | WriterFunction>): JSDoc[];
   /**
    * Inserts a JS doc.
    * @param index - Child index to insert at.
    * @param structure - Structure to insert.
    */
-  insertJsDoc(
-    index: number,
-    structure: OptionalKind<JSDocStructure> | string | WriterFunction,
-  ): JSDoc;
+  insertJsDoc(index: number, structure: OptionalKind<JSDocStructure> | string | WriterFunction): JSDoc;
   /**
    * Inserts JS docs.
    * @param index - Child index to insert at.
    * @param structures - Structures to insert.
    */
-  insertJsDocs(
-    index: number,
-    structures: ReadonlyArray<
-      OptionalKind<JSDocStructure> | string | WriterFunction
-    >,
-  ): JSDoc[];
+  insertJsDocs(index: number, structures: ReadonlyArray<OptionalKind<JSDocStructure> | string | WriterFunction>): JSDoc[];
 }
 
-declare type JSDocableNodeExtensionType = Node<
-  ts.Node & {
-    jsDoc?: ts.NodeArray<ts.JSDoc>;
-  }
->;
-export declare function LiteralLikeNode<
-  T extends Constructor<LiteralLikeNodeExtensionType>,
->(Base: T): Constructor<LiteralLikeNode> & T;
+declare type JSDocableNodeExtensionType = Node<ts.Node & {
+      jsDoc?: ts.NodeArray<ts.JSDoc>;
+  }>;
+export declare function LiteralLikeNode<T extends Constructor<LiteralLikeNodeExtensionType>>(Base: T): Constructor<LiteralLikeNode> & T;
 
 export interface LiteralLikeNode {
   /** Get text of the literal. */
@@ -1654,9 +1366,7 @@ export interface LiteralLikeNode {
 }
 
 declare type LiteralLikeNodeExtensionType = Node<ts.LiteralLikeNode>;
-export declare function ModifierableNode<
-  T extends Constructor<ModifierableNodeExtensionType>,
->(Base: T): Constructor<ModifierableNode> & T;
+export declare function ModifierableNode<T extends Constructor<ModifierableNodeExtensionType>>(Base: T): Constructor<ModifierableNode> & T;
 
 export interface ModifierableNode {
   /** Gets the node's modifiers. */
@@ -1665,16 +1375,12 @@ export interface ModifierableNode {
    * Gets the first modifier of the specified syntax kind or throws if none found.
    * @param kind - Syntax kind.
    */
-  getFirstModifierByKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getFirstModifierByKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the first modifier of the specified syntax kind or undefined if none found.
    * @param kind - Syntax kind.
    */
-  getFirstModifierByKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getFirstModifierByKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets if it has the specified modifier.
    * @param kind - Syntax kind to check for.
@@ -1694,65 +1400,37 @@ export interface ModifierableNode {
 }
 
 declare type ModifierableNodeExtensionType = Node;
-export declare type ModifierTexts =
-  | "export"
-  | "default"
-  | "declare"
-  | "abstract"
-  | "public"
-  | "protected"
-  | "private"
-  | "readonly"
-  | "static"
-  | "async"
-  | "const"
-  | "override"
-  | "in"
-  | "out";
-export declare function ModuledNode<
-  T extends Constructor<ModuledNodeExtensionType>,
->(Base: T): Constructor<ModuledNode> & T;
+export declare type ModifierTexts = "export" | "default" | "declare" | "abstract" | "public" | "protected" | "private" | "readonly" | "static" | "async" | "const" | "override" | "in" | "out";
+export declare function ModuledNode<T extends Constructor<ModuledNodeExtensionType>>(Base: T): Constructor<ModuledNode> & T;
 
 export interface ModuledNode {
   /**
    * Adds an import.
    * @param structure - Structure that represents the import.
    */
-  addImportDeclaration(
-    structure: OptionalKind<ImportDeclarationStructure>,
-  ): ImportDeclaration;
+  addImportDeclaration(structure: OptionalKind<ImportDeclarationStructure>): ImportDeclaration;
   /**
    * Adds imports.
    * @param structures - Structures that represent the imports.
    */
-  addImportDeclarations(
-    structures: ReadonlyArray<OptionalKind<ImportDeclarationStructure>>,
-  ): ImportDeclaration[];
+  addImportDeclarations(structures: ReadonlyArray<OptionalKind<ImportDeclarationStructure>>): ImportDeclaration[];
   /**
    * Insert an import.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the import.
    */
-  insertImportDeclaration(
-    index: number,
-    structure: OptionalKind<ImportDeclarationStructure>,
-  ): ImportDeclaration;
+  insertImportDeclaration(index: number, structure: OptionalKind<ImportDeclarationStructure>): ImportDeclaration;
   /**
    * Inserts imports.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the imports to insert.
    */
-  insertImportDeclarations(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<ImportDeclarationStructure>>,
-  ): ImportDeclaration[];
+  insertImportDeclarations(index: number, structures: ReadonlyArray<OptionalKind<ImportDeclarationStructure>>): ImportDeclaration[];
   /**
    * Gets the first import declaration that matches a condition, or undefined if it doesn't exist.
    * @param condition - Condition to get the import declaration by.
    */
-  getImportDeclaration(
-    condition: (importDeclaration: ImportDeclaration) => boolean,
-  ): ImportDeclaration | undefined;
+  getImportDeclaration(condition: (importDeclaration: ImportDeclaration) => boolean): ImportDeclaration | undefined;
   /**
    * Gets the first import declaration that matches a module specifier, or undefined if it doesn't exist.
    * @param module - Module specifier to get the import declaration by.
@@ -1762,9 +1440,7 @@ export interface ModuledNode {
    * Gets the first import declaration that matches a condition, or throws if it doesn't exist.
    * @param condition - Condition to get the import declaration by.
    */
-  getImportDeclarationOrThrow(
-    condition: (importDeclaration: ImportDeclaration) => boolean,
-  ): ImportDeclaration;
+  getImportDeclarationOrThrow(condition: (importDeclaration: ImportDeclaration) => boolean): ImportDeclaration;
   /**
    * Gets the first import declaration that matches a module specifier, or throws if it doesn't exist.
    * @param module - Module specifier to get the import declaration by.
@@ -1776,37 +1452,25 @@ export interface ModuledNode {
    * Add export declarations.
    * @param structure - Structure that represents the export.
    */
-  addExportDeclaration(
-    structure: OptionalKind<ExportDeclarationStructure>,
-  ): ExportDeclaration;
+  addExportDeclaration(structure: OptionalKind<ExportDeclarationStructure>): ExportDeclaration;
   /**
    * Add export declarations.
    * @param structures - Structures that represent the exports.
    */
-  addExportDeclarations(
-    structures: ReadonlyArray<OptionalKind<ExportDeclarationStructure>>,
-  ): ExportDeclaration[];
+  addExportDeclarations(structures: ReadonlyArray<OptionalKind<ExportDeclarationStructure>>): ExportDeclaration[];
   /**
    * Insert an export declaration.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the export.
    */
-  insertExportDeclaration(
-    index: number,
-    structure: OptionalKind<ExportDeclarationStructure>,
-  ): ExportDeclaration;
+  insertExportDeclaration(index: number, structure: OptionalKind<ExportDeclarationStructure>): ExportDeclaration;
   /**
    * Insert export declarations.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the exports to insert.
    */
-  insertExportDeclarations(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<ExportDeclarationStructure>>,
-  ): ExportDeclaration[];
-  getExportDeclaration(
-    condition: (exportDeclaration: ExportDeclaration) => boolean,
-  ): ExportDeclaration | undefined;
+  insertExportDeclarations(index: number, structures: ReadonlyArray<OptionalKind<ExportDeclarationStructure>>): ExportDeclaration[];
+  getExportDeclaration(condition: (exportDeclaration: ExportDeclaration) => boolean): ExportDeclaration | undefined;
   /**
    * Gets the first export declaration that matches a module specifier, or undefined if it doesn't exist.
    * @param module - Module specifier to get the export declaration by.
@@ -1816,9 +1480,7 @@ export interface ModuledNode {
    * Gets the first export declaration that matches a condition, or throws if it doesn't exist.
    * @param condition - Condition to get the export declaration by.
    */
-  getExportDeclarationOrThrow(
-    condition: (exportDeclaration: ExportDeclaration) => boolean,
-  ): ExportDeclaration;
+  getExportDeclarationOrThrow(condition: (exportDeclaration: ExportDeclaration) => boolean): ExportDeclaration;
   /**
    * Gets the first export declaration that matches a module specifier, or throws if it doesn't exist.
    * @param module - Module specifier to get the export declaration by.
@@ -1830,48 +1492,34 @@ export interface ModuledNode {
    * Add export assignments.
    * @param structure - Structure that represents the export.
    */
-  addExportAssignment(
-    structure: OptionalKind<ExportAssignmentStructure>,
-  ): ExportAssignment;
+  addExportAssignment(structure: OptionalKind<ExportAssignmentStructure>): ExportAssignment;
   /**
    * Add export assignments.
    * @param structures - Structures that represent the exports.
    */
-  addExportAssignments(
-    structures: ReadonlyArray<OptionalKind<ExportAssignmentStructure>>,
-  ): ExportAssignment[];
+  addExportAssignments(structures: ReadonlyArray<OptionalKind<ExportAssignmentStructure>>): ExportAssignment[];
   /**
    * Insert an export assignment.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the export.
    */
-  insertExportAssignment(
-    index: number,
-    structure: OptionalKind<ExportAssignmentStructure>,
-  ): ExportAssignment;
+  insertExportAssignment(index: number, structure: OptionalKind<ExportAssignmentStructure>): ExportAssignment;
   /**
    * Insert export assignments into a file.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the exports to insert.
    */
-  insertExportAssignments(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<ExportAssignmentStructure>>,
-  ): ExportAssignment[];
+  insertExportAssignments(index: number, structures: ReadonlyArray<OptionalKind<ExportAssignmentStructure>>): ExportAssignment[];
   /**
    * Gets the first export assignment that matches a condition, or undefined if it doesn't exist.
    * @param condition - Condition to get the export assignment by.
    */
-  getExportAssignment(
-    condition: (exportAssignment: ExportAssignment) => boolean,
-  ): ExportAssignment | undefined;
+  getExportAssignment(condition: (exportAssignment: ExportAssignment) => boolean): ExportAssignment | undefined;
   /**
    * Gets the first export assignment that matches a condition, or throws if it doesn't exist.
    * @param condition - Condition to get the export assignment by.
    */
-  getExportAssignmentOrThrow(
-    condition: (exportAssignment: ExportAssignment) => boolean,
-  ): ExportAssignment;
+  getExportAssignmentOrThrow(condition: (exportAssignment: ExportAssignment) => boolean): ExportAssignment;
   /** Get the file's export assignments. */
   getExportAssignments(): ExportAssignment[];
   /** Gets the default export symbol. */
@@ -1893,62 +1541,36 @@ export interface ModuledNode {
   removeDefaultExport(defaultExportSymbol?: Symbol | undefined): this;
 }
 
-declare type ModuledNodeExtensionType =
-  & Node<ts.SourceFile | ts.ModuleDeclaration>
-  & StatementedNode;
-export declare function AssertionKeyNamedNode<
-  T extends Constructor<AssertionKeyNamedNodeExtensionType>,
->(Base: T): Constructor<AssertionKeyNamedNode> & T;
+declare type ModuledNodeExtensionType = Node<ts.SourceFile | ts.ModuleDeclaration> & StatementedNode;
+export declare function AssertionKeyNamedNode<T extends Constructor<AssertionKeyNamedNodeExtensionType>>(Base: T): Constructor<AssertionKeyNamedNode> & T;
 
-export interface AssertionKeyNamedNode
-  extends AssertionKeyNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
+export interface AssertionKeyNamedNode extends AssertionKeyNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
 }
 
-declare type AssertionKeyNamedNodeExtensionType = NamedNodeBaseExtensionType<
-  ts.AssertionKey
->;
-export declare type AssertionKeyNamedNodeSpecific = NamedNodeSpecificBase<
-  AssertionKey
->;
-export declare function BindingNamedNode<
-  T extends Constructor<BindingNamedNodeExtensionType>,
->(Base: T): Constructor<BindingNamedNode> & T;
+declare type AssertionKeyNamedNodeExtensionType = NamedNodeBaseExtensionType<ts.AssertionKey>;
+export declare type AssertionKeyNamedNodeSpecific = NamedNodeSpecificBase<AssertionKey>;
+export declare function BindingNamedNode<T extends Constructor<BindingNamedNodeExtensionType>>(Base: T): Constructor<BindingNamedNode> & T;
 
-export interface BindingNamedNode
-  extends BindingNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
+export interface BindingNamedNode extends BindingNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
 }
 
-declare type BindingNamedNodeExtensionType = NamedNodeBaseExtensionType<
-  ts.BindingName
->;
-export declare type BindingNamedNodeSpecific = NamedNodeSpecificBase<
-  BindingName
->;
-export declare function ModuleNamedNode<
-  T extends Constructor<ModuleNamedNodeExtensionType>,
->(Base: T): Constructor<ModuleNamedNode> & T;
+declare type BindingNamedNodeExtensionType = NamedNodeBaseExtensionType<ts.BindingName>;
+export declare type BindingNamedNodeSpecific = NamedNodeSpecificBase<BindingName>;
+export declare function ModuleNamedNode<T extends Constructor<ModuleNamedNodeExtensionType>>(Base: T): Constructor<ModuleNamedNode> & T;
 
-export interface ModuleNamedNode
-  extends ModuleNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
+export interface ModuleNamedNode extends ModuleNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
 }
 
-declare type ModuleNamedNodeExtensionType = NamedNodeBaseExtensionType<
-  ts.ModuleName
->;
+declare type ModuleNamedNodeExtensionType = NamedNodeBaseExtensionType<ts.ModuleName>;
 export declare type ModuleNamedNodeSpecific = NamedNodeSpecificBase<ModuleName>;
-export declare function NameableNode<
-  T extends Constructor<NameableNodeExtensionType>,
->(Base: T): Constructor<NameableNode> & T;
+export declare function NameableNode<T extends Constructor<NameableNodeExtensionType>>(Base: T): Constructor<NameableNode> & T;
 
-export interface NameableNode
-  extends NameableNodeSpecific, ReferenceFindableNode, RenameableNode {
+export interface NameableNode extends NameableNodeSpecific, ReferenceFindableNode, RenameableNode {
 }
 
-declare type NameableNodeExtensionType = Node<
-  ts.Node & {
-    name?: ts.Identifier;
-  }
->;
+declare type NameableNodeExtensionType = Node<ts.Node & {
+      name?: ts.Identifier;
+  }>;
 
 export interface NameableNodeSpecific {
   /** Gets the name node if it exists. */
@@ -1963,24 +1585,14 @@ export interface NameableNodeSpecific {
   removeName(): this;
 }
 
-export declare function NamedNode<
-  T extends Constructor<NamedNodeExtensionType>,
->(Base: T): Constructor<NamedNode> & T;
+export declare function NamedNode<T extends Constructor<NamedNodeExtensionType>>(Base: T): Constructor<NamedNode> & T;
 
-export interface NamedNode
-  extends NamedNodeSpecific, ReferenceFindableNode, RenameableNode {
+export interface NamedNode extends NamedNodeSpecific, ReferenceFindableNode, RenameableNode {
 }
 
 declare type NamedNodeExtensionType = NamedNodeBaseExtensionType<ts.Identifier>;
 export declare type NamedNodeSpecific = NamedNodeSpecificBase<Identifier>;
-export declare function NamedNodeBase<
-  TCompilerNode extends ts.Node,
-  U extends Constructor<NamedNodeBaseExtensionType<TCompilerNode>>,
->(
-  Base: U,
-):
-  & Constructor<NamedNodeSpecificBase<CompilerNodeToWrappedType<TCompilerNode>>>
-  & U;
+export declare function NamedNodeBase<TCompilerNode extends ts.Node, U extends Constructor<NamedNodeBaseExtensionType<TCompilerNode>>>(Base: U): Constructor<NamedNodeSpecificBase<CompilerNodeToWrappedType<TCompilerNode>>> & U;
 
 export interface NamedNodeSpecificBase<TNode extends Node> {
   /** Gets the name node. */
@@ -1989,28 +1601,17 @@ export interface NamedNodeSpecificBase<TNode extends Node> {
   getName(): string;
 }
 
-declare type NamedNodeBaseExtensionType<TCompilerNode extends ts.Node> = Node<
-  ts.Node & {
-    name: TCompilerNode;
-  }
->;
-export declare function PropertyNamedNode<
-  T extends Constructor<PropertyNamedNodeExtensionType>,
->(Base: T): Constructor<PropertyNamedNode> & T;
+declare type NamedNodeBaseExtensionType<TCompilerNode extends ts.Node> = Node<ts.Node & {
+      name: TCompilerNode;
+  }>;
+export declare function PropertyNamedNode<T extends Constructor<PropertyNamedNodeExtensionType>>(Base: T): Constructor<PropertyNamedNode> & T;
 
-export interface PropertyNamedNode
-  extends PropertyNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
+export interface PropertyNamedNode extends PropertyNamedNodeSpecific, ReferenceFindableNode, RenameableNode {
 }
 
-declare type PropertyNamedNodeExtensionType = NamedNodeBaseExtensionType<
-  ts.PropertyName
->;
-export declare type PropertyNamedNodeSpecific = NamedNodeSpecificBase<
-  PropertyName
->;
-export declare function ReferenceFindableNode<
-  T extends Constructor<ReferenceFindableNodeExtensionType>,
->(Base: T): Constructor<ReferenceFindableNode> & T;
+declare type PropertyNamedNodeExtensionType = NamedNodeBaseExtensionType<ts.PropertyName>;
+export declare type PropertyNamedNodeSpecific = NamedNodeSpecificBase<PropertyName>;
+export declare function ReferenceFindableNode<T extends Constructor<ReferenceFindableNodeExtensionType>>(Base: T): Constructor<ReferenceFindableNode> & T;
 
 export interface ReferenceFindableNode {
   /** Finds the references of the definition of the node. */
@@ -2019,18 +1620,10 @@ export interface ReferenceFindableNode {
   findReferencesAsNodes(): Node[];
 }
 
-declare type ReferenceFindableNodeExtensionType = Node<
-  ts.Node & {
-    name?:
-      | ts.PropertyName
-      | ts.BindingName
-      | ts.DeclarationName
-      | ts.StringLiteral;
-  }
->;
-export declare function RenameableNode<
-  T extends Constructor<RenameableNodeExtensionType>,
->(Base: T): Constructor<RenameableNode> & T;
+declare type ReferenceFindableNodeExtensionType = Node<ts.Node & {
+      name?: ts.PropertyName | ts.BindingName | ts.DeclarationName | ts.StringLiteral;
+  }>;
+export declare function RenameableNode<T extends Constructor<RenameableNodeExtensionType>>(Base: T): Constructor<RenameableNode> & T;
 
 export interface RenameableNode {
   /**
@@ -2042,9 +1635,7 @@ export interface RenameableNode {
 }
 
 declare type RenameableNodeExtensionType = Node<ts.Node>;
-export declare function OverrideableNode<
-  T extends Constructor<OverrideableNodeExtensionType>,
->(Base: T): Constructor<OverrideableNode> & T;
+export declare function OverrideableNode<T extends Constructor<OverrideableNodeExtensionType>>(Base: T): Constructor<OverrideableNode> & T;
 
 export interface OverrideableNode {
   /** If it has an override keyword. */
@@ -2061,9 +1652,7 @@ export interface OverrideableNode {
 }
 
 declare type OverrideableNodeExtensionType = Node & ModifierableNode;
-export declare function ParameteredNode<
-  T extends Constructor<ParameteredNodeExtensionType>,
->(Base: T): Constructor<ParameteredNode> & T;
+export declare function ParameteredNode<T extends Constructor<ParameteredNodeExtensionType>>(Base: T): Constructor<ParameteredNode> & T;
 
 export interface ParameteredNode {
   /**
@@ -2075,9 +1664,7 @@ export interface ParameteredNode {
    * Gets a parameter or undefined if it doesn't exist.
    * @param findFunction - Function to use to find the parameter.
    */
-  getParameter(
-    findFunction: (declaration: ParameterDeclaration) => boolean,
-  ): ParameterDeclaration | undefined;
+  getParameter(findFunction: (declaration: ParameterDeclaration) => boolean): ParameterDeclaration | undefined;
   /**
    * Gets a parameter or throws if it doesn't exist.
    * @param name - Name of the parameter.
@@ -2087,53 +1674,37 @@ export interface ParameteredNode {
    * Gets a parameter or throws if it doesn't exist.
    * @param findFunction - Function to use to find the parameter.
    */
-  getParameterOrThrow(
-    findFunction: (declaration: ParameterDeclaration) => boolean,
-  ): ParameterDeclaration;
+  getParameterOrThrow(findFunction: (declaration: ParameterDeclaration) => boolean): ParameterDeclaration;
   /** Gets all the parameters of the node. */
   getParameters(): ParameterDeclaration[];
   /**
    * Adds a parameter.
    * @param structure - Structure of the parameter.
    */
-  addParameter(
-    structure: OptionalKind<ParameterDeclarationStructure>,
-  ): ParameterDeclaration;
+  addParameter(structure: OptionalKind<ParameterDeclarationStructure>): ParameterDeclaration;
   /**
    * Adds parameters.
    * @param structures - Structures of the parameters.
    */
-  addParameters(
-    structures: ReadonlyArray<OptionalKind<ParameterDeclarationStructure>>,
-  ): ParameterDeclaration[];
+  addParameters(structures: ReadonlyArray<OptionalKind<ParameterDeclarationStructure>>): ParameterDeclaration[];
   /**
    * Inserts parameters.
    * @param index - Child index to insert at.
    * @param structures - Parameters to insert.
    */
-  insertParameters(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<ParameterDeclarationStructure>>,
-  ): ParameterDeclaration[];
+  insertParameters(index: number, structures: ReadonlyArray<OptionalKind<ParameterDeclarationStructure>>): ParameterDeclaration[];
   /**
    * Inserts a parameter.
    * @param index - Child index to insert at.
    * @param structures - Parameter to insert.
    */
-  insertParameter(
-    index: number,
-    structure: OptionalKind<ParameterDeclarationStructure>,
-  ): ParameterDeclaration;
+  insertParameter(index: number, structure: OptionalKind<ParameterDeclarationStructure>): ParameterDeclaration;
 }
 
-declare type ParameteredNodeExtensionType = Node<
-  ts.Node & {
-    parameters: ts.NodeArray<ts.ParameterDeclaration>;
-  }
->;
-export declare function QuestionDotTokenableNode<
-  T extends Constructor<QuestionDotTokenableNodeExtensionType>,
->(Base: T): Constructor<QuestionDotTokenableNode> & T;
+declare type ParameteredNodeExtensionType = Node<ts.Node & {
+      parameters: ts.NodeArray<ts.ParameterDeclaration>;
+  }>;
+export declare function QuestionDotTokenableNode<T extends Constructor<QuestionDotTokenableNodeExtensionType>>(Base: T): Constructor<QuestionDotTokenableNode> & T;
 
 export interface QuestionDotTokenableNode {
   /** If it has a question dot token. */
@@ -2149,14 +1720,10 @@ export interface QuestionDotTokenableNode {
   setHasQuestionDotToken(value: boolean): this;
 }
 
-declare type QuestionDotTokenableNodeExtensionType = Node<
-  ts.Node & {
-    questionDotToken?: ts.QuestionDotToken;
-  }
->;
-export declare function QuestionTokenableNode<
-  T extends Constructor<QuestionTokenableNodeExtensionType>,
->(Base: T): Constructor<QuestionTokenableNode> & T;
+declare type QuestionDotTokenableNodeExtensionType = Node<ts.Node & {
+      questionDotToken?: ts.QuestionDotToken;
+  }>;
+export declare function QuestionTokenableNode<T extends Constructor<QuestionTokenableNodeExtensionType>>(Base: T): Constructor<QuestionTokenableNode> & T;
 
 export interface QuestionTokenableNode {
   /** If it has a question token. */
@@ -2172,14 +1739,10 @@ export interface QuestionTokenableNode {
   setHasQuestionToken(value: boolean): this;
 }
 
-declare type QuestionTokenableNodeExtensionType = Node<
-  ts.Node & {
-    questionToken?: ts.QuestionToken;
-  }
->;
-export declare function ReadonlyableNode<
-  T extends Constructor<ReadonlyableNodeExtensionType>,
->(Base: T): Constructor<ReadonlyableNode> & T;
+declare type QuestionTokenableNodeExtensionType = Node<ts.Node & {
+      questionToken?: ts.QuestionToken;
+  }>;
+export declare function ReadonlyableNode<T extends Constructor<ReadonlyableNodeExtensionType>>(Base: T): Constructor<ReadonlyableNode> & T;
 
 export interface ReadonlyableNode {
   /** Gets if it's readonly. */
@@ -2196,9 +1759,7 @@ export interface ReadonlyableNode {
 }
 
 declare type ReadonlyableNodeExtensionType = Node & ModifierableNode;
-export declare function ReturnTypedNode<
-  T extends Constructor<ReturnTypedNodeExtensionType>,
->(Base: T): Constructor<ReturnTypedNode> & T;
+export declare function ReturnTypedNode<T extends Constructor<ReturnTypedNodeExtensionType>>(Base: T): Constructor<ReturnTypedNode> & T;
 
 export interface ReturnTypedNode {
   /** Gets the return type. */
@@ -2219,9 +1780,7 @@ export interface ReturnTypedNode {
 }
 
 declare type ReturnTypedNodeExtensionType = Node<ts.SignatureDeclaration>;
-export declare function ScopeableNode<
-  T extends Constructor<ScopeableNodeExtensionType>,
->(Base: T): Constructor<ScopeableNode> & T;
+export declare function ScopeableNode<T extends Constructor<ScopeableNodeExtensionType>>(Base: T): Constructor<ScopeableNode> & T;
 
 export interface ScopeableNode {
   /**
@@ -2238,9 +1797,7 @@ export interface ScopeableNode {
 }
 
 declare type ScopeableNodeExtensionType = Node & ModifierableNode;
-export declare function ScopedNode<
-  T extends Constructor<ScopedNodeExtensionType>,
->(Base: T): Constructor<ScopedNode> & T;
+export declare function ScopedNode<T extends Constructor<ScopedNodeExtensionType>>(Base: T): Constructor<ScopedNode> & T;
 
 export interface ScopedNode {
   /** Gets the scope. */
@@ -2255,18 +1812,13 @@ export interface ScopedNode {
 }
 
 declare type ScopedNodeExtensionType = Node & ModifierableNode;
-export declare function SignaturedDeclaration<
-  T extends Constructor<SignaturedDeclarationExtensionType>,
->(Base: T): Constructor<SignaturedDeclaration> & T;
+export declare function SignaturedDeclaration<T extends Constructor<SignaturedDeclarationExtensionType>>(Base: T): Constructor<SignaturedDeclaration> & T;
 
-export interface SignaturedDeclaration
-  extends ParameteredNode, ReturnTypedNode {
+export interface SignaturedDeclaration extends ParameteredNode, ReturnTypedNode {
 }
 
 declare type SignaturedDeclarationExtensionType = Node<ts.SignatureDeclaration>;
-export declare function StaticableNode<
-  T extends Constructor<StaticableNodeExtensionType>,
->(Base: T): Constructor<StaticableNode> & T;
+export declare function StaticableNode<T extends Constructor<StaticableNodeExtensionType>>(Base: T): Constructor<StaticableNode> & T;
 
 export interface StaticableNode {
   /** Gets if it's static. */
@@ -2283,9 +1835,7 @@ export interface StaticableNode {
 }
 
 declare type StaticableNodeExtensionType = Node & ModifierableNode;
-export declare function TextInsertableNode<
-  T extends Constructor<TextInsertableNodeExtensionType>,
->(Base: T): Constructor<TextInsertableNode> & T;
+export declare function TextInsertableNode<T extends Constructor<TextInsertableNodeExtensionType>>(Base: T): Constructor<TextInsertableNode> & T;
 
 export interface TextInsertableNode {
   /**
@@ -2303,10 +1853,7 @@ export interface TextInsertableNode {
    * @param range - Start and end position of the text to replace.
    * @param textOrWriterFunction - Text to replace the range with.
    */
-  replaceText(
-    range: [number, number],
-    textOrWriterFunction: string | WriterFunction,
-  ): this;
+  replaceText(range: [number, number], textOrWriterFunction: string | WriterFunction): this;
   /** Removes all the text within the node */
   removeText(): this;
   /**
@@ -2320,9 +1867,7 @@ export interface TextInsertableNode {
 }
 
 declare type TextInsertableNodeExtensionType = Node;
-export declare function TypeArgumentedNode<
-  T extends Constructor<TypeArgumentedNodeExtensionType>,
->(Base: T): Constructor<TypeArgumentedNode> & T;
+export declare function TypeArgumentedNode<T extends Constructor<TypeArgumentedNodeExtensionType>>(Base: T): Constructor<TypeArgumentedNode> & T;
 
 export interface TypeArgumentedNode {
   /** Gets all the type arguments of the node. */
@@ -2348,10 +1893,7 @@ export interface TypeArgumentedNode {
    * @param index - Child index to insert at.
    * @param argumentTexts - Argument texts to insert.
    */
-  insertTypeArguments(
-    index: number,
-    argumentTexts: ReadonlyArray<string>,
-  ): TypeNode[];
+  insertTypeArguments(index: number, argumentTexts: ReadonlyArray<string>): TypeNode[];
   /**
    * Removes a type argument.
    * @param typeArg - Type argument to remove.
@@ -2364,14 +1906,10 @@ export interface TypeArgumentedNode {
   removeTypeArgument(index: number): this;
 }
 
-declare type TypeArgumentedNodeExtensionType = Node<
-  ts.Node & {
-    typeArguments?: ts.NodeArray<ts.TypeNode>;
-  }
->;
-export declare function TypedNode<
-  T extends Constructor<TypedNodeExtensionType>,
->(Base: T): Constructor<TypedNode> & T;
+declare type TypeArgumentedNodeExtensionType = Node<ts.Node & {
+      typeArguments?: ts.NodeArray<ts.TypeNode>;
+  }>;
+export declare function TypedNode<T extends Constructor<TypedNodeExtensionType>>(Base: T): Constructor<TypedNode> & T;
 
 export interface TypedNode {
   /** Gets the type node or undefined if none exists. */
@@ -2387,200 +1925,134 @@ export interface TypedNode {
   removeType(): this;
 }
 
-declare type TypedNodeExtensionType = Node<
-  ts.Node & {
-    type?: ts.TypeNode;
-  }
->;
-export declare function TypeElementMemberedNode<
-  T extends Constructor<TypeElementMemberedNodeExtensionType>,
->(Base: T): Constructor<TypeElementMemberedNode> & T;
+declare type TypedNodeExtensionType = Node<ts.Node & {
+      type?: ts.TypeNode;
+  }>;
+export declare function TypeElementMemberedNode<T extends Constructor<TypeElementMemberedNodeExtensionType>>(Base: T): Constructor<TypeElementMemberedNode> & T;
 
 export interface TypeElementMemberedNode {
   /**
    * Adds a member.
    * @param member - Member to add.
    */
-  addMember(
-    member: string | WriterFunction | TypeElementMemberStructures,
-  ): TypeElementTypes | CommentTypeElement;
+  addMember(member: string | WriterFunction | TypeElementMemberStructures): TypeElementTypes | CommentTypeElement;
   /**
    * Adds members.
    * @param members - Collection of members to add.
    */
-  addMembers(
-    members:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction | TypeElementMemberStructures>,
-  ): (TypeElementTypes | CommentTypeElement)[];
+  addMembers(members: string | WriterFunction | ReadonlyArray<string | WriterFunction | TypeElementMemberStructures>): (TypeElementTypes | CommentTypeElement)[];
   /**
    * Inserts a member.
    * @param index - Child index to insert at.
    * @param member - Member to insert.
    */
-  insertMember(
-    index: number,
-    member: string | WriterFunction | TypeElementMemberStructures,
-  ): TypeElementTypes | CommentTypeElement;
+  insertMember(index: number, member: string | WriterFunction | TypeElementMemberStructures): TypeElementTypes | CommentTypeElement;
   /**
    * Inserts members.
    * @param index - Child index to insert at.
    * @param members - Collection of members to insert.
    */
-  insertMembers(
-    index: number,
-    members:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction | TypeElementMemberStructures>,
-  ): (TypeElementTypes | CommentTypeElement)[];
+  insertMembers(index: number, members: string | WriterFunction | ReadonlyArray<string | WriterFunction | TypeElementMemberStructures>): (TypeElementTypes | CommentTypeElement)[];
   /**
    * Add construct signature.
    * @param structure - Structure representing the construct signature.
    */
-  addConstructSignature(
-    structure: OptionalKind<ConstructSignatureDeclarationStructure>,
-  ): ConstructSignatureDeclaration;
+  addConstructSignature(structure: OptionalKind<ConstructSignatureDeclarationStructure>): ConstructSignatureDeclaration;
   /**
    * Add construct signatures.
    * @param structures - Structures representing the construct signatures.
    */
-  addConstructSignatures(
-    structures: ReadonlyArray<
-      OptionalKind<ConstructSignatureDeclarationStructure>
-    >,
-  ): ConstructSignatureDeclaration[];
+  addConstructSignatures(structures: ReadonlyArray<OptionalKind<ConstructSignatureDeclarationStructure>>): ConstructSignatureDeclaration[];
   /**
    * Insert construct signature.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the construct signature.
    */
-  insertConstructSignature(
-    index: number,
-    structure: OptionalKind<ConstructSignatureDeclarationStructure>,
-  ): ConstructSignatureDeclaration;
+  insertConstructSignature(index: number, structure: OptionalKind<ConstructSignatureDeclarationStructure>): ConstructSignatureDeclaration;
   /**
    * Insert construct signatures.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the construct signatures.
    */
-  insertConstructSignatures(
-    index: number,
-    structures: ReadonlyArray<
-      OptionalKind<ConstructSignatureDeclarationStructure>
-    >,
-  ): ConstructSignatureDeclaration[];
+  insertConstructSignatures(index: number, structures: ReadonlyArray<OptionalKind<ConstructSignatureDeclarationStructure>>): ConstructSignatureDeclaration[];
   /**
    * Gets the first construct signature by a find function.
    * @param findFunction - Function to find the construct signature by.
    */
-  getConstructSignature(
-    findFunction: (member: ConstructSignatureDeclaration) => boolean,
-  ): ConstructSignatureDeclaration | undefined;
+  getConstructSignature(findFunction: (member: ConstructSignatureDeclaration) => boolean): ConstructSignatureDeclaration | undefined;
   /**
    * Gets the first construct signature by a find function or throws if not found.
    * @param findFunction - Function to find the construct signature by.
    */
-  getConstructSignatureOrThrow(
-    findFunction: (member: ConstructSignatureDeclaration) => boolean,
-  ): ConstructSignatureDeclaration;
+  getConstructSignatureOrThrow(findFunction: (member: ConstructSignatureDeclaration) => boolean): ConstructSignatureDeclaration;
   /** Gets the interface construct signatures. */
   getConstructSignatures(): ConstructSignatureDeclaration[];
   /**
    * Add call signature.
    * @param structure - Structure representing the call signature.
    */
-  addCallSignature(
-    structure: OptionalKind<CallSignatureDeclarationStructure>,
-  ): CallSignatureDeclaration;
+  addCallSignature(structure: OptionalKind<CallSignatureDeclarationStructure>): CallSignatureDeclaration;
   /**
    * Add call signatures.
    * @param structures - Structures representing the call signatures.
    */
-  addCallSignatures(
-    structures: ReadonlyArray<OptionalKind<CallSignatureDeclarationStructure>>,
-  ): CallSignatureDeclaration[];
+  addCallSignatures(structures: ReadonlyArray<OptionalKind<CallSignatureDeclarationStructure>>): CallSignatureDeclaration[];
   /**
    * Insert call signature.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the call signature.
    */
-  insertCallSignature(
-    index: number,
-    structure: OptionalKind<CallSignatureDeclarationStructure>,
-  ): CallSignatureDeclaration;
+  insertCallSignature(index: number, structure: OptionalKind<CallSignatureDeclarationStructure>): CallSignatureDeclaration;
   /**
    * Insert call signatures.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the call signatures.
    */
-  insertCallSignatures(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<CallSignatureDeclarationStructure>>,
-  ): CallSignatureDeclaration[];
+  insertCallSignatures(index: number, structures: ReadonlyArray<OptionalKind<CallSignatureDeclarationStructure>>): CallSignatureDeclaration[];
   /**
    * Gets the first call signature by a find function.
    * @param findFunction - Function to find the call signature by.
    */
-  getCallSignature(
-    findFunction: (member: CallSignatureDeclaration) => boolean,
-  ): CallSignatureDeclaration | undefined;
+  getCallSignature(findFunction: (member: CallSignatureDeclaration) => boolean): CallSignatureDeclaration | undefined;
   /**
    * Gets the first call signature by a find function or throws if not found.
    * @param findFunction - Function to find the call signature by.
    */
-  getCallSignatureOrThrow(
-    findFunction: (member: CallSignatureDeclaration) => boolean,
-  ): CallSignatureDeclaration;
+  getCallSignatureOrThrow(findFunction: (member: CallSignatureDeclaration) => boolean): CallSignatureDeclaration;
   /** Gets the interface call signatures. */
   getCallSignatures(): CallSignatureDeclaration[];
   /**
    * Add index signature.
    * @param structure - Structure representing the index signature.
    */
-  addIndexSignature(
-    structure: OptionalKind<IndexSignatureDeclarationStructure>,
-  ): IndexSignatureDeclaration;
+  addIndexSignature(structure: OptionalKind<IndexSignatureDeclarationStructure>): IndexSignatureDeclaration;
   /**
    * Add index signatures.
    * @param structures - Structures representing the index signatures.
    */
-  addIndexSignatures(
-    structures: ReadonlyArray<OptionalKind<IndexSignatureDeclarationStructure>>,
-  ): IndexSignatureDeclaration[];
+  addIndexSignatures(structures: ReadonlyArray<OptionalKind<IndexSignatureDeclarationStructure>>): IndexSignatureDeclaration[];
   /**
    * Insert index signature.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the index signature.
    */
-  insertIndexSignature(
-    index: number,
-    structure: OptionalKind<IndexSignatureDeclarationStructure>,
-  ): IndexSignatureDeclaration;
+  insertIndexSignature(index: number, structure: OptionalKind<IndexSignatureDeclarationStructure>): IndexSignatureDeclaration;
   /**
    * Insert index signatures.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the index signatures.
    */
-  insertIndexSignatures(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<IndexSignatureDeclarationStructure>>,
-  ): IndexSignatureDeclaration[];
+  insertIndexSignatures(index: number, structures: ReadonlyArray<OptionalKind<IndexSignatureDeclarationStructure>>): IndexSignatureDeclaration[];
   /**
    * Gets the first index signature by a find function.
    * @param findFunction - Function to find the index signature by.
    */
-  getIndexSignature(
-    findFunction: (member: IndexSignatureDeclaration) => boolean,
-  ): IndexSignatureDeclaration | undefined;
+  getIndexSignature(findFunction: (member: IndexSignatureDeclaration) => boolean): IndexSignatureDeclaration | undefined;
   /**
    * Gets the first index signature by a find function or throws if not found.
    * @param findFunction - Function to find the index signature by.
    */
-  getIndexSignatureOrThrow(
-    findFunction: (member: IndexSignatureDeclaration) => boolean,
-  ): IndexSignatureDeclaration;
+  getIndexSignatureOrThrow(findFunction: (member: IndexSignatureDeclaration) => boolean): IndexSignatureDeclaration;
   /** Gets the interface index signatures. */
   getIndexSignatures(): IndexSignatureDeclaration[];
   /**
@@ -2592,27 +2064,19 @@ export interface TypeElementMemberedNode {
    * Add methods.
    * @param structures - Structures representing the methods.
    */
-  addMethods(
-    structures: ReadonlyArray<OptionalKind<MethodSignatureStructure>>,
-  ): MethodSignature[];
+  addMethods(structures: ReadonlyArray<OptionalKind<MethodSignatureStructure>>): MethodSignature[];
   /**
    * Insert method.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the method.
    */
-  insertMethod(
-    index: number,
-    structure: OptionalKind<MethodSignatureStructure>,
-  ): MethodSignature;
+  insertMethod(index: number, structure: OptionalKind<MethodSignatureStructure>): MethodSignature;
   /**
    * Insert methods.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the methods.
    */
-  insertMethods(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<MethodSignatureStructure>>,
-  ): MethodSignature[];
+  insertMethods(index: number, structures: ReadonlyArray<OptionalKind<MethodSignatureStructure>>): MethodSignature[];
   /**
    * Gets the first method by name.
    * @param name - Name.
@@ -2622,9 +2086,7 @@ export interface TypeElementMemberedNode {
    * Gets the first method by a find function.
    * @param findFunction - Function to find the method by.
    */
-  getMethod(
-    findFunction: (member: MethodSignature) => boolean,
-  ): MethodSignature | undefined;
+  getMethod(findFunction: (member: MethodSignature) => boolean): MethodSignature | undefined;
   /**
    * Gets the first method by name or throws if not found.
    * @param name - Name.
@@ -2634,43 +2096,31 @@ export interface TypeElementMemberedNode {
    * Gets the first method by a find function or throws if not found.
    * @param findFunction - Function to find the method by.
    */
-  getMethodOrThrow(
-    findFunction: (member: MethodSignature) => boolean,
-  ): MethodSignature;
+  getMethodOrThrow(findFunction: (member: MethodSignature) => boolean): MethodSignature;
   /** Gets the interface method signatures. */
   getMethods(): MethodSignature[];
   /**
    * Add property.
    * @param structure - Structure representing the property.
    */
-  addProperty(
-    structure: OptionalKind<PropertySignatureStructure>,
-  ): PropertySignature;
+  addProperty(structure: OptionalKind<PropertySignatureStructure>): PropertySignature;
   /**
    * Add properties.
    * @param structures - Structures representing the properties.
    */
-  addProperties(
-    structures: ReadonlyArray<OptionalKind<PropertySignatureStructure>>,
-  ): PropertySignature[];
+  addProperties(structures: ReadonlyArray<OptionalKind<PropertySignatureStructure>>): PropertySignature[];
   /**
    * Insert property.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the property.
    */
-  insertProperty(
-    index: number,
-    structure: OptionalKind<PropertySignatureStructure>,
-  ): PropertySignature;
+  insertProperty(index: number, structure: OptionalKind<PropertySignatureStructure>): PropertySignature;
   /**
    * Insert properties.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the properties.
    */
-  insertProperties(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<PropertySignatureStructure>>,
-  ): PropertySignature[];
+  insertProperties(index: number, structures: ReadonlyArray<OptionalKind<PropertySignatureStructure>>): PropertySignature[];
   /**
    * Gets the first property by name.
    * @param name - Name.
@@ -2680,9 +2130,7 @@ export interface TypeElementMemberedNode {
    * Gets the first property by a find function.
    * @param findFunction - Function to find the property by.
    */
-  getProperty(
-    findFunction: (member: PropertySignature) => boolean,
-  ): PropertySignature | undefined;
+  getProperty(findFunction: (member: PropertySignature) => boolean): PropertySignature | undefined;
   /**
    * Gets the first property by name or throws if not found.
    * @param name - Name.
@@ -2692,9 +2140,7 @@ export interface TypeElementMemberedNode {
    * Gets the first property by a find function or throws if not found.
    * @param findFunction - Function to find the property by.
    */
-  getPropertyOrThrow(
-    findFunction: (member: PropertySignature) => boolean,
-  ): PropertySignature;
+  getPropertyOrThrow(findFunction: (member: PropertySignature) => boolean): PropertySignature;
   /** Gets the interface property signatures. */
   getProperties(): PropertySignature[];
   /** Gets all the members. */
@@ -2703,14 +2149,10 @@ export interface TypeElementMemberedNode {
   getMembersWithComments(): (TypeElementTypes | CommentTypeElement)[];
 }
 
-declare type TypeElementMemberedNodeExtensionType = Node<
-  ts.Node & {
-    members: ts.NodeArray<ts.TypeElement>;
-  }
->;
-export declare function TypeParameteredNode<
-  T extends Constructor<TypeParameteredNodeExtensionType>,
->(Base: T): Constructor<TypeParameteredNode> & T;
+declare type TypeElementMemberedNodeExtensionType = Node<ts.Node & {
+      members: ts.NodeArray<ts.TypeElement>;
+  }>;
+export declare function TypeParameteredNode<T extends Constructor<TypeParameteredNodeExtensionType>>(Base: T): Constructor<TypeParameteredNode> & T;
 
 export interface TypeParameteredNode {
   /**
@@ -2722,9 +2164,7 @@ export interface TypeParameteredNode {
    * Gets a type parameter or undefined if it doesn't exist.
    * @param findFunction - Function to use to find the type parameter.
    */
-  getTypeParameter(
-    findFunction: (declaration: TypeParameterDeclaration) => boolean,
-  ): TypeParameterDeclaration | undefined;
+  getTypeParameter(findFunction: (declaration: TypeParameterDeclaration) => boolean): TypeParameterDeclaration | undefined;
   /**
    * Gets a type parameter or throws if it doesn't exist.
    * @param name - Name of the parameter.
@@ -2734,57 +2174,37 @@ export interface TypeParameteredNode {
    * Gets a type parameter or throws if it doesn't exist.
    * @param findFunction - Function to use to find the type parameter.
    */
-  getTypeParameterOrThrow(
-    findFunction: (declaration: TypeParameterDeclaration) => boolean,
-  ): TypeParameterDeclaration;
+  getTypeParameterOrThrow(findFunction: (declaration: TypeParameterDeclaration) => boolean): TypeParameterDeclaration;
   /** Gets the type parameters. */
   getTypeParameters(): TypeParameterDeclaration[];
   /**
    * Adds a type parameter.
    * @param structure - Structure of the type parameter.
    */
-  addTypeParameter(
-    structure: OptionalKind<TypeParameterDeclarationStructure> | string,
-  ): TypeParameterDeclaration;
+  addTypeParameter(structure: OptionalKind<TypeParameterDeclarationStructure> | string): TypeParameterDeclaration;
   /**
    * Adds type parameters.
    * @param structures - Structures of the type parameters.
    */
-  addTypeParameters(
-    structures: ReadonlyArray<
-      OptionalKind<TypeParameterDeclarationStructure> | string
-    >,
-  ): TypeParameterDeclaration[];
+  addTypeParameters(structures: ReadonlyArray<OptionalKind<TypeParameterDeclarationStructure> | string>): TypeParameterDeclaration[];
   /**
    * Inserts a type parameter.
    * @param index - Child index to insert at. Specify a negative index to insert from the reverse.
    * @param structure - Structure of the type parameter.
    */
-  insertTypeParameter(
-    index: number,
-    structure: OptionalKind<TypeParameterDeclarationStructure> | string,
-  ): TypeParameterDeclaration;
+  insertTypeParameter(index: number, structure: OptionalKind<TypeParameterDeclarationStructure> | string): TypeParameterDeclaration;
   /**
    * Inserts type parameters.
    * @param index - Child index to insert at. Specify a negative index to insert from the reverse.
    * @param structures - Structures of the type parameters.
    */
-  insertTypeParameters(
-    index: number,
-    structures: ReadonlyArray<
-      OptionalKind<TypeParameterDeclarationStructure> | string
-    >,
-  ): TypeParameterDeclaration[];
+  insertTypeParameters(index: number, structures: ReadonlyArray<OptionalKind<TypeParameterDeclarationStructure> | string>): TypeParameterDeclaration[];
 }
 
-declare type TypeParameteredNodeExtensionType = Node<
-  ts.Node & {
-    typeParameters?: ts.NodeArray<ts.TypeParameterDeclaration>;
-  }
->;
-export declare function UnwrappableNode<
-  T extends Constructor<UnwrappableNodeExtensionType>,
->(Base: T): Constructor<UnwrappableNode> & T;
+declare type TypeParameteredNodeExtensionType = Node<ts.Node & {
+      typeParameters?: ts.NodeArray<ts.TypeParameterDeclaration>;
+  }>;
+export declare function UnwrappableNode<T extends Constructor<UnwrappableNodeExtensionType>>(Base: T): Constructor<UnwrappableNode> & T;
 
 export interface UnwrappableNode {
   /** Replaces the node's text with its body's statements. */
@@ -2802,14 +2222,9 @@ export declare class ArrayBindingPattern extends Node<ts.ArrayBindingPattern> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.ArrayBindingPattern>>;
 }
 
-declare const BindingElementBase:
-  & Constructor<DotDotDotTokenableNode>
-  & Constructor<InitializerExpressionableNode>
-  & Constructor<BindingNamedNode>
-  & typeof Node;
+declare const BindingElementBase: Constructor<DotDotDotTokenableNode> & Constructor<InitializerExpressionableNode> & Constructor<BindingNamedNode> & typeof Node;
 
-export declare class BindingElement
-  extends BindingElementBase<ts.BindingElement> {
+export declare class BindingElement extends BindingElementBase<ts.BindingElement> {
   /**
    * Gets binding element's property name node or throws if not found.
    *
@@ -2828,8 +2243,7 @@ export declare class BindingElement
   getParentOrThrow(): NonNullable<NodeParentType<ts.BindingElement>>;
 }
 
-export declare class ObjectBindingPattern
-  extends Node<ts.ObjectBindingPattern> {
+export declare class ObjectBindingPattern extends Node<ts.ObjectBindingPattern> {
   /** Gets the object binding pattern's elements. */
   getElements(): BindingElement[];
   /** @inheritdoc **/
@@ -2838,9 +2252,7 @@ export declare class ObjectBindingPattern
   getParentOrThrow(): NonNullable<NodeParentType<ts.ObjectBindingPattern>>;
 }
 
-export declare function AbstractableNode<
-  T extends Constructor<AbstractableNodeExtensionType>,
->(Base: T): Constructor<AbstractableNode> & T;
+export declare function AbstractableNode<T extends Constructor<AbstractableNodeExtensionType>>(Base: T): Constructor<AbstractableNode> & T;
 
 export interface AbstractableNode {
   /** Gets if the node is abstract. */
@@ -2857,27 +2269,12 @@ export interface AbstractableNode {
 }
 
 declare type AbstractableNodeExtensionType = Node & ModifierableNode;
-export declare function ClassLikeDeclarationBase<
-  T extends Constructor<ClassLikeDeclarationBaseExtensionType>,
->(Base: T): Constructor<ClassLikeDeclarationBase> & T;
+export declare function ClassLikeDeclarationBase<T extends Constructor<ClassLikeDeclarationBaseExtensionType>>(Base: T): Constructor<ClassLikeDeclarationBase> & T;
 
-export interface ClassLikeDeclarationBase
-  extends
-    NameableNode,
-    TextInsertableNode,
-    ImplementsClauseableNode,
-    HeritageClauseableNode,
-    AbstractableNode,
-    JSDocableNode,
-    TypeParameteredNode,
-    DecoratableNode,
-    ModifierableNode,
-    ClassLikeDeclarationBaseSpecific {
+export interface ClassLikeDeclarationBase extends NameableNode, TextInsertableNode, ImplementsClauseableNode, HeritageClauseableNode, AbstractableNode, JSDocableNode, TypeParameteredNode, DecoratableNode, ModifierableNode, ClassLikeDeclarationBaseSpecific {
 }
 
-declare function ClassLikeDeclarationBaseSpecific<
-  T extends Constructor<ClassLikeDeclarationBaseSpecificExtensionType>,
->(Base: T): Constructor<ClassLikeDeclarationBaseSpecific> & T;
+declare function ClassLikeDeclarationBaseSpecific<T extends Constructor<ClassLikeDeclarationBaseSpecificExtensionType>>(Base: T): Constructor<ClassLikeDeclarationBaseSpecific> & T;
 
 interface ClassLikeDeclarationBaseSpecific {
   /**
@@ -2895,240 +2292,160 @@ interface ClassLikeDeclarationBaseSpecific {
    * Inserts a class member.
    * @param member - Class member to insert.
    */
-  addMember(
-    member: string | WriterFunction | ClassMemberStructures,
-  ): ClassMemberTypes | CommentClassElement;
+  addMember(member: string | WriterFunction | ClassMemberStructures): ClassMemberTypes | CommentClassElement;
   /**
    * Inserts class members.
    * @param members - Collection of class members to insert.
    */
-  addMembers(
-    members:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction | ClassMemberStructures>,
-  ): (ClassMemberTypes | CommentClassElement)[];
+  addMembers(members: string | WriterFunction | ReadonlyArray<string | WriterFunction | ClassMemberStructures>): (ClassMemberTypes | CommentClassElement)[];
   /**
    * Inserts a class member.
    * @param index - Child index to insert at.
    * @param member - Class member to insert.
    */
-  insertMember(
-    index: number,
-    member: string | WriterFunction | ClassMemberStructures,
-  ): ClassMemberTypes | CommentClassElement;
+  insertMember(index: number, member: string | WriterFunction | ClassMemberStructures): ClassMemberTypes | CommentClassElement;
   /**
    * Inserts class members.
    * @param index - Child index to insert at.
    * @param members - Collection of class members to insert.
    */
-  insertMembers(
-    index: number,
-    members:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction | ClassMemberStructures>,
-  ): (ClassMemberTypes | CommentClassElement)[];
+  insertMembers(index: number, members: string | WriterFunction | ReadonlyArray<string | WriterFunction | ClassMemberStructures>): (ClassMemberTypes | CommentClassElement)[];
   /**
    * Adds a constructor.
    * @param structure - Structure of the constructor.
    */
-  addConstructor(
-    structure?: OptionalKind<ConstructorDeclarationStructure>,
-  ): ConstructorDeclaration;
+  addConstructor(structure?: OptionalKind<ConstructorDeclarationStructure>): ConstructorDeclaration;
   /**
    * Adds constructors.
    * @param structures - Structures of the constructor.
    */
-  addConstructors(
-    structures: ReadonlyArray<OptionalKind<ConstructorDeclarationStructure>>,
-  ): ConstructorDeclaration[];
+  addConstructors(structures: ReadonlyArray<OptionalKind<ConstructorDeclarationStructure>>): ConstructorDeclaration[];
   /**
    * Inserts a constructor.
    * @param index - Child index to insert at.
    * @param structure - Structure of the constructor.
    */
-  insertConstructor(
-    index: number,
-    structure?: OptionalKind<ConstructorDeclarationStructure>,
-  ): ConstructorDeclaration;
+  insertConstructor(index: number, structure?: OptionalKind<ConstructorDeclarationStructure>): ConstructorDeclaration;
   /**
    * Inserts constructors.
    * @param index - Child index to insert at.
    * @param structures - Structures of the constructor.
    */
-  insertConstructors(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<ConstructorDeclarationStructure>>,
-  ): ConstructorDeclaration[];
+  insertConstructors(index: number, structures: ReadonlyArray<OptionalKind<ConstructorDeclarationStructure>>): ConstructorDeclaration[];
   /** Gets the constructor declarations. */
   getConstructors(): ConstructorDeclaration[];
   /**
    * Adds a static block.
    * @param structure - Structure of the static block.
    */
-  addStaticBlock(
-    structure?: OptionalKind<ClassStaticBlockDeclarationStructure>,
-  ): ClassStaticBlockDeclaration;
+  addStaticBlock(structure?: OptionalKind<ClassStaticBlockDeclarationStructure>): ClassStaticBlockDeclaration;
   /**
    * Adds static block.
    * @param structures - Structures of the static block.
    */
-  addStaticBlocks(
-    structures: ReadonlyArray<
-      OptionalKind<ClassStaticBlockDeclarationStructure>
-    >,
-  ): ClassStaticBlockDeclaration[];
+  addStaticBlocks(structures: ReadonlyArray<OptionalKind<ClassStaticBlockDeclarationStructure>>): ClassStaticBlockDeclaration[];
   /**
    * Inserts a static block.
    * @param index - Child index to insert at.
    * @param structure - Structure of the static block.
    */
-  insertStaticBlock(
-    index: number,
-    structure?: OptionalKind<ClassStaticBlockDeclarationStructure>,
-  ): ClassStaticBlockDeclaration;
+  insertStaticBlock(index: number, structure?: OptionalKind<ClassStaticBlockDeclarationStructure>): ClassStaticBlockDeclaration;
   /**
    * Inserts static blocks.
    * @param index - Child index to insert at.
    * @param structures - Structures of the static blocks.
    */
-  insertStaticBlocks(
-    index: number,
-    structures: ReadonlyArray<
-      OptionalKind<ClassStaticBlockDeclarationStructure>
-    >,
-  ): ClassStaticBlockDeclaration[];
+  insertStaticBlocks(index: number, structures: ReadonlyArray<OptionalKind<ClassStaticBlockDeclarationStructure>>): ClassStaticBlockDeclaration[];
   /** Gets the static blocks. */
   getStaticBlocks(): ClassStaticBlockDeclaration[];
   /**
    * Add get accessor.
    * @param structure - Structure representing the get accessor.
    */
-  addGetAccessor(
-    structure: OptionalKind<GetAccessorDeclarationStructure>,
-  ): GetAccessorDeclaration;
+  addGetAccessor(structure: OptionalKind<GetAccessorDeclarationStructure>): GetAccessorDeclaration;
   /**
    * Add properties.
    * @param structures - Structures representing the properties.
    */
-  addGetAccessors(
-    structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>,
-  ): GetAccessorDeclaration[];
+  addGetAccessors(structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>): GetAccessorDeclaration[];
   /**
    * Insert get accessor.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the get accessor.
    */
-  insertGetAccessor(
-    index: number,
-    structure: OptionalKind<GetAccessorDeclarationStructure>,
-  ): GetAccessorDeclaration;
+  insertGetAccessor(index: number, structure: OptionalKind<GetAccessorDeclarationStructure>): GetAccessorDeclaration;
   /**
    * Insert properties.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the properties.
    */
-  insertGetAccessors(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>,
-  ): GetAccessorDeclaration[];
+  insertGetAccessors(index: number, structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>): GetAccessorDeclaration[];
   /**
    * Add set accessor.
    * @param structure - Structure representing the set accessor.
    */
-  addSetAccessor(
-    structure: OptionalKind<SetAccessorDeclarationStructure>,
-  ): SetAccessorDeclaration;
+  addSetAccessor(structure: OptionalKind<SetAccessorDeclarationStructure>): SetAccessorDeclaration;
   /**
    * Add properties.
    * @param structures - Structures representing the properties.
    */
-  addSetAccessors(
-    structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>,
-  ): SetAccessorDeclaration[];
+  addSetAccessors(structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>): SetAccessorDeclaration[];
   /**
    * Insert set accessor.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the set accessor.
    */
-  insertSetAccessor(
-    index: number,
-    structure: OptionalKind<SetAccessorDeclarationStructure>,
-  ): SetAccessorDeclaration;
+  insertSetAccessor(index: number, structure: OptionalKind<SetAccessorDeclarationStructure>): SetAccessorDeclaration;
   /**
    * Insert properties.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the properties.
    */
-  insertSetAccessors(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>,
-  ): SetAccessorDeclaration[];
+  insertSetAccessors(index: number, structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>): SetAccessorDeclaration[];
   /**
    * Add property.
    * @param structure - Structure representing the property.
    */
-  addProperty(
-    structure: OptionalKind<PropertyDeclarationStructure>,
-  ): PropertyDeclaration;
+  addProperty(structure: OptionalKind<PropertyDeclarationStructure>): PropertyDeclaration;
   /**
    * Add properties.
    * @param structures - Structures representing the properties.
    */
-  addProperties(
-    structures: ReadonlyArray<OptionalKind<PropertyDeclarationStructure>>,
-  ): PropertyDeclaration[];
+  addProperties(structures: ReadonlyArray<OptionalKind<PropertyDeclarationStructure>>): PropertyDeclaration[];
   /**
    * Insert property.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the property.
    */
-  insertProperty(
-    index: number,
-    structure: OptionalKind<PropertyDeclarationStructure>,
-  ): PropertyDeclaration;
+  insertProperty(index: number, structure: OptionalKind<PropertyDeclarationStructure>): PropertyDeclaration;
   /**
    * Insert properties.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the properties.
    */
-  insertProperties(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<PropertyDeclarationStructure>>,
-  ): PropertyDeclaration[];
+  insertProperties(index: number, structures: ReadonlyArray<OptionalKind<PropertyDeclarationStructure>>): PropertyDeclaration[];
   /**
    * Add method.
    * @param structure - Structure representing the method.
    */
-  addMethod(
-    structure: OptionalKind<MethodDeclarationStructure>,
-  ): MethodDeclaration;
+  addMethod(structure: OptionalKind<MethodDeclarationStructure>): MethodDeclaration;
   /**
    * Add methods.
    * @param structures - Structures representing the methods.
    */
-  addMethods(
-    structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>,
-  ): MethodDeclaration[];
+  addMethods(structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>): MethodDeclaration[];
   /**
    * Insert method.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the method.
    */
-  insertMethod(
-    index: number,
-    structure: OptionalKind<MethodDeclarationStructure>,
-  ): MethodDeclaration;
+  insertMethod(index: number, structure: OptionalKind<MethodDeclarationStructure>): MethodDeclaration;
   /**
    * Insert methods.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the methods.
    */
-  insertMethods(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>,
-  ): MethodDeclaration[];
+  insertMethods(index: number, structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>): MethodDeclaration[];
   /**
    * Gets the first instance property by name.
    * @param name - Name.
@@ -3138,9 +2455,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first instance property by a find function.
    * @param findFunction - Function to find an instance property by.
    */
-  getInstanceProperty(
-    findFunction: (prop: ClassInstancePropertyTypes) => boolean,
-  ): ClassInstancePropertyTypes | undefined;
+  getInstanceProperty(findFunction: (prop: ClassInstancePropertyTypes) => boolean): ClassInstancePropertyTypes | undefined;
   /**
    * Gets the first instance property by name or throws if not found.
    * @param name - Name.
@@ -3150,9 +2465,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first instance property by a find function or throws if not found.
    * @param findFunction - Function to find an instance property by.
    */
-  getInstancePropertyOrThrow(
-    findFunction: (prop: ClassInstancePropertyTypes) => boolean,
-  ): ClassInstancePropertyTypes;
+  getInstancePropertyOrThrow(findFunction: (prop: ClassInstancePropertyTypes) => boolean): ClassInstancePropertyTypes;
   /** Gets the class instance property declarations. */
   getInstanceProperties(): ClassInstancePropertyTypes[];
   /**
@@ -3164,9 +2477,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first static property by a find function.
    * @param findFunction - Function to find a static property by.
    */
-  getStaticProperty(
-    findFunction: (prop: ClassStaticPropertyTypes) => boolean,
-  ): ClassStaticPropertyTypes | undefined;
+  getStaticProperty(findFunction: (prop: ClassStaticPropertyTypes) => boolean): ClassStaticPropertyTypes | undefined;
   /**
    * Gets the first static property by name or throws if not found.
    * @param name - Name.
@@ -3176,9 +2487,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first static property by a find function. or throws if not found.
    * @param findFunction - Function to find a static property by.
    */
-  getStaticPropertyOrThrow(
-    findFunction: (prop: ClassStaticPropertyTypes) => boolean,
-  ): ClassStaticPropertyTypes;
+  getStaticPropertyOrThrow(findFunction: (prop: ClassStaticPropertyTypes) => boolean): ClassStaticPropertyTypes;
   /** Gets the class instance property declarations. */
   getStaticProperties(): ClassStaticPropertyTypes[];
   /**
@@ -3190,9 +2499,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first property declaration by a find function.
    * @param findFunction - Function to find a property declaration by.
    */
-  getProperty(
-    findFunction: (property: PropertyDeclaration) => boolean,
-  ): PropertyDeclaration | undefined;
+  getProperty(findFunction: (property: PropertyDeclaration) => boolean): PropertyDeclaration | undefined;
   /**
    * Gets the first property declaration by name or throws if it doesn't exist.
    * @param name - Name.
@@ -3202,9 +2509,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first property declaration by a find function or throws if it doesn't exist.
    * @param findFunction - Function to find a property declaration by.
    */
-  getPropertyOrThrow(
-    findFunction: (property: PropertyDeclaration) => boolean,
-  ): PropertyDeclaration;
+  getPropertyOrThrow(findFunction: (property: PropertyDeclaration) => boolean): PropertyDeclaration;
   /** Gets the class property declarations regardless of whether it's an instance of static property. */
   getProperties(): PropertyDeclaration[];
   /**
@@ -3216,9 +2521,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first get accessor declaration by a find function.
    * @param findFunction - Function to find a get accessor declaration by.
    */
-  getGetAccessor(
-    findFunction: (getAccessor: GetAccessorDeclaration) => boolean,
-  ): GetAccessorDeclaration | undefined;
+  getGetAccessor(findFunction: (getAccessor: GetAccessorDeclaration) => boolean): GetAccessorDeclaration | undefined;
   /**
    * Gets the first get accessor declaration by name or throws if it doesn't exist.
    * @param name - Name.
@@ -3228,9 +2531,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first get accessor declaration by a find function or throws if it doesn't exist.
    * @param findFunction - Function to find a get accessor declaration by.
    */
-  getGetAccessorOrThrow(
-    findFunction: (getAccessor: GetAccessorDeclaration) => boolean,
-  ): GetAccessorDeclaration;
+  getGetAccessorOrThrow(findFunction: (getAccessor: GetAccessorDeclaration) => boolean): GetAccessorDeclaration;
   /** Gets the class get accessor declarations regardless of whether it's an instance of static getAccessor. */
   getGetAccessors(): GetAccessorDeclaration[];
   /**
@@ -3242,9 +2543,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Sets the first set accessor declaration by a find function.
    * @param findFunction - Function to find a set accessor declaration by.
    */
-  getSetAccessor(
-    findFunction: (setAccessor: SetAccessorDeclaration) => boolean,
-  ): SetAccessorDeclaration | undefined;
+  getSetAccessor(findFunction: (setAccessor: SetAccessorDeclaration) => boolean): SetAccessorDeclaration | undefined;
   /**
    * Sets the first set accessor declaration by name or throws if it doesn't exist.
    * @param name - Name.
@@ -3254,9 +2553,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Sets the first set accessor declaration by a find function or throws if it doesn't exist.
    * @param findFunction - Function to find a set accessor declaration by.
    */
-  getSetAccessorOrThrow(
-    findFunction: (setAccessor: SetAccessorDeclaration) => boolean,
-  ): SetAccessorDeclaration;
+  getSetAccessorOrThrow(findFunction: (setAccessor: SetAccessorDeclaration) => boolean): SetAccessorDeclaration;
   /** Sets the class set accessor declarations regardless of whether it's an instance of static setAccessor. */
   getSetAccessors(): SetAccessorDeclaration[];
   /**
@@ -3268,9 +2565,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first method declaration by a find function.
    * @param findFunction - Function to find a method declaration by.
    */
-  getMethod(
-    findFunction: (method: MethodDeclaration) => boolean,
-  ): MethodDeclaration | undefined;
+  getMethod(findFunction: (method: MethodDeclaration) => boolean): MethodDeclaration | undefined;
   /**
    * Gets the first method declaration by name or throws if it doesn't exist.
    * @param name - Name.
@@ -3280,9 +2575,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first method declaration by a find function or throws if it doesn't exist.
    * @param findFunction - Function to find a method declaration by.
    */
-  getMethodOrThrow(
-    findFunction: (method: MethodDeclaration) => boolean,
-  ): MethodDeclaration;
+  getMethodOrThrow(findFunction: (method: MethodDeclaration) => boolean): MethodDeclaration;
   /** Gets the class method declarations regardless of whether it's an instance of static method. */
   getMethods(): MethodDeclaration[];
   /**
@@ -3294,9 +2587,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first instance method by a find function.
    * @param findFunction - Function to find an instance method by.
    */
-  getInstanceMethod(
-    findFunction: (method: MethodDeclaration) => boolean,
-  ): MethodDeclaration | undefined;
+  getInstanceMethod(findFunction: (method: MethodDeclaration) => boolean): MethodDeclaration | undefined;
   /**
    * Gets the first instance method by name or throws if not found.
    * @param name - Name.
@@ -3306,9 +2597,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first instance method by a find function. or throws if not found.
    * @param findFunction - Function to find an instance method by.
    */
-  getInstanceMethodOrThrow(
-    findFunction: (method: MethodDeclaration) => boolean,
-  ): MethodDeclaration;
+  getInstanceMethodOrThrow(findFunction: (method: MethodDeclaration) => boolean): MethodDeclaration;
   /** Gets the class instance method declarations. */
   getInstanceMethods(): MethodDeclaration[];
   /**
@@ -3320,9 +2609,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first static method by a find function.
    * @param findFunction - Function to find a static method by.
    */
-  getStaticMethod(
-    findFunction: (method: MethodDeclaration) => boolean,
-  ): MethodDeclaration | undefined;
+  getStaticMethod(findFunction: (method: MethodDeclaration) => boolean): MethodDeclaration | undefined;
   /**
    * Gets the first static method by name or throws if not found.
    * @param name - Name.
@@ -3332,9 +2619,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first static method by a find function. or throws if not found.
    * @param findFunction - Function to find a static method by.
    */
-  getStaticMethodOrThrow(
-    findFunction: (method: MethodDeclaration) => boolean,
-  ): MethodDeclaration;
+  getStaticMethodOrThrow(findFunction: (method: MethodDeclaration) => boolean): MethodDeclaration;
   /** Gets the class instance method declarations. */
   getStaticMethods(): MethodDeclaration[];
   /**
@@ -3346,9 +2631,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first instance member by a find function.
    * @param findFunction - Function to find the instance member by.
    */
-  getInstanceMember(
-    findFunction: (member: ClassInstanceMemberTypes) => boolean,
-  ): ClassInstanceMemberTypes | undefined;
+  getInstanceMember(findFunction: (member: ClassInstanceMemberTypes) => boolean): ClassInstanceMemberTypes | undefined;
   /**
    * Gets the first instance member by name or throws if not found.
    * @param name - Name.
@@ -3358,9 +2641,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first instance member by a find function. or throws if not found.
    * @param findFunction - Function to find the instance member by.
    */
-  getInstanceMemberOrThrow(
-    findFunction: (member: ClassInstanceMemberTypes) => boolean,
-  ): ClassInstanceMemberTypes;
+  getInstanceMemberOrThrow(findFunction: (member: ClassInstanceMemberTypes) => boolean): ClassInstanceMemberTypes;
   /** Gets the instance members. */
   getInstanceMembers(): ClassInstanceMemberTypes[];
   /**
@@ -3372,9 +2653,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first static member by a find function.
    * @param findFunction - Function to find an static method by.
    */
-  getStaticMember(
-    findFunction: (member: ClassStaticMemberTypes) => boolean,
-  ): ClassStaticMemberTypes | undefined;
+  getStaticMember(findFunction: (member: ClassStaticMemberTypes) => boolean): ClassStaticMemberTypes | undefined;
   /**
    * Gets the first static member by name or throws if not found.
    * @param name - Name.
@@ -3384,9 +2663,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first static member by a find function. or throws if not found.
    * @param findFunction - Function to find an static method by.
    */
-  getStaticMemberOrThrow(
-    findFunction: (member: ClassStaticMemberTypes) => boolean,
-  ): ClassStaticMemberTypes;
+  getStaticMemberOrThrow(findFunction: (member: ClassStaticMemberTypes) => boolean): ClassStaticMemberTypes;
   /** Gets the static members. */
   getStaticMembers(): ClassStaticMemberTypes[];
   /** Gets the class' members regardless of whether it's an instance of static member. */
@@ -3402,9 +2679,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first member by a find function.
    * @param findFunction - Function to find an method by.
    */
-  getMember(
-    findFunction: (member: ClassMemberTypes) => boolean,
-  ): ClassMemberTypes | undefined;
+  getMember(findFunction: (member: ClassMemberTypes) => boolean): ClassMemberTypes | undefined;
   /**
    * Gets the first member by name or throws if not found.
    * @param name - Name.
@@ -3414,9 +2689,7 @@ interface ClassLikeDeclarationBaseSpecific {
    * Gets the first member by a find function. or throws if not found.
    * @param findFunction - Function to find an method by.
    */
-  getMemberOrThrow(
-    findFunction: (member: ClassMemberTypes) => boolean,
-  ): ClassMemberTypes;
+  getMemberOrThrow(findFunction: (member: ClassMemberTypes) => boolean): ClassMemberTypes;
   /**
    * Gets the base types.
    *
@@ -3439,48 +2712,17 @@ interface ClassLikeDeclarationBaseSpecific {
   getDerivedClasses(): ClassDeclaration[];
 }
 
-export declare type ClassPropertyTypes =
-  | PropertyDeclaration
-  | GetAccessorDeclaration
-  | SetAccessorDeclaration;
-export declare type ClassInstancePropertyTypes =
-  | ClassPropertyTypes
-  | ParameterDeclaration;
-export declare type ClassInstanceMemberTypes =
-  | MethodDeclaration
-  | ClassInstancePropertyTypes;
-export declare type ClassStaticPropertyTypes =
-  | PropertyDeclaration
-  | GetAccessorDeclaration
-  | SetAccessorDeclaration;
-export declare type ClassStaticMemberTypes =
-  | MethodDeclaration
-  | ClassStaticBlockDeclaration
-  | ClassStaticPropertyTypes;
-export declare type ClassMemberTypes =
-  | MethodDeclaration
-  | PropertyDeclaration
-  | GetAccessorDeclaration
-  | SetAccessorDeclaration
-  | ConstructorDeclaration
-  | ClassStaticBlockDeclaration;
-declare type ClassLikeDeclarationBaseExtensionType = Node<
-  ts.ClassLikeDeclarationBase
->;
-declare type ClassLikeDeclarationBaseSpecificExtensionType =
-  & Node<ts.ClassLikeDeclarationBase>
-  & HeritageClauseableNode
-  & ModifierableNode
-  & NameableNode;
-declare const ClassDeclarationBase:
-  & Constructor<ModuleChildableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<ExportableNode>
-  & Constructor<ClassLikeDeclarationBase>
-  & typeof Statement;
+export declare type ClassPropertyTypes = PropertyDeclaration | GetAccessorDeclaration | SetAccessorDeclaration;
+export declare type ClassInstancePropertyTypes = ClassPropertyTypes | ParameterDeclaration;
+export declare type ClassInstanceMemberTypes = MethodDeclaration | ClassInstancePropertyTypes;
+export declare type ClassStaticPropertyTypes = PropertyDeclaration | GetAccessorDeclaration | SetAccessorDeclaration;
+export declare type ClassStaticMemberTypes = MethodDeclaration | ClassStaticBlockDeclaration | ClassStaticPropertyTypes;
+export declare type ClassMemberTypes = MethodDeclaration | PropertyDeclaration | GetAccessorDeclaration | SetAccessorDeclaration | ConstructorDeclaration | ClassStaticBlockDeclaration;
+declare type ClassLikeDeclarationBaseExtensionType = Node<ts.ClassLikeDeclarationBase>;
+declare type ClassLikeDeclarationBaseSpecificExtensionType = Node<ts.ClassLikeDeclarationBase> & HeritageClauseableNode & ModifierableNode & NameableNode;
+declare const ClassDeclarationBase: Constructor<ModuleChildableNode> & Constructor<AmbientableNode> & Constructor<ExportableNode> & Constructor<ClassLikeDeclarationBase> & typeof Statement;
 
-export declare class ClassDeclaration
-  extends ClassDeclarationBase<ts.ClassDeclaration> {
+export declare class ClassDeclaration extends ClassDeclarationBase<ts.ClassDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -3504,34 +2746,23 @@ export declare class ClassDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.ClassDeclaration>>;
 }
 
-export declare class ClassElement<T extends ts.ClassElement = ts.ClassElement>
-  extends Node<T> {
+export declare class ClassElement<T extends ts.ClassElement = ts.ClassElement> extends Node<T> {
   /** Removes the class member. */
   remove(): void;
 }
 
-declare const ClassExpressionBase:
-  & Constructor<ClassLikeDeclarationBase>
-  & typeof PrimaryExpression;
+declare const ClassExpressionBase: Constructor<ClassLikeDeclarationBase> & typeof PrimaryExpression;
 
-export declare class ClassExpression
-  extends ClassExpressionBase<ts.ClassExpression> {
+export declare class ClassExpression extends ClassExpressionBase<ts.ClassExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ClassExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ClassExpression>>;
 }
 
-declare const ClassStaticBlockDeclarationBase:
-  & Constructor<ChildOrderableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<StatementedNode>
-  & Constructor<JSDocableNode>
-  & Constructor<BodiedNode>
-  & typeof ClassElement;
+declare const ClassStaticBlockDeclarationBase: Constructor<ChildOrderableNode> & Constructor<TextInsertableNode> & Constructor<StatementedNode> & Constructor<JSDocableNode> & Constructor<BodiedNode> & typeof ClassElement;
 
-export declare class ClassStaticBlockDeclaration
-  extends ClassStaticBlockDeclarationBase<ts.ClassStaticBlockDeclaration> {
+export declare class ClassStaticBlockDeclaration extends ClassStaticBlockDeclarationBase<ts.ClassStaticBlockDeclaration> {
   /**
    * Method that exists for the sake of making code compile that looks for the name of static members.
    * This always returns "static".
@@ -3552,36 +2783,16 @@ export declare class ClassStaticBlockDeclaration
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ClassStaticBlockDeclaration>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.ClassStaticBlockDeclaration>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.ClassStaticBlockDeclaration>>;
 }
 
-export declare class CommentClassElement
-  extends ClassElement<CompilerCommentClassElement> {
+export declare class CommentClassElement extends ClassElement<CompilerCommentClassElement> {
 }
 
-declare const ConstructorDeclarationBase:
-  & Constructor<ReferenceFindableNode>
-  & Constructor<ChildOrderableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<OverloadableNode>
-  & Constructor<ScopedNode>
-  & Constructor<FunctionLikeDeclaration>
-  & Constructor<BodyableNode>
-  & typeof ClassElement;
-declare const ConstructorDeclarationOverloadBase:
-  & Constructor<TypeParameteredNode>
-  & Constructor<JSDocableNode>
-  & Constructor<ChildOrderableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<ScopedNode>
-  & Constructor<ModifierableNode>
-  & Constructor<SignaturedDeclaration>
-  & typeof ClassElement;
+declare const ConstructorDeclarationBase: Constructor<ReferenceFindableNode> & Constructor<ChildOrderableNode> & Constructor<TextInsertableNode> & Constructor<OverloadableNode> & Constructor<ScopedNode> & Constructor<FunctionLikeDeclaration> & Constructor<BodyableNode> & typeof ClassElement;
+declare const ConstructorDeclarationOverloadBase: Constructor<TypeParameteredNode> & Constructor<JSDocableNode> & Constructor<ChildOrderableNode> & Constructor<TextInsertableNode> & Constructor<ScopedNode> & Constructor<ModifierableNode> & Constructor<SignaturedDeclaration> & typeof ClassElement;
 
-export declare class ConstructorDeclaration
-  extends ConstructorDeclarationBase<ts.ConstructorDeclaration> {
+export declare class ConstructorDeclaration extends ConstructorDeclarationBase<ts.ConstructorDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -3591,62 +2802,35 @@ export declare class ConstructorDeclaration
    * Add a constructor overload.
    * @param structure - Structure to add.
    */
-  addOverload(
-    structure: OptionalKind<ConstructorDeclarationOverloadStructure>,
-  ): ConstructorDeclaration;
+  addOverload(structure: OptionalKind<ConstructorDeclarationOverloadStructure>): ConstructorDeclaration;
   /**
    * Add constructor overloads.
    * @param structures - Structures to add.
    */
-  addOverloads(
-    structures: ReadonlyArray<
-      OptionalKind<ConstructorDeclarationOverloadStructure>
-    >,
-  ): ConstructorDeclaration[];
+  addOverloads(structures: ReadonlyArray<OptionalKind<ConstructorDeclarationOverloadStructure>>): ConstructorDeclaration[];
   /**
    * Inserts a constructor overload.
    * @param index - Child index to insert at.
    * @param structure - Structures to insert.
    */
-  insertOverload(
-    index: number,
-    structure: OptionalKind<ConstructorDeclarationOverloadStructure>,
-  ): ConstructorDeclaration;
+  insertOverload(index: number, structure: OptionalKind<ConstructorDeclarationOverloadStructure>): ConstructorDeclaration;
   /**
    * Inserts constructor overloads.
    * @param index - Child index to insert at.
    * @param structures - Structures to insert.
    */
-  insertOverloads(
-    index: number,
-    structures: ReadonlyArray<
-      OptionalKind<ConstructorDeclarationOverloadStructure>
-    >,
-  ): ConstructorDeclaration[];
+  insertOverloads(index: number, structures: ReadonlyArray<OptionalKind<ConstructorDeclarationOverloadStructure>>): ConstructorDeclaration[];
   /** Gets the structure equivalent to this node. */
-  getStructure():
-    | ConstructorDeclarationStructure
-    | ConstructorDeclarationOverloadStructure;
+  getStructure(): ConstructorDeclarationStructure | ConstructorDeclarationOverloadStructure;
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ConstructorDeclaration>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ConstructorDeclaration>>;
 }
 
-declare const GetAccessorDeclarationBase:
-  & Constructor<ChildOrderableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<DecoratableNode>
-  & Constructor<AbstractableNode>
-  & Constructor<ScopedNode>
-  & Constructor<StaticableNode>
-  & Constructor<FunctionLikeDeclaration>
-  & Constructor<BodyableNode>
-  & Constructor<PropertyNamedNode>
-  & typeof ClassElement;
+declare const GetAccessorDeclarationBase: Constructor<ChildOrderableNode> & Constructor<TextInsertableNode> & Constructor<DecoratableNode> & Constructor<AbstractableNode> & Constructor<ScopedNode> & Constructor<StaticableNode> & Constructor<FunctionLikeDeclaration> & Constructor<BodyableNode> & Constructor<PropertyNamedNode> & typeof ClassElement;
 
-export declare class GetAccessorDeclaration
-  extends GetAccessorDeclarationBase<ts.GetAccessorDeclaration> {
+export declare class GetAccessorDeclaration extends GetAccessorDeclarationBase<ts.GetAccessorDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -3664,40 +2848,10 @@ export declare class GetAccessorDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.GetAccessorDeclaration>>;
 }
 
-declare const MethodDeclarationBase:
-  & Constructor<ChildOrderableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<OverrideableNode>
-  & Constructor<OverloadableNode>
-  & Constructor<BodyableNode>
-  & Constructor<DecoratableNode>
-  & Constructor<AbstractableNode>
-  & Constructor<ScopedNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<StaticableNode>
-  & Constructor<AsyncableNode>
-  & Constructor<GeneratorableNode>
-  & Constructor<FunctionLikeDeclaration>
-  & Constructor<PropertyNamedNode>
-  & typeof ClassElement;
-declare const MethodDeclarationOverloadBase:
-  & Constructor<JSDocableNode>
-  & Constructor<ChildOrderableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<OverrideableNode>
-  & Constructor<ScopedNode>
-  & Constructor<TypeParameteredNode>
-  & Constructor<AbstractableNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<StaticableNode>
-  & Constructor<AsyncableNode>
-  & Constructor<ModifierableNode>
-  & Constructor<GeneratorableNode>
-  & Constructor<SignaturedDeclaration>
-  & typeof ClassElement;
+declare const MethodDeclarationBase: Constructor<ChildOrderableNode> & Constructor<TextInsertableNode> & Constructor<OverrideableNode> & Constructor<OverloadableNode> & Constructor<BodyableNode> & Constructor<DecoratableNode> & Constructor<AbstractableNode> & Constructor<ScopedNode> & Constructor<QuestionTokenableNode> & Constructor<StaticableNode> & Constructor<AsyncableNode> & Constructor<GeneratorableNode> & Constructor<FunctionLikeDeclaration> & Constructor<PropertyNamedNode> & typeof ClassElement;
+declare const MethodDeclarationOverloadBase: Constructor<JSDocableNode> & Constructor<ChildOrderableNode> & Constructor<TextInsertableNode> & Constructor<OverrideableNode> & Constructor<ScopedNode> & Constructor<TypeParameteredNode> & Constructor<AbstractableNode> & Constructor<QuestionTokenableNode> & Constructor<StaticableNode> & Constructor<AsyncableNode> & Constructor<ModifierableNode> & Constructor<GeneratorableNode> & Constructor<SignaturedDeclaration> & typeof ClassElement;
 
-export declare class MethodDeclaration
-  extends MethodDeclarationBase<ts.MethodDeclaration> {
+export declare class MethodDeclaration extends MethodDeclarationBase<ts.MethodDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -3707,64 +2861,35 @@ export declare class MethodDeclaration
    * Add a method overload.
    * @param structure - Structure to add.
    */
-  addOverload(
-    structure: OptionalKind<MethodDeclarationOverloadStructure>,
-  ): MethodDeclaration;
+  addOverload(structure: OptionalKind<MethodDeclarationOverloadStructure>): MethodDeclaration;
   /**
    * Add method overloads.
    * @param structures - Structures to add.
    */
-  addOverloads(
-    structures: ReadonlyArray<OptionalKind<MethodDeclarationOverloadStructure>>,
-  ): MethodDeclaration[];
+  addOverloads(structures: ReadonlyArray<OptionalKind<MethodDeclarationOverloadStructure>>): MethodDeclaration[];
   /**
    * Inserts a method overload.
    * @param index - Child index to insert at.
    * @param structure - Structures to insert.
    */
-  insertOverload(
-    index: number,
-    structure: OptionalKind<MethodDeclarationOverloadStructure>,
-  ): MethodDeclaration;
+  insertOverload(index: number, structure: OptionalKind<MethodDeclarationOverloadStructure>): MethodDeclaration;
   /**
    * Inserts method overloads.
    * @param index - Child index to insert at.
    * @param structures - Structures to insert.
    */
-  insertOverloads(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<MethodDeclarationOverloadStructure>>,
-  ): MethodDeclaration[];
+  insertOverloads(index: number, structures: ReadonlyArray<OptionalKind<MethodDeclarationOverloadStructure>>): MethodDeclaration[];
   /** Gets the structure equivalent to this node. */
-  getStructure():
-    | MethodDeclarationStructure
-    | MethodDeclarationOverloadStructure;
+  getStructure(): MethodDeclarationStructure | MethodDeclarationOverloadStructure;
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.MethodDeclaration>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.MethodDeclaration>>;
 }
 
-declare const PropertyDeclarationBase:
-  & Constructor<ChildOrderableNode>
-  & Constructor<OverrideableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<DecoratableNode>
-  & Constructor<AbstractableNode>
-  & Constructor<ScopedNode>
-  & Constructor<StaticableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<ReadonlyableNode>
-  & Constructor<ExclamationTokenableNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<InitializerExpressionableNode>
-  & Constructor<TypedNode>
-  & Constructor<PropertyNamedNode>
-  & Constructor<ModifierableNode>
-  & typeof ClassElement;
+declare const PropertyDeclarationBase: Constructor<ChildOrderableNode> & Constructor<OverrideableNode> & Constructor<AmbientableNode> & Constructor<DecoratableNode> & Constructor<AbstractableNode> & Constructor<ScopedNode> & Constructor<StaticableNode> & Constructor<JSDocableNode> & Constructor<ReadonlyableNode> & Constructor<ExclamationTokenableNode> & Constructor<QuestionTokenableNode> & Constructor<InitializerExpressionableNode> & Constructor<TypedNode> & Constructor<PropertyNamedNode> & Constructor<ModifierableNode> & typeof ClassElement;
 
-export declare class PropertyDeclaration
-  extends PropertyDeclarationBase<ts.PropertyDeclaration> {
+export declare class PropertyDeclaration extends PropertyDeclarationBase<ts.PropertyDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -3780,20 +2905,9 @@ export declare class PropertyDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.PropertyDeclaration>>;
 }
 
-declare const SetAccessorDeclarationBase:
-  & Constructor<ChildOrderableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<DecoratableNode>
-  & Constructor<AbstractableNode>
-  & Constructor<ScopedNode>
-  & Constructor<StaticableNode>
-  & Constructor<FunctionLikeDeclaration>
-  & Constructor<BodyableNode>
-  & Constructor<PropertyNamedNode>
-  & typeof ClassElement;
+declare const SetAccessorDeclarationBase: Constructor<ChildOrderableNode> & Constructor<TextInsertableNode> & Constructor<DecoratableNode> & Constructor<AbstractableNode> & Constructor<ScopedNode> & Constructor<StaticableNode> & Constructor<FunctionLikeDeclaration> & Constructor<BodyableNode> & Constructor<PropertyNamedNode> & typeof ClassElement;
 
-export declare class SetAccessorDeclaration
-  extends SetAccessorDeclarationBase<ts.SetAccessorDeclaration> {
+export declare class SetAccessorDeclaration extends SetAccessorDeclarationBase<ts.SetAccessorDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -3832,10 +2946,7 @@ export declare abstract class CompilerCommentNode implements ts.Node {
   getChildCount(sourceFile?: ts.SourceFile | undefined): number;
   getChildAt(index: number, sourceFile?: ts.SourceFile | undefined): ts.Node;
   getChildren(sourceFile?: ts.SourceFile | undefined): ts.Node[];
-  getStart(
-    sourceFile?: ts.SourceFile | undefined,
-    includeJsDocComment?: boolean | undefined,
-  ): number;
+  getStart(sourceFile?: ts.SourceFile | undefined, includeJsDocComment?: boolean | undefined): number;
   getFullStart(): number;
   getEnd(): number;
   getWidth(sourceFile?: ts.SourceFileLike | undefined): number;
@@ -3845,696 +2956,366 @@ export declare abstract class CompilerCommentNode implements ts.Node {
   getText(sourceFile?: ts.SourceFile | undefined): string;
   getFirstToken(sourceFile?: ts.SourceFile | undefined): ts.Node | undefined;
   getLastToken(sourceFile?: ts.SourceFile | undefined): ts.Node | undefined;
-  forEachChild<T>(
-    cbNode: (node: ts.Node) => T | undefined,
-    cbNodeArray?: ((nodes: ts.NodeArray<ts.Node>) => T | undefined) | undefined,
-  ): T | undefined;
+  forEachChild<T>(cbNode: (node: ts.Node) => T | undefined, cbNodeArray?: ((nodes: ts.NodeArray<ts.Node>) => T | undefined) | undefined): T | undefined;
 }
 
-export declare class CompilerCommentStatement extends CompilerCommentNode
-  implements ts.Statement {
+export declare class CompilerCommentStatement extends CompilerCommentNode implements ts.Statement {
   _statementBrand: any;
 }
 
-export declare class CompilerCommentClassElement extends CompilerCommentNode
-  implements ts.ClassElement {
+export declare class CompilerCommentClassElement extends CompilerCommentNode implements ts.ClassElement {
   _classElementBrand: any;
   _declarationBrand: any;
 }
 
-export declare class CompilerCommentTypeElement extends CompilerCommentNode
-  implements ts.TypeElement {
+export declare class CompilerCommentTypeElement extends CompilerCommentNode implements ts.TypeElement {
   _typeElementBrand: any;
   _declarationBrand: any;
 }
 
-export declare class CompilerCommentObjectLiteralElement
-  extends CompilerCommentNode
-  implements ts.ObjectLiteralElement {
+export declare class CompilerCommentObjectLiteralElement extends CompilerCommentNode implements ts.ObjectLiteralElement {
   _declarationBrand: any;
   _objectLiteralBrand: any;
   declarationBrand: any;
 }
 
-export declare class CompilerCommentEnumMember extends CompilerCommentNode
-  implements ts.Node {
+export declare class CompilerCommentEnumMember extends CompilerCommentNode implements ts.Node {
 }
 
-export declare type NodePropertyToWrappedType<
-  NodeType extends ts.Node,
-  KeyName extends keyof NodeType,
-  NonNullableNodeType = NonNullable<NodeType[KeyName]>,
-> = NodeType[KeyName] extends
-  ts.NodeArray<infer ArrayNodeTypeForNullable> | undefined
-  ? CompilerNodeToWrappedType<ArrayNodeTypeForNullable>[] | undefined
-  : NodeType[KeyName] extends ts.NodeArray<infer ArrayNodeType>
-    ? CompilerNodeToWrappedType<ArrayNodeType>[]
-  : NodeType[KeyName] extends ts.Node
-    ? CompilerNodeToWrappedType<NodeType[KeyName]>
-  : NonNullableNodeType extends ts.Node
-    ? CompilerNodeToWrappedType<NonNullableNodeType> | undefined
-  : NodeType[KeyName];
-export declare type NodeParentType<NodeType extends ts.Node> = NodeType extends
-  ts.SourceFile ? undefined
-  : ts.Node extends NodeType
-    ? CompilerNodeToWrappedType<NodeType["parent"]> | undefined
-  : CompilerNodeToWrappedType<NodeType["parent"]>;
+export declare type NodePropertyToWrappedType<NodeType extends ts.Node, KeyName extends keyof NodeType, NonNullableNodeType = NonNullable<NodeType[KeyName]>> = NodeType[KeyName] extends ts.NodeArray<infer ArrayNodeTypeForNullable> | undefined ? CompilerNodeToWrappedType<ArrayNodeTypeForNullable>[] | undefined : NodeType[KeyName] extends ts.NodeArray<infer ArrayNodeType> ? CompilerNodeToWrappedType<ArrayNodeType>[] : NodeType[KeyName] extends ts.Node ? CompilerNodeToWrappedType<NodeType[KeyName]> : NonNullableNodeType extends ts.Node ? CompilerNodeToWrappedType<NonNullableNodeType> | undefined : NodeType[KeyName];
+export declare type NodeParentType<NodeType extends ts.Node> = NodeType extends ts.SourceFile ? undefined : ts.Node extends NodeType ? CompilerNodeToWrappedType<NodeType["parent"]> | undefined : CompilerNodeToWrappedType<NodeType["parent"]>;
 
 export declare class Node<NodeType extends ts.Node = ts.Node> {
   /** Gets if the node is an AnyKeyword. */
   static readonly isAnyKeyword: (node: Node | undefined) => node is Expression;
   /** Gets if the node is an ArrayBindingPattern. */
-  static readonly isArrayBindingPattern: (
-    node: Node | undefined,
-  ) => node is ArrayBindingPattern;
+  static readonly isArrayBindingPattern: (node: Node | undefined) => node is ArrayBindingPattern;
   /** Gets if the node is an ArrayLiteralExpression. */
-  static readonly isArrayLiteralExpression: (
-    node: Node | undefined,
-  ) => node is ArrayLiteralExpression;
+  static readonly isArrayLiteralExpression: (node: Node | undefined) => node is ArrayLiteralExpression;
   /** Gets if the node is an ArrowFunction. */
-  static readonly isArrowFunction: (
-    node: Node | undefined,
-  ) => node is ArrowFunction;
+  static readonly isArrowFunction: (node: Node | undefined) => node is ArrowFunction;
   /** Gets if the node is an AsExpression. */
-  static readonly isAsExpression: (
-    node: Node | undefined,
-  ) => node is AsExpression;
+  static readonly isAsExpression: (node: Node | undefined) => node is AsExpression;
   /** Gets if the node is an AssertClause. */
-  static readonly isAssertClause: (
-    node: Node | undefined,
-  ) => node is AssertClause;
+  static readonly isAssertClause: (node: Node | undefined) => node is AssertClause;
   /** Gets if the node is an AssertEntry. */
-  static readonly isAssertEntry: (
-    node: Node | undefined,
-  ) => node is AssertEntry;
+  static readonly isAssertEntry: (node: Node | undefined) => node is AssertEntry;
   /** Gets if the node is an AwaitExpression. */
-  static readonly isAwaitExpression: (
-    node: Node | undefined,
-  ) => node is AwaitExpression;
+  static readonly isAwaitExpression: (node: Node | undefined) => node is AwaitExpression;
   /** Gets if the node is a BigIntLiteral. */
-  static readonly isBigIntLiteral: (
-    node: Node | undefined,
-  ) => node is BigIntLiteral;
+  static readonly isBigIntLiteral: (node: Node | undefined) => node is BigIntLiteral;
   /** Gets if the node is a BinaryExpression. */
-  static readonly isBinaryExpression: (
-    node: Node | undefined,
-  ) => node is BinaryExpression;
+  static readonly isBinaryExpression: (node: Node | undefined) => node is BinaryExpression;
   /** Gets if the node is a BindingElement. */
-  static readonly isBindingElement: (
-    node: Node | undefined,
-  ) => node is BindingElement;
+  static readonly isBindingElement: (node: Node | undefined) => node is BindingElement;
   /** Gets if the node is a Block. */
   static readonly isBlock: (node: Node | undefined) => node is Block;
   /** Gets if the node is a BooleanKeyword. */
-  static readonly isBooleanKeyword: (
-    node: Node | undefined,
-  ) => node is Expression;
+  static readonly isBooleanKeyword: (node: Node | undefined) => node is Expression;
   /** Gets if the node is a BreakStatement. */
-  static readonly isBreakStatement: (
-    node: Node | undefined,
-  ) => node is BreakStatement;
+  static readonly isBreakStatement: (node: Node | undefined) => node is BreakStatement;
   /** Gets if the node is a CallExpression. */
-  static readonly isCallExpression: (
-    node: Node | undefined,
-  ) => node is CallExpression;
+  static readonly isCallExpression: (node: Node | undefined) => node is CallExpression;
   /** Gets if the node is a CaseBlock. */
   static readonly isCaseBlock: (node: Node | undefined) => node is CaseBlock;
   /** Gets if the node is a CaseClause. */
   static readonly isCaseClause: (node: Node | undefined) => node is CaseClause;
   /** Gets if the node is a CatchClause. */
-  static readonly isCatchClause: (
-    node: Node | undefined,
-  ) => node is CatchClause;
+  static readonly isCatchClause: (node: Node | undefined) => node is CatchClause;
   /** Gets if the node is a ClassDeclaration. */
-  static readonly isClassDeclaration: (
-    node: Node | undefined,
-  ) => node is ClassDeclaration;
+  static readonly isClassDeclaration: (node: Node | undefined) => node is ClassDeclaration;
   /** Gets if the node is a ClassExpression. */
-  static readonly isClassExpression: (
-    node: Node | undefined,
-  ) => node is ClassExpression;
+  static readonly isClassExpression: (node: Node | undefined) => node is ClassExpression;
   /** Gets if the node is a ClassStaticBlockDeclaration. */
-  static readonly isClassStaticBlockDeclaration: (
-    node: Node | undefined,
-  ) => node is ClassStaticBlockDeclaration;
+  static readonly isClassStaticBlockDeclaration: (node: Node | undefined) => node is ClassStaticBlockDeclaration;
   /** Gets if the node is a CommaListExpression. */
-  static readonly isCommaListExpression: (
-    node: Node | undefined,
-  ) => node is CommaListExpression;
+  static readonly isCommaListExpression: (node: Node | undefined) => node is CommaListExpression;
   /** Gets if the node is a ComputedPropertyName. */
-  static readonly isComputedPropertyName: (
-    node: Node | undefined,
-  ) => node is ComputedPropertyName;
+  static readonly isComputedPropertyName: (node: Node | undefined) => node is ComputedPropertyName;
   /** Gets if the node is a ConditionalExpression. */
-  static readonly isConditionalExpression: (
-    node: Node | undefined,
-  ) => node is ConditionalExpression;
+  static readonly isConditionalExpression: (node: Node | undefined) => node is ConditionalExpression;
   /** Gets if the node is a ContinueStatement. */
-  static readonly isContinueStatement: (
-    node: Node | undefined,
-  ) => node is ContinueStatement;
+  static readonly isContinueStatement: (node: Node | undefined) => node is ContinueStatement;
   /** Gets if the node is a DebuggerStatement. */
-  static readonly isDebuggerStatement: (
-    node: Node | undefined,
-  ) => node is DebuggerStatement;
+  static readonly isDebuggerStatement: (node: Node | undefined) => node is DebuggerStatement;
   /** Gets if the node is a Decorator. */
   static readonly isDecorator: (node: Node | undefined) => node is Decorator;
   /** Gets if the node is a DefaultClause. */
-  static readonly isDefaultClause: (
-    node: Node | undefined,
-  ) => node is DefaultClause;
+  static readonly isDefaultClause: (node: Node | undefined) => node is DefaultClause;
   /** Gets if the node is a DeleteExpression. */
-  static readonly isDeleteExpression: (
-    node: Node | undefined,
-  ) => node is DeleteExpression;
+  static readonly isDeleteExpression: (node: Node | undefined) => node is DeleteExpression;
   /** Gets if the node is a DoStatement. */
-  static readonly isDoStatement: (
-    node: Node | undefined,
-  ) => node is DoStatement;
+  static readonly isDoStatement: (node: Node | undefined) => node is DoStatement;
   /** Gets if the node is an ElementAccessExpression. */
-  static readonly isElementAccessExpression: (
-    node: Node | undefined,
-  ) => node is ElementAccessExpression;
+  static readonly isElementAccessExpression: (node: Node | undefined) => node is ElementAccessExpression;
   /** Gets if the node is an EmptyStatement. */
-  static readonly isEmptyStatement: (
-    node: Node | undefined,
-  ) => node is EmptyStatement;
+  static readonly isEmptyStatement: (node: Node | undefined) => node is EmptyStatement;
   /** Gets if the node is an EnumDeclaration. */
-  static readonly isEnumDeclaration: (
-    node: Node | undefined,
-  ) => node is EnumDeclaration;
+  static readonly isEnumDeclaration: (node: Node | undefined) => node is EnumDeclaration;
   /** Gets if the node is an EnumMember. */
   static readonly isEnumMember: (node: Node | undefined) => node is EnumMember;
   /** Gets if the node is an ExportAssignment. */
-  static readonly isExportAssignment: (
-    node: Node | undefined,
-  ) => node is ExportAssignment;
+  static readonly isExportAssignment: (node: Node | undefined) => node is ExportAssignment;
   /** Gets if the node is an ExportDeclaration. */
-  static readonly isExportDeclaration: (
-    node: Node | undefined,
-  ) => node is ExportDeclaration;
+  static readonly isExportDeclaration: (node: Node | undefined) => node is ExportDeclaration;
   /** Gets if the node is an ExportSpecifier. */
-  static readonly isExportSpecifier: (
-    node: Node | undefined,
-  ) => node is ExportSpecifier;
+  static readonly isExportSpecifier: (node: Node | undefined) => node is ExportSpecifier;
   /** Gets if the node is an ExpressionStatement. */
-  static readonly isExpressionStatement: (
-    node: Node | undefined,
-  ) => node is ExpressionStatement;
+  static readonly isExpressionStatement: (node: Node | undefined) => node is ExpressionStatement;
   /** Gets if the node is an ExpressionWithTypeArguments. */
-  static readonly isExpressionWithTypeArguments: (
-    node: Node | undefined,
-  ) => node is ExpressionWithTypeArguments;
+  static readonly isExpressionWithTypeArguments: (node: Node | undefined) => node is ExpressionWithTypeArguments;
   /** Gets if the node is an ExternalModuleReference. */
-  static readonly isExternalModuleReference: (
-    node: Node | undefined,
-  ) => node is ExternalModuleReference;
+  static readonly isExternalModuleReference: (node: Node | undefined) => node is ExternalModuleReference;
   /** Gets if the node is a ForInStatement. */
-  static readonly isForInStatement: (
-    node: Node | undefined,
-  ) => node is ForInStatement;
+  static readonly isForInStatement: (node: Node | undefined) => node is ForInStatement;
   /** Gets if the node is a ForOfStatement. */
-  static readonly isForOfStatement: (
-    node: Node | undefined,
-  ) => node is ForOfStatement;
+  static readonly isForOfStatement: (node: Node | undefined) => node is ForOfStatement;
   /** Gets if the node is a ForStatement. */
-  static readonly isForStatement: (
-    node: Node | undefined,
-  ) => node is ForStatement;
+  static readonly isForStatement: (node: Node | undefined) => node is ForStatement;
   /** Gets if the node is a FunctionDeclaration. */
-  static readonly isFunctionDeclaration: (
-    node: Node | undefined,
-  ) => node is FunctionDeclaration;
+  static readonly isFunctionDeclaration: (node: Node | undefined) => node is FunctionDeclaration;
   /** Gets if the node is a FunctionExpression. */
-  static readonly isFunctionExpression: (
-    node: Node | undefined,
-  ) => node is FunctionExpression;
+  static readonly isFunctionExpression: (node: Node | undefined) => node is FunctionExpression;
   /** Gets if the node is a HeritageClause. */
-  static readonly isHeritageClause: (
-    node: Node | undefined,
-  ) => node is HeritageClause;
+  static readonly isHeritageClause: (node: Node | undefined) => node is HeritageClause;
   /** Gets if the node is a Identifier. */
   static readonly isIdentifier: (node: Node | undefined) => node is Identifier;
   /** Gets if the node is a IfStatement. */
-  static readonly isIfStatement: (
-    node: Node | undefined,
-  ) => node is IfStatement;
+  static readonly isIfStatement: (node: Node | undefined) => node is IfStatement;
   /** Gets if the node is a ImportClause. */
-  static readonly isImportClause: (
-    node: Node | undefined,
-  ) => node is ImportClause;
+  static readonly isImportClause: (node: Node | undefined) => node is ImportClause;
   /** Gets if the node is a ImportDeclaration. */
-  static readonly isImportDeclaration: (
-    node: Node | undefined,
-  ) => node is ImportDeclaration;
+  static readonly isImportDeclaration: (node: Node | undefined) => node is ImportDeclaration;
   /** Gets if the node is a ImportEqualsDeclaration. */
-  static readonly isImportEqualsDeclaration: (
-    node: Node | undefined,
-  ) => node is ImportEqualsDeclaration;
+  static readonly isImportEqualsDeclaration: (node: Node | undefined) => node is ImportEqualsDeclaration;
   /** Gets if the node is a ImportSpecifier. */
-  static readonly isImportSpecifier: (
-    node: Node | undefined,
-  ) => node is ImportSpecifier;
+  static readonly isImportSpecifier: (node: Node | undefined) => node is ImportSpecifier;
   /** Gets if the node is a ImportTypeAssertionContainer. */
-  static readonly isImportTypeAssertionContainer: (
-    node: Node | undefined,
-  ) => node is ImportTypeAssertionContainer;
+  static readonly isImportTypeAssertionContainer: (node: Node | undefined) => node is ImportTypeAssertionContainer;
   /** Gets if the node is a InferKeyword. */
-  static readonly isInferKeyword: (
-    node: Node | undefined,
-  ) => node is Node<ts.Token<SyntaxKind.InferKeyword>>;
+  static readonly isInferKeyword: (node: Node | undefined) => node is Node<ts.Token<SyntaxKind.InferKeyword>>;
   /** Gets if the node is a InterfaceDeclaration. */
-  static readonly isInterfaceDeclaration: (
-    node: Node | undefined,
-  ) => node is InterfaceDeclaration;
+  static readonly isInterfaceDeclaration: (node: Node | undefined) => node is InterfaceDeclaration;
   /** Gets if the node is a JSDocAllType. */
-  static readonly isJSDocAllType: (
-    node: Node | undefined,
-  ) => node is JSDocAllType;
+  static readonly isJSDocAllType: (node: Node | undefined) => node is JSDocAllType;
   /** Gets if the node is a JSDocAugmentsTag. */
-  static readonly isJSDocAugmentsTag: (
-    node: Node | undefined,
-  ) => node is JSDocAugmentsTag;
+  static readonly isJSDocAugmentsTag: (node: Node | undefined) => node is JSDocAugmentsTag;
   /** Gets if the node is a JSDocAuthorTag. */
-  static readonly isJSDocAuthorTag: (
-    node: Node | undefined,
-  ) => node is JSDocAuthorTag;
+  static readonly isJSDocAuthorTag: (node: Node | undefined) => node is JSDocAuthorTag;
   /** Gets if the node is a JSDocCallbackTag. */
-  static readonly isJSDocCallbackTag: (
-    node: Node | undefined,
-  ) => node is JSDocCallbackTag;
+  static readonly isJSDocCallbackTag: (node: Node | undefined) => node is JSDocCallbackTag;
   /** Gets if the node is a JSDocClassTag. */
-  static readonly isJSDocClassTag: (
-    node: Node | undefined,
-  ) => node is JSDocClassTag;
+  static readonly isJSDocClassTag: (node: Node | undefined) => node is JSDocClassTag;
   /** Gets if the node is a JSDocDeprecatedTag. */
-  static readonly isJSDocDeprecatedTag: (
-    node: Node | undefined,
-  ) => node is JSDocDeprecatedTag;
+  static readonly isJSDocDeprecatedTag: (node: Node | undefined) => node is JSDocDeprecatedTag;
   /** Gets if the node is a JSDocEnumTag. */
-  static readonly isJSDocEnumTag: (
-    node: Node | undefined,
-  ) => node is JSDocEnumTag;
+  static readonly isJSDocEnumTag: (node: Node | undefined) => node is JSDocEnumTag;
   /** Gets if the node is a JSDocFunctionType. */
-  static readonly isJSDocFunctionType: (
-    node: Node | undefined,
-  ) => node is JSDocFunctionType;
+  static readonly isJSDocFunctionType: (node: Node | undefined) => node is JSDocFunctionType;
   /** Gets if the node is a JSDocImplementsTag. */
-  static readonly isJSDocImplementsTag: (
-    node: Node | undefined,
-  ) => node is JSDocImplementsTag;
+  static readonly isJSDocImplementsTag: (node: Node | undefined) => node is JSDocImplementsTag;
   /** Gets if the node is a JSDocLink. */
   static readonly isJSDocLink: (node: Node | undefined) => node is JSDocLink;
   /** Gets if the node is a JSDocLinkCode. */
-  static readonly isJSDocLinkCode: (
-    node: Node | undefined,
-  ) => node is JSDocLinkCode;
+  static readonly isJSDocLinkCode: (node: Node | undefined) => node is JSDocLinkCode;
   /** Gets if the node is a JSDocLinkPlain. */
-  static readonly isJSDocLinkPlain: (
-    node: Node | undefined,
-  ) => node is JSDocLinkPlain;
+  static readonly isJSDocLinkPlain: (node: Node | undefined) => node is JSDocLinkPlain;
   /** Gets if the node is a JSDocMemberName. */
-  static readonly isJSDocMemberName: (
-    node: Node | undefined,
-  ) => node is JSDocMemberName;
+  static readonly isJSDocMemberName: (node: Node | undefined) => node is JSDocMemberName;
   /** Gets if the node is a JSDocNamepathType. */
-  static readonly isJSDocNamepathType: (
-    node: Node | undefined,
-  ) => node is JSDocNamepathType;
+  static readonly isJSDocNamepathType: (node: Node | undefined) => node is JSDocNamepathType;
   /** Gets if the node is a JSDocNameReference. */
-  static readonly isJSDocNameReference: (
-    node: Node | undefined,
-  ) => node is JSDocNameReference;
+  static readonly isJSDocNameReference: (node: Node | undefined) => node is JSDocNameReference;
   /** Gets if the node is a JSDocNonNullableType. */
-  static readonly isJSDocNonNullableType: (
-    node: Node | undefined,
-  ) => node is JSDocNonNullableType;
+  static readonly isJSDocNonNullableType: (node: Node | undefined) => node is JSDocNonNullableType;
   /** Gets if the node is a JSDocNullableType. */
-  static readonly isJSDocNullableType: (
-    node: Node | undefined,
-  ) => node is JSDocNullableType;
+  static readonly isJSDocNullableType: (node: Node | undefined) => node is JSDocNullableType;
   /** Gets if the node is a JSDocOptionalType. */
-  static readonly isJSDocOptionalType: (
-    node: Node | undefined,
-  ) => node is JSDocOptionalType;
+  static readonly isJSDocOptionalType: (node: Node | undefined) => node is JSDocOptionalType;
   /** Gets if the node is a JSDocOverrideTag. */
-  static readonly isJSDocOverrideTag: (
-    node: Node | undefined,
-  ) => node is JSDocOverrideTag;
+  static readonly isJSDocOverrideTag: (node: Node | undefined) => node is JSDocOverrideTag;
   /** Gets if the node is a JSDocParameterTag. */
-  static readonly isJSDocParameterTag: (
-    node: Node | undefined,
-  ) => node is JSDocParameterTag;
+  static readonly isJSDocParameterTag: (node: Node | undefined) => node is JSDocParameterTag;
   /** Gets if the node is a JSDocPrivateTag. */
-  static readonly isJSDocPrivateTag: (
-    node: Node | undefined,
-  ) => node is JSDocPrivateTag;
+  static readonly isJSDocPrivateTag: (node: Node | undefined) => node is JSDocPrivateTag;
   /** Gets if the node is a JSDocPropertyTag. */
-  static readonly isJSDocPropertyTag: (
-    node: Node | undefined,
-  ) => node is JSDocPropertyTag;
+  static readonly isJSDocPropertyTag: (node: Node | undefined) => node is JSDocPropertyTag;
   /** Gets if the node is a JSDocProtectedTag. */
-  static readonly isJSDocProtectedTag: (
-    node: Node | undefined,
-  ) => node is JSDocProtectedTag;
+  static readonly isJSDocProtectedTag: (node: Node | undefined) => node is JSDocProtectedTag;
   /** Gets if the node is a JSDocPublicTag. */
-  static readonly isJSDocPublicTag: (
-    node: Node | undefined,
-  ) => node is JSDocPublicTag;
+  static readonly isJSDocPublicTag: (node: Node | undefined) => node is JSDocPublicTag;
   /** Gets if the node is a JSDocReadonlyTag. */
-  static readonly isJSDocReadonlyTag: (
-    node: Node | undefined,
-  ) => node is JSDocReadonlyTag;
+  static readonly isJSDocReadonlyTag: (node: Node | undefined) => node is JSDocReadonlyTag;
   /** Gets if the node is a JSDocReturnTag. */
-  static readonly isJSDocReturnTag: (
-    node: Node | undefined,
-  ) => node is JSDocReturnTag;
+  static readonly isJSDocReturnTag: (node: Node | undefined) => node is JSDocReturnTag;
   /** Gets if the node is a JSDocSeeTag. */
-  static readonly isJSDocSeeTag: (
-    node: Node | undefined,
-  ) => node is JSDocSeeTag;
+  static readonly isJSDocSeeTag: (node: Node | undefined) => node is JSDocSeeTag;
   /** Gets if the node is a JSDocSignature. */
-  static readonly isJSDocSignature: (
-    node: Node | undefined,
-  ) => node is JSDocSignature;
+  static readonly isJSDocSignature: (node: Node | undefined) => node is JSDocSignature;
   /** Gets if the node is a JSDocTemplateTag. */
-  static readonly isJSDocTemplateTag: (
-    node: Node | undefined,
-  ) => node is JSDocTemplateTag;
+  static readonly isJSDocTemplateTag: (node: Node | undefined) => node is JSDocTemplateTag;
   /** Gets if the node is a JSDocText. */
   static readonly isJSDocText: (node: Node | undefined) => node is JSDocText;
   /** Gets if the node is a JSDocThisTag. */
-  static readonly isJSDocThisTag: (
-    node: Node | undefined,
-  ) => node is JSDocThisTag;
+  static readonly isJSDocThisTag: (node: Node | undefined) => node is JSDocThisTag;
   /** Gets if the node is a JSDocTypedefTag. */
-  static readonly isJSDocTypedefTag: (
-    node: Node | undefined,
-  ) => node is JSDocTypedefTag;
+  static readonly isJSDocTypedefTag: (node: Node | undefined) => node is JSDocTypedefTag;
   /** Gets if the node is a JSDocTypeExpression. */
-  static readonly isJSDocTypeExpression: (
-    node: Node | undefined,
-  ) => node is JSDocTypeExpression;
+  static readonly isJSDocTypeExpression: (node: Node | undefined) => node is JSDocTypeExpression;
   /** Gets if the node is a JSDocTypeLiteral. */
-  static readonly isJSDocTypeLiteral: (
-    node: Node | undefined,
-  ) => node is JSDocTypeLiteral;
+  static readonly isJSDocTypeLiteral: (node: Node | undefined) => node is JSDocTypeLiteral;
   /** Gets if the node is a JSDocTypeTag. */
-  static readonly isJSDocTypeTag: (
-    node: Node | undefined,
-  ) => node is JSDocTypeTag;
+  static readonly isJSDocTypeTag: (node: Node | undefined) => node is JSDocTypeTag;
   /** Gets if the node is a JSDocUnknownType. */
-  static readonly isJSDocUnknownType: (
-    node: Node | undefined,
-  ) => node is JSDocUnknownType;
+  static readonly isJSDocUnknownType: (node: Node | undefined) => node is JSDocUnknownType;
   /** Gets if the node is a JSDocVariadicType. */
-  static readonly isJSDocVariadicType: (
-    node: Node | undefined,
-  ) => node is JSDocVariadicType;
+  static readonly isJSDocVariadicType: (node: Node | undefined) => node is JSDocVariadicType;
   /** Gets if the node is a JsxAttribute. */
-  static readonly isJsxAttribute: (
-    node: Node | undefined,
-  ) => node is JsxAttribute;
+  static readonly isJsxAttribute: (node: Node | undefined) => node is JsxAttribute;
   /** Gets if the node is a JsxClosingElement. */
-  static readonly isJsxClosingElement: (
-    node: Node | undefined,
-  ) => node is JsxClosingElement;
+  static readonly isJsxClosingElement: (node: Node | undefined) => node is JsxClosingElement;
   /** Gets if the node is a JsxClosingFragment. */
-  static readonly isJsxClosingFragment: (
-    node: Node | undefined,
-  ) => node is JsxClosingFragment;
+  static readonly isJsxClosingFragment: (node: Node | undefined) => node is JsxClosingFragment;
   /** Gets if the node is a JsxElement. */
   static readonly isJsxElement: (node: Node | undefined) => node is JsxElement;
   /** Gets if the node is a JsxExpression. */
-  static readonly isJsxExpression: (
-    node: Node | undefined,
-  ) => node is JsxExpression;
+  static readonly isJsxExpression: (node: Node | undefined) => node is JsxExpression;
   /** Gets if the node is a JsxFragment. */
-  static readonly isJsxFragment: (
-    node: Node | undefined,
-  ) => node is JsxFragment;
+  static readonly isJsxFragment: (node: Node | undefined) => node is JsxFragment;
   /** Gets if the node is a JsxOpeningElement. */
-  static readonly isJsxOpeningElement: (
-    node: Node | undefined,
-  ) => node is JsxOpeningElement;
+  static readonly isJsxOpeningElement: (node: Node | undefined) => node is JsxOpeningElement;
   /** Gets if the node is a JsxOpeningFragment. */
-  static readonly isJsxOpeningFragment: (
-    node: Node | undefined,
-  ) => node is JsxOpeningFragment;
+  static readonly isJsxOpeningFragment: (node: Node | undefined) => node is JsxOpeningFragment;
   /** Gets if the node is a JsxSelfClosingElement. */
-  static readonly isJsxSelfClosingElement: (
-    node: Node | undefined,
-  ) => node is JsxSelfClosingElement;
+  static readonly isJsxSelfClosingElement: (node: Node | undefined) => node is JsxSelfClosingElement;
   /** Gets if the node is a JsxSpreadAttribute. */
-  static readonly isJsxSpreadAttribute: (
-    node: Node | undefined,
-  ) => node is JsxSpreadAttribute;
+  static readonly isJsxSpreadAttribute: (node: Node | undefined) => node is JsxSpreadAttribute;
   /** Gets if the node is a JsxText. */
   static readonly isJsxText: (node: Node | undefined) => node is JsxText;
   /** Gets if the node is a LabeledStatement. */
-  static readonly isLabeledStatement: (
-    node: Node | undefined,
-  ) => node is LabeledStatement;
+  static readonly isLabeledStatement: (node: Node | undefined) => node is LabeledStatement;
   /** Gets if the node is a MetaProperty. */
-  static readonly isMetaProperty: (
-    node: Node | undefined,
-  ) => node is MetaProperty;
+  static readonly isMetaProperty: (node: Node | undefined) => node is MetaProperty;
   /** Gets if the node is a MethodDeclaration. */
-  static readonly isMethodDeclaration: (
-    node: Node | undefined,
-  ) => node is MethodDeclaration;
+  static readonly isMethodDeclaration: (node: Node | undefined) => node is MethodDeclaration;
   /** Gets if the node is a MethodSignature. */
-  static readonly isMethodSignature: (
-    node: Node | undefined,
-  ) => node is MethodSignature;
+  static readonly isMethodSignature: (node: Node | undefined) => node is MethodSignature;
   /** Gets if the node is a ModuleBlock. */
-  static readonly isModuleBlock: (
-    node: Node | undefined,
-  ) => node is ModuleBlock;
+  static readonly isModuleBlock: (node: Node | undefined) => node is ModuleBlock;
   /** Gets if the node is a ModuleDeclaration. */
-  static readonly isModuleDeclaration: (
-    node: Node | undefined,
-  ) => node is ModuleDeclaration;
+  static readonly isModuleDeclaration: (node: Node | undefined) => node is ModuleDeclaration;
   /** Gets if the node is a NamedExports. */
-  static readonly isNamedExports: (
-    node: Node | undefined,
-  ) => node is NamedExports;
+  static readonly isNamedExports: (node: Node | undefined) => node is NamedExports;
   /** Gets if the node is a NamedImports. */
-  static readonly isNamedImports: (
-    node: Node | undefined,
-  ) => node is NamedImports;
+  static readonly isNamedImports: (node: Node | undefined) => node is NamedImports;
   /** Gets if the node is a NamedTupleMember. */
-  static readonly isNamedTupleMember: (
-    node: Node | undefined,
-  ) => node is NamedTupleMember;
+  static readonly isNamedTupleMember: (node: Node | undefined) => node is NamedTupleMember;
   /** Gets if the node is a NamespaceExport. */
-  static readonly isNamespaceExport: (
-    node: Node | undefined,
-  ) => node is NamespaceExport;
+  static readonly isNamespaceExport: (node: Node | undefined) => node is NamespaceExport;
   /** Gets if the node is a NamespaceImport. */
-  static readonly isNamespaceImport: (
-    node: Node | undefined,
-  ) => node is NamespaceImport;
+  static readonly isNamespaceImport: (node: Node | undefined) => node is NamespaceImport;
   /** Gets if the node is a NeverKeyword. */
-  static readonly isNeverKeyword: (
-    node: Node | undefined,
-  ) => node is Node<ts.Token<SyntaxKind.NeverKeyword>>;
+  static readonly isNeverKeyword: (node: Node | undefined) => node is Node<ts.Token<SyntaxKind.NeverKeyword>>;
   /** Gets if the node is a NewExpression. */
-  static readonly isNewExpression: (
-    node: Node | undefined,
-  ) => node is NewExpression;
+  static readonly isNewExpression: (node: Node | undefined) => node is NewExpression;
   /** Gets if the node is a NonNullExpression. */
-  static readonly isNonNullExpression: (
-    node: Node | undefined,
-  ) => node is NonNullExpression;
+  static readonly isNonNullExpression: (node: Node | undefined) => node is NonNullExpression;
   /** Gets if the node is a NoSubstitutionTemplateLiteral. */
-  static readonly isNoSubstitutionTemplateLiteral: (
-    node: Node | undefined,
-  ) => node is NoSubstitutionTemplateLiteral;
+  static readonly isNoSubstitutionTemplateLiteral: (node: Node | undefined) => node is NoSubstitutionTemplateLiteral;
   /** Gets if the node is a NotEmittedStatement. */
-  static readonly isNotEmittedStatement: (
-    node: Node | undefined,
-  ) => node is NotEmittedStatement;
+  static readonly isNotEmittedStatement: (node: Node | undefined) => node is NotEmittedStatement;
   /** Gets if the node is a NumberKeyword. */
-  static readonly isNumberKeyword: (
-    node: Node | undefined,
-  ) => node is Expression;
+  static readonly isNumberKeyword: (node: Node | undefined) => node is Expression;
   /** Gets if the node is a NumericLiteral. */
-  static readonly isNumericLiteral: (
-    node: Node | undefined,
-  ) => node is NumericLiteral;
+  static readonly isNumericLiteral: (node: Node | undefined) => node is NumericLiteral;
   /** Gets if the node is a ObjectBindingPattern. */
-  static readonly isObjectBindingPattern: (
-    node: Node | undefined,
-  ) => node is ObjectBindingPattern;
+  static readonly isObjectBindingPattern: (node: Node | undefined) => node is ObjectBindingPattern;
   /** Gets if the node is a ObjectKeyword. */
-  static readonly isObjectKeyword: (
-    node: Node | undefined,
-  ) => node is Expression;
+  static readonly isObjectKeyword: (node: Node | undefined) => node is Expression;
   /** Gets if the node is a ObjectLiteralExpression. */
-  static readonly isObjectLiteralExpression: (
-    node: Node | undefined,
-  ) => node is ObjectLiteralExpression;
+  static readonly isObjectLiteralExpression: (node: Node | undefined) => node is ObjectLiteralExpression;
   /** Gets if the node is a OmittedExpression. */
-  static readonly isOmittedExpression: (
-    node: Node | undefined,
-  ) => node is OmittedExpression;
+  static readonly isOmittedExpression: (node: Node | undefined) => node is OmittedExpression;
   /** Gets if the node is a ParenthesizedExpression. */
-  static readonly isParenthesizedExpression: (
-    node: Node | undefined,
-  ) => node is ParenthesizedExpression;
+  static readonly isParenthesizedExpression: (node: Node | undefined) => node is ParenthesizedExpression;
   /** Gets if the node is a PartiallyEmittedExpression. */
-  static readonly isPartiallyEmittedExpression: (
-    node: Node | undefined,
-  ) => node is PartiallyEmittedExpression;
+  static readonly isPartiallyEmittedExpression: (node: Node | undefined) => node is PartiallyEmittedExpression;
   /** Gets if the node is a PostfixUnaryExpression. */
-  static readonly isPostfixUnaryExpression: (
-    node: Node | undefined,
-  ) => node is PostfixUnaryExpression;
+  static readonly isPostfixUnaryExpression: (node: Node | undefined) => node is PostfixUnaryExpression;
   /** Gets if the node is a PrefixUnaryExpression. */
-  static readonly isPrefixUnaryExpression: (
-    node: Node | undefined,
-  ) => node is PrefixUnaryExpression;
+  static readonly isPrefixUnaryExpression: (node: Node | undefined) => node is PrefixUnaryExpression;
   /** Gets if the node is a PrivateIdentifier. */
-  static readonly isPrivateIdentifier: (
-    node: Node | undefined,
-  ) => node is PrivateIdentifier;
+  static readonly isPrivateIdentifier: (node: Node | undefined) => node is PrivateIdentifier;
   /** Gets if the node is a PropertyAccessExpression. */
-  static readonly isPropertyAccessExpression: (
-    node: Node | undefined,
-  ) => node is PropertyAccessExpression;
+  static readonly isPropertyAccessExpression: (node: Node | undefined) => node is PropertyAccessExpression;
   /** Gets if the node is a PropertyAssignment. */
-  static readonly isPropertyAssignment: (
-    node: Node | undefined,
-  ) => node is PropertyAssignment;
+  static readonly isPropertyAssignment: (node: Node | undefined) => node is PropertyAssignment;
   /** Gets if the node is a PropertyDeclaration. */
-  static readonly isPropertyDeclaration: (
-    node: Node | undefined,
-  ) => node is PropertyDeclaration;
+  static readonly isPropertyDeclaration: (node: Node | undefined) => node is PropertyDeclaration;
   /** Gets if the node is a PropertySignature. */
-  static readonly isPropertySignature: (
-    node: Node | undefined,
-  ) => node is PropertySignature;
+  static readonly isPropertySignature: (node: Node | undefined) => node is PropertySignature;
   /** Gets if the node is a QualifiedName. */
-  static readonly isQualifiedName: (
-    node: Node | undefined,
-  ) => node is QualifiedName;
+  static readonly isQualifiedName: (node: Node | undefined) => node is QualifiedName;
   /** Gets if the node is a RegularExpressionLiteral. */
-  static readonly isRegularExpressionLiteral: (
-    node: Node | undefined,
-  ) => node is RegularExpressionLiteral;
+  static readonly isRegularExpressionLiteral: (node: Node | undefined) => node is RegularExpressionLiteral;
   /** Gets if the node is a ReturnStatement. */
-  static readonly isReturnStatement: (
-    node: Node | undefined,
-  ) => node is ReturnStatement;
+  static readonly isReturnStatement: (node: Node | undefined) => node is ReturnStatement;
   /** Gets if the node is a SemicolonToken. */
-  static readonly isSemicolonToken: (
-    node: Node | undefined,
-  ) => node is Node<ts.Token<SyntaxKind.SemicolonToken>>;
+  static readonly isSemicolonToken: (node: Node | undefined) => node is Node<ts.Token<SyntaxKind.SemicolonToken>>;
   /** Gets if the node is a ShorthandPropertyAssignment. */
-  static readonly isShorthandPropertyAssignment: (
-    node: Node | undefined,
-  ) => node is ShorthandPropertyAssignment;
+  static readonly isShorthandPropertyAssignment: (node: Node | undefined) => node is ShorthandPropertyAssignment;
   /** Gets if the node is a SourceFile. */
   static readonly isSourceFile: (node: Node | undefined) => node is SourceFile;
   /** Gets if the node is a SpreadAssignment. */
-  static readonly isSpreadAssignment: (
-    node: Node | undefined,
-  ) => node is SpreadAssignment;
+  static readonly isSpreadAssignment: (node: Node | undefined) => node is SpreadAssignment;
   /** Gets if the node is a SpreadElement. */
-  static readonly isSpreadElement: (
-    node: Node | undefined,
-  ) => node is SpreadElement;
+  static readonly isSpreadElement: (node: Node | undefined) => node is SpreadElement;
   /** Gets if the node is a StringKeyword. */
-  static readonly isStringKeyword: (
-    node: Node | undefined,
-  ) => node is Expression;
+  static readonly isStringKeyword: (node: Node | undefined) => node is Expression;
   /** Gets if the node is a StringLiteral. */
-  static readonly isStringLiteral: (
-    node: Node | undefined,
-  ) => node is StringLiteral;
+  static readonly isStringLiteral: (node: Node | undefined) => node is StringLiteral;
   /** Gets if the node is a SwitchStatement. */
-  static readonly isSwitchStatement: (
-    node: Node | undefined,
-  ) => node is SwitchStatement;
+  static readonly isSwitchStatement: (node: Node | undefined) => node is SwitchStatement;
   /** Gets if the node is a SymbolKeyword. */
-  static readonly isSymbolKeyword: (
-    node: Node | undefined,
-  ) => node is Expression;
+  static readonly isSymbolKeyword: (node: Node | undefined) => node is Expression;
   /** Gets if the node is a SyntaxList. */
   static readonly isSyntaxList: (node: Node | undefined) => node is SyntaxList;
   /** Gets if the node is a TaggedTemplateExpression. */
-  static readonly isTaggedTemplateExpression: (
-    node: Node | undefined,
-  ) => node is TaggedTemplateExpression;
+  static readonly isTaggedTemplateExpression: (node: Node | undefined) => node is TaggedTemplateExpression;
   /** Gets if the node is a TemplateExpression. */
-  static readonly isTemplateExpression: (
-    node: Node | undefined,
-  ) => node is TemplateExpression;
+  static readonly isTemplateExpression: (node: Node | undefined) => node is TemplateExpression;
   /** Gets if the node is a TemplateHead. */
-  static readonly isTemplateHead: (
-    node: Node | undefined,
-  ) => node is TemplateHead;
+  static readonly isTemplateHead: (node: Node | undefined) => node is TemplateHead;
   /** Gets if the node is a TemplateMiddle. */
-  static readonly isTemplateMiddle: (
-    node: Node | undefined,
-  ) => node is TemplateMiddle;
+  static readonly isTemplateMiddle: (node: Node | undefined) => node is TemplateMiddle;
   /** Gets if the node is a TemplateSpan. */
-  static readonly isTemplateSpan: (
-    node: Node | undefined,
-  ) => node is TemplateSpan;
+  static readonly isTemplateSpan: (node: Node | undefined) => node is TemplateSpan;
   /** Gets if the node is a TemplateTail. */
-  static readonly isTemplateTail: (
-    node: Node | undefined,
-  ) => node is TemplateTail;
+  static readonly isTemplateTail: (node: Node | undefined) => node is TemplateTail;
   /** Gets if the node is a ThrowStatement. */
-  static readonly isThrowStatement: (
-    node: Node | undefined,
-  ) => node is ThrowStatement;
+  static readonly isThrowStatement: (node: Node | undefined) => node is ThrowStatement;
   /** Gets if the node is a TryStatement. */
-  static readonly isTryStatement: (
-    node: Node | undefined,
-  ) => node is TryStatement;
+  static readonly isTryStatement: (node: Node | undefined) => node is TryStatement;
   /** Gets if the node is a TypeAliasDeclaration. */
-  static readonly isTypeAliasDeclaration: (
-    node: Node | undefined,
-  ) => node is TypeAliasDeclaration;
+  static readonly isTypeAliasDeclaration: (node: Node | undefined) => node is TypeAliasDeclaration;
   /** Gets if the node is a TypeOfExpression. */
-  static readonly isTypeOfExpression: (
-    node: Node | undefined,
-  ) => node is TypeOfExpression;
+  static readonly isTypeOfExpression: (node: Node | undefined) => node is TypeOfExpression;
   /** Gets if the node is a UndefinedKeyword. */
-  static readonly isUndefinedKeyword: (
-    node: Node | undefined,
-  ) => node is Expression;
+  static readonly isUndefinedKeyword: (node: Node | undefined) => node is Expression;
   /** Gets if the node is a VariableDeclaration. */
-  static readonly isVariableDeclaration: (
-    node: Node | undefined,
-  ) => node is VariableDeclaration;
+  static readonly isVariableDeclaration: (node: Node | undefined) => node is VariableDeclaration;
   /** Gets if the node is a VariableDeclarationList. */
-  static readonly isVariableDeclarationList: (
-    node: Node | undefined,
-  ) => node is VariableDeclarationList;
+  static readonly isVariableDeclarationList: (node: Node | undefined) => node is VariableDeclarationList;
   /** Gets if the node is a VariableStatement. */
-  static readonly isVariableStatement: (
-    node: Node | undefined,
-  ) => node is VariableStatement;
+  static readonly isVariableStatement: (node: Node | undefined) => node is VariableStatement;
   /** Gets if the node is a VoidExpression. */
-  static readonly isVoidExpression: (
-    node: Node | undefined,
-  ) => node is VoidExpression;
+  static readonly isVoidExpression: (node: Node | undefined) => node is VoidExpression;
   /** Gets if the node is a WhileStatement. */
-  static readonly isWhileStatement: (
-    node: Node | undefined,
-  ) => node is WhileStatement;
+  static readonly isWhileStatement: (node: Node | undefined) => node is WhileStatement;
   /** Gets if the node is a WithStatement. */
-  static readonly isWithStatement: (
-    node: Node | undefined,
-  ) => node is WithStatement;
+  static readonly isWithStatement: (node: Node | undefined) => node is WithStatement;
   /** Gets if the node is a YieldExpression. */
-  static readonly isYieldExpression: (
-    node: Node | undefined,
-  ) => node is YieldExpression;
+  static readonly isYieldExpression: (node: Node | undefined) => node is YieldExpression;
   protected constructor();
   /** Gets the underlying compiler node. */
   get compilerNode(): NodeType;
@@ -4612,32 +3393,24 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the node as the specified kind if it is equal to that kind, otherwise throws.
    * @param kind - Syntax kind.
    */
-  asKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  asKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Returns if the node is the specified kind.
    *
    * This is a type guard.
    * @param kind - Syntax kind.
    */
-  isKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): this is KindToNodeMappings[TKind];
+  isKind<TKind extends SyntaxKind>(kind: TKind): this is KindToNodeMappings[TKind];
   /**
    * Gets the node as the specified kind if it is equal to that kind, otherwise returns undefined.
    * @param kind - Syntax kind.
    */
-  asKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  asKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the first child by a condition or throws.
    * @param condition - Condition.
    */
-  getFirstChildOrThrow<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T;
+  getFirstChildOrThrow<T extends Node>(condition?: (node: Node) => node is T): T;
   /**
    * Gets the first child by a condition or throws.
    * @param condition - Condition.
@@ -4647,9 +3420,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the first child by a condition.
    * @param condition - Condition.
    */
-  getFirstChild<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T | undefined;
+  getFirstChild<T extends Node>(condition?: (node: Node) => node is T): T | undefined;
   /**
    * Gets the first child by a condition.
    * @param condition - Condition.
@@ -4669,9 +3440,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the last child by a condition.
    * @param condition - Condition.
    */
-  getLastChild<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T | undefined;
+  getLastChild<T extends Node>(condition?: (node: Node) => node is T): T | undefined;
   /**
    * Gets the last child by a condition.
    * @param condition - Condition.
@@ -4681,9 +3450,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the first descendant by a condition or throws.
    * @param condition - Condition.
    */
-  getFirstDescendantOrThrow<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T;
+  getFirstDescendantOrThrow<T extends Node>(condition?: (node: Node) => node is T): T;
   /**
    * Gets the first descendant by a condition or throws.
    * @param condition - Condition.
@@ -4693,9 +3460,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the first descendant by a condition.
    * @param condition - Condition.
    */
-  getFirstDescendant<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T | undefined;
+  getFirstDescendant<T extends Node>(condition?: (node: Node) => node is T): T | undefined;
   /**
    * Gets the first descendant by a condition.
    * @param condition - Condition.
@@ -4705,9 +3470,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the previous sibling or throws.
    * @param condition - Optional condition for getting the previous sibling.
    */
-  getPreviousSiblingOrThrow<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T;
+  getPreviousSiblingOrThrow<T extends Node>(condition?: (node: Node) => node is T): T;
   /**
    * Gets the previous sibling or throws.
    * @param condition - Optional condition for getting the previous sibling.
@@ -4717,9 +3480,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the previous sibling.
    * @param condition - Optional condition for getting the previous sibling.
    */
-  getPreviousSibling<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T | undefined;
+  getPreviousSibling<T extends Node>(condition?: (node: Node) => node is T): T | undefined;
   /**
    * Gets the previous sibling.
    * @param condition - Optional condition for getting the previous sibling.
@@ -4729,9 +3490,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the next sibling or throws.
    * @param condition - Optional condition for getting the next sibling.
    */
-  getNextSiblingOrThrow<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T;
+  getNextSiblingOrThrow<T extends Node>(condition?: (node: Node) => node is T): T;
   /**
    * Gets the next sibling or throws.
    * @param condition - Optional condition for getting the next sibling.
@@ -4741,9 +3500,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the next sibling.
    * @param condition - Optional condition for getting the next sibling.
    */
-  getNextSibling<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T | undefined;
+  getNextSibling<T extends Node>(condition?: (node: Node) => node is T): T | undefined;
   /**
    * Gets the next sibling.
    * @param condition - Optional condition for getting the next sibling.
@@ -4779,10 +3536,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * @param cbNode - Callback invoked for each child.
    * @param cbNodeArray - Callback invoked for each array of nodes.
    */
-  forEachChild<T>(
-    cbNode: (node: Node) => T | undefined,
-    cbNodeArray?: (nodes: Node[]) => T | undefined,
-  ): T | undefined;
+  forEachChild<T>(cbNode: (node: Node) => T | undefined, cbNodeArray?: (nodes: Node[]) => T | undefined): T | undefined;
   /**
    * Invokes the `cbNode` callback for each descendant and the `cbNodeArray` for every array of nodes stored in properties of the node and descendant nodes.
    * If `cbNodeArray` is not defined, then it will pass every element of the array to `cbNode`.
@@ -4792,16 +3546,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * @param cbNode - Callback invoked for each descendant.
    * @param cbNodeArray - Callback invoked for each array of nodes.
    */
-  forEachDescendant<T>(
-    cbNode: (
-      node: Node,
-      traversal: ForEachDescendantTraversalControl,
-    ) => T | undefined,
-    cbNodeArray?: (
-      nodes: Node[],
-      traversal: ForEachDescendantTraversalControl,
-    ) => T | undefined,
-  ): T | undefined;
+  forEachDescendant<T>(cbNode: (node: Node, traversal: ForEachDescendantTraversalControl) => T | undefined, cbNodeArray?: (nodes: Node[], traversal: ForEachDescendantTraversalControl) => T | undefined): T | undefined;
   /** Gets the child nodes passed to the delegate of `node.forEachChild(child => {})` as an array. */
   forEachChildAsArray(): Node<ts.Node>[];
   /** Gets the descendant nodes passed to the delegate of `node.forEachDescendant(descendant => {})` as an array. */
@@ -4868,9 +3613,9 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * @param options - Options for getting the text.
    */
   getText(options: {
-    trimLeadingIndentation?: boolean;
-    includeJsDocComments?: boolean;
-  }): string;
+        trimLeadingIndentation?: boolean;
+        includeJsDocComments?: boolean;
+    }): string;
   /** Gets the full text with leading trivia (comments and whitespace). */
   getFullText(): string;
   /** Gets the combined modifier flags. */
@@ -4883,10 +3628,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets a compiler node property wrapped in a Node.
    * @param propertyName - Property name.
    */
-  getNodeProperty<
-    KeyType extends keyof LocalNodeType,
-    LocalNodeType extends ts.Node = NodeType,
-  >(propertyName: KeyType): NodePropertyToWrappedType<LocalNodeType, KeyType>;
+  getNodeProperty<KeyType extends keyof LocalNodeType, LocalNodeType extends ts.Node = NodeType>(propertyName: KeyType): NodePropertyToWrappedType<LocalNodeType, KeyType>;
   /** Goes up the tree getting all the parents in ascending order. */
   getAncestors(): Node[];
   /** Get the node's parent. */
@@ -4898,9 +3640,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Throws if the initial parent doesn't match the condition.
    * @param condition - Condition that tests the parent to see if the expression is true.
    */
-  getParentWhileOrThrow<T extends Node>(
-    condition: (parent: Node, node: Node) => parent is T,
-  ): T;
+  getParentWhileOrThrow<T extends Node>(condition: (parent: Node, node: Node) => parent is T): T;
   /**
    * Goes up the parents (ancestors) of the node while a condition is true.
    * Throws if the initial parent doesn't match the condition.
@@ -4912,33 +3652,25 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Returns undefined if the initial parent doesn't match the condition.
    * @param condition - Condition that tests the parent to see if the expression is true.
    */
-  getParentWhile<T extends Node>(
-    condition: (parent: Node, child: Node) => parent is T,
-  ): T | undefined;
+  getParentWhile<T extends Node>(condition: (parent: Node, child: Node) => parent is T): T | undefined;
   /**
    * Goes up the parents (ancestors) of the node while a condition is true.
    * Returns undefined if the initial parent doesn't match the condition.
    * @param condition - Condition that tests the parent to see if the expression is true.
    */
-  getParentWhile(
-    condition: (parent: Node, child: Node) => boolean,
-  ): Node | undefined;
+  getParentWhile(condition: (parent: Node, child: Node) => boolean): Node | undefined;
   /**
    * Goes up the parents (ancestors) of the node while the parent is the specified syntax kind.
    * Throws if the initial parent is not the specified syntax kind.
    * @param kind - Syntax kind to check for.
    */
-  getParentWhileKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getParentWhileKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Goes up the parents (ancestors) of the node while the parent is the specified syntax kind.
    * Returns undefined if the initial parent is not the specified syntax kind.
    * @param kind - Syntax kind to check for.
    */
-  getParentWhileKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getParentWhileKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /** Gets the last token of this node. Usually this is a close brace. */
   getLastToken(): Node;
   /** Gets if this node is in a syntax list. */
@@ -5034,156 +3766,106 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the children based on a kind.
    * @param kind - Syntax kind.
    */
-  getChildrenOfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind][];
+  getChildrenOfKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind][];
   /**
    * Gets the first child by syntax kind or throws an error if not found.
    * @param kind - Syntax kind.
    */
-  getFirstChildByKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getFirstChildByKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the first child by syntax kind.
    * @param kind - Syntax kind.
    */
-  getFirstChildByKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getFirstChildByKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the first child if it matches the specified syntax kind or throws an error if not found.
    * @param kind - Syntax kind.
    */
-  getFirstChildIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getFirstChildIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the first child if it matches the specified syntax kind.
    * @param kind - Syntax kind.
    */
-  getFirstChildIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getFirstChildIfKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the last child by syntax kind or throws an error if not found.
    * @param kind - Syntax kind.
    */
-  getLastChildByKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getLastChildByKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the last child by syntax kind.
    * @param kind - Syntax kind.
    */
-  getLastChildByKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getLastChildByKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the last child if it matches the specified syntax kind or throws an error if not found.
    * @param kind - Syntax kind.
    */
-  getLastChildIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getLastChildIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the last child if it matches the specified syntax kind.
    * @param kind - Syntax kind.
    */
-  getLastChildIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getLastChildIfKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the child at the specified index if it's the specified kind or throws an exception.
    * @param index - Child index to get.
    * @param kind - Expected kind.
    */
-  getChildAtIndexIfKindOrThrow<TKind extends SyntaxKind>(
-    index: number,
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getChildAtIndexIfKindOrThrow<TKind extends SyntaxKind>(index: number, kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the child at the specified index if it's the specified kind or returns undefined.
    * @param index - Child index to get.
    * @param kind - Expected kind.
    */
-  getChildAtIndexIfKind<TKind extends SyntaxKind>(
-    index: number,
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getChildAtIndexIfKind<TKind extends SyntaxKind>(index: number, kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the previous sibiling if it matches the specified kind, or throws.
    * @param kind - Kind to check.
    */
-  getPreviousSiblingIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getPreviousSiblingIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the next sibiling if it matches the specified kind, or throws.
    * @param kind - Kind to check.
    */
-  getNextSiblingIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getNextSiblingIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the previous sibling if it matches the specified kind.
    * @param kind - Kind to check.
    */
-  getPreviousSiblingIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getPreviousSiblingIfKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the next sibling if it matches the specified kind.
    * @param kind - Kind to check.
    */
-  getNextSiblingIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getNextSiblingIfKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /** Gets the parent if it matches a certain condition or throws. */
-  getParentIfOrThrow<T extends Node>(
-    condition: (parent: Node | undefined, node: Node) => parent is T,
-  ): T;
+  getParentIfOrThrow<T extends Node>(condition: (parent: Node | undefined, node: Node) => parent is T): T;
   /** Gets the parent if it matches a certain condition or throws. */
-  getParentIfOrThrow(
-    condition: (parent: Node | undefined, node: Node) => boolean,
-  ): Node;
+  getParentIfOrThrow(condition: (parent: Node | undefined, node: Node) => boolean): Node;
   /** Gets the parent if it matches a certain condition. */
-  getParentIf<T extends Node>(
-    condition: (parent: Node | undefined, node: Node) => parent is T,
-  ): T | undefined;
+  getParentIf<T extends Node>(condition: (parent: Node | undefined, node: Node) => parent is T): T | undefined;
   /** Gets the parent if it matches a certain condition. */
-  getParentIf(
-    condition: (parent: Node | undefined, node: Node) => boolean,
-  ): Node | undefined;
+  getParentIf(condition: (parent: Node | undefined, node: Node) => boolean): Node | undefined;
   /** Gets the parent if it's a certain syntax kind or throws. */
-  getParentIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getParentIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /** Gets the parent if it's a certain syntax kind. */
-  getParentIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getParentIfKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the first ancestor by syntax kind or throws if not found.
    * @param kind - Syntax kind.
    */
-  getFirstAncestorByKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getFirstAncestorByKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Get the first ancestor by syntax kind.
    * @param kind - Syntax kind.
    */
-  getFirstAncestorByKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getFirstAncestorByKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets the first ancestor that matches the provided condition or throws if not found.
    * @param condition - Condition to match.
    */
-  getFirstAncestorOrThrow<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T;
+  getFirstAncestorOrThrow<T extends Node>(condition?: (node: Node) => node is T): T;
   /**
    * Gets the first ancestor that matches the provided condition or throws if not found.
    * @param condition - Condition to match.
@@ -5193,9 +3875,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the first ancestor that matches the provided condition or returns undefined if not found.
    * @param condition - Condition to match.
    */
-  getFirstAncestor<T extends Node>(
-    condition?: (node: Node) => node is T,
-  ): T | undefined;
+  getFirstAncestor<T extends Node>(condition?: (node: Node) => node is T): T | undefined;
   /**
    * Gets the first ancestor that matches the provided condition or returns undefined if not found.
    * @param condition - Condition to match.
@@ -5205,104 +3885,77 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets the descendants that match a specified syntax kind.
    * @param kind - Kind to check.
    */
-  getDescendantsOfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind][];
+  getDescendantsOfKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind][];
   /**
    * Gets the first descendant by syntax kind or throws.
    * @param kind - Syntax kind.
    */
-  getFirstDescendantByKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind];
+  getFirstDescendantByKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind];
   /**
    * Gets the first descendant by syntax kind.
    * @param kind - Syntax kind.
    */
-  getFirstDescendantByKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappings[TKind] | undefined;
+  getFirstDescendantByKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappings[TKind] | undefined;
   /**
    * Gets if the node has an expression.
    * @param node - Node to check.
    */
   static hasExpression<T extends Node>(node: T): node is T & {
-    getExpression(): Expression;
-  };
+        getExpression(): Expression;
+    };
   /**
    * Gets if the node has a name.
    * @param node - Node to check.
    */
   static hasName<T extends Node>(node: T): node is T & {
-    getName(): string;
-    getNameNode(): Node;
-  };
+        getName(): string;
+        getNameNode(): Node;
+    };
   /**
    * Gets if the node has a body.
    * @param node - Node to check.
    */
   static hasBody<T extends Node>(node: T): node is T & {
-    getBody(): Node;
-  };
+        getBody(): Node;
+    };
   /**
    * Gets if the node has a structure.
    * @param node - Node to check.
    */
   static hasStructure<T extends Node>(node: T): node is T & {
-    getStructure(): Structures;
-  };
+        getStructure(): Structures;
+    };
   /** Creates a type guard for syntax kinds. */
-  static is<TKind extends keyof KindToNodeMappings>(
-    kind: TKind,
-  ): (node: Node | undefined) => node is KindToNodeMappings[TKind];
+  static is<TKind extends keyof KindToNodeMappings>(kind: TKind): (node: Node | undefined) => node is KindToNodeMappings[TKind];
   /** Gets if the provided value is a Node. */
   static isNode(value: unknown): value is Node;
   /** Gets if the provided node is a comment node. */
-  static isCommentNode(
-    node: Node | undefined,
-  ): node is
-    | CommentStatement
-    | CommentClassElement
-    | CommentTypeElement
-    | CommentObjectLiteralElement
-    | CommentEnumMember;
+  static isCommentNode(node: Node | undefined): node is CommentStatement | CommentClassElement | CommentTypeElement | CommentObjectLiteralElement | CommentEnumMember;
   /** Gets if the provided node is a CommentStatement. */
   static isCommentStatement(node: Node | undefined): node is CommentStatement;
   /** Gets if the provided node is a CommentClassElement. */
-  static isCommentClassElement(
-    node: Node | undefined,
-  ): node is CommentClassElement;
+  static isCommentClassElement(node: Node | undefined): node is CommentClassElement;
   /** Gets if the provided value is a CommentTypeElement. */
-  static isCommentTypeElement(
-    node: Node | undefined,
-  ): node is CommentTypeElement;
+  static isCommentTypeElement(node: Node | undefined): node is CommentTypeElement;
   /** Gets if the provided node is a CommentObjectLiteralElement. */
-  static isCommentObjectLiteralElement(
-    node: Node | undefined,
-  ): node is CommentObjectLiteralElement;
+  static isCommentObjectLiteralElement(node: Node | undefined): node is CommentObjectLiteralElement;
   /** Gets if the provided node is a CommentEnumMember. */
   static isCommentEnumMember(node: Node | undefined): node is CommentEnumMember;
   /**
    * Gets if the node is an AbstractableNode.
    * @param node - Node to check.
    */
-  static isAbstractable<T extends Node>(
-    node: T | undefined,
-  ): node is AbstractableNode & AbstractableNodeExtensionType & T;
+  static isAbstractable<T extends Node>(node: T | undefined): node is AbstractableNode & AbstractableNodeExtensionType & T;
   /**
    * Gets if the node is an AmbientableNode.
    * @param node - Node to check.
    */
-  static isAmbientable<T extends Node>(
-    node: T | undefined,
-  ): node is AmbientableNode & AmbientableNodeExtensionType & T;
+  static isAmbientable<T extends Node>(node: T | undefined): node is AmbientableNode & AmbientableNodeExtensionType & T;
   /**
    * Gets if the node is an ArgumentedNode.
    * @param node - Node to check.
    */
-  static isArgumented<T extends Node>(
-    node: T | undefined,
-  ): node is ArgumentedNode & ArgumentedNodeExtensionType & T;
+  static isArgumented<T extends Node>(node: T | undefined): node is ArgumentedNode & ArgumentedNodeExtensionType & T;
   /**
    * Gets if the node is an ArrayTypeNode.
    * @param node - Node to check.
@@ -5312,134 +3965,92 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is an AssertionKeyNamedNode.
    * @param node - Node to check.
    */
-  static isAssertionKeyNamed<T extends Node>(
-    node: T | undefined,
-  ): node is AssertionKeyNamedNode & AssertionKeyNamedNodeExtensionType & T;
+  static isAssertionKeyNamed<T extends Node>(node: T | undefined): node is AssertionKeyNamedNode & AssertionKeyNamedNodeExtensionType & T;
   /**
    * Gets if the node is an AsyncableNode.
    * @param node - Node to check.
    */
-  static isAsyncable<T extends Node>(
-    node: T | undefined,
-  ): node is AsyncableNode & AsyncableNodeExtensionType & T;
+  static isAsyncable<T extends Node>(node: T | undefined): node is AsyncableNode & AsyncableNodeExtensionType & T;
   /**
    * Gets if the node is an AwaitableNode.
    * @param node - Node to check.
    */
-  static isAwaitable<T extends Node>(
-    node: T | undefined,
-  ): node is AwaitableNode & AwaitableNodeExtensionType & T;
+  static isAwaitable<T extends Node>(node: T | undefined): node is AwaitableNode & AwaitableNodeExtensionType & T;
   /**
    * Gets if the node is a BindingNamedNode.
    * @param node - Node to check.
    */
-  static isBindingNamed<T extends Node>(
-    node: T | undefined,
-  ): node is BindingNamedNode & BindingNamedNodeExtensionType & T;
+  static isBindingNamed<T extends Node>(node: T | undefined): node is BindingNamedNode & BindingNamedNodeExtensionType & T;
   /**
    * Gets if the node is a BodiedNode.
    * @param node - Node to check.
    */
-  static isBodied<T extends Node>(
-    node: T | undefined,
-  ): node is BodiedNode & BodiedNodeExtensionType & T;
+  static isBodied<T extends Node>(node: T | undefined): node is BodiedNode & BodiedNodeExtensionType & T;
   /**
    * Gets if the node is a BodyableNode.
    * @param node - Node to check.
    */
-  static isBodyable<T extends Node>(
-    node: T | undefined,
-  ): node is BodyableNode & BodyableNodeExtensionType & T;
+  static isBodyable<T extends Node>(node: T | undefined): node is BodyableNode & BodyableNodeExtensionType & T;
   /**
    * Gets if the node is a CallSignatureDeclaration.
    * @param node - Node to check.
    */
-  static isCallSignatureDeclaration(
-    node: Node | undefined,
-  ): node is CallSignatureDeclaration;
+  static isCallSignatureDeclaration(node: Node | undefined): node is CallSignatureDeclaration;
   /**
    * Gets if the node is a ChildOrderableNode.
    * @param node - Node to check.
    */
-  static isChildOrderable<T extends Node>(
-    node: T | undefined,
-  ): node is ChildOrderableNode & ChildOrderableNodeExtensionType & T;
+  static isChildOrderable<T extends Node>(node: T | undefined): node is ChildOrderableNode & ChildOrderableNodeExtensionType & T;
   /**
    * Gets if the node is a ClassLikeDeclarationBase.
    * @param node - Node to check.
    */
-  static isClassLikeDeclarationBase<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & ClassLikeDeclarationBase
-    & ClassLikeDeclarationBaseExtensionType
-    & T;
+  static isClassLikeDeclarationBase<T extends Node>(node: T | undefined): node is ClassLikeDeclarationBase & ClassLikeDeclarationBaseExtensionType & T;
   /**
    * Gets if the node is a ConditionalTypeNode.
    * @param node - Node to check.
    */
-  static isConditionalTypeNode(
-    node: Node | undefined,
-  ): node is ConditionalTypeNode;
+  static isConditionalTypeNode(node: Node | undefined): node is ConditionalTypeNode;
   /**
    * Gets if the node is a ConstructorDeclaration.
    * @param node - Node to check.
    */
-  static isConstructorDeclaration(
-    node: Node | undefined,
-  ): node is ConstructorDeclaration;
+  static isConstructorDeclaration(node: Node | undefined): node is ConstructorDeclaration;
   /**
    * Gets if the node is a ConstructorTypeNode.
    * @param node - Node to check.
    */
-  static isConstructorTypeNode(
-    node: Node | undefined,
-  ): node is ConstructorTypeNode;
+  static isConstructorTypeNode(node: Node | undefined): node is ConstructorTypeNode;
   /**
    * Gets if the node is a ConstructSignatureDeclaration.
    * @param node - Node to check.
    */
-  static isConstructSignatureDeclaration(
-    node: Node | undefined,
-  ): node is ConstructSignatureDeclaration;
+  static isConstructSignatureDeclaration(node: Node | undefined): node is ConstructSignatureDeclaration;
   /**
    * Gets if the node is a DecoratableNode.
    * @param node - Node to check.
    */
-  static isDecoratable<T extends Node>(
-    node: T | undefined,
-  ): node is DecoratableNode & DecoratableNodeExtensionType & T;
+  static isDecoratable<T extends Node>(node: T | undefined): node is DecoratableNode & DecoratableNodeExtensionType & T;
   /**
    * Gets if the node is a DotDotDotTokenableNode.
    * @param node - Node to check.
    */
-  static isDotDotDotTokenable<T extends Node>(
-    node: T | undefined,
-  ): node is DotDotDotTokenableNode & DotDotDotTokenableNodeExtensionType & T;
+  static isDotDotDotTokenable<T extends Node>(node: T | undefined): node is DotDotDotTokenableNode & DotDotDotTokenableNodeExtensionType & T;
   /**
    * Gets if the node is an ExclamationTokenableNode.
    * @param node - Node to check.
    */
-  static isExclamationTokenable<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & ExclamationTokenableNode
-    & ExclamationTokenableNodeExtensionType
-    & T;
+  static isExclamationTokenable<T extends Node>(node: T | undefined): node is ExclamationTokenableNode & ExclamationTokenableNodeExtensionType & T;
   /**
    * Gets if the node is an ExportableNode.
    * @param node - Node to check.
    */
-  static isExportable<T extends Node>(
-    node: T | undefined,
-  ): node is ExportableNode & ExportableNodeExtensionType & T;
+  static isExportable<T extends Node>(node: T | undefined): node is ExportableNode & ExportableNodeExtensionType & T;
   /**
    * Gets if the node is an ExportGetableNode.
    * @param node - Node to check.
    */
-  static isExportGetable<T extends Node>(
-    node: T | undefined,
-  ): node is ExportGetableNode & ExportGetableNodeExtensionType & T;
+  static isExportGetable<T extends Node>(node: T | undefined): node is ExportGetableNode & ExportGetableNodeExtensionType & T;
   /**
    * Gets if the node is an Expression.
    * @param node - Node to check.
@@ -5449,23 +4060,17 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is an ExpressionableNode.
    * @param node - Node to check.
    */
-  static isExpressionable<T extends Node>(
-    node: T | undefined,
-  ): node is ExpressionableNode & ExpressionableNodeExtensionType & T;
+  static isExpressionable<T extends Node>(node: T | undefined): node is ExpressionableNode & ExpressionableNodeExtensionType & T;
   /**
    * Gets if the node is an ExpressionedNode.
    * @param node - Node to check.
    */
-  static isExpressioned<T extends Node>(
-    node: T | undefined,
-  ): node is ExpressionedNode & ExpressionedNodeExtensionType & T;
+  static isExpressioned<T extends Node>(node: T | undefined): node is ExpressionedNode & ExpressionedNodeExtensionType & T;
   /**
    * Gets if the node is an ExtendsClauseableNode.
    * @param node - Node to check.
    */
-  static isExtendsClauseable<T extends Node>(
-    node: T | undefined,
-  ): node is ExtendsClauseableNode & ExtendsClauseableNodeExtensionType & T;
+  static isExtendsClauseable<T extends Node>(node: T | undefined): node is ExtendsClauseableNode & ExtendsClauseableNodeExtensionType & T;
   /**
    * Gets if the node is a FalseLiteral.
    * @param node - Node to check.
@@ -5475,9 +4080,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a FunctionLikeDeclaration.
    * @param node - Node to check.
    */
-  static isFunctionLikeDeclaration<T extends Node>(
-    node: T | undefined,
-  ): node is FunctionLikeDeclaration & FunctionLikeDeclarationExtensionType & T;
+  static isFunctionLikeDeclaration<T extends Node>(node: T | undefined): node is FunctionLikeDeclaration & FunctionLikeDeclarationExtensionType & T;
   /**
    * Gets if the node is a FunctionTypeNode.
    * @param node - Node to check.
@@ -5487,33 +4090,22 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a GeneratorableNode.
    * @param node - Node to check.
    */
-  static isGeneratorable<T extends Node>(
-    node: T | undefined,
-  ): node is GeneratorableNode & GeneratorableNodeExtensionType & T;
+  static isGeneratorable<T extends Node>(node: T | undefined): node is GeneratorableNode & GeneratorableNodeExtensionType & T;
   /**
    * Gets if the node is a GetAccessorDeclaration.
    * @param node - Node to check.
    */
-  static isGetAccessorDeclaration(
-    node: Node | undefined,
-  ): node is GetAccessorDeclaration;
+  static isGetAccessorDeclaration(node: Node | undefined): node is GetAccessorDeclaration;
   /**
    * Gets if the node is a HeritageClauseableNode.
    * @param node - Node to check.
    */
-  static isHeritageClauseable<T extends Node>(
-    node: T | undefined,
-  ): node is HeritageClauseableNode & HeritageClauseableNodeExtensionType & T;
+  static isHeritageClauseable<T extends Node>(node: T | undefined): node is HeritageClauseableNode & HeritageClauseableNodeExtensionType & T;
   /**
    * Gets if the node is a ImplementsClauseableNode.
    * @param node - Node to check.
    */
-  static isImplementsClauseable<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & ImplementsClauseableNode
-    & ImplementsClauseableNodeExtensionType
-    & T;
+  static isImplementsClauseable<T extends Node>(node: T | undefined): node is ImplementsClauseableNode & ImplementsClauseableNodeExtensionType & T;
   /**
    * Gets if the node is a ImportExpression.
    * @param node - Node to check.
@@ -5528,16 +4120,12 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a IndexedAccessTypeNode.
    * @param node - Node to check.
    */
-  static isIndexedAccessTypeNode(
-    node: Node | undefined,
-  ): node is IndexedAccessTypeNode;
+  static isIndexedAccessTypeNode(node: Node | undefined): node is IndexedAccessTypeNode;
   /**
    * Gets if the node is a IndexSignatureDeclaration.
    * @param node - Node to check.
    */
-  static isIndexSignatureDeclaration(
-    node: Node | undefined,
-  ): node is IndexSignatureDeclaration;
+  static isIndexSignatureDeclaration(node: Node | undefined): node is IndexSignatureDeclaration;
   /**
    * Gets if the node is a InferTypeNode.
    * @param node - Node to check.
@@ -5547,36 +4135,22 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a InitializerExpressionableNode.
    * @param node - Node to check.
    */
-  static isInitializerExpressionable<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & InitializerExpressionableNode
-    & InitializerExpressionableNodeExtensionType
-    & T;
+  static isInitializerExpressionable<T extends Node>(node: T | undefined): node is InitializerExpressionableNode & InitializerExpressionableNodeExtensionType & T;
   /**
    * Gets if the node is a InitializerExpressionGetableNode.
    * @param node - Node to check.
    */
-  static isInitializerExpressionGetable<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & InitializerExpressionGetableNode
-    & InitializerExpressionGetableNodeExtensionType
-    & T;
+  static isInitializerExpressionGetable<T extends Node>(node: T | undefined): node is InitializerExpressionGetableNode & InitializerExpressionGetableNodeExtensionType & T;
   /**
    * Gets if the node is a IntersectionTypeNode.
    * @param node - Node to check.
    */
-  static isIntersectionTypeNode(
-    node: Node | undefined,
-  ): node is IntersectionTypeNode;
+  static isIntersectionTypeNode(node: Node | undefined): node is IntersectionTypeNode;
   /**
    * Gets if the node is a IterationStatement.
    * @param node - Node to check.
    */
-  static isIterationStatement(
-    node: Node | undefined,
-  ): node is IterationStatement;
+  static isIterationStatement(node: Node | undefined): node is IterationStatement;
   /**
    * Gets if the node is a JSDoc.
    * @param node - Node to check.
@@ -5586,16 +4160,12 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a JSDocableNode.
    * @param node - Node to check.
    */
-  static isJSDocable<T extends Node>(
-    node: T | undefined,
-  ): node is JSDocableNode & JSDocableNodeExtensionType & T;
+  static isJSDocable<T extends Node>(node: T | undefined): node is JSDocableNode & JSDocableNodeExtensionType & T;
   /**
    * Gets if the node is a JSDocPropertyLikeTag.
    * @param node - Node to check.
    */
-  static isJSDocPropertyLikeTag<T extends Node>(
-    node: T | undefined,
-  ): node is JSDocPropertyLikeTag & JSDocPropertyLikeTagExtensionType & T;
+  static isJSDocPropertyLikeTag<T extends Node>(node: T | undefined): node is JSDocPropertyLikeTag & JSDocPropertyLikeTagExtensionType & T;
   /**
    * Gets if the node is a JSDocTag.
    * @param node - Node to check.
@@ -5610,19 +4180,12 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a JSDocTypeExpressionableTag.
    * @param node - Node to check.
    */
-  static isJSDocTypeExpressionableTag<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & JSDocTypeExpressionableTag
-    & JSDocTypeExpressionableTagExtensionType
-    & T;
+  static isJSDocTypeExpressionableTag<T extends Node>(node: T | undefined): node is JSDocTypeExpressionableTag & JSDocTypeExpressionableTagExtensionType & T;
   /**
    * Gets if the node is a JSDocTypeParameteredTag.
    * @param node - Node to check.
    */
-  static isJSDocTypeParameteredTag<T extends Node>(
-    node: T | undefined,
-  ): node is JSDocTypeParameteredTag & JSDocTypeParameteredTagExtensionType & T;
+  static isJSDocTypeParameteredTag<T extends Node>(node: T | undefined): node is JSDocTypeParameteredTag & JSDocTypeParameteredTagExtensionType & T;
   /**
    * Gets if the node is a JSDocUnknownTag.
    * @param node - Node to check.
@@ -5632,33 +4195,22 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a JsxAttributedNode.
    * @param node - Node to check.
    */
-  static isJsxAttributed<T extends Node>(
-    node: T | undefined,
-  ): node is JsxAttributedNode & JsxAttributedNodeExtensionType & T;
+  static isJsxAttributed<T extends Node>(node: T | undefined): node is JsxAttributedNode & JsxAttributedNodeExtensionType & T;
   /**
    * Gets if the node is a JsxTagNamedNode.
    * @param node - Node to check.
    */
-  static isJsxTagNamed<T extends Node>(
-    node: T | undefined,
-  ): node is JsxTagNamedNode & JsxTagNamedNodeExtensionType & T;
+  static isJsxTagNamed<T extends Node>(node: T | undefined): node is JsxTagNamedNode & JsxTagNamedNodeExtensionType & T;
   /**
    * Gets if the node is a LeftHandSideExpression.
    * @param node - Node to check.
    */
-  static isLeftHandSideExpression(
-    node: Node | undefined,
-  ): node is LeftHandSideExpression;
+  static isLeftHandSideExpression(node: Node | undefined): node is LeftHandSideExpression;
   /**
    * Gets if the node is a LeftHandSideExpressionedNode.
    * @param node - Node to check.
    */
-  static isLeftHandSideExpressioned<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & LeftHandSideExpressionedNode
-    & LeftHandSideExpressionedNodeExtensionType
-    & T;
+  static isLeftHandSideExpressioned<T extends Node>(node: T | undefined): node is LeftHandSideExpressionedNode & LeftHandSideExpressionedNodeExtensionType & T;
   /**
    * Gets if the node is a LiteralExpression.
    * @param node - Node to check.
@@ -5668,9 +4220,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a LiteralLikeNode.
    * @param node - Node to check.
    */
-  static isLiteralLike<T extends Node>(
-    node: T | undefined,
-  ): node is LiteralLikeNode & LiteralLikeNodeExtensionType & T;
+  static isLiteralLike<T extends Node>(node: T | undefined): node is LiteralLikeNode & LiteralLikeNodeExtensionType & T;
   /**
    * Gets if the node is a LiteralTypeNode.
    * @param node - Node to check.
@@ -5690,51 +4240,37 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a ModifierableNode.
    * @param node - Node to check.
    */
-  static isModifierable<T extends Node>(
-    node: T | undefined,
-  ): node is ModifierableNode & ModifierableNodeExtensionType & T;
+  static isModifierable<T extends Node>(node: T | undefined): node is ModifierableNode & ModifierableNodeExtensionType & T;
   /**
    * Gets if the node is a ModuleChildableNode.
    * @param node - Node to check.
    */
-  static isModuleChildable<T extends Node>(
-    node: T | undefined,
-  ): node is ModuleChildableNode & ModuleChildableNodeExtensionType & T;
+  static isModuleChildable<T extends Node>(node: T | undefined): node is ModuleChildableNode & ModuleChildableNodeExtensionType & T;
   /**
    * Gets if the node is a ModuledNode.
    * @param node - Node to check.
    */
-  static isModuled<T extends Node>(
-    node: T | undefined,
-  ): node is ModuledNode & ModuledNodeExtensionType & T;
+  static isModuled<T extends Node>(node: T | undefined): node is ModuledNode & ModuledNodeExtensionType & T;
   /**
    * Gets if the node is a ModuleNamedNode.
    * @param node - Node to check.
    */
-  static isModuleNamed<T extends Node>(
-    node: T | undefined,
-  ): node is ModuleNamedNode & ModuleNamedNodeExtensionType & T;
+  static isModuleNamed<T extends Node>(node: T | undefined): node is ModuleNamedNode & ModuleNamedNodeExtensionType & T;
   /**
    * Gets if the node is a NameableNode.
    * @param node - Node to check.
    */
-  static isNameable<T extends Node>(
-    node: T | undefined,
-  ): node is NameableNode & NameableNodeExtensionType & T;
+  static isNameable<T extends Node>(node: T | undefined): node is NameableNode & NameableNodeExtensionType & T;
   /**
    * Gets if the node is a NamedNode.
    * @param node - Node to check.
    */
-  static isNamed<T extends Node>(
-    node: T | undefined,
-  ): node is NamedNode & NamedNodeExtensionType & T;
+  static isNamed<T extends Node>(node: T | undefined): node is NamedNode & NamedNodeExtensionType & T;
   /**
    * Gets if the node is a NodeWithTypeArguments.
    * @param node - Node to check.
    */
-  static isNodeWithTypeArguments(
-    node: Node | undefined,
-  ): node is NodeWithTypeArguments;
+  static isNodeWithTypeArguments(node: Node | undefined): node is NodeWithTypeArguments;
   /**
    * Gets if the node is a NullLiteral.
    * @param node - Node to check.
@@ -5744,37 +4280,27 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a OverloadableNode.
    * @param node - Node to check.
    */
-  static isOverloadable<T extends Node>(
-    node: T | undefined,
-  ): node is OverloadableNode & OverloadableNodeExtensionType & T;
+  static isOverloadable<T extends Node>(node: T | undefined): node is OverloadableNode & OverloadableNodeExtensionType & T;
   /**
    * Gets if the node is a OverrideableNode.
    * @param node - Node to check.
    */
-  static isOverrideable<T extends Node>(
-    node: T | undefined,
-  ): node is OverrideableNode & OverrideableNodeExtensionType & T;
+  static isOverrideable<T extends Node>(node: T | undefined): node is OverrideableNode & OverrideableNodeExtensionType & T;
   /**
    * Gets if the node is a ParameterDeclaration.
    * @param node - Node to check.
    */
-  static isParameterDeclaration(
-    node: Node | undefined,
-  ): node is ParameterDeclaration;
+  static isParameterDeclaration(node: Node | undefined): node is ParameterDeclaration;
   /**
    * Gets if the node is a ParameteredNode.
    * @param node - Node to check.
    */
-  static isParametered<T extends Node>(
-    node: T | undefined,
-  ): node is ParameteredNode & ParameteredNodeExtensionType & T;
+  static isParametered<T extends Node>(node: T | undefined): node is ParameteredNode & ParameteredNodeExtensionType & T;
   /**
    * Gets if the node is a ParenthesizedTypeNode.
    * @param node - Node to check.
    */
-  static isParenthesizedTypeNode(
-    node: Node | undefined,
-  ): node is ParenthesizedTypeNode;
+  static isParenthesizedTypeNode(node: Node | undefined): node is ParenthesizedTypeNode;
   /**
    * Gets if the node is a PrimaryExpression.
    * @param node - Node to check.
@@ -5784,82 +4310,57 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a PropertyNamedNode.
    * @param node - Node to check.
    */
-  static isPropertyNamed<T extends Node>(
-    node: T | undefined,
-  ): node is PropertyNamedNode & PropertyNamedNodeExtensionType & T;
+  static isPropertyNamed<T extends Node>(node: T | undefined): node is PropertyNamedNode & PropertyNamedNodeExtensionType & T;
   /**
    * Gets if the node is a QuestionDotTokenableNode.
    * @param node - Node to check.
    */
-  static isQuestionDotTokenable<T extends Node>(
-    node: T | undefined,
-  ): node is
-    & QuestionDotTokenableNode
-    & QuestionDotTokenableNodeExtensionType
-    & T;
+  static isQuestionDotTokenable<T extends Node>(node: T | undefined): node is QuestionDotTokenableNode & QuestionDotTokenableNodeExtensionType & T;
   /**
    * Gets if the node is a QuestionTokenableNode.
    * @param node - Node to check.
    */
-  static isQuestionTokenable<T extends Node>(
-    node: T | undefined,
-  ): node is QuestionTokenableNode & QuestionTokenableNodeExtensionType & T;
+  static isQuestionTokenable<T extends Node>(node: T | undefined): node is QuestionTokenableNode & QuestionTokenableNodeExtensionType & T;
   /**
    * Gets if the node is a ReadonlyableNode.
    * @param node - Node to check.
    */
-  static isReadonlyable<T extends Node>(
-    node: T | undefined,
-  ): node is ReadonlyableNode & ReadonlyableNodeExtensionType & T;
+  static isReadonlyable<T extends Node>(node: T | undefined): node is ReadonlyableNode & ReadonlyableNodeExtensionType & T;
   /**
    * Gets if the node is a ReferenceFindableNode.
    * @param node - Node to check.
    */
-  static isReferenceFindable<T extends Node>(
-    node: T | undefined,
-  ): node is ReferenceFindableNode & ReferenceFindableNodeExtensionType & T;
+  static isReferenceFindable<T extends Node>(node: T | undefined): node is ReferenceFindableNode & ReferenceFindableNodeExtensionType & T;
   /**
    * Gets if the node is a RenameableNode.
    * @param node - Node to check.
    */
-  static isRenameable<T extends Node>(
-    node: T | undefined,
-  ): node is RenameableNode & RenameableNodeExtensionType & T;
+  static isRenameable<T extends Node>(node: T | undefined): node is RenameableNode & RenameableNodeExtensionType & T;
   /**
    * Gets if the node is a ReturnTypedNode.
    * @param node - Node to check.
    */
-  static isReturnTyped<T extends Node>(
-    node: T | undefined,
-  ): node is ReturnTypedNode & ReturnTypedNodeExtensionType & T;
+  static isReturnTyped<T extends Node>(node: T | undefined): node is ReturnTypedNode & ReturnTypedNodeExtensionType & T;
   /**
    * Gets if the node is a ScopeableNode.
    * @param node - Node to check.
    */
-  static isScopeable<T extends Node>(
-    node: T | undefined,
-  ): node is ScopeableNode & ScopeableNodeExtensionType & T;
+  static isScopeable<T extends Node>(node: T | undefined): node is ScopeableNode & ScopeableNodeExtensionType & T;
   /**
    * Gets if the node is a ScopedNode.
    * @param node - Node to check.
    */
-  static isScoped<T extends Node>(
-    node: T | undefined,
-  ): node is ScopedNode & ScopedNodeExtensionType & T;
+  static isScoped<T extends Node>(node: T | undefined): node is ScopedNode & ScopedNodeExtensionType & T;
   /**
    * Gets if the node is a SetAccessorDeclaration.
    * @param node - Node to check.
    */
-  static isSetAccessorDeclaration(
-    node: Node | undefined,
-  ): node is SetAccessorDeclaration;
+  static isSetAccessorDeclaration(node: Node | undefined): node is SetAccessorDeclaration;
   /**
    * Gets if the node is a SignaturedDeclaration.
    * @param node - Node to check.
    */
-  static isSignaturedDeclaration<T extends Node>(
-    node: T | undefined,
-  ): node is SignaturedDeclaration & SignaturedDeclarationExtensionType & T;
+  static isSignaturedDeclaration<T extends Node>(node: T | undefined): node is SignaturedDeclaration & SignaturedDeclarationExtensionType & T;
   /**
    * Gets if the node is a Statement.
    * @param node - Node to check.
@@ -5869,16 +4370,12 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a StatementedNode.
    * @param node - Node to check.
    */
-  static isStatemented<T extends Node>(
-    node: T | undefined,
-  ): node is StatementedNode & StatementedNodeExtensionType & T;
+  static isStatemented<T extends Node>(node: T | undefined): node is StatementedNode & StatementedNodeExtensionType & T;
   /**
    * Gets if the node is a StaticableNode.
    * @param node - Node to check.
    */
-  static isStaticable<T extends Node>(
-    node: T | undefined,
-  ): node is StaticableNode & StaticableNodeExtensionType & T;
+  static isStaticable<T extends Node>(node: T | undefined): node is StaticableNode & StaticableNodeExtensionType & T;
   /**
    * Gets if the node is a SuperExpression.
    * @param node - Node to check.
@@ -5888,16 +4385,12 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a TemplateLiteralTypeNode.
    * @param node - Node to check.
    */
-  static isTemplateLiteralTypeNode(
-    node: Node | undefined,
-  ): node is TemplateLiteralTypeNode;
+  static isTemplateLiteralTypeNode(node: Node | undefined): node is TemplateLiteralTypeNode;
   /**
    * Gets if the node is a TextInsertableNode.
    * @param node - Node to check.
    */
-  static isTextInsertable<T extends Node>(
-    node: T | undefined,
-  ): node is TextInsertableNode & TextInsertableNodeExtensionType & T;
+  static isTextInsertable<T extends Node>(node: T | undefined): node is TextInsertableNode & TextInsertableNodeExtensionType & T;
   /**
    * Gets if the node is a ThisExpression.
    * @param node - Node to check.
@@ -5922,9 +4415,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a TypeArgumentedNode.
    * @param node - Node to check.
    */
-  static isTypeArgumented<T extends Node>(
-    node: T | undefined,
-  ): node is TypeArgumentedNode & TypeArgumentedNodeExtensionType & T;
+  static isTypeArgumented<T extends Node>(node: T | undefined): node is TypeArgumentedNode & TypeArgumentedNodeExtensionType & T;
   /**
    * Gets if the node is a TypeAssertion.
    * @param node - Node to check.
@@ -5934,9 +4425,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a TypedNode.
    * @param node - Node to check.
    */
-  static isTyped<T extends Node>(
-    node: T | undefined,
-  ): node is TypedNode & TypedNodeExtensionType & T;
+  static isTyped<T extends Node>(node: T | undefined): node is TypedNode & TypedNodeExtensionType & T;
   /**
    * Gets if the node is a TypeElement.
    * @param node - Node to check.
@@ -5946,9 +4435,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a TypeElementMemberedNode.
    * @param node - Node to check.
    */
-  static isTypeElementMembered<T extends Node>(
-    node: T | undefined,
-  ): node is TypeElementMemberedNode & TypeElementMemberedNodeExtensionType & T;
+  static isTypeElementMembered<T extends Node>(node: T | undefined): node is TypeElementMemberedNode & TypeElementMemberedNodeExtensionType & T;
   /**
    * Gets if the node is a TypeLiteralNode.
    * @param node - Node to check.
@@ -5963,23 +4450,17 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a TypeOperatorTypeNode.
    * @param node - Node to check.
    */
-  static isTypeOperatorTypeNode(
-    node: Node | undefined,
-  ): node is TypeOperatorTypeNode;
+  static isTypeOperatorTypeNode(node: Node | undefined): node is TypeOperatorTypeNode;
   /**
    * Gets if the node is a TypeParameterDeclaration.
    * @param node - Node to check.
    */
-  static isTypeParameterDeclaration(
-    node: Node | undefined,
-  ): node is TypeParameterDeclaration;
+  static isTypeParameterDeclaration(node: Node | undefined): node is TypeParameterDeclaration;
   /**
    * Gets if the node is a TypeParameteredNode.
    * @param node - Node to check.
    */
-  static isTypeParametered<T extends Node>(
-    node: T | undefined,
-  ): node is TypeParameteredNode & TypeParameteredNodeExtensionType & T;
+  static isTypeParametered<T extends Node>(node: T | undefined): node is TypeParameteredNode & TypeParameteredNodeExtensionType & T;
   /**
    * Gets if the node is a TypePredicateNode.
    * @param node - Node to check.
@@ -6004,9 +4485,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a UnaryExpressionedNode.
    * @param node - Node to check.
    */
-  static isUnaryExpressioned<T extends Node>(
-    node: T | undefined,
-  ): node is UnaryExpressionedNode & UnaryExpressionedNodeExtensionType & T;
+  static isUnaryExpressioned<T extends Node>(node: T | undefined): node is UnaryExpressionedNode & UnaryExpressionedNodeExtensionType & T;
   /**
    * Gets if the node is a UnionTypeNode.
    * @param node - Node to check.
@@ -6016,9 +4495,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
    * Gets if the node is a UnwrappableNode.
    * @param node - Node to check.
    */
-  static isUnwrappable<T extends Node>(
-    node: T | undefined,
-  ): node is UnwrappableNode & UnwrappableNodeExtensionType & T;
+  static isUnwrappable<T extends Node>(node: T | undefined): node is UnwrappableNode & UnwrappableNodeExtensionType & T;
   /**
    * Gets if the node is a UpdateExpression.
    * @param node - Node to check.
@@ -6029,7 +4506,7 @@ export declare class Node<NodeType extends ts.Node = ts.Node> {
 export declare enum Scope {
   Public = "public",
   Protected = "protected",
-  Private = "private",
+  Private = "private"
 }
 
 export declare class SyntaxList extends Node<ts.SyntaxList> {
@@ -6038,25 +4515,14 @@ export declare class SyntaxList extends Node<ts.SyntaxList> {
    * @param textOrWriterFunction - Text to add or function that provides a writer to write with.
    * @returns The children that were added.
    */
-  addChildText(
-    textOrWriterFunction:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction>,
-  ): Node<ts.Node>[];
+  addChildText(textOrWriterFunction: string | WriterFunction | ReadonlyArray<string | WriterFunction>): Node<ts.Node>[];
   /**
    * Inserts text at the specified child index.
    * @param index - Child index to insert at.
    * @param textOrWriterFunction - Text to insert or function that provides a writer to write with.
    * @returns The children that were inserted.
    */
-  insertChildText(
-    index: number,
-    textOrWriterFunction:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction>,
-  ): Node<ts.Node>[];
+  insertChildText(index: number, textOrWriterFunction: string | WriterFunction | ReadonlyArray<string | WriterFunction>): Node<ts.Node>[];
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.SyntaxList>;
   /** @inheritdoc **/
@@ -6106,42 +4572,8 @@ export interface TransformTraversalControl {
   visitChildren(): ts.Node;
 }
 
-export declare type CompilerNodeToWrappedType<T extends ts.Node> = T extends
-  ts.ObjectDestructuringAssignment ? ObjectDestructuringAssignment
-  : T extends ts.ArrayDestructuringAssignment ? ArrayDestructuringAssignment
-  : T extends ts.SuperElementAccessExpression ? SuperElementAccessExpression
-  : T extends ts.SuperPropertyAccessExpression ? SuperPropertyAccessExpression
-  : T extends ts.AssignmentExpression<infer U>
-    ? AssignmentExpression<ts.AssignmentExpression<U>>
-  : T["kind"] extends keyof ImplementedKindToNodeMappings
-    ? ImplementedKindToNodeMappings[T["kind"]]
-  : T extends ts.SyntaxList ? SyntaxList
-  : T extends ts.JSDocTypeExpression ? JSDocTypeExpression
-  : T extends ts.JSDocType ? JSDocType
-  : T extends ts.NodeWithTypeArguments ? NodeWithTypeArguments
-  : T extends ts.TypeNode ? TypeNode
-  : T extends ts.JSDocTag ? JSDocTag
-  : T extends ts.LiteralExpression ? LiteralExpression
-  : T extends ts.PrimaryExpression ? PrimaryExpression
-  : T extends ts.MemberExpression ? MemberExpression
-  : T extends ts.LeftHandSideExpression ? LeftHandSideExpression
-  : T extends ts.UpdateExpression ? UpdateExpression
-  : T extends ts.UnaryExpression ? UnaryExpression
-  : T extends ts.Expression ? Expression
-  : T extends ts.IterationStatement ? IterationStatement
-  : T extends CompilerCommentStatement ? CommentStatement
-  : T extends CompilerCommentClassElement ? CommentClassElement
-  : T extends CompilerCommentTypeElement ? CommentTypeElement
-  : T extends CompilerCommentObjectLiteralElement ? CommentObjectLiteralElement
-  : T extends CompilerCommentEnumMember ? CommentEnumMember
-  : T extends ts.TypeElement ? TypeElement
-  : T extends ts.Statement ? Statement
-  : T extends ts.ClassElement ? ClassElement
-  : T extends ts.ObjectLiteralElement ? ObjectLiteralElement
-  : Node<T>;
-declare const DecoratorBase:
-  & Constructor<LeftHandSideExpressionedNode>
-  & typeof Node;
+export declare type CompilerNodeToWrappedType<T extends ts.Node> = T extends ts.ObjectDestructuringAssignment ? ObjectDestructuringAssignment : T extends ts.ArrayDestructuringAssignment ? ArrayDestructuringAssignment : T extends ts.SuperElementAccessExpression ? SuperElementAccessExpression : T extends ts.SuperPropertyAccessExpression ? SuperPropertyAccessExpression : T extends ts.AssignmentExpression<infer U> ? AssignmentExpression<ts.AssignmentExpression<U>> : T["kind"] extends keyof ImplementedKindToNodeMappings ? ImplementedKindToNodeMappings[T["kind"]] : T extends ts.SyntaxList ? SyntaxList : T extends ts.JSDocTypeExpression ? JSDocTypeExpression : T extends ts.JSDocType ? JSDocType : T extends ts.NodeWithTypeArguments ? NodeWithTypeArguments : T extends ts.TypeNode ? TypeNode : T extends ts.JSDocTag ? JSDocTag : T extends ts.LiteralExpression ? LiteralExpression : T extends ts.PrimaryExpression ? PrimaryExpression : T extends ts.MemberExpression ? MemberExpression : T extends ts.LeftHandSideExpression ? LeftHandSideExpression : T extends ts.UpdateExpression ? UpdateExpression : T extends ts.UnaryExpression ? UnaryExpression : T extends ts.Expression ? Expression : T extends ts.IterationStatement ? IterationStatement : T extends CompilerCommentStatement ? CommentStatement : T extends CompilerCommentClassElement ? CommentClassElement : T extends CompilerCommentTypeElement ? CommentTypeElement : T extends CompilerCommentObjectLiteralElement ? CommentObjectLiteralElement : T extends CompilerCommentEnumMember ? CommentEnumMember : T extends ts.TypeElement ? TypeElement : T extends ts.Statement ? Statement : T extends ts.ClassElement ? ClassElement : T extends ts.ObjectLiteralElement ? ObjectLiteralElement : Node<T>;
+declare const DecoratorBase: Constructor<LeftHandSideExpressionedNode> & typeof Node;
 
 export declare class Decorator extends DecoratorBase<ts.Decorator> {
   private _getInnerExpression;
@@ -6175,27 +4607,19 @@ export declare class Decorator extends DecoratorBase<ts.Decorator> {
    * Adds type arguments.
    * @param argumentTexts - Argument texts.
    */
-  addTypeArguments(
-    argumentTexts: ReadonlyArray<string>,
-  ): TypeNode<ts.TypeNode>[];
+  addTypeArguments(argumentTexts: ReadonlyArray<string>): TypeNode<ts.TypeNode>[];
   /**
    * Inserts a type argument.
    * @param index - Child index to insert at.
    * @param argumentTexts - Argument text.
    */
-  insertTypeArgument(
-    index: number,
-    argumentText: string,
-  ): TypeNode<ts.TypeNode>;
+  insertTypeArgument(index: number, argumentText: string): TypeNode<ts.TypeNode>;
   /**
    * Inserts type arguments.
    * @param index - Child index to insert at.
    * @param argumentTexts - Argument texts.
    */
-  insertTypeArguments(
-    index: number,
-    argumentTexts: ReadonlyArray<string>,
-  ): TypeNode<ts.TypeNode>[];
+  insertTypeArguments(index: number, argumentTexts: ReadonlyArray<string>): TypeNode<ts.TypeNode>[];
   /**
    * Removes a type argument.
    * @param typeArg - Type argument to remove.
@@ -6215,27 +4639,19 @@ export declare class Decorator extends DecoratorBase<ts.Decorator> {
    * Adds arguments.
    * @param argumentTexts - Argument texts.
    */
-  addArguments(
-    argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): Node<ts.Node>[];
+  addArguments(argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction): Node<ts.Node>[];
   /**
    * Inserts an argument.
    * @param index - Child index to insert at.
    * @param argumentTexts - Argument text.
    */
-  insertArgument(
-    index: number,
-    argumentText: string | WriterFunction,
-  ): Node<ts.Node>;
+  insertArgument(index: number, argumentText: string | WriterFunction): Node<ts.Node>;
   /**
    * Inserts arguments.
    * @param index - Child index to insert at.
    * @param argumentTexts - Argument texts.
    */
-  insertArguments(
-    index: number,
-    argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction,
-  ): Node<ts.Node>[];
+  insertArguments(index: number, argumentTexts: ReadonlyArray<string | WriterFunction> | WriterFunction): Node<ts.Node>[];
   /**
    * Removes an argument based on the node.
    * @param node - Argument's node to remove.
@@ -6261,9 +4677,7 @@ export declare class Decorator extends DecoratorBase<ts.Decorator> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.Decorator>>;
 }
 
-export declare function JSDocPropertyLikeTag<
-  T extends Constructor<JSDocPropertyLikeTagExtensionType>,
->(Base: T): Constructor<JSDocPropertyLikeTag> & T;
+export declare function JSDocPropertyLikeTag<T extends Constructor<JSDocPropertyLikeTagExtensionType>>(Base: T): Constructor<JSDocPropertyLikeTag> & T;
 
 export interface JSDocPropertyLikeTag {
   /** Gets the type expression node of the JS doc tag if it exists. */
@@ -6278,12 +4692,8 @@ export interface JSDocPropertyLikeTag {
   isBracketed(): boolean;
 }
 
-declare type JSDocPropertyLikeTagExtensionType =
-  & Node<ts.JSDocPropertyLikeTag>
-  & JSDocTag;
-export declare function JSDocTypeExpressionableTag<
-  T extends Constructor<JSDocTypeExpressionableTagExtensionType>,
->(Base: T): Constructor<JSDocTypeExpressionableTag> & T;
+declare type JSDocPropertyLikeTagExtensionType = Node<ts.JSDocPropertyLikeTag> & JSDocTag;
+export declare function JSDocTypeExpressionableTag<T extends Constructor<JSDocTypeExpressionableTagExtensionType>>(Base: T): Constructor<JSDocTypeExpressionableTag> & T;
 
 export interface JSDocTypeExpressionableTag {
   /** Gets the type expression node of the JS doc tag if it exists. */
@@ -6292,29 +4702,19 @@ export interface JSDocTypeExpressionableTag {
   getTypeExpressionOrThrow(): JSDocTypeExpression;
 }
 
-declare type JSDocTypeExpressionableTagExtensionType =
-  & Node<
-    ts.Node & {
+declare type JSDocTypeExpressionableTagExtensionType = Node<ts.Node & {
       typeExpression: ts.JSDocTypeExpression | undefined;
-    }
-  >
-  & JSDocTag;
-export declare function JSDocTypeParameteredTag<
-  T extends Constructor<JSDocTypeParameteredTagExtensionType>,
->(Base: T): Constructor<JSDocTypeParameteredTag> & T;
+  }> & JSDocTag;
+export declare function JSDocTypeParameteredTag<T extends Constructor<JSDocTypeParameteredTagExtensionType>>(Base: T): Constructor<JSDocTypeParameteredTag> & T;
 
 export interface JSDocTypeParameteredTag {
   /** Gets the type parameters. */
   getTypeParameters(): TypeParameterDeclaration[];
 }
 
-declare type JSDocTypeParameteredTagExtensionType =
-  & Node<
-    ts.Node & {
+declare type JSDocTypeParameteredTagExtensionType = Node<ts.Node & {
       typeParameters: ts.NodeArray<ts.TypeParameterDeclaration>;
-    }
-  >
-  & JSDocTag;
+  }> & JSDocTag;
 declare const JSDocBase: typeof Node;
 
 /** JS doc node. */
@@ -6326,10 +4726,7 @@ export declare class JSDoc extends JSDocBase<ts.JSDoc> {
   /** Gets the JSDoc's text without the surrounding slashes and stars. */
   getInnerText(): string;
   /** Gets the comment property. Use `#getCommentText()` to get the text of the JS doc comment if necessary. */
-  getComment():
-    | string
-    | (JSDocText | JSDocLink | JSDocLinkCode | JSDocLinkPlain | undefined)[]
-    | undefined;
+  getComment(): string | (JSDocText | JSDocLink | JSDocLinkCode | JSDocLinkPlain | undefined)[] | undefined;
   /** Gets the text of the JS doc comment. */
   getCommentText(): string | undefined;
   /**
@@ -6351,27 +4748,19 @@ export declare class JSDoc extends JSDocBase<ts.JSDoc> {
    * Adds JS doc tags.
    * @param structures - Tag structures to add.
    */
-  addTags(
-    structures: ReadonlyArray<OptionalKind<JSDocTagStructure>>,
-  ): JSDocTag<ts.JSDocTag>[];
+  addTags(structures: ReadonlyArray<OptionalKind<JSDocTagStructure>>): JSDocTag<ts.JSDocTag>[];
   /**
    * Inserts a JS doc tag at the specified index.
    * @param index - Index to insert at.
    * @param structure - Tag structure to insert.
    */
-  insertTag(
-    index: number,
-    structure: OptionalKind<JSDocTagStructure>,
-  ): JSDocTag<ts.JSDocTag>;
+  insertTag(index: number, structure: OptionalKind<JSDocTagStructure>): JSDocTag<ts.JSDocTag>;
   /**
    * Inserts JS doc tags at the specified index.
    * @param index - Index to insert at.
    * @param structures - Tag structures to insert.
    */
-  insertTags(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<JSDocTagStructure>>,
-  ): JSDocTag<ts.JSDocTag>[];
+  insertTags(index: number, structures: ReadonlyArray<OptionalKind<JSDocTagStructure>>): JSDocTag<ts.JSDocTag>[];
   /** Removes this JSDoc. */
   remove(): void;
   /**
@@ -6428,8 +4817,7 @@ export declare class JSDocClassTag extends JSDocTag<ts.JSDocClassTag> {
 }
 
 /** JS doc deprecated tag node. */
-export declare class JSDocDeprecatedTag
-  extends JSDocTag<ts.JSDocDeprecatedTag> {
+export declare class JSDocDeprecatedTag extends JSDocTag<ts.JSDocDeprecatedTag> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JSDocDeprecatedTag>;
   /** @inheritdoc **/
@@ -6444,13 +4832,10 @@ export declare class JSDocEnumTag extends JSDocTag<ts.JSDocEnumTag> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.JSDocEnumTag>>;
 }
 
-declare const JSDocFunctionTypeBase:
-  & Constructor<SignaturedDeclaration>
-  & typeof JSDocType;
+declare const JSDocFunctionTypeBase: Constructor<SignaturedDeclaration> & typeof JSDocType;
 
 /** JS doc function type. */
-export declare class JSDocFunctionType
-  extends JSDocFunctionTypeBase<ts.JSDocFunctionType> {
+export declare class JSDocFunctionType extends JSDocFunctionTypeBase<ts.JSDocFunctionType> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JSDocFunctionType>;
   /** @inheritdoc **/
@@ -6458,8 +4843,7 @@ export declare class JSDocFunctionType
 }
 
 /** JS doc implements tag node. */
-export declare class JSDocImplementsTag
-  extends JSDocTag<ts.JSDocImplementsTag> {
+export declare class JSDocImplementsTag extends JSDocTag<ts.JSDocImplementsTag> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JSDocImplementsTag>;
   /** @inheritdoc **/
@@ -6519,8 +4903,7 @@ export declare class JSDocNameReference extends Node<ts.JSDocNameReference> {
 }
 
 /** JS doc non-nullable type. */
-export declare class JSDocNonNullableType
-  extends JSDocType<ts.JSDocNonNullableType> {
+export declare class JSDocNonNullableType extends JSDocType<ts.JSDocNonNullableType> {
   /** Gets the type node of the JS doc non-nullable type node. */
   getTypeNode(): TypeNode<ts.TypeNode>;
   isPostfix(): boolean;
@@ -6559,13 +4942,10 @@ export declare class JSDocOverrideTag extends JSDocTag<ts.JSDocOverrideTag> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.JSDocOverrideTag>>;
 }
 
-declare const JSDocParameterTagBase:
-  & Constructor<JSDocPropertyLikeTag>
-  & typeof JSDocTag;
+declare const JSDocParameterTagBase: Constructor<JSDocPropertyLikeTag> & typeof JSDocTag;
 
 /** JS doc parameter tag node. */
-export declare class JSDocParameterTag
-  extends JSDocParameterTagBase<ts.JSDocParameterTag> {
+export declare class JSDocParameterTag extends JSDocParameterTagBase<ts.JSDocParameterTag> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JSDocParameterTag>;
   /** @inheritdoc **/
@@ -6580,13 +4960,10 @@ export declare class JSDocPrivateTag extends JSDocTag<ts.JSDocPrivateTag> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.JSDocPrivateTag>>;
 }
 
-declare const JSDocPropertyTagBase:
-  & Constructor<JSDocPropertyLikeTag>
-  & typeof JSDocTag;
+declare const JSDocPropertyTagBase: Constructor<JSDocPropertyLikeTag> & typeof JSDocTag;
 
 /** JS doc property tag node. */
-export declare class JSDocPropertyTag
-  extends JSDocPropertyTagBase<ts.JSDocPropertyTag> {
+export declare class JSDocPropertyTag extends JSDocPropertyTagBase<ts.JSDocPropertyTag> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JSDocPropertyTag>;
   /** @inheritdoc **/
@@ -6617,22 +4994,17 @@ export declare class JSDocReadonlyTag extends JSDocTag<ts.JSDocReadonlyTag> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.JSDocReadonlyTag>>;
 }
 
-declare const JSDocReturnTagBase:
-  & Constructor<JSDocTypeExpressionableTag>
-  & typeof JSDocTag;
+declare const JSDocReturnTagBase: Constructor<JSDocTypeExpressionableTag> & typeof JSDocTag;
 
 /** JS doc return tag node. */
-export declare class JSDocReturnTag
-  extends JSDocReturnTagBase<ts.JSDocReturnTag> {
+export declare class JSDocReturnTag extends JSDocReturnTagBase<ts.JSDocReturnTag> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JSDocReturnTag>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.JSDocReturnTag>>;
 }
 
-declare const JSDocSeeTagBase:
-  & Constructor<JSDocTypeExpressionableTag>
-  & typeof JSDocTag;
+declare const JSDocSeeTagBase: Constructor<JSDocTypeExpressionableTag> & typeof JSDocTag;
 
 /** JS doc "see" tag node. */
 export declare class JSDocSeeTag extends JSDocSeeTagBase<ts.JSDocSeeTag> {
@@ -6655,8 +5027,7 @@ export declare class JSDocSignature extends JSDocType<ts.JSDocSignature> {
 declare const JSDocTagBase: typeof Node;
 
 /** JS doc tag node. */
-export declare class JSDocTag<NodeType extends ts.JSDocTag = ts.JSDocTag>
-  extends JSDocTagBase<NodeType> {
+export declare class JSDocTag<NodeType extends ts.JSDocTag = ts.JSDocTag> extends JSDocTagBase<NodeType> {
   /** Gets the tag's name as a string (ex. returns `"param"` for `&#64;param`). */
   getTagName(): string;
   /** Gets the tag name node (ex. Returns the `param` identifier for `&#64;param`). */
@@ -6669,10 +5040,7 @@ export declare class JSDocTag<NodeType extends ts.JSDocTag = ts.JSDocTag>
    */
   setTagName(tagName: string): Node<ts.Node>;
   /** Gets the tag's comment property. Use `#getCommentText()` to get the text of the JS doc tag comment if necessary. */
-  getComment():
-    | string
-    | (JSDocText | JSDocLink | JSDocLinkCode | JSDocLinkPlain | undefined)[]
-    | undefined;
+  getComment(): string | (JSDocText | JSDocLink | JSDocLinkCode | JSDocLinkPlain | undefined)[] | undefined;
   /** Gets the text of the JS doc tag comment (ex. `"Some description."` for `&#64;param value Some description.`). */
   getCommentText(): string | undefined;
   /** Removes the JS doc comment. */
@@ -6700,13 +5068,10 @@ export declare class JSDocTagInfo {
   getText(): ts.SymbolDisplayPart[];
 }
 
-declare const JSDocTemplateTagBase:
-  & Constructor<JSDocTypeParameteredTag>
-  & typeof JSDocTag;
+declare const JSDocTemplateTagBase: Constructor<JSDocTypeParameteredTag> & typeof JSDocTag;
 
 /** JS doc template tag node. */
-export declare class JSDocTemplateTag
-  extends JSDocTemplateTagBase<ts.JSDocTemplateTag> {
+export declare class JSDocTemplateTag extends JSDocTemplateTagBase<ts.JSDocTemplateTag> {
   /** Gets the template tag's constraint if it exists or returns undefined. */
   getConstraint(): JSDocTypeExpression | undefined;
   /** Gets the template tag's constraint if it exists or throws otherwise. */
@@ -6725,9 +5090,7 @@ export declare class JSDocText extends Node<ts.JSDocText> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.JSDocText>>;
 }
 
-declare const JSDocThisTagBase:
-  & Constructor<JSDocTypeExpressionableTag>
-  & typeof JSDocTag;
+declare const JSDocThisTagBase: Constructor<JSDocTypeExpressionableTag> & typeof JSDocTag;
 
 /** JS doc "this" tag node. */
 export declare class JSDocThisTag extends JSDocThisTagBase<ts.JSDocThisTag> {
@@ -6738,8 +5101,7 @@ export declare class JSDocThisTag extends JSDocThisTagBase<ts.JSDocThisTag> {
 }
 
 /** JS doc type node. */
-export declare class JSDocType<T extends ts.JSDocType = ts.JSDocType>
-  extends TypeNode<T> {
+export declare class JSDocType<T extends ts.JSDocType = ts.JSDocType> extends TypeNode<T> {
 }
 
 /** JS doc type def tag node. */
@@ -6751,8 +5113,7 @@ export declare class JSDocTypedefTag extends JSDocTag<ts.JSDocTypedefTag> {
 }
 
 /** JS doc type expression node. */
-export declare class JSDocTypeExpression
-  extends TypeNode<ts.JSDocTypeExpression> {
+export declare class JSDocTypeExpression extends TypeNode<ts.JSDocTypeExpression> {
   /** Gets the type node of the JS doc type expression. */
   getTypeNode(): TypeNode<ts.TypeNode>;
   /** @inheritdoc **/
@@ -6814,18 +5175,9 @@ export declare class CommentEnumMember extends Node<CompilerCommentEnumMember> {
   remove(): void;
 }
 
-declare const EnumDeclarationBase:
-  & Constructor<TextInsertableNode>
-  & Constructor<ModuleChildableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<ExportableNode>
-  & Constructor<ModifierableNode>
-  & Constructor<NamedNode>
-  & typeof Statement;
+declare const EnumDeclarationBase: Constructor<TextInsertableNode> & Constructor<ModuleChildableNode> & Constructor<JSDocableNode> & Constructor<AmbientableNode> & Constructor<ExportableNode> & Constructor<ModifierableNode> & Constructor<NamedNode> & typeof Statement;
 
-export declare class EnumDeclaration
-  extends EnumDeclarationBase<ts.EnumDeclaration> {
+export declare class EnumDeclaration extends EnumDeclarationBase<ts.EnumDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -6840,69 +5192,41 @@ export declare class EnumDeclaration
    * Adds a member to the enum.
    * @param structure - Structure of the enum.
    */
-  addMember(
-    structure: OptionalKind<EnumMemberStructure> | WriterFunction | string,
-  ): EnumMember | CommentEnumMember;
+  addMember(structure: OptionalKind<EnumMemberStructure> | WriterFunction | string): EnumMember | CommentEnumMember;
   /**
    * Adds members to the enum.
    * @param structures - Structures of the enums.
    */
-  addMembers(
-    structures: ReadonlyArray<OptionalKind<EnumMemberStructure>>,
-  ): EnumMember[];
+  addMembers(structures: ReadonlyArray<OptionalKind<EnumMemberStructure>>): EnumMember[];
   /**
    * Adds members to the enum.
    * @param structures - Structures of the enums.
    */
-  addMembers(
-    structures:
-      | ReadonlyArray<
-        OptionalKind<EnumMemberStructure> | WriterFunction | string
-      >
-      | string
-      | WriterFunction,
-  ): (EnumMember | CommentEnumMember)[];
+  addMembers(structures: ReadonlyArray<OptionalKind<EnumMemberStructure> | WriterFunction | string> | string | WriterFunction): (EnumMember | CommentEnumMember)[];
   /**
    * Inserts a member to the enum.
    * @param index - Child index to insert at.
    * @param structure - Structure of the enum.
    */
-  insertMember(
-    index: number,
-    structure: OptionalKind<EnumMemberStructure>,
-  ): EnumMember;
+  insertMember(index: number, structure: OptionalKind<EnumMemberStructure>): EnumMember;
   /**
    * Inserts a member to the enum.
    * @param index - Child index to insert at.
    * @param structure - Structure of the enum.
    */
-  insertMember(
-    index: number,
-    structure: OptionalKind<EnumMemberStructure> | WriterFunction | string,
-  ): EnumMember | CommentEnumMember;
+  insertMember(index: number, structure: OptionalKind<EnumMemberStructure> | WriterFunction | string): EnumMember | CommentEnumMember;
   /**
    * Inserts members to an enum.
    * @param index - Child index to insert at.
    * @param structures - Structures of the enums.
    */
-  insertMembers(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<EnumMemberStructure>>,
-  ): EnumMember[];
+  insertMembers(index: number, structures: ReadonlyArray<OptionalKind<EnumMemberStructure>>): EnumMember[];
   /**
    * Inserts members to an enum.
    * @param index - Child index to insert at.
    * @param structures - Structures of the enums.
    */
-  insertMembers(
-    index: number,
-    structures:
-      | ReadonlyArray<
-        OptionalKind<EnumMemberStructure> | WriterFunction | string
-      >
-      | WriterFunction
-      | string,
-  ): (EnumMember | CommentEnumMember)[];
+  insertMembers(index: number, structures: ReadonlyArray<OptionalKind<EnumMemberStructure> | WriterFunction | string> | WriterFunction | string): (EnumMember | CommentEnumMember)[];
   /**
    * Gets an enum member.
    * @param name - Name of the member.
@@ -6912,9 +5236,7 @@ export declare class EnumDeclaration
    * Gets an enum member.
    * @param findFunction - Function to use to find the member.
    */
-  getMember(
-    findFunction: (declaration: EnumMember) => boolean,
-  ): EnumMember | undefined;
+  getMember(findFunction: (declaration: EnumMember) => boolean): EnumMember | undefined;
   /**
    * Gets an enum member or throws if not found.
    * @param name - Name of the member.
@@ -6924,9 +5246,7 @@ export declare class EnumDeclaration
    * Gets an enum member or throws if not found.
    * @param findFunction - Function to use to find the member.
    */
-  getMemberOrThrow(
-    findFunction: (declaration: EnumMember) => boolean,
-  ): EnumMember;
+  getMemberOrThrow(findFunction: (declaration: EnumMember) => boolean): EnumMember;
   /** Gets the enum's members. */
   getMembers(): EnumMember[];
   /** Gets the enum's members with comment enum members. */
@@ -6945,11 +5265,7 @@ export declare class EnumDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.EnumDeclaration>>;
 }
 
-declare const EnumMemberBase:
-  & Constructor<JSDocableNode>
-  & Constructor<InitializerExpressionableNode>
-  & Constructor<PropertyNamedNode>
-  & typeof Node;
+declare const EnumMemberBase: Constructor<JSDocableNode> & Constructor<InitializerExpressionableNode> & Constructor<PropertyNamedNode> & typeof Node;
 
 export declare class EnumMember extends EnumMemberBase<ts.EnumMember> {
   /** Gets the constant value of the enum. */
@@ -6979,20 +5295,16 @@ export declare class EnumMember extends EnumMemberBase<ts.EnumMember> {
 
 declare const ArrayDestructuringAssignmentBase: typeof AssignmentExpression;
 
-export declare class ArrayDestructuringAssignment
-  extends ArrayDestructuringAssignmentBase<ts.ArrayDestructuringAssignment> {
+export declare class ArrayDestructuringAssignment extends ArrayDestructuringAssignmentBase<ts.ArrayDestructuringAssignment> {
   /** Gets the left array literal expression of the array destructuring assignment. */
   getLeft(): ArrayLiteralExpression;
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ArrayDestructuringAssignment>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.ArrayDestructuringAssignment>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.ArrayDestructuringAssignment>>;
 }
 
-export declare class ArrayLiteralExpression
-  extends PrimaryExpression<ts.ArrayLiteralExpression> {
+export declare class ArrayLiteralExpression extends PrimaryExpression<ts.ArrayLiteralExpression> {
   /** Gets the array's elements. */
   getElements(): Expression[];
   /**
@@ -7001,49 +5313,34 @@ export declare class ArrayLiteralExpression
    * @param options - Options.
    */
   addElement(textOrWriterFunction: string | WriterFunction, options?: {
-    useNewLines?: boolean;
-  }): Expression<ts.Expression>;
+        useNewLines?: boolean;
+    }): Expression<ts.Expression>;
   /**
    * Adds elements to the array.
    * @param textsOrWriterFunction - Texts to add as elements.
    * @param options - Options.
    */
-  addElements(
-    textsOrWriterFunction:
-      | ReadonlyArray<string | WriterFunction>
-      | WriterFunction,
-    options?: {
-      useNewLines?: boolean;
-    },
-  ): Expression<ts.Expression>[];
+  addElements(textsOrWriterFunction: ReadonlyArray<string | WriterFunction> | WriterFunction, options?: {
+        useNewLines?: boolean;
+    }): Expression<ts.Expression>[];
   /**
    * Insert an element into the array.
    * @param index - Child index to insert at.
    * @param text - Text to insert as an element.
    * @param options - Options.
    */
-  insertElement(
-    index: number,
-    textOrWriterFunction: string | WriterFunction,
-    options?: {
-      useNewLines?: boolean;
-    },
-  ): Expression<ts.Expression>;
+  insertElement(index: number, textOrWriterFunction: string | WriterFunction, options?: {
+        useNewLines?: boolean;
+    }): Expression<ts.Expression>;
   /**
    * Insert elements into the array.
    * @param index - Child index to insert at.
    * @param textsOrWriterFunction - Texts to insert as elements.
    * @param options - Options.
    */
-  insertElements(
-    index: number,
-    textsOrWriterFunction:
-      | ReadonlyArray<string | WriterFunction>
-      | WriterFunction,
-    options?: {
-      useNewLines?: boolean;
-    },
-  ): Expression<ts.Expression>[];
+  insertElements(index: number, textsOrWriterFunction: ReadonlyArray<string | WriterFunction> | WriterFunction, options?: {
+        useNewLines?: boolean;
+    }): Expression<ts.Expression>[];
   /**
    * Removes an element from the array.
    * @param index - Index to remove from.
@@ -7060,10 +5357,7 @@ export declare class ArrayLiteralExpression
   getParentOrThrow(): NonNullable<NodeParentType<ts.ArrayLiteralExpression>>;
 }
 
-declare const AsExpressionBase:
-  & Constructor<TypedNode>
-  & Constructor<ExpressionedNode>
-  & typeof Expression;
+declare const AsExpressionBase: Constructor<TypedNode> & Constructor<ExpressionedNode> & typeof Expression;
 
 export declare class AsExpression extends AsExpressionBase<ts.AsExpression> {
   /** @inheritdoc **/
@@ -7074,20 +5368,14 @@ export declare class AsExpression extends AsExpressionBase<ts.AsExpression> {
 
 declare const AssignmentExpressionBase: typeof BinaryExpression;
 
-export declare class AssignmentExpression<
-  T extends ts.AssignmentExpression<ts.AssignmentOperatorToken> =
-    ts.AssignmentExpression<ts.AssignmentOperatorToken>,
-> extends AssignmentExpressionBase<T> {
+export declare class AssignmentExpression<T extends ts.AssignmentExpression<ts.AssignmentOperatorToken> = ts.AssignmentExpression<ts.AssignmentOperatorToken>> extends AssignmentExpressionBase<T> {
   /** Gets the operator token of the assignment expression. */
   getOperatorToken(): Node<ts.AssignmentOperatorToken>;
 }
 
-declare const AwaitExpressionBase:
-  & Constructor<UnaryExpressionedNode>
-  & typeof UnaryExpression;
+declare const AwaitExpressionBase: Constructor<UnaryExpressionedNode> & typeof UnaryExpression;
 
-export declare class AwaitExpression
-  extends AwaitExpressionBase<ts.AwaitExpression> {
+export declare class AwaitExpression extends AwaitExpressionBase<ts.AwaitExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.AwaitExpression>;
   /** @inheritdoc **/
@@ -7096,9 +5384,7 @@ export declare class AwaitExpression
 
 declare const BinaryExpressionBase: typeof Expression;
 
-export declare class BinaryExpression<
-  T extends ts.BinaryExpression = ts.BinaryExpression,
-> extends BinaryExpressionBase<T> {
+export declare class BinaryExpression<T extends ts.BinaryExpression = ts.BinaryExpression> extends BinaryExpressionBase<T> {
   /** Gets the left side of the binary expression. */
   getLeft(): Expression;
   /** Gets the operator token of the binary expression. */
@@ -7107,24 +5393,16 @@ export declare class BinaryExpression<
   getRight(): Expression;
 }
 
-declare const CallExpressionBase:
-  & Constructor<TypeArgumentedNode>
-  & Constructor<ArgumentedNode>
-  & Constructor<QuestionDotTokenableNode>
-  & Constructor<LeftHandSideExpressionedNode>
-  & typeof LeftHandSideExpression;
+declare const CallExpressionBase: Constructor<TypeArgumentedNode> & Constructor<ArgumentedNode> & Constructor<QuestionDotTokenableNode> & Constructor<LeftHandSideExpressionedNode> & typeof LeftHandSideExpression;
 
-export declare class CallExpression<
-  T extends ts.CallExpression = ts.CallExpression,
-> extends CallExpressionBase<T> {
+export declare class CallExpression<T extends ts.CallExpression = ts.CallExpression> extends CallExpressionBase<T> {
   /** Gets the return type of the call expression. */
   getReturnType(): Type;
 }
 
 declare const CommaListExpressionBase: typeof Expression;
 
-export declare class CommaListExpression
-  extends CommaListExpressionBase<ts.CommaListExpression> {
+export declare class CommaListExpression extends CommaListExpressionBase<ts.CommaListExpression> {
   /** Gets the elements. */
   getElements(): Expression[];
   /** @inheritdoc **/
@@ -7135,8 +5413,7 @@ export declare class CommaListExpression
 
 declare const ConditionalExpressionBase: typeof Expression;
 
-export declare class ConditionalExpression
-  extends ConditionalExpressionBase<ts.ConditionalExpression> {
+export declare class ConditionalExpression extends ConditionalExpressionBase<ts.ConditionalExpression> {
   /** Gets the condition of the conditional expression. */
   getCondition(): Expression;
   /** Gets the question token of the conditional expression. */
@@ -7153,41 +5430,30 @@ export declare class ConditionalExpression
   getParentOrThrow(): NonNullable<NodeParentType<ts.ConditionalExpression>>;
 }
 
-declare const DeleteExpressionBase:
-  & Constructor<UnaryExpressionedNode>
-  & typeof UnaryExpression;
+declare const DeleteExpressionBase: Constructor<UnaryExpressionedNode> & typeof UnaryExpression;
 
-export declare class DeleteExpression
-  extends DeleteExpressionBase<ts.DeleteExpression> {
+export declare class DeleteExpression extends DeleteExpressionBase<ts.DeleteExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.DeleteExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.DeleteExpression>>;
 }
 
-declare const ElementAccessExpressionBase:
-  & Constructor<QuestionDotTokenableNode>
-  & Constructor<LeftHandSideExpressionedNode>
-  & typeof MemberExpression;
+declare const ElementAccessExpressionBase: Constructor<QuestionDotTokenableNode> & Constructor<LeftHandSideExpressionedNode> & typeof MemberExpression;
 
-export declare class ElementAccessExpression<
-  T extends ts.ElementAccessExpression = ts.ElementAccessExpression,
-> extends ElementAccessExpressionBase<T> {
+export declare class ElementAccessExpression<T extends ts.ElementAccessExpression = ts.ElementAccessExpression> extends ElementAccessExpressionBase<T> {
   /** Gets this element access expression's argument expression or undefined if none exists. */
   getArgumentExpression(): Expression | undefined;
   /** Gets this element access expression's argument expression or throws if none exists. */
   getArgumentExpressionOrThrow(): Expression<ts.Expression>;
 }
 
-export declare class Expression<T extends ts.Expression = ts.Expression>
-  extends Node<T> {
+export declare class Expression<T extends ts.Expression = ts.Expression> extends Node<T> {
   /** Gets the contextual type of the expression. */
   getContextualType(): Type | undefined;
 }
 
-export declare function ExpressionableNode<
-  T extends Constructor<ExpressionableNodeExtensionType>,
->(Base: T): Constructor<ExpressionableNode> & T;
+export declare function ExpressionableNode<T extends Constructor<ExpressionableNodeExtensionType>>(Base: T): Constructor<ExpressionableNode> & T;
 
 export interface ExpressionableNode {
   /** Gets the expression if it exists or returns undefined. */
@@ -7195,26 +5461,15 @@ export interface ExpressionableNode {
   /** Gets the expression if it exists or throws. */
   getExpressionOrThrow(): Expression;
   /** Gets the expression if it is of the specified syntax kind or returns undefined. */
-  getExpressionIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToExpressionMappings[TKind] | undefined;
+  getExpressionIfKind<TKind extends SyntaxKind>(kind: TKind): KindToExpressionMappings[TKind] | undefined;
   /** Gets the expression if it is of the specified syntax kind or throws. */
-  getExpressionIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToExpressionMappings[TKind];
+  getExpressionIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToExpressionMappings[TKind];
 }
 
-declare type ExpressionableNodeExtensionType = Node<
-  ts.Node & {
-    expression?: ts.Expression;
-  }
->;
-export declare function BaseExpressionedNode<
-  T extends Constructor<ExpressionedNodeExtensionType>,
-  TExpression extends Node = CompilerNodeToWrappedType<
-    InstanceOf<T>["compilerNode"]
-  >,
->(Base: T): Constructor<BaseExpressionedNode<TExpression>> & T;
+declare type ExpressionableNodeExtensionType = Node<ts.Node & {
+      expression?: ts.Expression;
+  }>;
+export declare function BaseExpressionedNode<T extends Constructor<ExpressionedNodeExtensionType>, TExpression extends Node = CompilerNodeToWrappedType<InstanceOf<T>["compilerNode"]>>(Base: T): Constructor<BaseExpressionedNode<TExpression>> & T;
 
 export interface BaseExpressionedNode<TExpression extends Node> {
   /** Gets the expression. */
@@ -7223,16 +5478,12 @@ export interface BaseExpressionedNode<TExpression extends Node> {
    * Gets the expression if its of a certain kind or returns undefined.
    * @param kind - Syntax kind of the expression.
    */
-  getExpressionIfKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToExpressionMappings[TKind] | undefined;
+  getExpressionIfKind<TKind extends SyntaxKind>(kind: TKind): KindToExpressionMappings[TKind] | undefined;
   /**
    * Gets the expression if its of a certain kind or throws.
    * @param kind - Syntax kind of the expression.
    */
-  getExpressionIfKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToExpressionMappings[TKind];
+  getExpressionIfKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToExpressionMappings[TKind];
   /**
    * Sets the expression.
    * @param textOrWriterFunction - Text to set the expression with.
@@ -7240,102 +5491,67 @@ export interface BaseExpressionedNode<TExpression extends Node> {
   setExpression(textOrWriterFunction: string | WriterFunction): this;
 }
 
-export declare function ExpressionedNode<
-  T extends Constructor<ExpressionedNodeExtensionType>,
->(Base: T): Constructor<ExpressionedNode> & T;
+export declare function ExpressionedNode<T extends Constructor<ExpressionedNodeExtensionType>>(Base: T): Constructor<ExpressionedNode> & T;
 
 export interface ExpressionedNode extends BaseExpressionedNode<Expression> {
 }
 
-declare type ExpressionedNodeExtensionType = Node<
-  ts.Node & {
-    expression: ts.Expression;
-  }
->;
-export declare function ImportExpressionedNode<
-  T extends Constructor<ImportExpressionedNodeExtensionType>,
->(Base: T): Constructor<ImportExpressionedNode> & T;
+declare type ExpressionedNodeExtensionType = Node<ts.Node & {
+      expression: ts.Expression;
+  }>;
+export declare function ImportExpressionedNode<T extends Constructor<ImportExpressionedNodeExtensionType>>(Base: T): Constructor<ImportExpressionedNode> & T;
 
-export interface ImportExpressionedNode
-  extends BaseExpressionedNode<ImportExpression> {
+export interface ImportExpressionedNode extends BaseExpressionedNode<ImportExpression> {
 }
 
-declare type ImportExpressionedNodeExtensionType = Node<
-  ts.Node & {
-    expression: ts.ImportExpression;
-  }
->;
-export declare function LeftHandSideExpressionedNode<
-  T extends Constructor<LeftHandSideExpressionedNodeExtensionType>,
->(Base: T): Constructor<LeftHandSideExpressionedNode> & T;
+declare type ImportExpressionedNodeExtensionType = Node<ts.Node & {
+      expression: ts.ImportExpression;
+  }>;
+export declare function LeftHandSideExpressionedNode<T extends Constructor<LeftHandSideExpressionedNodeExtensionType>>(Base: T): Constructor<LeftHandSideExpressionedNode> & T;
 
-export interface LeftHandSideExpressionedNode
-  extends BaseExpressionedNode<LeftHandSideExpression> {
+export interface LeftHandSideExpressionedNode extends BaseExpressionedNode<LeftHandSideExpression> {
 }
 
-declare type LeftHandSideExpressionedNodeExtensionType = Node<
-  ts.Node & {
-    expression: ts.LeftHandSideExpression;
-  }
->;
-export declare function SuperExpressionedNode<
-  T extends Constructor<SuperExpressionedNodeExtensionType>,
->(Base: T): Constructor<SuperExpressionedNode> & T;
+declare type LeftHandSideExpressionedNodeExtensionType = Node<ts.Node & {
+      expression: ts.LeftHandSideExpression;
+  }>;
+export declare function SuperExpressionedNode<T extends Constructor<SuperExpressionedNodeExtensionType>>(Base: T): Constructor<SuperExpressionedNode> & T;
 
-export interface SuperExpressionedNode
-  extends BaseExpressionedNode<SuperExpression> {
+export interface SuperExpressionedNode extends BaseExpressionedNode<SuperExpression> {
 }
 
-declare type SuperExpressionedNodeExtensionType = Node<
-  ts.Node & {
-    expression: ts.SuperExpression;
-  }
->;
-export declare function UnaryExpressionedNode<
-  T extends Constructor<UnaryExpressionedNodeExtensionType>,
->(Base: T): Constructor<UnaryExpressionedNode> & T;
+declare type SuperExpressionedNodeExtensionType = Node<ts.Node & {
+      expression: ts.SuperExpression;
+  }>;
+export declare function UnaryExpressionedNode<T extends Constructor<UnaryExpressionedNodeExtensionType>>(Base: T): Constructor<UnaryExpressionedNode> & T;
 
-export interface UnaryExpressionedNode
-  extends BaseExpressionedNode<UnaryExpression> {
+export interface UnaryExpressionedNode extends BaseExpressionedNode<UnaryExpression> {
 }
 
-declare type UnaryExpressionedNodeExtensionType = Node<
-  ts.Node & {
-    expression: ts.UnaryExpression;
-  }
->;
+declare type UnaryExpressionedNodeExtensionType = Node<ts.Node & {
+      expression: ts.UnaryExpression;
+  }>;
 declare const ImportExpressionBase: typeof PrimaryExpression;
 
-export declare class ImportExpression
-  extends ImportExpressionBase<ts.ImportExpression> {
+export declare class ImportExpression extends ImportExpressionBase<ts.ImportExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ImportExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ImportExpression>>;
 }
 
-export declare class LeftHandSideExpression<
-  T extends ts.LeftHandSideExpression = ts.LeftHandSideExpression,
-> extends UpdateExpression<T> {
+export declare class LeftHandSideExpression<T extends ts.LeftHandSideExpression = ts.LeftHandSideExpression> extends UpdateExpression<T> {
 }
 
-declare const LiteralExpressionBase:
-  & Constructor<LiteralLikeNode>
-  & typeof PrimaryExpression;
+declare const LiteralExpressionBase: Constructor<LiteralLikeNode> & typeof PrimaryExpression;
 
-export declare class LiteralExpression<
-  T extends ts.LiteralExpression = ts.LiteralExpression,
-> extends LiteralExpressionBase<T> {
+export declare class LiteralExpression<T extends ts.LiteralExpression = ts.LiteralExpression> extends LiteralExpressionBase<T> {
 }
 
-export declare class MemberExpression<
-  T extends ts.MemberExpression = ts.MemberExpression,
-> extends LeftHandSideExpression<T> {
+export declare class MemberExpression<T extends ts.MemberExpression = ts.MemberExpression> extends LeftHandSideExpression<T> {
 }
 
-declare const MetaPropertyBase:
-  & Constructor<NamedNode>
-  & typeof PrimaryExpression;
+declare const MetaPropertyBase: Constructor<NamedNode> & typeof PrimaryExpression;
 
 export declare class MetaProperty extends MetaPropertyBase<ts.MetaProperty> {
   /** Gets the keyword token. */
@@ -7346,11 +5562,7 @@ export declare class MetaProperty extends MetaPropertyBase<ts.MetaProperty> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.MetaProperty>>;
 }
 
-declare const NewExpressionBase:
-  & Constructor<TypeArgumentedNode>
-  & Constructor<ArgumentedNode>
-  & Constructor<LeftHandSideExpressionedNode>
-  & typeof PrimaryExpression;
+declare const NewExpressionBase: Constructor<TypeArgumentedNode> & Constructor<ArgumentedNode> & Constructor<LeftHandSideExpressionedNode> & typeof PrimaryExpression;
 
 export declare class NewExpression extends NewExpressionBase<ts.NewExpression> {
   /** @inheritdoc **/
@@ -7359,47 +5571,37 @@ export declare class NewExpression extends NewExpressionBase<ts.NewExpression> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.NewExpression>>;
 }
 
-declare const NonNullExpressionBase:
-  & Constructor<ExpressionedNode>
-  & typeof LeftHandSideExpression;
+declare const NonNullExpressionBase: Constructor<ExpressionedNode> & typeof LeftHandSideExpression;
 
-export declare class NonNullExpression
-  extends NonNullExpressionBase<ts.NonNullExpression> {
+export declare class NonNullExpression extends NonNullExpressionBase<ts.NonNullExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.NonNullExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.NonNullExpression>>;
 }
 
-export declare class CommentObjectLiteralElement
-  extends ObjectLiteralElement<CompilerCommentObjectLiteralElement> {
+export declare class CommentObjectLiteralElement extends ObjectLiteralElement<CompilerCommentObjectLiteralElement> {
 }
 
 declare const ObjectDestructuringAssignmentBase: typeof AssignmentExpression;
 
-export declare class ObjectDestructuringAssignment
-  extends ObjectDestructuringAssignmentBase<ts.ObjectDestructuringAssignment> {
+export declare class ObjectDestructuringAssignment extends ObjectDestructuringAssignmentBase<ts.ObjectDestructuringAssignment> {
   /** Gets the left object literal expression of the object destructuring assignment. */
   getLeft(): ObjectLiteralExpression;
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ObjectDestructuringAssignment>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.ObjectDestructuringAssignment>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.ObjectDestructuringAssignment>>;
 }
 
-export declare class ObjectLiteralElement<
-  T extends ts.ObjectLiteralElement = ts.ObjectLiteralElement,
-> extends Node<T> {
+export declare class ObjectLiteralElement<T extends ts.ObjectLiteralElement = ts.ObjectLiteralElement> extends Node<T> {
   /** Removes the object literal element from the object literal expression. */
   remove(): void;
 }
 
 declare const ObjectLiteralExpressionBase: typeof PrimaryExpression;
 
-export declare class ObjectLiteralExpression
-  extends ObjectLiteralExpressionBase<ts.ObjectLiteralExpression> {
+export declare class ObjectLiteralExpression extends ObjectLiteralExpressionBase<ts.ObjectLiteralExpression> {
   /**
    * Gets the first property by the provided name or throws.
    * @param name - Name of the property.
@@ -7409,9 +5611,7 @@ export declare class ObjectLiteralExpression
    * Gets the first property that matches the provided find function or throws.
    * @param findFunction - Find function.
    */
-  getPropertyOrThrow(
-    findFunction: (property: ObjectLiteralElementLike) => boolean,
-  ): ObjectLiteralElementLike;
+  getPropertyOrThrow(findFunction: (property: ObjectLiteralElementLike) => boolean): ObjectLiteralElementLike;
   /**
    * Gets the first property by the provided name or returns undefined.
    * @param name - Name of the property.
@@ -7421,42 +5621,25 @@ export declare class ObjectLiteralExpression
    * Gets the first property that matches the provided find function or returns undefined.
    * @param findFunction - Find function.
    */
-  getProperty(
-    findFunction: (property: ObjectLiteralElementLike) => boolean,
-  ): ObjectLiteralElementLike | undefined;
+  getProperty(findFunction: (property: ObjectLiteralElementLike) => boolean): ObjectLiteralElementLike | undefined;
   /** Gets the properties. */
   getProperties(): ObjectLiteralElementLike[];
   /** Gets the properties with comment object literal elements. */
-  getPropertiesWithComments(): (
-    | ObjectLiteralElementLike
-    | CommentObjectLiteralElement
-  )[];
+  getPropertiesWithComments(): (ObjectLiteralElementLike | CommentObjectLiteralElement)[];
   /**
    * Adds the specified property to the object literal expression.
    *
    * Note: If you only want to add a property assignment, then it might be more convenient to use #addPropertyAssignment.
    * @structure - The structure to add.
    */
-  addProperty(
-    structure:
-      | string
-      | WriterFunction
-      | ObjectLiteralExpressionPropertyStructures,
-  ): CommentObjectLiteralElement | ObjectLiteralElementLike;
+  addProperty(structure: string | WriterFunction | ObjectLiteralExpressionPropertyStructures): CommentObjectLiteralElement | ObjectLiteralElementLike;
   /**
    * Adds the specified properties to the object literal expression.
    *
    * Note: If you only want to add property assignments, then it might be more convenient to use #addPropertyAssignments.
    * @structures - The structures to add.
    */
-  addProperties(
-    structures:
-      | string
-      | WriterFunction
-      | ReadonlyArray<
-        string | WriterFunction | ObjectLiteralExpressionPropertyStructures
-      >,
-  ): (CommentObjectLiteralElement | ObjectLiteralElementLike)[];
+  addProperties(structures: string | WriterFunction | ReadonlyArray<string | WriterFunction | ObjectLiteralExpressionPropertyStructures>): (CommentObjectLiteralElement | ObjectLiteralElementLike)[];
   /**
    * Inserts the specified property to the object literal expression.
    *
@@ -7464,13 +5647,7 @@ export declare class ObjectLiteralExpression
    * @index - The index to insert at.
    * @structure - The structure to insert.
    */
-  insertProperty(
-    index: number,
-    structure:
-      | string
-      | WriterFunction
-      | ObjectLiteralExpressionPropertyStructures,
-  ): CommentObjectLiteralElement | ObjectLiteralElementLike;
+  insertProperty(index: number, structure: string | WriterFunction | ObjectLiteralExpressionPropertyStructures): CommentObjectLiteralElement | ObjectLiteralElementLike;
   /**
    * Inserts the specified properties to the object literal expression.
    *
@@ -7478,225 +5655,148 @@ export declare class ObjectLiteralExpression
    * @index - The index to insert at.
    * @structures - The structures to insert.
    */
-  insertProperties(
-    index: number,
-    structures:
-      | string
-      | WriterFunction
-      | ReadonlyArray<
-        string | WriterFunction | ObjectLiteralExpressionPropertyStructures
-      >,
-  ): (CommentObjectLiteralElement | ObjectLiteralElementLike)[];
+  insertProperties(index: number, structures: string | WriterFunction | ReadonlyArray<string | WriterFunction | ObjectLiteralExpressionPropertyStructures>): (CommentObjectLiteralElement | ObjectLiteralElementLike)[];
   /**
    * Adds a property assignment.
    * @param structure - Structure that represents the property assignment to add.
    */
-  addPropertyAssignment(
-    structure: OptionalKind<PropertyAssignmentStructure>,
-  ): PropertyAssignment;
+  addPropertyAssignment(structure: OptionalKind<PropertyAssignmentStructure>): PropertyAssignment;
   /**
    * Adds property assignments.
    * @param structures - Structure that represents the property assignments to add.
    */
-  addPropertyAssignments(
-    structures: ReadonlyArray<OptionalKind<PropertyAssignmentStructure>>,
-  ): PropertyAssignment[];
+  addPropertyAssignments(structures: ReadonlyArray<OptionalKind<PropertyAssignmentStructure>>): PropertyAssignment[];
   /**
    * Inserts a property assignment at the specified index.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the property assignment to insert.
    */
-  insertPropertyAssignment(
-    index: number,
-    structure: OptionalKind<PropertyAssignmentStructure>,
-  ): PropertyAssignment;
+  insertPropertyAssignment(index: number, structure: OptionalKind<PropertyAssignmentStructure>): PropertyAssignment;
   /**
    * Inserts property assignments at the specified index.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the property assignments to insert.
    */
-  insertPropertyAssignments(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<PropertyAssignmentStructure>>,
-  ): PropertyAssignment[];
+  insertPropertyAssignments(index: number, structures: ReadonlyArray<OptionalKind<PropertyAssignmentStructure>>): PropertyAssignment[];
   /**
    * Adds a shorthand property assignment.
    * @param structure - Structure that represents the shorthand property assignment to add.
    */
-  addShorthandPropertyAssignment(
-    structure: OptionalKind<ShorthandPropertyAssignmentStructure>,
-  ): ShorthandPropertyAssignment;
+  addShorthandPropertyAssignment(structure: OptionalKind<ShorthandPropertyAssignmentStructure>): ShorthandPropertyAssignment;
   /**
    * Adds shorthand property assignments.
    * @param structures - Structure that represents the shorthand property assignments to add.
    */
-  addShorthandPropertyAssignments(
-    structures: ReadonlyArray<
-      OptionalKind<ShorthandPropertyAssignmentStructure>
-    >,
-  ): ShorthandPropertyAssignment[];
+  addShorthandPropertyAssignments(structures: ReadonlyArray<OptionalKind<ShorthandPropertyAssignmentStructure>>): ShorthandPropertyAssignment[];
   /**
    * Inserts a shorthand property assignment at the specified index.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the shorthand property assignment to insert.
    */
-  insertShorthandPropertyAssignment(
-    index: number,
-    structure: OptionalKind<ShorthandPropertyAssignmentStructure>,
-  ): ShorthandPropertyAssignment;
+  insertShorthandPropertyAssignment(index: number, structure: OptionalKind<ShorthandPropertyAssignmentStructure>): ShorthandPropertyAssignment;
   /**
    * Inserts shorthand property assignments at the specified index.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the shorthand property assignments to insert.
    */
-  insertShorthandPropertyAssignments(
-    index: number,
-    structures: ReadonlyArray<
-      OptionalKind<ShorthandPropertyAssignmentStructure>
-    >,
-  ): ShorthandPropertyAssignment[];
+  insertShorthandPropertyAssignments(index: number, structures: ReadonlyArray<OptionalKind<ShorthandPropertyAssignmentStructure>>): ShorthandPropertyAssignment[];
   /**
    * Adds a spread assignment.
    * @param structure - Structure that represents the spread assignment to add.
    */
-  addSpreadAssignment(
-    structure: OptionalKind<SpreadAssignmentStructure>,
-  ): SpreadAssignment;
+  addSpreadAssignment(structure: OptionalKind<SpreadAssignmentStructure>): SpreadAssignment;
   /**
    * Adds spread assignments.
    * @param structures - Structure that represents the spread assignments to add.
    */
-  addSpreadAssignments(
-    structures: ReadonlyArray<OptionalKind<SpreadAssignmentStructure>>,
-  ): SpreadAssignment[];
+  addSpreadAssignments(structures: ReadonlyArray<OptionalKind<SpreadAssignmentStructure>>): SpreadAssignment[];
   /**
    * Inserts a spread assignment at the specified index.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the spread assignment to insert.
    */
-  insertSpreadAssignment(
-    index: number,
-    structure: OptionalKind<SpreadAssignmentStructure>,
-  ): SpreadAssignment;
+  insertSpreadAssignment(index: number, structure: OptionalKind<SpreadAssignmentStructure>): SpreadAssignment;
   /**
    * Inserts spread assignments at the specified index.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the spread assignments to insert.
    */
-  insertSpreadAssignments(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<SpreadAssignmentStructure>>,
-  ): SpreadAssignment[];
+  insertSpreadAssignments(index: number, structures: ReadonlyArray<OptionalKind<SpreadAssignmentStructure>>): SpreadAssignment[];
   /**
    * Adds a method.
    * @param structure - Structure that represents the method to add.
    */
-  addMethod(
-    structure: OptionalKind<MethodDeclarationStructure>,
-  ): MethodDeclaration;
+  addMethod(structure: OptionalKind<MethodDeclarationStructure>): MethodDeclaration;
   /**
    * Adds methods.
    * @param structures - Structure that represents the methods to add.
    */
-  addMethods(
-    structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>,
-  ): MethodDeclaration[];
+  addMethods(structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>): MethodDeclaration[];
   /**
    * Inserts a method at the specified index.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the method to insert.
    */
-  insertMethod(
-    index: number,
-    structure: OptionalKind<MethodDeclarationStructure>,
-  ): MethodDeclaration;
+  insertMethod(index: number, structure: OptionalKind<MethodDeclarationStructure>): MethodDeclaration;
   /**
    * Inserts methods at the specified index.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the methods to insert.
    */
-  insertMethods(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>,
-  ): MethodDeclaration[];
+  insertMethods(index: number, structures: ReadonlyArray<OptionalKind<MethodDeclarationStructure>>): MethodDeclaration[];
   /**
    * Adds a get accessor.
    * @param structure - Structure that represents the property assignment to add.
    */
-  addGetAccessor(
-    structure: OptionalKind<GetAccessorDeclarationStructure>,
-  ): GetAccessorDeclaration;
+  addGetAccessor(structure: OptionalKind<GetAccessorDeclarationStructure>): GetAccessorDeclaration;
   /**
    * Adds get accessors.
    * @param structures - Structure that represents the get accessors to add.
    */
-  addGetAccessors(
-    structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>,
-  ): GetAccessorDeclaration[];
+  addGetAccessors(structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>): GetAccessorDeclaration[];
   /**
    * Inserts a get accessor at the specified index.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the get accessor to insert.
    */
-  insertGetAccessor(
-    index: number,
-    structure: OptionalKind<GetAccessorDeclarationStructure>,
-  ): GetAccessorDeclaration;
+  insertGetAccessor(index: number, structure: OptionalKind<GetAccessorDeclarationStructure>): GetAccessorDeclaration;
   /**
    * Inserts get accessors at the specified index.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the get accessors to insert.
    */
-  insertGetAccessors(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>,
-  ): GetAccessorDeclaration[];
+  insertGetAccessors(index: number, structures: ReadonlyArray<OptionalKind<GetAccessorDeclarationStructure>>): GetAccessorDeclaration[];
   /**
    * Adds a set accessor.
    * @param structure - Structure that represents the property assignment to add.
    */
-  addSetAccessor(
-    structure: OptionalKind<SetAccessorDeclarationStructure>,
-  ): SetAccessorDeclaration;
+  addSetAccessor(structure: OptionalKind<SetAccessorDeclarationStructure>): SetAccessorDeclaration;
   /**
    * Adds set accessors.
    * @param structures - Structure that represents the set accessors to add.
    */
-  addSetAccessors(
-    structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>,
-  ): SetAccessorDeclaration[];
+  addSetAccessors(structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>): SetAccessorDeclaration[];
   /**
    * Inserts a set accessor at the specified index.
    * @param index - Child index to insert at.
    * @param structure - Structure that represents the set accessor to insert.
    */
-  insertSetAccessor(
-    index: number,
-    structure: OptionalKind<SetAccessorDeclarationStructure>,
-  ): SetAccessorDeclaration;
+  insertSetAccessor(index: number, structure: OptionalKind<SetAccessorDeclarationStructure>): SetAccessorDeclaration;
   /**
    * Inserts set accessors at the specified index.
    * @param index - Child index to insert at.
    * @param structures - Structures that represent the set accessors to insert.
    */
-  insertSetAccessors(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>,
-  ): SetAccessorDeclaration[];
+  insertSetAccessors(index: number, structures: ReadonlyArray<OptionalKind<SetAccessorDeclarationStructure>>): SetAccessorDeclaration[];
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ObjectLiteralExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ObjectLiteralExpression>>;
 }
 
-declare const PropertyAssignmentBase:
-  & Constructor<InitializerExpressionGetableNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<PropertyNamedNode>
-  & typeof ObjectLiteralElement;
+declare const PropertyAssignmentBase: Constructor<InitializerExpressionGetableNode> & Constructor<QuestionTokenableNode> & Constructor<PropertyNamedNode> & typeof ObjectLiteralElement;
 
-export declare class PropertyAssignment
-  extends PropertyAssignmentBase<ts.PropertyAssignment> {
+export declare class PropertyAssignment extends PropertyAssignmentBase<ts.PropertyAssignment> {
   /**
    * Removes the initializer and returns the new shorthand property assignment.
    *
@@ -7712,9 +5812,7 @@ export declare class PropertyAssignment
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
    */
-  set(
-    structure: Partial<PropertyAssignmentStructure>,
-  ): this | ShorthandPropertyAssignment;
+  set(structure: Partial<PropertyAssignmentStructure>): this | ShorthandPropertyAssignment;
   /** Gets the structure equivalent to this node. */
   getStructure(): PropertyAssignmentStructure;
   /** @inheritdoc **/
@@ -7723,14 +5821,9 @@ export declare class PropertyAssignment
   getParentOrThrow(): NonNullable<NodeParentType<ts.PropertyAssignment>>;
 }
 
-declare const ShorthandPropertyAssignmentBase:
-  & Constructor<InitializerExpressionGetableNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<NamedNode>
-  & typeof ObjectLiteralElement;
+declare const ShorthandPropertyAssignmentBase: Constructor<InitializerExpressionGetableNode> & Constructor<QuestionTokenableNode> & Constructor<NamedNode> & typeof ObjectLiteralElement;
 
-export declare class ShorthandPropertyAssignment
-  extends ShorthandPropertyAssignmentBase<ts.ShorthandPropertyAssignment> {
+export declare class ShorthandPropertyAssignment extends ShorthandPropertyAssignmentBase<ts.ShorthandPropertyAssignment> {
   /** Gets if the shorthand property assignment has an object assignment initializer. */
   hasObjectAssignmentInitializer(): boolean;
   /** Gets the object assignment initializer or throws if it doesn't exist. */
@@ -7764,17 +5857,12 @@ export declare class ShorthandPropertyAssignment
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ShorthandPropertyAssignment>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.ShorthandPropertyAssignment>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.ShorthandPropertyAssignment>>;
 }
 
-declare const SpreadAssignmentBase:
-  & Constructor<ExpressionedNode>
-  & typeof ObjectLiteralElement;
+declare const SpreadAssignmentBase: Constructor<ExpressionedNode> & typeof ObjectLiteralElement;
 
-export declare class SpreadAssignment
-  extends SpreadAssignmentBase<ts.SpreadAssignment> {
+export declare class SpreadAssignment extends SpreadAssignmentBase<ts.SpreadAssignment> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -7790,44 +5878,34 @@ export declare class SpreadAssignment
 
 declare const OmittedExpressionBase: typeof Expression;
 
-export declare class OmittedExpression
-  extends OmittedExpressionBase<ts.OmittedExpression> {
+export declare class OmittedExpression extends OmittedExpressionBase<ts.OmittedExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.OmittedExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.OmittedExpression>>;
 }
 
-declare const ParenthesizedExpressionBase:
-  & Constructor<ExpressionedNode>
-  & typeof Expression;
+declare const ParenthesizedExpressionBase: Constructor<ExpressionedNode> & typeof Expression;
 
-export declare class ParenthesizedExpression
-  extends ParenthesizedExpressionBase<ts.ParenthesizedExpression> {
+export declare class ParenthesizedExpression extends ParenthesizedExpressionBase<ts.ParenthesizedExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ParenthesizedExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ParenthesizedExpression>>;
 }
 
-declare const PartiallyEmittedExpressionBase:
-  & Constructor<ExpressionedNode>
-  & typeof Expression;
+declare const PartiallyEmittedExpressionBase: Constructor<ExpressionedNode> & typeof Expression;
 
-export declare class PartiallyEmittedExpression
-  extends PartiallyEmittedExpressionBase<ts.PartiallyEmittedExpression> {
+export declare class PartiallyEmittedExpression extends PartiallyEmittedExpressionBase<ts.PartiallyEmittedExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.PartiallyEmittedExpression>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.PartiallyEmittedExpression>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.PartiallyEmittedExpression>>;
 }
 
 declare const PostfixUnaryExpressionBase: typeof UnaryExpression;
 
-export declare class PostfixUnaryExpression
-  extends PostfixUnaryExpressionBase<ts.PostfixUnaryExpression> {
+export declare class PostfixUnaryExpression extends PostfixUnaryExpressionBase<ts.PostfixUnaryExpression> {
   /** Gets the operator token of the postfix unary expression. */
   getOperatorToken(): ts.PostfixUnaryOperator;
   /** Gets the operand of the postfix unary expression. */
@@ -7840,8 +5918,7 @@ export declare class PostfixUnaryExpression
 
 declare const PrefixUnaryExpressionBase: typeof UnaryExpression;
 
-export declare class PrefixUnaryExpression
-  extends PrefixUnaryExpressionBase<ts.PrefixUnaryExpression> {
+export declare class PrefixUnaryExpression extends PrefixUnaryExpressionBase<ts.PrefixUnaryExpression> {
   /** Gets the operator token of the prefix unary expression. */
   getOperatorToken(): ts.PrefixUnaryOperator;
   /** Gets the operand of the prefix unary expression. */
@@ -7852,25 +5929,15 @@ export declare class PrefixUnaryExpression
   getParentOrThrow(): NonNullable<NodeParentType<ts.PrefixUnaryExpression>>;
 }
 
-export declare class PrimaryExpression<
-  T extends ts.PrimaryExpression = ts.PrimaryExpression,
-> extends MemberExpression<T> {
+export declare class PrimaryExpression<T extends ts.PrimaryExpression = ts.PrimaryExpression> extends MemberExpression<T> {
 }
 
-declare const PropertyAccessExpressionBase:
-  & Constructor<NamedNode>
-  & Constructor<QuestionDotTokenableNode>
-  & Constructor<LeftHandSideExpressionedNode>
-  & typeof MemberExpression;
+declare const PropertyAccessExpressionBase: Constructor<NamedNode> & Constructor<QuestionDotTokenableNode> & Constructor<LeftHandSideExpressionedNode> & typeof MemberExpression;
 
-export declare class PropertyAccessExpression<
-  T extends ts.PropertyAccessExpression = ts.PropertyAccessExpression,
-> extends PropertyAccessExpressionBase<T> {
+export declare class PropertyAccessExpression<T extends ts.PropertyAccessExpression = ts.PropertyAccessExpression> extends PropertyAccessExpressionBase<T> {
 }
 
-declare const SpreadElementBase:
-  & Constructor<ExpressionedNode>
-  & typeof Expression;
+declare const SpreadElementBase: Constructor<ExpressionedNode> & typeof Expression;
 
 export declare class SpreadElement extends SpreadElementBase<ts.SpreadElement> {
   /** @inheritdoc **/
@@ -7879,58 +5946,43 @@ export declare class SpreadElement extends SpreadElementBase<ts.SpreadElement> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.SpreadElement>>;
 }
 
-declare const SuperElementAccessExpressionBase:
-  & Constructor<SuperExpressionedNode>
-  & typeof ElementAccessExpression;
+declare const SuperElementAccessExpressionBase: Constructor<SuperExpressionedNode> & typeof ElementAccessExpression;
 
-export declare class SuperElementAccessExpression
-  extends SuperElementAccessExpressionBase<ts.SuperElementAccessExpression> {
+export declare class SuperElementAccessExpression extends SuperElementAccessExpressionBase<ts.SuperElementAccessExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.SuperElementAccessExpression>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.SuperElementAccessExpression>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.SuperElementAccessExpression>>;
 }
 
 declare const SuperExpressionBase: typeof PrimaryExpression;
 
-export declare class SuperExpression
-  extends SuperExpressionBase<ts.SuperExpression> {
+export declare class SuperExpression extends SuperExpressionBase<ts.SuperExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.SuperExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.SuperExpression>>;
 }
 
-declare const SuperPropertyAccessExpressionBase:
-  & Constructor<SuperExpressionedNode>
-  & typeof PropertyAccessExpression;
+declare const SuperPropertyAccessExpressionBase: Constructor<SuperExpressionedNode> & typeof PropertyAccessExpression;
 
-export declare class SuperPropertyAccessExpression
-  extends SuperPropertyAccessExpressionBase<ts.SuperPropertyAccessExpression> {
+export declare class SuperPropertyAccessExpression extends SuperPropertyAccessExpressionBase<ts.SuperPropertyAccessExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.SuperPropertyAccessExpression>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.SuperPropertyAccessExpression>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.SuperPropertyAccessExpression>>;
 }
 
 declare const ThisExpressionBase: typeof PrimaryExpression;
 
-export declare class ThisExpression
-  extends ThisExpressionBase<ts.ThisExpression> {
+export declare class ThisExpression extends ThisExpressionBase<ts.ThisExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ThisExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ThisExpression>>;
 }
 
-declare const TypeAssertionBase:
-  & Constructor<TypedNode>
-  & Constructor<UnaryExpressionedNode>
-  & typeof UnaryExpression;
+declare const TypeAssertionBase: Constructor<TypedNode> & Constructor<UnaryExpressionedNode> & typeof UnaryExpression;
 
 export declare class TypeAssertion extends TypeAssertionBase<ts.TypeAssertion> {
   /** @inheritdoc **/
@@ -7939,59 +5991,40 @@ export declare class TypeAssertion extends TypeAssertionBase<ts.TypeAssertion> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.TypeAssertion>>;
 }
 
-declare const TypeOfExpressionBase:
-  & Constructor<UnaryExpressionedNode>
-  & typeof UnaryExpression;
+declare const TypeOfExpressionBase: Constructor<UnaryExpressionedNode> & typeof UnaryExpression;
 
-export declare class TypeOfExpression
-  extends TypeOfExpressionBase<ts.TypeOfExpression> {
+export declare class TypeOfExpression extends TypeOfExpressionBase<ts.TypeOfExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.TypeOfExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.TypeOfExpression>>;
 }
 
-export declare class UnaryExpression<
-  T extends ts.UnaryExpression = ts.UnaryExpression,
-> extends Expression<T> {
+export declare class UnaryExpression<T extends ts.UnaryExpression = ts.UnaryExpression> extends Expression<T> {
 }
 
-export declare class UpdateExpression<
-  T extends ts.UpdateExpression = ts.UpdateExpression,
-> extends UnaryExpression<T> {
+export declare class UpdateExpression<T extends ts.UpdateExpression = ts.UpdateExpression> extends UnaryExpression<T> {
 }
 
-declare const VoidExpressionBase:
-  & Constructor<UnaryExpressionedNode>
-  & typeof UnaryExpression;
+declare const VoidExpressionBase: Constructor<UnaryExpressionedNode> & typeof UnaryExpression;
 
-export declare class VoidExpression
-  extends VoidExpressionBase<ts.VoidExpression> {
+export declare class VoidExpression extends VoidExpressionBase<ts.VoidExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.VoidExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.VoidExpression>>;
 }
 
-declare const YieldExpressionBase:
-  & Constructor<ExpressionableNode>
-  & Constructor<GeneratorableNode>
-  & typeof Expression;
+declare const YieldExpressionBase: Constructor<ExpressionableNode> & Constructor<GeneratorableNode> & typeof Expression;
 
-export declare class YieldExpression
-  extends YieldExpressionBase<ts.YieldExpression> {
+export declare class YieldExpression extends YieldExpressionBase<ts.YieldExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.YieldExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.YieldExpression>>;
 }
 
-declare const ArrowFunctionBase:
-  & Constructor<TextInsertableNode>
-  & Constructor<BodiedNode>
-  & Constructor<AsyncableNode>
-  & Constructor<FunctionLikeDeclaration>
-  & typeof Expression;
+declare const ArrowFunctionBase: Constructor<TextInsertableNode> & Constructor<BodiedNode> & Constructor<AsyncableNode> & Constructor<FunctionLikeDeclaration> & typeof Expression;
 
 export declare class ArrowFunction extends ArrowFunctionBase<ts.ArrowFunction> {
   /** Gets the equals greater than token of the arrow function. */
@@ -8002,71 +6035,32 @@ export declare class ArrowFunction extends ArrowFunctionBase<ts.ArrowFunction> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.ArrowFunction>>;
 }
 
-declare const FunctionDeclarationBase:
-  & Constructor<UnwrappableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<OverloadableNode>
-  & Constructor<BodyableNode>
-  & Constructor<AsyncableNode>
-  & Constructor<GeneratorableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<ExportableNode>
-  & Constructor<FunctionLikeDeclaration>
-  & Constructor<ModuleChildableNode>
-  & Constructor<NameableNode>
-  & typeof Statement;
-declare const FunctionDeclarationOverloadBase:
-  & Constructor<UnwrappableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<AsyncableNode>
-  & Constructor<GeneratorableNode>
-  & Constructor<SignaturedDeclaration>
-  & Constructor<AmbientableNode>
-  & Constructor<ModuleChildableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<TypeParameteredNode>
-  & Constructor<ExportableNode>
-  & Constructor<ModifierableNode>
-  & typeof Statement;
+declare const FunctionDeclarationBase: Constructor<UnwrappableNode> & Constructor<TextInsertableNode> & Constructor<OverloadableNode> & Constructor<BodyableNode> & Constructor<AsyncableNode> & Constructor<GeneratorableNode> & Constructor<AmbientableNode> & Constructor<ExportableNode> & Constructor<FunctionLikeDeclaration> & Constructor<ModuleChildableNode> & Constructor<NameableNode> & typeof Statement;
+declare const FunctionDeclarationOverloadBase: Constructor<UnwrappableNode> & Constructor<TextInsertableNode> & Constructor<AsyncableNode> & Constructor<GeneratorableNode> & Constructor<SignaturedDeclaration> & Constructor<AmbientableNode> & Constructor<ModuleChildableNode> & Constructor<JSDocableNode> & Constructor<TypeParameteredNode> & Constructor<ExportableNode> & Constructor<ModifierableNode> & typeof Statement;
 
-export declare class FunctionDeclaration
-  extends FunctionDeclarationBase<ts.FunctionDeclaration> {
+export declare class FunctionDeclaration extends FunctionDeclarationBase<ts.FunctionDeclaration> {
   /**
    * Adds a function overload.
    * @param structure - Structure of the overload.
    */
-  addOverload(
-    structure: OptionalKind<FunctionDeclarationOverloadStructure>,
-  ): FunctionDeclaration;
+  addOverload(structure: OptionalKind<FunctionDeclarationOverloadStructure>): FunctionDeclaration;
   /**
    * Adds function overloads.
    * @param structures - Structures of the overloads.
    */
-  addOverloads(
-    structures: ReadonlyArray<
-      OptionalKind<FunctionDeclarationOverloadStructure>
-    >,
-  ): FunctionDeclaration[];
+  addOverloads(structures: ReadonlyArray<OptionalKind<FunctionDeclarationOverloadStructure>>): FunctionDeclaration[];
   /**
    * Inserts a function overload.
    * @param index - Child index to insert at.
    * @param structure - Structure of the overload.
    */
-  insertOverload(
-    index: number,
-    structure: OptionalKind<FunctionDeclarationOverloadStructure>,
-  ): FunctionDeclaration;
+  insertOverload(index: number, structure: OptionalKind<FunctionDeclarationOverloadStructure>): FunctionDeclaration;
   /**
    * Inserts function overloads.
    * @param index - Child index to insert at.
    * @param structure - Structures of the overloads.
    */
-  insertOverloads(
-    index: number,
-    structures: ReadonlyArray<
-      OptionalKind<FunctionDeclarationOverloadStructure>
-    >,
-  ): FunctionDeclaration[];
+  insertOverloads(index: number, structures: ReadonlyArray<OptionalKind<FunctionDeclarationOverloadStructure>>): FunctionDeclaration[];
   /** Removes this function declaration. */
   remove(): void;
   /**
@@ -8075,55 +6069,29 @@ export declare class FunctionDeclaration
    */
   set(structure: Partial<FunctionDeclarationStructure>): this;
   /** Gets the structure equivalent to this node. */
-  getStructure():
-    | FunctionDeclarationStructure
-    | FunctionDeclarationOverloadStructure;
+  getStructure(): FunctionDeclarationStructure | FunctionDeclarationOverloadStructure;
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.FunctionDeclaration>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.FunctionDeclaration>>;
 }
 
-declare const FunctionExpressionBase:
-  & Constructor<JSDocableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<BodiedNode>
-  & Constructor<AsyncableNode>
-  & Constructor<GeneratorableNode>
-  & Constructor<StatementedNode>
-  & Constructor<TypeParameteredNode>
-  & Constructor<SignaturedDeclaration>
-  & Constructor<ModifierableNode>
-  & Constructor<NameableNode>
-  & typeof PrimaryExpression;
+declare const FunctionExpressionBase: Constructor<JSDocableNode> & Constructor<TextInsertableNode> & Constructor<BodiedNode> & Constructor<AsyncableNode> & Constructor<GeneratorableNode> & Constructor<StatementedNode> & Constructor<TypeParameteredNode> & Constructor<SignaturedDeclaration> & Constructor<ModifierableNode> & Constructor<NameableNode> & typeof PrimaryExpression;
 
-export declare class FunctionExpression
-  extends FunctionExpressionBase<ts.FunctionExpression> {
+export declare class FunctionExpression extends FunctionExpressionBase<ts.FunctionExpression> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.FunctionExpression>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.FunctionExpression>>;
 }
 
-export declare function FunctionLikeDeclaration<
-  T extends Constructor<FunctionLikeDeclarationExtensionType>,
->(Base: T): Constructor<FunctionLikeDeclaration> & T;
+export declare function FunctionLikeDeclaration<T extends Constructor<FunctionLikeDeclarationExtensionType>>(Base: T): Constructor<FunctionLikeDeclaration> & T;
 
-export interface FunctionLikeDeclaration
-  extends
-    JSDocableNode,
-    TypeParameteredNode,
-    SignaturedDeclaration,
-    StatementedNode,
-    ModifierableNode {
+export interface FunctionLikeDeclaration extends JSDocableNode, TypeParameteredNode, SignaturedDeclaration, StatementedNode, ModifierableNode {
 }
 
-declare type FunctionLikeDeclarationExtensionType = Node<
-  ts.FunctionLikeDeclaration
->;
-export declare function OverloadableNode<
-  T extends Constructor<OverloadableNodeExtensionType>,
->(Base: T): Constructor<OverloadableNode> & T;
+declare type FunctionLikeDeclarationExtensionType = Node<ts.FunctionLikeDeclaration>;
+export declare function OverloadableNode<T extends Constructor<OverloadableNodeExtensionType>>(Base: T): Constructor<OverloadableNode> & T;
 
 /** Node that supports overloads. */
 export interface OverloadableNode {
@@ -8140,21 +6108,9 @@ export interface OverloadableNode {
 }
 
 declare type OverloadableNodeExtensionType = Node & BodyableNode;
-declare const ParameterDeclarationBase:
-  & Constructor<OverrideableNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<DecoratableNode>
-  & Constructor<ScopeableNode>
-  & Constructor<ReadonlyableNode>
-  & Constructor<ModifierableNode>
-  & Constructor<DotDotDotTokenableNode>
-  & Constructor<TypedNode>
-  & Constructor<InitializerExpressionableNode>
-  & Constructor<BindingNamedNode>
-  & typeof Node;
+declare const ParameterDeclarationBase: Constructor<OverrideableNode> & Constructor<QuestionTokenableNode> & Constructor<DecoratableNode> & Constructor<ScopeableNode> & Constructor<ReadonlyableNode> & Constructor<ModifierableNode> & Constructor<DotDotDotTokenableNode> & Constructor<TypedNode> & Constructor<InitializerExpressionableNode> & Constructor<BindingNamedNode> & typeof Node;
 
-export declare class ParameterDeclaration
-  extends ParameterDeclarationBase<ts.ParameterDeclaration> {
+export declare class ParameterDeclaration extends ParameterDeclarationBase<ts.ParameterDeclaration> {
   /** Gets if it's a rest parameter. */
   isRestParameter(): boolean;
   /** Gets if this is a property with a scope, readonly, or override keyword (found in class constructors). */
@@ -8217,15 +6173,9 @@ export declare class HeritageClause extends Node<ts.HeritageClause> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.HeritageClause>>;
 }
 
-declare const CallSignatureDeclarationBase:
-  & Constructor<TypeParameteredNode>
-  & Constructor<ChildOrderableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<SignaturedDeclaration>
-  & typeof TypeElement;
+declare const CallSignatureDeclarationBase: Constructor<TypeParameteredNode> & Constructor<ChildOrderableNode> & Constructor<JSDocableNode> & Constructor<SignaturedDeclaration> & typeof TypeElement;
 
-export declare class CallSignatureDeclaration
-  extends CallSignatureDeclarationBase<ts.CallSignatureDeclaration> {
+export declare class CallSignatureDeclaration extends CallSignatureDeclarationBase<ts.CallSignatureDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -8239,19 +6189,12 @@ export declare class CallSignatureDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.CallSignatureDeclaration>>;
 }
 
-export declare class CommentTypeElement
-  extends TypeElement<CompilerCommentTypeElement> {
+export declare class CommentTypeElement extends TypeElement<CompilerCommentTypeElement> {
 }
 
-declare const ConstructSignatureDeclarationBase:
-  & Constructor<TypeParameteredNode>
-  & Constructor<ChildOrderableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<SignaturedDeclaration>
-  & typeof TypeElement;
+declare const ConstructSignatureDeclarationBase: Constructor<TypeParameteredNode> & Constructor<ChildOrderableNode> & Constructor<JSDocableNode> & Constructor<SignaturedDeclaration> & typeof TypeElement;
 
-export declare class ConstructSignatureDeclaration
-  extends ConstructSignatureDeclarationBase<ts.ConstructSignatureDeclaration> {
+export declare class ConstructSignatureDeclaration extends ConstructSignatureDeclarationBase<ts.ConstructSignatureDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -8262,21 +6205,12 @@ export declare class ConstructSignatureDeclaration
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ConstructSignatureDeclaration>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.ConstructSignatureDeclaration>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.ConstructSignatureDeclaration>>;
 }
 
-declare const IndexSignatureDeclarationBase:
-  & Constructor<ReturnTypedNode>
-  & Constructor<ChildOrderableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<ReadonlyableNode>
-  & Constructor<ModifierableNode>
-  & typeof TypeElement;
+declare const IndexSignatureDeclarationBase: Constructor<ReturnTypedNode> & Constructor<ChildOrderableNode> & Constructor<JSDocableNode> & Constructor<ReadonlyableNode> & Constructor<ModifierableNode> & typeof TypeElement;
 
-export declare class IndexSignatureDeclaration
-  extends IndexSignatureDeclarationBase<ts.IndexSignatureDeclaration> {
+export declare class IndexSignatureDeclaration extends IndexSignatureDeclarationBase<ts.IndexSignatureDeclaration> {
   /** Gets the key name. */
   getKeyName(): string;
   /**
@@ -8308,30 +6242,13 @@ export declare class IndexSignatureDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.IndexSignatureDeclaration>>;
 }
 
-declare const InterfaceDeclarationBase:
-  & Constructor<TypeElementMemberedNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<ExtendsClauseableNode>
-  & Constructor<HeritageClauseableNode>
-  & Constructor<TypeParameteredNode>
-  & Constructor<JSDocableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<ModuleChildableNode>
-  & Constructor<ExportableNode>
-  & Constructor<ModifierableNode>
-  & Constructor<NamedNode>
-  & typeof Statement;
+declare const InterfaceDeclarationBase: Constructor<TypeElementMemberedNode> & Constructor<TextInsertableNode> & Constructor<ExtendsClauseableNode> & Constructor<HeritageClauseableNode> & Constructor<TypeParameteredNode> & Constructor<JSDocableNode> & Constructor<AmbientableNode> & Constructor<ModuleChildableNode> & Constructor<ExportableNode> & Constructor<ModifierableNode> & Constructor<NamedNode> & typeof Statement;
 
-export declare class InterfaceDeclaration
-  extends InterfaceDeclarationBase<ts.InterfaceDeclaration> {
+export declare class InterfaceDeclaration extends InterfaceDeclarationBase<ts.InterfaceDeclaration> {
   /** Gets the base types. */
   getBaseTypes(): Type[];
   /** Gets the base declarations. */
-  getBaseDeclarations(): (
-    | TypeAliasDeclaration
-    | InterfaceDeclaration
-    | ClassDeclaration
-  )[];
+  getBaseDeclarations(): (TypeAliasDeclaration | InterfaceDeclaration | ClassDeclaration)[];
   /**
    * Gets all the implementations of the interface.
    *
@@ -8351,17 +6268,9 @@ export declare class InterfaceDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.InterfaceDeclaration>>;
 }
 
-declare const MethodSignatureBase:
-  & Constructor<ChildOrderableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<TypeParameteredNode>
-  & Constructor<SignaturedDeclaration>
-  & Constructor<PropertyNamedNode>
-  & typeof TypeElement;
+declare const MethodSignatureBase: Constructor<ChildOrderableNode> & Constructor<JSDocableNode> & Constructor<QuestionTokenableNode> & Constructor<TypeParameteredNode> & Constructor<SignaturedDeclaration> & Constructor<PropertyNamedNode> & typeof TypeElement;
 
-export declare class MethodSignature
-  extends MethodSignatureBase<ts.MethodSignature> {
+export declare class MethodSignature extends MethodSignatureBase<ts.MethodSignature> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -8375,19 +6284,9 @@ export declare class MethodSignature
   getParentOrThrow(): NonNullable<NodeParentType<ts.MethodSignature>>;
 }
 
-declare const PropertySignatureBase:
-  & Constructor<ChildOrderableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<ReadonlyableNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<InitializerExpressionableNode>
-  & Constructor<TypedNode>
-  & Constructor<PropertyNamedNode>
-  & Constructor<ModifierableNode>
-  & typeof TypeElement;
+declare const PropertySignatureBase: Constructor<ChildOrderableNode> & Constructor<JSDocableNode> & Constructor<ReadonlyableNode> & Constructor<QuestionTokenableNode> & Constructor<InitializerExpressionableNode> & Constructor<TypedNode> & Constructor<PropertyNamedNode> & Constructor<ModifierableNode> & typeof TypeElement;
 
-export declare class PropertySignature
-  extends PropertySignatureBase<ts.PropertySignature> {
+export declare class PropertySignature extends PropertySignatureBase<ts.PropertySignature> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -8401,15 +6300,12 @@ export declare class PropertySignature
   getParentOrThrow(): NonNullable<NodeParentType<ts.PropertySignature>>;
 }
 
-export declare class TypeElement<TNode extends ts.TypeElement = ts.TypeElement>
-  extends Node<TNode> {
+export declare class TypeElement<TNode extends ts.TypeElement = ts.TypeElement> extends Node<TNode> {
   /** Removes the member. */
   remove(): void;
 }
 
-export declare function JsxAttributedNode<
-  T extends Constructor<JsxAttributedNodeExtensionType>,
->(Base: T): Constructor<JsxAttributedNode> & T;
+export declare function JsxAttributedNode<T extends Constructor<JsxAttributedNodeExtensionType>>(Base: T): Constructor<JsxAttributedNode> & T;
 
 export interface JsxAttributedNode {
   /** Gets the JSX element's attributes. */
@@ -8423,9 +6319,7 @@ export interface JsxAttributedNode {
    * Gets an attribute by a find function or returns undefined when it can't be found.
    * @param findFunction - Find function.
    */
-  getAttribute(
-    findFunction: (attribute: JsxAttributeLike) => boolean,
-  ): JsxAttributeLike | undefined;
+  getAttribute(findFunction: (attribute: JsxAttributeLike) => boolean): JsxAttributeLike | undefined;
   /**
    * Gets an attribute by name or throws when it can't be found.
    * @param name - Name to search for.
@@ -8435,78 +6329,37 @@ export interface JsxAttributedNode {
    * Gets an attribute by a find function or throws when it can't be found.
    * @param findFunction - Find function.
    */
-  getAttributeOrThrow(
-    findFunction: (attribute: JsxAttributeLike) => boolean,
-  ): JsxAttributeLike;
+  getAttributeOrThrow(findFunction: (attribute: JsxAttributeLike) => boolean): JsxAttributeLike;
   /** Adds an attribute into the element. */
-  addAttribute(
-    attribute:
-      | OptionalKind<JsxAttributeStructure>
-      | OptionalKind<JsxSpreadAttributeStructure>,
-  ): JsxAttributeLike;
+  addAttribute(attribute: OptionalKind<JsxAttributeStructure> | OptionalKind<JsxSpreadAttributeStructure>): JsxAttributeLike;
   /** Adds attributes into the element. */
-  addAttributes(
-    attributes: ReadonlyArray<
-      | OptionalKind<JsxAttributeStructure>
-      | OptionalKind<JsxSpreadAttributeStructure>
-    >,
-  ): JsxAttributeLike[];
+  addAttributes(attributes: ReadonlyArray<OptionalKind<JsxAttributeStructure> | OptionalKind<JsxSpreadAttributeStructure>>): JsxAttributeLike[];
   /** Inserts an attribute into the element. */
-  insertAttribute(
-    index: number,
-    attribute:
-      | OptionalKind<JsxAttributeStructure>
-      | OptionalKind<JsxSpreadAttributeStructure>,
-  ): JsxAttributeLike;
+  insertAttribute(index: number, attribute: OptionalKind<JsxAttributeStructure> | OptionalKind<JsxSpreadAttributeStructure>): JsxAttributeLike;
   /** Inserts attributes into the element. */
-  insertAttributes(
-    index: number,
-    attributes: ReadonlyArray<
-      | OptionalKind<JsxAttributeStructure>
-      | OptionalKind<JsxSpreadAttributeStructure>
-    >,
-  ): JsxAttributeLike[];
+  insertAttributes(index: number, attributes: ReadonlyArray<OptionalKind<JsxAttributeStructure> | OptionalKind<JsxSpreadAttributeStructure>>): JsxAttributeLike[];
 }
 
-declare type JsxAttributedNodeExtensionType =
-  & Node<
-    ts.Node & {
+declare type JsxAttributedNodeExtensionType = Node<ts.Node & {
       attributes: ts.JsxAttributes;
-    }
-  >
-  & JsxTagNamedNode;
-export declare function JsxTagNamedNode<
-  T extends Constructor<JsxTagNamedNodeExtensionType>,
->(Base: T): Constructor<JsxTagNamedNode> & T;
+  }> & JsxTagNamedNode;
+export declare function JsxTagNamedNode<T extends Constructor<JsxTagNamedNodeExtensionType>>(Base: T): Constructor<JsxTagNamedNode> & T;
 
 export interface JsxTagNamedNode {
   /** Gets the tag name of the JSX closing element. */
   getTagNameNode(): JsxTagNameExpression;
 }
 
-declare type JsxTagNamedNodeExtensionType = Node<
-  ts.Node & {
-    tagName: ts.JsxTagNameExpression;
-  }
->;
+declare type JsxTagNamedNodeExtensionType = Node<ts.Node & {
+      tagName: ts.JsxTagNameExpression;
+  }>;
 declare const JsxAttributeBase: Constructor<NamedNode> & typeof Node;
 
 export declare class JsxAttribute extends JsxAttributeBase<ts.JsxAttribute> {
   /** Gets the JSX attribute's initializer or throws if it doesn't exist. */
-  getInitializerOrThrow():
-    | StringLiteral
-    | JsxElement
-    | JsxSelfClosingElement
-    | JsxFragment
-    | JsxExpression;
+  getInitializerOrThrow(): StringLiteral | JsxElement | JsxSelfClosingElement | JsxFragment | JsxExpression;
   /** Gets the JSX attribute's initializer or returns undefined if it doesn't exist. */
-  getInitializer():
-    | JsxElement
-    | JsxExpression
-    | JsxFragment
-    | JsxSelfClosingElement
-    | StringLiteral
-    | undefined;
+  getInitializer(): JsxElement | JsxExpression | JsxFragment | JsxSelfClosingElement | StringLiteral | undefined;
   /**
    * Sets the initializer.
    * @param textOrWriterFunction - Text or writer function to set the initializer with.
@@ -8532,16 +6385,14 @@ export declare class JsxAttribute extends JsxAttributeBase<ts.JsxAttribute> {
 
 declare const JsxClosingElementBase: Constructor<JsxTagNamedNode> & typeof Node;
 
-export declare class JsxClosingElement
-  extends JsxClosingElementBase<ts.JsxClosingElement> {
+export declare class JsxClosingElement extends JsxClosingElementBase<ts.JsxClosingElement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JsxClosingElement>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.JsxClosingElement>>;
 }
 
-export declare class JsxClosingFragment
-  extends Expression<ts.JsxClosingFragment> {
+export declare class JsxClosingFragment extends Expression<ts.JsxClosingFragment> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JsxClosingFragment>;
   /** @inheritdoc **/
@@ -8580,10 +6431,7 @@ export declare class JsxElement extends JsxElementBase<ts.JsxElement> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.JsxElement>>;
 }
 
-declare const JsxExpressionBase:
-  & Constructor<ExpressionableNode>
-  & Constructor<DotDotDotTokenableNode>
-  & typeof Expression;
+declare const JsxExpressionBase: Constructor<ExpressionableNode> & Constructor<DotDotDotTokenableNode> & typeof Expression;
 
 export declare class JsxExpression extends JsxExpressionBase<ts.JsxExpression> {
   /** @inheritdoc **/
@@ -8605,34 +6453,25 @@ export declare class JsxFragment extends PrimaryExpression<ts.JsxFragment> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.JsxFragment>>;
 }
 
-declare const JsxOpeningElementBase:
-  & Constructor<JsxAttributedNode>
-  & Constructor<JsxTagNamedNode>
-  & typeof Expression;
+declare const JsxOpeningElementBase: Constructor<JsxAttributedNode> & Constructor<JsxTagNamedNode> & typeof Expression;
 
-export declare class JsxOpeningElement
-  extends JsxOpeningElementBase<ts.JsxOpeningElement> {
+export declare class JsxOpeningElement extends JsxOpeningElementBase<ts.JsxOpeningElement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JsxOpeningElement>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.JsxOpeningElement>>;
 }
 
-export declare class JsxOpeningFragment
-  extends Expression<ts.JsxOpeningFragment> {
+export declare class JsxOpeningFragment extends Expression<ts.JsxOpeningFragment> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.JsxOpeningFragment>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.JsxOpeningFragment>>;
 }
 
-declare const JsxSelfClosingElementBase:
-  & Constructor<JsxAttributedNode>
-  & Constructor<JsxTagNamedNode>
-  & typeof PrimaryExpression;
+declare const JsxSelfClosingElementBase: Constructor<JsxAttributedNode> & Constructor<JsxTagNamedNode> & typeof PrimaryExpression;
 
-export declare class JsxSelfClosingElement
-  extends JsxSelfClosingElementBase<ts.JsxSelfClosingElement> {
+export declare class JsxSelfClosingElement extends JsxSelfClosingElementBase<ts.JsxSelfClosingElement> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -8646,12 +6485,9 @@ export declare class JsxSelfClosingElement
   getParentOrThrow(): NonNullable<NodeParentType<ts.JsxSelfClosingElement>>;
 }
 
-declare const JsxSpreadAttributeBase:
-  & Constructor<ExpressionedNode>
-  & typeof Node;
+declare const JsxSpreadAttributeBase: Constructor<ExpressionedNode> & typeof Node;
 
-export declare class JsxSpreadAttribute
-  extends JsxSpreadAttributeBase<ts.JsxSpreadAttribute> {
+export declare class JsxSpreadAttribute extends JsxSpreadAttributeBase<ts.JsxSpreadAttribute> {
   /** Removes the JSX spread attribute. */
   remove(): void;
   /**
@@ -9013,8 +6849,7 @@ export declare class NullLiteral extends NullLiteralBase<ts.NullLiteral> {
 
 declare const NumericLiteralBase: typeof LiteralExpression;
 
-export declare class NumericLiteral
-  extends NumericLiteralBase<ts.NumericLiteral> {
+export declare class NumericLiteral extends NumericLiteralBase<ts.NumericLiteral> {
   /** Gets the literal value. */
   getLiteralValue(): number;
   /**
@@ -9033,13 +6868,12 @@ export declare enum QuoteKind {
   /** Single quote */
   Single = "'",
   /** Double quote */
-  Double = '"',
+  Double = "\""
 }
 
 declare const RegularExpressionLiteralBase: typeof LiteralExpression;
 
-export declare class RegularExpressionLiteral
-  extends RegularExpressionLiteralBase<ts.RegularExpressionLiteral> {
+export declare class RegularExpressionLiteral extends RegularExpressionLiteralBase<ts.RegularExpressionLiteral> {
   /** Gets the literal value. */
   getLiteralValue(): RegExp;
   /**
@@ -9083,8 +6917,7 @@ export declare class StringLiteral extends StringLiteralBase<ts.StringLiteral> {
 
 declare const NoSubstitutionTemplateLiteralBase: typeof LiteralExpression;
 
-export declare class NoSubstitutionTemplateLiteral
-  extends NoSubstitutionTemplateLiteralBase<ts.NoSubstitutionTemplateLiteral> {
+export declare class NoSubstitutionTemplateLiteral extends NoSubstitutionTemplateLiteralBase<ts.NoSubstitutionTemplateLiteral> {
   /** Gets the literal value. */
   getLiteralValue(): string;
   /**
@@ -9098,13 +6931,10 @@ export declare class NoSubstitutionTemplateLiteral
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.NoSubstitutionTemplateLiteral>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.NoSubstitutionTemplateLiteral>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.NoSubstitutionTemplateLiteral>>;
 }
 
-export declare class TaggedTemplateExpression
-  extends MemberExpression<ts.TaggedTemplateExpression> {
+export declare class TaggedTemplateExpression extends MemberExpression<ts.TaggedTemplateExpression> {
   /** Gets the tag. */
   getTag(): LeftHandSideExpression;
   /** Gets the template literal. */
@@ -9122,8 +6952,7 @@ export declare class TaggedTemplateExpression
 
 declare const TemplateExpressionBase: typeof PrimaryExpression;
 
-export declare class TemplateExpression
-  extends TemplateExpressionBase<ts.TemplateExpression> {
+export declare class TemplateExpression extends TemplateExpressionBase<ts.TemplateExpression> {
   /** Gets the template head. */
   getHead(): TemplateHead;
   /** Gets the template spans. */
@@ -9153,8 +6982,7 @@ export declare class TemplateHead extends TemplateHeadBase<ts.TemplateHead> {
 
 declare const TemplateMiddleBase: Constructor<LiteralLikeNode> & typeof Node;
 
-export declare class TemplateMiddle
-  extends TemplateMiddleBase<ts.TemplateMiddle> {
+export declare class TemplateMiddle extends TemplateMiddleBase<ts.TemplateMiddle> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.TemplateMiddle>;
   /** @inheritdoc **/
@@ -9185,9 +7013,7 @@ declare const AssertClauseBase: typeof Node;
 
 export declare class AssertClause extends AssertClauseBase<ts.AssertClause> {
   /** Sets the elements in the assert clause */
-  setElements(
-    elements: ReadonlyArray<OptionalKind<AssertEntryStructure>>,
-  ): this;
+  setElements(elements: ReadonlyArray<OptionalKind<AssertEntryStructure>>): this;
   /** Gets the elements of the assert clause. */
   getElements(): AssertEntry[];
   /** Removes the assert clause. */
@@ -9213,12 +7039,9 @@ export declare class AssertEntry extends AssertEntryBase<ts.AssertEntry> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.AssertEntry>>;
 }
 
-declare const ExportAssignmentBase:
-  & Constructor<ExpressionedNode>
-  & typeof Statement;
+declare const ExportAssignmentBase: Constructor<ExpressionedNode> & typeof Statement;
 
-export declare class ExportAssignment
-  extends ExportAssignmentBase<ts.ExportAssignment> {
+export declare class ExportAssignment extends ExportAssignmentBase<ts.ExportAssignment> {
   /**
    * Gets if this is an export equals assignment.
    *
@@ -9245,8 +7068,7 @@ export declare class ExportAssignment
 
 declare const ExportDeclarationBase: typeof Statement;
 
-export declare class ExportDeclaration
-  extends ExportDeclarationBase<ts.ExportDeclaration> {
+export declare class ExportDeclaration extends ExportDeclarationBase<ts.ExportDeclaration> {
   /** Gets if this export declaration is type only. */
   isTypeOnly(): boolean;
   /** Sets if this export declaration is type only. */
@@ -9289,56 +7111,30 @@ export declare class ExportDeclaration
    * Adds a named export.
    * @param namedExport - Structure, name, or writer function to write the named export.
    */
-  addNamedExport(
-    namedExport:
-      | OptionalKind<ExportSpecifierStructure>
-      | string
-      | WriterFunction,
-  ): ExportSpecifier;
+  addNamedExport(namedExport: OptionalKind<ExportSpecifierStructure> | string | WriterFunction): ExportSpecifier;
   /**
    * Adds named exports.
    * @param namedExports - Structures, names, or writer function to write the named exports.
    */
-  addNamedExports(
-    namedExports:
-      | ReadonlyArray<
-        OptionalKind<ExportSpecifierStructure> | string | WriterFunction
-      >
-      | WriterFunction,
-  ): ExportSpecifier[];
+  addNamedExports(namedExports: ReadonlyArray<OptionalKind<ExportSpecifierStructure> | string | WriterFunction> | WriterFunction): ExportSpecifier[];
   /**
    * Inserts a named export.
    * @param index - Child index to insert at.
    * @param namedExport - Structure, name, or writer function to write the named export.
    */
-  insertNamedExport(
-    index: number,
-    namedExport:
-      | OptionalKind<ExportSpecifierStructure>
-      | string
-      | WriterFunction,
-  ): ExportSpecifier;
+  insertNamedExport(index: number, namedExport: OptionalKind<ExportSpecifierStructure> | string | WriterFunction): ExportSpecifier;
   /**
    * Inserts named exports into the export declaration.
    * @param index - Child index to insert at.
    * @param namedExports - Structures, names, or writer funciton to write the named exports.
    */
-  insertNamedExports(
-    index: number,
-    namedExports:
-      | ReadonlyArray<
-        OptionalKind<ExportSpecifierStructure> | string | WriterFunction
-      >
-      | WriterFunction,
-  ): ExportSpecifier[];
+  insertNamedExports(index: number, namedExports: ReadonlyArray<OptionalKind<ExportSpecifierStructure> | string | WriterFunction> | WriterFunction): ExportSpecifier[];
   /** Gets the named exports. */
   getNamedExports(): ExportSpecifier[];
   /** Changes the export declaration to namespace export. Removes all the named exports. */
   toNamespaceExport(): this;
   /** Sets the elements in an assert clause. */
-  setAssertElements(
-    elements: ReadonlyArray<OptionalKind<AssertEntryStructure>> | undefined,
-  ): this;
+  setAssertElements(elements: ReadonlyArray<OptionalKind<AssertEntryStructure>> | undefined): this;
   /** Gets the assert clause or returns undefined if it doesn't exist. */
   getAssertClause(): AssertClause | undefined;
   /**
@@ -9356,8 +7152,7 @@ export declare class ExportDeclaration
 
 declare const ExportSpecifierBase: typeof Node;
 
-export declare class ExportSpecifier
-  extends ExportSpecifierBase<ts.ExportSpecifier> {
+export declare class ExportSpecifier extends ExportSpecifierBase<ts.ExportSpecifier> {
   /** Sets the name of what's being exported. */
   setName(name: string): this;
   /** Gets the name of the export specifier. */
@@ -9410,12 +7205,9 @@ export declare class ExportSpecifier
   getParentOrThrow(): NonNullable<NodeParentType<ts.ExportSpecifier>>;
 }
 
-declare const ExternalModuleReferenceBase:
-  & Constructor<ExpressionableNode>
-  & typeof Node;
+declare const ExternalModuleReferenceBase: Constructor<ExpressionableNode> & typeof Node;
 
-export declare class ExternalModuleReference
-  extends ExternalModuleReferenceBase<ts.ExternalModuleReference> {
+export declare class ExternalModuleReference extends ExternalModuleReferenceBase<ts.ExternalModuleReference> {
   /** Gets the source file referenced or throws if it can't find it. */
   getReferencedSourceFileOrThrow(): SourceFile;
   /** Gets if the external module reference is relative. */
@@ -9457,8 +7249,7 @@ export declare class ImportClause extends ImportClauseBase<ts.ImportClause> {
 
 declare const ImportDeclarationBase: typeof Statement;
 
-export declare class ImportDeclaration
-  extends ImportDeclarationBase<ts.ImportDeclaration> {
+export declare class ImportDeclaration extends ImportDeclarationBase<ts.ImportDeclaration> {
   /** Gets if this import declaration is type only. */
   isTypeOnly(): boolean;
   /** Sets if this import declaration is type only. */
@@ -9516,48 +7307,24 @@ export declare class ImportDeclaration
    * Adds a named import.
    * @param namedImport - Name, structure, or writer to write the named import with.
    */
-  addNamedImport(
-    namedImport:
-      | OptionalKind<ImportSpecifierStructure>
-      | string
-      | WriterFunction,
-  ): ImportSpecifier;
+  addNamedImport(namedImport: OptionalKind<ImportSpecifierStructure> | string | WriterFunction): ImportSpecifier;
   /**
    * Adds named imports.
    * @param namedImport - Structures, names, or writer function to write the named import with.
    */
-  addNamedImports(
-    namedImports:
-      | ReadonlyArray<
-        OptionalKind<ImportSpecifierStructure> | string | WriterFunction
-      >
-      | WriterFunction,
-  ): ImportSpecifier[];
+  addNamedImports(namedImports: ReadonlyArray<OptionalKind<ImportSpecifierStructure> | string | WriterFunction> | WriterFunction): ImportSpecifier[];
   /**
    * Inserts a named import.
    * @param index - Child index to insert at.
    * @param namedImport - Structure, name, or writer function to write the named import with.
    */
-  insertNamedImport(
-    index: number,
-    namedImport:
-      | OptionalKind<ImportSpecifierStructure>
-      | string
-      | WriterFunction,
-  ): ImportSpecifier;
+  insertNamedImport(index: number, namedImport: OptionalKind<ImportSpecifierStructure> | string | WriterFunction): ImportSpecifier;
   /**
    * Inserts named imports into the import declaration.
    * @param index - Child index to insert at.
    * @param namedImports - Structures, names, or writer function to write the named import with.
    */
-  insertNamedImports(
-    index: number,
-    namedImports:
-      | ReadonlyArray<
-        OptionalKind<ImportSpecifierStructure> | string | WriterFunction
-      >
-      | WriterFunction,
-  ): ImportSpecifier[];
+  insertNamedImports(index: number, namedImports: ReadonlyArray<OptionalKind<ImportSpecifierStructure> | string | WriterFunction> | WriterFunction): ImportSpecifier[];
   /** Gets the named imports. */
   getNamedImports(): ImportSpecifier[];
   /**
@@ -9570,9 +7337,7 @@ export declare class ImportDeclaration
   /** Gets the import clause or returns undefined if it doesn't exist. */
   getImportClause(): ImportClause | undefined;
   /** Sets the elements in an assert clause. */
-  setAssertElements(
-    elements: ReadonlyArray<OptionalKind<AssertEntryStructure>> | undefined,
-  ): this;
+  setAssertElements(elements: ReadonlyArray<OptionalKind<AssertEntryStructure>> | undefined): this;
   /** Gets the assert clause or returns undefined if it doesn't exist. */
   getAssertClause(): AssertClause | undefined;
   /**
@@ -9588,13 +7353,9 @@ export declare class ImportDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.ImportDeclaration>>;
 }
 
-declare const ImportEqualsDeclarationBase:
-  & Constructor<JSDocableNode>
-  & Constructor<NamedNode>
-  & typeof Statement;
+declare const ImportEqualsDeclarationBase: Constructor<JSDocableNode> & Constructor<NamedNode> & typeof Statement;
 
-export declare class ImportEqualsDeclaration
-  extends ImportEqualsDeclarationBase<ts.ImportEqualsDeclaration> {
+export declare class ImportEqualsDeclaration extends ImportEqualsDeclarationBase<ts.ImportEqualsDeclaration> {
   /** Gets if this import equals declaration is type only. */
   isTypeOnly(): boolean;
   /** Sets if this import equals declaration is type only. */
@@ -9625,8 +7386,7 @@ export declare class ImportEqualsDeclaration
 
 declare const ImportSpecifierBase: typeof Node;
 
-export declare class ImportSpecifier
-  extends ImportSpecifierBase<ts.ImportSpecifier> {
+export declare class ImportSpecifier extends ImportSpecifierBase<ts.ImportSpecifier> {
   /**
    * Sets the identifier being imported.
    * @param name - Name being imported.
@@ -9685,9 +7445,7 @@ export declare class ModuleBlock extends ModuleBlockBase<ts.ModuleBlock> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.ModuleBlock>>;
 }
 
-export declare function ModuleChildableNode<
-  T extends Constructor<ModuleChildableNodeExtensionType>,
->(Base: T): Constructor<ModuleChildableNode> & T;
+export declare function ModuleChildableNode<T extends Constructor<ModuleChildableNodeExtensionType>>(Base: T): Constructor<ModuleChildableNode> & T;
 
 export interface ModuleChildableNode {
   /** Gets the parent module declaration or undefined if it doesn't exist. */
@@ -9697,22 +7455,9 @@ export interface ModuleChildableNode {
 }
 
 declare type ModuleChildableNodeExtensionType = Node;
-declare const ModuleDeclarationBase:
-  & Constructor<ModuledNode>
-  & Constructor<UnwrappableNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<BodyableNode>
-  & Constructor<ModuleChildableNode>
-  & Constructor<StatementedNode>
-  & Constructor<JSDocableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<ExportableNode>
-  & Constructor<ModifierableNode>
-  & Constructor<ModuleNamedNode>
-  & typeof Statement;
+declare const ModuleDeclarationBase: Constructor<ModuledNode> & Constructor<UnwrappableNode> & Constructor<TextInsertableNode> & Constructor<BodyableNode> & Constructor<ModuleChildableNode> & Constructor<StatementedNode> & Constructor<JSDocableNode> & Constructor<AmbientableNode> & Constructor<ExportableNode> & Constructor<ModifierableNode> & Constructor<ModuleNamedNode> & typeof Statement;
 
-export declare class ModuleDeclaration
-  extends ModuleDeclarationBase<ts.ModuleDeclaration> {
+export declare class ModuleDeclaration extends ModuleDeclarationBase<ts.ModuleDeclaration> {
   /** Gets the full name of the namespace. */
   getName(): string;
   /**
@@ -9759,7 +7504,7 @@ export declare class ModuleDeclaration
 export declare enum ModuleDeclarationKind {
   Namespace = "namespace",
   Module = "module",
-  Global = "global",
+  Global = "global"
 }
 
 declare const NamedExportsBase: typeof Node;
@@ -9786,8 +7531,7 @@ export declare class NamedImports extends NamedImportsBase<ts.NamedImports> {
 
 declare const NamespaceExportBase: Constructor<RenameableNode> & typeof Node;
 
-export declare class NamespaceExport
-  extends NamespaceExportBase<ts.NamespaceExport> {
+export declare class NamespaceExport extends NamespaceExportBase<ts.NamespaceExport> {
   /** Sets the name of the namespace export. */
   setName(name: string): this;
   /** Gets the name of the namespace export. */
@@ -9802,8 +7546,7 @@ export declare class NamespaceExport
 
 declare const NamespaceImportBase: Constructor<RenameableNode> & typeof Node;
 
-export declare class NamespaceImport
-  extends NamespaceImportBase<ts.NamespaceImport> {
+export declare class NamespaceImport extends NamespaceImportBase<ts.NamespaceImport> {
   /** Sets the name of the namespace import. */
   setName(name: string): this;
   /** Gets the name of the namespace import. */
@@ -9829,7 +7572,7 @@ export declare enum FileSystemRefreshResult {
   /** The source file was updated from the file system. */
   Updated = 1,
   /** The source file was deleted. */
-  Deleted = 2,
+  Deleted = 2
 }
 
 export interface SourceFileCopyOptions {
@@ -9844,11 +7587,7 @@ export interface SourceFileMoveOptions {
 export interface SourceFileEmitOptions extends EmitOptionsBase {
 }
 
-declare const SourceFileBase:
-  & Constructor<ModuledNode>
-  & Constructor<StatementedNode>
-  & Constructor<TextInsertableNode>
-  & typeof Node;
+declare const SourceFileBase: Constructor<ModuledNode> & Constructor<StatementedNode> & Constructor<TextInsertableNode> & typeof Node;
 
 export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
   private _refreshFromFileSystemInternal;
@@ -9872,9 +7611,9 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param pos - Position in the source file.
    */
   getLineAndColumnAtPos(pos: number): {
-    line: number;
-    column: number;
-  };
+        line: number;
+        column: number;
+    };
   /**
    * Gets the character count from the start of the line to the provided position.
    * @param pos - Position.
@@ -9888,10 +7627,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param options Options for copying.
    * @returns The source file the copy was made to.
    */
-  copyToDirectory(
-    dirPathOrDirectory: string | Directory,
-    options?: SourceFileCopyOptions,
-  ): SourceFile;
+  copyToDirectory(dirPathOrDirectory: string | Directory, options?: SourceFileCopyOptions): SourceFile;
   /**
    * Copy this source file to a new file.
    *
@@ -9907,10 +7643,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param filePath - New file path. Can be relative to the original file or an absolute path.
    * @param options - Options for copying.
    */
-  copyImmediately(
-    filePath: string,
-    options?: SourceFileCopyOptions,
-  ): Promise<SourceFile>;
+  copyImmediately(filePath: string, options?: SourceFileCopyOptions): Promise<SourceFile>;
   /**
    * Copy this source file to a new file and immediately saves it to the file system synchronously.
    *
@@ -9918,10 +7651,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param filePath - New file path. Can be relative to the original file or an absolute path.
    * @param options - Options for copying.
    */
-  copyImmediatelySync(
-    filePath: string,
-    options?: SourceFileCopyOptions,
-  ): SourceFile;
+  copyImmediatelySync(filePath: string, options?: SourceFileCopyOptions): SourceFile;
   /**
    * Moves this source file to the specified directory.
    *
@@ -9929,10 +7659,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param dirPathOrDirectory Directory path or directory object to move the file to.
    * @param options Options for moving.
    */
-  moveToDirectory(
-    dirPathOrDirectory: string | Directory,
-    options?: SourceFileMoveOptions,
-  ): SourceFile;
+  moveToDirectory(dirPathOrDirectory: string | Directory, options?: SourceFileMoveOptions): SourceFile;
   /**
    * Moves this source file to a new file.
    *
@@ -9948,10 +7675,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param filePath - New file path. Can be relative to the original file or an absolute path.
    * @param options - Options for moving.
    */
-  moveImmediately(
-    filePath: string,
-    options?: SourceFileMoveOptions,
-  ): Promise<SourceFile>;
+  moveImmediately(filePath: string, options?: SourceFileMoveOptions): Promise<SourceFile>;
   /**
    * Moves this source file to a new file and synchronously updates the file system immediately.
    *
@@ -9959,10 +7683,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param filePath - New file path. Can be relative to the original file or an absolute path.
    * @param options - Options for moving.
    */
-  moveImmediatelySync(
-    filePath: string,
-    options?: SourceFileMoveOptions,
-  ): SourceFile;
+  moveImmediatelySync(filePath: string, options?: SourceFileMoveOptions): SourceFile;
   /**
    * Queues a deletion of the file to the file system.
    *
@@ -10051,8 +7772,8 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param options - Emit options.
    */
   getEmitOutput(options?: {
-    emitOnlyDtsFiles?: boolean;
-  }): EmitOutput;
+        emitOnlyDtsFiles?: boolean;
+    }): EmitOutput;
   /**
    * Formats the source file text using the internal TypeScript formatting API.
    * @param settings - Format code settings.
@@ -10108,10 +7829,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param subscription - Subscription.
    * @param subscribe - Optional and defaults to true. Use an explicit false to unsubscribe.
    */
-  onModified(
-    subscription: (sender: SourceFile) => void,
-    subscribe?: boolean,
-  ): this;
+  onModified(subscription: (sender: SourceFile) => void, subscribe?: boolean): this;
   /**
    * Organizes the imports in the file.
    *
@@ -10119,10 +7837,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param formatSettings - Format code settings.
    * @param userPreferences - User preferences for refactoring.
    */
-  organizeImports(
-    formatSettings?: FormatCodeSettings,
-    userPreferences?: UserPreferences,
-  ): this;
+  organizeImports(formatSettings?: FormatCodeSettings, userPreferences?: UserPreferences): this;
   /**
    * Removes all unused declarations like interfaces, classes, enums, functions, variables, parameters,
    * methods, properties, imports, etc. from this file.
@@ -10134,28 +7849,20 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
    * @param formatSettings - Format code settings.
    * @param userPreferences - User preferences for refactoring.
    */
-  fixUnusedIdentifiers(
-    formatSettings?: FormatCodeSettings,
-    userPreferences?: UserPreferences,
-  ): this;
+  fixUnusedIdentifiers(formatSettings?: FormatCodeSettings, userPreferences?: UserPreferences): this;
   /**
    * Code fix to add import declarations for identifiers that are referenced, but not imported in the source file.
    * @param formatSettings - Format code settings.
    * @param userPreferences - User preferences for refactoring.
    */
-  fixMissingImports(
-    formatSettings?: FormatCodeSettings,
-    userPreferences?: UserPreferences,
-  ): this;
+  fixMissingImports(formatSettings?: FormatCodeSettings, userPreferences?: UserPreferences): this;
   /**
    * Applies the text changes to the source file.
    *
    * WARNING! This will forget all the nodes in the file! It's best to do this after you're all done with the file.
    * @param textChanges - Text changes.
    */
-  applyTextChanges(
-    textChanges: ReadonlyArray<ts.TextChange | TextChange>,
-  ): this;
+  applyTextChanges(textChanges: ReadonlyArray<ts.TextChange | TextChange>): this;
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -10169,9 +7876,7 @@ export declare class SourceFile extends SourceFileBase<ts.SourceFile> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.SourceFile>>;
 }
 
-declare function CommonIdentifierBase<
-  T extends Constructor<CommonIdentifierBaseExtensionType>,
->(Base: T): Constructor<CommonIdentifierBase> & T;
+declare function CommonIdentifierBase<T extends Constructor<CommonIdentifierBaseExtensionType>>(Base: T): Constructor<CommonIdentifierBase> & T;
 
 interface CommonIdentifierBase {
   /** Gets the text for the identifier. */
@@ -10188,28 +7893,19 @@ interface CommonIdentifierBase {
   getDefinitions(): DefinitionInfo[];
 }
 
-declare type CommonIdentifierBaseExtensionType = Node<
-  ts.Node & {
-    text: string;
-  }
->;
-declare const ComputedPropertyNameBase:
-  & Constructor<ExpressionedNode>
-  & typeof Node;
+declare type CommonIdentifierBaseExtensionType = Node<ts.Node & {
+      text: string;
+  }>;
+declare const ComputedPropertyNameBase: Constructor<ExpressionedNode> & typeof Node;
 
-export declare class ComputedPropertyName
-  extends ComputedPropertyNameBase<ts.ComputedPropertyName> {
+export declare class ComputedPropertyName extends ComputedPropertyNameBase<ts.ComputedPropertyName> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ComputedPropertyName>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ComputedPropertyName>>;
 }
 
-declare const IdentifierBase:
-  & Constructor<CommonIdentifierBase>
-  & Constructor<ReferenceFindableNode>
-  & Constructor<RenameableNode>
-  & typeof PrimaryExpression;
+declare const IdentifierBase: Constructor<CommonIdentifierBase> & Constructor<ReferenceFindableNode> & Constructor<RenameableNode> & typeof PrimaryExpression;
 
 export declare class Identifier extends IdentifierBase<ts.Identifier> {
   /**
@@ -10224,14 +7920,9 @@ export declare class Identifier extends IdentifierBase<ts.Identifier> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.Identifier>>;
 }
 
-declare const PrivateIdentifierBase:
-  & Constructor<CommonIdentifierBase>
-  & Constructor<ReferenceFindableNode>
-  & Constructor<RenameableNode>
-  & typeof Node;
+declare const PrivateIdentifierBase: Constructor<CommonIdentifierBase> & Constructor<ReferenceFindableNode> & Constructor<RenameableNode> & typeof Node;
 
-export declare class PrivateIdentifier
-  extends PrivateIdentifierBase<ts.PrivateIdentifier> {
+export declare class PrivateIdentifier extends PrivateIdentifierBase<ts.PrivateIdentifier> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.PrivateIdentifier>;
   /** @inheritdoc **/
@@ -10249,10 +7940,7 @@ export declare class QualifiedName extends Node<ts.QualifiedName> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.QualifiedName>>;
 }
 
-declare const BlockBase:
-  & Constructor<TextInsertableNode>
-  & Constructor<StatementedNode>
-  & typeof Statement;
+declare const BlockBase: Constructor<TextInsertableNode> & Constructor<StatementedNode> & typeof Statement;
 
 export declare class Block extends BlockBase<ts.Block> {
   /** @inheritdoc **/
@@ -10293,12 +7981,7 @@ export declare class CaseBlock extends CaseBlockBase<ts.CaseBlock> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.CaseBlock>>;
 }
 
-declare const CaseClauseBase:
-  & Constructor<JSDocableNode>
-  & Constructor<ExpressionedNode>
-  & Constructor<TextInsertableNode>
-  & Constructor<StatementedNode>
-  & typeof Node;
+declare const CaseClauseBase: Constructor<JSDocableNode> & Constructor<ExpressionedNode> & Constructor<TextInsertableNode> & Constructor<StatementedNode> & typeof Node;
 
 export declare class CaseClause extends CaseClauseBase<ts.CaseClause> {
   /** Removes this case clause. */
@@ -10324,8 +8007,7 @@ export declare class CatchClause extends CatchClauseBase<ts.CatchClause> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.CatchClause>>;
 }
 
-export declare class CommentStatement
-  extends Statement<CompilerCommentStatement> {
+export declare class CommentStatement extends Statement<CompilerCommentStatement> {
 }
 
 export declare class ContinueStatement extends Statement<ts.ContinueStatement> {
@@ -10341,18 +8023,14 @@ export declare class ContinueStatement extends Statement<ts.ContinueStatement> {
 
 declare const DebuggerStatementBase: typeof Statement;
 
-export declare class DebuggerStatement
-  extends DebuggerStatementBase<ts.DebuggerStatement> {
+export declare class DebuggerStatement extends DebuggerStatementBase<ts.DebuggerStatement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.DebuggerStatement>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.DebuggerStatement>>;
 }
 
-declare const DefaultClauseBase:
-  & Constructor<TextInsertableNode>
-  & Constructor<StatementedNode>
-  & typeof Node;
+declare const DefaultClauseBase: Constructor<TextInsertableNode> & Constructor<StatementedNode> & typeof Node;
 
 export declare class DefaultClause extends DefaultClauseBase<ts.DefaultClause> {
   /** Removes the default clause. */
@@ -10363,9 +8041,7 @@ export declare class DefaultClause extends DefaultClauseBase<ts.DefaultClause> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.DefaultClause>>;
 }
 
-declare const DoStatementBase:
-  & Constructor<ExpressionedNode>
-  & typeof IterationStatement;
+declare const DoStatementBase: Constructor<ExpressionedNode> & typeof IterationStatement;
 
 export declare class DoStatement extends DoStatementBase<ts.DoStatement> {
   /** @inheritdoc **/
@@ -10376,33 +8052,25 @@ export declare class DoStatement extends DoStatementBase<ts.DoStatement> {
 
 declare const EmptyStatementBase: typeof Statement;
 
-export declare class EmptyStatement
-  extends EmptyStatementBase<ts.EmptyStatement> {
+export declare class EmptyStatement extends EmptyStatementBase<ts.EmptyStatement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.EmptyStatement>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.EmptyStatement>>;
 }
 
-declare const ExpressionStatementBase:
-  & Constructor<ExpressionedNode>
-  & Constructor<JSDocableNode>
-  & typeof Statement;
+declare const ExpressionStatementBase: Constructor<ExpressionedNode> & Constructor<JSDocableNode> & typeof Statement;
 
-export declare class ExpressionStatement
-  extends ExpressionStatementBase<ts.ExpressionStatement> {
+export declare class ExpressionStatement extends ExpressionStatementBase<ts.ExpressionStatement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ExpressionStatement>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ExpressionStatement>>;
 }
 
-declare const ForInStatementBase:
-  & Constructor<ExpressionedNode>
-  & typeof IterationStatement;
+declare const ForInStatementBase: Constructor<ExpressionedNode> & typeof IterationStatement;
 
-export declare class ForInStatement
-  extends ForInStatementBase<ts.ForInStatement> {
+export declare class ForInStatement extends ForInStatementBase<ts.ForInStatement> {
   /** Gets this for in statement's initializer. */
   getInitializer(): VariableDeclarationList | Expression;
   /** @inheritdoc **/
@@ -10411,13 +8079,9 @@ export declare class ForInStatement
   getParentOrThrow(): NonNullable<NodeParentType<ts.ForInStatement>>;
 }
 
-declare const ForOfStatementBase:
-  & Constructor<ExpressionedNode>
-  & Constructor<AwaitableNode>
-  & typeof IterationStatement;
+declare const ForOfStatementBase: Constructor<ExpressionedNode> & Constructor<AwaitableNode> & typeof IterationStatement;
 
-export declare class ForOfStatement
-  extends ForOfStatementBase<ts.ForOfStatement> {
+export declare class ForOfStatement extends ForOfStatementBase<ts.ForOfStatement> {
   /** Gets this for of statement's initializer. */
   getInitializer(): VariableDeclarationList | Expression;
   /** @inheritdoc **/
@@ -10462,19 +8126,14 @@ export declare class IfStatement extends IfStatementBase<ts.IfStatement> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.IfStatement>>;
 }
 
-export declare class IterationStatement<
-  T extends ts.IterationStatement = ts.IterationStatement,
-> extends Statement<T> {
+export declare class IterationStatement<T extends ts.IterationStatement = ts.IterationStatement> extends Statement<T> {
   /** Gets this iteration statement's statement. */
   getStatement(): Statement;
 }
 
-declare const LabeledStatementBase:
-  & Constructor<JSDocableNode>
-  & typeof Statement;
+declare const LabeledStatementBase: Constructor<JSDocableNode> & typeof Statement;
 
-export declare class LabeledStatement
-  extends LabeledStatementBase<ts.LabeledStatement> {
+export declare class LabeledStatement extends LabeledStatementBase<ts.LabeledStatement> {
   /** Gets this labeled statement's label */
   getLabel(): Identifier;
   /** Gets this labeled statement's statement */
@@ -10487,20 +8146,16 @@ export declare class LabeledStatement
 
 declare const NotEmittedStatementBase: typeof Statement;
 
-export declare class NotEmittedStatement
-  extends NotEmittedStatementBase<ts.NotEmittedStatement> {
+export declare class NotEmittedStatement extends NotEmittedStatementBase<ts.NotEmittedStatement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.NotEmittedStatement>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.NotEmittedStatement>>;
 }
 
-declare const ReturnStatementBase:
-  & Constructor<ExpressionableNode>
-  & typeof Statement;
+declare const ReturnStatementBase: Constructor<ExpressionableNode> & typeof Statement;
 
-export declare class ReturnStatement
-  extends ReturnStatementBase<ts.ReturnStatement> {
+export declare class ReturnStatement extends ReturnStatementBase<ts.ReturnStatement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ReturnStatement>;
   /** @inheritdoc **/
@@ -10509,15 +8164,12 @@ export declare class ReturnStatement
 
 declare const StatementBase: Constructor<ChildOrderableNode> & typeof Node;
 
-export declare class Statement<T extends ts.Statement = ts.Statement>
-  extends StatementBase<T> {
+export declare class Statement<T extends ts.Statement = ts.Statement> extends StatementBase<T> {
   /** Removes the statement. */
   remove(): void;
 }
 
-export declare function StatementedNode<
-  T extends Constructor<StatementedNodeExtensionType>,
->(Base: T): Constructor<StatementedNode> & T;
+export declare function StatementedNode<T extends Constructor<StatementedNodeExtensionType>>(Base: T): Constructor<StatementedNode> & T;
 
 export interface StatementedNode {
   /** Gets the node's statements. */
@@ -10528,68 +8180,45 @@ export interface StatementedNode {
    * Gets the first statement that matches the provided condition or returns undefined if it doesn't exist.
    * @param findFunction - Function to find the statement by.
    */
-  getStatement<T extends Statement>(
-    findFunction: (statement: Statement) => statement is T,
-  ): T | undefined;
+  getStatement<T extends Statement>(findFunction: (statement: Statement) => statement is T): T | undefined;
   /**
    * Gets the first statement that matches the provided condition or returns undefined if it doesn't exist.
    * @param findFunction - Function to find the statement by.
    */
-  getStatement(
-    findFunction: (statement: Statement) => boolean,
-  ): Statement | undefined;
+  getStatement(findFunction: (statement: Statement) => boolean): Statement | undefined;
   /**
    * Gets the first statement that matches the provided condition or throws if it doesn't exist.
    * @param findFunction - Function to find the statement by.
    */
-  getStatementOrThrow<T extends Statement>(
-    findFunction: (statement: Statement) => statement is T,
-  ): T;
+  getStatementOrThrow<T extends Statement>(findFunction: (statement: Statement) => statement is T): T;
   /**
    * Gets the first statement that matches the provided condition or throws if it doesn't exist.
    * @param findFunction - Function to find the statement by.
    */
-  getStatementOrThrow(
-    findFunction: (statement: Statement) => boolean,
-  ): Statement;
+  getStatementOrThrow(findFunction: (statement: Statement) => boolean): Statement;
   /**
    * Gets the first statement that matches the provided syntax kind or returns undefined if it doesn't exist.
    * @param kind - Syntax kind to find the node by.
    */
-  getStatementByKind<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappingsWithCommentStatements[TKind] | undefined;
+  getStatementByKind<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappingsWithCommentStatements[TKind] | undefined;
   /**
    * Gets the first statement that matches the provided syntax kind or throws if it doesn't exist.
    * @param kind - Syntax kind to find the node by.
    */
-  getStatementByKindOrThrow<TKind extends SyntaxKind>(
-    kind: TKind,
-  ): KindToNodeMappingsWithCommentStatements[TKind];
+  getStatementByKindOrThrow<TKind extends SyntaxKind>(kind: TKind): KindToNodeMappingsWithCommentStatements[TKind];
   /**
    * Add statements.
    * @param statements - statements to add.
    * @returns The statements that were added.
    */
-  addStatements(
-    statements:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction | StatementStructures>,
-  ): Statement[];
+  addStatements(statements: string | WriterFunction | ReadonlyArray<string | WriterFunction | StatementStructures>): Statement[];
   /**
    * Inserts statements at the specified index.
    * @param index - Child index to insert at.
    * @param statements - Statements to insert.
    * @returns The statements that were inserted.
    */
-  insertStatements(
-    index: number,
-    statements:
-      | string
-      | WriterFunction
-      | ReadonlyArray<string | WriterFunction | StatementStructures>,
-  ): Statement[];
+  insertStatements(index: number, statements: string | WriterFunction | ReadonlyArray<string | WriterFunction | StatementStructures>): Statement[];
   /**
    * Removes the statement at the specified index.
    * @param index - Child index to remove the statement at.
@@ -10604,34 +8233,24 @@ export interface StatementedNode {
    * Adds an class declaration as a child.
    * @param structure - Structure of the class declaration to add.
    */
-  addClass(
-    structure: OptionalKind<ClassDeclarationStructure>,
-  ): ClassDeclaration;
+  addClass(structure: OptionalKind<ClassDeclarationStructure>): ClassDeclaration;
   /**
    * Adds class declarations as a child.
    * @param structures - Structures of the class declarations to add.
    */
-  addClasses(
-    structures: ReadonlyArray<OptionalKind<ClassDeclarationStructure>>,
-  ): ClassDeclaration[];
+  addClasses(structures: ReadonlyArray<OptionalKind<ClassDeclarationStructure>>): ClassDeclaration[];
   /**
    * Inserts an class declaration as a child.
    * @param index - Child index to insert at.
    * @param structure - Structure of the class declaration to insert.
    */
-  insertClass(
-    index: number,
-    structure: OptionalKind<ClassDeclarationStructure>,
-  ): ClassDeclaration;
+  insertClass(index: number, structure: OptionalKind<ClassDeclarationStructure>): ClassDeclaration;
   /**
    * Inserts class declarations as a child.
    * @param index - Child index to insert at.
    * @param structures - Structures of the class declarations to insert.
    */
-  insertClasses(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<ClassDeclarationStructure>>,
-  ): ClassDeclaration[];
+  insertClasses(index: number, structures: ReadonlyArray<OptionalKind<ClassDeclarationStructure>>): ClassDeclaration[];
   /** Gets the direct class declaration children. */
   getClasses(): ClassDeclaration[];
   /**
@@ -10643,9 +8262,7 @@ export interface StatementedNode {
    * Gets a class.
    * @param findFunction - Function to use to find the class.
    */
-  getClass(
-    findFunction: (declaration: ClassDeclaration) => boolean,
-  ): ClassDeclaration | undefined;
+  getClass(findFunction: (declaration: ClassDeclaration) => boolean): ClassDeclaration | undefined;
   /**
    * Gets a class or throws if it doesn't exist.
    * @param name - Name of the class.
@@ -10655,9 +8272,7 @@ export interface StatementedNode {
    * Gets a class or throws if it doesn't exist.
    * @param findFunction - Function to use to find the class.
    */
-  getClassOrThrow(
-    findFunction: (declaration: ClassDeclaration) => boolean,
-  ): ClassDeclaration;
+  getClassOrThrow(findFunction: (declaration: ClassDeclaration) => boolean): ClassDeclaration;
   /**
    * Adds an enum declaration as a child.
    * @param structure - Structure of the enum declaration to add.
@@ -10667,27 +8282,19 @@ export interface StatementedNode {
    * Adds enum declarations as a child.
    * @param structures - Structures of the enum declarations to add.
    */
-  addEnums(
-    structures: ReadonlyArray<OptionalKind<EnumDeclarationStructure>>,
-  ): EnumDeclaration[];
+  addEnums(structures: ReadonlyArray<OptionalKind<EnumDeclarationStructure>>): EnumDeclaration[];
   /**
    * Inserts an enum declaration as a child.
    * @param index - Child index to insert at.
    * @param structure - Structure of the enum declaration to insert.
    */
-  insertEnum(
-    index: number,
-    structure: OptionalKind<EnumDeclarationStructure>,
-  ): EnumDeclaration;
+  insertEnum(index: number, structure: OptionalKind<EnumDeclarationStructure>): EnumDeclaration;
   /**
    * Inserts enum declarations as a child.
    * @param index - Child index to insert at.
    * @param structures - Structures of the enum declarations to insert.
    */
-  insertEnums(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<EnumDeclarationStructure>>,
-  ): EnumDeclaration[];
+  insertEnums(index: number, structures: ReadonlyArray<OptionalKind<EnumDeclarationStructure>>): EnumDeclaration[];
   /** Gets the direct enum declaration children. */
   getEnums(): EnumDeclaration[];
   /**
@@ -10699,9 +8306,7 @@ export interface StatementedNode {
    * Gets an enum.
    * @param findFunction - Function to use to find the enum.
    */
-  getEnum(
-    findFunction: (declaration: EnumDeclaration) => boolean,
-  ): EnumDeclaration | undefined;
+  getEnum(findFunction: (declaration: EnumDeclaration) => boolean): EnumDeclaration | undefined;
   /**
    * Gets an enum or throws if it doesn't exist.
    * @param name - Name of the enum.
@@ -10711,41 +8316,29 @@ export interface StatementedNode {
    * Gets an enum or throws if it doesn't exist.
    * @param findFunction - Function to use to find the enum.
    */
-  getEnumOrThrow(
-    findFunction: (declaration: EnumDeclaration) => boolean,
-  ): EnumDeclaration;
+  getEnumOrThrow(findFunction: (declaration: EnumDeclaration) => boolean): EnumDeclaration;
   /**
    * Adds a function declaration as a child.
    * @param structure - Structure of the function declaration to add.
    */
-  addFunction(
-    structure: OptionalKind<FunctionDeclarationStructure>,
-  ): FunctionDeclaration;
+  addFunction(structure: OptionalKind<FunctionDeclarationStructure>): FunctionDeclaration;
   /**
    * Adds function declarations as a child.
    * @param structures - Structures of the function declarations to add.
    */
-  addFunctions(
-    structures: ReadonlyArray<OptionalKind<FunctionDeclarationStructure>>,
-  ): FunctionDeclaration[];
+  addFunctions(structures: ReadonlyArray<OptionalKind<FunctionDeclarationStructure>>): FunctionDeclaration[];
   /**
    * Inserts an function declaration as a child.
    * @param index - Child index to insert at.
    * @param structure - Structure of the function declaration to insert.
    */
-  insertFunction(
-    index: number,
-    structure: OptionalKind<FunctionDeclarationStructure>,
-  ): FunctionDeclaration;
+  insertFunction(index: number, structure: OptionalKind<FunctionDeclarationStructure>): FunctionDeclaration;
   /**
    * Inserts function declarations as a child.
    * @param index - Child index to insert at.
    * @param structures - Structures of the function declarations to insert.
    */
-  insertFunctions(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<FunctionDeclarationStructure>>,
-  ): FunctionDeclaration[];
+  insertFunctions(index: number, structures: ReadonlyArray<OptionalKind<FunctionDeclarationStructure>>): FunctionDeclaration[];
   /** Gets the direct function declaration children. */
   getFunctions(): FunctionDeclaration[];
   /**
@@ -10757,9 +8350,7 @@ export interface StatementedNode {
    * Gets a function.
    * @param findFunction - Function to use to find the function.
    */
-  getFunction(
-    findFunction: (declaration: FunctionDeclaration) => boolean,
-  ): FunctionDeclaration | undefined;
+  getFunction(findFunction: (declaration: FunctionDeclaration) => boolean): FunctionDeclaration | undefined;
   /**
    * Gets a function or throws if it doesn't exist.
    * @param name - Name of the function.
@@ -10769,41 +8360,29 @@ export interface StatementedNode {
    * Gets a function or throws if it doesn't exist.
    * @param findFunction - Function to use to find the function.
    */
-  getFunctionOrThrow(
-    findFunction: (declaration: FunctionDeclaration) => boolean,
-  ): FunctionDeclaration;
+  getFunctionOrThrow(findFunction: (declaration: FunctionDeclaration) => boolean): FunctionDeclaration;
   /**
    * Adds a interface declaration as a child.
    * @param structure - Structure of the interface declaration to add.
    */
-  addInterface(
-    structure: OptionalKind<InterfaceDeclarationStructure>,
-  ): InterfaceDeclaration;
+  addInterface(structure: OptionalKind<InterfaceDeclarationStructure>): InterfaceDeclaration;
   /**
    * Adds interface declarations as a child.
    * @param structures - Structures of the interface declarations to add.
    */
-  addInterfaces(
-    structures: ReadonlyArray<OptionalKind<InterfaceDeclarationStructure>>,
-  ): InterfaceDeclaration[];
+  addInterfaces(structures: ReadonlyArray<OptionalKind<InterfaceDeclarationStructure>>): InterfaceDeclaration[];
   /**
    * Inserts an interface declaration as a child.
    * @param index - Child index to insert at.
    * @param structure - Structure of the interface declaration to insert.
    */
-  insertInterface(
-    index: number,
-    structure: OptionalKind<InterfaceDeclarationStructure>,
-  ): InterfaceDeclaration;
+  insertInterface(index: number, structure: OptionalKind<InterfaceDeclarationStructure>): InterfaceDeclaration;
   /**
    * Inserts interface declarations as a child.
    * @param index - Child index to insert at.
    * @param structures - Structures of the interface declarations to insert.
    */
-  insertInterfaces(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<InterfaceDeclarationStructure>>,
-  ): InterfaceDeclaration[];
+  insertInterfaces(index: number, structures: ReadonlyArray<OptionalKind<InterfaceDeclarationStructure>>): InterfaceDeclaration[];
   /** Gets the direct interface declaration children. */
   getInterfaces(): InterfaceDeclaration[];
   /**
@@ -10815,9 +8394,7 @@ export interface StatementedNode {
    * Gets an interface.
    * @param findFunction - Function to use to find the interface.
    */
-  getInterface(
-    findFunction: (declaration: InterfaceDeclaration) => boolean,
-  ): InterfaceDeclaration | undefined;
+  getInterface(findFunction: (declaration: InterfaceDeclaration) => boolean): InterfaceDeclaration | undefined;
   /**
    * Gets an interface or throws if it doesn't exist.
    * @param name - Name of the interface.
@@ -10827,41 +8404,29 @@ export interface StatementedNode {
    * Gets an interface or throws if it doesn't exist.
    * @param findFunction - Function to use to find the interface.
    */
-  getInterfaceOrThrow(
-    findFunction: (declaration: InterfaceDeclaration) => boolean,
-  ): InterfaceDeclaration;
+  getInterfaceOrThrow(findFunction: (declaration: InterfaceDeclaration) => boolean): InterfaceDeclaration;
   /**
    * Adds a module declaration as a child.
    * @param structure - Structure of the namespace declaration to add.
    */
-  addModule(
-    structure: OptionalKind<ModuleDeclarationStructure>,
-  ): ModuleDeclaration;
+  addModule(structure: OptionalKind<ModuleDeclarationStructure>): ModuleDeclaration;
   /**
    * Adds module declarations as a child.
    * @param structures - Structures of the namespace declarations to add.
    */
-  addModules(
-    structures: ReadonlyArray<OptionalKind<ModuleDeclarationStructure>>,
-  ): ModuleDeclaration[];
+  addModules(structures: ReadonlyArray<OptionalKind<ModuleDeclarationStructure>>): ModuleDeclaration[];
   /**
    * Inserts a module declaration as a child.
    * @param index - Child index to insert at.
    * @param structure - Structure of the namespace declaration to insert.
    */
-  insertModule(
-    index: number,
-    structure: OptionalKind<ModuleDeclarationStructure>,
-  ): ModuleDeclaration;
+  insertModule(index: number, structure: OptionalKind<ModuleDeclarationStructure>): ModuleDeclaration;
   /**
    * Inserts module declarations as children.
    * @param index - Child index to insert at.
    * @param structures - Structures of the namespace declarations to insert.
    */
-  insertModules(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<ModuleDeclarationStructure>>,
-  ): ModuleDeclaration[];
+  insertModules(index: number, structures: ReadonlyArray<OptionalKind<ModuleDeclarationStructure>>): ModuleDeclaration[];
   /** Gets the module declaration children. */
   getModules(): ModuleDeclaration[];
   /**
@@ -10873,9 +8438,7 @@ export interface StatementedNode {
    * Gets a module declaration child by condition.
    * @param findFunction - Function to use to find the namespace.
    */
-  getModule(
-    findFunction: (declaration: ModuleDeclaration) => boolean,
-  ): ModuleDeclaration | undefined;
+  getModule(findFunction: (declaration: ModuleDeclaration) => boolean): ModuleDeclaration | undefined;
   /**
    * Gets a module declaration child by name or throws if it doesn't exist.
    * @param name - Name of the namespace.
@@ -10885,41 +8448,29 @@ export interface StatementedNode {
    * Gets a module declaration child by condition or throws if it doesn't exist.
    * @param findFunction - Function to use to find the namespace.
    */
-  getModuleOrThrow(
-    findFunction: (declaration: ModuleDeclaration) => boolean,
-  ): ModuleDeclaration;
+  getModuleOrThrow(findFunction: (declaration: ModuleDeclaration) => boolean): ModuleDeclaration;
   /**
    * Adds a type alias declaration as a child.
    * @param structure - Structure of the type alias declaration to add.
    */
-  addTypeAlias(
-    structure: OptionalKind<TypeAliasDeclarationStructure>,
-  ): TypeAliasDeclaration;
+  addTypeAlias(structure: OptionalKind<TypeAliasDeclarationStructure>): TypeAliasDeclaration;
   /**
    * Adds type alias declarations as a child.
    * @param structures - Structures of the type alias declarations to add.
    */
-  addTypeAliases(
-    structures: ReadonlyArray<OptionalKind<TypeAliasDeclarationStructure>>,
-  ): TypeAliasDeclaration[];
+  addTypeAliases(structures: ReadonlyArray<OptionalKind<TypeAliasDeclarationStructure>>): TypeAliasDeclaration[];
   /**
    * Inserts an type alias declaration as a child.
    * @param index - Child index to insert at.
    * @param structure - Structure of the type alias declaration to insert.
    */
-  insertTypeAlias(
-    index: number,
-    structure: OptionalKind<TypeAliasDeclarationStructure>,
-  ): TypeAliasDeclaration;
+  insertTypeAlias(index: number, structure: OptionalKind<TypeAliasDeclarationStructure>): TypeAliasDeclaration;
   /**
    * Inserts type alias declarations as a child.
    * @param index - Child index to insert at.
    * @param structures - Structures of the type alias declarations to insert.
    */
-  insertTypeAliases(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<TypeAliasDeclarationStructure>>,
-  ): TypeAliasDeclaration[];
+  insertTypeAliases(index: number, structures: ReadonlyArray<OptionalKind<TypeAliasDeclarationStructure>>): TypeAliasDeclaration[];
   /** Gets the direct type alias declaration children. */
   getTypeAliases(): TypeAliasDeclaration[];
   /**
@@ -10931,9 +8482,7 @@ export interface StatementedNode {
    * Gets a type alias.
    * @param findFunction - Function to use to find the type alias.
    */
-  getTypeAlias(
-    findFunction: (declaration: TypeAliasDeclaration) => boolean,
-  ): TypeAliasDeclaration | undefined;
+  getTypeAlias(findFunction: (declaration: TypeAliasDeclaration) => boolean): TypeAliasDeclaration | undefined;
   /**
    * Gets a type alias or throws if it doesn't exist.
    * @param name - Name of the type alias.
@@ -10943,39 +8492,27 @@ export interface StatementedNode {
    * Gets a type alias or throws if it doesn't exist.
    * @param findFunction - Function to use to find the type alias.
    */
-  getTypeAliasOrThrow(
-    findFunction: (declaration: TypeAliasDeclaration) => boolean,
-  ): TypeAliasDeclaration;
+  getTypeAliasOrThrow(findFunction: (declaration: TypeAliasDeclaration) => boolean): TypeAliasDeclaration;
   /**
    * Adds a variable statement.
    * @param structure - Structure of the variable statement.
    */
-  addVariableStatement(
-    structure: OptionalKind<VariableStatementStructure>,
-  ): VariableStatement;
+  addVariableStatement(structure: OptionalKind<VariableStatementStructure>): VariableStatement;
   /**
    * Adds variable statements.
    * @param structures - Structures of the variable statements.
    */
-  addVariableStatements(
-    structures: ReadonlyArray<OptionalKind<VariableStatementStructure>>,
-  ): VariableStatement[];
+  addVariableStatements(structures: ReadonlyArray<OptionalKind<VariableStatementStructure>>): VariableStatement[];
   /**
    * Inserts a variable statement.
    * @param structure - Structure of the variable statement.
    */
-  insertVariableStatement(
-    index: number,
-    structure: OptionalKind<VariableStatementStructure>,
-  ): VariableStatement;
+  insertVariableStatement(index: number, structure: OptionalKind<VariableStatementStructure>): VariableStatement;
   /**
    * Inserts variable statements.
    * @param structures - Structures of the variable statements.
    */
-  insertVariableStatements(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<VariableStatementStructure>>,
-  ): VariableStatement[];
+  insertVariableStatements(index: number, structures: ReadonlyArray<OptionalKind<VariableStatementStructure>>): VariableStatement[];
   /** Gets the direct variable statement children. */
   getVariableStatements(): VariableStatement[];
   /**
@@ -10987,9 +8524,7 @@ export interface StatementedNode {
    * Gets a variable statement.
    * @param findFunction - Function to use to find the variable statement.
    */
-  getVariableStatement(
-    findFunction: (declaration: VariableStatement) => boolean,
-  ): VariableStatement | undefined;
+  getVariableStatement(findFunction: (declaration: VariableStatement) => boolean): VariableStatement | undefined;
   /**
    * Gets a variable statement or throws if it doesn't exist.
    * @param name - Name of one of the variable statement's declarations.
@@ -10999,9 +8534,7 @@ export interface StatementedNode {
    * Gets a variable statement or throws if it doesn't exist.
    * @param findFunction - Function to use to find the variable statement.
    */
-  getVariableStatementOrThrow(
-    findFunction: (declaration: VariableStatement) => boolean,
-  ): VariableStatement;
+  getVariableStatementOrThrow(findFunction: (declaration: VariableStatement) => boolean): VariableStatement;
   /**
    * Gets all the variable declarations within the variable statement children.
    * @remarks This does not return the variable declarations within for statements or for of statements.
@@ -11016,9 +8549,7 @@ export interface StatementedNode {
    * Gets a variable declaration.
    * @param findFunction - Function to use to find the variable declaration.
    */
-  getVariableDeclaration(
-    findFunction: (declaration: VariableDeclaration) => boolean,
-  ): VariableDeclaration | undefined;
+  getVariableDeclaration(findFunction: (declaration: VariableDeclaration) => boolean): VariableDeclaration | undefined;
   /**
    * Gets a variable declaration or throws if it doesn't exist.
    * @param name - Name of the variable declaration.
@@ -11028,34 +8559,20 @@ export interface StatementedNode {
    * Gets a variable declaration or throws if it doesn't exist.
    * @param findFunction - Function to use to find the variable declaration.
    */
-  getVariableDeclarationOrThrow(
-    findFunction: (declaration: VariableDeclaration) => boolean,
-  ): VariableDeclaration;
+  getVariableDeclarationOrThrow(findFunction: (declaration: VariableDeclaration) => boolean): VariableDeclaration;
 }
 
-declare type StatementedNodeExtensionType = Node<
-  | ts.SourceFile
-  | ts.FunctionDeclaration
-  | ts.ModuleDeclaration
-  | ts.FunctionLikeDeclaration
-  | ts.CaseClause
-  | ts.DefaultClause
-  | ts.ModuleBlock
->;
+declare type StatementedNodeExtensionType = Node<ts.SourceFile | ts.FunctionDeclaration | ts.ModuleDeclaration | ts.FunctionLikeDeclaration | ts.CaseClause | ts.DefaultClause | ts.ModuleBlock>;
 
-export interface KindToNodeMappingsWithCommentStatements
-  extends ImplementedKindToNodeMappings {
+export interface KindToNodeMappingsWithCommentStatements extends ImplementedKindToNodeMappings {
   [kind: number]: Node;
   [SyntaxKind.SingleLineCommentTrivia]: CommentStatement;
   [SyntaxKind.MultiLineCommentTrivia]: CommentStatement;
 }
 
-declare const SwitchStatementBase:
-  & Constructor<ExpressionedNode>
-  & typeof Statement;
+declare const SwitchStatementBase: Constructor<ExpressionedNode> & typeof Statement;
 
-export declare class SwitchStatement
-  extends SwitchStatementBase<ts.SwitchStatement> {
+export declare class SwitchStatement extends SwitchStatementBase<ts.SwitchStatement> {
   /** Gets this switch statement's case block. */
   getCaseBlock(): CaseBlock;
   /** Gets the switch statement's case block's clauses. */
@@ -11076,12 +8593,9 @@ export declare class SwitchStatement
   getParentOrThrow(): NonNullable<NodeParentType<ts.SwitchStatement>>;
 }
 
-declare const ThrowStatementBase:
-  & Constructor<ExpressionedNode>
-  & typeof Statement;
+declare const ThrowStatementBase: Constructor<ExpressionedNode> & typeof Statement;
 
-export declare class ThrowStatement
-  extends ThrowStatementBase<ts.ThrowStatement> {
+export declare class ThrowStatement extends ThrowStatementBase<ts.ThrowStatement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ThrowStatement>;
   /** @inheritdoc **/
@@ -11107,16 +8621,9 @@ export declare class TryStatement extends TryStatementBase<ts.TryStatement> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.TryStatement>>;
 }
 
-declare const VariableStatementBase:
-  & Constructor<ModuleChildableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<ExportableNode>
-  & Constructor<ModifierableNode>
-  & typeof Statement;
+declare const VariableStatementBase: Constructor<ModuleChildableNode> & Constructor<JSDocableNode> & Constructor<AmbientableNode> & Constructor<ExportableNode> & Constructor<ModifierableNode> & typeof Statement;
 
-export declare class VariableStatement
-  extends VariableStatementBase<ts.VariableStatement> {
+export declare class VariableStatement extends VariableStatementBase<ts.VariableStatement> {
   /** Get variable declaration list. */
   getDeclarationList(): VariableDeclarationList;
   /** Get the variable declarations. */
@@ -11134,34 +8641,24 @@ export declare class VariableStatement
    * Add a variable declaration to the statement.
    * @param structure - Structure representing the variable declaration to add.
    */
-  addDeclaration(
-    structure: OptionalKind<VariableDeclarationStructure>,
-  ): VariableDeclaration;
+  addDeclaration(structure: OptionalKind<VariableDeclarationStructure>): VariableDeclaration;
   /**
    * Adds variable declarations to the statement.
    * @param structures - Structures representing the variable declarations to add.
    */
-  addDeclarations(
-    structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>,
-  ): VariableDeclaration[];
+  addDeclarations(structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>): VariableDeclaration[];
   /**
    * Inserts a variable declaration at the specified index within the statement.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the variable declaration to insert.
    */
-  insertDeclaration(
-    index: number,
-    structure: OptionalKind<VariableDeclarationStructure>,
-  ): VariableDeclaration;
+  insertDeclaration(index: number, structure: OptionalKind<VariableDeclarationStructure>): VariableDeclaration;
   /**
    * Inserts variable declarations at the specified index within the statement.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the variable declarations to insert.
    */
-  insertDeclarations(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>,
-  ): VariableDeclaration[];
+  insertDeclarations(index: number, structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>): VariableDeclaration[];
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -11175,21 +8672,16 @@ export declare class VariableStatement
   getParentOrThrow(): NonNullable<NodeParentType<ts.VariableStatement>>;
 }
 
-declare const WhileStatementBase:
-  & Constructor<ExpressionedNode>
-  & typeof IterationStatement;
+declare const WhileStatementBase: Constructor<ExpressionedNode> & typeof IterationStatement;
 
-export declare class WhileStatement
-  extends WhileStatementBase<ts.WhileStatement> {
+export declare class WhileStatement extends WhileStatementBase<ts.WhileStatement> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.WhileStatement>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.WhileStatement>>;
 }
 
-declare const WithStatementBase:
-  & Constructor<ExpressionedNode>
-  & typeof Statement;
+declare const WithStatementBase: Constructor<ExpressionedNode> & typeof Statement;
 
 export declare class WithStatement extends WithStatementBase<ts.WithStatement> {
   /** Gets this with statement's statement. */
@@ -11209,8 +8701,7 @@ export declare class ArrayTypeNode extends TypeNode<ts.ArrayTypeNode> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.ArrayTypeNode>>;
 }
 
-export declare class ConditionalTypeNode
-  extends TypeNode<ts.ConditionalTypeNode> {
+export declare class ConditionalTypeNode extends TypeNode<ts.ConditionalTypeNode> {
   /**
    * Gets the conditional type node's check type.
    *
@@ -11241,69 +8732,49 @@ export declare class ConditionalTypeNode
   getParentOrThrow(): NonNullable<NodeParentType<ts.ConditionalTypeNode>>;
 }
 
-declare const ConstructorTypeNodeBase:
-  & Constructor<AbstractableNode>
-  & Constructor<ModifierableNode>
-  & typeof FunctionOrConstructorTypeNodeBase;
+declare const ConstructorTypeNodeBase: Constructor<AbstractableNode> & Constructor<ModifierableNode> & typeof FunctionOrConstructorTypeNodeBase;
 
-export declare class ConstructorTypeNode
-  extends ConstructorTypeNodeBase<ts.ConstructorTypeNode> {
+export declare class ConstructorTypeNode extends ConstructorTypeNodeBase<ts.ConstructorTypeNode> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ConstructorTypeNode>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.ConstructorTypeNode>>;
 }
 
-declare const ExpressionWithTypeArgumentsBase:
-  & Constructor<LeftHandSideExpressionedNode>
-  & typeof NodeWithTypeArguments;
+declare const ExpressionWithTypeArgumentsBase: Constructor<LeftHandSideExpressionedNode> & typeof NodeWithTypeArguments;
 
-export declare class ExpressionWithTypeArguments
-  extends ExpressionWithTypeArgumentsBase<ts.ExpressionWithTypeArguments> {
+export declare class ExpressionWithTypeArguments extends ExpressionWithTypeArgumentsBase<ts.ExpressionWithTypeArguments> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ExpressionWithTypeArguments>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.ExpressionWithTypeArguments>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.ExpressionWithTypeArguments>>;
 }
 
-declare const FunctionOrConstructorTypeNodeBaseBase:
-  & Constructor<SignaturedDeclaration>
-  & typeof TypeNode;
+declare const FunctionOrConstructorTypeNodeBaseBase: Constructor<SignaturedDeclaration> & typeof TypeNode;
 
-export declare class FunctionOrConstructorTypeNodeBase<
-  T extends ts.FunctionOrConstructorTypeNode = ts.FunctionOrConstructorTypeNode,
-> extends FunctionOrConstructorTypeNodeBaseBase<T> {
+export declare class FunctionOrConstructorTypeNodeBase<T extends ts.FunctionOrConstructorTypeNode = ts.FunctionOrConstructorTypeNode> extends FunctionOrConstructorTypeNodeBaseBase<T> {
 }
 
-declare const FunctionTypeNodeBase:
-  & Constructor<TypeParameteredNode>
-  & typeof FunctionOrConstructorTypeNodeBase;
+declare const FunctionTypeNodeBase: Constructor<TypeParameteredNode> & typeof FunctionOrConstructorTypeNodeBase;
 
-export declare class FunctionTypeNode
-  extends FunctionTypeNodeBase<ts.FunctionTypeNode> {
+export declare class FunctionTypeNode extends FunctionTypeNodeBase<ts.FunctionTypeNode> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.FunctionTypeNode>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.FunctionTypeNode>>;
 }
 
-export declare class ImportTypeAssertionContainer
-  extends Node<ts.ImportTypeAssertionContainer> {
+export declare class ImportTypeAssertionContainer extends Node<ts.ImportTypeAssertionContainer> {
   getAssertClause(): AssertClause;
   /** If the assertion clause spans multiple lines. */
   isMultiline(): boolean;
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.ImportTypeAssertionContainer>;
   /** @inheritdoc **/
-  getParentOrThrow(): NonNullable<
-    NodeParentType<ts.ImportTypeAssertionContainer>
-  >;
+  getParentOrThrow(): NonNullable<NodeParentType<ts.ImportTypeAssertionContainer>>;
 }
 
-export declare class ImportTypeNode
-  extends NodeWithTypeArguments<ts.ImportTypeNode> {
+export declare class ImportTypeNode extends NodeWithTypeArguments<ts.ImportTypeNode> {
   /**
    * Sets the argument text.
    * @param text - Text of the argument.
@@ -11330,8 +8801,7 @@ export declare class ImportTypeNode
   getParentOrThrow(): NonNullable<NodeParentType<ts.ImportTypeNode>>;
 }
 
-export declare class IndexedAccessTypeNode
-  extends TypeNode<ts.IndexedAccessTypeNode> {
+export declare class IndexedAccessTypeNode extends TypeNode<ts.IndexedAccessTypeNode> {
   /**
    * Gets the indexed access type node's object type node.
    *
@@ -11363,8 +8833,7 @@ export declare class InferTypeNode extends TypeNode<ts.InferTypeNode> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.InferTypeNode>>;
 }
 
-export declare class IntersectionTypeNode
-  extends TypeNode<ts.IntersectionTypeNode> {
+export declare class IntersectionTypeNode extends TypeNode<ts.IntersectionTypeNode> {
   /** Gets the intersection type nodes. */
   getTypeNodes(): TypeNode[];
   /** @inheritdoc **/
@@ -11375,11 +8844,7 @@ export declare class IntersectionTypeNode
 
 export declare class LiteralTypeNode extends TypeNode<ts.LiteralTypeNode> {
   /** Gets the literal type node's literal. */
-  getLiteral():
-    | NullLiteral
-    | BooleanLiteral
-    | LiteralExpression
-    | PrefixUnaryExpression;
+  getLiteral(): NullLiteral | BooleanLiteral | LiteralExpression | PrefixUnaryExpression;
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.LiteralTypeNode>;
   /** @inheritdoc **/
@@ -11392,27 +8857,13 @@ export declare class MappedTypeNode extends TypeNode<ts.MappedTypeNode> {
   /** Gets the mapped type node's name type node or throws if it doesn't exist. */
   getNameTypeNodeOrThrow(): TypeNode;
   /** Gets the mapped type's readonly token. */
-  getReadonlyToken():
-    | Node<ts.ReadonlyKeyword>
-    | Node<ts.PlusToken>
-    | Node<ts.MinusToken>
-    | undefined;
+  getReadonlyToken(): Node<ts.ReadonlyKeyword> | Node<ts.PlusToken> | Node<ts.MinusToken> | undefined;
   /** Gets the mapped type's readonly token or throws if not exist. */
-  getReadonlyTokenOrThrow():
-    | Node<ts.ReadonlyKeyword>
-    | Node<ts.PlusToken>
-    | Node<ts.MinusToken>;
+  getReadonlyTokenOrThrow(): Node<ts.ReadonlyKeyword> | Node<ts.PlusToken> | Node<ts.MinusToken>;
   /** Gets the mapped type's question token. */
-  getQuestionToken():
-    | Node<ts.QuestionToken>
-    | Node<ts.PlusToken>
-    | Node<ts.MinusToken>
-    | undefined;
+  getQuestionToken(): Node<ts.QuestionToken> | Node<ts.PlusToken> | Node<ts.MinusToken> | undefined;
   /** Gets the mapped type's question token or throws if not exist. */
-  getQuestionTokenOrThrow():
-    | Node<ts.QuestionToken>
-    | Node<ts.PlusToken>
-    | Node<ts.MinusToken>;
+  getQuestionTokenOrThrow(): Node<ts.QuestionToken> | Node<ts.PlusToken> | Node<ts.MinusToken>;
   /** Gets the mapped type node's type parameter. */
   getTypeParameter(): TypeParameterDeclaration;
   /** Gets the mapped type node's type node if it exists or returns undefined when not. */
@@ -11425,21 +8876,14 @@ export declare class MappedTypeNode extends TypeNode<ts.MappedTypeNode> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.MappedTypeNode>>;
 }
 
-declare const NamedTupleMemberBase:
-  & Constructor<TypedNode>
-  & Constructor<QuestionTokenableNode>
-  & Constructor<DotDotDotTokenableNode>
-  & Constructor<JSDocableNode>
-  & Constructor<NamedNode>
-  & typeof TypeNode;
+declare const NamedTupleMemberBase: Constructor<TypedNode> & Constructor<QuestionTokenableNode> & Constructor<DotDotDotTokenableNode> & Constructor<JSDocableNode> & Constructor<NamedNode> & typeof TypeNode;
 
 /**
  * A named/labeled tuple element.
  *
  * Ex. `start: number` in `type Range = [start: number, end: number]`
  */
-export declare class NamedTupleMember
-  extends NamedTupleMemberBase<ts.NamedTupleMember> {
+export declare class NamedTupleMember extends NamedTupleMemberBase<ts.NamedTupleMember> {
   /** Gets the named tuple type's type. */
   getTypeNode(): TypeNode<ts.TypeNode>;
   /** Throws. This is not supported for NamedTupleMember. */
@@ -11450,8 +8894,7 @@ export declare class NamedTupleMember
   getParentOrThrow(): NonNullable<NodeParentType<ts.NamedTupleMember>>;
 }
 
-export declare class ParenthesizedTypeNode
-  extends TypeNode<ts.ParenthesizedTypeNode> {
+export declare class ParenthesizedTypeNode extends TypeNode<ts.ParenthesizedTypeNode> {
   /** Gets the node within the parentheses. */
   getTypeNode(): TypeNode;
   /**
@@ -11465,8 +8908,7 @@ export declare class ParenthesizedTypeNode
   getParentOrThrow(): NonNullable<NodeParentType<ts.ParenthesizedTypeNode>>;
 }
 
-export declare class TemplateLiteralTypeNode
-  extends TypeNode<ts.TemplateLiteralTypeNode> {
+export declare class TemplateLiteralTypeNode extends TypeNode<ts.TemplateLiteralTypeNode> {
   /** Gets the template head. */
   getHead(): TemplateHead;
   /** Gets the template spans. */
@@ -11501,18 +8943,9 @@ export declare class TupleTypeNode extends TypeNode<ts.TupleTypeNode> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.TupleTypeNode>>;
 }
 
-declare const TypeAliasDeclarationBase:
-  & Constructor<TypeParameteredNode>
-  & Constructor<TypedNode>
-  & Constructor<JSDocableNode>
-  & Constructor<AmbientableNode>
-  & Constructor<ExportableNode>
-  & Constructor<ModifierableNode>
-  & Constructor<NamedNode>
-  & typeof Statement;
+declare const TypeAliasDeclarationBase: Constructor<TypeParameteredNode> & Constructor<TypedNode> & Constructor<JSDocableNode> & Constructor<AmbientableNode> & Constructor<ExportableNode> & Constructor<ModifierableNode> & Constructor<NamedNode> & typeof Statement;
 
-export declare class TypeAliasDeclaration
-  extends TypeAliasDeclarationBase<ts.TypeAliasDeclaration> {
+export declare class TypeAliasDeclaration extends TypeAliasDeclarationBase<ts.TypeAliasDeclaration> {
   /**
    * Sets the node from a structure.
    * @param structure - Structure to set the node with.
@@ -11526,38 +8959,26 @@ export declare class TypeAliasDeclaration
   getParentOrThrow(): NonNullable<NodeParentType<ts.TypeAliasDeclaration>>;
 }
 
-declare const TypeLiteralNodeBase:
-  & Constructor<TypeElementMemberedNode>
-  & typeof TypeNode;
+declare const TypeLiteralNodeBase: Constructor<TypeElementMemberedNode> & typeof TypeNode;
 
-export declare class TypeLiteralNode
-  extends TypeLiteralNodeBase<ts.TypeLiteralNode> {
+export declare class TypeLiteralNode extends TypeLiteralNodeBase<ts.TypeLiteralNode> {
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.TypeLiteralNode>;
   /** @inheritdoc **/
   getParentOrThrow(): NonNullable<NodeParentType<ts.TypeLiteralNode>>;
 }
 
-export declare class TypeNode<T extends ts.TypeNode = ts.TypeNode>
-  extends Node<T> {
+export declare class TypeNode<T extends ts.TypeNode = ts.TypeNode> extends Node<T> {
 }
 
-declare const NodeWithTypeArgumentsBase:
-  & Constructor<TypeArgumentedNode>
-  & typeof TypeNode;
+declare const NodeWithTypeArgumentsBase: Constructor<TypeArgumentedNode> & typeof TypeNode;
 
-export declare class NodeWithTypeArguments<
-  T extends ts.NodeWithTypeArguments = ts.NodeWithTypeArguments,
-> extends NodeWithTypeArgumentsBase<T> {
+export declare class NodeWithTypeArguments<T extends ts.NodeWithTypeArguments = ts.NodeWithTypeArguments> extends NodeWithTypeArgumentsBase<T> {
 }
 
-export declare class TypeOperatorTypeNode
-  extends TypeNode<ts.TypeOperatorNode> {
+export declare class TypeOperatorTypeNode extends TypeNode<ts.TypeOperatorNode> {
   /** Gets the operator of the type node. */
-  getOperator():
-    | SyntaxKind.KeyOfKeyword
-    | SyntaxKind.ReadonlyKeyword
-    | SyntaxKind.UniqueKeyword;
+  getOperator(): SyntaxKind.KeyOfKeyword | SyntaxKind.ReadonlyKeyword | SyntaxKind.UniqueKeyword;
   /** Gets the node within the type operator. */
   getTypeNode(): TypeNode;
   /** @inheritdoc **/
@@ -11575,16 +8996,12 @@ export declare enum TypeParameterVariance {
   /** Covariant. */
   Out = 2,
   /** Invariant. */
-  InOut = 3,
+  InOut = 3
 }
 
-declare const TypeParameterDeclarationBase:
-  & Constructor<ModifierableNode>
-  & Constructor<NamedNode>
-  & typeof Node;
+declare const TypeParameterDeclarationBase: Constructor<ModifierableNode> & Constructor<NamedNode> & typeof Node;
 
-export declare class TypeParameterDeclaration
-  extends TypeParameterDeclarationBase<ts.TypeParameterDeclaration> {
+export declare class TypeParameterDeclaration extends TypeParameterDeclarationBase<ts.TypeParameterDeclaration> {
   /** Gets the constraint of the type parameter. */
   getConstraint(): TypeNode | undefined;
   /** Gets the constraint of the type parameter or throws if it doesn't exist. */
@@ -11652,8 +9069,7 @@ export declare class TypePredicateNode extends TypeNode<ts.TypePredicateNode> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.TypePredicateNode>>;
 }
 
-export declare class TypeQueryNode
-  extends NodeWithTypeArguments<ts.TypeQueryNode> {
+export declare class TypeQueryNode extends NodeWithTypeArguments<ts.TypeQueryNode> {
   /** Gets the expression name. */
   getExprName(): EntityName;
   /** @inheritdoc **/
@@ -11662,8 +9078,7 @@ export declare class TypeQueryNode
   getParentOrThrow(): NonNullable<NodeParentType<ts.TypeQueryNode>>;
 }
 
-export declare class TypeReferenceNode
-  extends NodeWithTypeArguments<ts.TypeReferenceNode> {
+export declare class TypeReferenceNode extends NodeWithTypeArguments<ts.TypeReferenceNode> {
   /** Gets the type name. */
   getTypeName(): EntityName;
   /** @inheritdoc **/
@@ -11681,16 +9096,9 @@ export declare class UnionTypeNode extends TypeNode<ts.UnionTypeNode> {
   getParentOrThrow(): NonNullable<NodeParentType<ts.UnionTypeNode>>;
 }
 
-declare const VariableDeclarationBase:
-  & Constructor<ExportGetableNode>
-  & Constructor<ExclamationTokenableNode>
-  & Constructor<TypedNode>
-  & Constructor<InitializerExpressionableNode>
-  & Constructor<BindingNamedNode>
-  & typeof Node;
+declare const VariableDeclarationBase: Constructor<ExportGetableNode> & Constructor<ExclamationTokenableNode> & Constructor<TypedNode> & Constructor<InitializerExpressionableNode> & Constructor<BindingNamedNode> & typeof Node;
 
-export declare class VariableDeclaration
-  extends VariableDeclarationBase<ts.VariableDeclaration> {
+export declare class VariableDeclaration extends VariableDeclarationBase<ts.VariableDeclaration> {
   /** Removes this variable declaration. */
   remove(): void;
   /** Gets the corresponding variable statement if it exists. Throws for variable declarations in for statements. */
@@ -11713,15 +9121,12 @@ export declare class VariableDeclaration
 export declare enum VariableDeclarationKind {
   Var = "var",
   Let = "let",
-  Const = "const",
+  Const = "const"
 }
 
-declare const VariableDeclarationListBase:
-  & Constructor<ModifierableNode>
-  & typeof Node;
+declare const VariableDeclarationListBase: Constructor<ModifierableNode> & typeof Node;
 
-export declare class VariableDeclarationList
-  extends VariableDeclarationListBase<ts.VariableDeclarationList> {
+export declare class VariableDeclarationList extends VariableDeclarationListBase<ts.VariableDeclarationList> {
   /** Get the variable declarations. */
   getDeclarations(): VariableDeclaration[];
   /** Gets the variable declaration kind. */
@@ -11737,34 +9142,24 @@ export declare class VariableDeclarationList
    * Add a variable declaration to the statement.
    * @param structure - Structure representing the variable declaration to add.
    */
-  addDeclaration(
-    structure: OptionalKind<VariableDeclarationStructure>,
-  ): VariableDeclaration;
+  addDeclaration(structure: OptionalKind<VariableDeclarationStructure>): VariableDeclaration;
   /**
    * Adds variable declarations to the statement.
    * @param structures - Structures representing the variable declarations to add.
    */
-  addDeclarations(
-    structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>,
-  ): VariableDeclaration[];
+  addDeclarations(structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>): VariableDeclaration[];
   /**
    * Inserts a variable declaration at the specified index within the statement.
    * @param index - Child index to insert at.
    * @param structure - Structure representing the variable declaration to insert.
    */
-  insertDeclaration(
-    index: number,
-    structure: OptionalKind<VariableDeclarationStructure>,
-  ): VariableDeclaration;
+  insertDeclaration(index: number, structure: OptionalKind<VariableDeclarationStructure>): VariableDeclaration;
   /**
    * Inserts variable declarations at the specified index within the statement.
    * @param index - Child index to insert at.
    * @param structures - Structures representing the variable declarations to insert.
    */
-  insertDeclarations(
-    index: number,
-    structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>,
-  ): VariableDeclaration[];
+  insertDeclarations(index: number, structures: ReadonlyArray<OptionalKind<VariableDeclarationStructure>>): VariableDeclaration[];
   /** @inheritdoc **/
   getParent(): NodeParentType<ts.VariableDeclarationList>;
   /** @inheritdoc **/
@@ -11786,21 +9181,7 @@ export declare class Signature {
   /** Gets the JS doc tags. */
   getJsDocTags(): JSDocTagInfo[];
   /** Gets the signature's declaration. */
-  getDeclaration():
-    | MethodSignature
-    | MethodDeclaration
-    | ConstructorDeclaration
-    | GetAccessorDeclaration
-    | SetAccessorDeclaration
-    | CallSignatureDeclaration
-    | ConstructSignatureDeclaration
-    | IndexSignatureDeclaration
-    | FunctionTypeNode
-    | ConstructorTypeNode
-    | FunctionExpression
-    | ArrowFunction
-    | FunctionDeclaration
-    | JSDocFunctionType;
+  getDeclaration(): MethodSignature | MethodDeclaration | ConstructorDeclaration | GetAccessorDeclaration | SetAccessorDeclaration | CallSignatureDeclaration | ConstructSignatureDeclaration | IndexSignatureDeclaration | FunctionTypeNode | ConstructorTypeNode | FunctionExpression | ArrowFunction | FunctionDeclaration | JSDocFunctionType;
 }
 
 export declare class Symbol {
@@ -11940,10 +9321,7 @@ export declare class LanguageService {
    * @param sourceFile - Source file.
    * @param pos - Position.
    */
-  getDefinitionsAtPosition(
-    sourceFile: SourceFile,
-    pos: number,
-  ): DefinitionInfo[];
+  getDefinitionsAtPosition(sourceFile: SourceFile, pos: number): DefinitionInfo[];
   /**
    * Gets the implementations for the specified node.
    * @param node - Node.
@@ -11954,10 +9332,7 @@ export declare class LanguageService {
    * @param sourceFile - Source file.
    * @param pos - Position.
    */
-  getImplementationsAtPosition(
-    sourceFile: SourceFile,
-    pos: number,
-  ): ImplementationLocation[];
+  getImplementationsAtPosition(sourceFile: SourceFile, pos: number): ImplementationLocation[];
   /**
    * Finds references based on the specified node.
    * @param node - Node to find references for.
@@ -11973,10 +9348,7 @@ export declare class LanguageService {
    * @param sourceFile - Source file.
    * @param pos - Position to find the reference at.
    */
-  findReferencesAtPosition(
-    sourceFile: SourceFile,
-    pos: number,
-  ): ReferencedSymbol[];
+  findReferencesAtPosition(sourceFile: SourceFile, pos: number): ReferencedSymbol[];
   /**
    * Find the rename locations for the specified node.
    * @param node - Node to get the rename locations for.
@@ -11987,38 +9359,26 @@ export declare class LanguageService {
    * Gets the suggestion diagnostics.
    * @param filePathOrSourceFile - The source file or file path to get suggestions for.
    */
-  getSuggestionDiagnostics(
-    filePathOrSourceFile: SourceFile | string,
-  ): DiagnosticWithLocation[];
+  getSuggestionDiagnostics(filePathOrSourceFile: SourceFile | string): DiagnosticWithLocation[];
   /**
    * Gets the formatting edits for a range.
    * @param filePath - File path.
    * @param range - Position range.
    * @param formatSettings - Format code settings.
    */
-  getFormattingEditsForRange(
-    filePath: string,
-    range: [number, number],
-    formatSettings: FormatCodeSettings,
-  ): TextChange[];
+  getFormattingEditsForRange(filePath: string, range: [number, number], formatSettings: FormatCodeSettings): TextChange[];
   /**
    * Gets the formatting edits for a document.
    * @param filePath - File path of the source file.
    * @param formatSettings - Format code settings.
    */
-  getFormattingEditsForDocument(
-    filePath: string,
-    formatSettings: FormatCodeSettings,
-  ): TextChange[];
+  getFormattingEditsForDocument(filePath: string, formatSettings: FormatCodeSettings): TextChange[];
   /**
    * Gets the formatted text for a document.
    * @param filePath - File path of the source file.
    * @param formatSettings - Format code settings.
    */
-  getFormattedDocumentText(
-    filePath: string,
-    formatSettings: FormatCodeSettings,
-  ): string;
+  getFormattedDocumentText(filePath: string, formatSettings: FormatCodeSettings): string;
   /**
    * Gets the emit output of a source file.
    * @param sourceFile - Source file.
@@ -12037,22 +9397,14 @@ export declare class LanguageService {
    * @param position - Position.
    * @param settings - Editor settings.
    */
-  getIdentationAtPosition(
-    sourceFile: SourceFile,
-    position: number,
-    settings?: EditorSettings,
-  ): number;
+  getIdentationAtPosition(sourceFile: SourceFile, position: number, settings?: EditorSettings): number;
   /**
    * Gets the indentation at the specified position.
    * @param filePath - File path.
    * @param position - Position.
    * @param settings - Editor settings.
    */
-  getIdentationAtPosition(
-    filePath: string,
-    position: number,
-    settings?: EditorSettings,
-  ): number;
+  getIdentationAtPosition(filePath: string, position: number, settings?: EditorSettings): number;
   /**
    * Gets the file text changes for organizing the imports in a source file.
    *
@@ -12060,11 +9412,7 @@ export declare class LanguageService {
    * @param formatSettings - Format code settings.
    * @param userPreferences - User preferences for refactoring.
    */
-  organizeImports(
-    sourceFile: SourceFile,
-    formatSettings?: FormatCodeSettings,
-    userPreferences?: UserPreferences,
-  ): FileTextChanges[];
+  organizeImports(sourceFile: SourceFile, formatSettings?: FormatCodeSettings, userPreferences?: UserPreferences): FileTextChanges[];
   /**
    * Gets the file text changes for organizing the imports in a source file.
    *
@@ -12072,11 +9420,7 @@ export declare class LanguageService {
    * @param formatSettings - Format code settings.
    * @param userPreferences - User preferences for refactoring.
    */
-  organizeImports(
-    filePath: string,
-    formatSettings?: FormatCodeSettings,
-    userPreferences?: UserPreferences,
-  ): FileTextChanges[];
+  organizeImports(filePath: string, formatSettings?: FormatCodeSettings, userPreferences?: UserPreferences): FileTextChanges[];
   /**
    * Gets the edit information for applying a refactor at a the provided position in a source file.
    * @param filePathOrSourceFile - File path or source file to get the edits for.
@@ -12086,17 +9430,10 @@ export declare class LanguageService {
    * @param actionName - Refactor action name.
    * @param preferences - User preferences for refactoring.
    */
-  getEditsForRefactor(
-    filePathOrSourceFile: string | SourceFile,
-    formatSettings: FormatCodeSettings,
-    positionOrRange: number | {
-      getPos(): number;
-      getEnd(): number;
-    },
-    refactorName: string,
-    actionName: string,
-    preferences?: UserPreferences,
-  ): RefactorEditInfo | undefined;
+  getEditsForRefactor(filePathOrSourceFile: string | SourceFile, formatSettings: FormatCodeSettings, positionOrRange: number | {
+        getPos(): number;
+        getEnd(): number;
+    }, refactorName: string, actionName: string, preferences?: UserPreferences): RefactorEditInfo | undefined;
   /**
    * Gets file changes and actions to perform for the provided fixId.
    * @param filePathOrSourceFile - File path or source file to get the combined code fixes for.
@@ -12104,12 +9441,7 @@ export declare class LanguageService {
    * @param formatSettings - Format code settings.
    * @param preferences - User preferences for refactoring.
    */
-  getCombinedCodeFix(
-    filePathOrSourceFile: string | SourceFile,
-    fixId: {},
-    formatSettings?: FormatCodeSettings,
-    preferences?: UserPreferences,
-  ): CombinedCodeActions;
+  getCombinedCodeFix(filePathOrSourceFile: string | SourceFile, fixId: {}, formatSettings?: FormatCodeSettings, preferences?: UserPreferences): CombinedCodeActions;
   /**
    * Gets the edit information for applying a code fix at the provided text range in a source file.
    * @param filePathOrSourceFile - File path or source file to get the code fixes for.
@@ -12119,14 +9451,7 @@ export declare class LanguageService {
    * @param formatOptions - Format code settings.
    * @param preferences - User preferences for refactoring.
    */
-  getCodeFixesAtPosition(
-    filePathOrSourceFile: string | SourceFile,
-    start: number,
-    end: number,
-    errorCodes: ReadonlyArray<number>,
-    formatOptions?: FormatCodeSettings,
-    preferences?: UserPreferences,
-  ): CodeFixAction[];
+  getCodeFixesAtPosition(filePathOrSourceFile: string | SourceFile, start: number, end: number, errorCodes: ReadonlyArray<number>, formatOptions?: FormatCodeSettings, preferences?: UserPreferences): CodeFixAction[];
 }
 
 /** Options for emitting from a Program. */
@@ -12199,9 +9524,7 @@ export declare class Program {
 }
 
 /** Represents a code action. */
-export declare class CodeAction<
-  TCompilerObject extends ts.CodeAction = ts.CodeAction,
-> {
+export declare class CodeAction<TCompilerObject extends ts.CodeAction = ts.CodeAction> {
   protected constructor();
   /** Gets the compiler object. */
   get compilerObject(): TCompilerObject;
@@ -12245,9 +9568,7 @@ export declare class CombinedCodeActions {
 }
 
 /** Definition info. */
-export declare class DefinitionInfo<
-  TCompilerObject extends ts.DefinitionInfo = ts.DefinitionInfo,
-> extends DocumentSpan<TCompilerObject> {
+export declare class DefinitionInfo<TCompilerObject extends ts.DefinitionInfo = ts.DefinitionInfo> extends DocumentSpan<TCompilerObject> {
   protected constructor();
   /** Gets the kind. */
   getKind(): ts.ScriptElementKind;
@@ -12262,9 +9583,7 @@ export declare class DefinitionInfo<
 }
 
 /** Diagnostic. */
-export declare class Diagnostic<
-  TCompilerObject extends ts.Diagnostic = ts.Diagnostic,
-> {
+export declare class Diagnostic<TCompilerObject extends ts.Diagnostic = ts.Diagnostic> {
   protected constructor();
   /** Gets the underlying compiler diagnostic. */
   get compilerObject(): TCompilerObject;
@@ -12301,8 +9620,7 @@ export declare class DiagnosticMessageChain {
   getCategory(): DiagnosticCategory;
 }
 
-export declare class DiagnosticWithLocation
-  extends Diagnostic<ts.DiagnosticWithLocation> {
+export declare class DiagnosticWithLocation extends Diagnostic<ts.DiagnosticWithLocation> {
   private constructor();
   /** Gets the line number. */
   getLineNumber(): number;
@@ -12315,9 +9633,7 @@ export declare class DiagnosticWithLocation
 }
 
 /** Document span. */
-export declare class DocumentSpan<
-  TCompilerObject extends ts.DocumentSpan = ts.DocumentSpan,
-> {
+export declare class DocumentSpan<TCompilerObject extends ts.DocumentSpan = ts.DocumentSpan> {
   protected constructor();
   /** Gets the compiler object. */
   get compilerObject(): TCompilerObject;
@@ -12384,8 +9700,7 @@ export declare class FileTextChanges {
   isNewFile(): boolean;
 }
 
-export declare class ImplementationLocation
-  extends DocumentSpan<ts.ImplementationLocation> {
+export declare class ImplementationLocation extends DocumentSpan<ts.ImplementationLocation> {
   private constructor();
   /** Gets the kind. */
   getKind(): ts.ScriptElementKind;
@@ -12462,23 +9777,19 @@ export declare class ReferencedSymbol {
   getReferences(): ReferencedSymbolEntry[];
 }
 
-export declare class ReferencedSymbolDefinitionInfo
-  extends DefinitionInfo<ts.ReferencedSymbolDefinitionInfo> {
+export declare class ReferencedSymbolDefinitionInfo extends DefinitionInfo<ts.ReferencedSymbolDefinitionInfo> {
   private constructor();
   /** Gets the display parts. */
   getDisplayParts(): SymbolDisplayPart[];
 }
 
-export declare class ReferenceEntry<
-  T extends ts.ReferenceEntry = ts.ReferenceEntry,
-> extends DocumentSpan<T> {
+export declare class ReferenceEntry<T extends ts.ReferenceEntry = ts.ReferenceEntry> extends DocumentSpan<T> {
   protected constructor();
   isWriteAccess(): boolean;
   isInString(): true | undefined;
 }
 
-export declare class ReferencedSymbolEntry
-  extends ReferenceEntry<ts.ReferencedSymbolEntry> {
+export declare class ReferencedSymbolEntry extends ReferenceEntry<ts.ReferencedSymbolEntry> {
   private constructor();
   /** If this is the definition reference. */
   isDefinition(): boolean | undefined;
@@ -12611,11 +9922,7 @@ export declare class TypeChecker {
    * @param enclosingNode - Enclosing node.
    * @param typeFormatFlags - Type format flags.
    */
-  getTypeText(
-    type: Type,
-    enclosingNode?: Node,
-    typeFormatFlags?: TypeFormatFlags,
-  ): string;
+  getTypeText(type: Type, enclosingNode?: Node, typeFormatFlags?: TypeFormatFlags): string;
   /**
    * Gets the return type of a signature.
    * @param signature - Signature to get the return type of.
@@ -12625,9 +9932,7 @@ export declare class TypeChecker {
    * Gets a signature from a node.
    * @param node - Node to get the signature from.
    */
-  getSignatureFromNode(
-    node: Node<ts.SignatureDeclaration>,
-  ): Signature | undefined;
+  getSignatureFromNode(node: Node<ts.SignatureDeclaration>): Signature | undefined;
   /**
    * Gets the exports of a module.
    * @param moduleSymbol - Module symbol.
@@ -12637,9 +9942,7 @@ export declare class TypeChecker {
    * Gets the local target symbol of the provided export specifier.
    * @param exportSpecifier - Export specifier.
    */
-  getExportSpecifierLocalTargetSymbol(
-    exportSpecifier: ExportSpecifier,
-  ): Symbol | undefined;
+  getExportSpecifierLocalTargetSymbol(exportSpecifier: ExportSpecifier): Symbol | undefined;
   /**
    * Gets the resolved signature from a node or returns undefined if the signature can't be resolved.
    * @param node - Node to get the signature from.
@@ -12736,9 +10039,7 @@ export declare class Type<TType extends ts.Type = ts.Type> {
    * Gets a property or returns undefined if it does not exist.
    * @param findFunction - Function for searching for a property.
    */
-  getProperty(
-    findFunction: (declaration: Symbol) => boolean,
-  ): Symbol | undefined;
+  getProperty(findFunction: (declaration: Symbol) => boolean): Symbol | undefined;
   /** Gets the apparent properties of the type. */
   getApparentProperties(): Symbol[];
   /**
@@ -12747,9 +10048,7 @@ export declare class Type<TType extends ts.Type = ts.Type> {
    * @param findFunction - Function for searching for an apparent property.
    */
   getApparentProperty(name: string): Symbol | undefined;
-  getApparentProperty(
-    findFunction: (declaration: Symbol) => boolean,
-  ): Symbol | undefined;
+  getApparentProperty(findFunction: (declaration: Symbol) => boolean): Symbol | undefined;
   /** Gets if the type is possibly null or undefined. */
   isNullable(): boolean;
   /** Gets the non-nullable type. */
@@ -12903,7 +10202,7 @@ export declare enum IndentationText {
   /** Eight spaces */
   EightSpaces = "        ",
   /** Tab */
-  Tab = "\t",
+  Tab = "\t"
 }
 
 /** Manipulation settings. */
@@ -12926,8 +10225,7 @@ export interface ManipulationSettings extends SupportedFormatCodeSettingsOnly {
 }
 
 /** FormatCodeSettings that are currently supported in the library. */
-export interface SupportedFormatCodeSettings
-  extends SupportedFormatCodeSettingsOnly, EditorSettings {
+export interface SupportedFormatCodeSettings extends SupportedFormatCodeSettingsOnly, EditorSettings {
 }
 
 /** FormatCodeSettings that are currently supported in the library. */
@@ -12942,8 +10240,7 @@ export interface SupportedFormatCodeSettingsOnly {
 }
 
 /** Holds the manipulation settings. */
-export declare class ManipulationSettingsContainer
-  extends SettingsContainer<ManipulationSettings> {
+export declare class ManipulationSettingsContainer extends SettingsContainer<ManipulationSettings> {
   private _editorSettings;
   private _formatCodeSettings;
   private _userPreferences;
@@ -12973,63 +10270,13 @@ export declare class ManipulationSettingsContainer
   set(settings: Partial<ManipulationSettings>): void;
 }
 
-export declare type StatementStructures =
-  | ClassDeclarationStructure
-  | EnumDeclarationStructure
-  | FunctionDeclarationStructure
-  | InterfaceDeclarationStructure
-  | ModuleDeclarationStructure
-  | TypeAliasDeclarationStructure
-  | ImportDeclarationStructure
-  | ExportDeclarationStructure
-  | ExportAssignmentStructure
-  | VariableStatementStructure;
-export declare type ClassMemberStructures =
-  | ConstructorDeclarationStructure
-  | GetAccessorDeclarationStructure
-  | SetAccessorDeclarationStructure
-  | MethodDeclarationStructure
-  | PropertyDeclarationStructure
-  | ClassStaticBlockDeclarationStructure;
-export declare type TypeElementMemberStructures =
-  | CallSignatureDeclarationStructure
-  | ConstructSignatureDeclarationStructure
-  | IndexSignatureDeclarationStructure
-  | MethodSignatureStructure
-  | PropertySignatureStructure;
+export declare type StatementStructures = ClassDeclarationStructure | EnumDeclarationStructure | FunctionDeclarationStructure | InterfaceDeclarationStructure | ModuleDeclarationStructure | TypeAliasDeclarationStructure | ImportDeclarationStructure | ExportDeclarationStructure | ExportAssignmentStructure | VariableStatementStructure;
+export declare type ClassMemberStructures = ConstructorDeclarationStructure | GetAccessorDeclarationStructure | SetAccessorDeclarationStructure | MethodDeclarationStructure | PropertyDeclarationStructure | ClassStaticBlockDeclarationStructure;
+export declare type TypeElementMemberStructures = CallSignatureDeclarationStructure | ConstructSignatureDeclarationStructure | IndexSignatureDeclarationStructure | MethodSignatureStructure | PropertySignatureStructure;
 export declare type InterfaceMemberStructures = TypeElementMemberStructures;
-export declare type ObjectLiteralExpressionPropertyStructures =
-  | PropertyAssignmentStructure
-  | ShorthandPropertyAssignmentStructure
-  | SpreadAssignmentStructure
-  | GetAccessorDeclarationStructure
-  | SetAccessorDeclarationStructure
-  | MethodDeclarationStructure;
-export declare type JsxStructures =
-  | JsxAttributeStructure
-  | JsxSpreadAttributeStructure
-  | JsxElementStructure
-  | JsxSelfClosingElementStructure;
-export declare type Structures =
-  | AssertEntryStructure
-  | StatementStructures
-  | ClassMemberStructures
-  | EnumMemberStructure
-  | InterfaceMemberStructures
-  | ObjectLiteralExpressionPropertyStructures
-  | JsxStructures
-  | FunctionDeclarationOverloadStructure
-  | MethodDeclarationOverloadStructure
-  | ConstructorDeclarationOverloadStructure
-  | ParameterDeclarationStructure
-  | TypeParameterDeclarationStructure
-  | SourceFileStructure
-  | ExportSpecifierStructure
-  | ImportSpecifierStructure
-  | VariableDeclarationStructure
-  | JSDocStructure
-  | JSDocTagStructure
-  | DecoratorStructure;
+export declare type ObjectLiteralExpressionPropertyStructures = PropertyAssignmentStructure | ShorthandPropertyAssignmentStructure | SpreadAssignmentStructure | GetAccessorDeclarationStructure | SetAccessorDeclarationStructure | MethodDeclarationStructure;
+export declare type JsxStructures = JsxAttributeStructure | JsxSpreadAttributeStructure | JsxElementStructure | JsxSelfClosingElementStructure;
+export declare type Structures = AssertEntryStructure | StatementStructures | ClassMemberStructures | EnumMemberStructure | InterfaceMemberStructures | ObjectLiteralExpressionPropertyStructures | JsxStructures | FunctionDeclarationOverloadStructure | MethodDeclarationOverloadStructure | ConstructorDeclarationOverloadStructure | ParameterDeclarationStructure | TypeParameterDeclarationStructure | SourceFileStructure | ExportSpecifierStructure | ImportSpecifierStructure | VariableDeclarationStructure | JSDocStructure | JSDocTagStructure | DecoratorStructure;
 
 export interface AbstractableNodeStructure {
   isAbstract?: boolean;
@@ -13140,8 +10387,7 @@ export interface ScopedNodeStructure {
   scope?: Scope;
 }
 
-export interface SignaturedDeclarationStructure
-  extends ParameteredNodeStructure, ReturnTypedNodeStructure {
+export interface SignaturedDeclarationStructure extends ParameteredNodeStructure, ReturnTypedNodeStructure {
 }
 
 export interface StaticableNodeStructure {
@@ -13164,15 +10410,7 @@ export interface TypeParameteredNodeStructure {
   typeParameters?: (OptionalKind<TypeParameterDeclarationStructure> | string)[];
 }
 
-export interface ClassLikeDeclarationBaseStructure
-  extends
-    NameableNodeStructure,
-    ClassLikeDeclarationBaseSpecificStructure,
-    ImplementsClauseableNodeStructure,
-    DecoratableNodeStructure,
-    TypeParameteredNodeStructure,
-    JSDocableNodeStructure,
-    AbstractableNodeStructure {
+export interface ClassLikeDeclarationBaseStructure extends NameableNodeStructure, ClassLikeDeclarationBaseSpecificStructure, ImplementsClauseableNodeStructure, DecoratableNodeStructure, TypeParameteredNodeStructure, JSDocableNodeStructure, AbstractableNodeStructure {
 }
 
 interface ClassLikeDeclarationBaseSpecificStructure {
@@ -13184,13 +10422,7 @@ interface ClassLikeDeclarationBaseSpecificStructure {
   methods?: OptionalKind<MethodDeclarationStructure>[];
 }
 
-export interface ClassDeclarationStructure
-  extends
-    Structure,
-    ClassLikeDeclarationBaseStructure,
-    ClassDeclarationSpecificStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure {
+export interface ClassDeclarationStructure extends Structure, ClassLikeDeclarationBaseStructure, ClassDeclarationSpecificStructure, AmbientableNodeStructure, ExportableNodeStructure {
   /**
    * The class name.
    * @remarks Can be undefined. For example: `export default class { ... }`
@@ -13198,151 +10430,63 @@ export interface ClassDeclarationStructure
   name?: string;
 }
 
-interface ClassDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Class> {
+interface ClassDeclarationSpecificStructure extends KindedStructure<StructureKind.Class> {
 }
 
-export interface ClassStaticBlockDeclarationStructure
-  extends
-    Structure,
-    ClassStaticBlockDeclarationSpecificStructure,
-    JSDocableNodeStructure,
-    StatementedNodeStructure {
+export interface ClassStaticBlockDeclarationStructure extends Structure, ClassStaticBlockDeclarationSpecificStructure, JSDocableNodeStructure, StatementedNodeStructure {
 }
 
-interface ClassStaticBlockDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.ClassStaticBlock> {
+interface ClassStaticBlockDeclarationSpecificStructure extends KindedStructure<StructureKind.ClassStaticBlock> {
 }
 
-export interface ConstructorDeclarationStructure
-  extends
-    Structure,
-    ConstructorDeclarationSpecificStructure,
-    ScopedNodeStructure,
-    FunctionLikeDeclarationStructure {
+export interface ConstructorDeclarationStructure extends Structure, ConstructorDeclarationSpecificStructure, ScopedNodeStructure, FunctionLikeDeclarationStructure {
 }
 
-interface ConstructorDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Constructor> {
+interface ConstructorDeclarationSpecificStructure extends KindedStructure<StructureKind.Constructor> {
   overloads?: OptionalKind<ConstructorDeclarationOverloadStructure>[];
 }
 
-export interface ConstructorDeclarationOverloadStructure
-  extends
-    Structure,
-    ConstructorDeclarationOverloadSpecificStructure,
-    ScopedNodeStructure,
-    SignaturedDeclarationStructure,
-    TypeParameteredNodeStructure,
-    JSDocableNodeStructure {
+export interface ConstructorDeclarationOverloadStructure extends Structure, ConstructorDeclarationOverloadSpecificStructure, ScopedNodeStructure, SignaturedDeclarationStructure, TypeParameteredNodeStructure, JSDocableNodeStructure {
 }
 
-interface ConstructorDeclarationOverloadSpecificStructure
-  extends KindedStructure<StructureKind.ConstructorOverload> {
+interface ConstructorDeclarationOverloadSpecificStructure extends KindedStructure<StructureKind.ConstructorOverload> {
 }
 
-export interface GetAccessorDeclarationStructure
-  extends
-    Structure,
-    GetAccessorDeclarationSpecificStructure,
-    PropertyNamedNodeStructure,
-    StaticableNodeStructure,
-    DecoratableNodeStructure,
-    AbstractableNodeStructure,
-    ScopedNodeStructure,
-    FunctionLikeDeclarationStructure {
+export interface GetAccessorDeclarationStructure extends Structure, GetAccessorDeclarationSpecificStructure, PropertyNamedNodeStructure, StaticableNodeStructure, DecoratableNodeStructure, AbstractableNodeStructure, ScopedNodeStructure, FunctionLikeDeclarationStructure {
 }
 
-interface GetAccessorDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.GetAccessor> {
+interface GetAccessorDeclarationSpecificStructure extends KindedStructure<StructureKind.GetAccessor> {
 }
 
-export interface MethodDeclarationStructure
-  extends
-    Structure,
-    MethodDeclarationSpecificStructure,
-    PropertyNamedNodeStructure,
-    StaticableNodeStructure,
-    DecoratableNodeStructure,
-    AbstractableNodeStructure,
-    ScopedNodeStructure,
-    AsyncableNodeStructure,
-    GeneratorableNodeStructure,
-    FunctionLikeDeclarationStructure,
-    QuestionTokenableNodeStructure,
-    OverrideableNodeStructure {
+export interface MethodDeclarationStructure extends Structure, MethodDeclarationSpecificStructure, PropertyNamedNodeStructure, StaticableNodeStructure, DecoratableNodeStructure, AbstractableNodeStructure, ScopedNodeStructure, AsyncableNodeStructure, GeneratorableNodeStructure, FunctionLikeDeclarationStructure, QuestionTokenableNodeStructure, OverrideableNodeStructure {
 }
 
-interface MethodDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Method> {
+interface MethodDeclarationSpecificStructure extends KindedStructure<StructureKind.Method> {
   overloads?: OptionalKind<MethodDeclarationOverloadStructure>[];
 }
 
-export interface MethodDeclarationOverloadStructure
-  extends
-    Structure,
-    MethodDeclarationOverloadSpecificStructure,
-    StaticableNodeStructure,
-    AbstractableNodeStructure,
-    ScopedNodeStructure,
-    AsyncableNodeStructure,
-    GeneratorableNodeStructure,
-    SignaturedDeclarationStructure,
-    TypeParameteredNodeStructure,
-    JSDocableNodeStructure,
-    QuestionTokenableNodeStructure,
-    OverrideableNodeStructure {
+export interface MethodDeclarationOverloadStructure extends Structure, MethodDeclarationOverloadSpecificStructure, StaticableNodeStructure, AbstractableNodeStructure, ScopedNodeStructure, AsyncableNodeStructure, GeneratorableNodeStructure, SignaturedDeclarationStructure, TypeParameteredNodeStructure, JSDocableNodeStructure, QuestionTokenableNodeStructure, OverrideableNodeStructure {
 }
 
-interface MethodDeclarationOverloadSpecificStructure
-  extends KindedStructure<StructureKind.MethodOverload> {
+interface MethodDeclarationOverloadSpecificStructure extends KindedStructure<StructureKind.MethodOverload> {
 }
 
-export interface PropertyDeclarationStructure
-  extends
-    Structure,
-    PropertyDeclarationSpecificStructure,
-    PropertyNamedNodeStructure,
-    TypedNodeStructure,
-    QuestionTokenableNodeStructure,
-    ExclamationTokenableNodeStructure,
-    StaticableNodeStructure,
-    ScopedNodeStructure,
-    JSDocableNodeStructure,
-    ReadonlyableNodeStructure,
-    InitializerExpressionableNodeStructure,
-    DecoratableNodeStructure,
-    AbstractableNodeStructure,
-    AmbientableNodeStructure,
-    OverrideableNodeStructure {
+export interface PropertyDeclarationStructure extends Structure, PropertyDeclarationSpecificStructure, PropertyNamedNodeStructure, TypedNodeStructure, QuestionTokenableNodeStructure, ExclamationTokenableNodeStructure, StaticableNodeStructure, ScopedNodeStructure, JSDocableNodeStructure, ReadonlyableNodeStructure, InitializerExpressionableNodeStructure, DecoratableNodeStructure, AbstractableNodeStructure, AmbientableNodeStructure, OverrideableNodeStructure {
 }
 
-interface PropertyDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Property> {
+interface PropertyDeclarationSpecificStructure extends KindedStructure<StructureKind.Property> {
 }
 
-export interface SetAccessorDeclarationStructure
-  extends
-    Structure,
-    SetAccessorDeclarationSpecificStructure,
-    PropertyNamedNodeStructure,
-    StaticableNodeStructure,
-    DecoratableNodeStructure,
-    AbstractableNodeStructure,
-    ScopedNodeStructure,
-    FunctionLikeDeclarationStructure {
+export interface SetAccessorDeclarationStructure extends Structure, SetAccessorDeclarationSpecificStructure, PropertyNamedNodeStructure, StaticableNodeStructure, DecoratableNodeStructure, AbstractableNodeStructure, ScopedNodeStructure, FunctionLikeDeclarationStructure {
 }
 
-interface SetAccessorDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.SetAccessor> {
+interface SetAccessorDeclarationSpecificStructure extends KindedStructure<StructureKind.SetAccessor> {
 }
 
-export interface DecoratorStructure
-  extends Structure, DecoratorSpecificStructure {
+export interface DecoratorStructure extends Structure, DecoratorSpecificStructure {
 }
 
-interface DecoratorSpecificStructure
-  extends KindedStructure<StructureKind.Decorator> {
+interface DecoratorSpecificStructure extends KindedStructure<StructureKind.Decorator> {
   name: string;
   /**
    * Arguments for a decorator factory.
@@ -13365,45 +10509,28 @@ interface JSDocSpecificStructure extends KindedStructure<StructureKind.JSDoc> {
   tags?: OptionalKind<JSDocTagStructure>[];
 }
 
-export interface JSDocTagStructure
-  extends Structure, JSDocTagSpecificStructure {
+export interface JSDocTagStructure extends Structure, JSDocTagSpecificStructure {
 }
 
-interface JSDocTagSpecificStructure
-  extends KindedStructure<StructureKind.JSDocTag> {
+interface JSDocTagSpecificStructure extends KindedStructure<StructureKind.JSDocTag> {
   /** The name for the JS doc tag that comes after the "at" symbol. */
   tagName: string;
   /** The text that follows the tag name. */
   text?: string | WriterFunction;
 }
 
-export interface EnumDeclarationStructure
-  extends
-    Structure,
-    NamedNodeStructure,
-    EnumDeclarationSpecificStructure,
-    JSDocableNodeStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure {
+export interface EnumDeclarationStructure extends Structure, NamedNodeStructure, EnumDeclarationSpecificStructure, JSDocableNodeStructure, AmbientableNodeStructure, ExportableNodeStructure {
 }
 
-interface EnumDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Enum> {
+interface EnumDeclarationSpecificStructure extends KindedStructure<StructureKind.Enum> {
   isConst?: boolean;
   members?: OptionalKind<EnumMemberStructure>[];
 }
 
-export interface EnumMemberStructure
-  extends
-    Structure,
-    EnumMemberSpecificStructure,
-    PropertyNamedNodeStructure,
-    JSDocableNodeStructure,
-    InitializerExpressionableNodeStructure {
+export interface EnumMemberStructure extends Structure, EnumMemberSpecificStructure, PropertyNamedNodeStructure, JSDocableNodeStructure, InitializerExpressionableNodeStructure {
 }
 
-interface EnumMemberSpecificStructure
-  extends KindedStructure<StructureKind.EnumMember> {
+interface EnumMemberSpecificStructure extends KindedStructure<StructureKind.EnumMember> {
   /** Convenience property for setting the initializer. */
   value?: number | string;
 }
@@ -13412,330 +10539,183 @@ export interface ExpressionedNodeStructure {
   expression: string | WriterFunction;
 }
 
-export interface PropertyAssignmentStructure
-  extends
-    Structure,
-    PropertyAssignmentSpecificStructure,
-    PropertyNamedNodeStructure {
+export interface PropertyAssignmentStructure extends Structure, PropertyAssignmentSpecificStructure, PropertyNamedNodeStructure {
 }
 
-interface PropertyAssignmentSpecificStructure
-  extends KindedStructure<StructureKind.PropertyAssignment> {
+interface PropertyAssignmentSpecificStructure extends KindedStructure<StructureKind.PropertyAssignment> {
   initializer: string | WriterFunction;
 }
 
-export interface ShorthandPropertyAssignmentStructure
-  extends
-    Structure,
-    ShorthandPropertyAssignmentSpecificStructure,
-    NamedNodeStructure {
+export interface ShorthandPropertyAssignmentStructure extends Structure, ShorthandPropertyAssignmentSpecificStructure, NamedNodeStructure {
 }
 
-interface ShorthandPropertyAssignmentSpecificStructure
-  extends KindedStructure<StructureKind.ShorthandPropertyAssignment> {
+interface ShorthandPropertyAssignmentSpecificStructure extends KindedStructure<StructureKind.ShorthandPropertyAssignment> {
 }
 
-export interface SpreadAssignmentStructure
-  extends
-    Structure,
-    SpreadAssignmentSpecificStructure,
-    ExpressionedNodeStructure {
+export interface SpreadAssignmentStructure extends Structure, SpreadAssignmentSpecificStructure, ExpressionedNodeStructure {
 }
 
-interface SpreadAssignmentSpecificStructure
-  extends KindedStructure<StructureKind.SpreadAssignment> {
+interface SpreadAssignmentSpecificStructure extends KindedStructure<StructureKind.SpreadAssignment> {
 }
 
-export interface FunctionDeclarationStructure
-  extends
-    Structure,
-    FunctionDeclarationSpecificStructure,
-    NameableNodeStructure,
-    FunctionLikeDeclarationStructure,
-    AsyncableNodeStructure,
-    GeneratorableNodeStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure {
+export interface FunctionDeclarationStructure extends Structure, FunctionDeclarationSpecificStructure, NameableNodeStructure, FunctionLikeDeclarationStructure, AsyncableNodeStructure, GeneratorableNodeStructure, AmbientableNodeStructure, ExportableNodeStructure {
 }
 
-interface FunctionDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Function> {
+interface FunctionDeclarationSpecificStructure extends KindedStructure<StructureKind.Function> {
   overloads?: OptionalKind<FunctionDeclarationOverloadStructure>[];
 }
 
-export interface FunctionDeclarationOverloadStructure
-  extends
-    Structure,
-    FunctionDeclarationOverloadSpecificStructure,
-    SignaturedDeclarationStructure,
-    TypeParameteredNodeStructure,
-    JSDocableNodeStructure,
-    AsyncableNodeStructure,
-    GeneratorableNodeStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure {
+export interface FunctionDeclarationOverloadStructure extends Structure, FunctionDeclarationOverloadSpecificStructure, SignaturedDeclarationStructure, TypeParameteredNodeStructure, JSDocableNodeStructure, AsyncableNodeStructure, GeneratorableNodeStructure, AmbientableNodeStructure, ExportableNodeStructure {
 }
 
-interface FunctionDeclarationOverloadSpecificStructure
-  extends KindedStructure<StructureKind.FunctionOverload> {
+interface FunctionDeclarationOverloadSpecificStructure extends KindedStructure<StructureKind.FunctionOverload> {
 }
 
-export interface FunctionLikeDeclarationStructure
-  extends
-    SignaturedDeclarationStructure,
-    TypeParameteredNodeStructure,
-    JSDocableNodeStructure,
-    StatementedNodeStructure {
+export interface FunctionLikeDeclarationStructure extends SignaturedDeclarationStructure, TypeParameteredNodeStructure, JSDocableNodeStructure, StatementedNodeStructure {
 }
 
-export interface ParameterDeclarationStructure
-  extends
-    Structure,
-    BindingNamedNodeStructure,
-    TypedNodeStructure,
-    ReadonlyableNodeStructure,
-    DecoratableNodeStructure,
-    QuestionTokenableNodeStructure,
-    ScopeableNodeStructure,
-    InitializerExpressionableNodeStructure,
-    ParameterDeclarationSpecificStructure,
-    OverrideableNodeStructure {
+export interface ParameterDeclarationStructure extends Structure, BindingNamedNodeStructure, TypedNodeStructure, ReadonlyableNodeStructure, DecoratableNodeStructure, QuestionTokenableNodeStructure, ScopeableNodeStructure, InitializerExpressionableNodeStructure, ParameterDeclarationSpecificStructure, OverrideableNodeStructure {
 }
 
-interface ParameterDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Parameter> {
+interface ParameterDeclarationSpecificStructure extends KindedStructure<StructureKind.Parameter> {
   isRestParameter?: boolean;
 }
 
-export interface CallSignatureDeclarationStructure
-  extends
-    Structure,
-    CallSignatureDeclarationSpecificStructure,
-    JSDocableNodeStructure,
-    SignaturedDeclarationStructure,
-    TypeParameteredNodeStructure {
+export interface CallSignatureDeclarationStructure extends Structure, CallSignatureDeclarationSpecificStructure, JSDocableNodeStructure, SignaturedDeclarationStructure, TypeParameteredNodeStructure {
 }
 
-interface CallSignatureDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.CallSignature> {
+interface CallSignatureDeclarationSpecificStructure extends KindedStructure<StructureKind.CallSignature> {
 }
 
-export interface ConstructSignatureDeclarationStructure
-  extends
-    Structure,
-    ConstructSignatureDeclarationSpecificStructure,
-    JSDocableNodeStructure,
-    SignaturedDeclarationStructure,
-    TypeParameteredNodeStructure {
+export interface ConstructSignatureDeclarationStructure extends Structure, ConstructSignatureDeclarationSpecificStructure, JSDocableNodeStructure, SignaturedDeclarationStructure, TypeParameteredNodeStructure {
 }
 
-interface ConstructSignatureDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.ConstructSignature> {
+interface ConstructSignatureDeclarationSpecificStructure extends KindedStructure<StructureKind.ConstructSignature> {
 }
 
-export interface IndexSignatureDeclarationStructure
-  extends
-    Structure,
-    IndexSignatureDeclarationSpecificStructure,
-    JSDocableNodeStructure,
-    ReadonlyableNodeStructure,
-    ReturnTypedNodeStructure {
+export interface IndexSignatureDeclarationStructure extends Structure, IndexSignatureDeclarationSpecificStructure, JSDocableNodeStructure, ReadonlyableNodeStructure, ReturnTypedNodeStructure {
 }
 
-interface IndexSignatureDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.IndexSignature> {
+interface IndexSignatureDeclarationSpecificStructure extends KindedStructure<StructureKind.IndexSignature> {
   keyName?: string;
   keyType?: string;
 }
 
-export interface InterfaceDeclarationStructure
-  extends
-    Structure,
-    NamedNodeStructure,
-    InterfaceDeclarationSpecificStructure,
-    ExtendsClauseableNodeStructure,
-    TypeParameteredNodeStructure,
-    JSDocableNodeStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure,
-    TypeElementMemberedNodeStructure {
+export interface InterfaceDeclarationStructure extends Structure, NamedNodeStructure, InterfaceDeclarationSpecificStructure, ExtendsClauseableNodeStructure, TypeParameteredNodeStructure, JSDocableNodeStructure, AmbientableNodeStructure, ExportableNodeStructure, TypeElementMemberedNodeStructure {
 }
 
-interface InterfaceDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Interface> {
+interface InterfaceDeclarationSpecificStructure extends KindedStructure<StructureKind.Interface> {
 }
 
-export interface MethodSignatureStructure
-  extends
-    Structure,
-    PropertyNamedNodeStructure,
-    MethodSignatureSpecificStructure,
-    QuestionTokenableNodeStructure,
-    JSDocableNodeStructure,
-    SignaturedDeclarationStructure,
-    TypeParameteredNodeStructure {
+export interface MethodSignatureStructure extends Structure, PropertyNamedNodeStructure, MethodSignatureSpecificStructure, QuestionTokenableNodeStructure, JSDocableNodeStructure, SignaturedDeclarationStructure, TypeParameteredNodeStructure {
 }
 
-interface MethodSignatureSpecificStructure
-  extends KindedStructure<StructureKind.MethodSignature> {
+interface MethodSignatureSpecificStructure extends KindedStructure<StructureKind.MethodSignature> {
 }
 
-export interface PropertySignatureStructure
-  extends
-    Structure,
-    PropertySignatureSpecificStructure,
-    PropertyNamedNodeStructure,
-    TypedNodeStructure,
-    QuestionTokenableNodeStructure,
-    JSDocableNodeStructure,
-    ReadonlyableNodeStructure,
-    InitializerExpressionableNodeStructure {
+export interface PropertySignatureStructure extends Structure, PropertySignatureSpecificStructure, PropertyNamedNodeStructure, TypedNodeStructure, QuestionTokenableNodeStructure, JSDocableNodeStructure, ReadonlyableNodeStructure, InitializerExpressionableNodeStructure {
 }
 
-interface PropertySignatureSpecificStructure
-  extends KindedStructure<StructureKind.PropertySignature> {
+interface PropertySignatureSpecificStructure extends KindedStructure<StructureKind.PropertySignature> {
 }
 
 export interface JsxAttributedNodeStructure {
-  attributes?:
-    (OptionalKind<JsxAttributeStructure> | JsxSpreadAttributeStructure)[];
+  attributes?: (OptionalKind<JsxAttributeStructure> | JsxSpreadAttributeStructure)[];
 }
 
 export interface JsxTagNamedNodeStructure {
   name: string;
 }
 
-export interface JsxAttributeStructure
-  extends Structure, JsxAttributeSpecificStructure, NamedNodeStructure {
+export interface JsxAttributeStructure extends Structure, JsxAttributeSpecificStructure, NamedNodeStructure {
 }
 
-interface JsxAttributeSpecificStructure
-  extends KindedStructure<StructureKind.JsxAttribute> {
+interface JsxAttributeSpecificStructure extends KindedStructure<StructureKind.JsxAttribute> {
   initializer?: string;
 }
 
-export interface JsxElementStructure
-  extends Structure, JsxElementSpecificStructure {
+export interface JsxElementStructure extends Structure, JsxElementSpecificStructure {
 }
 
-interface JsxElementSpecificStructure
-  extends KindedStructure<StructureKind.JsxElement> {
+interface JsxElementSpecificStructure extends KindedStructure<StructureKind.JsxElement> {
   name: string;
-  attributes?:
-    (OptionalKind<JsxAttributeStructure> | JsxSpreadAttributeStructure)[];
-  children?:
-    (OptionalKind<JsxElementStructure> | JsxSelfClosingElementStructure)[];
+  attributes?: (OptionalKind<JsxAttributeStructure> | JsxSpreadAttributeStructure)[];
+  children?: (OptionalKind<JsxElementStructure> | JsxSelfClosingElementStructure)[];
   bodyText?: string;
 }
 
-export interface JsxSelfClosingElementStructure
-  extends
-    Structure,
-    JsxTagNamedNodeStructure,
-    JsxSelfClosingElementSpecificStructure,
-    JsxAttributedNodeStructure {
+export interface JsxSelfClosingElementStructure extends Structure, JsxTagNamedNodeStructure, JsxSelfClosingElementSpecificStructure, JsxAttributedNodeStructure {
 }
 
-interface JsxSelfClosingElementSpecificStructure
-  extends KindedStructure<StructureKind.JsxSelfClosingElement> {
+interface JsxSelfClosingElementSpecificStructure extends KindedStructure<StructureKind.JsxSelfClosingElement> {
 }
 
-export interface JsxSpreadAttributeStructure
-  extends Structure, JsxSpreadAttributeSpecificStructure {
+export interface JsxSpreadAttributeStructure extends Structure, JsxSpreadAttributeSpecificStructure {
 }
 
-interface JsxSpreadAttributeSpecificStructure
-  extends KindedStructure<StructureKind.JsxSpreadAttribute> {
+interface JsxSpreadAttributeSpecificStructure extends KindedStructure<StructureKind.JsxSpreadAttribute> {
   expression: string;
 }
 
-export interface AssertEntryStructure
-  extends
-    Structure,
-    AssertEntryStructureSpecificStructure,
-    AssertionKeyNamedNodeStructure {
+export interface AssertEntryStructure extends Structure, AssertEntryStructureSpecificStructure, AssertionKeyNamedNodeStructure {
 }
 
-interface AssertEntryStructureSpecificStructure
-  extends KindedStructure<StructureKind.AssertEntry> {
+interface AssertEntryStructureSpecificStructure extends KindedStructure<StructureKind.AssertEntry> {
   /** Expression value. Quote this when providing a string. */
   value: string;
 }
 
-export interface ExportAssignmentStructure
-  extends Structure, ExportAssignmentSpecificStructure {
+export interface ExportAssignmentStructure extends Structure, ExportAssignmentSpecificStructure {
 }
 
-interface ExportAssignmentSpecificStructure
-  extends KindedStructure<StructureKind.ExportAssignment> {
+interface ExportAssignmentSpecificStructure extends KindedStructure<StructureKind.ExportAssignment> {
   isExportEquals?: boolean;
   expression: string | WriterFunction;
 }
 
-export interface ExportDeclarationStructure
-  extends Structure, ExportDeclarationSpecificStructure {
+export interface ExportDeclarationStructure extends Structure, ExportDeclarationSpecificStructure {
 }
 
-interface ExportDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.ExportDeclaration> {
+interface ExportDeclarationSpecificStructure extends KindedStructure<StructureKind.ExportDeclaration> {
   isTypeOnly?: boolean;
   namespaceExport?: string;
-  namedExports?:
-    | (string | OptionalKind<ExportSpecifierStructure> | WriterFunction)[]
-    | WriterFunction;
+  namedExports?: (string | OptionalKind<ExportSpecifierStructure> | WriterFunction)[] | WriterFunction;
   moduleSpecifier?: string;
   assertElements?: OptionalKind<AssertEntryStructure>[] | undefined;
 }
 
-export interface ExportSpecifierStructure
-  extends Structure, ExportSpecifierSpecificStructure {
+export interface ExportSpecifierStructure extends Structure, ExportSpecifierSpecificStructure {
 }
 
-interface ExportSpecifierSpecificStructure
-  extends KindedStructure<StructureKind.ExportSpecifier> {
+interface ExportSpecifierSpecificStructure extends KindedStructure<StructureKind.ExportSpecifier> {
   name: string;
   alias?: string;
 }
 
-export interface ImportDeclarationStructure
-  extends Structure, ImportDeclarationSpecificStructure {
+export interface ImportDeclarationStructure extends Structure, ImportDeclarationSpecificStructure {
 }
 
-interface ImportDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.ImportDeclaration> {
+interface ImportDeclarationSpecificStructure extends KindedStructure<StructureKind.ImportDeclaration> {
   isTypeOnly?: boolean;
   defaultImport?: string;
   namespaceImport?: string;
-  namedImports?:
-    | (OptionalKind<ImportSpecifierStructure> | string | WriterFunction)[]
-    | WriterFunction;
+  namedImports?: (OptionalKind<ImportSpecifierStructure> | string | WriterFunction)[] | WriterFunction;
   moduleSpecifier: string;
   assertElements?: OptionalKind<AssertEntryStructure>[] | undefined;
 }
 
-export interface ImportSpecifierStructure
-  extends Structure, ImportSpecifierSpecificStructure {
+export interface ImportSpecifierStructure extends Structure, ImportSpecifierSpecificStructure {
 }
 
-interface ImportSpecifierSpecificStructure
-  extends KindedStructure<StructureKind.ImportSpecifier> {
+interface ImportSpecifierSpecificStructure extends KindedStructure<StructureKind.ImportSpecifier> {
   name: string;
   alias?: string;
 }
 
-export interface ModuleDeclarationStructure
-  extends
-    Structure,
-    ModuleNamedNodeStructure,
-    ModuleDeclarationSpecificStructure,
-    JSDocableNodeStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure,
-    StatementedNodeStructure {
+export interface ModuleDeclarationStructure extends Structure, ModuleNamedNodeStructure, ModuleDeclarationSpecificStructure, JSDocableNodeStructure, AmbientableNodeStructure, ExportableNodeStructure, StatementedNodeStructure {
 }
 
-interface ModuleDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.Module> {
+interface ModuleDeclarationSpecificStructure extends KindedStructure<StructureKind.Module> {
   /**
    * The module declaration kind.
    *
@@ -13744,8 +10724,7 @@ interface ModuleDeclarationSpecificStructure
   declarationKind?: ModuleDeclarationKind;
 }
 
-export interface SourceFileStructure
-  extends Structure, SourceFileSpecificStructure, StatementedNodeStructure {
+export interface SourceFileStructure extends Structure, SourceFileSpecificStructure, StatementedNodeStructure {
 }
 
 interface SourceFileSpecificStructure {
@@ -13753,37 +10732,19 @@ interface SourceFileSpecificStructure {
 }
 
 export interface StatementedNodeStructure {
-  statements?:
-    | (string | WriterFunction | StatementStructures)[]
-    | string
-    | WriterFunction;
+  statements?: (string | WriterFunction | StatementStructures)[] | string | WriterFunction;
 }
 
-export interface VariableDeclarationStructure
-  extends
-    Structure,
-    VariableDeclarationSpecificStructure,
-    BindingNamedNodeStructure,
-    InitializerExpressionableNodeStructure,
-    TypedNodeStructure,
-    ExclamationTokenableNodeStructure {
+export interface VariableDeclarationStructure extends Structure, VariableDeclarationSpecificStructure, BindingNamedNodeStructure, InitializerExpressionableNodeStructure, TypedNodeStructure, ExclamationTokenableNodeStructure {
 }
 
-interface VariableDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.VariableDeclaration> {
+interface VariableDeclarationSpecificStructure extends KindedStructure<StructureKind.VariableDeclaration> {
 }
 
-export interface VariableStatementStructure
-  extends
-    Structure,
-    VariableStatementSpecificStructure,
-    JSDocableNodeStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure {
+export interface VariableStatementStructure extends Structure, VariableStatementSpecificStructure, JSDocableNodeStructure, AmbientableNodeStructure, ExportableNodeStructure {
 }
 
-interface VariableStatementSpecificStructure
-  extends KindedStructure<StructureKind.VariableStatement> {
+interface VariableStatementSpecificStructure extends KindedStructure<StructureKind.VariableStatement> {
   declarationKind?: VariableDeclarationKind;
   declarations: OptionalKind<VariableDeclarationStructure>[];
 }
@@ -13797,315 +10758,167 @@ export interface Structure {
 
 /** Type guards for use on structures. */
 export declare const Structure: {
-  /**
-   * Gets if the provided structure has a name.
-   */
-  readonly hasName: <T extends Structure>(structure: T) => structure is T & {
-    name: string;
+      /**
+       * Gets if the provided structure has a name.
+       */
+      readonly hasName: <T extends Structure>(structure: T) => structure is T & {
+          name: string;
+      };
+      /** Gets if the provided structure is a AssertEntryStructure. */
+      readonly isAssertEntry: (structure: unknown) => structure is AssertEntryStructure;
+      /** Gets if the provided structure is a AssertionKeyNamedNodeStructure. */
+      readonly isAssertionKeyNamed: <T_1>(structure: T_1) => structure is T_1 & AssertionKeyNamedNodeStructure;
+      /** Gets if the provided structure is a CallSignatureDeclarationStructure. */
+      readonly isCallSignature: (structure: unknown) => structure is CallSignatureDeclarationStructure;
+      /** Gets if the provided structure is a JSDocableNodeStructure. */
+      readonly isJSDocable: <T_2>(structure: T_2) => structure is T_2 & JSDocableNodeStructure;
+      /** Gets if the provided structure is a SignaturedDeclarationStructure. */
+      readonly isSignatured: <T_3>(structure: T_3) => structure is T_3 & SignaturedDeclarationStructure;
+      /** Gets if the provided structure is a ParameteredNodeStructure. */
+      readonly isParametered: <T_4>(structure: T_4) => structure is T_4 & ParameteredNodeStructure;
+      /** Gets if the provided structure is a ReturnTypedNodeStructure. */
+      readonly isReturnTyped: <T_5>(structure: T_5) => structure is T_5 & ReturnTypedNodeStructure;
+      /** Gets if the provided structure is a TypeParameteredNodeStructure. */
+      readonly isTypeParametered: <T_6>(structure: T_6) => structure is T_6 & TypeParameteredNodeStructure;
+      /** Gets if the provided structure is a ClassDeclarationStructure. */
+      readonly isClass: (structure: unknown) => structure is ClassDeclarationStructure;
+      /** Gets if the provided structure is a ClassLikeDeclarationBaseStructure. */
+      readonly isClassLikeDeclarationBase: <T_7>(structure: T_7) => structure is T_7 & ClassLikeDeclarationBaseStructure;
+      /** Gets if the provided structure is a NameableNodeStructure. */
+      readonly isNameable: <T_8>(structure: T_8) => structure is T_8 & NameableNodeStructure;
+      /** Gets if the provided structure is a ImplementsClauseableNodeStructure. */
+      readonly isImplementsClauseable: <T_9>(structure: T_9) => structure is T_9 & ImplementsClauseableNodeStructure;
+      /** Gets if the provided structure is a DecoratableNodeStructure. */
+      readonly isDecoratable: <T_10>(structure: T_10) => structure is T_10 & DecoratableNodeStructure;
+      /** Gets if the provided structure is a AbstractableNodeStructure. */
+      readonly isAbstractable: <T_11>(structure: T_11) => structure is T_11 & AbstractableNodeStructure;
+      /** Gets if the provided structure is a AmbientableNodeStructure. */
+      readonly isAmbientable: <T_12>(structure: T_12) => structure is T_12 & AmbientableNodeStructure;
+      /** Gets if the provided structure is a ExportableNodeStructure. */
+      readonly isExportable: <T_13>(structure: T_13) => structure is T_13 & ExportableNodeStructure;
+      /** Gets if the provided structure is a ClassStaticBlockDeclarationStructure. */
+      readonly isClassStaticBlock: (structure: unknown) => structure is ClassStaticBlockDeclarationStructure;
+      /** Gets if the provided structure is a StatementedNodeStructure. */
+      readonly isStatemented: <T_14>(structure: T_14) => structure is T_14 & StatementedNodeStructure;
+      /** Gets if the provided structure is a ConstructorDeclarationOverloadStructure. */
+      readonly isConstructorDeclarationOverload: (structure: unknown) => structure is ConstructorDeclarationOverloadStructure;
+      /** Gets if the provided structure is a ScopedNodeStructure. */
+      readonly isScoped: <T_15>(structure: T_15) => structure is T_15 & ScopedNodeStructure;
+      /** Gets if the provided structure is a ConstructorDeclarationStructure. */
+      readonly isConstructor: (structure: unknown) => structure is ConstructorDeclarationStructure;
+      /** Gets if the provided structure is a FunctionLikeDeclarationStructure. */
+      readonly isFunctionLike: <T_16>(structure: T_16) => structure is T_16 & FunctionLikeDeclarationStructure;
+      /** Gets if the provided structure is a ConstructSignatureDeclarationStructure. */
+      readonly isConstructSignature: (structure: unknown) => structure is ConstructSignatureDeclarationStructure;
+      /** Gets if the provided structure is a DecoratorStructure. */
+      readonly isDecorator: (structure: unknown) => structure is DecoratorStructure;
+      /** Gets if the provided structure is a EnumDeclarationStructure. */
+      readonly isEnum: (structure: unknown) => structure is EnumDeclarationStructure;
+      /** Gets if the provided structure is a NamedNodeStructure. */
+      readonly isNamed: <T_17>(structure: T_17) => structure is T_17 & NamedNodeStructure;
+      /** Gets if the provided structure is a EnumMemberStructure. */
+      readonly isEnumMember: (structure: unknown) => structure is EnumMemberStructure;
+      /** Gets if the provided structure is a PropertyNamedNodeStructure. */
+      readonly isPropertyNamed: <T_18>(structure: T_18) => structure is T_18 & PropertyNamedNodeStructure;
+      /** Gets if the provided structure is a InitializerExpressionableNodeStructure. */
+      readonly isInitializerExpressionable: <T_19>(structure: T_19) => structure is T_19 & InitializerExpressionableNodeStructure;
+      /** Gets if the provided structure is a ExportAssignmentStructure. */
+      readonly isExportAssignment: (structure: unknown) => structure is ExportAssignmentStructure;
+      /** Gets if the provided structure is a ExportDeclarationStructure. */
+      readonly isExportDeclaration: (structure: unknown) => structure is ExportDeclarationStructure;
+      /** Gets if the provided structure is a ExportSpecifierStructure. */
+      readonly isExportSpecifier: (structure: unknown) => structure is ExportSpecifierStructure;
+      /** Gets if the provided structure is a FunctionDeclarationOverloadStructure. */
+      readonly isFunctionDeclarationOverload: (structure: unknown) => structure is FunctionDeclarationOverloadStructure;
+      /** Gets if the provided structure is a AsyncableNodeStructure. */
+      readonly isAsyncable: <T_20>(structure: T_20) => structure is T_20 & AsyncableNodeStructure;
+      /** Gets if the provided structure is a GeneratorableNodeStructure. */
+      readonly isGeneratorable: <T_21>(structure: T_21) => structure is T_21 & GeneratorableNodeStructure;
+      /** Gets if the provided structure is a FunctionDeclarationStructure. */
+      readonly isFunction: (structure: unknown) => structure is FunctionDeclarationStructure;
+      /** Gets if the provided structure is a GetAccessorDeclarationStructure. */
+      readonly isGetAccessor: (structure: unknown) => structure is GetAccessorDeclarationStructure;
+      /** Gets if the provided structure is a StaticableNodeStructure. */
+      readonly isStaticable: <T_22>(structure: T_22) => structure is T_22 & StaticableNodeStructure;
+      /** Gets if the provided structure is a ImportDeclarationStructure. */
+      readonly isImportDeclaration: (structure: unknown) => structure is ImportDeclarationStructure;
+      /** Gets if the provided structure is a ImportSpecifierStructure. */
+      readonly isImportSpecifier: (structure: unknown) => structure is ImportSpecifierStructure;
+      /** Gets if the provided structure is a IndexSignatureDeclarationStructure. */
+      readonly isIndexSignature: (structure: unknown) => structure is IndexSignatureDeclarationStructure;
+      /** Gets if the provided structure is a ReadonlyableNodeStructure. */
+      readonly isReadonlyable: <T_23>(structure: T_23) => structure is T_23 & ReadonlyableNodeStructure;
+      /** Gets if the provided structure is a InterfaceDeclarationStructure. */
+      readonly isInterface: (structure: unknown) => structure is InterfaceDeclarationStructure;
+      /** Gets if the provided structure is a ExtendsClauseableNodeStructure. */
+      readonly isExtendsClauseable: <T_24>(structure: T_24) => structure is T_24 & ExtendsClauseableNodeStructure;
+      /** Gets if the provided structure is a TypeElementMemberedNodeStructure. */
+      readonly isTypeElementMembered: <T_25>(structure: T_25) => structure is T_25 & TypeElementMemberedNodeStructure;
+      /** Gets if the provided structure is a JSDocStructure. */
+      readonly isJSDoc: (structure: unknown) => structure is JSDocStructure;
+      /** Gets if the provided structure is a JSDocTagStructure. */
+      readonly isJSDocTag: (structure: unknown) => structure is JSDocTagStructure;
+      /** Gets if the provided structure is a JsxAttributeStructure. */
+      readonly isJsxAttribute: (structure: unknown) => structure is JsxAttributeStructure;
+      /** Gets if the provided structure is a JsxElementStructure. */
+      readonly isJsxElement: (structure: unknown) => structure is JsxElementStructure;
+      /** Gets if the provided structure is a JsxSelfClosingElementStructure. */
+      readonly isJsxSelfClosingElement: (structure: unknown) => structure is JsxSelfClosingElementStructure;
+      /** Gets if the provided structure is a JsxTagNamedNodeStructure. */
+      readonly isJsxTagNamed: <T_26>(structure: T_26) => structure is T_26 & JsxTagNamedNodeStructure;
+      /** Gets if the provided structure is a JsxAttributedNodeStructure. */
+      readonly isJsxAttributed: <T_27>(structure: T_27) => structure is T_27 & JsxAttributedNodeStructure;
+      /** Gets if the provided structure is a JsxSpreadAttributeStructure. */
+      readonly isJsxSpreadAttribute: (structure: unknown) => structure is JsxSpreadAttributeStructure;
+      /** Gets if the provided structure is a MethodDeclarationOverloadStructure. */
+      readonly isMethodDeclarationOverload: (structure: unknown) => structure is MethodDeclarationOverloadStructure;
+      /** Gets if the provided structure is a QuestionTokenableNodeStructure. */
+      readonly isQuestionTokenable: <T_28>(structure: T_28) => structure is T_28 & QuestionTokenableNodeStructure;
+      /** Gets if the provided structure is a OverrideableNodeStructure. */
+      readonly isOverrideable: <T_29>(structure: T_29) => structure is T_29 & OverrideableNodeStructure;
+      /** Gets if the provided structure is a MethodDeclarationStructure. */
+      readonly isMethod: (structure: unknown) => structure is MethodDeclarationStructure;
+      /** Gets if the provided structure is a MethodSignatureStructure. */
+      readonly isMethodSignature: (structure: unknown) => structure is MethodSignatureStructure;
+      /** Gets if the provided structure is a ModuleDeclarationStructure. */
+      readonly isModule: (structure: unknown) => structure is ModuleDeclarationStructure;
+      /** Gets if the provided structure is a ModuleNamedNodeStructure. */
+      readonly isModuleNamed: <T_30>(structure: T_30) => structure is T_30 & ModuleNamedNodeStructure;
+      /** Gets if the provided structure is a ParameterDeclarationStructure. */
+      readonly isParameter: (structure: unknown) => structure is ParameterDeclarationStructure;
+      /** Gets if the provided structure is a BindingNamedNodeStructure. */
+      readonly isBindingNamed: <T_31>(structure: T_31) => structure is T_31 & BindingNamedNodeStructure;
+      /** Gets if the provided structure is a TypedNodeStructure. */
+      readonly isTyped: <T_32>(structure: T_32) => structure is T_32 & TypedNodeStructure;
+      /** Gets if the provided structure is a ScopeableNodeStructure. */
+      readonly isScopeable: <T_33>(structure: T_33) => structure is T_33 & ScopeableNodeStructure;
+      /** Gets if the provided structure is a PropertyAssignmentStructure. */
+      readonly isPropertyAssignment: (structure: unknown) => structure is PropertyAssignmentStructure;
+      /** Gets if the provided structure is a PropertyDeclarationStructure. */
+      readonly isProperty: (structure: unknown) => structure is PropertyDeclarationStructure;
+      /** Gets if the provided structure is a ExclamationTokenableNodeStructure. */
+      readonly isExclamationTokenable: <T_34>(structure: T_34) => structure is T_34 & ExclamationTokenableNodeStructure;
+      /** Gets if the provided structure is a PropertySignatureStructure. */
+      readonly isPropertySignature: (structure: unknown) => structure is PropertySignatureStructure;
+      /** Gets if the provided structure is a SetAccessorDeclarationStructure. */
+      readonly isSetAccessor: (structure: unknown) => structure is SetAccessorDeclarationStructure;
+      /** Gets if the provided structure is a ShorthandPropertyAssignmentStructure. */
+      readonly isShorthandPropertyAssignment: (structure: unknown) => structure is ShorthandPropertyAssignmentStructure;
+      /** Gets if the provided structure is a SourceFileStructure. */
+      readonly isSourceFile: (structure: unknown) => structure is SourceFileStructure;
+      /** Gets if the provided structure is a SpreadAssignmentStructure. */
+      readonly isSpreadAssignment: (structure: unknown) => structure is SpreadAssignmentStructure;
+      /** Gets if the provided structure is a ExpressionedNodeStructure. */
+      readonly isExpressioned: <T_35>(structure: T_35) => structure is T_35 & ExpressionedNodeStructure;
+      /** Gets if the provided structure is a TypeAliasDeclarationStructure. */
+      readonly isTypeAlias: (structure: unknown) => structure is TypeAliasDeclarationStructure;
+      /** Gets if the provided structure is a TypeParameterDeclarationStructure. */
+      readonly isTypeParameter: (structure: unknown) => structure is TypeParameterDeclarationStructure;
+      /** Gets if the provided structure is a VariableDeclarationStructure. */
+      readonly isVariableDeclaration: (structure: unknown) => structure is VariableDeclarationStructure;
+      /** Gets if the provided structure is a VariableStatementStructure. */
+      readonly isVariableStatement: (structure: unknown) => structure is VariableStatementStructure;
   };
-  /** Gets if the provided structure is a AssertEntryStructure. */
-  readonly isAssertEntry: (
-    structure: unknown,
-  ) => structure is AssertEntryStructure;
-  /** Gets if the provided structure is a AssertionKeyNamedNodeStructure. */
-  readonly isAssertionKeyNamed: <T_1>(
-    structure: T_1,
-  ) => structure is T_1 & AssertionKeyNamedNodeStructure;
-  /** Gets if the provided structure is a CallSignatureDeclarationStructure. */
-  readonly isCallSignature: (
-    structure: unknown,
-  ) => structure is CallSignatureDeclarationStructure;
-  /** Gets if the provided structure is a JSDocableNodeStructure. */
-  readonly isJSDocable: <T_2>(
-    structure: T_2,
-  ) => structure is T_2 & JSDocableNodeStructure;
-  /** Gets if the provided structure is a SignaturedDeclarationStructure. */
-  readonly isSignatured: <T_3>(
-    structure: T_3,
-  ) => structure is T_3 & SignaturedDeclarationStructure;
-  /** Gets if the provided structure is a ParameteredNodeStructure. */
-  readonly isParametered: <T_4>(
-    structure: T_4,
-  ) => structure is T_4 & ParameteredNodeStructure;
-  /** Gets if the provided structure is a ReturnTypedNodeStructure. */
-  readonly isReturnTyped: <T_5>(
-    structure: T_5,
-  ) => structure is T_5 & ReturnTypedNodeStructure;
-  /** Gets if the provided structure is a TypeParameteredNodeStructure. */
-  readonly isTypeParametered: <T_6>(
-    structure: T_6,
-  ) => structure is T_6 & TypeParameteredNodeStructure;
-  /** Gets if the provided structure is a ClassDeclarationStructure. */
-  readonly isClass: (
-    structure: unknown,
-  ) => structure is ClassDeclarationStructure;
-  /** Gets if the provided structure is a ClassLikeDeclarationBaseStructure. */
-  readonly isClassLikeDeclarationBase: <T_7>(
-    structure: T_7,
-  ) => structure is T_7 & ClassLikeDeclarationBaseStructure;
-  /** Gets if the provided structure is a NameableNodeStructure. */
-  readonly isNameable: <T_8>(
-    structure: T_8,
-  ) => structure is T_8 & NameableNodeStructure;
-  /** Gets if the provided structure is a ImplementsClauseableNodeStructure. */
-  readonly isImplementsClauseable: <T_9>(
-    structure: T_9,
-  ) => structure is T_9 & ImplementsClauseableNodeStructure;
-  /** Gets if the provided structure is a DecoratableNodeStructure. */
-  readonly isDecoratable: <T_10>(
-    structure: T_10,
-  ) => structure is T_10 & DecoratableNodeStructure;
-  /** Gets if the provided structure is a AbstractableNodeStructure. */
-  readonly isAbstractable: <T_11>(
-    structure: T_11,
-  ) => structure is T_11 & AbstractableNodeStructure;
-  /** Gets if the provided structure is a AmbientableNodeStructure. */
-  readonly isAmbientable: <T_12>(
-    structure: T_12,
-  ) => structure is T_12 & AmbientableNodeStructure;
-  /** Gets if the provided structure is a ExportableNodeStructure. */
-  readonly isExportable: <T_13>(
-    structure: T_13,
-  ) => structure is T_13 & ExportableNodeStructure;
-  /** Gets if the provided structure is a ClassStaticBlockDeclarationStructure. */
-  readonly isClassStaticBlock: (
-    structure: unknown,
-  ) => structure is ClassStaticBlockDeclarationStructure;
-  /** Gets if the provided structure is a StatementedNodeStructure. */
-  readonly isStatemented: <T_14>(
-    structure: T_14,
-  ) => structure is T_14 & StatementedNodeStructure;
-  /** Gets if the provided structure is a ConstructorDeclarationOverloadStructure. */
-  readonly isConstructorDeclarationOverload: (
-    structure: unknown,
-  ) => structure is ConstructorDeclarationOverloadStructure;
-  /** Gets if the provided structure is a ScopedNodeStructure. */
-  readonly isScoped: <T_15>(
-    structure: T_15,
-  ) => structure is T_15 & ScopedNodeStructure;
-  /** Gets if the provided structure is a ConstructorDeclarationStructure. */
-  readonly isConstructor: (
-    structure: unknown,
-  ) => structure is ConstructorDeclarationStructure;
-  /** Gets if the provided structure is a FunctionLikeDeclarationStructure. */
-  readonly isFunctionLike: <T_16>(
-    structure: T_16,
-  ) => structure is T_16 & FunctionLikeDeclarationStructure;
-  /** Gets if the provided structure is a ConstructSignatureDeclarationStructure. */
-  readonly isConstructSignature: (
-    structure: unknown,
-  ) => structure is ConstructSignatureDeclarationStructure;
-  /** Gets if the provided structure is a DecoratorStructure. */
-  readonly isDecorator: (structure: unknown) => structure is DecoratorStructure;
-  /** Gets if the provided structure is a EnumDeclarationStructure. */
-  readonly isEnum: (
-    structure: unknown,
-  ) => structure is EnumDeclarationStructure;
-  /** Gets if the provided structure is a NamedNodeStructure. */
-  readonly isNamed: <T_17>(
-    structure: T_17,
-  ) => structure is T_17 & NamedNodeStructure;
-  /** Gets if the provided structure is a EnumMemberStructure. */
-  readonly isEnumMember: (
-    structure: unknown,
-  ) => structure is EnumMemberStructure;
-  /** Gets if the provided structure is a PropertyNamedNodeStructure. */
-  readonly isPropertyNamed: <T_18>(
-    structure: T_18,
-  ) => structure is T_18 & PropertyNamedNodeStructure;
-  /** Gets if the provided structure is a InitializerExpressionableNodeStructure. */
-  readonly isInitializerExpressionable: <T_19>(
-    structure: T_19,
-  ) => structure is T_19 & InitializerExpressionableNodeStructure;
-  /** Gets if the provided structure is a ExportAssignmentStructure. */
-  readonly isExportAssignment: (
-    structure: unknown,
-  ) => structure is ExportAssignmentStructure;
-  /** Gets if the provided structure is a ExportDeclarationStructure. */
-  readonly isExportDeclaration: (
-    structure: unknown,
-  ) => structure is ExportDeclarationStructure;
-  /** Gets if the provided structure is a ExportSpecifierStructure. */
-  readonly isExportSpecifier: (
-    structure: unknown,
-  ) => structure is ExportSpecifierStructure;
-  /** Gets if the provided structure is a FunctionDeclarationOverloadStructure. */
-  readonly isFunctionDeclarationOverload: (
-    structure: unknown,
-  ) => structure is FunctionDeclarationOverloadStructure;
-  /** Gets if the provided structure is a AsyncableNodeStructure. */
-  readonly isAsyncable: <T_20>(
-    structure: T_20,
-  ) => structure is T_20 & AsyncableNodeStructure;
-  /** Gets if the provided structure is a GeneratorableNodeStructure. */
-  readonly isGeneratorable: <T_21>(
-    structure: T_21,
-  ) => structure is T_21 & GeneratorableNodeStructure;
-  /** Gets if the provided structure is a FunctionDeclarationStructure. */
-  readonly isFunction: (
-    structure: unknown,
-  ) => structure is FunctionDeclarationStructure;
-  /** Gets if the provided structure is a GetAccessorDeclarationStructure. */
-  readonly isGetAccessor: (
-    structure: unknown,
-  ) => structure is GetAccessorDeclarationStructure;
-  /** Gets if the provided structure is a StaticableNodeStructure. */
-  readonly isStaticable: <T_22>(
-    structure: T_22,
-  ) => structure is T_22 & StaticableNodeStructure;
-  /** Gets if the provided structure is a ImportDeclarationStructure. */
-  readonly isImportDeclaration: (
-    structure: unknown,
-  ) => structure is ImportDeclarationStructure;
-  /** Gets if the provided structure is a ImportSpecifierStructure. */
-  readonly isImportSpecifier: (
-    structure: unknown,
-  ) => structure is ImportSpecifierStructure;
-  /** Gets if the provided structure is a IndexSignatureDeclarationStructure. */
-  readonly isIndexSignature: (
-    structure: unknown,
-  ) => structure is IndexSignatureDeclarationStructure;
-  /** Gets if the provided structure is a ReadonlyableNodeStructure. */
-  readonly isReadonlyable: <T_23>(
-    structure: T_23,
-  ) => structure is T_23 & ReadonlyableNodeStructure;
-  /** Gets if the provided structure is a InterfaceDeclarationStructure. */
-  readonly isInterface: (
-    structure: unknown,
-  ) => structure is InterfaceDeclarationStructure;
-  /** Gets if the provided structure is a ExtendsClauseableNodeStructure. */
-  readonly isExtendsClauseable: <T_24>(
-    structure: T_24,
-  ) => structure is T_24 & ExtendsClauseableNodeStructure;
-  /** Gets if the provided structure is a TypeElementMemberedNodeStructure. */
-  readonly isTypeElementMembered: <T_25>(
-    structure: T_25,
-  ) => structure is T_25 & TypeElementMemberedNodeStructure;
-  /** Gets if the provided structure is a JSDocStructure. */
-  readonly isJSDoc: (structure: unknown) => structure is JSDocStructure;
-  /** Gets if the provided structure is a JSDocTagStructure. */
-  readonly isJSDocTag: (structure: unknown) => structure is JSDocTagStructure;
-  /** Gets if the provided structure is a JsxAttributeStructure. */
-  readonly isJsxAttribute: (
-    structure: unknown,
-  ) => structure is JsxAttributeStructure;
-  /** Gets if the provided structure is a JsxElementStructure. */
-  readonly isJsxElement: (
-    structure: unknown,
-  ) => structure is JsxElementStructure;
-  /** Gets if the provided structure is a JsxSelfClosingElementStructure. */
-  readonly isJsxSelfClosingElement: (
-    structure: unknown,
-  ) => structure is JsxSelfClosingElementStructure;
-  /** Gets if the provided structure is a JsxTagNamedNodeStructure. */
-  readonly isJsxTagNamed: <T_26>(
-    structure: T_26,
-  ) => structure is T_26 & JsxTagNamedNodeStructure;
-  /** Gets if the provided structure is a JsxAttributedNodeStructure. */
-  readonly isJsxAttributed: <T_27>(
-    structure: T_27,
-  ) => structure is T_27 & JsxAttributedNodeStructure;
-  /** Gets if the provided structure is a JsxSpreadAttributeStructure. */
-  readonly isJsxSpreadAttribute: (
-    structure: unknown,
-  ) => structure is JsxSpreadAttributeStructure;
-  /** Gets if the provided structure is a MethodDeclarationOverloadStructure. */
-  readonly isMethodDeclarationOverload: (
-    structure: unknown,
-  ) => structure is MethodDeclarationOverloadStructure;
-  /** Gets if the provided structure is a QuestionTokenableNodeStructure. */
-  readonly isQuestionTokenable: <T_28>(
-    structure: T_28,
-  ) => structure is T_28 & QuestionTokenableNodeStructure;
-  /** Gets if the provided structure is a OverrideableNodeStructure. */
-  readonly isOverrideable: <T_29>(
-    structure: T_29,
-  ) => structure is T_29 & OverrideableNodeStructure;
-  /** Gets if the provided structure is a MethodDeclarationStructure. */
-  readonly isMethod: (
-    structure: unknown,
-  ) => structure is MethodDeclarationStructure;
-  /** Gets if the provided structure is a MethodSignatureStructure. */
-  readonly isMethodSignature: (
-    structure: unknown,
-  ) => structure is MethodSignatureStructure;
-  /** Gets if the provided structure is a ModuleDeclarationStructure. */
-  readonly isModule: (
-    structure: unknown,
-  ) => structure is ModuleDeclarationStructure;
-  /** Gets if the provided structure is a ModuleNamedNodeStructure. */
-  readonly isModuleNamed: <T_30>(
-    structure: T_30,
-  ) => structure is T_30 & ModuleNamedNodeStructure;
-  /** Gets if the provided structure is a ParameterDeclarationStructure. */
-  readonly isParameter: (
-    structure: unknown,
-  ) => structure is ParameterDeclarationStructure;
-  /** Gets if the provided structure is a BindingNamedNodeStructure. */
-  readonly isBindingNamed: <T_31>(
-    structure: T_31,
-  ) => structure is T_31 & BindingNamedNodeStructure;
-  /** Gets if the provided structure is a TypedNodeStructure. */
-  readonly isTyped: <T_32>(
-    structure: T_32,
-  ) => structure is T_32 & TypedNodeStructure;
-  /** Gets if the provided structure is a ScopeableNodeStructure. */
-  readonly isScopeable: <T_33>(
-    structure: T_33,
-  ) => structure is T_33 & ScopeableNodeStructure;
-  /** Gets if the provided structure is a PropertyAssignmentStructure. */
-  readonly isPropertyAssignment: (
-    structure: unknown,
-  ) => structure is PropertyAssignmentStructure;
-  /** Gets if the provided structure is a PropertyDeclarationStructure. */
-  readonly isProperty: (
-    structure: unknown,
-  ) => structure is PropertyDeclarationStructure;
-  /** Gets if the provided structure is a ExclamationTokenableNodeStructure. */
-  readonly isExclamationTokenable: <T_34>(
-    structure: T_34,
-  ) => structure is T_34 & ExclamationTokenableNodeStructure;
-  /** Gets if the provided structure is a PropertySignatureStructure. */
-  readonly isPropertySignature: (
-    structure: unknown,
-  ) => structure is PropertySignatureStructure;
-  /** Gets if the provided structure is a SetAccessorDeclarationStructure. */
-  readonly isSetAccessor: (
-    structure: unknown,
-  ) => structure is SetAccessorDeclarationStructure;
-  /** Gets if the provided structure is a ShorthandPropertyAssignmentStructure. */
-  readonly isShorthandPropertyAssignment: (
-    structure: unknown,
-  ) => structure is ShorthandPropertyAssignmentStructure;
-  /** Gets if the provided structure is a SourceFileStructure. */
-  readonly isSourceFile: (
-    structure: unknown,
-  ) => structure is SourceFileStructure;
-  /** Gets if the provided structure is a SpreadAssignmentStructure. */
-  readonly isSpreadAssignment: (
-    structure: unknown,
-  ) => structure is SpreadAssignmentStructure;
-  /** Gets if the provided structure is a ExpressionedNodeStructure. */
-  readonly isExpressioned: <T_35>(
-    structure: T_35,
-  ) => structure is T_35 & ExpressionedNodeStructure;
-  /** Gets if the provided structure is a TypeAliasDeclarationStructure. */
-  readonly isTypeAlias: (
-    structure: unknown,
-  ) => structure is TypeAliasDeclarationStructure;
-  /** Gets if the provided structure is a TypeParameterDeclarationStructure. */
-  readonly isTypeParameter: (
-    structure: unknown,
-  ) => structure is TypeParameterDeclarationStructure;
-  /** Gets if the provided structure is a VariableDeclarationStructure. */
-  readonly isVariableDeclaration: (
-    structure: unknown,
-  ) => structure is VariableDeclarationStructure;
-  /** Gets if the provided structure is a VariableStatementStructure. */
-  readonly isVariableStatement: (
-    structure: unknown,
-  ) => structure is VariableStatementStructure;
-};
 
 export interface KindedStructure<TKind extends StructureKind> {
   kind: TKind;
@@ -14153,104 +10966,44 @@ export declare enum StructureKind {
   TypeAlias = 38,
   TypeParameter = 39,
   VariableDeclaration = 40,
-  VariableStatement = 41,
+  VariableStatement = 41
 }
 
-export interface TypeAliasDeclarationStructure
-  extends
-    Structure,
-    TypeAliasDeclarationSpecificStructure,
-    NamedNodeStructure,
-    TypedNodeStructure,
-    TypeParameteredNodeStructure,
-    JSDocableNodeStructure,
-    AmbientableNodeStructure,
-    ExportableNodeStructure {
+export interface TypeAliasDeclarationStructure extends Structure, TypeAliasDeclarationSpecificStructure, NamedNodeStructure, TypedNodeStructure, TypeParameteredNodeStructure, JSDocableNodeStructure, AmbientableNodeStructure, ExportableNodeStructure {
   type: string | WriterFunction;
 }
 
-interface TypeAliasDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.TypeAlias> {
+interface TypeAliasDeclarationSpecificStructure extends KindedStructure<StructureKind.TypeAlias> {
   type: string | WriterFunction;
 }
 
-export interface TypeParameterDeclarationStructure
-  extends
-    Structure,
-    TypeParameterDeclarationSpecificStructure,
-    NamedNodeStructure {
+export interface TypeParameterDeclarationStructure extends Structure, TypeParameterDeclarationSpecificStructure, NamedNodeStructure {
 }
 
-interface TypeParameterDeclarationSpecificStructure
-  extends KindedStructure<StructureKind.TypeParameter> {
+interface TypeParameterDeclarationSpecificStructure extends KindedStructure<StructureKind.TypeParameter> {
   constraint?: string | WriterFunction;
   default?: string | WriterFunction;
   variance?: TypeParameterVariance;
 }
 
-export declare type OptionalKind<
-  TStructure extends {
-    kind?: StructureKind;
-  },
-> =
-  & Pick<TStructure, Exclude<keyof TStructure, "kind">>
-  & Partial<Pick<TStructure, "kind">>;
+export declare type OptionalKind<TStructure extends {
+      kind?: StructureKind;
+  }> = Pick<TStructure, Exclude<keyof TStructure, "kind">> & Partial<Pick<TStructure, "kind">>;
 /**
  * Iterates over the elements in the provided array.
  * @param structures - Array of structures to iterate over.
  * @param callback - Callback to do on each element in the array. Returning a truthy value will return that value in the main function call.
  */
-export declare function forEachStructureChild<TStructure>(
-  structures: ReadonlyArray<Structures>,
-  callback: (child: Structures) => TStructure | void,
-): TStructure | undefined;
+export declare function forEachStructureChild<TStructure>(structures: ReadonlyArray<Structures>, callback: (child: Structures) => TStructure | void): TStructure | undefined;
 /**
  * Iterates over the children of the provided array.
  * @remarks If the children do not have a `kind` property, it will be automatically added.
  * @param structure - Structure to iterate over.
  * @param callback - Callback to do on each child of the provided structure. Returning a truthy value will return that value in the main function call.
  */
-export declare function forEachStructureChild<TStructure>(
-  structure: Structures,
-  callback: (child: Structures) => TStructure | void,
-): TStructure | undefined;
-import {
-  CompilerOptions,
-  DiagnosticCategory,
-  EditorSettings,
-  EmitHint,
-  LanguageVariant,
-  ModuleKind,
-  ModuleResolutionKind,
-  NewLineKind,
-  NodeFlags,
-  ObjectFlags,
-  ScriptKind,
-  ScriptTarget,
-  SymbolFlags,
-  SyntaxKind,
-  TypeFlags,
-  TypeFormatFlags,
-} from "./common/mod.ts";
-export {
-  CompilerOptions,
-  DiagnosticCategory,
-  EditorSettings,
-  EmitHint,
-  LanguageVariant,
-  ModuleKind,
-  ModuleResolutionKind,
-  NewLineKind,
-  NodeFlags,
-  ObjectFlags,
-  ScriptKind,
-  ScriptTarget,
-  SymbolFlags,
-  SyntaxKind,
-  ts,
-  TypeFlags,
-  TypeFormatFlags,
-};
+export declare function forEachStructureChild<TStructure>(structure: Structures, callback: (child: Structures) => TStructure | void): TStructure | undefined;
+import { CompilerOptions, DiagnosticCategory, EditorSettings, EmitHint, LanguageVariant, ModuleKind, ModuleResolutionKind, NewLineKind, NodeFlags, ObjectFlags, ScriptKind, ScriptTarget, SymbolFlags, SyntaxKind, TypeFlags, TypeFormatFlags } from "./common/mod.ts";
+export { ts, CompilerOptions, DiagnosticCategory, EditorSettings, EmitHint, LanguageVariant, ModuleKind, ModuleResolutionKind, NewLineKind, NodeFlags, ObjectFlags, ScriptKind, ScriptTarget, SymbolFlags, SyntaxKind, TypeFlags, TypeFormatFlags };
 
 /** Code writer that assists with formatting and visualizing blocks of JavaScript or TypeScript code. */
 export declare class CodeBlockWriter {
@@ -14330,10 +11083,7 @@ export declare class CodeBlockWriter {
    * @param condition - Condition to evaluate.
    * @param textFunc - A function that returns a string to write if the condition is true.
    */
-  conditionalWriteLine(
-    condition: boolean | undefined,
-    textFunc: () => string,
-  ): this;
+  conditionalWriteLine(condition: boolean | undefined, textFunc: () => string): this;
   /**
    * Conditionally writes a line of text.
    * @param condition - Condition to evaluate.
@@ -14389,10 +11139,7 @@ export declare class CodeBlockWriter {
    * @param condition - Condition to evaluate.
    * @param textFunc - A function that returns a string to write if the condition is true.
    */
-  conditionalWrite(
-    condition: boolean | undefined,
-    textFunc: () => string,
-  ): this;
+  conditionalWrite(condition: boolean | undefined, textFunc: () => string): this;
   /**
    * Conditionally writes text.
    * @param condition - Condition to evaluate.
@@ -14449,9 +11196,7 @@ export declare class CodeBlockWriter {
    * @remarks It is much more efficient to use this method rather than `#toString()` since `#toString()`
    * will combine the internal array into a string.
    */
-  iterateLastChars<T>(
-    action: (char: string, index: number) => T | undefined,
-  ): T | undefined;
+  iterateLastChars<T>(action: (char: string, index: number) => T | undefined): T | undefined;
   /**
    * Iterates over the writer character char codes in reverse order. The iteration stops when a non-null or
    * undefined value is returned from the action. The returned value is then returned by the method.
@@ -14460,9 +11205,7 @@ export declare class CodeBlockWriter {
    * will combine the internal array into a string. Additionally, this is slightly more efficient that
    * `iterateLastChars` as this won't allocate a string per character.
    */
-  iterateLastCharCodes<T>(
-    action: (charCode: number, index: number) => T | undefined,
-  ): T | undefined;
+  iterateLastCharCodes<T>(action: (charCode: number, index: number) => T | undefined): T | undefined;
   /** Gets the writer's text. */
   toString(): string;
 }

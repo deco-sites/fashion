@@ -4,18 +4,18 @@
 
 import type { FormatInputPathObject, ParsedPath } from "./_interface.ts";
 import {
+  CHAR_DOT,
   CHAR_BACKWARD_SLASH,
   CHAR_COLON,
-  CHAR_DOT,
   CHAR_QUESTION_MARK,
 } from "./_constants.ts";
 
 import {
-  _format,
   assertPath,
   isPathSeparator,
   isWindowsDeviceRoot,
   normalizeString,
+  _format,
 } from "./_util.ts";
 import { assert } from "../_util/assert.ts";
 
@@ -167,7 +167,7 @@ export function resolve(...pathSegments: string[]): string {
     resolvedTail,
     !resolvedAbsolute,
     "\\",
-    isPathSeparator,
+    isPathSeparator
   );
 
   return resolvedDevice + (resolvedAbsolute ? "\\" : "") + resolvedTail || ".";
@@ -259,7 +259,7 @@ export function normalize(path: string): string {
       path.slice(rootEnd),
       !isAbsolute,
       "\\",
-      isPathSeparator,
+      isPathSeparator
     );
   } else {
     tail = "";
@@ -750,7 +750,7 @@ export function format(pathObject: FormatInputPathObject): string {
   /* eslint-disable max-len */
   if (pathObject === null || typeof pathObject !== "object") {
     throw new TypeError(
-      `The "pathObject" argument must be of type Object. Received type ${typeof pathObject}`,
+      `The "pathObject" argument must be of type Object. Received type ${typeof pathObject}`
     );
   }
   return _format("\\", pathObject);
