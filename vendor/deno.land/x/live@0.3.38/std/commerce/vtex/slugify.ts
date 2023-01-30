@@ -14,32 +14,31 @@
  * - Join those 3 regexs for special characters into a single one.
  * - Replace the regexp of `removeDiacritics` function with a Map. We can make the complexity
  * of this function be O(n) with n=string.length
- *
  */
- const from =
- 'ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþÞĐđßÆa'
+const from =
+  "ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþÞĐđßÆa";
 
 const to =
- 'AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYYZaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzbBDdBAa'
+  "AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYYZaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzbBDdBAa";
 
 const removeDiacritics = (str: string) => {
- let newStr = str.slice(0)
+  let newStr = str.slice(0);
 
- for (let i = 0; i < from.length; i++) {
-   newStr = newStr.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i))
- }
+  for (let i = 0; i < from.length; i++) {
+    newStr = newStr.replace(new RegExp(from.charAt(i), "g"), to.charAt(i));
+  }
 
- return newStr
-}
+  return newStr;
+};
 
 const slugifySpecialCharacters = (str: string) => {
- return str.replace(/[·/_,:]/, '-')
-}
+  return str.replace(/[·/_,:]/, "-");
+};
 
 export function slugify(str: string) {
- const noCommas = str.replace(/,/g, '')
- const replaced = noCommas.replace(/[*+~.()'"!:@&\[\]`/ %$#?{}|><=_^]/g, '-')
- const slugified = slugifySpecialCharacters(removeDiacritics(replaced))
+  const noCommas = str.replace(/,/g, "");
+  const replaced = noCommas.replace(/[*+~.()'"!:@&\[\]`/ %$#?{}|><=_^]/g, "-");
+  const slugified = slugifySpecialCharacters(removeDiacritics(replaced));
 
- return slugified.toLowerCase()
+  return slugified.toLowerCase();
 }

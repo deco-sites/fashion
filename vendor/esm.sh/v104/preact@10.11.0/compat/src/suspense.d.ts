@@ -1,4 +1,8 @@
-import { Component, ComponentChild, ComponentChildren } from '../../src/index.d.ts';
+import {
+  Component,
+  ComponentChild,
+  ComponentChildren,
+} from "../../src/index.d.ts";
 
 //
 // Suspense/lazy
@@ -6,10 +10,10 @@ import { Component, ComponentChild, ComponentChildren } from '../../src/index.d.
 export function lazy<T>(loader: () => Promise<{ default: T } | T>): T;
 
 export interface SuspenseProps {
-	children?: ComponentChildren;
-	fallback: ComponentChildren;
+  children?: ComponentChildren;
+  fallback: ComponentChildren;
 }
 
 export class Suspense extends Component<SuspenseProps> {
-	render(): ComponentChild;
+  render(): ComponentChild;
 }

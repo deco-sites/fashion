@@ -1,5 +1,11 @@
-import { ensureDir, ensureDirSync } from "https://deno.land/std@0.140.0/fs/ensure_dir.ts";
-import { expandGlob, expandGlobSync } from "https://deno.land/std@0.140.0/fs/expand_glob.ts";
+import {
+  ensureDir,
+  ensureDirSync,
+} from "https://deno.land/std@0.140.0/fs/ensure_dir.ts";
+import {
+  expandGlob,
+  expandGlobSync,
+} from "https://deno.land/std@0.140.0/fs/expand_glob.ts";
 import * as stdPath from "https://deno.land/std@0.140.0/path/mod.ts";
 
 export class DenoRuntime {
@@ -129,8 +135,9 @@ class DenoRuntimeFileSystem {
       exclude: excludePatterns,
     });
     for await (const globEntry of globEntries) {
-      if (globEntry.isFile)
+      if (globEntry.isFile) {
         result.push(globEntry.path);
+      }
     }
     return result;
   }
@@ -145,8 +152,9 @@ class DenoRuntimeFileSystem {
       exclude: excludePatterns,
     });
     for (const globEntry of globEntries) {
-      if (globEntry.isFile)
+      if (globEntry.isFile) {
         result.push(globEntry.path);
+      }
     }
     return result;
   }
@@ -162,15 +170,20 @@ function globPatternsToPattern(patterns: ReadonlyArray<string>) {
   const includePatterns = [];
 
   for (const pattern of patterns) {
-    if (isNegatedGlob(pattern))
+    if (isNegatedGlob(pattern)) {
       excludePatterns.push(pattern);
-    else
+    } else {
       includePatterns.push(pattern);
+    }
   }
 
   return {
     excludePatterns,
-    pattern: includePatterns.length === 0 ? "." : includePatterns.length === 1 ? includePatterns[0] : `{${includePatterns.join(",")}}`,
+    pattern: includePatterns.length === 0
+      ? "."
+      : includePatterns.length === 1
+      ? includePatterns[0]
+      : `{${includePatterns.join(",")}}`,
   };
 
   function isNegatedGlob(glob: string) {

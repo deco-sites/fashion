@@ -1,15 +1,34 @@
-export type Platform = 'browser' | 'node' | 'neutral';
-export type Format = 'iife' | 'cjs' | 'esm';
-export type Loader = 'js' | 'jsx' | 'ts' | 'tsx' | 'css' | 'json' | 'text' | 'base64' | 'file' | 'dataurl' | 'binary' | 'copy' | 'default';
-export type LogLevel = 'verbose' | 'debug' | 'info' | 'warning' | 'error' | 'silent';
-export type Charset = 'ascii' | 'utf8';
-export type Drop = 'console' | 'debugger';
+export type Platform = "browser" | "node" | "neutral";
+export type Format = "iife" | "cjs" | "esm";
+export type Loader =
+  | "js"
+  | "jsx"
+  | "ts"
+  | "tsx"
+  | "css"
+  | "json"
+  | "text"
+  | "base64"
+  | "file"
+  | "dataurl"
+  | "binary"
+  | "copy"
+  | "default";
+export type LogLevel =
+  | "verbose"
+  | "debug"
+  | "info"
+  | "warning"
+  | "error"
+  | "silent";
+export type Charset = "ascii" | "utf8";
+export type Drop = "console" | "debugger";
 
 interface CommonOptions {
   /** Documentation: https://esbuild.github.io/api/#sourcemap */
-  sourcemap?: boolean | 'linked' | 'inline' | 'external' | 'both';
+  sourcemap?: boolean | "linked" | "inline" | "external" | "both";
   /** Documentation: https://esbuild.github.io/api/#legal-comments */
-  legalComments?: 'none' | 'inline' | 'eof' | 'linked' | 'external';
+  legalComments?: "none" | "inline" | "eof" | "linked" | "external";
   /** Documentation: https://esbuild.github.io/api/#source-root */
   sourceRoot?: string;
   /** Documentation: https://esbuild.github.io/api/#sources-content */
@@ -52,7 +71,7 @@ interface CommonOptions {
   ignoreAnnotations?: boolean;
 
   /** Documentation: https://esbuild.github.io/api/#jsx */
-  jsx?: 'transform' | 'preserve' | 'automatic';
+  jsx?: "transform" | "preserve" | "automatic";
   /** Documentation: https://esbuild.github.io/api/#jsx-factory */
   jsxFactory?: string;
   /** Documentation: https://esbuild.github.io/api/#jsx-fragment */
@@ -250,12 +269,12 @@ export interface ServeResult {
 export interface TransformOptions extends CommonOptions {
   tsconfigRaw?: string | {
     compilerOptions?: {
-      jsxFactory?: string,
-      jsxFragmentFactory?: string,
-      useDefineForClassFields?: boolean,
-      importsNotUsedAsValues?: 'remove' | 'preserve' | 'error',
-      preserveValueImports?: boolean,
-    },
+      jsxFactory?: string;
+      jsxFragmentFactory?: string;
+      useDefineForClassFields?: boolean;
+      importsNotUsedAsValues?: "remove" | "preserve" | "error";
+      preserveValueImports?: boolean;
+    };
   };
 
   sourcefile?: string;
@@ -279,35 +298,55 @@ export interface TransformFailure extends Error {
 
 export interface Plugin {
   name: string;
-  setup: (build: PluginBuild) => (void | Promise<void>);
+  setup: (build: PluginBuild) => void | Promise<void>;
 }
 
 export interface PluginBuild {
   initialOptions: BuildOptions;
   resolve(path: string, options?: ResolveOptions): Promise<ResolveResult>;
 
-  onStart(callback: () =>
-    (OnStartResult | null | void | Promise<OnStartResult | null | void>)): void;
-  onEnd(callback: (result: BuildResult) =>
-    (void | Promise<void>)): void;
-  onResolve(options: OnResolveOptions, callback: (args: OnResolveArgs) =>
-    (OnResolveResult | null | undefined | Promise<OnResolveResult | null | undefined>)): void;
-  onLoad(options: OnLoadOptions, callback: (args: OnLoadArgs) =>
-    (OnLoadResult | null | undefined | Promise<OnLoadResult | null | undefined>)): void;
+  onStart(
+    callback: () =>
+      | OnStartResult
+      | null
+      | void
+      | Promise<OnStartResult | null | void>,
+  ): void;
+  onEnd(callback: (result: BuildResult) => void | Promise<void>): void;
+  onResolve(
+    options: OnResolveOptions,
+    callback: (
+      args: OnResolveArgs,
+    ) =>
+      | OnResolveResult
+      | null
+      | undefined
+      | Promise<OnResolveResult | null | undefined>,
+  ): void;
+  onLoad(
+    options: OnLoadOptions,
+    callback: (
+      args: OnLoadArgs,
+    ) =>
+      | OnLoadResult
+      | null
+      | undefined
+      | Promise<OnLoadResult | null | undefined>,
+  ): void;
 
   // This is a full copy of the esbuild library in case you need it
   esbuild: {
-    serve: typeof serve,
-    build: typeof build,
-    buildSync: typeof buildSync,
-    transform: typeof transform,
-    transformSync: typeof transformSync,
-    formatMessages: typeof formatMessages,
-    formatMessagesSync: typeof formatMessagesSync,
-    analyzeMetafile: typeof analyzeMetafile,
-    analyzeMetafileSync: typeof analyzeMetafileSync,
-    initialize: typeof initialize,
-    version: typeof version,
+    serve: typeof serve;
+    build: typeof build;
+    buildSync: typeof buildSync;
+    transform: typeof transform;
+    transformSync: typeof transformSync;
+    formatMessages: typeof formatMessages;
+    formatMessagesSync: typeof formatMessagesSync;
+    analyzeMetafile: typeof analyzeMetafile;
+    analyzeMetafileSync: typeof analyzeMetafileSync;
+    initialize: typeof initialize;
+    version: typeof version;
   };
 }
 
@@ -352,17 +391,15 @@ export interface OnResolveArgs {
 }
 
 export type ImportKind =
-  | 'entry-point'
-
+  | "entry-point"
   // JS
-  | 'import-statement'
-  | 'require-call'
-  | 'dynamic-import'
-  | 'require-resolve'
-
+  | "import-statement"
+  | "require-call"
+  | "dynamic-import"
+  | "require-resolve"
   // CSS
-  | 'import-rule'
-  | 'url-token'
+  | "import-rule"
+  | "url-token";
 
 export interface OnResolveResult {
   pluginName?: string;
@@ -425,33 +462,33 @@ export interface PartialNote {
 export interface Metafile {
   inputs: {
     [path: string]: {
-      bytes: number
+      bytes: number;
       imports: {
-        path: string
-        kind: ImportKind
-      }[]
-    }
-  }
+        path: string;
+        kind: ImportKind;
+      }[];
+    };
+  };
   outputs: {
     [path: string]: {
-      bytes: number
+      bytes: number;
       inputs: {
         [path: string]: {
-          bytesInOutput: number
-        }
-      }
+          bytesInOutput: number;
+        };
+      };
       imports: {
-        path: string
-        kind: ImportKind
-      }[]
-      exports: string[]
-      entryPoint?: string
-    }
-  }
+        path: string;
+        kind: ImportKind;
+      }[];
+      exports: string[];
+      entryPoint?: string;
+    };
+  };
 }
 
 export interface FormatMessagesOptions {
-  kind: 'error' | 'warning';
+  kind: "error" | "warning";
   color?: boolean;
   terminalWidth?: number;
 }
@@ -471,10 +508,18 @@ export interface AnalyzeMetafileOptions {
  *
  * Documentation: https://esbuild.github.io/api/#build-api
  */
-export declare function build(options: BuildOptions & { write: false }): Promise<BuildResult & { outputFiles: OutputFile[] }>;
-export declare function build(options: BuildOptions & { incremental: true, metafile: true }): Promise<BuildIncremental & { metafile: Metafile }>;
-export declare function build(options: BuildOptions & { incremental: true }): Promise<BuildIncremental>;
-export declare function build(options: BuildOptions & { metafile: true }): Promise<BuildResult & { metafile: Metafile }>;
+export declare function build(
+  options: BuildOptions & { write: false },
+): Promise<BuildResult & { outputFiles: OutputFile[] }>;
+export declare function build(
+  options: BuildOptions & { incremental: true; metafile: true },
+): Promise<BuildIncremental & { metafile: Metafile }>;
+export declare function build(
+  options: BuildOptions & { incremental: true },
+): Promise<BuildIncremental>;
+export declare function build(
+  options: BuildOptions & { metafile: true },
+): Promise<BuildResult & { metafile: Metafile }>;
 export declare function build(options: BuildOptions): Promise<BuildResult>;
 
 /**
@@ -486,7 +531,10 @@ export declare function build(options: BuildOptions): Promise<BuildResult>;
  *
  * Documentation: https://esbuild.github.io/api/#serve
  */
-export declare function serve(serveOptions: ServeOptions, buildOptions: BuildOptions): Promise<ServeResult>;
+export declare function serve(
+  serveOptions: ServeOptions,
+  buildOptions: BuildOptions,
+): Promise<ServeResult>;
 
 /**
  * This function transforms a single JavaScript file. It can be used to minify
@@ -499,7 +547,10 @@ export declare function serve(serveOptions: ServeOptions, buildOptions: BuildOpt
  *
  * Documentation: https://esbuild.github.io/api/#transform-api
  */
-export declare function transform(input: string, options?: TransformOptions): Promise<TransformResult>;
+export declare function transform(
+  input: string,
+  options?: TransformOptions,
+): Promise<TransformResult>;
 
 /**
  * Converts log messages to formatted message strings suitable for printing in
@@ -509,7 +560,10 @@ export declare function transform(input: string, options?: TransformOptions): Pr
  * - Works in node: yes
  * - Works in browser: yes
  */
-export declare function formatMessages(messages: PartialMessage[], options: FormatMessagesOptions): Promise<string[]>;
+export declare function formatMessages(
+  messages: PartialMessage[],
+  options: FormatMessagesOptions,
+): Promise<string[]>;
 
 /**
  * Pretty-prints an analysis of the metafile JSON to a string. This is just for
@@ -521,7 +575,10 @@ export declare function formatMessages(messages: PartialMessage[], options: Form
  *
  * Documentation: https://esbuild.github.io/api/#analyze
  */
-export declare function analyzeMetafile(metafile: Metafile | string, options?: AnalyzeMetafileOptions): Promise<string>;
+export declare function analyzeMetafile(
+  metafile: Metafile | string,
+  options?: AnalyzeMetafileOptions,
+): Promise<string>;
 
 /**
  * A synchronous version of "build".
@@ -531,7 +588,9 @@ export declare function analyzeMetafile(metafile: Metafile | string, options?: A
  *
  * Documentation: https://esbuild.github.io/api/#build-api
  */
-export declare function buildSync(options: BuildOptions & { write: false }): BuildResult & { outputFiles: OutputFile[] };
+export declare function buildSync(
+  options: BuildOptions & { write: false },
+): BuildResult & { outputFiles: OutputFile[] };
 export declare function buildSync(options: BuildOptions): BuildResult;
 
 /**
@@ -542,7 +601,10 @@ export declare function buildSync(options: BuildOptions): BuildResult;
  *
  * Documentation: https://esbuild.github.io/api/#transform-api
  */
-export declare function transformSync(input: string, options?: TransformOptions): TransformResult;
+export declare function transformSync(
+  input: string,
+  options?: TransformOptions,
+): TransformResult;
 
 /**
  * A synchronous version of "formatMessages".
@@ -550,7 +612,10 @@ export declare function transformSync(input: string, options?: TransformOptions)
  * - Works in node: yes
  * - Works in browser: no
  */
-export declare function formatMessagesSync(messages: PartialMessage[], options: FormatMessagesOptions): string[];
+export declare function formatMessagesSync(
+  messages: PartialMessage[],
+  options: FormatMessagesOptions,
+): string[];
 
 /**
  * A synchronous version of "analyzeMetafile".
@@ -560,7 +625,10 @@ export declare function formatMessagesSync(messages: PartialMessage[], options: 
  *
  * Documentation: https://esbuild.github.io/api/#analyze
  */
-export declare function analyzeMetafileSync(metafile: Metafile | string, options?: AnalyzeMetafileOptions): string;
+export declare function analyzeMetafileSync(
+  metafile: Metafile | string,
+  options?: AnalyzeMetafileOptions,
+): string;
 
 /**
  * This configures the browser-based version of esbuild. It is necessary to
@@ -579,7 +647,7 @@ export interface InitializeOptions {
    * The URL of the "esbuild.wasm" file. This must be provided when running
    * esbuild in the browser.
    */
-  wasmURL?: string
+  wasmURL?: string;
 
   /**
    * The result of calling "new WebAssembly.Module(buffer)" where "buffer"
@@ -589,14 +657,14 @@ export interface InitializeOptions {
    * You can use this as an alternative to "wasmURL" for environments where it's
    * not possible to download the WebAssembly module.
    */
-  wasmModule?: WebAssembly.Module
+  wasmModule?: WebAssembly.Module;
 
   /**
    * By default esbuild runs the WebAssembly-based browser API in a web worker
    * to avoid blocking the UI thread. This can be disabled by setting "worker"
    * to false.
    */
-  worker?: boolean
+  worker?: boolean;
 }
 
 export let version: string;

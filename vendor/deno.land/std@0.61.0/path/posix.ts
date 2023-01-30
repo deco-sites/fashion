@@ -6,10 +6,10 @@ import type { FormatInputPathObject, ParsedPath } from "./_interface.ts";
 import { CHAR_DOT, CHAR_FORWARD_SLASH } from "./_constants.ts";
 
 import {
-  assertPath,
-  normalizeString,
-  isPosixPathSeparator,
   _format,
+  assertPath,
+  isPosixPathSeparator,
+  normalizeString,
 } from "./_util.ts";
 
 export const sep = "/";
@@ -50,7 +50,7 @@ export function resolve(...pathSegments: string[]): string {
     resolvedPath,
     !resolvedAbsolute,
     "/",
-    isPosixPathSeparator
+    isPosixPathSeparator,
   );
 
   if (resolvedAbsolute) {
@@ -337,7 +337,7 @@ export function format(pathObject: FormatInputPathObject): string {
   /* eslint-disable max-len */
   if (pathObject === null || typeof pathObject !== "object") {
     throw new TypeError(
-      `The "pathObject" argument must be of type Object. Received type ${typeof pathObject}`
+      `The "pathObject" argument must be of type Object. Received type ${typeof pathObject}`,
     );
   }
   return _format("/", pathObject);

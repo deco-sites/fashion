@@ -2,30 +2,30 @@ import { Plugin } from "$fresh/server.ts";
 
 export interface Options {
   /** Attempt higher priority fetch (low or high) */
-  priority?: boolean
+  priority?: boolean;
   /** Allowed origins to prefetch (empty allows all) */
-  origins?: string[]
+  origins?: string[];
   /** Timeout after which prefetching will occur */
-  timeout?: number
-  /** 
-   * The concurrency limit for prefetching 
+  timeout?: number;
+  /**
+   * The concurrency limit for prefetching
    * @default 2
-   * */
-  throttle?: number
+   */
+  throttle?: number;
   /** The area percentage of each link that must have entered the viewport to be fetched */
-  threshold?: number
+  threshold?: number;
   /** The total number of prefetches to allow */
-  limit?: number
+  limit?: number;
   /** Time each link needs to stay inside viewport before prefetching (milliseconds) */
-  delay?: number
+  delay?: number;
   /** Option to switch from prefetching and use prerendering only */
-  prerender?: boolean
+  prerender?: boolean;
   /** Option to use both prerendering and prefetching */
-  prerenderAndPrefetch?: boolean
-};
+  prerenderAndPrefetch?: boolean;
+}
 
 const prefetch = (options: Options = {
-  throttle: 10
+  throttle: 10,
 }): Plugin => {
   const main = `data:application/javascript,
     import { listen } from "https://esm.sh/quicklink@2.3.0";
@@ -36,20 +36,19 @@ const prefetch = (options: Options = {
       } else {
         document.addEventListener("DOMContentLoaded", () => listen(options));
       }
-    };`
+    };`;
 
   return {
-    name: 'prefetch',
+    name: "prefetch",
     entrypoints: { main },
     render: (ctx) => {
-      ctx.render()
+      ctx.render();
 
       return {
-        scripts: [{ entrypoint: 'main', state: options }]
-      }
-    }
-  }
-}
+        scripts: [{ entrypoint: "main", state: options }],
+      };
+    },
+  };
+};
 
-export default prefetch
-
+export default prefetch;

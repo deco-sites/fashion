@@ -12,7 +12,6 @@ import { SEP } from "./separator.ts";
  *         "./deno/std/fs/mod.ts",
  *       ]);
  *       console.log(p); // "./deno/std/"
- *
  */
 export function common(paths: string[], sep = SEP): string {
   const [first = "", ...remaining] = paths;

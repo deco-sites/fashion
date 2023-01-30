@@ -1,10 +1,10 @@
 export {
   deflate,
-  inflate,
-  gzip,
   gunzip,
-  zlib,
+  gzip,
+  inflate,
   unzlib,
+  zlib,
 } from "./pkg/denoflate.js";
 
 import init from "./pkg/denoflate.js";

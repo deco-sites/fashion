@@ -1,5 +1,14 @@
-import { MaybeThunk, MaybeArray, Falsy, Directive, CSSRules, CSSAtKeyframes, CSSProperties, Context } from 'https://esm.sh/v96/twind@0.16.17/twind.d.ts';
-export * from 'https://esm.sh/v96/twind@0.16.17/twind.d.ts';
+import {
+  Context,
+  CSSAtKeyframes,
+  CSSProperties,
+  CSSRules,
+  Directive,
+  Falsy,
+  MaybeArray,
+  MaybeThunk,
+} from "https://esm.sh/v96/twind@0.16.17/twind.d.ts";
+export * from "https://esm.sh/v96/twind@0.16.17/twind.d.ts";
 
 /**
  * [[include:src/css/README.md]]
@@ -9,13 +18,17 @@ export * from 'https://esm.sh/v96/twind@0.16.17/twind.d.ts';
  */
 
 interface CSSFactory<T, I, R> {
-    (strings: TemplateStringsArray, ...interpolations: readonly MaybeThunk<MaybeArray<I | string | number | Falsy>>[]): Directive<R>;
-    (tokens: MaybeThunk<MaybeArray<T | Falsy>>): Directive<R>;
-    (...tokens: readonly MaybeThunk<T | Falsy>[]): Directive<R>;
+  (
+    strings: TemplateStringsArray,
+    ...interpolations: readonly MaybeThunk<
+      MaybeArray<I | string | number | Falsy>
+    >[]
+  ): Directive<R>;
+  (tokens: MaybeThunk<MaybeArray<T | Falsy>>): Directive<R>;
+  (...tokens: readonly MaybeThunk<T | Falsy>[]): Directive<R>;
 }
 declare const css: CSSFactory<CSSRules, CSSRules, CSSRules>;
 /**
- *
  * ```js
  * const bounce = keyframes({
  *   'from, 20%, 53%, 80%, to': {
@@ -38,9 +51,12 @@ declare const css: CSSFactory<CSSRules, CSSRules, CSSRules>;
  * ```
  * @param waypoints
  */
-declare const keyframes: CSSFactory<CSSAtKeyframes, CSSAtKeyframes | CSSProperties, string>;
+declare const keyframes: CSSFactory<
+  CSSAtKeyframes,
+  CSSAtKeyframes | CSSProperties,
+  string
+>;
 /**
- *
  * ```js
  * const bounce = animation('1s ease infinite', {
  *   'from, 20%, 53%, 80%, to': {
@@ -59,15 +75,23 @@ declare const keyframes: CSSFactory<CSSAtKeyframes, CSSAtKeyframes | CSSProperti
  * ```
  */
 interface Animation {
-    (value: string | CSSRules | ((context: Context) => string)): CSSFactory<CSSAtKeyframes, CSSAtKeyframes | CSSProperties, CSSRules>;
-    (value: string | CSSRules | ((context: Context) => string), waypoints: CSSAtKeyframes | Directive<string>): Directive<CSSRules>;
+  (
+    value: string | CSSRules | ((context: Context) => string),
+  ): CSSFactory<CSSAtKeyframes, CSSAtKeyframes | CSSProperties, CSSRules>;
+  (
+    value: string | CSSRules | ((context: Context) => string),
+    waypoints: CSSAtKeyframes | Directive<string>,
+  ): Directive<CSSRules>;
 }
 declare const animation: Animation;
 interface Screen {
-    (size: string): Directive<string>;
-    (size: string, css: Directive<CSSRules> | MaybeArray<CSSRules | Falsy>): Directive<CSSRules>;
+  (size: string): Directive<string>;
+  (
+    size: string,
+    css: Directive<CSSRules> | MaybeArray<CSSRules | Falsy>,
+  ): Directive<CSSRules>;
 }
 declare const screen: Screen;
 
-export { Animation, CSSFactory, Screen, animation, css, keyframes, screen };
+export { Animation, animation, css, CSSFactory, keyframes, Screen, screen };
 //# sourceMappingURL=css.d.ts.map

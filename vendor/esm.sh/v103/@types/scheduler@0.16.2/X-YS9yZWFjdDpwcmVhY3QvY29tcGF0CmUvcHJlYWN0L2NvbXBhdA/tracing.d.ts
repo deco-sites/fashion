@@ -13,21 +13,17 @@ export {};
 export interface Build {}
 
 export type EnableSchedulerTracing = Build extends { type: infer BuildType }
-  ? BuildType extends "production" | "profiling"
-    ? false
-    : BuildType extends "development"
-    ? true
-    : undefined
+  ? BuildType extends "production" | "profiling" ? false
+  : BuildType extends "development" ? true
+  : undefined
   : undefined;
 
 type TypeByBuildFlag<
   Flag extends boolean | undefined,
   WhenTrue,
-  WhenFalse
-> = Flag extends undefined
-  ? (WhenTrue | WhenFalse)
-  : Flag extends true
-  ? WhenTrue
+  WhenFalse,
+> = Flag extends undefined ? (WhenTrue | WhenFalse)
+  : Flag extends true ? WhenTrue
   : WhenFalse;
 
 type IfSchedulerTracing<WhenTrue, WhenFalse> = TypeByBuildFlag<
@@ -107,7 +103,7 @@ export function unstable_trace<T>(
   name: string,
   timestamp: number,
   callback: () => T,
-  threadID?: number
+  threadID?: number,
 ): T;
 
 export type WrappedFunction<T extends (...args: any[]) => any> = T & {
@@ -123,7 +119,7 @@ export type WrappedFunction<T extends (...args: any[]) => any> = T & {
  */
 export function unstable_wrap<T extends (...args: any[]) => any>(
   callback: T,
-  threadID?: number
+  threadID?: number,
 ): IfSchedulerTracing<WrappedFunction<T>, T>;
 
 export function unstable_subscribe(subscriber: Subscriber): void;

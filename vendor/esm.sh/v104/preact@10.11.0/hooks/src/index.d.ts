@@ -1,4 +1,8 @@
-import { ErrorInfo, PreactContext, Ref as PreactRef } from '../../src/index.d.ts';
+import {
+  ErrorInfo,
+  PreactContext,
+  Ref as PreactRef,
+} from "../../src/index.d.ts";
 
 type Inputs = ReadonlyArray<unknown>;
 
@@ -10,8 +14,8 @@ export type StateUpdater<S> = (value: S | ((prevState: S) => S)) => void;
 export function useState<S>(initialState: S | (() => S)): [S, StateUpdater<S>];
 
 export function useState<S = undefined>(): [
-	S | undefined,
-	StateUpdater<S | undefined>
+  S | undefined,
+  StateUpdater<S | undefined>,
 ];
 
 export type Reducer<S, A> = (prevState: S, action: A) => S;
@@ -25,8 +29,8 @@ export type Reducer<S, A> = (prevState: S, action: A) => S;
  * @param initialState The initial value to store as state
  */
 export function useReducer<S, A>(
-	reducer: Reducer<S, A>,
-	initialState: S
+  reducer: Reducer<S, A>,
+  initialState: S,
 ): [S, (action: A) => void];
 
 /**
@@ -40,19 +44,19 @@ export function useReducer<S, A>(
  * @param init A function that, given the `initialArg`, returns the initial value to store as state
  */
 export function useReducer<S, A, I>(
-	reducer: Reducer<S, A>,
-	initialArg: I,
-	init: (arg: I) => S
+  reducer: Reducer<S, A>,
+  initialArg: I,
+  init: (arg: I) => S,
 ): [S, (action: A) => void];
 
 /** @deprecated Use the `Ref` type instead. */
 type PropRef<T> = MutableRef<T>;
 interface Ref<T> {
-	readonly current: T | null;
+  readonly current: T | null;
 }
 
 interface MutableRef<T> {
-	current: T;
+  current: T;
 }
 
 /**
@@ -87,9 +91,9 @@ type CreateHandle = () => object;
  * @param inputs If present, effect will only activate if the values in the list change (using ===).
  */
 export function useImperativeHandle<T, R extends T>(
-	ref: PreactRef<T>,
-	create: () => R,
-	inputs?: Inputs
+  ref: PreactRef<T>,
+  create: () => R,
+  inputs?: Inputs,
 ): void;
 
 /**
@@ -135,7 +139,7 @@ export function useContext<T>(context: PreactContext<T>): T;
 export function useDebugValue<T>(value: T, formatter?: (value: T) => any): void;
 
 export function useErrorBoundary(
-	callback?: (error: any, errorInfo: ErrorInfo) => Promise<void> | void
+  callback?: (error: any, errorInfo: ErrorInfo) => Promise<void> | void,
 ): [any, () => void];
 
 export function useId(): string;
