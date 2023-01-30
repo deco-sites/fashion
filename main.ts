@@ -13,7 +13,7 @@ import partytownPlugin from "partytown/mod.ts";
 await start(manifest, {
   plugins: [
     partytownPlugin(),
-    // prefetchPlugin(),
+    prefetchPlugin(),
     twindPlugin({
       selfURL: new URL("./twind.config.ts", import.meta.url).href,
       ...twindConfig,
