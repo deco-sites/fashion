@@ -177,7 +177,7 @@ const addItems = async (
 type Middleware = (fn: () => Promise<void>) => Promise<void>;
 
 const withCart: Middleware = async (cb) => {
-  if (cart.value == null) {
+  if (cart.value === null) {
     throw new Error("Missing cart");
   }
 
