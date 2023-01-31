@@ -1,5 +1,4 @@
 import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
-import Image from "$live/std/ui/components/Image.tsx";
 import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
 
 export type Props = {

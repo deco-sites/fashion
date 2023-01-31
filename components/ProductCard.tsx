@@ -5,6 +5,7 @@ import {
   bestInstallment,
   installmentToString,
 } from "../sections/ProductDetails.tsx";
+import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
 
 interface Image {
   src: string;
@@ -41,16 +42,29 @@ export default function ProductCard({
       <div class="h-full z-10">
         <a href={url}>
           {img && img.url && (
-            <Image
-              class="w-full max-w-full h-auto"
-              src={img.url}
-              alt={img.alternateName}
-              width={326}
-              height={489}
-              sizes="(max-width: 640px) 40vw, 20vw"
-              loading="lazy"
-              decoding="async"
-            />
+            <Picture>
+              <Source
+                media="(max-width: 639px)"
+                src={img.url}
+                width={234}
+                height={351}
+              />
+              <Source
+                media="(min-width: 640px)"
+                src={img.url}
+                width={312}
+                height={468}
+              />
+              <Image
+                class="w-full max-w-full h-auto"
+                src={img.url}
+                alt={img.alternateName}
+                width={312}
+                height={468}
+                loading="lazy"
+                decoding="async"
+              />
+            </Picture>
           )}
           <div class="mt-3">
             {name && (
