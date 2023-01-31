@@ -1,5 +1,6 @@
 import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import Image from "$live/std/ui/components/Image.tsx";
+import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
 
 export type Props = {
   imgSrc: { mobile: LiveImage; desktop: LiveImage };
@@ -17,24 +18,31 @@ export default function Banner(
   return (
     <section class="w-full mb-8">
       <div class="relative">
-        <picture class="inset-0">
-          <source
+        <Picture class="inset-0" preload>
+          <Source
             media="(max-width: 767px)"
-            srcset={imgSrc.mobile}
-          />
-          <source
-            media="(min-width: 768px)"
-            srcset={imgSrc.desktop}
-          />
-          <Image
-            class="object-cover pb-5 w-full"
-            sizes="(max-width: 640px) 75vw, 50vw"
             src={imgSrc.mobile}
+            width={436}
+            height={377}
+            fetchPriority="high"
+          />
+          <Source
+            media="(min-width: 768px)"
+            src={imgSrc.desktop}
+            width={1920}
+            height={726}
+            fetchPriority="high"
+          />
+          <img
+            class="object-cover pb-5 w-full"
+            src={imgSrc.mobile}
+            sizes="(max-width: 640px) 75vw, 50vw"
             alt={alt}
             width={300}
             height={300}
+            loading="eager"
           />
-        </picture>
+        </Picture>
 
         <div class="absolute inset-0 md:flex md:flex-col md:items-center md:justify-center text-[#4d5b31] m-[4vh] md:m-auto md:text-[#f2e9d8] md:w-[28vw]">
           <a
