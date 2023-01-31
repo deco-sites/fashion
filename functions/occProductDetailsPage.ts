@@ -22,8 +22,6 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
 
     const product = data.page.product;
 
-    console.log("OCC DATA", data);
-
     // Product not found, return the 404 status code
     if (!data) {
       return {
@@ -32,8 +30,9 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
       };
     }
 
-    // Convert the VTEX product to schema.org format and return it
-    return { data: toProductPage(product) };
+    // Convert the OCC product to schema.org format and return it
+    // deno-lint-ignore no-explicit-any
+    return { data: toProductPage(product, undefined as any) };
   };
 
 export default productPageLoader;

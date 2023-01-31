@@ -1,17 +1,17 @@
 import { useState } from "preact/hooks";
 import { useDebouncedCallback } from "../utils.ts";
-import { useCart } from "../data/cartHooks.ts";
+import { useCart } from "../sdk/cart/useCart.ts";
 
 interface Props {
-  itemId: string;
+  index: number;
   initialQuantity: number;
 }
 
 const QUANTITY_MAX_VALUE = 100;
 
-export default function QuantitySelector({ initialQuantity, itemId }: Props) {
+export default function QuantitySelector({ initialQuantity, index }: Props) {
   const [quantity, setQuantity] = useState(initialQuantity);
-  const { updateItem } = useCart();
+  const { updateItems } = useCart();
 
   const inputClass =
     "text-center p-2 block max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm";
@@ -30,10 +30,10 @@ export default function QuantitySelector({ initialQuantity, itemId }: Props) {
 
   const updateQuantity = useDebouncedCallback(
     (newQuantity: number) => {
-      updateItem(itemId, newQuantity);
+      updateItems({ orderItems: [{ index, quantity: newQuantity }] });
     },
     ONE_SECOND,
-    [itemId],
+    [index],
   );
 
   return (
