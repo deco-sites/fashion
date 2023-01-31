@@ -5,6 +5,7 @@ import {
   bestInstallment,
   installmentToString,
 } from "../sections/ProductDetails.tsx";
+import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
 
 interface Image {
   src: string;
@@ -36,61 +37,72 @@ export default function ProductCard({
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full p-2 group relative mb-5"
+      class="w-full p-2 mb-5"
     >
-      <div class="h-full z-10">
-        <a href={url}>
-          {img && img.url && (
+      <a href={url}>
+        {img && img.url && (
+          <Picture>
+            <Source
+              media="(max-width: 639px)"
+              src={img.url}
+              width={234}
+              height={351}
+            />
+            <Source
+              media="(min-width: 640px)"
+              src={img.url}
+              width={406}
+              height={608}
+            />
             <Image
               class="w-full max-w-full h-auto"
               src={img.url}
               alt={img.alternateName}
-              width={326}
-              height={489}
-              sizes="(max-width: 640px) 40vw, 20vw"
+              width={322}
+              height={483}
               loading="lazy"
               decoding="async"
             />
-          )}
-          <div class="mt-3">
-            {name && (
-              <div
-                class="block text-sm overflow-hidden whitespace-nowrap uppercase mb-3"
-                style={{ textOverflow: "ellipsis" }}
-                href={url}
-              >
-                {name.replace(/(.*)(\-).*$/, "$1$2")}
-              </div>
-            )}
-            <div class="text-xs flex justify-start gap-2 mb-1">
-              {listPrice && (
-                <span class="text-gray-400 line-through">
-                  R$ {listPrice.price.toFixed(2)}
-                </span>
-              )}
-              {price && (
-                <span class="font-bold">
-                  R$ {typeof price === "number" ? price.toFixed(2) : price}
-                </span>
-              )}
-            </div>
-            {installment && price && (
-              <div class="text-xs font-bold text-gray-500">
-                ou {installmentToString(installment, price)}
-              </div>
-            )}
-          </div>
-        </a>
-        {seller && (
-          <div class="mt-2">
-            <AddToCart
-              class="w-full text-white text-xs uppercase py-2 cursor-pointer"
-              skuId={productID}
-              sellerId={seller}
-            />
-          </div>
+          </Picture>
         )}
-      </div>
+        <div class="mt-3">
+          {name && (
+            <div
+              class="block text-sm overflow-hidden whitespace-nowrap uppercase mb-3"
+              style={{ textOverflow: "ellipsis" }}
+              href={url}
+            >
+              {name.replace(/(.*)(\-).*$/, "$1$2")}
+            </div>
+          )}
+          <div class="text-xs flex justify-start gap-2 mb-1">
+            {listPrice && (
+              <span class="text-gray-400 line-through">
+                R$ {listPrice.price.toFixed(2)}
+              </span>
+            )}
+            {price && (
+              <span class="font-bold">
+                R$ {typeof price === "number" ? price.toFixed(2) : price}
+              </span>
+            )}
+          </div>
+          {installment && price && (
+            <div class="text-xs font-bold text-gray-500">
+              ou {installmentToString(installment, price)}
+            </div>
+          )}
+        </div>
+      </a>
+      {seller && (
+        <div class="mt-2">
+          <AddToCart
+            class="w-full text-white text-xs uppercase py-2 cursor-pointer"
+            skuId={productID}
+            sellerId={seller}
+          />
+        </div>
+      )}
     </div>
   );
 }

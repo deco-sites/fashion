@@ -15,7 +15,7 @@ export default function ProductShelf({
   return (
     <section class="max-w-[1400px] w-full p-2 md:p-0 mx-auto">
       {title && <h2 class="text-center mb-8 text-lg md:text-2xl">{title}</h2>}
-      <div class="grid grid-cols-2 md:grid-cols-4 md:gap-2">
+      <div class="grid grid-cols-2 md:grid-cols-4 md:gap-4">
         {products?.map((product, index) => {
           return <ProductCard key={index} {...product} />;
         })}
