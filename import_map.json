@@ -17,7 +17,6 @@
     "std/": "https://deno.land/std@0.162.0/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.0.3",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
-    "swr": "https://esm.sh/swr@2.0.0-beta.6?alias=react:preact/compat&external=preact/compat",
     "prefetch": "https://deno.land/x/prefetch@0.0.6/mod.ts"
   }
 }

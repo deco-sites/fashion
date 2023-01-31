@@ -1,8 +1,9 @@
 // TODO: Default schema
-import { OrderFormItem } from "../../clients/vtex/checkout.ts";
+import { OrderFormItem } from "../../sdk/cart/types.ts";
 import QuantitySelector from "../QuantitySelector.tsx";
 
 interface Props {
+  index: number;
   item: OrderFormItem;
   onRemove(): void;
 }
@@ -14,9 +15,12 @@ export const formatPrice = (cents: number) =>
   }).format(cents / 100);
 
 export default function CartItem({
-  item: { imageUrl, skuName, detailUrl, name, price, quantity, uniqueId },
+  index,
+  item: { imageUrl, skuName, detailUrl, name, sellingPrice, quantity },
   onRemove,
 }: Props) {
+  const isGift = sellingPrice < 0.01;
+
   return (
     <li class="flex py-6">
       <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -32,7 +36,7 @@ export default function CartItem({
             <a href={detailUrl}>
               <h3>{name}</h3>
             </a>
-            <p class="ml-4">{formatPrice(price)}</p>
+            {!isGift && <p class="ml-4">{formatPrice(sellingPrice)}</p>}
           </div>
           <p class="mt-1 text-sm text-gray-500">
             {skuName === name ? "" : skuName}
@@ -41,17 +45,21 @@ export default function CartItem({
         <div class="flex flex-1 items-end justify-between text-sm">
           <p class="text-gray-500">
             Quantidade:
-            <QuantitySelector initialQuantity={quantity} itemId={uniqueId} />
+            {isGift
+              ? quantity
+              : <QuantitySelector initialQuantity={quantity} index={index} />}
           </p>
 
           <div class="flex">
-            <button
-              type="button"
-              class="font-medium"
-              onClick={() => onRemove()}
-            >
-              Remove
-            </button>
+            {!isGift && (
+              <button
+                type="button"
+                class="font-medium"
+                onClick={() => onRemove()}
+              >
+                Remove
+              </button>
+            )}
           </div>
         </div>
       </div>
