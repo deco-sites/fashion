@@ -4,11 +4,11 @@ import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
 
 export interface Feature {
   /**
-   * @src Image src
+   * @description Image src
    */
   src: LiveImage;
   /**
-   * @title Title
+   * @description Title
    */
   title: string;
   /**
@@ -39,7 +39,6 @@ export default function HighlightedFeatures(
             class=""
             decoding="async"
             loading="lazy"
-            src={src}
           />
           <span class="font-bold uppercase text-center mt-3">{title}</span>
           <p class="text-xs text-center">{description}</p>

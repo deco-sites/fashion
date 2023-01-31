@@ -464,11 +464,12 @@ const manifest: DecoManifest = {
                   "format": "image-uri",
                   "type": "string",
                   "title": "Src",
-                  "src": "Image src",
+                  "description": "Image src",
                 },
                 "title": {
                   "type": "string",
                   "title": "Title",
+                  "description": "Title",
                 },
                 "description": {
                   "type": "string",

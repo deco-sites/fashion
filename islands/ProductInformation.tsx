@@ -27,7 +27,7 @@ export default function ProductInformation({ description }: Props) {
     //       </p>
     //       <p>
     //         <a
-    //           href="https://offpremium.troquefacil.com.br/"
+    //           href="https://troquefacil.example.com/"
     //           class="underline text-black"
     //           target="_blank"
     //           rel="noopener noreferrer"
