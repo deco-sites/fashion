@@ -1,7 +1,8 @@
 import { useSignal } from "@preact/signals";
-import { useCart } from "../sdk/cart/useCart.ts";
 import Button from "$components/ui/Button.tsx";
-import { OPEN_CART_EVENT_NAME } from "./Minicart.tsx";
+
+import { useCart } from "../sdk/cart/useCart.ts";
+import { useUI } from "../sdk/useUI.ts";
 
 interface Props {
   skuId: string;
@@ -12,6 +13,7 @@ interface Props {
 
 export default function AddToCart({ skuId, sellerId, large }: Props) {
   const isAddingToCart = useSignal(false);
+  const { displayCart } = useUI();
   const { addItems, loading } = useCart();
 
   const onAddItem = async () => {
@@ -21,8 +23,7 @@ export default function AddToCart({ skuId, sellerId, large }: Props) {
         orderItems: [{ id: skuId, seller: sellerId, quantity: 1 }],
       });
 
-      const openMinicart = new Event(OPEN_CART_EVENT_NAME);
-      dispatchEvent(openMinicart);
+      displayCart.value = true;
     } finally {
       isAddingToCart.value = false;
     }

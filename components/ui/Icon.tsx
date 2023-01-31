@@ -10,7 +10,8 @@ type AvailableIcons =
   | "ShoppingCart"
   | "Bars3"
   | "Heart"
-  | "MagnifyingGlass";
+  | "MagnifyingGlass"
+  | "XMark";
 
 const mapWeightToValue: Record<IconWeight, number> = {
   bold: 24,

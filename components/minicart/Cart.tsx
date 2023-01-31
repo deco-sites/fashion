@@ -1,61 +1,17 @@
-import { useEffect, useRef } from "preact/hooks";
-import Icon from "$components/ui/Icon.tsx";
-import { useCart } from "../sdk/cart/useCart.ts";
-import Modal from "../components/ui/Modal.tsx";
-import CartItem, { formatPrice } from "../components/minicart/CartItem.tsx";
+import { useCart } from "../../sdk/cart/useCart.ts";
+import CartItem, { formatPrice } from "./CartItem.tsx";
 
 const CHECKOUT_URL =
   "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
 
-declare global {
-  interface HTMLDialogElement {
-    showModal(): void;
-    close(): void;
-  }
-}
-export const OPEN_CART_EVENT_NAME = "openCart";
-
-// TODO: Figure out why effect is triggered twice (Preact's dev mode?)
-let eventListenerAdded = false;
-
-export default function Cart() {
-  const { cart } = useCart();
-
-  const modalRef = useRef<HTMLDialogElement | null>(null);
-
-  useEffect(() => {
-    if (!eventListenerAdded) {
-      addEventListener(OPEN_CART_EVENT_NAME, (e) => {
-        modalRef?.current?.showModal();
-        e.stopPropagation();
-      });
-      eventListenerAdded = true;
-    }
-  }, []);
-
-  return (
-    <div>
-      <button
-        onClick={() => modalRef.current!.showModal()}
-        class="h-full flex items-center gap-2 p-2"
-        aria-label="open cart"
-      >
-        <Icon name="ShoppingCart" className="w-8 h-8" />
-      </button>
-      <Modal title="Seu Carrinho" ref={modalRef}>
-        <CartInner />
-      </Modal>
-    </div>
-  );
-}
-
-function CartInner() {
+function Cart() {
   const { cart, updateItems } = useCart();
-  const isCartEmpty = cart.value?.items.length === 0;
 
   if (!cart.value) {
     return null;
   }
+
+  const isCartEmpty = cart.value.items.length === 0;
 
   return (
     <>
@@ -117,3 +73,5 @@ function CartInner() {
     </>
   );
 }
+
+export default Cart;
