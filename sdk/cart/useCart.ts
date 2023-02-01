@@ -10,7 +10,13 @@ const fetchAPI = async <T>(input: string, init?: RequestInit) => {
     },
   });
 
-  return response.json() as Promise<T>;
+  if (response.ok) {
+    return response.json() as Promise<T>;
+  }
+
+  throw new Error(
+    `Request failed with status code ${response.status} ${input}`,
+  );
 };
 
 const cart = signal<OrderForm | null>(null);
@@ -193,37 +199,56 @@ const withLoading: Middleware = async (cb) => {
   }
 };
 
+let queue = Promise.resolve();
+const withPQueue: Middleware = (cb) => {
+  queue = queue.then(cb);
+
+  return queue;
+};
+
 // Start fetching the cart on client-side only
 if (typeof document !== "undefined") {
-  withLoading(getCart);
+  const _getCart = () => withPQueue(() => withLoading(getCart));
+
+  _getCart();
+
+  document.addEventListener(
+    "visibilitychange",
+    () => document.visibilityState === "visible" && _getCart(),
+  );
 }
 
 const state = {
   loading,
   cart,
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items/removeAll */
-  removeAllItems: () => withCart(() => withLoading(removeAllItems)),
+  removeAllItems: () =>
+    withPQueue(() => withCart(() => withLoading(removeAllItems))),
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#get-/checkout/changeToAnonymousUser/-orderFormId- */
   removeAllPersonalData: () =>
-    withCart(() => withLoading(removeAllPersonalData)),
+    withPQueue(() => withCart(() => withLoading(removeAllPersonalData))),
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items/update */
   updateItems: (opts: UpdateItemsOptions) =>
-    withCart(() => withLoading(() => updateItems(opts))),
+    withPQueue(() => withCart(() => withLoading(() => updateItems(opts)))),
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items */
   addItems: (opts: AddItemsOptions) =>
-    withCart(() => withLoading(() => addItems(opts))),
+    withPQueue(() => withCart(() => withLoading(() => addItems(opts)))),
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#put-/api/checkout/pub/orderForm/-orderFormId-/items/-itemIndex-/price */
   changePrice: (opts: ChangePriceOptions) =>
-    withCart(() => withLoading(() => changePrice(opts))),
+    withPQueue(() => withCart(() => withLoading(() => changePrice(opts)))),
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#patch-/api/checkout/pub/orderForm/-orderFormId-/profile */
   ignoreProfileData: (opts: IgnoreProfileDataOptions) =>
-    withCart(() => withLoading(() => ignoreProfileData(opts))),
+    withPQueue(() =>
+      withCart(() => withLoading(() => ignoreProfileData(opts)))
+    ),
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#get-/api/checkout/pub/orderForm/-orderFormId-/installments */
   getCartInstallments: (opts: CartInstallmentsOptions) =>
-    withCart(() => withLoading(() => getCartInstallments(opts))),
+    withPQueue(() =>
+      withCart(() => withLoading(() => getCartInstallments(opts)))
+    ),
   /** @docs https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/coupons */
   addCouponsToCart: (opts: AddCouponsToCartOptions) =>
-    withCart(() => withLoading(() => addCouponsToCart(opts))),
+    withPQueue(() => withCart(() => withLoading(() => addCouponsToCart(opts)))),
 };
 
 export const useCart = () => state;
