@@ -8,9 +8,9 @@ interface Props {
 
 const QUANTITY_MAX_VALUE = 100;
 
-// deno-lint-ignore no-explicit-any
-const isHTMLInputElement = (e: any): e is HTMLInputElement =>
-  typeof e?.value !== "undefined";
+const isHTMLInputElement = (e: EventTarget | null): e is HTMLInputElement =>
+  // deno-lint-ignore no-explicit-any
+  typeof (e as any)?.value !== "undefined";
 
 // Remove default browser behavior: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
 // TODO: Figure out how to add it via twind config.
