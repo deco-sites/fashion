@@ -60,14 +60,14 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({
   return (
     <dialog
       ref={ref}
-      class={`bg-transparent p-0 m-0 pt-[50%] sm:pt-0 sm:ml-auto max-w-full sm:max-w-lg w-full max-h-full h-full slide-bottom backdrop ${dialog}`}
+      class={`bg-transparent p-0 m-0 pt-[15%] sm:pt-0 sm:ml-auto max-w-full sm:max-w-lg w-full max-h-full h-full slide-bottom backdrop ${dialog}`}
       onClick={onDialogClick}
     >
       <div
-        class={`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between`}
+        class={`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between divide-y`}
       >
         <>
-          <div class="flex justify-between">
+          <div class="pb-4 flex justify-between">
             <h2 class="text-lg font-medium text-gray-900">{title}</h2>
             <button class="py-1" onClick={onClose}>
               <Icon name="XMark" class="w-6 h-6 fill-current text-gray-600" />
