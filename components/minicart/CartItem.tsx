@@ -1,5 +1,5 @@
 // TODO: Default schema
-import { OrderFormItem } from "../../sdk/cart/types.ts";
+import type { OrderFormItem } from "../../sdk/cart/types.ts";
 import QuantitySelector from "../QuantitySelector.tsx";
 
 interface Props {
