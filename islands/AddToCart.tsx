@@ -35,6 +35,7 @@ export default function AddToCart({ skuId, sellerId, large }: Props) {
         large ? "p-4 md:text-lg w-64 h-14" : "px-6 py-2 w-full"
       } bg-primary-red hover:bg-primary-red-dark focus:ring-1 focus:outline-none focus:ring-primary-red-light uppercase`}
       onClick={onAddItem}
+      fit="container"
       loading={isAddingToCart.value}
       disabled={loading.value}
     >

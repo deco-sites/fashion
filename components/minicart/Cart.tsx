@@ -1,3 +1,5 @@
+import { useComputed } from "@preact/signals";
+
 import { useCart } from "../../sdk/cart/useCart.ts";
 import { useUI } from "../../sdk/useUI.ts";
 import CartItem, { formatPrice } from "./CartItem.tsx";
@@ -9,7 +11,7 @@ const CHECKOUT_URL =
 
 function Cart() {
   const { displayCart } = useUI();
-  const { cart, loading, updateItems } = useCart();
+  const { cart, loading } = useCart();
   const isCartEmpty = cart.value?.items.length === 0;
 
   if (cart.value === null) {
@@ -23,30 +25,24 @@ function Cart() {
           ? <p class="text-gray-700">Não há itens no carrinho</p>
           : (
             <ul role="list" class="-my-6 divide-y divide-gray-200">
-              {cart.value.items.map((item, index) => (
+              {cart.value.items.map((_, index) => (
                 <CartItem
                   index={index}
                   key={index}
-                  item={item}
-                  onRemove={() =>
-                    updateItems({ orderItems: [{ index, quantity: 0 }] })}
                 />
               ))}
             </ul>
           )}
       </div>
       <div class="pt-4 flex flex-col gap-2">
-        <div class="flex justify-between text-lg font-medium">
-          <p>Subtotal</p>
-          <p>
-            {formatPrice(
-              cart.value.totalizers.find(({ id }) => id === "Items")?.value ??
-                0,
-            )}
-          </p>
-        </div>
+        {cart.value.totalizers.map(({ name, value }) => (
+          <div class="flex justify-between text-lg font-medium">
+            <p>{name}</p>
+            <p>{formatPrice(value)}</p>
+          </div>
+        ))}
         <p class="text-sm text-gray-500">
-          Frete será calculado no Checkout
+          Taxas e frete serāo calculados no checkout
         </p>
         <div class="">
           <Button
@@ -56,23 +52,10 @@ function Cart() {
                 `${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`,
                 "_blank",
               )}
-            disabled={loading.value}
+            disabled={loading.value || cart.value.items.length === 0}
           >
             Finalizar Compra
           </Button>
-        </div>
-        <div class="flex justify-center text-center text-sm text-gray-500">
-          <p>
-            or&nbsp;
-            <Button
-              variant="tertiary"
-              onClick={() => {
-                displayCart.value = false;
-              }}
-            >
-              Continue Comprando <span aria-hidden="true">&rarr;</span>
-            </Button>
-          </p>
         </div>
       </div>
     </>
