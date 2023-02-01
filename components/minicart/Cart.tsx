@@ -6,12 +6,11 @@ const CHECKOUT_URL =
 
 function Cart() {
   const { cart, updateItems } = useCart();
+  const isCartEmpty = cart.value?.items.length === 0;
 
-  if (!cart.value) {
+  if (cart.value === null) {
     return null;
   }
-
-  const isCartEmpty = cart.value.items.length === 0;
 
   return (
     <>
@@ -48,7 +47,6 @@ function Cart() {
         <div class="mt-6">
           <a
             class="w-full bg-gray-700 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-700"
-            disabled={isCartEmpty}
             target="_blank"
             href={`${CHECKOUT_URL}?orderFormId=${cart.value.orderFormId}`}
           >
