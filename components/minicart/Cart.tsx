@@ -1,7 +1,4 @@
-import { useComputed } from "@preact/signals";
-
 import { useCart } from "../../sdk/cart/useCart.ts";
-import { useUI } from "../../sdk/useUI.ts";
 import CartItem, { formatPrice } from "./CartItem.tsx";
 
 import Button from "../ui/Button.tsx";
@@ -10,7 +7,6 @@ const CHECKOUT_URL =
   "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
 
 function Cart() {
-  const { displayCart } = useUI();
   const { cart, loading } = useCart();
   const isCartEmpty = cart.value?.items.length === 0;
 
