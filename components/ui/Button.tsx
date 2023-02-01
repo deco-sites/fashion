@@ -15,10 +15,10 @@ export type Props =
   };
 
 const variants = {
-  primary: "text-white bg-primary-red",
-  secondary: "text-deco-black bg-custom-gray",
+  primary: "text-white bg-primary-red rounded",
+  secondary: "text-deco-black bg-custom-gray rounded",
   tertiary: "text-deco-black bg-transparent",
-  danger: "text-white bg-primary-red-dark",
+  danger: "text-white bg-primary-red-dark rounded",
 };
 
 const sizes = {
@@ -45,11 +45,11 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
 
   return (
     <Component
-      className={`inline-flex items-center justify-center rounded cursor-pointer ${
+      className={`inline-flex items-center justify-center cursor-pointer ${
         sizes[size]
       } ${variants[variant]} ${
         fits[fit]
-      } flex items-center justify-center cursor-pointer rounded transition-colors duration-150 ease-in hover:bg-opacity-80 disabled:bg-gray-400 disabled:text-gray-800 disabled:cursor-not-allowed focus:outline-none`}
+      } flex items-center justify-center cursor-pointer transition-colors duration-150 ease-in hover:bg-opacity-80 disabled:bg-gray-400 disabled:text-gray-800 disabled:cursor-not-allowed focus:outline-none`}
       {...props}
       ref={ref}
     >

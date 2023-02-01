@@ -1,5 +1,26 @@
-/** @type {import('$fresh/plugins/twind').Options} */
-export default {
+import { animation, css } from "twind/css";
+import type { Options } from "$fresh/plugins/twind.ts";
+
+const options: Omit<Options, "selfURL"> = {
+  plugins: {
+    "slide-left": animation("0.4s ease normal", {
+      from: { transform: "translateX(100%)" },
+      to: { transform: "translateX(0)" },
+    }),
+    "slide-right": animation("0.4s ease normal", {
+      from: { transform: "translateX(-100%)" },
+      to: { transform: "translateX(0)" },
+    }),
+    "slide-bottom": animation("0.4s ease normal", {
+      from: { transform: "translateY(100%)" },
+      to: { transform: "translateY(0)" },
+    }),
+    backdrop: css({
+      "&::backdrop": {
+        background: "rgba(0, 0, 0, 0.5)",
+      },
+    }),
+  },
   theme: {
     extend: {
       colors: {
@@ -28,3 +49,5 @@ export default {
     },
   },
 };
+
+export default options;

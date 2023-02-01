@@ -109,7 +109,7 @@ interface UpdateItemsOptions {
 }
 
 const updateItems = async (
-  { orderItems, allowedOutdatedData }: UpdateItemsOptions,
+  { orderItems, allowedOutdatedData = ["paymentData"] }: UpdateItemsOptions,
 ) => {
   const params = new URLSearchParams();
 
@@ -152,7 +152,7 @@ interface AddItemsOptions {
 }
 
 const addItems = async (
-  { orderItems, allowedOutdatedData }: AddItemsOptions,
+  { orderItems, allowedOutdatedData = ["paymentData"] }: AddItemsOptions,
 ) => {
   const params = new URLSearchParams();
 

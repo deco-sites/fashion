@@ -3,17 +3,17 @@ import Alert from "$components/Alert.tsx";
 import StoreLogo from "$components/icons/StoreLogo.tsx";
 import Icon from "$components/ui/Icon.tsx";
 
-import Minicart from "../islands/Minicart.tsx";
+import CartButton from "../islands/CartButton.tsx";
+import CartModal from "../islands/CartModal.tsx";
 
 function NavItem({
   href,
   children,
-  class: className,
 }: h.JSX.HTMLAttributes<HTMLLIElement>) {
   return (
     <a
       href={href ?? `/search?ft=${children}`}
-      class={`flex items-center text-[15px] px-8 lg:px-6`}
+      class="flex items-center text-[15px] px-8 lg:px-6"
     >
       <span class="hover:border-black border-solid border-b border-white">
         {children}
@@ -24,30 +24,35 @@ function NavItem({
 
 function Navbar() {
   return (
-    <div>
-      <section class="md:hidden flex p-2 justify-between items-center px-12">
-        <div class="w-24">
-          <button aria-label="open menu" class="p-2">
-            <Icon name="Bars3" className="w-8 h-8" />
-          </button>
-        </div>
-        <a href="/" class="block min-w-[10rem] max-w-[12rem] p-3">
+    <>
+      {/* Mobile Version */}
+      <section class="md:hidden flex justify-between items-center p-2">
+        <button
+          aria-label="open menu"
+          class="flex items-center justify-center h-12 w-12"
+        >
+          <Icon name="Bars3" className="w-8 h-8" />
+        </button>
+
+        <a href="/" class="block max-w-[10rem]">
           <StoreLogo />
         </a>
-        <div class="flex mt-2 w-24 justify-end">
-          <a href="#" class="p-1" aria-label="search">
-            <Icon name="MagnifyingGlass" className="w-8 h-8" />
+        <div class="flex justify-end">
+          <a
+            href="#"
+            class="flex items-center justify-center h-12 w-12"
+            aria-label="search"
+          >
+            <Icon name="MagnifyingGlass" className="w-6 h-6" />
           </a>
-          <a href="#" class="p-1 hidden" aria-label="my account">
-            <Icon name="User" className="w-8 h-8" />
-          </a>
-          <div class="p-1">
-            <Minicart />
-          </div>
+
+          <CartButton />
         </div>
       </section>
-      <section class="hidden md:flex bg-white flex-row h-[80px] items-center md:border-b border-[#d3d5db]">
-        <a href="/" class="block min-w-[12rem] max-w-[14rem] p-3 ml-4">
+
+      {/* Desktop Version */}
+      <section class="hidden md:flex bg-white flex-row h-[80px] items-center md:border-b border-[#d3d5db] mx-8">
+        <a href="/" class="block min-w-[12rem] max-w-[14rem] p-3">
           <StoreLogo />
         </a>
         <div class="flex justify-center md:justify-between pl-12 h-14">
@@ -62,17 +67,17 @@ function Navbar() {
             Infantil
           </NavItem>
         </div>
-        <div class="flex-1 flex items-center justify-end md:mr-8">
-          <a href="#" class="mr-6">
-            <Icon name="MagnifyingGlass" className="w-8 h-8" />
+        <div class="flex-1 flex items-center justify-end gap-6">
+          <a href="#" class="h-12 w-12 flex justify-center items-center">
+            <Icon name="MagnifyingGlass" className="w-6 h-6" />
           </a>
-          <a href="#" class="mr-6">
-            <Icon name="User" className="w-8 h-8" />
+          <a href="#" class="h-12 w-12 flex justify-center items-center">
+            <Icon name="User" className="w-6 h-6" />
           </a>
-          <Minicart />
+          <CartButton />
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
@@ -85,6 +90,7 @@ function Header({ alerts }: Props) {
     <header>
       <Alert alerts={alerts} />
       <Navbar />
+      <CartModal />
     </header>
   );
 }
