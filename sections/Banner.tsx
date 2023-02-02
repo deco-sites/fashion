@@ -35,10 +35,7 @@ export default function Banner(
           <img
             class="object-cover pb-5 w-full"
             src={imgSrc.mobile}
-            sizes="(max-width: 640px) 75vw, 50vw"
             alt={alt}
-            width={300}
-            height={300}
             loading="eager"
           />
         </Picture>
