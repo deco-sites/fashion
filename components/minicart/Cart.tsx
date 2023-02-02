@@ -49,7 +49,7 @@ function Coupon() {
                 displayInput.value = false;
               }}
             >
-              <span>Cancelar</span>
+              <span>Fechar</span>
             </Button>
             <Button
               loading={loading.value}
