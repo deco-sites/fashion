@@ -12,7 +12,7 @@ function Coupon() {
   const { cart, loading, addCouponsToCart } = useCart();
   const ref = useRef<HTMLInputElement>(null);
   const displayInput = useSignal(false);
-  const coupon = cart.value?.marketingData.coupon;
+  const coupon = cart.value?.marketingData?.coupon;
 
   const onApply = () => {
     const text = ref.current?.value;
