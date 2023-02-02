@@ -39,9 +39,12 @@ import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
 import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
-import * as $$$$4 from "./functions/vtexProductDetailsPage.ts";
-import * as $$$$5 from "./functions/vtexProductList.ts";
-import * as $$$$6 from "./functions/vtexProductListingPage.ts";
+import * as $$$$4 from "./functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$5 from "./functions/vtexLegacyProductList.ts";
+import * as $$$$6 from "./functions/vtexLegacyProductListingPage.ts";
+import * as $$$$7 from "./functions/vtexProductDetailsPage.ts";
+import * as $$$$8 from "./functions/vtexProductList.ts";
+import * as $$$$9 from "./functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -86,9 +89,12 @@ const manifest: DecoManifest = {
     "./functions/shopifyProductDetailsPage.ts": $$$$1,
     "./functions/shopifyProductList.ts": $$$$2,
     "./functions/shopifyProductListingPage.ts": $$$$3,
-    "./functions/vtexProductDetailsPage.ts": $$$$4,
-    "./functions/vtexProductList.ts": $$$$5,
-    "./functions/vtexProductListingPage.ts": $$$$6,
+    "./functions/vtexLegacyProductDetailsPage.ts": $$$$4,
+    "./functions/vtexLegacyProductList.ts": $$$$5,
+    "./functions/vtexLegacyProductListingPage.ts": $$$$6,
+    "./functions/vtexProductDetailsPage.ts": $$$$7,
+    "./functions/vtexProductList.ts": $$$$8,
+    "./functions/vtexProductListingPage.ts": $$$$9,
   },
   schemas: {
     "./sections/Banner.tsx": {
@@ -722,6 +728,132 @@ const manifest: DecoManifest = {
         },
         "required": [
           "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "62615533560fc71180a86d2f3398b2396d2cbbc5",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexLegacyProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vtex Legacy Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "85d77d809b0be6ec54dbe06b714da53af53b54db",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexLegacyProductList.ts": {
+      "inputSchema": {
+        "title": "Vtex Legacy Product List",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "query to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "546cbd7d0ccd06d3cfddd3184a52c465c9b5139a",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "./functions/vtexLegacyProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Vtex Legacy Product Listing Page",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Query",
+            "description": "overides the query term",
+          },
+          "count": {
+            "type": "number",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "OrderByPriceDESC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByPriceASC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByTopSaleDESC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByReviewRateDESC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByNameASC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByNameDESC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByReleaseDateDESC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByBestDiscountDESC",
+              },
+              {
+                "type": "string",
+                "const": "OrderByScoreDESC",
+              },
+              {
+                "type": "string",
+                "const": "",
+              },
+            ],
+            "title": "Sort",
+          },
+        },
+        "required": [
+          "count",
+          "sort",
         ],
       },
       "outputSchema": {

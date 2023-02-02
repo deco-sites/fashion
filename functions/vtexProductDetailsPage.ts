@@ -40,7 +40,14 @@ const productPageLoader: LoaderFunction<
   }
 
   // Convert the VTEX product to schema.org format and return it
-  return { data: toProductPage(product, skuId.toString()) };
+  // console.log(
+  //   "RESPONSE IS >>>>>>>>",
+  //   toProductPage(product, "IntelligentSearch", skuId.toString()),
+  // );
+
+  return {
+    data: toProductPage(product, "IntelligentSearch", skuId.toString()),
+  };
 };
 
 export default productPageLoader;
