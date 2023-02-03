@@ -42,11 +42,12 @@ export default function ProductCard({
       <a href={url}>
         {img && img.url && (
           <Picture>
+            {/* 2:3 aspect-ratio*/}
             <Source
               media="(max-width: 639px)"
               src={img.url}
-              width={234}
-              height={351}
+              width={187}
+              height={281}
             />
             <Source
               media="(min-width: 640px)"
