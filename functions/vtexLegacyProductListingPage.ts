@@ -25,13 +25,12 @@ const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
   ctx,
   props,
 ) => {
-  // const account = ctx.state.global.vtexconfig.account;
-  const account = "lojaoffpremium";
+  const account = ctx.state.global.vtexconfig.account;
   const count = props.count ?? 12;
   const searchParams = new URLSearchParams();
   const query = props.query ?? "";
   searchParams.set("ft", query);
-  // const selectedFacets = filtersFromSearchParams(url.searchParams); //ajeitar essa parte de filtros
+  // const selectedFacets = filtersFromSearchParams(url.searchParams); // Ajeitar essa parte para adicionar os search args de filtros
 
   const baseUrl = `https://vtex-search-proxy.global.ssl.fastly.net/${account}`;
 

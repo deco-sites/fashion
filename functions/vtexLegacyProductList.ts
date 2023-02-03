@@ -22,29 +22,16 @@ const productListLoader: LoaderFunction<Props, Product[]> = async (
 ) => {
   const count = props.count ?? 12;
   const query = props.query || "";
-
-  // const searchArgs = {
-  //   query,
-  //   page: 0,
-  //   count,
-  // };
-
-  // const account = ctx.state.global.vtexconfig.account;
-  const account = "lojaoffpremium";
+  const account = ctx.state.global.vtexconfig.account;
   const baseUrl = `https://vtex-search-proxy.global.ssl.fastly.net/${account}`;
   const link = `${baseUrl}/${query}?_from=0&_to=${count - 1}`;
   const searchResponse = await fetch(
     `${link}`,
   ).then((r) => r.json());
 
-  // search prodcuts on VTEX. Feel free to change any of these parameters
-  // const productsResult = await vtex.search.products(searchArgs);
   const legacyProducts = searchResponse;
   // console.log(">>>>>>>>>>>>>>", searchResponse);
 
-  // Transform VTEX product format into schema.org's compatible format
-  // If a property is missing from the final `products` array you can add
-  // it in here
   const products = legacyProducts.map((p) =>
     toProduct(p, p.items[0], 0, "Legacy")
   );

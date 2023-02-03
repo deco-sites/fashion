@@ -19,16 +19,14 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
     ctx,
   ) => {
     const skuId = ctx.params.slug?.split("-").pop();
-    //const query = `sku:${skuId}`;
 
-    // VTEX Search
     const slugWithoutSkuId = ctx.params.slug?.split("-").reverse().slice(1)
       .reverse().join("-") || DEFAULT_SLUG_WITHOUT_SKU;
 
     // console.log({ slugWithoutSkuId });
 
     // TO-DO: mover para outra função
-    const account = "lojaoffpremium";
+    const account = ctx.state.global.vtexconfig.account;
     const environment = "vtexcommercestable";
     const searchResponse = await fetch(
       `https://${account}.${environment}.com.br/api/catalog_system/pub/products/search/${slugWithoutSkuId}/p`,
@@ -37,8 +35,6 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
     // console.log("SEARCH RESPONSE LEGACY >>>>>>>>>>", searchResponse);
 
     const product = searchResponse[0];
-    // console.log({ searchResponse });
-    // console.log({ skuId });
 
     // Product not found, return the 404 status code
     if (!product) {
@@ -54,7 +50,6 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
     //   "RESPONSE LEGACY >>>>>>>>",
     //   toProductPage(product, "Legacy", skuId),
     // );
-    // Convert the VTEX product to schema.org format and return it
     return { data: toProductPage(product, "Legacy", skuId) };
   };
 
