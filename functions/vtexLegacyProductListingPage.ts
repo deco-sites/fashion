@@ -42,25 +42,16 @@ const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
 
   searchParams.set("_to", (count - 1).toString());
 
-  // console.log("AQUI >>>>>", searchParams.toString());
-
   const [productsResult] = await Promise.all([
     fetch(
       `${baseUrl}/${props.query ?? ""}?${searchParams.toString()}`,
     ).then((response) => response.json() as Promise<Product[]>),
   ]);
-  // console.log("PRODUCT RESULT >>>>>>>", productsResult);
 
   const products = productsResult.map((p) =>
     toProduct(p, p.items[0], 0, "Legacy")
   );
 
-  // console.log("PRODUCTS >>>>>", products);
-
-  console.log(
-    "URl >>>>>",
-    `${baseUrl}/${props.query ?? ""}?${searchParams.toString()}`,
-  );
   // const filters = facets
   //   .map((f) => toFilter(f))
   //   .filter((x): x is Filter => Boolean(x));

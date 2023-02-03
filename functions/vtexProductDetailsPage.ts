@@ -39,12 +39,6 @@ const productPageLoader: LoaderFunction<
     };
   }
 
-  // Convert the VTEX product to schema.org format and return it
-  // console.log(
-  //   "RESPONSE IS >>>>>>>>",
-  //   toProductPage(product, "IntelligentSearch", skuId.toString()),
-  // );
-
   return {
     data: toProductPage(product, "IntelligentSearch", skuId.toString()),
   };

@@ -30,7 +30,6 @@ const productListLoader: LoaderFunction<Props, Product[]> = async (
   ).then((r) => r.json());
 
   const legacyProducts = searchResponse;
-  // console.log(">>>>>>>>>>>>>>", searchResponse);
 
   const products = legacyProducts.map((p) =>
     toProduct(p, p.items[0], 0, "Legacy")
