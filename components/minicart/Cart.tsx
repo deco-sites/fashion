@@ -5,9 +5,6 @@ import CartItem, { formatPrice } from "./CartItem.tsx";
 
 import Button from "../ui/Button.tsx";
 
-const CHECKOUT_URL =
-  "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
-
 function Coupon() {
   const { cart, loading, addCouponsToCart } = useCart();
   const ref = useRef<HTMLInputElement>(null);
@@ -116,10 +113,9 @@ function Cart() {
           <Button
             fit="container"
             onClick={() =>
-              window.open(
-                `${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`,
-                "_blank",
-              )}
+              window.location.href = `/checkout?orderFormId=${
+                cart.value!.orderFormId
+              }`}
             disabled={loading.value || cart.value.items.length === 0}
           >
             Finalizar Compra

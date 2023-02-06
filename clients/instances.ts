@@ -7,6 +7,7 @@ export const defaultVTEXSettings = {
   locale: "pt-BR",
   salesChannel: "1",
 };
+
 export const vtex = createVTEXClient({
   platform: "vtex",
 });

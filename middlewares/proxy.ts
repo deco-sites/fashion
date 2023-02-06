@@ -1,7 +1,11 @@
-import { Handlers } from "$fresh/server.ts";
+import { MiddlewareHandler } from "$fresh/server.ts";
 import { Cookie, setCookie } from "std/http/mod.ts";
 
-const proxyTo = `https://bravtexfashionstore.vtexcommercestable.com.br/api`;
+interface ProxyOptions {
+  /** @example 'bravtexfashionstore' */
+  account: string;
+  paths: string[];
+}
 
 const hopByHop = [
   "Keep-Alive",
@@ -114,17 +118,17 @@ function getSetCookies(headers: Headers): Cookie[] {
     .filter(Boolean) as Cookie[];
 }
 
-const proxy: Handlers["GET"] = async (req, ctx) => {
+export const proxyTo = async (req: Request, to: string) => {
   const url = new URL(req.url);
   const headers = new Headers(req.headers);
 
   hopByHop.forEach((h) => headers.delete(h));
 
-  const response = await fetch(`${proxyTo}/${ctx.params.catchall}`, {
-    headers,
+  const response = await fetch(to, {
     redirect: "manual",
     method: req.method,
     body: req.body,
+    headers,
   });
 
   // Change cookies domain
@@ -141,12 +145,22 @@ const proxy: Handlers["GET"] = async (req, ctx) => {
   });
 };
 
-export const handler: Handlers = {
-  GET: proxy,
-  HEAD: proxy,
-  POST: proxy,
-  PUT: proxy,
-  DELETE: proxy,
-  OPTIONS: proxy,
-  PATCH: proxy,
+export const withVTEXProxy = (
+  { account, paths }: ProxyOptions,
+): MiddlewareHandler => {
+  const patterns = paths.map((p) => new URLPattern({ pathname: p }));
+
+  return (req, ctx) => {
+    const url = new URL(req.url);
+
+    const match = patterns.find((p) => p.test({ pathname: url.pathname }));
+    if (match) {
+      return proxyTo(
+        req,
+        `https://${account}.vtexcommercestable.com.br${url.pathname}${url.search}`,
+      );
+    }
+
+    return ctx.next();
+  };
 };
