@@ -1,5 +1,4 @@
 import { useId } from "preact/hooks";
-import Icon from "$components/ui/Icon.tsx";
 
 import Slider from "../islands/Slider.tsx";
 

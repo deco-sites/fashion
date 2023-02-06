@@ -70,7 +70,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({
           <div class="pb-4 flex justify-between">
             <h2 class="text-lg font-medium text-gray-900">{title}</h2>
             <button class="py-1" onClick={onClose}>
-              <Icon name="XMark" class="w-6 h-6 fill-current text-gray-600" />
+              <Icon id="XMark" class="w-6 h-6 fill-current text-gray-600" />
             </button>
           </div>
           {children}

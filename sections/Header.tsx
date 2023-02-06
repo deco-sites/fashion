@@ -1,6 +1,6 @@
 import type { h } from "preact";
 import Alert from "$components/Alert.tsx";
-import StoreLogo from "$components/icons/StoreLogo.tsx";
+// import StoreLogo from "$components/icons/StoreLogo.tsx";
 import Icon from "$components/ui/Icon.tsx";
 
 import CartButton from "../islands/CartButton.tsx";
@@ -31,11 +31,11 @@ function Navbar() {
           aria-label="open menu"
           class="flex items-center justify-center h-12 w-12"
         >
-          <Icon name="Bars3" className="w-8 h-8" />
+          <Icon id="Bars3" className="w-8 h-8" />
         </button>
 
         <a href="/" class="block max-w-[10rem]">
-          <StoreLogo />
+          <Icon id="Logo" width="566" height="64" class="w-full" />
         </a>
         <div class="flex justify-end">
           <a
@@ -43,7 +43,7 @@ function Navbar() {
             class="flex items-center justify-center h-12 w-12"
             aria-label="search"
           >
-            <Icon name="MagnifyingGlass" className="w-6 h-6" />
+            <Icon id="MagnifyingGlass" className="w-6 h-6" />
           </a>
 
           <CartButton />
@@ -53,7 +53,7 @@ function Navbar() {
       {/* Desktop Version */}
       <section class="hidden md:flex bg-white flex-row h-[80px] items-center md:border-b border-[#d3d5db] mx-8">
         <a href="/" class="block min-w-[12rem] max-w-[14rem] p-3">
-          <StoreLogo />
+          <Icon id="Logo" width="566" height="64" class="w-full" />
         </a>
         <div class="flex justify-center md:justify-between pl-12 h-14">
           <NavItem href="/farm">Marcas</NavItem>
@@ -69,10 +69,10 @@ function Navbar() {
         </div>
         <div class="flex-1 flex items-center justify-end gap-6">
           <a href="#" class="h-12 w-12 flex justify-center items-center">
-            <Icon name="MagnifyingGlass" className="w-6 h-6" />
+            <Icon id="MagnifyingGlass" className="w-6 h-6" />
           </a>
           <a href="#" class="h-12 w-12 flex justify-center items-center">
-            <Icon name="User" className="w-6 h-6" />
+            <Icon id="User" className="w-6 h-6" />
           </a>
           <CartButton />
         </div>

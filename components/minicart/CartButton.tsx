@@ -16,7 +16,7 @@ function CartButton() {
       }}
       disabled={loading.value}
     >
-      <Icon name="ShoppingCart" className="w-6 h-6" />
+      <Icon id="ShoppingCart" className="w-6 h-6" />
       {totalItems && (
         <div class="absolute text-sm right-0 top-0 rounded-full bg-red-500 text-white w-4 h-4 flex items-center justify-center">
           {totalItems}
