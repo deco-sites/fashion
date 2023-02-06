@@ -1,4 +1,4 @@
-import SearchIcon from "$components/icons/SearchIcon.tsx";
+import Icon from "../components/ui/Icon.tsx";
 
 export interface Props {
   query?: string;
@@ -20,7 +20,7 @@ export default function Search({ query }: Props) {
         />
       </form>
       <button type="submit" class="p-2">
-        <SearchIcon />
+        <Icon id="Search" width={25} height={25} />
       </button>
     </div>
   );

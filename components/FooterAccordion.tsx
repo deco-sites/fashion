@@ -1,3 +1,5 @@
+import Icon from "./ui/Icon.tsx";
+
 export const sections = [
   {
     label: "Sobre",
@@ -96,68 +98,26 @@ export const sections = [
           Pagamento por Pix
         </div>
         <div class="mb-3">
-          <img
-            src="/assets/pix.svg"
-            alt="Logotipo pix"
-            width="44.39px"
-            height="16px"
-            loading="lazy"
-            decoding="async"
-          />
+          <Icon id="Pix" width="44.39px" height="16px" />
         </div>
         <div class="text-white mt-3 text-xs">
           Cartão de Crédito
         </div>
         <ul class="flex flex-row flex-wrap justify-start mt-1">
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <img
-              src="/assets/visa.svg"
-              alt="Bandeira Visa"
-              width="20px"
-              height="6.46px"
-              loading="lazy"
-              decoding="async"
-            />
+            <Icon id="Visa" width="20px" height="6.46px" />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <img
-              src="/assets/diners.svg"
-              alt="Bandeira Diners"
-              width="16px"
-              height="13.83px"
-              loading="lazy"
-              decoding="async"
-            />
+            <Icon id="Diners" width="16px" height="13.83px" />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <img
-              src="/assets/mastercard-logo-c0bb8dbfe9c9d74d6ddcf7f781d31921.svg"
-              alt="Bandeira Mastercard"
-              width="20px"
-              height="16.09px"
-              loading="lazy"
-              decoding="async"
-            />
+            <Icon id="Mastercard" width="20px" height="16.09px" />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <img
-              src="/assets/amex.svg"
-              alt="Bandeira Amex"
-              width="16px"
-              height="10.57px"
-              loading="lazy"
-              decoding="async"
-            />
+            <Icon id="Amex" width="16px" height="10.57px" />
           </li>
           <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <img
-              src="/assets/elo.svg"
-              alt="Bandeira Elo"
-              width="20px"
-              height="7.66px"
-              loading="lazy"
-              decoding="async"
-            />
+            <Icon id="Elo" width="20px" height="7.66px" />
           </li>
         </ul>
       </div>

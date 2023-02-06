@@ -11,7 +11,18 @@ type AvailableIcons =
   | "Bars3"
   | "Heart"
   | "MagnifyingGlass"
-  | "XMark";
+  | "Search"
+  | "XMark"
+  | "Amex"
+  | "Diners"
+  | "Elo"
+  | "Mastercard"
+  | "Visa"
+  | "Pix"
+  | "Logo"
+  | "Facebook"
+  | "Instagram"
+  | "Tiktok";
 
 const mapWeightToValue: Record<IconWeight, number> = {
   bold: 24,
@@ -24,9 +35,9 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
    * Symbol id from element to render. Take a look at `/static/icons.svg`.
    *
-   * Example: <Icon name="Bell" />
+   * Example: <Icon id="Bell" />
    */
-  name: AvailableIcons;
+  id: AvailableIcons;
   /**
    * SVG weight.
    *
@@ -35,10 +46,10 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   weight?: IconWeight;
 }
 
-function Icon({ name, weight = "regular", ...otherProps }: Props) {
+function Icon({ id, weight = "regular", ...otherProps }: Props) {
   return (
     <svg {...otherProps} strokeWidth={mapWeightToValue[weight]}>
-      <use href={`/icons.svg#${name}`} />
+      <use href={`/sprites.svg#${id}`} />
     </svg>
   );
 }
