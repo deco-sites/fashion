@@ -1,9 +1,9 @@
-import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
+import type { JSX } from "preact";
 
 export default function SearchBar() {
   const [query, setQuery] = useState("");
-  const onSearch = (e: h.JSX.TargetedEvent<HTMLFormElement>) => {
+  const onSearch = (e: JSX.TargetedEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     window.location.href = `/search?ft=${query}`;

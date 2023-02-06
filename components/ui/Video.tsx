@@ -1,4 +1,4 @@
-import { h } from "preact";
+import type { JSX } from "preact";
 
 const FACTORS = [1, 2, 3];
 function getVideoSrcSet(
@@ -15,7 +15,7 @@ function getVideoSrcSet(
   return srcSetList.join(", ");
 }
 
-interface Props extends h.JSX.HTMLAttributes<HTMLVideoElement> {
+interface Props extends JSX.HTMLAttributes<HTMLVideoElement> {
   src: string;
   width?: number;
   height?: number;

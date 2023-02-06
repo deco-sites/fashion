@@ -18,9 +18,7 @@ export default function ProductCard({
   productID,
   name,
   image,
-  brand,
   offers,
-  additionalProperty,
 }: Product) {
   const img = image?.[0];
   const offer = offers?.offers[0];
@@ -29,9 +27,6 @@ export default function ProductCard({
     spec.priceType === "https://schema.org/ListPrice"
   );
   const price = offer?.price;
-  const discountPercentage = listPrice && price && Math.trunc(
-    Math.max(1 - price / listPrice.price, 0) * 100,
-  );
   const installment = offer?.priceSpecification.reduce(bestInstallment, null);
 
   return (

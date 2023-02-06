@@ -19,27 +19,22 @@ import * as $$5 from "./islands/SearchBar.tsx";
 import * as $$6 from "./islands/SearchControls.tsx";
 import * as $$7 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
-import * as $$$1 from "./sections/BannerImg.tsx";
-import * as $$$2 from "./sections/BannnerGrid.tsx";
-import * as $$$3 from "./sections/Button.story.tsx";
-import * as $$$4 from "./sections/Footer.tsx";
-import * as $$$5 from "./sections/Head.tsx";
-import * as $$$6 from "./sections/Header.tsx";
-import * as $$$7 from "./sections/HighlightedFeatures.tsx";
-import * as $$$8 from "./sections/HomeFilter.tsx";
-import * as $$$9 from "./sections/IconCart.tsx";
-import * as $$$10 from "./sections/ListLinks.tsx";
-import * as $$$11 from "./sections/MarcasConvidadas.tsx";
-import * as $$$12 from "./sections/Newsletter.tsx";
-import * as $$$13 from "./sections/ProductDetails.tsx";
-import * as $$$14 from "./sections/ProductGallery.tsx";
-import * as $$$15 from "./sections/ProductShelf.tsx";
-import * as $$$16 from "./sections/Search.tsx";
-import * as $$$17 from "./sections/SearchControls.tsx";
-import * as $$$18 from "./sections/Spacer.tsx";
-import * as $$$19 from "./sections/StoreFeatures.tsx";
-import * as $$$20 from "./sections/VideoCarousel.tsx";
-import * as $$$21 from "./sections/vtexconfig.global.tsx";
+import * as $$$1 from "./sections/BannnerGrid.tsx";
+import * as $$$2 from "./sections/Button.story.tsx";
+import * as $$$3 from "./sections/Footer.tsx";
+import * as $$$4 from "./sections/Head.tsx";
+import * as $$$5 from "./sections/Header.tsx";
+import * as $$$6 from "./sections/HighlightedFeatures.tsx";
+import * as $$$7 from "./sections/MarcasConvidadas.tsx";
+import * as $$$8 from "./sections/Newsletter.tsx";
+import * as $$$9 from "./sections/ProductDetails.tsx";
+import * as $$$10 from "./sections/ProductGallery.tsx";
+import * as $$$11 from "./sections/ProductShelf.tsx";
+import * as $$$12 from "./sections/Search.tsx";
+import * as $$$13 from "./sections/SearchControls.tsx";
+import * as $$$14 from "./sections/Spacer.tsx";
+import * as $$$15 from "./sections/StoreFeatures.tsx";
+import * as $$$16 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -69,27 +64,22 @@ const manifest: DecoManifest = {
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
-    "./sections/BannerImg.tsx": $$$1,
-    "./sections/BannnerGrid.tsx": $$$2,
-    "./sections/Button.story.tsx": $$$3,
-    "./sections/Footer.tsx": $$$4,
-    "./sections/Head.tsx": $$$5,
-    "./sections/Header.tsx": $$$6,
-    "./sections/HighlightedFeatures.tsx": $$$7,
-    "./sections/HomeFilter.tsx": $$$8,
-    "./sections/IconCart.tsx": $$$9,
-    "./sections/ListLinks.tsx": $$$10,
-    "./sections/MarcasConvidadas.tsx": $$$11,
-    "./sections/Newsletter.tsx": $$$12,
-    "./sections/ProductDetails.tsx": $$$13,
-    "./sections/ProductGallery.tsx": $$$14,
-    "./sections/ProductShelf.tsx": $$$15,
-    "./sections/Search.tsx": $$$16,
-    "./sections/SearchControls.tsx": $$$17,
-    "./sections/Spacer.tsx": $$$18,
-    "./sections/StoreFeatures.tsx": $$$19,
-    "./sections/VideoCarousel.tsx": $$$20,
-    "./sections/vtexconfig.global.tsx": $$$21,
+    "./sections/BannnerGrid.tsx": $$$1,
+    "./sections/Button.story.tsx": $$$2,
+    "./sections/Footer.tsx": $$$3,
+    "./sections/Head.tsx": $$$4,
+    "./sections/Header.tsx": $$$5,
+    "./sections/HighlightedFeatures.tsx": $$$6,
+    "./sections/MarcasConvidadas.tsx": $$$7,
+    "./sections/Newsletter.tsx": $$$8,
+    "./sections/ProductDetails.tsx": $$$9,
+    "./sections/ProductGallery.tsx": $$$10,
+    "./sections/ProductShelf.tsx": $$$11,
+    "./sections/Search.tsx": $$$12,
+    "./sections/SearchControls.tsx": $$$13,
+    "./sections/Spacer.tsx": $$$14,
+    "./sections/StoreFeatures.tsx": $$$15,
+    "./sections/vtexconfig.global.tsx": $$$16,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -132,85 +122,6 @@ const manifest: DecoManifest = {
               "null",
             ],
             "title": "Alt",
-          },
-          "text": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Text",
-          },
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "subtitle": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Subtitle",
-          },
-          "link": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Link",
-          },
-          "CTA": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": " C T A",
-          },
-        },
-        "required": [
-          "imgSrc",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/BannerImg.tsx": {
-      "inputSchema": {
-        "title": " Banner Img",
-        "type": "object",
-        "properties": {
-          "imgSrc": {
-            "title": "Img Src",
-            "type": "object",
-            "properties": {
-              "mobile": {
-                "type": "string",
-                "title": "Mobile",
-              },
-              "desktop": {
-                "type": "string",
-                "title": "Desktop",
-              },
-            },
-            "required": [
-              "mobile",
-              "desktop",
-            ],
-          },
-          "alt": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Alt",
-          },
-          "textColor": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Text Color",
           },
           "text": {
             "type": [
@@ -492,31 +403,6 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/HomeFilter.tsx": {
-      "inputSchema": null,
-      "outputSchema": null,
-    },
-    "./sections/IconCart.tsx": {
-      "inputSchema": {
-        "title": " Icon Cart",
-        "type": "object",
-        "properties": {
-          "size": {
-            "type": [
-              "number",
-              "null",
-            ],
-            "title": "Size",
-          },
-        },
-        "required": [],
-      },
-      "outputSchema": null,
-    },
-    "./sections/ListLinks.tsx": {
-      "inputSchema": null,
-      "outputSchema": null,
-    },
     "./sections/MarcasConvidadas.tsx": {
       "inputSchema": {
         "title": " Marcas Convidadas",
@@ -721,62 +607,6 @@ const manifest: DecoManifest = {
     },
     "./sections/StoreFeatures.tsx": {
       "inputSchema": null,
-      "outputSchema": null,
-    },
-    "./sections/VideoCarousel.tsx": {
-      "inputSchema": {
-        "title": " Video Carousel",
-        "type": "object",
-        "properties": {
-          "videos": {
-            "title": "Videos",
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "mobile": {
-                  "format": "video-uri",
-                  "type": "string",
-                  "title": "Mobile",
-                },
-                "desktop": {
-                  "format": "video-uri",
-                  "type": "string",
-                  "title": "Desktop",
-                },
-                "alt": {
-                  "type": [
-                    "string",
-                    "null",
-                  ],
-                  "title": "Alt",
-                },
-                "link": {
-                  "type": "string",
-                  "title": "Link",
-                },
-              },
-              "required": [
-                "mobile",
-                "desktop",
-                "link",
-              ],
-            },
-          },
-          "delay": {
-            "type": [
-              "number",
-              "null",
-            ],
-            "title": "delay",
-            "description": "Time to switch slides in seconds",
-            "default": "3",
-          },
-        },
-        "required": [
-          "videos",
-        ],
-      },
       "outputSchema": null,
     },
     "./sections/vtexconfig.global.tsx": {
