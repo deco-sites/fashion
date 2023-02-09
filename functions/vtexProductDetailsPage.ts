@@ -6,8 +6,6 @@ import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
 import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 import { LiveState } from "$live/types.ts";
 
-const DEFAULT_SKU = 1023372;
-
 /**
  * @title VTEX Product Page Loader
  * @description Works on routes of type /:slug/p
@@ -17,18 +15,18 @@ const productPageLoader: LoaderFunction<
   ProductDetailsPage | null,
   LiveState<{ vtexconfig: VTEXConfig | undefined }>
 > = async (
-  _req,
+  req,
   ctx,
 ) => {
-  const skuId = Number(ctx.params.slug?.split("-").pop()) || DEFAULT_SKU;
-  const query = `sku:${skuId}`;
+  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
+  const skuId = new URL(req.url).searchParams.get("skuId");
 
   // search prodcuts on VTEX. Feel free to change any of these parameters
   const { products: [product] } = await vtex.search.products({
-    query,
+    query: `sku:${skuId}`,
     page: 0,
     count: 1,
-    ...(ctx.state.global.vtexconfig ?? defaultVTEXSettings),
+    ...vtexConfig,
   });
 
   // Product not found, return the 404 status code
@@ -40,7 +38,7 @@ const productPageLoader: LoaderFunction<
   }
 
   return {
-    data: toProductPage(product, "IntelligentSearch", skuId.toString()),
+    data: toProductPage(product, skuId?.toString()),
   };
 };
 

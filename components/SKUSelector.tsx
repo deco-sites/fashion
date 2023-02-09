@@ -6,7 +6,7 @@ interface Props {
 
 // Navigates the user the the choosen sku
 const onChange = {
-  onchange: "(function(e){ location.pathname = e.target.value; })(event)",
+  onchange: "(function(e){  window.location.href = e.target.value; })(event)",
 };
 
 export default function SKUSelector(

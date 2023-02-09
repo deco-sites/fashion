@@ -1,22 +1,15 @@
 import { useMemo } from "preact/hooks";
 import { ProductListingPage } from "$live/std/commerce/types.ts";
 
-import { createFiltersManager } from "../../sdk/searchFilters.ts";
-
 interface Props {
   filters: ProductListingPage["filters"];
 }
 
-export default function Filters({ filters: initialFilters }: Props) {
-  const { filters, filtersToSearch, toggleFilter } = useMemo(
-    () => createFiltersManager(initialFilters),
-    [initialFilters],
-  );
-
+export default function Filters({ filters }: Props) {
   return (
     <div class="h-full flex flex-col">
       <div class="flex flex-col overflow-scroll flex-1">
-        {filters.value.map((filter, index) => {
+        {filters.map((filter) => {
           if (filter["@type"] !== "FilterToggle") {
             return null;
           }
@@ -47,7 +40,7 @@ export default function Filters({ filters: initialFilters }: Props) {
                       class="mr-2"
                       type="checkbox"
                       checked={value.selected}
-                      onInput={() => toggleFilter(value.label, index)}
+                      onInput={() => window.location.href = value.url}
                     />
                     <label
                       for={`${filter.key}:${value.value}`}
@@ -64,14 +57,6 @@ export default function Filters({ filters: initialFilters }: Props) {
             </div>
           );
         })}
-      </div>
-      <div className="flex flex-row justify-center px-2 py-3">
-        <button
-          class="inline-flex w-3/4 justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm bg-primary text-white hover:bg-primary-green-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-green-light"
-          onClick={() => window.location.search = filtersToSearch()}
-        >
-          Aplicar
-        </button>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ const isRefObject = (
 
 const styles = {
   "sidebar-right": {
-    dialog: `sm:slide-left`,
+    dialog: `sm:slide-left sm:ml-auto`,
     corners: `rounded-tl-2xl rounded-tr-2xl sm:rounded-none`,
   },
   "sidebar-left": {
@@ -38,7 +38,6 @@ const styles = {
   },
 };
 
-// TODO: Right now, modal is a right-sidebar only
 const Modal = forwardRef<HTMLDialogElement, Props>(({
   children,
   title,
@@ -60,7 +59,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({
   return (
     <dialog
       ref={ref}
-      class={`bg-transparent p-0 m-0 pt-[15%] sm:pt-0 sm:ml-auto max-w-full sm:max-w-lg w-full max-h-full h-full slide-bottom backdrop ${dialog}`}
+      class={`bg-transparent p-0 m-0 pt-[15%] sm:pt-0 max-w-full sm:max-w-lg w-full max-h-full h-full slide-bottom backdrop ${dialog}`}
       onClick={onDialogClick}
     >
       <div

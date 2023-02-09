@@ -34,6 +34,7 @@ const plpLoader: LoaderFunction<
   ctx,
   props,
 ) => {
+  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
   const url = new URL(req.url);
 
   const count = props.count ?? 12;
@@ -48,7 +49,7 @@ const plpLoader: LoaderFunction<
     sort,
     count,
     selectedFacets,
-    ...(ctx.state.global.vtexconfig ?? defaultVTEXSettings),
+    ...vtexConfig,
   };
 
   // search prodcuts on VTEX. Feel free to change any of these parameters
@@ -62,12 +63,10 @@ const plpLoader: LoaderFunction<
   // Transform VTEX product format into schema.org's compatible format
   // If a property is missing from the final `products` array you can add
   // it in here
-  const products = vtexProducts.map((p) =>
-    toProduct(p, p.items[0], 0, "IntelligentSearch")
-  );
+  const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
   const pageInfo = { hasNextPage: Boolean(pagination.next.proxyURL) };
   const filters = facets
-    .map((f) => toFilter(f))
+    .map((f) => !f.hidden && toFilter(f))
     .filter((x): x is Filter => Boolean(x));
 
   return {

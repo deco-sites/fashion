@@ -770,6 +770,45 @@ const manifest: DecoManifest = {
             "title": "Count",
             "description": "total number of items to display",
           },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
+              {
+                "type": "string",
+                "const": "price:desc",
+              },
+              {
+                "type": "string",
+                "const": "price:asc",
+              },
+              {
+                "type": "string",
+                "const": "orders:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:asc",
+              },
+              {
+                "type": "string",
+                "const": "release:desc",
+              },
+              {
+                "type": "string",
+                "const": "discount:desc",
+              },
+            ],
+            "title": "Sort",
+            "description": "search sort parameter",
+          },
         },
         "required": [
           "query",
@@ -791,12 +830,12 @@ const manifest: DecoManifest = {
         "title": "Vtex Legacy Product Listing Page",
         "type": "object",
         "properties": {
-          "query": {
+          "term": {
             "type": [
               "string",
               "null",
             ],
-            "title": "Query",
+            "title": "Term",
             "description": "overides the query term",
           },
           "count": {
@@ -804,56 +843,36 @@ const manifest: DecoManifest = {
             "title": "Items per page",
             "description": "number of products per page to display",
           },
-          "sort": {
-            "type": "string",
-            "anyOf": [
-              {
-                "type": "string",
-                "const": "OrderByPriceDESC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByPriceASC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByTopSaleDESC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByReviewRateDESC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByNameASC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByNameDESC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByReleaseDateDESC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByBestDiscountDESC",
-              },
-              {
-                "type": "string",
-                "const": "OrderByScoreDESC",
-              },
-              {
-                "type": "string",
-                "const": "",
-              },
+          "ft": {
+            "type": [
+              "string",
+              "null",
             ],
-            "title": "Sort",
+            "title": "Ft",
+            "description": "FullText term",
+            "docs":
+              "https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search",
+          },
+          "fq": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Fq",
+            "docs":
+              "https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search",
+          },
+          "map": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Map",
+            "description": "map param",
           },
         },
         "required": [
           "count",
-          "sort",
         ],
       },
       "outputSchema": {

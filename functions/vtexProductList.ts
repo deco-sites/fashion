@@ -41,28 +41,24 @@ const productListLoader: LoaderFunction<
   ctx,
   props,
 ) => {
+  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
   const count = props.count ?? 12;
   const query = props.query || "";
   const sort: Sort = props.sort || "";
 
-  const searchArgs = {
+  // search prodcuts on VTEX. Feel free to change any of these parameters
+  const { products: vtexProducts } = await vtex.search.products({
     query,
     page: 0,
     count,
     sort,
-    ...(ctx.state.global.vtexconfig ?? defaultVTEXSettings),
-  };
-
-  // search prodcuts on VTEX. Feel free to change any of these parameters
-  const productsResult = await vtex.search.products(searchArgs);
-  const { products: vtexProducts } = productsResult;
+    ...vtexConfig,
+  });
 
   // Transform VTEX product format into schema.org's compatible format
   // If a property is missing from the final `products` array you can add
   // it in here
-  const products = vtexProducts.map((p) =>
-    toProduct(p, p.items[0], 0, "IntelligentSearch")
-  );
+  const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
 
   return {
     data: products,

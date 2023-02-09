@@ -1,60 +1,106 @@
-import { toFilter, toProduct } from "$live/std/commerce/vtex/transform.ts";
-import type { ProductListingPage } from "$live/std/commerce/types.ts";
+import {
+  legacyFacetToFilter,
+  toProduct,
+} from "$live/std/commerce/vtex/transform.ts";
+import type { Filter, ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
-import type { LegacySort, Product } from "$live/std/commerce/vtex/types.ts";
+import type { LiveState } from "$live/types.ts";
+import type { LegacySort } from "$live/std/commerce/vtex/types.ts";
+
+import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
+import vtexconfig, { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 
 export interface Props {
   /**
    * @description overides the query term
    */
-  query?: string;
+  term?: string;
   /**
    * @title Items per page
    * @description number of products per page to display
    */
   count: number;
-  sort: LegacySort;
+  /**
+   * @description FullText term
+   * @docs https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search
+   */
+  ft?: string;
+  /**
+   * @docs https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search
+   */
+  fq?: string;
+  /**
+   * @description map param
+   */
+  map?: string;
 }
 
 /**
  * @title Product listing page loader
  * @description Returns data ready for search pages like category,brand pages
  */
-const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
+const plpLoader: LoaderFunction<
+  Props,
+  ProductListingPage,
+  LiveState<{ vtexconfig?: VTEXConfig }>
+> = async (
   req,
   ctx,
   props,
 ) => {
-  const account = ctx.state.global.vtexconfig.account;
+  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
+  const url = new URL(req.url);
+
   const count = props.count ?? 12;
-  const searchParams = new URLSearchParams();
-  const query = props.query ?? "";
-  searchParams.set("ft", query);
-  // const selectedFacets = filtersFromSearchParams(url.searchParams); // Ajeitar essa parte para adicionar os search args de filtros
+  const term = props.term || ctx.params["0"] || "";
+  const page = Number(url.searchParams.get("page")) || 0;
+  const O = url.searchParams.get("sort") as LegacySort || "" as LegacySort;
+  const ft = props.ft || url.searchParams.get("q") || "";
+  const fq = props.fq || url.searchParams.get("fq") || "";
+  const map = props.map || url.searchParams.get("map") || "";
+  const _from = page * count + 1;
+  const _to = (page + 1) * count;
 
-  const baseUrl = `https://vtex-search-proxy.global.ssl.fastly.net/${account}`;
+  const searchArgs = {
+    term,
+    _from,
+    _to,
+    O,
+    ft,
+    fq,
+    map,
+    ...vtexConfig,
+  };
 
-  if (props.sort !== undefined) {
-    searchParams.set("O", props.sort);
-  }
+  const pageType = await vtex.catalog_system.pageType({
+    slug: `${url.pathname}${url.search}`,
+    ...vtexConfig,
+  });
 
-  searchParams.set("_from", "0");
+  console.log({ pageType });
 
-  searchParams.set("_to", (count - 1).toString());
-
-  const [productsResult] = await Promise.all([
-    fetch(
-      `${baseUrl}/${props.query ?? ""}?${searchParams.toString()}`,
-    ).then((response) => response.json() as Promise<Product[]>),
+  // search prodcuts on VTEX. Feel free to change any of these parameters
+  const [vtexProducts, vtexFacets] = await Promise.all([
+    vtex.catalog_system.products(searchArgs),
+    vtex.catalog_system.facets(searchArgs),
   ]);
 
-  const products = productsResult.map((p) =>
-    toProduct(p, p.items[0], 0, "Legacy")
-  );
+  // Transform VTEX product format into schema.org's compatible format
+  // If a property is missing from the final `products` array you can add
+  // it in here
+  const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
+  const pageInfo = {
+    hasNextPage: Boolean(page < 50 && products.length === count),
+  };
+  const filters = Object.entries({
+    Departments: vtexFacets.Departments,
+    Brands: vtexFacets.Brands,
+    ...vtexFacets.SpecificationFilters,
+  }).map(([name, facets]) => legacyFacetToFilter(name, facets, url))
+    .flat()
+    .filter((x): x is Filter => Boolean(x));
 
-  // const filters = facets
-  //   .map((f) => toFilter(f))
-  //   .filter((x): x is Filter => Boolean(x));
+  console.log({ filters });
 
   return {
     data: {
@@ -63,8 +109,9 @@ const plpLoader: LoaderFunction<Props, ProductListingPage> = async (
         itemListElement: [],
         numberOfItems: 0,
       },
-      // filters,
+      filters,
       products,
+      pageInfo,
     },
   };
 };

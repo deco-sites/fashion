@@ -33,7 +33,12 @@ export default function SearchControls({ filters }: Props) {
           <SortSelector />
         </div>
       </div>
-      <Modal title="Selecione os filtros" mode="sidebar-left" ref={modalRef}>
+      <Modal
+        title="Selecione os filtros"
+        mode="sidebar-left"
+        ref={modalRef}
+        onClose={() => modalRef.current?.close()}
+      >
         <Filters filters={filters} />
       </Modal>
     </div>
