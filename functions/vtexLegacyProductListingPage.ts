@@ -97,10 +97,10 @@ const legacyPLPLoader: LoaderFunction<
   const page = Number(url.searchParams.get("page")) || 0;
   const O = (url.searchParams.get("O") ||
     SORT_TO_LEGACY_SORT[url.searchParams.get("sort") ?? ""]) as LegacySort;
-  const ft = props.ft || url.searchParams.get("q") ||
-    url.searchParams.get("ft") || "";
+  const ft = props.ft || url.searchParams.get("ft") ||
+    url.searchParams.get("q") || "";
   const fq = props.fq || url.searchParams.get("fq") || "";
-  const map = props.map || url.searchParams.get("map") || "" ||
+  const map = props.map || url.searchParams.get("map") ||
     await mapParamFromUrl(term, vtexConfig);
   const _from = page * count + 1;
   const _to = (page + 1) * count;
