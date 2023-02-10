@@ -7,7 +7,6 @@ export const defaultVTEXSettings: VTEXConfig = {
   account: "bravtexfashionstore",
   locale: "pt-BR",
   salesChannel: "1",
-  searchEngine: "Legacy",
 };
 
 export const vtex = createVTEXClient({

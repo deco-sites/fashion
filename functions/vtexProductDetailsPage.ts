@@ -3,8 +3,8 @@ import type { LoaderFunction } from "$live/std/types.ts";
 import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
-import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
-import { LiveState } from "$live/types.ts";
+import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
+import type { LiveState } from "$live/types.ts";
 
 /**
  * @title VTEX Product Page Loader

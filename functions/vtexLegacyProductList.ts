@@ -5,8 +5,8 @@ import type { LoaderFunction } from "$live/std/types.ts";
 import type { LiveState } from "$live/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
-import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
-import { LegacySort } from "$live/std/commerce/vtex/types.ts";
+import type { LegacySort } from "$live/std/commerce/vtex/types.ts";
+import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 
 export interface Props {
   /** @description query to use on search */

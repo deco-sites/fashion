@@ -8,7 +8,7 @@ import type { LiveState } from "$live/types.ts";
 import type { LegacySort } from "$live/std/commerce/vtex/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
-import vtexconfig, { VTEXConfig } from "../sections/vtexconfig.global.tsx";
+import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 
 export interface Props {
   /**
@@ -22,11 +22,11 @@ export interface Props {
   count: number;
   /**
    * @description FullText term
-   * @docs https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search
+   * @$comment https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search
    */
   ft?: string;
   /**
-   * @docs https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search
+   * @$comment https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search
    */
   fq?: string;
   /**
@@ -34,6 +34,36 @@ export interface Props {
    */
   map?: string;
 }
+
+const PAGE_TYPE_TO_MAP_PARAM = {
+  Brand: "b",
+  Category: "c",
+  Department: "c",
+  SubCategory: "c",
+  Collection: "productClusterIds",
+  Cluster: "productClusterIds",
+  Product: null,
+  NotFound: null,
+  FullText: null,
+};
+
+const mapParamFromUrl = async (term: string, vtexConfig: VTEXConfig) => {
+  const segments = term.split("/");
+  const results = await Promise.all(
+    segments.map((segment) =>
+      vtex.catalog_system.pageType({
+        slug: segment,
+        ...vtexConfig,
+      })
+    ),
+  );
+
+  const pageTypes = results
+    .map((r) => PAGE_TYPE_TO_MAP_PARAM[r.pageType])
+    .filter(Boolean);
+
+  return pageTypes.join(",");
+};
 
 /**
  * @title Product listing page loader
@@ -57,27 +87,21 @@ const plpLoader: LoaderFunction<
   const O = url.searchParams.get("sort") as LegacySort || "" as LegacySort;
   const ft = props.ft || url.searchParams.get("q") || "";
   const fq = props.fq || url.searchParams.get("fq") || "";
-  const map = props.map || url.searchParams.get("map") || "";
+  const map = props.map || url.searchParams.get("map") || "" ||
+    await mapParamFromUrl(term, vtexConfig);
   const _from = page * count + 1;
   const _to = (page + 1) * count;
 
   const searchArgs = {
     term,
+    map,
     _from,
     _to,
     O,
     ft,
     fq,
-    map,
     ...vtexConfig,
   };
-
-  const pageType = await vtex.catalog_system.pageType({
-    slug: `${url.pathname}${url.search}`,
-    ...vtexConfig,
-  });
-
-  console.log({ pageType });
 
   // search prodcuts on VTEX. Feel free to change any of these parameters
   const [vtexProducts, vtexFacets] = await Promise.all([
@@ -96,11 +120,9 @@ const plpLoader: LoaderFunction<
     Departments: vtexFacets.Departments,
     Brands: vtexFacets.Brands,
     ...vtexFacets.SpecificationFilters,
-  }).map(([name, facets]) => legacyFacetToFilter(name, facets, url))
+  }).map(([name, facets]) => legacyFacetToFilter(name, facets, url, map))
     .flat()
     .filter((x): x is Filter => Boolean(x));
-
-  console.log({ filters });
 
   return {
     data: {

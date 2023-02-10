@@ -1,13 +1,15 @@
-import { toFilter, toProduct } from "$live/std/commerce/vtex/transform.ts";
+import {
+  filtersFromSearchParams,
+  toFilter,
+  toProduct,
+} from "$live/std/commerce/vtex/transform.ts";
 import type { Filter, ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { LiveState } from "$live/types.ts";
 import type { Sort } from "$live/std/commerce/vtex/types.ts";
 
-import { filtersFromSearchParams } from "../sdk/searchFilters.ts";
-
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
-import { VTEXConfig } from "../sections/vtexconfig.global.tsx";
+import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
 
 export interface Props {
   /**
@@ -20,6 +22,53 @@ export interface Props {
    */
   count: number;
 }
+
+const PAGE_TYPE_TO_MAP_PARAM = {
+  Brand: "b",
+  Category: "c",
+  Department: "c",
+  SubCategory: "c",
+  Collection: "productClusterIds",
+  Cluster: "productClusterIds",
+  Product: null,
+  NotFound: null,
+  FullText: null,
+};
+
+const filtersFromURL = async (
+  url: URL,
+  vtexConfig: VTEXConfig,
+) => {
+  const selectedFacets = filtersFromSearchParams(url.searchParams);
+
+  if (selectedFacets.length > 0) {
+    return selectedFacets;
+  }
+
+  /**
+   * We have to figure out the facets from the url, e.g.
+   */
+  const segments = url.pathname.split("/").slice(1);
+  const results = await Promise.all(
+    segments.map((segment) =>
+      vtex.catalog_system.pageType({
+        slug: segment,
+        ...vtexConfig,
+      })
+    ),
+  );
+
+  return results
+    .map((r) => {
+      const key = PAGE_TYPE_TO_MAP_PARAM[r.pageType];
+
+      return key && r.name && {
+        key,
+        value: r.name,
+      };
+    })
+    .filter((facet): facet is { key: string; value: string } => Boolean(facet));
+};
 
 /**
  * @title Product listing page loader
@@ -41,7 +90,7 @@ const plpLoader: LoaderFunction<
   const query = props.query || url.searchParams.get("q") || "";
   const page = Number(url.searchParams.get("page")) || 0;
   const sort = url.searchParams.get("sort") as Sort || "" as Sort;
-  const selectedFacets = filtersFromSearchParams(url.searchParams);
+  const selectedFacets = await filtersFromURL(url, vtexConfig);
 
   const searchArgs = {
     query,
@@ -66,7 +115,7 @@ const plpLoader: LoaderFunction<
   const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
   const pageInfo = { hasNextPage: Boolean(pagination.next.proxyURL) };
   const filters = facets
-    .map((f) => !f.hidden && toFilter(f))
+    .map((f) => !f.hidden && toFilter(f, selectedFacets))
     .filter((x): x is Filter => Boolean(x));
 
   return {
