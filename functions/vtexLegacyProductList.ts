@@ -32,7 +32,7 @@ export interface Props {
  * @title Legacy product list loader
  * @description Usefull for shelves and static galleries.
  */
-const productListLoader: LoaderFunction<
+const legacyProductListLoader: LoaderFunction<
   Props,
   Product[],
   LiveState<{ vtexconfig: VTEXConfig | undefined }>
@@ -65,4 +65,4 @@ const productListLoader: LoaderFunction<
   };
 };
 
-export default productListLoader;
+export default legacyProductListLoader;

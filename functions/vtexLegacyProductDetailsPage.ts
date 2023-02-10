@@ -10,7 +10,7 @@ import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
  * @title VTEX Product Page Loader
  * @description Works on routes of type /:slug/p
  */
-const productPageLoader: LoaderFunction<
+const legacyProductPageLoader: LoaderFunction<
   null,
   ProductDetailsPage | null,
   LiveState<{ vtexconfig: VTEXConfig | undefined }>
@@ -41,4 +41,4 @@ const productPageLoader: LoaderFunction<
   };
 };
 
-export default productPageLoader;
+export default legacyProductPageLoader;

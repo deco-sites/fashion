@@ -2,7 +2,7 @@
   "imports": {
     "$components/": "./components/",
     "$sections/": "./sections/",
-    "$live/": "https://raw.githubusercontent.com/deco-cx/live/a1ecaaee0658fa3db18a9dfc353711882c7bd54e/",
+    "$live/": "https://raw.githubusercontent.com/deco-cx/live/3716ca89c247ec2e9e20827c3e8815e5b542a57d/",
     "partytown/": "https://deno.land/x/partytown@0.1.3/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
     "supabase": "https://esm.sh/@supabase/supabase-js@1.35.4",
