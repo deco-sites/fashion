@@ -59,7 +59,7 @@ function Navbar() {
           <NavItem href="/vtex-fashion">Marcas</NavItem>
           <NavItem href="/feminino">Feminino</NavItem>
           <NavItem href="/masculino">Masculino</NavItem>
-          <NavItem href="/infantil">Infantil</NavItem>
+          <NavItem href="/137?map=productClusterIds">Inverno</NavItem>
         </div>
         <div class="flex-1 flex items-center justify-end gap-6">
           <a href="#" class="h-12 w-12 flex justify-center items-center">
