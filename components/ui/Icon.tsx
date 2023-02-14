@@ -3,7 +3,7 @@ import type { JSX } from "preact";
 type IconWeight = "thin" | "light" | "regular" | "bold";
 
 type AvailableIcons =
- | "Circle"
+  | "Circle"
   | "ChevronLeft"
   | "ChevronRight"
   | "QuestionMarkCircle"
