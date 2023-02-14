@@ -131,7 +131,7 @@ function FooterAccordion() {
       {sections.map(({ label, content }) => (
         <div key={label}>
           <details class="w-full cursor-pointer flex flex-row justify-between focus:outline-none">
-            <summary class="text-white px-6 py-2">{label}</summary>
+            <summary class="text-white px-6 py-2 text-red-900">{label}</summary>
             <div class="px-8 text-sm text-gray-100">
               {content}
             </div>
