@@ -14,7 +14,7 @@ const productPageLoader: LoaderFunction<
   null,
   ProductDetailsPage | null
 > = async (_req, _ctx) => {
-  // search prodcuts on Oracle. Feel free to change any of these parameters
+  // search products on Oracle. Feel free to change any of these parameters
 
   const skuId = _ctx.params.slug || DEFAULT_SKU;
 

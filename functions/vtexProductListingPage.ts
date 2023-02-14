@@ -101,7 +101,7 @@ const plpLoader: LoaderFunction<
     ...vtexConfig,
   };
 
-  // search prodcuts on VTEX. Feel free to change any of these parameters
+  // search products on VTEX. Feel free to change any of these parameters
   const [productsResult, facetsResult] = await Promise.all([
     vtex.search.products(searchArgs),
     vtex.search.facets(searchArgs),

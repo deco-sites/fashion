@@ -21,7 +21,7 @@ const productPageLoader: LoaderFunction<null, ProductDetailsPage | null> =
 
     const handle = splitted.slice(0, maybeSkuId ? -1 : undefined).join("-");
 
-    // search prodcuts on Shopify. Feel free to change any of these parameters
+    // search products on Shopify. Feel free to change any of these parameters
     const data = await shopify.product(handle);
 
     if (!data?.product) {

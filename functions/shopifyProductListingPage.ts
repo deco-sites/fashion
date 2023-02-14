@@ -31,7 +31,7 @@ const searchLoader: LoaderFunction<Props, ProductListingPage> = async (
   const count = props.count ?? 12;
   const query = props.query || url.searchParams.get("q") || "";
 
-  // search prodcuts on Shopify. Feel free to change any of these parameters
+  // search products on Shopify. Feel free to change any of these parameters
   const data = await shopify.products({
     first: count,
     query: query,

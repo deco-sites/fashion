@@ -102,8 +102,8 @@ const legacyPLPLoader: LoaderFunction<
   const fq = props.fq || url.searchParams.get("fq") || "";
   const map = props.map || url.searchParams.get("map") ||
     await mapParamFromUrl(term, vtexConfig);
-  const _from = page * count + 1;
-  const _to = (page + 1) * count;
+  const _from = page * count;
+  const _to = (page + 1) * count - 1;
 
   const searchArgs = {
     term,
@@ -116,7 +116,7 @@ const legacyPLPLoader: LoaderFunction<
     ...vtexConfig,
   };
 
-  // search prodcuts on VTEX. Feel free to change any of these parameters
+  // search products on VTEX. Feel free to change any of these parameters
   const [vtexProducts, vtexFacets] = await Promise.all([
     vtex.catalog_system.products(searchArgs),
     vtex.catalog_system.facets(searchArgs),

@@ -46,7 +46,7 @@ const productListLoader: LoaderFunction<
   const query = props.query || "";
   const sort: Sort = props.sort || "";
 
-  // search prodcuts on VTEX. Feel free to change any of these parameters
+  // search products on VTEX. Feel free to change any of these parameters
   const { products: vtexProducts } = await vtex.search.products({
     query,
     page: 0,

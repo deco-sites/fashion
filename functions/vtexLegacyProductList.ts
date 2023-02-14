@@ -13,7 +13,8 @@ export interface Props {
   query: string;
   /** @description total number of items to display */
   count: number;
-  //* @enumNames ["relevance", "greater discount", "arrivals", "name asc", "name desc", "most ordered", "price asc", "price desc"]
+  //  TODO: Allow writting enum names
+  // * @enumNames ["relevance", "greater discount", "arrivals", "name asc", "name desc", "most ordered", "price asc", "price desc"]
   /**
    * @description search sort parameter
    */
@@ -46,7 +47,7 @@ const legacyProductListLoader: LoaderFunction<
   const query = props.query || "";
   const O = props.sort || "";
 
-  // search prodcuts on VTEX. Feel free to change any of these parameters
+  // search products on VTEX. Feel free to change any of these parameters
   const vtexProducts = await vtex.catalog_system.products({
     term: query,
     _from: 1,
