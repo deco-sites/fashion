@@ -13,13 +13,15 @@ export default function ProductShelf({
   products,
 }: Props) {
   return (
-    <section class="max-w-[1400px] w-full p-2 md:p-0 mx-auto">
+    <div class="max-w-[1400px] w-full p-2 md:p-0 mx-auto">
       {title && <h2 class="text-center mb-8 text-lg md:text-2xl">{title}</h2>}
-      <div class="grid grid-cols-2 md:grid-cols-4 md:gap-4">
-        {products?.map((product, index) => {
-          return <ProductCard key={index} {...product} />;
-        })}
-      </div>
-    </section>
+      <ul class="flex flex-nowrap overflow-auto w-full justify-between">
+        {products?.map((product, index) => (
+          <li>
+            <ProductCard key={index} {...product} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

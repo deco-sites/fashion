@@ -32,7 +32,7 @@ export default function ProductCard({
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full p-2 mb-5"
+      class="w-full p-2 mb-5 min-w-[230px] max-w-[320px]"
     >
       <a href={url}>
         {img && img.url && (
