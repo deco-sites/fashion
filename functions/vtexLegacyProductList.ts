@@ -5,15 +5,16 @@ import type { LoaderFunction } from "$live/std/types.ts";
 import type { LiveState } from "$live/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
+import type { LegacySort } from "$live/std/commerce/vtex/types.ts";
 import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
-import type { Sort } from "$live/std/commerce/vtex/types.ts";
 
 export interface Props {
   /** @description query to use on search */
   query: string;
   /** @description total number of items to display */
   count: number;
-  //* @enumNames ["relevance", "greater discount", "arrivals", "name asc", "name desc", "most ordered", "price asc", "price desc"]
+  //  TODO: Allow writting enum names
+  // * @enumNames ["relevance", "greater discount", "arrivals", "name asc", "name desc", "most ordered", "price asc", "price desc"]
   /**
    * @description search sort parameter
    */
@@ -29,10 +30,10 @@ export interface Props {
 }
 
 /**
- * @title Product list loader
+ * @title Legacy product list loader
  * @description Usefull for shelves and static galleries.
  */
-const productListLoader: LoaderFunction<
+const legacyProductListLoader: LoaderFunction<
   Props,
   Product[],
   LiveState<{ vtexconfig: VTEXConfig | undefined }>
@@ -44,14 +45,14 @@ const productListLoader: LoaderFunction<
   const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
   const count = props.count ?? 12;
   const query = props.query || "";
-  const sort: Sort = props.sort || "";
+  const O = props.sort || "";
 
   // search products on VTEX. Feel free to change any of these parameters
-  const { products: vtexProducts } = await vtex.search.products({
-    query,
-    page: 0,
-    count,
-    sort,
+  const vtexProducts = await vtex.catalog_system.products({
+    term: query,
+    _from: 1,
+    _to: count,
+    O: O as LegacySort,
     ...vtexConfig,
   });
 
@@ -65,4 +66,4 @@ const productListLoader: LoaderFunction<
   };
 };
 
-export default productListLoader;
+export default legacyProductListLoader;

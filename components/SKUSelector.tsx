@@ -6,7 +6,7 @@ interface Props {
 
 // Navigates the user the the choosen sku
 const onChange = {
-  onchange: "(function(e){ location.pathname = e.target.value; })(event)",
+  onchange: "(function(e){  window.location.href = e.target.value; })(event)",
 };
 
 export default function SKUSelector(
@@ -20,16 +20,15 @@ export default function SKUSelector(
   const possibilities = allProperties.reduce((acc, { property, url }) => {
     const { name = "", value = "" } = property;
 
-    if (!Array.isArray(acc[name])) {
-      acc[name] = [];
-    }
-
     if (url) {
-      acc[name].push({ url, value });
+      acc[name] = {
+        ...acc[name],
+        [url]: value,
+      };
     }
 
     return acc;
-  }, {} as Record<string, { url: string; value: string }[]>);
+  }, {} as Record<string, Record<string, string>>);
 
   return (
     <div class="border border-gray-300 flex flex-row justify-between px-3 py-2 md:w-1/4">
@@ -37,7 +36,7 @@ export default function SKUSelector(
         <>
           <label class="font-bold" for={name}>{name}</label>
           <select id={name} {...onChange}>
-            {possibilities[name].map(({ value, url }) => {
+            {Object.entries(possibilities[name]).map(([url, value]) => {
               return (
                 <option key={url} value={url} selected={url === currentUrl}>
                   {value}
