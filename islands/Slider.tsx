@@ -44,6 +44,16 @@ function Slider({ id, items, delay = 2_000 }: Props) {
     if (content) {
       content.style.transform = `translateX(-${(100 / items) * index}%)`;
     }
+
+    const dots = document.getElementById(id)?.querySelectorAll("[data-dot]");
+
+    if (dots) {
+      dots.forEach((dot, it) =>
+        it === index
+          ? dot.setAttribute("disabled", "")
+          : dot.removeAttribute("disabled")
+      );
+    }
   }, [index]);
 
   // Handles next/prev elements

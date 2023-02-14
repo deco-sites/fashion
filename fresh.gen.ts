@@ -18,23 +18,22 @@ import * as $$4 from "./islands/ProductInformation.tsx";
 import * as $$5 from "./islands/SearchBar.tsx";
 import * as $$6 from "./islands/SearchControls.tsx";
 import * as $$7 from "./islands/Slider.tsx";
-import * as $$$0 from "./sections/Banner.tsx";
-import * as $$$1 from "./sections/BannnerGrid.tsx";
-import * as $$$2 from "./sections/Button.story.tsx";
-import * as $$$3 from "./sections/Footer.tsx";
-import * as $$$4 from "./sections/Head.tsx";
-import * as $$$5 from "./sections/Header.tsx";
-import * as $$$6 from "./sections/HighlightedFeatures.tsx";
-import * as $$$7 from "./sections/MarcasConvidadas.tsx";
-import * as $$$8 from "./sections/Newsletter.tsx";
-import * as $$$9 from "./sections/ProductDetails.tsx";
-import * as $$$10 from "./sections/ProductGallery.tsx";
-import * as $$$11 from "./sections/ProductShelf.tsx";
-import * as $$$12 from "./sections/Search.tsx";
-import * as $$$13 from "./sections/SearchControls.tsx";
-import * as $$$14 from "./sections/Spacer.tsx";
-import * as $$$15 from "./sections/StoreFeatures.tsx";
-import * as $$$16 from "./sections/vtexconfig.global.tsx";
+import * as $$$0 from "./sections/Button.story.tsx";
+import * as $$$1 from "./sections/Carousel.tsx";
+import * as $$$2 from "./sections/Footer.tsx";
+import * as $$$3 from "./sections/Head.tsx";
+import * as $$$4 from "./sections/Header.tsx";
+import * as $$$5 from "./sections/HighlightedFeatures.tsx";
+import * as $$$6 from "./sections/MarcasConvidadas.tsx";
+import * as $$$7 from "./sections/Newsletter.tsx";
+import * as $$$8 from "./sections/ProductDetails.tsx";
+import * as $$$9 from "./sections/ProductGallery.tsx";
+import * as $$$10 from "./sections/ProductShelf.tsx";
+import * as $$$11 from "./sections/Search.tsx";
+import * as $$$12 from "./sections/SearchControls.tsx";
+import * as $$$13 from "./sections/Spacer.tsx";
+import * as $$$14 from "./sections/StoreFeatures.tsx";
+import * as $$$15 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -66,23 +65,22 @@ const manifest: DecoManifest = {
     "./islands/Slider.tsx": $$7,
   },
   sections: {
-    "./sections/Banner.tsx": $$$0,
-    "./sections/BannnerGrid.tsx": $$$1,
-    "./sections/Button.story.tsx": $$$2,
-    "./sections/Footer.tsx": $$$3,
-    "./sections/Head.tsx": $$$4,
-    "./sections/Header.tsx": $$$5,
-    "./sections/HighlightedFeatures.tsx": $$$6,
-    "./sections/MarcasConvidadas.tsx": $$$7,
-    "./sections/Newsletter.tsx": $$$8,
-    "./sections/ProductDetails.tsx": $$$9,
-    "./sections/ProductGallery.tsx": $$$10,
-    "./sections/ProductShelf.tsx": $$$11,
-    "./sections/Search.tsx": $$$12,
-    "./sections/SearchControls.tsx": $$$13,
-    "./sections/Spacer.tsx": $$$14,
-    "./sections/StoreFeatures.tsx": $$$15,
-    "./sections/vtexconfig.global.tsx": $$$16,
+    "./sections/Button.story.tsx": $$$0,
+    "./sections/Carousel.tsx": $$$1,
+    "./sections/Footer.tsx": $$$2,
+    "./sections/Head.tsx": $$$3,
+    "./sections/Header.tsx": $$$4,
+    "./sections/HighlightedFeatures.tsx": $$$5,
+    "./sections/MarcasConvidadas.tsx": $$$6,
+    "./sections/Newsletter.tsx": $$$7,
+    "./sections/ProductDetails.tsx": $$$8,
+    "./sections/ProductGallery.tsx": $$$9,
+    "./sections/ProductShelf.tsx": $$$10,
+    "./sections/Search.tsx": $$$11,
+    "./sections/SearchControls.tsx": $$$12,
+    "./sections/Spacer.tsx": $$$13,
+    "./sections/StoreFeatures.tsx": $$$14,
+    "./sections/vtexconfig.global.tsx": $$$15,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -97,127 +95,6 @@ const manifest: DecoManifest = {
     "./functions/vtexProductListingPage.ts": $$$$9,
   },
   schemas: {
-    "./sections/Banner.tsx": {
-      "inputSchema": {
-        "title": " Banner",
-        "type": "object",
-        "properties": {
-          "imgSrc": {
-            "title": "Img Src",
-            "type": "object",
-            "properties": {
-              "mobile": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Mobile",
-              },
-              "desktop": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Desktop",
-              },
-            },
-            "required": [
-              "mobile",
-              "desktop",
-            ],
-          },
-          "alt": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Alt",
-          },
-          "text": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Text",
-          },
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "subtitle": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Subtitle",
-          },
-          "link": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Link",
-          },
-          "CTA": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": " C T A",
-          },
-        },
-        "required": [
-          "imgSrc",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/BannnerGrid.tsx": {
-      "inputSchema": {
-        "title": " Bannner Grid",
-        "type": "object",
-        "properties": {
-          "images": {
-            "type": "array",
-            "items": {
-              "title": "Banner",
-              "type": "object",
-              "properties": {
-                "src": {
-                  "format": "image-uri",
-                  "type": "string",
-                  "title": "Src",
-                },
-                "alt": {
-                  "type": "string",
-                  "title": "Alt",
-                  "description": "Image alt text",
-                },
-                "href": {
-                  "type": "string",
-                  "title": "Href",
-                  "description": "When you click you go to",
-                },
-              },
-              "required": [
-                "src",
-                "alt",
-                "href",
-              ],
-            },
-            "title": "Images",
-          },
-          "title": {
-            "type": "string",
-            "title": "Title",
-          },
-        },
-        "required": [
-          "images",
-          "title",
-        ],
-      },
-      "outputSchema": null,
-    },
     "./sections/Button.story.tsx": {
       "inputSchema": {
         "title": " Button.story",
@@ -279,6 +156,64 @@ const manifest: DecoManifest = {
               "null",
             ],
             "title": "Loading",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Carousel.tsx": {
+      "inputSchema": {
+        "title": " Carousel",
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "title": "Image",
+              "type": "object",
+              "properties": {
+                "desktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Desktop",
+                  "description": "desktop otimized image",
+                },
+                "mobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Mobile",
+                  "description": "mobile otimized image",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description":
+                    "when user clicks on the image, go to this link",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image's alt text",
+                },
+              },
+              "required": [
+                "desktop",
+                "mobile",
+                "href",
+                "alt",
+              ],
+            },
+            "title": "Images",
+          },
+          "preload": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Preload",
+            "description":
+              "Check this option when this banner is the biggest image on the screen for image optimizations",
           },
         },
         "required": [],
