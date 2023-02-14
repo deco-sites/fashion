@@ -59,7 +59,7 @@ export default function Footer() {
       <div class="w-full">
         <div class="flex justify-center px-3 pb-4">
           <p class="text-xs text-center">
-            Site by deco.cx
+            Site by <a href="https://www.deco.cx">deco.cx</a>
           </p>
         </div>
       </div>
