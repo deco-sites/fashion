@@ -15,9 +15,8 @@ import * as $$1 from "./islands/CartButton.tsx";
 import * as $$2 from "./islands/CartModal.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
 import * as $$4 from "./islands/ProductInformation.tsx";
-import * as $$5 from "./islands/SearchBar.tsx";
-import * as $$6 from "./islands/SearchControls.tsx";
-import * as $$7 from "./islands/Slider.tsx";
+import * as $$5 from "./islands/SearchControls.tsx";
+import * as $$6 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Button.story.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/Footer.tsx";
@@ -29,11 +28,10 @@ import * as $$$7 from "./sections/Newsletter.tsx";
 import * as $$$8 from "./sections/ProductDetails.tsx";
 import * as $$$9 from "./sections/ProductGallery.tsx";
 import * as $$$10 from "./sections/ProductShelf.tsx";
-import * as $$$11 from "./sections/Search.tsx";
-import * as $$$12 from "./sections/SearchControls.tsx";
-import * as $$$13 from "./sections/Spacer.tsx";
-import * as $$$14 from "./sections/StoreFeatures.tsx";
-import * as $$$15 from "./sections/vtexconfig.global.tsx";
+import * as $$$11 from "./sections/SearchControls.tsx";
+import * as $$$12 from "./sections/Spacer.tsx";
+import * as $$$13 from "./sections/StoreFeatures.tsx";
+import * as $$$14 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -60,9 +58,8 @@ const manifest: DecoManifest = {
     "./islands/CartModal.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
     "./islands/ProductInformation.tsx": $$4,
-    "./islands/SearchBar.tsx": $$5,
-    "./islands/SearchControls.tsx": $$6,
-    "./islands/Slider.tsx": $$7,
+    "./islands/SearchControls.tsx": $$5,
+    "./islands/Slider.tsx": $$6,
   },
   sections: {
     "./sections/Button.story.tsx": $$$0,
@@ -76,11 +73,10 @@ const manifest: DecoManifest = {
     "./sections/ProductDetails.tsx": $$$8,
     "./sections/ProductGallery.tsx": $$$9,
     "./sections/ProductShelf.tsx": $$$10,
-    "./sections/Search.tsx": $$$11,
-    "./sections/SearchControls.tsx": $$$12,
-    "./sections/Spacer.tsx": $$$13,
-    "./sections/StoreFeatures.tsx": $$$14,
-    "./sections/vtexconfig.global.tsx": $$$15,
+    "./sections/SearchControls.tsx": $$$11,
+    "./sections/Spacer.tsx": $$$12,
+    "./sections/StoreFeatures.tsx": $$$13,
+    "./sections/vtexconfig.global.tsx": $$$14,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -294,6 +290,15 @@ const manifest: DecoManifest = {
             },
             "title": "Alerts",
           },
+          "searchbarPlaceholder": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Searchbar placeholder",
+            "description": "Search bar default placeholder message",
+            "default": "What are you looking for?",
+          },
         },
         "required": [
           "alerts",
@@ -484,23 +489,6 @@ const manifest: DecoManifest = {
           "title",
           "products",
         ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/Search.tsx": {
-      "inputSchema": {
-        "title": " Search",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Query",
-          },
-        },
-        "required": [],
       },
       "outputSchema": null,
     },
