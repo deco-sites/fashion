@@ -17,7 +17,7 @@ export default function ProductShelf({
       {title && <h2 class="text-center mb-8 text-lg md:text-2xl">{title}</h2>}
       <ul class="flex flex-nowrap overflow-auto w-full justify-between">
         {products?.map((product, index) => (
-          <li class="min-w-[230px] max-w-[320px]">
+          <li class="min-w-[220px] max-w-[250px] sm:min-w-[260px] sm:max-w-[280px]">
             <ProductCard key={index} {...product} />
           </li>
         ))}
