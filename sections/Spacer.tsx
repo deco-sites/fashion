@@ -1,5 +1,15 @@
-export default function Spacer(
-  { height = 8, heightMobile = 8 }: { height?: number; heightMobile?: number },
-) {
-  return <div class={`h-${heightMobile} h-md-${height}`} />;
+export interface Props {
+  height?: {
+    mobile: number;
+    desktop: number;
+  };
 }
+
+function Spacer({ height }: Props) {
+  const mobile = height?.mobile ?? 8;
+  const desktop = height?.desktop ?? 8;
+
+  return <div class={`h-${mobile} md:h-${desktop}`} />;
+}
+
+export default Spacer;

@@ -16,9 +16,8 @@ import * as $$2 from "./islands/CartModal.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
 import * as $$4 from "./islands/MenuButton.tsx";
 import * as $$5 from "./islands/MenuModal.tsx";
-import * as $$6 from "./islands/ProductInformation.tsx";
-import * as $$7 from "./islands/SearchControls.tsx";
-import * as $$8 from "./islands/Slider.tsx";
+import * as $$6 from "./islands/SearchControls.tsx";
+import * as $$7 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Button.story.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/Footer.tsx";
@@ -26,15 +25,14 @@ import * as $$$3 from "./sections/Head.tsx";
 import * as $$$4 from "./sections/Header.tsx";
 import * as $$$5 from "./sections/HighlightedFeatures.tsx";
 import * as $$$6 from "./sections/Highlights.tsx";
-import * as $$$7 from "./sections/MarcasConvidadas.tsx";
-import * as $$$8 from "./sections/Newsletter.tsx";
-import * as $$$9 from "./sections/ProductDetails.tsx";
-import * as $$$10 from "./sections/ProductGallery.tsx";
-import * as $$$11 from "./sections/ProductShelf.tsx";
-import * as $$$12 from "./sections/SearchControls.tsx";
-import * as $$$13 from "./sections/Spacer.tsx";
-import * as $$$14 from "./sections/StoreFeatures.tsx";
-import * as $$$15 from "./sections/vtexconfig.global.tsx";
+import * as $$$7 from "./sections/Newsletter.tsx";
+import * as $$$8 from "./sections/ProductDetails.tsx";
+import * as $$$9 from "./sections/ProductGallery.tsx";
+import * as $$$10 from "./sections/ProductShelf.tsx";
+import * as $$$11 from "./sections/SearchControls.tsx";
+import * as $$$12 from "./sections/Spacer.tsx";
+import * as $$$13 from "./sections/StoreFeatures.tsx";
+import * as $$$14 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -62,9 +60,8 @@ const manifest: DecoManifest = {
     "./islands/LiveControls.tsx": $$3,
     "./islands/MenuButton.tsx": $$4,
     "./islands/MenuModal.tsx": $$5,
-    "./islands/ProductInformation.tsx": $$6,
-    "./islands/SearchControls.tsx": $$7,
-    "./islands/Slider.tsx": $$8,
+    "./islands/SearchControls.tsx": $$6,
+    "./islands/Slider.tsx": $$7,
   },
   sections: {
     "./sections/Button.story.tsx": $$$0,
@@ -74,15 +71,14 @@ const manifest: DecoManifest = {
     "./sections/Header.tsx": $$$4,
     "./sections/HighlightedFeatures.tsx": $$$5,
     "./sections/Highlights.tsx": $$$6,
-    "./sections/MarcasConvidadas.tsx": $$$7,
-    "./sections/Newsletter.tsx": $$$8,
-    "./sections/ProductDetails.tsx": $$$9,
-    "./sections/ProductGallery.tsx": $$$10,
-    "./sections/ProductShelf.tsx": $$$11,
-    "./sections/SearchControls.tsx": $$$12,
-    "./sections/Spacer.tsx": $$$13,
-    "./sections/StoreFeatures.tsx": $$$14,
-    "./sections/vtexconfig.global.tsx": $$$15,
+    "./sections/Newsletter.tsx": $$$7,
+    "./sections/ProductDetails.tsx": $$$8,
+    "./sections/ProductGallery.tsx": $$$9,
+    "./sections/ProductShelf.tsx": $$$10,
+    "./sections/SearchControls.tsx": $$$11,
+    "./sections/Spacer.tsx": $$$12,
+    "./sections/StoreFeatures.tsx": $$$13,
+    "./sections/vtexconfig.global.tsx": $$$14,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -484,86 +480,6 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/MarcasConvidadas.tsx": {
-      "inputSchema": {
-        "title": " Marcas Convidadas",
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "title": "Title",
-          },
-          "mainBanner": {
-            "title": "Main Banner",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "title": "Href",
-              },
-              "smallSrc": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Small Src",
-                "description": "Image src for small screen devices (mobile)",
-              },
-              "largeSrc": {
-                "format": "image-uri",
-                "type": "string",
-                "title": "Large Src",
-                "description": "Image src for large screen devices (desktop)",
-              },
-              "alt": {
-                "type": "string",
-                "title": "Alt",
-                "description": "Image alt text",
-              },
-            },
-            "required": [
-              "href",
-              "smallSrc",
-              "largeSrc",
-              "alt",
-            ],
-          },
-          "banners": {
-            "type": "array",
-            "items": {
-              "title": "Banner",
-              "type": "object",
-              "properties": {
-                "href": {
-                  "type": "string",
-                  "title": "Href",
-                },
-                "src": {
-                  "format": "image-uri",
-                  "type": "string",
-                  "title": "Src",
-                },
-                "alt": {
-                  "type": "string",
-                  "title": "Alt",
-                  "description": "Image alt text",
-                },
-              },
-              "required": [
-                "href",
-                "src",
-                "alt",
-              ],
-            },
-            "title": "Banners",
-          },
-        },
-        "required": [
-          "title",
-          "mainBanner",
-          "banners",
-        ],
-      },
-      "outputSchema": null,
-    },
     "./sections/Newsletter.tsx": {
       "inputSchema": null,
       "outputSchema": null,
@@ -651,18 +567,22 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "height": {
-            "type": [
-              "number",
-              "null",
-            ],
             "title": "Height",
-          },
-          "heightMobile": {
-            "type": [
-              "number",
-              "null",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "type": "number",
+                "title": "Mobile",
+              },
+              "desktop": {
+                "type": "number",
+                "title": "Desktop",
+              },
+            },
+            "required": [
+              "mobile",
+              "desktop",
             ],
-            "title": "Height Mobile",
           },
         },
         "required": [],
