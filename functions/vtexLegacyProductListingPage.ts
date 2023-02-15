@@ -58,8 +58,8 @@ const PAGE_TYPE_TO_MAP_PARAM = {
   FullText: null,
 };
 
-const mapParamFromUrl = async (term: string, vtexConfig: VTEXConfig) => {
-  const segments = term.split("/");
+const mapParamFromUrl = async (term: string | null, vtexConfig: VTEXConfig) => {
+  const segments = term ? term.split("/") : [];
   const results = await Promise.all(
     segments.map((segment) =>
       vtex.catalog_system.pageType({
