@@ -49,12 +49,16 @@ function Searchbar({
     >
       <input
         class="flex-grow px-2 outline-none"
-        id="search"
         name={name}
         defaultValue={query}
         placeholder={placeholder}
       />
-      <button htmlFor="searchbar" type="submit" class="p-2 outline-none">
+      <button
+        aria-label="Search"
+        htmlFor="searchbar"
+        type="submit"
+        class="p-2 outline-none"
+      >
         <Icon id="MagnifyingGlass" className="w-6 h-6" />
       </button>
     </form>

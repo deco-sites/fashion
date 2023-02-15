@@ -30,7 +30,7 @@ function Carousel({ images = [], preload = false }: Props) {
   return (
     <div
       id={id}
-      class="mb-8 relative w-full overflow-hidden"
+      class="relative w-full overflow-hidden"
     >
       <ul
         data-slider-content
@@ -75,12 +75,14 @@ function Carousel({ images = [], preload = false }: Props) {
         <>
           {/* Next/Prev button Controls */}
           <button
+            aria-label="previous banner image"
             class="absolute top-1/2 left-0 ml-2 text-white outline-none p-2"
             data-slider-prev
           >
             <Icon class="w-6 h-6" id="ChevronLeft" />
           </button>
           <button
+            aria-label="next banner image"
             class="absolute top-1/2 right-0 mr-2 text-white outline-none p-2"
             data-slider-next
           >
@@ -89,8 +91,9 @@ function Carousel({ images = [], preload = false }: Props) {
 
           {/* Dots buttons, usually bellow main image */}
           <div class="absolute w-full top-[80%] flex justify-center flex-nowrap">
-            {images.map(() => (
+            {images.map((_, id) => (
               <button
+                aria-label={`Display ${id} banner`}
                 class="p-2 rounded-full text-white disabled:text-gray-600 outline-none"
                 data-dot
               >

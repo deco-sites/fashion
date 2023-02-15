@@ -15,8 +15,8 @@ export interface Props {
 
 function Highlights({ highlights = [], title }: Props) {
   return (
-    <div class="max-w-[1400px] w-full p-2 flex flex-col items-center">
-      {title && <h2 class="mb-8 text-lg md:text-2xl">{title}</h2>}
+    <div class="w-full p-2 flex flex-col gap-4 items-center bg-gray-100">
+      {title && <h2 class="text-lg md:text-2xl">{title}</h2>}
       <ul
         class="flex flex-nowrap overflow-x-auto max-w-full gap-8"
         style={{
@@ -26,7 +26,10 @@ function Highlights({ highlights = [], title }: Props) {
         }}
       >
         {highlights.map(({ src, alt, href, label }) => (
-          <li class="min-w-[180px]" style={{ "scroll-snap-align": "center" }}>
+          <li
+            class="min-w-[180px] p-2"
+            style={{ "scroll-snap-align": "center" }}
+          >
             <a
               href={href}
               class="flex flex-col gap-2 items-center"

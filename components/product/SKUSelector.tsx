@@ -9,7 +9,7 @@ const onChange = {
   onchange: "(function(e){  window.location.href = e.target.value; })(event)",
 };
 
-export default function SKUSelector(
+function SKUSelector(
   { product: { isVariantOf, url: currentUrl } }: Props,
 ) {
   const allProperties = (isVariantOf?.hasVariant ?? [])
@@ -49,3 +49,5 @@ export default function SKUSelector(
     </div>
   );
 }
+
+export default SKUSelector;
