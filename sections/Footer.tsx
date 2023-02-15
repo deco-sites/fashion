@@ -28,6 +28,7 @@ export default function Footer() {
                 class="flex items-center justify-center w-8 h-8"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook logo"
               >
                 <Icon id="Facebook" class="w-auto" />
               </a>
@@ -38,6 +39,7 @@ export default function Footer() {
                 class="flex items-center justify-center w-8 h-8"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram logo"
               >
                 <Icon id="Instagram" class="w-auto" />
               </a>
@@ -48,6 +50,7 @@ export default function Footer() {
                 class="flex items-center justify-center w-8 h-8"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Tiktok logo"
               >
                 <Icon id="Tiktok" class="w-auto" />
               </a>

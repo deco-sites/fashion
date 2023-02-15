@@ -1,4 +1,4 @@
-import UIButton from "$components/ui/Button.tsx";
+import UIButton from "$store/components/ui/Button.tsx";
 
 export interface Props {
   variant?: "primary" | "secondary" | "tertiary" | "danger";

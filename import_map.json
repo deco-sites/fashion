@@ -2,6 +2,7 @@
   "imports": {
     "$components/": "./components/",
     "$sections/": "./sections/",
+    "$store/": "./",
     "$live/": "https://deno.land/x/live@0.5.1/",
     "partytown/": "https://deno.land/x/partytown@0.1.3/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",

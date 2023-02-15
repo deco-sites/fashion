@@ -1,5 +1,5 @@
 import { useSignal } from "@preact/signals";
-import Button from "$components/ui/Button.tsx";
+import Button from "$store/components/ui/Button.tsx";
 
 import { useCart } from "../sdk/cart/useCart.ts";
 import { useUI } from "../sdk/useUI.ts";

@@ -1,4 +1,4 @@
-import ProductCard from "$components/ProductCard.tsx";
+import ProductCard from "$store/components/product/ProductCard.tsx";
 import type { LoaderReturnType } from "$live/std/types.ts";
 import type { ProductListingPage } from "$live/std/commerce/types.ts";
 
