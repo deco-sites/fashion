@@ -1,4 +1,6 @@
-import Searchbar from "$components/search/Searchbar.tsx";
+import Searchbar, {
+  Props as SearchbarProps,
+} from "$components/search/Searchbar.tsx";
 import Icon from "$components/ui/Icon.tsx";
 import Alert from "$components/Alert.tsx";
 import type { JSX } from "preact";
@@ -22,7 +24,7 @@ function NavItem({
   );
 }
 
-function Navbar({ searchbarPlaceholder }: { searchbarPlaceholder?: string }) {
+function Navbar({ searchbar }: { searchbar?: SearchbarProps }) {
   return (
     <>
       {/* Mobile Version */}
@@ -43,7 +45,7 @@ function Navbar({ searchbarPlaceholder }: { searchbarPlaceholder?: string }) {
           </div>
         </div>
         <div class="px-2 pb-2">
-          <Searchbar placeholder={searchbarPlaceholder} />
+          <Searchbar {...searchbar} />
         </div>
       </div>
 
@@ -59,7 +61,7 @@ function Navbar({ searchbarPlaceholder }: { searchbarPlaceholder?: string }) {
           <NavItem href="/137?map=productClusterIds">Inverno</NavItem>
         </div>
         <div class="flex-1 flex items-center justify-end gap-6">
-          <Searchbar placeholder={searchbarPlaceholder} />
+          <Searchbar {...searchbar} />
           <a href="#" class="h-12 w-12 flex justify-center items-center">
             <Icon id="User" className="w-6 h-6" />
           </a>
@@ -72,19 +74,15 @@ function Navbar({ searchbarPlaceholder }: { searchbarPlaceholder?: string }) {
 
 export interface Props {
   alerts: string[];
-  /**
-   * @title Searchbar placeholder
-   * @description Search bar default placeholder message
-   * @default What are you looking for?
-   */
-  searchbarPlaceholder?: string;
+  /** @title Search Bar */
+  searchbar?: SearchbarProps;
 }
 
-function Header({ alerts, searchbarPlaceholder }: Props) {
+function Header({ alerts, searchbar }: Props) {
   return (
     <header>
       <Alert alerts={alerts} />
-      <Navbar searchbarPlaceholder={searchbarPlaceholder} />
+      <Navbar searchbar={searchbar} />
       <CartModal />
     </header>
   );

@@ -290,14 +290,48 @@ const manifest: DecoManifest = {
             },
             "title": "Alerts",
           },
-          "searchbarPlaceholder": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Searchbar placeholder",
-            "description": "Search bar default placeholder message",
-            "default": "What are you looking for?",
+          "searchbar": {
+            "title": "Search Bar",
+            "type": "object",
+            "properties": {
+              "placeholder": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Placeholder",
+                "description": "Search bar default placeholder message",
+                "default": "What are you looking for?",
+              },
+              "action": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Page path",
+                "description":
+                  "When user clicks on the search button, navigate it to",
+                "default": "/s",
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Term name",
+                "description":
+                  "Querystring param used when navigating the user",
+                "default": "q",
+              },
+              "query": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Query",
+              },
+            },
+            "required": [],
           },
         },
         "required": [

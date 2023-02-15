@@ -10,8 +10,25 @@
  */
 import Icon from "../ui/Icon.tsx";
 
-interface Props {
+export interface Props {
+  /**
+   * @title Placeholder
+   * @description Search bar default placeholder message
+   * @default What are you looking for?
+   */
   placeholder?: string;
+  /**
+   * @title Page path
+   * @description When user clicks on the search button, navigate it to
+   * @default /s
+   */
+  action?: string;
+  /**
+   * @title Term name
+   * @description Querystring param used when navigating the user
+   * @default q
+   */
+  name?: string;
   /**
    * TODO: Receive querystring from parameter in the server-side
    */
@@ -20,18 +37,20 @@ interface Props {
 
 function Searchbar({
   placeholder = "What are you looking for?",
+  action = "/s",
+  name = "q",
   query,
 }: Props) {
   return (
     <form
       id="searchbar"
-      action="/s"
+      action={action}
       class="flex flex-row px-2 py-0 sm:p-2 text-sm text-left border rounded sm:min-w-[400px]"
     >
       <input
         class="flex-grow px-2 outline-none"
         id="search"
-        name="q"
+        name={name}
         defaultValue={query}
         placeholder={placeholder}
       />
