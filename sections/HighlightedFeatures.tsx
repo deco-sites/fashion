@@ -24,7 +24,7 @@ export default function HighlightedFeatures(
   { features }: Props,
 ) {
   return (
-    <section class="bg-gray-200 flex flex-row flex-wrap py-2 justify-center">
+    <section class="bg-gray-100 flex flex-row flex-wrap py-2 justify-center">
       {features.map(({ src, title, description }) => (
         <div key={title} class="w-1/2 md:w-1/5 p-6 flex flex-col items-center">
           <Image
