@@ -1,17 +1,43 @@
 import Searchbar, {
   Props as SearchbarProps,
 } from "$components/search/Searchbar.tsx";
-import Icon from "$components/ui/Icon.tsx";
 import Alert from "$components/Alert.tsx";
-import type { JSX } from "preact";
+import Icon from "$components/ui/Icon.tsx";
+import type { NavItem as Item } from "$components/menu/NavItem.ts";
 
 import CartButton from "../islands/CartButton.tsx";
 import CartModal from "../islands/CartModal.tsx";
+import MenuButton from "../islands/MenuButton.tsx";
+import MenuModal from "../islands/MenuModal.tsx";
+import type { ComponentChildren } from "preact";
+
+const item: Item[] = [
+  {
+    label: "Masculino",
+    href: "/masculino",
+    children: [
+      { label: "Polos", href: "/masculino/polos" },
+      { label: "Shorts", href: "/masculino/shorts" },
+    ],
+  },
+  {
+    label: "Feminino",
+    href: "/feminino",
+    children: [
+      { label: "Roupas", href: "/feminino/roupas" },
+    ],
+  },
+  {
+    label: "Brindes",
+    href: "/brindes",
+    children: [],
+  },
+];
 
 function NavItem({
   href,
   children,
-}: JSX.HTMLAttributes<HTMLAnchorElement>) {
+}: { href: string; children: ComponentChildren }) {
   return (
     <a
       href={href ?? `/s?ft=${children}`}
@@ -24,18 +50,16 @@ function NavItem({
   );
 }
 
-function Navbar({ searchbar }: { searchbar?: SearchbarProps }) {
+function Navbar({ searchbar, items }: {
+  searchbar?: SearchbarProps;
+  items: Item[];
+}) {
   return (
     <>
       {/* Mobile Version */}
       <div class="md:hidden">
         <div class="flex justify-between items-center p-2 pb-0">
-          <button
-            aria-label="open menu"
-            class="flex items-center justify-center h-12 w-12"
-          >
-            <Icon id="Bars3" className="w-8 h-8" />
-          </button>
+          <MenuButton />
 
           <a href="/" class="block max-w-[10rem]">
             <Icon id="Logo" width="566" height="64" class="w-full" />
@@ -55,10 +79,9 @@ function Navbar({ searchbar }: { searchbar?: SearchbarProps }) {
           <Icon id="Logo" width="566" height="64" class="w-full" />
         </a>
         <div class="flex justify-center md:justify-between pl-12 h-14">
-          <NavItem href="/vtex-fashion">Marcas</NavItem>
-          <NavItem href="/feminino">Feminino</NavItem>
-          <NavItem href="/masculino">Masculino</NavItem>
-          <NavItem href="/137?map=productClusterIds">Inverno</NavItem>
+          {items.map(
+            (item) => <NavItem href={item.href}>{item.label}</NavItem>,
+          )}
         </div>
         <div class="flex-1 flex items-center justify-end gap-6">
           <Searchbar {...searchbar} />
@@ -76,14 +99,20 @@ export interface Props {
   alerts: string[];
   /** @title Search Bar */
   searchbar?: SearchbarProps;
+  /**
+   * @title Navigation items
+   * @description Navigation items used both on mobile and desktop menus
+   */
+  navItems?: Item[];
 }
 
-function Header({ alerts, searchbar }: Props) {
+function Header({ alerts, searchbar, navItems = item }: Props) {
   return (
     <header>
       <Alert alerts={alerts} />
-      <Navbar searchbar={searchbar} />
+      <Navbar searchbar={searchbar} items={navItems} />
       <CartModal />
+      <MenuModal items={navItems} />
     </header>
   );
 }
