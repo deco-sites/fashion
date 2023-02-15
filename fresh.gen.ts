@@ -7,9 +7,8 @@ import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./routes/[...catchall].tsx";
 import * as $1 from "./routes/_app.tsx";
 import * as $2 from "./routes/_middleware.ts";
-import * as $3 from "./routes/api/[...catchall].tsx";
-import * as $4 from "./routes/index.tsx";
-import * as $5 from "./routes/inspect-vscode.ts";
+import * as $3 from "./routes/index.tsx";
+import * as $4 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/CartButton.tsx";
 import * as $$2 from "./islands/CartModal.tsx";
@@ -49,9 +48,8 @@ const manifest: DecoManifest = {
     "./routes/[...catchall].tsx": $0,
     "./routes/_app.tsx": $1,
     "./routes/_middleware.ts": $2,
-    "./routes/api/[...catchall].tsx": $3,
-    "./routes/index.tsx": $4,
-    "./routes/inspect-vscode.ts": $5,
+    "./routes/index.tsx": $3,
+    "./routes/inspect-vscode.ts": $4,
   },
   islands: {
     "./islands/AddToCart.tsx": $$0,
