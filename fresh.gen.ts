@@ -14,9 +14,11 @@ import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/CartButton.tsx";
 import * as $$2 from "./islands/CartModal.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
-import * as $$4 from "./islands/ProductInformation.tsx";
-import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/Slider.tsx";
+import * as $$4 from "./islands/MenuButton.tsx";
+import * as $$5 from "./islands/MenuModal.tsx";
+import * as $$6 from "./islands/ProductInformation.tsx";
+import * as $$7 from "./islands/SearchControls.tsx";
+import * as $$8 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Button.story.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/Footer.tsx";
@@ -57,9 +59,11 @@ const manifest: DecoManifest = {
     "./islands/CartButton.tsx": $$1,
     "./islands/CartModal.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
-    "./islands/ProductInformation.tsx": $$4,
-    "./islands/SearchControls.tsx": $$5,
-    "./islands/Slider.tsx": $$6,
+    "./islands/MenuButton.tsx": $$4,
+    "./islands/MenuModal.tsx": $$5,
+    "./islands/ProductInformation.tsx": $$6,
+    "./islands/SearchControls.tsx": $$7,
+    "./islands/Slider.tsx": $$8,
   },
   sections: {
     "./sections/Button.story.tsx": $$$0,
@@ -332,6 +336,52 @@ const manifest: DecoManifest = {
               },
             },
             "required": [],
+          },
+          "navItems": {
+            "type": "array",
+            "items": {
+              "title": "Item",
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                },
+                "children": {
+                  "title": "Children",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string",
+                        "title": "Label",
+                      },
+                      "href": {
+                        "type": "string",
+                        "title": "Href",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "href",
+                    ],
+                  },
+                },
+              },
+              "required": [
+                "label",
+                "href",
+                "children",
+              ],
+            },
+            "title": "Navigation items",
+            "description":
+              "Navigation items used both on mobile and desktop menus",
           },
         },
         "required": [
