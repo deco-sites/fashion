@@ -30,11 +30,11 @@ function Carousel({ images = [], preload = false }: Props) {
   return (
     <div
       id={id}
-      class="mb-8 relative"
+      class="mb-8 relative w-full overflow-hidden"
     >
       <ul
         data-slider-content
-        class="flex flex-nowrap overflow-auto transition"
+        class="flex flex-nowrap transition"
         style={{ width: `calc(${images.length}*100vw)` }}
       >
         {images.map(({ desktop, mobile, href, alt }, index) => {
