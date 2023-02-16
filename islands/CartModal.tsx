@@ -1,3 +1,1 @@
-import CartModal from "../components/minicart/CartModal.tsx";
-
-export default () => <CartModal />;
+export { default } from "$store/components/minicart/CartModal.tsx";

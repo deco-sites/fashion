@@ -1,21 +1,9 @@
-import ProductCard from "$store/components/product/ProductCard.tsx";
-import type { LoaderReturnType } from "$live/std/types.ts";
-import type { ProductListingPage } from "$live/std/commerce/types.ts";
+import ProductGallery, {
+  Props,
+} from "$store/components/product/ProductGallery.tsx";
 
-export interface Props {
-  page: LoaderReturnType<ProductListingPage>;
+function ProductGallerySection(props: Props) {
+  return <ProductGallery {...props} />;
 }
 
-export default function ProductGallery({ page }: Props) {
-  return (
-    <section class="md:mx-auto px-2 md:px-4 py-8 md:py-20">
-      <div class="relative grid grid-cols-2 md:grid-cols-4 gap-2 items-center">
-        {page?.products?.map((product) => (
-          <div class="w-full md:px-2 list-none">
-            <ProductCard {...product} />
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
+export default ProductGallerySection;

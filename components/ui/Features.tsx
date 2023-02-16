@@ -20,7 +20,7 @@ export interface Props {
   features: Feature[];
 }
 
-export default function HighlightedFeatures(
+function FeatureHighlights(
   { features }: Props,
 ) {
   return (
@@ -46,3 +46,5 @@ export default function HighlightedFeatures(
     </section>
   );
 }
+
+export default FeatureHighlights;
