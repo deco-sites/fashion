@@ -71,7 +71,7 @@ function Carousel({ images = [], preload = false }: Props) {
         })}
       </ul>
 
-      {images.length > 0 && (
+      {images.length > 10 && (
         <>
           {/* Next/Prev button Controls */}
           <button
@@ -106,6 +106,84 @@ function Carousel({ images = [], preload = false }: Props) {
           <Slider items={images.length} id={id} delay={5_000} />
         </>
       )}
+      <ul
+        data-slider-content
+        class="flex flex-nowrap transition"
+        style={{ width: `calc(${images.length}*100vw)` }}
+      >
+        {[images[0]].map(({ desktop, mobile, href, alt }, index) => {
+          const lcp = index === 0 && preload;
+
+          return (
+            <li>
+              <a href={href}>
+                <Picture class="w-screen block" preload={lcp}>
+                  <Source
+                    media="(max-width: 767px)"
+                    fetchPriority={lcp ? "high" : "auto"}
+                    src={mobile}
+                    width={360}
+                    height={331}
+                  />
+                  <Source
+                    media="(min-width: 768px)"
+                    fetchPriority={lcp ? "high" : "auto"}
+                    src={desktop}
+                    width={1366}
+                    height={517}
+                  />
+                  <img
+                    class="object-cover w-full"
+                    loading={lcp ? "eager" : "lazy"}
+                    decoding={lcp ? "sync" : undefined}
+                    src={desktop}
+                    alt={alt}
+                  />
+                </Picture>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <ul
+        data-slider-content
+        class="flex flex-nowrap transition"
+        style={{ width: `calc(${images.length}*100vw)` }}
+      >
+        {[images[0]].map(({ desktop, mobile, href, alt }, index) => {
+          const lcp = index === 0 && preload;
+
+          return (
+            <li>
+              <a href={href}>
+                <Picture class="w-screen block" preload={lcp}>
+                  <Source
+                    media="(max-width: 767px)"
+                    fetchPriority={lcp ? "high" : "auto"}
+                    src={mobile}
+                    width={360}
+                    height={331}
+                  />
+                  <Source
+                    media="(min-width: 768px)"
+                    fetchPriority={lcp ? "high" : "auto"}
+                    src={desktop}
+                    width={1366}
+                    height={517}
+                  />
+                  <img
+                    class="object-cover w-full"
+                    loading={lcp ? "eager" : "lazy"}
+                    decoding={lcp ? "sync" : undefined}
+                    src={desktop}
+                    alt={alt}
+                  />
+                </Picture>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
