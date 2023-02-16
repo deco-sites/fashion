@@ -5,7 +5,7 @@ export interface Highlight {
   src: LiveImage;
   alt: string;
   href: string;
-  label: string;
+  label?: string;
 }
 
 export interface Props {
@@ -15,8 +15,12 @@ export interface Props {
 
 function Highlights({ highlights = [], title }: Props) {
   return (
-    <div class="w-full p-2 flex flex-col gap-4 items-center bg-gray-100">
-      {title && <h2 class="text-lg md:text-2xl">{title}</h2>}
+    <div class="w-full p-2 flex flex-col gap-4 items-center">
+      {title && (
+        <h2 class="text-[13px] text-uppercase font-semibold tracking-[5px]">
+          {title}
+        </h2>
+      )}
       <ul
         class="flex flex-nowrap overflow-x-auto max-w-full gap-8"
         style={{
@@ -37,9 +41,7 @@ function Highlights({ highlights = [], title }: Props) {
               <Image
                 src={src}
                 alt={alt}
-                width={180}
-                height={180}
-                class="rounded-xl sm:rounded-3xl hover:shadow-xl"
+                class=""
               />
               <div>{label}</div>
             </a>

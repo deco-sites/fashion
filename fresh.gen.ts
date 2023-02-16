@@ -18,20 +18,21 @@ import * as $$4 from "./islands/MenuButton.tsx";
 import * as $$5 from "./islands/MenuModal.tsx";
 import * as $$6 from "./islands/SearchControls.tsx";
 import * as $$7 from "./islands/Slider.tsx";
-import * as $$$0 from "./sections/Button.story.tsx";
-import * as $$$1 from "./sections/Carousel.tsx";
-import * as $$$2 from "./sections/Features.tsx";
-import * as $$$3 from "./sections/Footer.tsx";
-import * as $$$4 from "./sections/Head.tsx";
-import * as $$$5 from "./sections/Header.tsx";
-import * as $$$6 from "./sections/Highlights.tsx";
-import * as $$$7 from "./sections/Newsletter.tsx";
-import * as $$$8 from "./sections/ProductDetails.tsx";
-import * as $$$9 from "./sections/ProductGallery.tsx";
-import * as $$$10 from "./sections/ProductShelf.tsx";
-import * as $$$11 from "./sections/SearchControls.tsx";
-import * as $$$12 from "./sections/Spacer.tsx";
-import * as $$$13 from "./sections/vtexconfig.global.tsx";
+import * as $$$0 from "./sections/BannerGrid.tsx";
+import * as $$$1 from "./sections/Button.story.tsx";
+import * as $$$2 from "./sections/Carousel.tsx";
+import * as $$$3 from "./sections/Features.tsx";
+import * as $$$4 from "./sections/Footer.tsx";
+import * as $$$5 from "./sections/Head.tsx";
+import * as $$$6 from "./sections/Header.tsx";
+import * as $$$7 from "./sections/Highlights.tsx";
+import * as $$$8 from "./sections/Newsletter.tsx";
+import * as $$$9 from "./sections/ProductDetails.tsx";
+import * as $$$10 from "./sections/ProductGallery.tsx";
+import * as $$$11 from "./sections/ProductShelf.tsx";
+import * as $$$12 from "./sections/SearchControls.tsx";
+import * as $$$13 from "./sections/Spacer.tsx";
+import * as $$$14 from "./sections/vtexconfig.global.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -63,20 +64,21 @@ const manifest: DecoManifest = {
     "./islands/Slider.tsx": $$7,
   },
   sections: {
-    "./sections/Button.story.tsx": $$$0,
-    "./sections/Carousel.tsx": $$$1,
-    "./sections/Features.tsx": $$$2,
-    "./sections/Footer.tsx": $$$3,
-    "./sections/Head.tsx": $$$4,
-    "./sections/Header.tsx": $$$5,
-    "./sections/Highlights.tsx": $$$6,
-    "./sections/Newsletter.tsx": $$$7,
-    "./sections/ProductDetails.tsx": $$$8,
-    "./sections/ProductGallery.tsx": $$$9,
-    "./sections/ProductShelf.tsx": $$$10,
-    "./sections/SearchControls.tsx": $$$11,
-    "./sections/Spacer.tsx": $$$12,
-    "./sections/vtexconfig.global.tsx": $$$13,
+    "./sections/BannerGrid.tsx": $$$0,
+    "./sections/Button.story.tsx": $$$1,
+    "./sections/Carousel.tsx": $$$2,
+    "./sections/Features.tsx": $$$3,
+    "./sections/Footer.tsx": $$$4,
+    "./sections/Head.tsx": $$$5,
+    "./sections/Header.tsx": $$$6,
+    "./sections/Highlights.tsx": $$$7,
+    "./sections/Newsletter.tsx": $$$8,
+    "./sections/ProductDetails.tsx": $$$9,
+    "./sections/ProductGallery.tsx": $$$10,
+    "./sections/ProductShelf.tsx": $$$11,
+    "./sections/SearchControls.tsx": $$$12,
+    "./sections/Spacer.tsx": $$$13,
+    "./sections/vtexconfig.global.tsx": $$$14,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -91,6 +93,83 @@ const manifest: DecoManifest = {
     "./functions/vtexProductListingPage.ts": $$$$9,
   },
   schemas: {
+    "./sections/BannerGrid.tsx": {
+      "inputSchema": {
+        "title": " Banner Grid",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Title",
+          },
+          "itemsPerLine": {
+            "title": "Items Per Line",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Mobile",
+              },
+              "desktop": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Desktop",
+              },
+            },
+            "required": [],
+            "description": "Default is 2 for mobile and all for desktop",
+          },
+          "banners": {
+            "type": "array",
+            "items": {
+              "title": "Banner",
+              "type": "object",
+              "properties": {
+                "srcMobile": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src Mobile",
+                },
+                "srcDesktop": {
+                  "format": "image-uri",
+                  "type": "string",
+                  "title": "Src Desktop",
+                },
+                "alt": {
+                  "type": "string",
+                  "title": "Alt",
+                  "description": "Image alt text",
+                },
+                "href": {
+                  "type": "string",
+                  "title": "Href",
+                  "description": "When you click you go to",
+                },
+              },
+              "required": [
+                "srcMobile",
+                "alt",
+                "href",
+              ],
+            },
+            "title": "Banners",
+          },
+        },
+        "required": [
+          "itemsPerLine",
+          "banners",
+        ],
+      },
+      "outputSchema": null,
+    },
     "./sections/Button.story.tsx": {
       "inputSchema": {
         "title": " Button.story",
@@ -454,7 +533,10 @@ const manifest: DecoManifest = {
                   "title": "Href",
                 },
                 "label": {
-                  "type": "string",
+                  "type": [
+                    "string",
+                    "null",
+                  ],
                   "title": "Label",
                 },
               },
@@ -462,7 +544,6 @@ const manifest: DecoManifest = {
                 "src",
                 "alt",
                 "href",
-                "label",
               ],
             },
             "title": "Highlights",
