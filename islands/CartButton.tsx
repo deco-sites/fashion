@@ -1,3 +1,1 @@
-import CartButton from "../components/minicart/CartButton.tsx";
-
-export default () => <CartButton />;
+export { default } from "$store/components/minicart/CartButton.tsx";

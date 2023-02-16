@@ -1,6 +1,6 @@
 import { useId } from "preact/hooks";
 
-import Slider from "../islands/Slider.tsx";
+import Slider from "$store/islands/Slider.tsx";
 
 const messages = [
   "Parcelamento em até 10x no cartão",

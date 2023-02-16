@@ -1,3 +1,3 @@
-import MenuButton from "../components/menu/MenuButton.tsx";
+export { default } from "$store/components/header/MenuButton.tsx";
 
-export default () => <MenuButton />;
+

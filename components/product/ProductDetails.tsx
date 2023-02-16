@@ -4,8 +4,8 @@ import { Head } from "$fresh/runtime.ts";
 import Image from "$live/std/ui/components/Image.tsx";
 import SKUSelector from "$store/components/product/SKUSelector.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
-import ScriptLDJson from "$store/components/ScriptLDJson.tsx";
 import AddToCart from "$store/islands/AddToCart.tsx";
+import ScriptLDJson from "$store/components/seo/ScriptLDJson.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
