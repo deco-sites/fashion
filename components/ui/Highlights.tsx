@@ -39,6 +39,7 @@ function Highlights({ highlights = [], title }: Props) {
               class="flex flex-col gap-2 items-center"
             >
               <Image
+                width={180}
                 src={src}
                 alt={alt}
                 class=""
