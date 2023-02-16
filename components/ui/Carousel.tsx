@@ -60,6 +60,7 @@ function Carousel({ images = [], preload = false }: Props) {
                   <img
                     class="object-cover w-full"
                     loading={lcp ? "eager" : "lazy"}
+                    decoding={lcp ? "sync" : undefined}
                     src={desktop}
                     alt={alt}
                   />
