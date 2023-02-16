@@ -39,7 +39,7 @@ function Highlights({ highlights = [], title }: Props) {
                 alt={alt}
                 width={180}
                 height={180}
-                class="rounded-xl sm:rounded-3xl"
+                class="rounded-xl sm:rounded-3xl hover:shadow-xl"
               />
               <div>{label}</div>
             </a>
