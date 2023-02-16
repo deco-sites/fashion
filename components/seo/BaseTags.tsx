@@ -126,4 +126,4 @@ function BaseTags(props: Props) {
   );
 }
 
-export default BaseTags
+export default BaseTags;
