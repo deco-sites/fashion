@@ -3,6 +3,7 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
+import { context } from "$live/live.ts";
 import { DecoManifest } from "$live/types.ts";
 import * as $0 from "./routes/[...catchall].tsx";
 import * as $1 from "./routes/_app.tsx";
@@ -10,14 +11,13 @@ import * as $2 from "./routes/_middleware.ts";
 import * as $3 from "./routes/api/[...catchall].tsx";
 import * as $4 from "./routes/index.tsx";
 import * as $5 from "./routes/inspect-vscode.ts";
-import * as $$0 from "./islands/AddToCart.tsx";
+import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/CartButton.tsx";
 import * as $$2 from "./islands/CartModal.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
-import * as $$4 from "./islands/MenuButton.tsx";
-import * as $$5 from "./islands/MenuModal.tsx";
-import * as $$6 from "./islands/SearchControls.tsx";
-import * as $$7 from "./islands/Slider.tsx";
+import * as $$4 from "./islands/Menu.tsx";
+import * as $$5 from "./islands/SearchControls.tsx";
+import * as $$6 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Button.story.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/Features.tsx";
@@ -53,14 +53,13 @@ const manifest: DecoManifest = {
     "./routes/inspect-vscode.ts": $5,
   },
   islands: {
-    "./islands/AddToCart.tsx": $$0,
+    "./islands/AddToCartButton.tsx": $$0,
     "./islands/CartButton.tsx": $$1,
     "./islands/CartModal.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
-    "./islands/MenuButton.tsx": $$4,
-    "./islands/MenuModal.tsx": $$5,
-    "./islands/SearchControls.tsx": $$6,
-    "./islands/Slider.tsx": $$7,
+    "./islands/Menu.tsx": $$4,
+    "./islands/SearchControls.tsx": $$5,
+    "./islands/Slider.tsx": $$6,
   },
   sections: {
     "./sections/Button.story.tsx": $$$0,
@@ -977,6 +976,6 @@ const manifest: DecoManifest = {
 };
 
 // live — this exposes the manifest so the live server can render components dynamically
-globalThis.manifest = manifest;
+context.manifest = manifest;
 
 export default manifest;

@@ -25,11 +25,11 @@ const isRefObject = (
 
 const styles = {
   "sidebar-right": {
-    dialog: `sm:slide-left sm:ml-auto`,
+    dialog: `sm:animate-slide-left sm:ml-auto`,
     corners: `rounded-tl-2xl rounded-tr-2xl sm:rounded-none`,
   },
   "sidebar-left": {
-    dialog: `sm:slide-right`,
+    dialog: `sm:animate-slide-right`,
     corners: `rounded-tr-2xl rounded-tl-2xl sm:rounded-none`,
   },
   center: {
@@ -59,7 +59,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({
   return (
     <dialog
       ref={ref}
-      class={`bg-transparent p-0 m-0 pt-[15%] sm:pt-0 max-w-full sm:max-w-lg w-full max-h-full h-full slide-bottom backdrop ${dialog}`}
+      class={`bg-transparent p-0 m-0 pt-[15%] sm:pt-0 max-w-full sm:max-w-lg w-full max-h-full h-full animate-slide-bottom backdrop ${dialog}`}
       onClick={onDialogClick}
     >
       <div
