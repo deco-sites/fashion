@@ -32,6 +32,7 @@ import * as $$$10 from "./sections/ProductShelf.tsx";
 import * as $$$11 from "./sections/SearchControls.tsx";
 import * as $$$12 from "./sections/Spacer.tsx";
 import * as $$$13 from "./sections/vtexconfig.global.tsx";
+import * as $$$14 from "$live/sections/Head.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
 import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
 import * as $$$$2 from "./functions/shopifyProductList.ts";
@@ -42,6 +43,12 @@ import * as $$$$6 from "./functions/vtexLegacyProductListingPage.ts";
 import * as $$$$7 from "./functions/vtexProductDetailsPage.ts";
 import * as $$$$8 from "./functions/vtexProductList.ts";
 import * as $$$$9 from "./functions/vtexProductListingPage.ts";
+import * as $$$$10 from "$live/functions/EffectSelectPage.ts";
+import * as $$$$11 from "$live/functions/MatchDate.ts";
+import * as $$$$12 from "$live/functions/MatchEnvironment.ts";
+import * as $$$$13 from "$live/functions/MatchRandom.ts";
+import * as $$$$14 from "$live/functions/MatchSite.ts";
+import * as $$$$15 from "$live/functions/MatchUserAgent.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -76,6 +83,7 @@ const manifest: DecoManifest = {
     "./sections/SearchControls.tsx": $$$11,
     "./sections/Spacer.tsx": $$$12,
     "./sections/vtexconfig.global.tsx": $$$13,
+    "$live/sections/Head.tsx": $$$14,
   },
   functions: {
     "./functions/occProductDetailsPage.ts": $$$$0,
@@ -88,6 +96,12 @@ const manifest: DecoManifest = {
     "./functions/vtexProductDetailsPage.ts": $$$$7,
     "./functions/vtexProductList.ts": $$$$8,
     "./functions/vtexProductListingPage.ts": $$$$9,
+    "$live/functions/EffectSelectPage.ts": $$$$10,
+    "$live/functions/MatchDate.ts": $$$$11,
+    "$live/functions/MatchEnvironment.ts": $$$$12,
+    "$live/functions/MatchRandom.ts": $$$$13,
+    "$live/functions/MatchSite.ts": $$$$14,
+    "$live/functions/MatchUserAgent.ts": $$$$15,
   },
   schemas: {
     "./sections/Button.story.tsx": {
@@ -965,6 +979,248 @@ const manifest: DecoManifest = {
         "properties": {
           "data": {
             "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/sections/Head.tsx": {
+      "inputSchema": {
+        "title": " Head",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Title",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Description",
+          },
+          "url": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Url",
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Image Url",
+          },
+          "faviconUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Favicon Url",
+          },
+          "styleUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Style Urls",
+          },
+          "inlineStyles": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Inline Styles",
+          },
+          "scriptUrls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Script Urls",
+          },
+          "inlineScripts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Inline Scripts",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "$live/functions/EffectSelectPage.ts": {
+      "inputSchema": {
+        "title": " Effect Select Page",
+        "type": "object",
+        "properties": {
+          "pageIds": {
+            "type": "array",
+            "items": {
+              "type": "number",
+            },
+            "title": "Page Ids",
+          },
+        },
+        "required": [
+          "pageIds",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/functions/MatchDate.ts": {
+      "inputSchema": {
+        "title": " Match Date",
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Start",
+            "format": "date-time",
+          },
+          "end": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "End",
+            "format": "date-time",
+          },
+          "session": {
+            "type": "boolean",
+            "title": "Session",
+          },
+        },
+        "required": [
+          "session",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/functions/MatchEnvironment.ts": {
+      "inputSchema": {
+        "title": " Match Environment",
+        "type": "object",
+        "properties": {
+          "environment": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "production",
+              },
+              {
+                "type": "string",
+                "const": "development",
+              },
+            ],
+            "title": "Environment",
+          },
+        },
+        "required": [
+          "environment",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "c995d72dc372b1b50bf9f70943e37fc94e1ccac9",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/functions/MatchRandom.ts": {
+      "inputSchema": {
+        "title": " Match Random",
+        "type": "object",
+        "properties": {
+          "traffic": {
+            "type": "number",
+            "title": "Traffic",
+          },
+          "session": {
+            "type": "boolean",
+            "title": "Session",
+          },
+        },
+        "required": [
+          "traffic",
+          "session",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/functions/MatchSite.ts": {
+      "inputSchema": {
+        "title": " Match Site",
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "number",
+            "title": "Site Id",
+          },
+        },
+        "required": [
+          "siteId",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "c995d72dc372b1b50bf9f70943e37fc94e1ccac9",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/functions/MatchUserAgent.ts": {
+      "inputSchema": {
+        "title": " Match User Agent",
+        "type": "object",
+        "properties": {
+          "includes": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Includes",
+          },
+          "match": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Match",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "c995d72dc372b1b50bf9f70943e37fc94e1ccac9",
           },
         },
         "additionalProperties": true,
