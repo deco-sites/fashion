@@ -3,7 +3,7 @@ import Searchbar, {
 } from "$store/components/search/Searchbar.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import CartButton from "$store/islands/CartButton.tsx";
-import MenuButton from "$store/islands/MenuButton.tsx";
+import Menu from "$store/islands/Menu.tsx";
 import type { ComponentChildren } from "preact";
 
 import type { NavItem as Item } from "./NavItem.ts";
@@ -33,7 +33,7 @@ function Navbar({ searchbar, items }: {
       {/* Mobile Version */}
       <div class="md:hidden">
         <div class="flex justify-between items-center p-2 pb-0">
-          <MenuButton />
+          <Menu items={items} />
 
           <a href="/" class="block max-w-[10rem]" aria-label="Store logo">
             <Icon id="Logo" width="566" height="64" class="w-full" />

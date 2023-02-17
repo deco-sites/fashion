@@ -15,8 +15,8 @@ await start(manifest, {
     partytownPlugin(),
     prefetchPlugin(),
     twindPlugin({
-      selfURL: new URL("./twind.config.ts", import.meta.url).href,
       ...twindConfig,
+      selfURL: new URL("./twind.config.ts", import.meta.url).href,
     }),
   ],
 });

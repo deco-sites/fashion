@@ -1,5 +1,4 @@
 import CartModal from "$store/islands/CartModal.tsx";
-import MenuModal from "$store/islands/MenuModal.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 
 import Alert from "./Alert.tsx";
@@ -46,7 +45,6 @@ function Header({ alerts, searchbar, navItems = item }: Props) {
       <Alert alerts={alerts} />
       <Navbar searchbar={searchbar} items={navItems} />
       <CartModal />
-      <MenuModal items={navItems} />
     </header>
   );
 }

@@ -4,7 +4,7 @@ import { Head } from "$fresh/runtime.ts";
 import Image from "$live/std/ui/components/Image.tsx";
 import SKUSelector from "$store/components/product/SKUSelector.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
-import AddToCart from "$store/islands/AddToCart.tsx";
+import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import ScriptLDJson from "$store/components/seo/ScriptLDJson.tsx";
 
 export interface Props {
@@ -133,7 +133,7 @@ function ProductDetails({ page }: Props) {
           </div>
           {seller && (
             <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-              <AddToCart skuId={productID} sellerId={seller} large />
+              <AddToCartButton skuId={productID} sellerId={seller} large />
             </div>
           )}
           {description && (
