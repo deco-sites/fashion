@@ -3,14 +3,11 @@ import Button from "../ui/Button.tsx";
 interface Props {
   quantity: number;
   disabled?: boolean;
+  loading?: boolean;
   onChange?: (quantity: number) => void;
 }
 
 const QUANTITY_MAX_VALUE = 100;
-
-const isHTMLInputElement = (e: EventTarget | null): e is HTMLInputElement =>
-  // deno-lint-ignore no-explicit-any
-  typeof (e as any)?.value !== "undefined";
 
 // Remove default browser behavior: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
 // TODO: Figure out how to add it via twind config.
@@ -26,42 +23,42 @@ input[type="number"] {
 }
 `;
 
-function QuantitySelector({ onChange, quantity, disabled }: Props) {
+function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
   const decrement = () => onChange?.(Math.max(0, quantity - 1));
 
   const increment = () =>
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="flex border border-gray-300">
-      <Button variant="tertiary" onClick={decrement} disabled={disabled}>
+    <div class="flex border-1 border-default">
+      <Button
+        class="h-9 w-9"
+        variant="icon"
+        onClick={decrement}
+        disabled={disabled}
+        loading={loading}
+      >
         -
       </Button>
       <style dangerouslySetInnerHTML={{ __html: innerStyle }} />
       <input
-        class="text-center outline-none max-w-[2rem] disabled:bg-gray-400 disabled:text-gray-800 disabled:cursor-not-allowed"
+        class="text-center text-default text-body-strong font-body-strong bg-transparent outline-none disabled:opacity-50"
         type="number"
         inputMode="numeric"
         pattern="[0-9]*"
         max={QUANTITY_MAX_VALUE}
         min={1}
         value={quantity}
-        onBlur={(e) => {
-          if (!isHTMLInputElement(e.target)) {
-            return;
-          }
-
-          const value = e.target.valueAsNumber;
-
-          if (typeof value !== "number" || !Number.isInteger(value)) {
-            return;
-          }
-
-          onChange?.(value);
-        }}
         disabled={disabled}
+        onBlur={(e) => onChange?.(e.currentTarget.valueAsNumber)}
       />
-      <Button variant="tertiary" onClick={increment} disabled={disabled}>
+      <Button
+        class="h-9 w-9"
+        variant="icon"
+        onClick={increment}
+        disabled={disabled}
+        loading={loading}
+      >
         +
       </Button>
     </div>

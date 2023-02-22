@@ -1,5 +1,8 @@
-import type { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import Image from "$live/std/ui/components/Image.tsx";
+import Container from "$store/components/ui/Container.tsx";
+import Text from "$store/components/ui/Text.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
+import type { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 
 export interface Highlight {
   src: LiveImage;
@@ -13,30 +16,44 @@ export interface Props {
   title: string;
 }
 
+function HighlightCard(
+  { highlight: { src, alt, href, label }, index }: {
+    highlight: Highlight;
+    index: number;
+  },
+) {
+}
+
 function Highlights({ highlights = [], title }: Props) {
   return (
-    <div class="w-full p-2 flex flex-col gap-4 items-center bg-gray-100">
-      {title && <h2 class="text-lg md:text-2xl">{title}</h2>}
-      <ul class="flex flex-nowrap overflow-x-auto max-w-full gap-8 scroll-x-mandatory scroll-smooth">
-        {highlights.map(({ src, alt, href, label }) => (
-          <li class="min-w-[180px] p-2 scroll-snap-center">
+    <Container class="flex flex-col items-center gap-10 py-10">
+      {title && (
+        <h2>
+          <Text class="uppercase" variant="subheading-strong">{title}</Text>
+        </h2>
+      )}
+      <Slider>
+        {highlights.map(({ href, src, alt, label }, index) => {
+          const ml = index == 0 ? "ml-4" : "";
+          const mr = index === highlights.length - 1 ? "mr-4" : "";
+
+          return (
             <a
               href={href}
-              class="flex flex-col gap-2 items-center"
+              class={`flex flex-col gap-4 items-center min-w-[200px] max-w-[200px] ${ml} ${mr}`}
             >
               <Image
                 src={src}
                 alt={alt}
-                width={180}
-                height={180}
-                class="rounded-xl sm:rounded-3xl hover:shadow-xl"
+                width={200}
+                height={309}
               />
-              <div>{label}</div>
+              <Text variant="body-strong">{label}</Text>
             </a>
-          </li>
-        ))}
-      </ul>
-    </div>
+          );
+        })}
+      </Slider>
+    </Container>
   );
 }
 

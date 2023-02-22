@@ -1,9 +1,6 @@
-import Searchbar, {
-  Props as SearchbarProps,
-} from "$store/components/search/Searchbar.tsx";
+import HeaderButton from "$store/islands/HeaderButton.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import CartButton from "$store/islands/CartButton.tsx";
-import Menu from "$store/islands/Menu.tsx";
+import Text from "$store/components/ui/Text.tsx";
 import type { ComponentChildren } from "preact";
 
 import type { NavItem as Item } from "./NavItem.ts";
@@ -13,62 +10,50 @@ function NavItem({
   label,
 }: { href: string; label: ComponentChildren }) {
   return (
-    <a
-      href={href ?? `/s?ft=${label}`}
-      class="flex items-center text-[15px] px-8 lg:px-6"
-    >
-      <span class="hover:border-black border-solid border-b border-white">
+    <a href={href ?? `/s?ft=${label}`}>
+      <Text
+        class="hover:border-black border-solid border-b border-white"
+        variant="body-regular"
+      >
         {label}
-      </span>
+      </Text>
     </a>
   );
 }
 
-function Navbar({ searchbar, items }: {
-  searchbar?: SearchbarProps;
+function Navbar({ items }: {
   items: Item[];
 }) {
   return (
     <>
       {/* Mobile Version */}
-      <div class="md:hidden">
-        <div class="flex justify-between items-center p-2 pb-0">
-          <Menu items={items} />
+      <div class="md:hidden flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-4 gap-4">
+        <HeaderButton variant="menu" />
 
-          <a href="/" class="block max-w-[10rem]" aria-label="Store logo">
-            <Icon id="Logo" width="566" height="64" class="w-full" />
-          </a>
-          <div class="flex justify-end">
-            <CartButton />
-          </div>
-        </div>
-        <div class="px-2 pb-2">
-          <Searchbar {...searchbar} />
+        <a href="/" class="flex-grow" aria-label="Store logo">
+          <Icon id="Logo" width={87.5} height={28} />
+        </a>
+
+        <div class="flex gap-6">
+          <HeaderButton variant="search" />
+          <HeaderButton variant="cart" />
         </div>
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex bg-white flex-row h-[80px] items-center md:border-b border-[#d3d5db] mx-8">
-        <a
-          href="/"
-          class="block min-w-[12rem] max-w-[14rem] p-3"
-          aria-label="Store logo"
-        >
-          <Icon id="Logo" width="566" height="64" class="w-full" />
+      <div class="hidden md:flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-4">
+        <a href="/" aria-label="Store logo">
+          <Icon id="Logo" width={87.5} height={28} />
         </a>
-        <div class="flex justify-center md:justify-between pl-12 h-14">
+        <div class="flex-grow flex gap-6 justify-center">
           {items.map((item) => <NavItem {...item} />)}
         </div>
-        <div class="flex-1 flex items-center justify-end gap-6">
-          <Searchbar {...searchbar} />
-          <a
-            href="#"
-            class="h-12 w-12 flex justify-center items-center"
-            aria-label="Log in"
-          >
-            <Icon id="User" className="w-6 h-6" />
+        <div class="flex items-center justify-end gap-6">
+          <HeaderButton variant="search" />
+          <a href="/login" aria-label="Log in">
+            <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </a>
-          <CartButton />
+          <HeaderButton variant="cart" />
         </div>
       </div>
     </>

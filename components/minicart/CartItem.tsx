@@ -1,28 +1,25 @@
 import Image from "$live/std/ui/components/Image.tsx";
-
-import QuantitySelector from "../ui/QuantitySelector.tsx";
-import { useCart } from "../../sdk/cart/useCart.ts";
-import Button from "../ui/Button.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Text from "$store/components/ui/Text.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
+import { useCart } from "$store/sdk/cart/useCart.ts";
+import { formatPrice } from "$store/sdk/format.ts";
 
 interface Props {
   index: number;
 }
 
-export const formatPrice = (cents: number) =>
-  Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  }).format(cents / 100);
-
 function CartItem({ index }: Props) {
   const { loading, cart, updateItems } = useCart();
   const item = cart.value!.items[index];
+  const locale = cart.value?.clientPreferencesData.locale;
+  const currencyCode = cart.value?.storePreferencesData.currencyCode;
   const {
     imageUrl,
     skuName,
     sellingPrice,
     listPrice,
-    detailUrl,
     name,
     quantity,
   } = item;
@@ -30,61 +27,46 @@ function CartItem({ index }: Props) {
   const isGift = sellingPrice < 0.01;
 
   return (
-    <li class="flex gap-2 py-6">
-      <div class="overflow-hidden rounded-md border border-gray-200">
-        <Image
-          src={imageUrl}
-          alt={skuName}
-          width={100}
-          height={100}
-          class="object-cover object-center"
-        />
-      </div>
-      <div class="flex flex-grow flex-col justify-between">
-        <div>
-          <div class="flex justify-between text-base font-medium text-gray-900 overflow-hidden">
-            <a href={detailUrl}>
-              <h3>{name} {skuName === name ? "" : skuName}</h3>
-            </a>
-          </div>
-        </div>
+    <div class="flex flex-row justify-between items-start gap-4">
+      <Image
+        src={imageUrl}
+        alt={skuName}
+        width={108}
+        height={150}
+        class="object-cover object-center"
+      />
+      <div class="flex-grow">
+        <Text variant="body-regular">
+          {name}
+        </Text>
         <div class="flex items-center gap-2">
-          <span class="text-sm line-through font-extralight">
-            {formatPrice(listPrice)}
-          </span>
-          {isGift
-            ? <span class="text-lg font-semibold text-green-600">Grátis</span>
-            : (
-              <span class="text-lg font-semibold text-primary-red">
-                {formatPrice(sellingPrice)}
-              </span>
-            )}
+          <Text tone="subdued" variant="subcaption-regular">
+            {formatPrice(listPrice / 100, currencyCode!, locale)}
+          </Text>
+          <Text tone={isGift ? "default" : "critical"} variant="caption-strong">
+            {isGift
+              ? "Grátis"
+              : formatPrice(sellingPrice / 100, currencyCode!, locale)}
+          </Text>
         </div>
-        <div class="flex items-end justify-between text-sm">
-          <p class="text-gray-500">
-            <QuantitySelector
-              disabled={loading.value || isGift}
-              quantity={quantity}
-              onChange={(quantity) =>
-                updateItems({ orderItems: [{ index, quantity }] })}
-            />
-          </p>
-
-          {!isGift && (
-            <div class="flex">
-              <Button
-                onClick={() =>
-                  updateItems({ orderItems: [{ index, quantity: 0 }] })}
-                disabled={loading.value}
-                variant="tertiary"
-              >
-                Remove
-              </Button>
-            </div>
-          )}
+        <div class="mt-6 max-w-min">
+          <QuantitySelector
+            disabled={loading.value || isGift}
+            quantity={quantity}
+            onChange={(quantity) =>
+              updateItems({ orderItems: [{ index, quantity }] })}
+          />
         </div>
       </div>
-    </li>
+      <Button
+        onClick={() => updateItems({ orderItems: [{ index, quantity: 0 }] })}
+        disabled={loading.value || isGift}
+        loading={loading.value}
+        variant="icon"
+      >
+        <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+      </Button>
+    </div>
   );
 }
 

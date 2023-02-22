@@ -13,6 +13,12 @@ export interface VTEXConfig {
    * @description Locale used for VTEX Intelligent Search client.
    */
   locale: string;
+
+  /**
+   * @description Default price currency.
+   * @default USD
+   */
+  priceCurrency: string;
 }
 
 export default function vtexconfig(_: VTEXConfig) {

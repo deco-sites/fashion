@@ -1,8 +1,7 @@
+import { asset } from "$fresh/runtime.ts";
 import type { JSX } from "preact";
 
-type IconWeight = "thin" | "light" | "regular" | "bold";
-
-type AvailableIcons =
+export type AvailableIcons =
   | "Circle"
   | "ChevronLeft"
   | "ChevronRight"
@@ -12,10 +11,7 @@ type AvailableIcons =
   | "Bars3"
   | "Heart"
   | "MagnifyingGlass"
-  | "Search"
   | "XMark"
-  | "Amex"
-  | "Diners"
   | "Elo"
   | "Mastercard"
   | "Visa"
@@ -23,14 +19,15 @@ type AvailableIcons =
   | "Logo"
   | "Facebook"
   | "Instagram"
-  | "Tiktok";
-
-const mapWeightToValue: Record<IconWeight, number> = {
-  bold: 24,
-  regular: 16,
-  light: 12,
-  thin: 8,
-};
+  | "Tiktok"
+  | "Truck"
+  | "Discount"
+  | "Return"
+  | "CreditCard"
+  | "Deco"
+  | "Discord"
+  | "FilterList"
+  | "ChevronUp";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
@@ -39,18 +36,12 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
    * Example: <Icon id="Bell" />
    */
   id: AvailableIcons;
-  /**
-   * SVG weight.
-   *
-   * @default 'regular'
-   */
-  weight?: IconWeight;
 }
 
-function Icon({ id, weight = "regular", ...otherProps }: Props) {
+function Icon({ id, strokeWidth = 16, ...otherProps }: Props) {
   return (
-    <svg {...otherProps} strokeWidth={mapWeightToValue[weight]}>
-      <use href={`/sprites.svg#${id}`} />
+    <svg {...otherProps} strokeWidth={strokeWidth}>
+      <use href={asset(`/sprites.svg#${id}`)} />
     </svg>
   );
 }

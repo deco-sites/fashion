@@ -1,6 +1,6 @@
 import { useId } from "preact/hooks";
-
-import Slider from "$store/islands/Slider.tsx";
+import Text from "$store/components/ui/Text.tsx";
+import Slider from "$store/islands/Slick.tsx";
 
 const messages = [
   "Parcelamento em até 10x no cartão",
@@ -20,10 +20,10 @@ function Alert({ alerts = messages }: Props) {
     <>
       <section
         id={id}
-        class="hidden md:flex flex-row w-full justify-between h-10 bg-[#353535]"
+        class="flex flex-row w-full justify-between h-10 bg-decorative-two"
       >
         <div class="flex gap-2 items-center text-sm text-white m-auto">
-          <div class="w-[500px] overflow-x-hidden">
+          <div class="w-[340px] sm:w-[500px] overflow-x-hidden">
             <div
               data-slider-content
               class={`w-[${
@@ -31,9 +31,13 @@ function Alert({ alerts = messages }: Props) {
               }%] transition flex justify-center`}
             >
               {alerts.map((alert) => (
-                <span class="w-[500px] text-center uppercase text-xs">
+                <Text
+                  class="w-[340px] sm:w-[500px] text-center"
+                  variant="caption-regular"
+                  tone="interactive-default"
+                >
                   {alert}
-                </span>
+                </Text>
               ))}
             </div>
           </div>

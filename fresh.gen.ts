@@ -12,25 +12,24 @@ import * as $3 from "./routes/api/[...catchall].tsx";
 import * as $4 from "./routes/index.tsx";
 import * as $5 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCartButton.tsx";
-import * as $$1 from "./islands/CartButton.tsx";
-import * as $$2 from "./islands/CartModal.tsx";
+import * as $$1 from "./islands/HeaderButton.tsx";
+import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
-import * as $$4 from "./islands/Menu.tsx";
-import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/Slider.tsx";
-import * as $$$0 from "./sections/Button.story.tsx";
-import * as $$$1 from "./sections/Carousel.tsx";
+import * as $$4 from "./islands/SearchControls.tsx";
+import * as $$5 from "./islands/Slick.tsx";
+import * as $$$0 from "./sections/Carousel.tsx";
+import * as $$$1 from "./sections/DesignSystem.story.tsx";
 import * as $$$2 from "./sections/Features.tsx";
 import * as $$$3 from "./sections/Footer.tsx";
-import * as $$$4 from "./sections/Head.tsx";
-import * as $$$5 from "./sections/Header.tsx";
-import * as $$$6 from "./sections/Highlights.tsx";
-import * as $$$7 from "./sections/Newsletter.tsx";
-import * as $$$8 from "./sections/ProductDetails.tsx";
-import * as $$$9 from "./sections/ProductGallery.tsx";
-import * as $$$10 from "./sections/ProductShelf.tsx";
-import * as $$$11 from "./sections/SearchControls.tsx";
-import * as $$$12 from "./sections/Spacer.tsx";
+import * as $$$4 from "./sections/Header.tsx";
+import * as $$$5 from "./sections/Highlights.tsx";
+import * as $$$6 from "./sections/ProductDetails.tsx";
+import * as $$$7 from "./sections/ProductGallery.tsx";
+import * as $$$8 from "./sections/ProductShelf.tsx";
+import * as $$$9 from "./sections/SearchControls.tsx";
+import * as $$$10 from "./sections/Seo.tsx";
+import * as $$$11 from "./sections/SeoPDP.tsx";
+import * as $$$12 from "./sections/SeoPLP.tsx";
 import * as $$$13 from "./sections/vtexconfig.global.tsx";
 import * as $$$14 from "$live/sections/Head.tsx";
 import * as $$$$0 from "./functions/occProductDetailsPage.ts";
@@ -61,27 +60,26 @@ const manifest: DecoManifest = {
   },
   islands: {
     "./islands/AddToCartButton.tsx": $$0,
-    "./islands/CartButton.tsx": $$1,
-    "./islands/CartModal.tsx": $$2,
+    "./islands/HeaderButton.tsx": $$1,
+    "./islands/HeaderModals.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
-    "./islands/Menu.tsx": $$4,
-    "./islands/SearchControls.tsx": $$5,
-    "./islands/Slider.tsx": $$6,
+    "./islands/SearchControls.tsx": $$4,
+    "./islands/Slick.tsx": $$5,
   },
   sections: {
-    "./sections/Button.story.tsx": $$$0,
-    "./sections/Carousel.tsx": $$$1,
+    "./sections/Carousel.tsx": $$$0,
+    "./sections/DesignSystem.story.tsx": $$$1,
     "./sections/Features.tsx": $$$2,
     "./sections/Footer.tsx": $$$3,
-    "./sections/Head.tsx": $$$4,
-    "./sections/Header.tsx": $$$5,
-    "./sections/Highlights.tsx": $$$6,
-    "./sections/Newsletter.tsx": $$$7,
-    "./sections/ProductDetails.tsx": $$$8,
-    "./sections/ProductGallery.tsx": $$$9,
-    "./sections/ProductShelf.tsx": $$$10,
-    "./sections/SearchControls.tsx": $$$11,
-    "./sections/Spacer.tsx": $$$12,
+    "./sections/Header.tsx": $$$4,
+    "./sections/Highlights.tsx": $$$5,
+    "./sections/ProductDetails.tsx": $$$6,
+    "./sections/ProductGallery.tsx": $$$7,
+    "./sections/ProductShelf.tsx": $$$8,
+    "./sections/SearchControls.tsx": $$$9,
+    "./sections/Seo.tsx": $$$10,
+    "./sections/SeoPDP.tsx": $$$11,
+    "./sections/SeoPLP.tsx": $$$12,
     "./sections/vtexconfig.global.tsx": $$$13,
     "$live/sections/Head.tsx": $$$14,
   },
@@ -104,73 +102,6 @@ const manifest: DecoManifest = {
     "$live/functions/MatchUserAgent.ts": $$$$15,
   },
   schemas: {
-    "./sections/Button.story.tsx": {
-      "inputSchema": {
-        "title": " Button.story",
-        "type": "object",
-        "properties": {
-          "variant": {
-            "type": "string",
-            "anyOf": [
-              {
-                "type": "string",
-                "const": "primary",
-              },
-              {
-                "type": "string",
-                "const": "secondary",
-              },
-              {
-                "type": "string",
-                "const": "tertiary",
-              },
-              {
-                "type": "string",
-                "const": "danger",
-              },
-            ],
-            "title": "Variant",
-          },
-          "size": {
-            "type": "string",
-            "anyOf": [
-              {
-                "type": "string",
-                "const": "small",
-              },
-              {
-                "type": "string",
-                "const": "large",
-              },
-            ],
-            "title": "Size",
-          },
-          "fit": {
-            "type": "string",
-            "anyOf": [
-              {
-                "type": "string",
-                "const": "container",
-              },
-              {
-                "type": "string",
-                "const": "content",
-              },
-            ],
-            "title": "Fit",
-          },
-          "loading": {
-            "type": [
-              "boolean",
-              "null",
-            ],
-            "title": "Loading",
-          },
-        },
-        "required": [],
-      },
-      "outputSchema": null,
-    },
     "./sections/Carousel.tsx": {
       "inputSchema": {
         "title": " Carousel",
@@ -229,6 +160,10 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "./sections/DesignSystem.story.tsx": {
+      "inputSchema": null,
+      "outputSchema": null,
+    },
     "./sections/Features.tsx": {
       "inputSchema": {
         "title": " Features",
@@ -240,10 +175,115 @@ const manifest: DecoManifest = {
               "title": "Feature",
               "type": "object",
               "properties": {
-                "src": {
-                  "format": "image-uri",
+                "icon": {
                   "type": "string",
-                  "title": "Src",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Circle",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronLeft",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronRight",
+                    },
+                    {
+                      "type": "string",
+                      "const": "QuestionMarkCircle",
+                    },
+                    {
+                      "type": "string",
+                      "const": "User",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ShoppingCart",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Bars3",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Heart",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MagnifyingGlass",
+                    },
+                    {
+                      "type": "string",
+                      "const": "XMark",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Elo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Mastercard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Visa",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Pix",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Logo",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Facebook",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Instagram",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Tiktok",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Truck",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Discount",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Return",
+                    },
+                    {
+                      "type": "string",
+                      "const": "CreditCard",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Deco",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Discord",
+                    },
+                    {
+                      "type": "string",
+                      "const": "FilterList",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronUp",
+                    },
+                  ],
+                  "title": "Icon",
                   "description": "Image src",
                 },
                 "title": {
@@ -258,7 +298,7 @@ const manifest: DecoManifest = {
                 },
               },
               "required": [
-                "src",
+                "icon",
                 "title",
                 "description",
               ],
@@ -273,64 +313,177 @@ const manifest: DecoManifest = {
       "outputSchema": null,
     },
     "./sections/Footer.tsx": {
-      "inputSchema": null,
-      "outputSchema": null,
-    },
-    "./sections/Head.tsx": {
       "inputSchema": {
-        "title": " Head",
+        "title": " Footer",
         "type": "object",
         "properties": {
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "description": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Description",
-          },
-          "url": {
-            "type": "string",
-            "title": "Url",
-          },
-          "imageUrl": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Image Url",
-          },
-          "faviconUrl": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Favicon Url",
-          },
-          "styleUrls": {
+          "sections": {
             "type": "array",
             "items": {
-              "type": "string",
+              "title": "Section",
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "title": "Label",
+                },
+                "children": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "anyOf": [
+                      {
+                        "title": "StringItem",
+                        "type": "object",
+                        "properties": {
+                          "label": {
+                            "type": "string",
+                            "title": "Label",
+                          },
+                          "href": {
+                            "type": "string",
+                            "title": "Href",
+                          },
+                        },
+                        "required": [
+                          "label",
+                          "href",
+                        ],
+                      },
+                      {
+                        "title": "IconItem",
+                        "type": "object",
+                        "properties": {
+                          "icon": {
+                            "type": "string",
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "const": "Circle",
+                              },
+                              {
+                                "type": "string",
+                                "const": "ChevronLeft",
+                              },
+                              {
+                                "type": "string",
+                                "const": "ChevronRight",
+                              },
+                              {
+                                "type": "string",
+                                "const": "QuestionMarkCircle",
+                              },
+                              {
+                                "type": "string",
+                                "const": "User",
+                              },
+                              {
+                                "type": "string",
+                                "const": "ShoppingCart",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Bars3",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Heart",
+                              },
+                              {
+                                "type": "string",
+                                "const": "MagnifyingGlass",
+                              },
+                              {
+                                "type": "string",
+                                "const": "XMark",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Elo",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Mastercard",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Visa",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Pix",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Logo",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Facebook",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Instagram",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Tiktok",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Truck",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Discount",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Return",
+                              },
+                              {
+                                "type": "string",
+                                "const": "CreditCard",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Deco",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Discord",
+                              },
+                              {
+                                "type": "string",
+                                "const": "FilterList",
+                              },
+                              {
+                                "type": "string",
+                                "const": "ChevronUp",
+                              },
+                            ],
+                            "title": "Icon",
+                          },
+                        },
+                        "required": [
+                          "icon",
+                        ],
+                      },
+                    ],
+                    "title": "Item",
+                  },
+                  "title": "Children",
+                },
+              },
+              "required": [
+                "label",
+                "children",
+              ],
             },
-            "title": "Style Urls",
-          },
-          "themeColor": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Theme Color",
+            "title": "Sections",
           },
         },
-        "required": [
-          "url",
-        ],
+        "required": [],
       },
       "outputSchema": null,
     },
@@ -435,6 +588,13 @@ const manifest: DecoManifest = {
             "description":
               "Navigation items used both on mobile and desktop menus",
           },
+          "products": {
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+            "format": "live-function",
+            "type": "string",
+            "title": "Product suggestions",
+            "description": "Product suggestions displayed on search",
+          },
         },
         "required": [
           "alerts",
@@ -491,17 +651,13 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/Newsletter.tsx": {
-      "inputSchema": null,
-      "outputSchema": null,
-    },
     "./sections/ProductDetails.tsx": {
       "inputSchema": {
         "title": " Product Details",
         "type": "object",
         "properties": {
           "page": {
-            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -519,7 +675,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -541,7 +697,7 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "products": {
-            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
             "format": "live-function",
             "type": "string",
             "title": "Products",
@@ -560,7 +716,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -572,31 +728,143 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/Spacer.tsx": {
+    "./sections/Seo.tsx": {
       "inputSchema": {
-        "title": " Spacer",
+        "title": " Seo",
         "type": "object",
         "properties": {
-          "height": {
-            "title": "Height",
-            "type": "object",
-            "properties": {
-              "mobile": {
-                "type": "number",
-                "title": "Mobile",
-              },
-              "desktop": {
-                "type": "number",
-                "title": "Desktop",
-              },
-            },
-            "required": [
-              "mobile",
-              "desktop",
+          "title": {
+            "type": [
+              "string",
+              "null",
             ],
+            "title": "Title",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Description",
+          },
+          "url": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Url",
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Image Url",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
           },
         },
         "required": [],
+      },
+      "outputSchema": null,
+    },
+    "./sections/SeoPDP.tsx": {
+      "inputSchema": {
+        "title": " Seo P D P",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+          "titleTemplate": {
+            "type": "string",
+            "title": "Title template",
+            "description":
+              "add a %s whenever you want it to be replaced with the product name",
+            "default": "%s | Fashion Store",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Meta tag description",
+            "description":
+              "If not set, the product description will be used instead",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
+          },
+        },
+        "required": [
+          "page",
+          "titleTemplate",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/SeoPLP.tsx": {
+      "inputSchema": {
+        "title": " Seo P L P",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+          "title": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Title",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Description",
+          },
+          "url": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Url",
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Image Url",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
+          },
+        },
+        "required": [
+          "page",
+        ],
       },
       "outputSchema": null,
     },
@@ -622,11 +890,18 @@ const manifest: DecoManifest = {
             "title": "Locale",
             "description": "Locale used for VTEX Intelligent Search client.",
           },
+          "priceCurrency": {
+            "type": "string",
+            "title": "Price Currency",
+            "description": "Default price currency.",
+            "default": "USD",
+          },
         },
         "required": [
           "account",
           "salesChannel",
           "locale",
+          "priceCurrency",
         ],
       },
       "outputSchema": null,
@@ -640,7 +915,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
           },
         },
         "additionalProperties": true,
@@ -655,7 +930,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
           },
         },
         "additionalProperties": true,
@@ -686,7 +961,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
           },
         },
         "additionalProperties": true,
@@ -719,7 +994,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
           },
         },
         "additionalProperties": true,
@@ -734,7 +1009,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
           },
         },
         "additionalProperties": true,
@@ -804,7 +1079,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
           },
         },
         "additionalProperties": true,
@@ -860,7 +1135,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
           },
         },
         "additionalProperties": true,
@@ -875,7 +1150,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "77c3750ca550c4476e576a53c2aa0bf943d6dd33",
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
           },
         },
         "additionalProperties": true,
@@ -945,7 +1220,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
           },
         },
         "additionalProperties": true,
@@ -978,7 +1253,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "32f8a6c92e01d08eaba8ff4e3e4f0985c1b774f9",
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
           },
         },
         "additionalProperties": true,

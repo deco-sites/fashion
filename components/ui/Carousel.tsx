@@ -2,7 +2,7 @@ import { useId } from "preact/hooks";
 import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import Slider from "$store/islands/Slider.tsx";
+import Slider from "$store/islands/Slick.tsx";
 
 export interface Image {
   /** @description desktop otimized image */
@@ -48,14 +48,14 @@ function Carousel({ images = [], preload = false }: Props) {
                     fetchPriority={lcp ? "high" : "auto"}
                     src={mobile}
                     width={360}
-                    height={331}
+                    height={600}
                   />
                   <Source
                     media="(min-width: 768px)"
                     fetchPriority={lcp ? "high" : "auto"}
                     src={desktop}
                     width={1366}
-                    height={517}
+                    height={600}
                   />
                   <img
                     class="object-cover w-full"
@@ -78,14 +78,14 @@ function Carousel({ images = [], preload = false }: Props) {
             class="absolute top-1/2 left-0 ml-2 text-white outline-none p-2"
             data-slider-prev
           >
-            <Icon class="w-6 h-6" id="ChevronLeft" />
+            <Icon width={24} height={24} id="ChevronLeft" strokeWidth={3} />
           </button>
           <button
             aria-label="next banner image"
             class="absolute top-1/2 right-0 mr-2 text-white outline-none p-2"
             data-slider-next
           >
-            <Icon class="w-6 h-6" id="ChevronRight" />
+            <Icon width={24} height={24} id="ChevronRight" strokeWidth={3} />
           </button>
 
           {/* Dots buttons, usually bellow main image */}
@@ -96,7 +96,7 @@ function Carousel({ images = [], preload = false }: Props) {
                 class="p-2 rounded-full text-white disabled:text-gray-600 outline-none"
                 data-dot
               >
-                <Icon class="w-6 h-6" id="Circle" />
+                <Icon id="Circle" width={24} height={24} strokeWidth={2} />
               </button>
             ))}
           </div>
