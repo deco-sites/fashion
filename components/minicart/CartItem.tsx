@@ -2,6 +2,7 @@ import Image from "$live/std/ui/components/Image.tsx";
 
 import QuantitySelector from "../ui/QuantitySelector.tsx";
 import { useCart } from "../../sdk/cart/useCart.ts";
+import resizeImage from "../../sdk/cart/resizeImage.ts";
 import Button from "../ui/Button.tsx";
 
 interface Props {
@@ -33,7 +34,7 @@ function CartItem({ index }: Props) {
     <li class="flex gap-2 py-6">
       <div class="overflow-hidden rounded-md border border-gray-200">
         <Image
-          src={imageUrl}
+          src={resizeImage(imageUrl)}
           alt={skuName}
           width={100}
           height={100}
