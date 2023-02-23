@@ -32,16 +32,17 @@ import * as $$$10 from "./sections/ProductShelf.tsx";
 import * as $$$11 from "./sections/SearchControls.tsx";
 import * as $$$12 from "./sections/Spacer.tsx";
 import * as $$$13 from "./sections/vtexconfig.global.tsx";
-import * as $$$$0 from "./functions/occProductDetailsPage.ts";
-import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
-import * as $$$$2 from "./functions/shopifyProductList.ts";
-import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
-import * as $$$$4 from "./functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$5 from "./functions/vtexLegacyProductList.ts";
-import * as $$$$6 from "./functions/vtexLegacyProductListingPage.ts";
-import * as $$$$7 from "./functions/vtexProductDetailsPage.ts";
-import * as $$$$8 from "./functions/vtexProductList.ts";
-import * as $$$$9 from "./functions/vtexProductListingPage.ts";
+import * as $$$$0 from "./functions/nuvemShopProductList.ts";
+import * as $$$$1 from "./functions/occProductDetailsPage.ts";
+import * as $$$$2 from "./functions/shopifyProductDetailsPage.ts";
+import * as $$$$3 from "./functions/shopifyProductList.ts";
+import * as $$$$4 from "./functions/shopifyProductListingPage.ts";
+import * as $$$$5 from "./functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$6 from "./functions/vtexLegacyProductList.ts";
+import * as $$$$7 from "./functions/vtexLegacyProductListingPage.ts";
+import * as $$$$8 from "./functions/vtexProductDetailsPage.ts";
+import * as $$$$9 from "./functions/vtexProductList.ts";
+import * as $$$$10 from "./functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -78,16 +79,17 @@ const manifest: DecoManifest = {
     "./sections/vtexconfig.global.tsx": $$$13,
   },
   functions: {
-    "./functions/occProductDetailsPage.ts": $$$$0,
-    "./functions/shopifyProductDetailsPage.ts": $$$$1,
-    "./functions/shopifyProductList.ts": $$$$2,
-    "./functions/shopifyProductListingPage.ts": $$$$3,
-    "./functions/vtexLegacyProductDetailsPage.ts": $$$$4,
-    "./functions/vtexLegacyProductList.ts": $$$$5,
-    "./functions/vtexLegacyProductListingPage.ts": $$$$6,
-    "./functions/vtexProductDetailsPage.ts": $$$$7,
-    "./functions/vtexProductList.ts": $$$$8,
-    "./functions/vtexProductListingPage.ts": $$$$9,
+    "./functions/nuvemShopProductList.ts": $$$$0,
+    "./functions/occProductDetailsPage.ts": $$$$1,
+    "./functions/shopifyProductDetailsPage.ts": $$$$2,
+    "./functions/shopifyProductList.ts": $$$$3,
+    "./functions/shopifyProductListingPage.ts": $$$$4,
+    "./functions/vtexLegacyProductDetailsPage.ts": $$$$5,
+    "./functions/vtexLegacyProductList.ts": $$$$6,
+    "./functions/vtexLegacyProductListingPage.ts": $$$$7,
+    "./functions/vtexProductDetailsPage.ts": $$$$8,
+    "./functions/vtexProductList.ts": $$$$9,
+    "./functions/vtexProductListingPage.ts": $$$$10,
   },
   schemas: {
     "./sections/Button.story.tsx": {
@@ -526,6 +528,10 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Title",
           },
+          "subtitle": {
+            "type": "string",
+            "title": "Subtitle",
+          },
           "products": {
             "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
             "format": "live-function",
@@ -535,6 +541,7 @@ const manifest: DecoManifest = {
         },
         "required": [
           "title",
+          "subtitle",
           "products",
         ],
       },
@@ -616,6 +623,31 @@ const manifest: DecoManifest = {
         ],
       },
       "outputSchema": null,
+    },
+    "./functions/nuvemShopProductList.ts": {
+      "inputSchema": {
+        "title": "Nuvem Shop Product List",
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+        },
+        "required": [
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "18e9298f44fabfefab948fb98a413b90224be6a0",
+          },
+        },
+        "additionalProperties": true,
+      },
     },
     "./functions/occProductDetailsPage.ts": {
       "inputSchema": {

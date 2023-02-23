@@ -140,7 +140,7 @@ function Footer() {
       </div>
 
       <div class="md:hidden w-full">
-        <div class="w-full py-3 bg-[#353535]">
+        <div class="w-full py-3 bg-blue-300">
           {sections.map(({ label, content }) => (
             <div key={label}>
               <details class="w-full cursor-pointer flex flex-row justify-between focus:outline-none">

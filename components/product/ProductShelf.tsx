@@ -4,16 +4,19 @@ import type { Product } from "$live/std/commerce/types.ts";
 
 export interface Props {
   title: string;
+  subtitle: string;
   products: LoaderReturnType<Product[]>;
 }
 
 function ProductShelf({
   title,
   products,
+  subtitle,
 }: Props) {
   return (
     <div class="w-full p-2 flex flex-col items-center">
       {title && <h2 class="text-lg md:text-2xl">{title}</h2>}
+      {subtitle && <h2 class="text-sm md:text-2xl">{subtitle}</h2>}
       <ul class="flex flex-nowrap overflow-x-auto max-w-full gap-2 scroll-x-mandatory scroll-smooth">
         {products?.map((product, index) => (
           <li class="min-w-[220px] max-w-[250px] sm:min-w-[250px] sm:max-w-[280px] scroll-snap-center">
