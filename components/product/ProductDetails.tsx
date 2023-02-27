@@ -125,7 +125,7 @@ function ProductDetails({ page }: Props) {
             <Text variant="caption-regular">
               {description && (
                 <details>
-                  <summary>Descrição</summary>
+                  <summary class="cursor-pointer">Descrição</summary>
                   <div class="ml-2 mt-2">{description}</div>
                 </details>
               )}
