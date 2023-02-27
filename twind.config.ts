@@ -7,6 +7,25 @@
 import type { Options } from "$fresh/plugins/twind.ts";
 
 const options: Omit<Options, "selfURL"> = {
+  preflight: (preflight) => ({
+    ...preflight,
+
+    // Stick footer to the bottom of the page
+    body: {
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh",
+    },
+    'section[data-manifest-key="./sections/Footer.tsx"]': {
+      marginTop: "auto",
+    },
+
+    // Prevent scroll when modal is open
+    "body[no-scroll]": {
+      overflow: "hidden",
+      height: "100vh",
+    },
+  }),
   plugins: {
     backdrop: {
       "&::backdrop": {

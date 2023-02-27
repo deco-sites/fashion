@@ -99,7 +99,7 @@ function ProductCard({ product, preload }: Props) {
               }}
             >
               <Sizes {...product} />
-              <Button as="a" href={product.url}>Adicionar a sacola</Button>
+              <Button as="a" href={product.url}>Visualizar Produto</Button>
             </div>
           )}
         </div>

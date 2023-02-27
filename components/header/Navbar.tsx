@@ -10,7 +10,7 @@ function NavItem({
   label,
 }: { href: string; label: ComponentChildren }) {
   return (
-    <a href={href ?? `/s?ft=${label}`}>
+    <a href={href}>
       <Text
         class="hover:border-black border-solid border-b border-white"
         variant="body-regular"

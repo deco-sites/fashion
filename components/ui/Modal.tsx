@@ -42,8 +42,15 @@ const Modal = ({
 
   useEffect(() => {
     if (ref.current?.open === true && open === false) {
+      document.getElementsByTagName("body").item(0)?.removeAttribute(
+        "no-scroll",
+      );
       ref.current.close();
     } else if (ref.current?.open === false && open === true) {
+      document.getElementsByTagName("body").item(0)?.setAttribute(
+        "no-scroll",
+        "",
+      );
       ref.current.showModal();
       lazy.value = true;
     }

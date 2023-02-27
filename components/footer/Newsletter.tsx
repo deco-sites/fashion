@@ -17,7 +17,10 @@ function Newsletter() {
           class="py-2 px-3 flex-grow bg-decorative-one rounded text-interactive-default border-1 border-default"
           placeholder="Seu e-mail"
         />
-        <button class="py-2 px-3 bg-dark-interactive-default rounded">
+        <button
+          class="py-2 px-3 bg-dark-interactive-default rounded"
+          type="bgutton" // prevent form's default behavior
+        >
           Cadastrar
         </button>
       </form>
