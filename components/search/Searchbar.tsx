@@ -50,9 +50,9 @@ export type Props = EditableProps & {
 };
 
 const terms = [
-  "Vestidos",
-  "Blusas",
-  "Saias",
+  "Vestido",
+  "Polo",
+  "Saia",
 ];
 
 function Searchbar({
