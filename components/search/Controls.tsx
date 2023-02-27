@@ -1,11 +1,12 @@
-import { useRef } from "preact/hooks";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
+import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Filters from "$store/components/search/Filters.tsx";
 import Sort from "$store/components/search/Sort.tsx";
 import Modal from "$store/components/ui/Modal.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
+import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/std/types.ts";
 
@@ -14,7 +15,7 @@ export interface Props {
 }
 
 function SearchControls({ page }: Props) {
-  const modalRef = useRef<HTMLDialogElement | null>(null);
+  const open = useSignal(false);
   const filters = page?.filters;
   const breadcrumb = page?.breadcrumb;
 
@@ -28,23 +29,27 @@ function SearchControls({ page }: Props) {
         <Breadcrumb breadcrumbList={breadcrumb} />
       </div>
       <div class="flex flex-row sm:gap-6 items-center justify-between">
-        <button
-          class="flex gap-2 items-center p-2"
-          onClick={() => modalRef.current!.showModal()}
+        <Button
+          variant="icon"
+          onClick={() => {
+            open.value = true;
+          }}
         >
           <Icon id="FilterList" width={16} height={16} />
           <Text variant="caption-regular">
             Filtrar
           </Text>
-        </button>
+        </Button>
         <Sort />
       </div>
 
       <Modal
         title="Filtrar"
         mode="sidebar-right"
-        ref={modalRef}
-        onClose={() => modalRef.current?.close()}
+        open={open.value}
+        onClose={() => {
+          open.value = false;
+        }}
       >
         <Filters filters={filters} />
       </Modal>
