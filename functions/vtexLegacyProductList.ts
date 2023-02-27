@@ -38,10 +38,11 @@ const legacyProductListLoader: LoaderFunction<
   Product[],
   LiveState<{ vtexconfig: VTEXConfig | undefined }>
 > = async (
-  _req,
+  req,
   ctx,
   props,
 ) => {
+  const url = new URL(req.url);
   const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
   const count = props.count ?? 12;
   const query = props.query || "";
@@ -59,7 +60,9 @@ const legacyProductListLoader: LoaderFunction<
   // Transform VTEX product format into schema.org's compatible format
   // If a property is missing from the final `products` array you can add
   // it in here
-  const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
+  const products = vtexProducts.map((p) =>
+    toProduct(p, p.items[0], 0, { url, ...vtexConfig })
+  );
 
   return {
     data: products,

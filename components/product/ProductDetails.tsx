@@ -1,11 +1,16 @@
-import { ProductDetailsPage } from "$live/std/commerce/types.ts";
-import { LoaderReturnType } from "$live/std/types.ts";
-import { Head } from "$fresh/runtime.ts";
 import Image from "$live/std/ui/components/Image.tsx";
-import SKUSelector from "$store/components/product/SKUSelector.tsx";
-import { useOffer } from "$store/sdk/useOffer.ts";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
-import ScriptLDJson from "$store/components/seo/ScriptLDJson.tsx";
+import Container from "$store/components/ui/Container.tsx";
+import Text from "$store/components/ui/Text.tsx";
+import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import { useOffer } from "$store/sdk/useOffer.ts";
+import { formatPrice } from "$store/sdk/format.ts";
+import type { LoaderReturnType } from "$live/std/types.ts";
+import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
+
+import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -17,144 +22,118 @@ function ProductDetails({ page }: Props) {
   }
 
   const {
-    breadcrumbList: { numberOfItems, itemListElement },
-    product: {
-      description,
-      isVariantOf,
-      productID,
-      offers,
-      image,
-      name,
-    },
+    breadcrumbList,
+    product,
   } = page;
+  const {
+    description,
+    productID,
+    offers,
+    image: images,
+    name,
+    gtin,
+  } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
 
+  /**
+   * I did not really liked the images from our default base store.
+   * To overcome this issue without generating another catalog altogheter
+   * I decided to get images from unplash. However, you should get the images
+   * front the catalog itself. To do this, just uncomment the code below
+   */
+  // const [front, back] = images ?? [];
+  const [front, back] = [{
+    url: `https://source.unsplash.com/user/nikutm?v=${productID}`,
+    alternateName: "nikutm-front",
+  }, {
+    url: `https://source.unsplash.com/user/nikutm?v=${productID}-2`,
+    alternateName: "nikutm-back",
+  }];
+
   return (
-    <>
-      <Head>
-        <ScriptLDJson {...page.product} />
-        <ScriptLDJson {...page.breadcrumbList} />
-      </Head>
-      <section class="w-full bg-gray-100 flex flex-col lg:flex-row">
-        <div class="w-full lg:w-3/5 bg-gray-100 flex justify-center items-center">
-          {image && (
+    <Container class="py-0 sm:py-10">
+      <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
+        {/* Image Gallery */}
+        <div class="flex flex-row overflow-auto scroll-x-mandatory scroll-smooth sm:gap-2">
+          {[front, back ?? front].map((img, index) => (
             <Image
-              class="object-contain col-span-4 lg:w-[600px] w-full h-full"
-              sizes="(max-width: 640px) 100vw, 25vw"
-              src={image[0].url!}
-              alt={image[0].alternateName!}
+              style={{ aspectRatio: "360 / 500" }}
+              class="scroll-snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
+              sizes="(max-width: 640px) 100vw, 30vw"
+              src={img.url!}
+              alt={img.alternateName}
               width={360}
-              height={540}
+              height={500}
+              // Preload LCP image for better web vitals
+              preload={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
             />
-          )}
-          {image && image.length > 1 && (
-            <Image
-              class="object-contain col-span-4 lg:w-[600px] w-full h-full hidden md:block"
-              sizes="(max-width: 640px) 100vw, 25vw"
-              src={image[1].url!}
-              alt={image[1].alternateName!}
-              width={360}
-              height={540}
-            />
-          )}
+          ))}
         </div>
-        <div class="w-full lg:w-2/5 bg-white border border-solid border-gray-300 flex flex-col">
-          <div class="flex flex-col px-10 mt-10">
-            <div class="pb-2 flex justify-between">
-              <div>
-                {itemListElement.map(({ item, position, name }) => (
-                  <>
-                    <a
-                      href={item}
-                      class={`${
-                        position === numberOfItems
-                          ? "font-bold"
-                          : "text-gray-400"
-                      } hover:underline`}
-                    >
-                      {name}
-                    </a>
-                    {position !== numberOfItems && (
-                      <span class="px-2 text-gray-400">|</span>
-                    )}
-                  </>
-                ))}
-              </div>
+        {/* Product Info */}
+        <div class="px-4 sm:px-0">
+          {/* Breadcrumb */}
+          <Breadcrumb breadcrumbList={breadcrumbList} />
+          {/* Code and name */}
+          <div class="mt-4 sm:mt-8">
+            <div>
+              <Text tone="subdued" variant="subcaption-regular">
+                Cod. {gtin}
+              </Text>
             </div>
-            <h1 class="lg:text-2xl text-xl  uppercase text-gray-800">
-              {name?.includes(isVariantOf?.name ?? "")
-                ? name
-                : `${isVariantOf?.name ?? ""} - ${name}`}
+            <h1>
+              <Text variant="heading-regular">{name}</Text>
             </h1>
           </div>
-          <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-            <div class="flex flex-col w-full">
-              {listPrice && (
-                <div>
-                  <span class="line-through">
-                    De:
-                    {new Intl.NumberFormat("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    }).format(listPrice.price)}
-                  </span>
-                </div>
-              )}
-              {price && (
-                <div>
-                  <span class="">Por:</span>
-                  <span class="text-primary-red">
-                    {new Intl.NumberFormat("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    }).format(price)}
-                  </span>
-                </div>
-              )}
-              {installments && (
-                <span className="text-gray-600">
-                  {installments}
-                </span>
-              )}
-              <div class="flex flex-row justify-between py-3 w-full">
-                <SKUSelector product={page.product} />
-                <div class="border border-gray-300 flex flex-row justify-between items-center px-3 py-1 md:w-1/4">
-                  <span class="font-bold">Qtd</span>
-                  <div class="flex flex-row items-center">
-                    <button class="px-1 rounded-1/2 w-8 h-8">-</button>
-                    <span class="px-2">1</span>
-                    <button class="px-1 hover:bg-gray-300 rounded-1/2 w-8 h-8">
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
+          {/* Prices */}
+          <div class="mt-4">
+            <div class="flex flex-row gap-2 items-center">
+              <Text
+                class="line-through"
+                tone="subdued"
+                variant="subcaption-regular"
+              >
+                {formatPrice(listPrice, offers!.priceCurrency!)}
+              </Text>
+              <Text tone="critical" variant="heading-strong">
+                {formatPrice(price, offers!.priceCurrency!)}
+              </Text>
             </div>
+            <Text tone="subdued" variant="caption-regular">
+              {installments}
+            </Text>
           </div>
-          {seller && (
-            <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-              <AddToCartButton skuId={productID} sellerId={seller} large />
-            </div>
-          )}
-          {description && (
-            <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
-              <div className="w-full border-b border-t border-solid border-black mt-8">
-                <div class="border-b border-gray-200">
-                  <details class="w-full p-4 px-2 cursor-pointer flex flex-row justify-between">
-                    <summary>
-                      <span class="font-bold">Descrição</span>
-                    </summary>
-                    <p class="p-4 pt-4 pb-2 text-sm text-gray-500">
-                      {description}
-                    </p>
-                  </details>
-                </div>
-              </div>
-            </div>
-          )}
+          {/* Sku Selector */}
+          <div class="mt-4 sm:mt-6">
+            <ProductSelector product={product} />
+          </div>
+          {/* Add to Cart and Favorites button */}
+          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+            {seller && (
+              <AddToCartButton
+                skuId={productID}
+                sellerId={seller}
+              />
+            )}
+            <Button variant="quiet">
+              <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
+              Favoritar
+            </Button>
+          </div>
+          {/* Description card */}
+          <div class="mt-4 sm:mt-6">
+            <Text variant="caption-regular">
+              {description && (
+                <details>
+                  <summary class="cursor-pointer">Descrição</summary>
+                  <div class="ml-2 mt-2">{description}</div>
+                </details>
+              )}
+            </Text>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </Container>
   );
 }
 

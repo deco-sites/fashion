@@ -3,13 +3,18 @@ import {
   toFilter,
   toProduct,
 } from "$live/std/commerce/vtex/transform.ts";
+import { slugify } from "$live/std/commerce/vtex/slugify.ts";
 import type { Filter, ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { LiveState } from "$live/types.ts";
-import type { Sort } from "$live/std/commerce/vtex/types.ts";
+import type { PageType, Sort } from "$live/std/commerce/vtex/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
 import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
+import {
+  pageTypesFromPathname,
+  pageTypesToBreadcrumbList,
+} from "./vtexLegacyProductListingPage.ts";
 
 export interface Props {
   /**
@@ -24,10 +29,7 @@ export interface Props {
 }
 
 const PAGE_TYPE_TO_MAP_PARAM = {
-  Brand: "b",
-  Category: "c",
-  Department: "c",
-  SubCategory: "c",
+  Brand: "brand",
   Collection: "productClusterIds",
   Cluster: "productClusterIds",
   Product: null,
@@ -35,40 +37,29 @@ const PAGE_TYPE_TO_MAP_PARAM = {
   FullText: null,
 };
 
-const filtersFromURL = async (
-  url: URL,
-  vtexConfig: VTEXConfig,
-) => {
-  const selectedFacets = filtersFromSearchParams(url.searchParams);
-
-  if (selectedFacets.length > 0) {
-    return selectedFacets;
+const pageTypeToMapParam = (type: PageType["pageType"], index: number) => {
+  if (type === "Category" || type === "Department" || type === "SubCategory") {
+    return `category-${index + 1}`;
   }
 
-  /**
-   * We have to figure out the facets from the url, e.g.
-   */
-  const segments = url.pathname.split("/").slice(1);
-  const results = await Promise.all(
-    segments.map((segment) =>
-      vtex.catalog_system.pageType({
-        slug: segment,
-        ...vtexConfig,
-      })
-    ),
-  );
+  return PAGE_TYPE_TO_MAP_PARAM[type];
+};
 
-  return results
-    .map((r) => {
-      const key = PAGE_TYPE_TO_MAP_PARAM[r.pageType];
+const filtersFromPathname = (pages: PageType[]) =>
+  pages
+    .map((page, index) => {
+      const key = pageTypeToMapParam(page.pageType, index);
 
-      return key && r.name && {
+      if (!key || !page.name) {
+        return;
+      }
+
+      return key && page.name && {
         key,
-        value: r.name,
+        value: slugify(page.name),
       };
     })
     .filter((facet): facet is { key: string; value: string } => Boolean(facet));
-};
 
 /**
  * @title Product listing page loader
@@ -83,14 +74,18 @@ const plpLoader: LoaderFunction<
   ctx,
   props,
 ) => {
-  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
   const url = new URL(req.url);
+  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
 
   const count = props.count ?? 12;
   const query = props.query || url.searchParams.get("q") || "";
   const page = Number(url.searchParams.get("page")) || 0;
   const sort = url.searchParams.get("sort") as Sort || "" as Sort;
-  const selectedFacets = await filtersFromURL(url, vtexConfig);
+  const pageTypesPromise = pageTypesFromPathname(url.pathname, vtexConfig);
+  const selectedFacetsFromParams = filtersFromSearchParams(url.searchParams);
+  const selectedFacets = selectedFacetsFromParams.length === 0
+    ? filtersFromPathname(await pageTypesPromise)
+    : selectedFacetsFromParams;
 
   const searchArgs = {
     query,
@@ -112,22 +107,44 @@ const plpLoader: LoaderFunction<
   // Transform VTEX product format into schema.org's compatible format
   // If a property is missing from the final `products` array you can add
   // it in here
-  const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
-  const pageInfo = { hasNextPage: Boolean(pagination.next.proxyURL) };
+  const products = vtexProducts.map((p) =>
+    toProduct(p, p.items[0], 0, { url, ...vtexConfig })
+  );
   const filters = facets
     .map((f) => !f.hidden && toFilter(f, selectedFacets))
     .filter((x): x is Filter => Boolean(x));
+  const itemListElement = pageTypesToBreadcrumbList(
+    await pageTypesPromise,
+    url,
+  );
+
+  const hasNextPage = Boolean(pagination.next.proxyUrl);
+  const hasPreviousPage = page > 0;
+  const nextPage = new URLSearchParams(url.searchParams);
+  const previousPage = new URLSearchParams(url.searchParams);
+
+  if (hasNextPage) {
+    nextPage.set("page", (page + 1).toString());
+  }
+
+  if (hasPreviousPage) {
+    previousPage.set("page", (page - 1).toString());
+  }
 
   return {
     data: {
       breadcrumb: {
         "@type": "BreadcrumbList",
-        itemListElement: [],
-        numberOfItems: 0,
+        itemListElement,
+        numberOfItems: itemListElement.length,
       },
       filters,
       products,
-      pageInfo,
+      pageInfo: {
+        nextPage: hasNextPage ? `?${nextPage}` : undefined,
+        previousPage: hasPreviousPage ? `?${previousPage}` : undefined,
+        currentPage: page,
+      },
     },
   };
 };

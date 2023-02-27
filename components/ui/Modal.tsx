@@ -1,7 +1,9 @@
-import type { ComponentChildren, Ref, RefObject } from "preact";
-import { useMemo } from "preact/hooks";
+import Text from "$store/components/ui/Text.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import { useEffect, useRef } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
-import { forwardRef } from "preact/compat";
+import { useSignal } from "@preact/signals";
+import type { JSX } from "preact";
 
 import Icon from "./Icon.tsx";
 
@@ -12,71 +14,69 @@ if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
   );
 }
 
-interface Props {
+export type Props = JSX.IntrinsicElements["dialog"] & {
   title?: string;
   mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
-  children?: ComponentChildren;
-}
-
-const isRefObject = (
-  ref: Ref<HTMLDialogElement>,
-): ref is RefObject<HTMLDialogElement> => Boolean("current" in ref);
-
-const styles = {
-  "sidebar-right": {
-    dialog: `sm:animate-slide-left sm:ml-auto`,
-    corners: `rounded-tl-2xl rounded-tr-2xl sm:rounded-none`,
-  },
-  "sidebar-left": {
-    dialog: `sm:animate-slide-right`,
-    corners: `rounded-tr-2xl rounded-tl-2xl sm:rounded-none`,
-  },
-  center: {
-    dialog: "",
-    corners: `rounded-2xl`,
-  },
+  loading?: "lazy" | "eager";
 };
 
-const Modal = forwardRef<HTMLDialogElement, Props>(({
-  children,
+const styles = {
+  "sidebar-right": "animate-slide-left sm:ml-auto",
+  "sidebar-left": "animate-slide-right",
+  center: "",
+};
+
+const Modal = ({
+  open,
   title,
   mode = "sidebar-right",
   onClose,
-}, ref) => {
-  const onDialogClick = (e: MouseEvent) => {
-    if (!isRefObject(ref)) {
-      return;
-    }
+  children,
+  loading,
+  ...props
+}: Props) => {
+  const lazy = useSignal(false);
+  const ref = useRef<HTMLDialogElement>(null);
+  const variant = styles[mode];
 
-    if ((e.target as HTMLDialogElement).tagName === "DIALOG") {
-      onClose?.();
+  useEffect(() => {
+    if (ref.current?.open === true && open === false) {
+      document.getElementsByTagName("body").item(0)?.removeAttribute(
+        "no-scroll",
+      );
+      ref.current.close();
+    } else if (ref.current?.open === false && open === true) {
+      document.getElementsByTagName("body").item(0)?.setAttribute(
+        "no-scroll",
+        "",
+      );
+      ref.current.showModal();
+      lazy.value = true;
     }
-  };
-
-  const { dialog, corners } = useMemo(() => styles[mode], [mode]);
+  }, [open]);
 
   return (
     <dialog
+      {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 pt-[15%] sm:pt-0 max-w-full sm:max-w-lg w-full max-h-full h-full animate-slide-bottom backdrop ${dialog}`}
-      onClick={onDialogClick}
+      class={`bg-transparent p-0 m-0 max-w-full sm:max-w-lg w-full max-h-full h-full backdrop ${variant}`}
+      onClick={(e) =>
+        (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <div
-        class={`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between divide-y`}
-      >
-        <>
-          <div class="pb-4 flex justify-between">
-            <h2 class="text-lg font-medium text-gray-900">{title}</h2>
-            <button class="py-1" onClick={onClose}>
-              <Icon id="XMark" class="w-6 h-6 fill-current text-gray-600" />
-            </button>
-          </div>
-          {children}
-        </>
-      </div>
+      <section class="py-6 px-4 h-full bg-default flex flex-col">
+        <header class="flex justify-between pb-6 border-b-1 border-default">
+          <h1>
+            <Text variant="heading-strong">{title}</Text>
+          </h1>
+          <Button variant="icon" onClick={onClose}>
+            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+          </Button>
+        </header>
+        {loading === "lazy" ? lazy.value && children : children}
+      </section>
     </dialog>
   );
-});
+};
 
 export default Modal;

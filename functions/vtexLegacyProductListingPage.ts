@@ -2,10 +2,11 @@ import {
   legacyFacetToFilter,
   toProduct,
 } from "$live/std/commerce/vtex/transform.ts";
+import { slugify } from "$live/std/commerce/vtex/slugify.ts";
 import type { Filter, ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderFunction } from "$live/std/types.ts";
 import type { LiveState } from "$live/types.ts";
-import type { LegacySort } from "$live/std/commerce/vtex/types.ts";
+import type { LegacySort, PageType } from "$live/std/commerce/vtex/types.ts";
 
 import { defaultVTEXSettings, vtex } from "../clients/instances.ts";
 import type { VTEXConfig } from "../sections/vtexconfig.global.tsx";
@@ -46,6 +47,44 @@ const SORT_TO_LEGACY_SORT: Record<string, string> = {
   "": "OrderByScoreDESC",
 };
 
+export const pageTypesFromPathname = async (
+  pathname: string,
+  vtexConfig: VTEXConfig,
+) => {
+  const segments = pathname.split("/").filter(Boolean);
+
+  const results = await Promise.all(
+    segments.map((_, index) =>
+      vtex.catalog_system.pageType({
+        slug: segments.slice(0, index + 1).join("/"),
+        ...vtexConfig,
+      })
+    ),
+  );
+
+  return results.filter((result) => PAGE_TYPE_TO_MAP_PARAM[result.pageType]);
+};
+
+export const pageTypesToBreadcrumbList = (pages: PageType[], url: URL) => {
+  const filteredPages = pages
+    .filter(({ pageType }) =>
+      pageType === "Category" || pageType === "Department" ||
+      pageType === "SubCategory"
+    );
+
+  return filteredPages.map((page, index) => {
+    const position = index + 1;
+    const slug = filteredPages.slice(0, position).map((x) => slugify(x.name!));
+
+    return ({
+      "@type": "ListItem" as const,
+      name: page.name!,
+      item: new URL(`/${slug.join("/")}`, url.origin).href,
+      position,
+    });
+  });
+};
+
 const PAGE_TYPE_TO_MAP_PARAM = {
   Brand: "b",
   Category: "c",
@@ -58,23 +97,10 @@ const PAGE_TYPE_TO_MAP_PARAM = {
   FullText: null,
 };
 
-const mapParamFromUrl = async (term: string | null, vtexConfig: VTEXConfig) => {
-  const segments = term ? term.split("/") : [];
-  const results = await Promise.all(
-    segments.map((segment) =>
-      vtex.catalog_system.pageType({
-        slug: segment,
-        ...vtexConfig,
-      })
-    ),
-  );
-
-  const pageTypes = results
-    .map((r) => PAGE_TYPE_TO_MAP_PARAM[r.pageType])
-    .filter(Boolean);
-
-  return pageTypes.join(",");
-};
+const mapParamFromUrl = (pages: PageType[]) =>
+  pages
+    .map((type) => PAGE_TYPE_TO_MAP_PARAM[type.pageType])
+    .join(",");
 
 /**
  * @title Product listing page loader
@@ -89,11 +115,12 @@ const legacyPLPLoader: LoaderFunction<
   ctx,
   props,
 ) => {
-  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
   const url = new URL(req.url);
+  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
 
   const count = props.count ?? 12;
   const term = props.term || ctx.params["0"] || "";
+  const pageTypesPromise = pageTypesFromPathname(term, vtexConfig);
   const page = Number(url.searchParams.get("page")) || 0;
   const O = (url.searchParams.get("O") ||
     SORT_TO_LEGACY_SORT[url.searchParams.get("sort") ?? ""]) as LegacySort;
@@ -101,7 +128,7 @@ const legacyPLPLoader: LoaderFunction<
     url.searchParams.get("q") || "";
   const fq = props.fq || url.searchParams.get("fq") || "";
   const map = props.map || url.searchParams.get("map") ||
-    await mapParamFromUrl(term, vtexConfig);
+    mapParamFromUrl(await pageTypesPromise);
   const _from = page * count;
   const _to = (page + 1) * count - 1;
 
@@ -125,10 +152,9 @@ const legacyPLPLoader: LoaderFunction<
   // Transform VTEX product format into schema.org's compatible format
   // If a property is missing from the final `products` array you can add
   // it in here
-  const products = vtexProducts.map((p) => toProduct(p, p.items[0], 0));
-  const pageInfo = {
-    hasNextPage: Boolean(page < 50 && products.length === count),
-  };
+  const products = vtexProducts.map((p) =>
+    toProduct(p, p.items[0], 0, { url, ...vtexConfig })
+  );
   const filters = Object.entries({
     Departments: vtexFacets.Departments,
     Brands: vtexFacets.Brands,
@@ -136,17 +162,38 @@ const legacyPLPLoader: LoaderFunction<
   }).map(([name, facets]) => legacyFacetToFilter(name, facets, url, map))
     .flat()
     .filter((x): x is Filter => Boolean(x));
+  const itemListElement = pageTypesToBreadcrumbList(
+    await pageTypesPromise,
+    url,
+  );
+
+  const hasNextPage = Boolean(page < 50 && products.length === count);
+  const hasPreviousPage = page > 0;
+  const nextPage = new URLSearchParams(url.searchParams);
+  const previousPage = new URLSearchParams(url.searchParams);
+
+  if (hasNextPage) {
+    nextPage.set("page", (page + 1).toString());
+  }
+
+  if (hasPreviousPage) {
+    previousPage.set("page", (page - 1).toString());
+  }
 
   return {
     data: {
       breadcrumb: {
         "@type": "BreadcrumbList",
-        itemListElement: [],
-        numberOfItems: 0,
+        itemListElement,
+        numberOfItems: itemListElement.length,
       },
       filters,
       products,
-      pageInfo,
+      pageInfo: {
+        nextPage: hasNextPage ? nextPage.toString() : undefined,
+        previousPage: hasPreviousPage ? previousPage.toString() : undefined,
+        currentPage: page,
+      },
     },
   };
 };

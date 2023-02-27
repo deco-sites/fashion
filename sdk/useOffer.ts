@@ -1,4 +1,4 @@
-import {
+import type {
   AggregateOffer,
   UnitPriceSpecification,
 } from "$live/std/commerce/types.ts";
@@ -61,7 +61,7 @@ export const useOffer = (aggregateOffer?: AggregateOffer) => {
 
   return {
     price,
-    listPrice,
+    listPrice: listPrice?.price,
     seller,
     installments: installment && price
       ? installmentToString(installment, price)

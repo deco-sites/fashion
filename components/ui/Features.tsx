@@ -1,11 +1,12 @@
-import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
-import Image from "$live/std/ui/components/Image.tsx";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import Text from "$store/components/ui/Text.tsx";
+import Container from "$store/components/ui/Container.tsx";
 
 export interface Feature {
   /**
    * @description Image src
    */
-  src: LiveImage;
+  icon: AvailableIcons;
   /**
    * @description Title
    */
@@ -24,26 +25,29 @@ function FeatureHighlights(
   { features }: Props,
 ) {
   return (
-    <section class="bg-gray-100 flex flex-row flex-wrap py-2 justify-center">
-      {features.map(({ src, title, description }) => (
-        <div key={title} class="w-1/2 md:w-1/5 p-6 flex flex-col items-center">
-          <Image
-            sizes="(min-width: 59px) 59px, 100vw"
-            data-main-image=""
-            style="object-fit:cover;opacity:1"
-            width={59}
-            height={31}
-            src={src}
-            alt={description}
-            class=""
-            decoding="async"
-            loading="lazy"
-          />
-          <span class="font-bold uppercase text-center mt-3">{title}</span>
-          <p class="text-xs text-center">{description}</p>
+    <Container class="min-h-[280px] p-6 sm:px-0 sm:py-10">
+      <div class="border-default border-1">
+        <div class="flex flex-col justify-evenly sm:flex-row divide-y-1 sm:divide-y-0 sm:divide-x-1 divide-default mx-6 sm:mx-0 sm:my-10">
+          {features.map(({ icon: id = "Truck", title, description }) => (
+            <div class="flex flex-row sm:flex-col gap-4 py-6 sm:py-0 sm:px-10">
+              <Icon
+                class="text-icon-brand"
+                id={id}
+                width={40}
+                height={40}
+                strokeWidth={2}
+              />
+              <div class="flex flex-col gap-2">
+                <Text variant="heading-strong">{title}</Text>
+                <Text tone="subdued" variant="caption-regular">
+                  {description}
+                </Text>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </section>
+      </div>
+    </Container>
   );
 }
 

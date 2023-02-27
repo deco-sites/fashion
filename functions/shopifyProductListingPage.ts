@@ -30,6 +30,7 @@ const searchLoader: LoaderFunction<Props, ProductListingPage> = async (
 
   const count = props.count ?? 12;
   const query = props.query || url.searchParams.get("q") || "";
+  const page = Number(url.searchParams.get("page")) ?? 0;
 
   // search products on Shopify. Feel free to change any of these parameters
   const data = await shopify.products({
@@ -43,7 +44,19 @@ const searchLoader: LoaderFunction<Props, ProductListingPage> = async (
   const products = data?.products.nodes.map((p) =>
     toProduct(p, p.variants.nodes[0])
   );
-  const pageInfo = data?.products.pageInfo ?? { hasNextPage: false };
+
+  const hasNextPage = Boolean(data?.products.pageInfo.hasNextPage ?? false);
+  const hasPreviousPage = false;
+  const nextPage = new URLSearchParams(url.searchParams);
+  const previousPage = new URLSearchParams(url.searchParams);
+
+  if (hasNextPage) {
+    nextPage.set("page", (page + 1).toString());
+  }
+
+  if (hasPreviousPage) {
+    previousPage.set("page", (page - 1).toString());
+  }
 
   return {
     data: {
@@ -55,7 +68,11 @@ const searchLoader: LoaderFunction<Props, ProductListingPage> = async (
       },
       filters: [],
       products: products ?? [],
-      pageInfo,
+      pageInfo: {
+        nextPage: hasNextPage ? nextPage.toString() : undefined,
+        previousPage: hasPreviousPage ? previousPage.toString() : undefined,
+        currentPage: page,
+      },
     },
   };
 };

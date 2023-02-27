@@ -1,5 +1,7 @@
-import CartModal from "$store/islands/CartModal.tsx";
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import Modals from "$store/islands/HeaderModals.tsx";
+import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import type { LoaderReturnType } from "$live/std/types.ts";
+import type { Product } from "$live/std/commerce/types.ts";
 
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
@@ -7,12 +9,9 @@ import type { NavItem as Item } from "./NavItem.ts";
 
 const item: Item[] = [
   {
-    label: "Masculino",
-    href: "/masculino",
-    children: [
-      { label: "Polos", href: "/masculino/polos" },
-      { label: "Shorts", href: "/masculino/shorts" },
-    ],
+    label: "Sale",
+    href: "/brindes",
+    children: [],
   },
   {
     label: "Feminino",
@@ -22,9 +21,12 @@ const item: Item[] = [
     ],
   },
   {
-    label: "Brindes",
-    href: "/brindes",
-    children: [],
+    label: "Masculino",
+    href: "/masculino",
+    children: [
+      { label: "Polos", href: "/masculino/polos" },
+      { label: "Shorts", href: "/masculino/shorts" },
+    ],
   },
 ];
 
@@ -37,14 +39,26 @@ export interface Props {
    * @description Navigation items used both on mobile and desktop menus
    */
   navItems?: Item[];
+
+  /**
+   * @title Product suggestions
+   * @description Product suggestions displayed on search
+   */
+  products?: LoaderReturnType<Product[]>;
 }
 
-function Header({ alerts, searchbar, navItems = item }: Props) {
+function Header({ alerts, searchbar, products, navItems = item }: Props) {
   return (
-    <header>
-      <Alert alerts={alerts} />
-      <Navbar searchbar={searchbar} items={navItems} />
-      <CartModal />
+    <header class="h-[93px]">
+      <div class="bg-default fixed w-full z-50">
+        <Alert alerts={alerts} />
+        <Navbar items={navItems} />
+      </div>
+
+      <Modals
+        menu={{ items: navItems }}
+        searchbar={{ ...searchbar, products }}
+      />
     </header>
   );
 }

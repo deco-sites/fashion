@@ -1,131 +1,99 @@
-import { useRef } from "preact/hooks";
-import { useSignal } from "@preact/signals";
-import { useCart } from "../../sdk/cart/useCart.ts";
-import CartItem, { formatPrice } from "./CartItem.tsx";
+import { useCart } from "$store/sdk/cart/useCart.ts";
+import { formatPrice } from "$store/sdk/format.ts";
+import CartItem from "./CartItem.tsx";
 
-import Button from "../ui/Button.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import Text from "$store/components/ui/Text.tsx";
+import { useUI } from "../../sdk/useUI.ts";
+import Coupon from "./Coupon.tsx";
 
 const CHECKOUT_URL =
   "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
 
-function Coupon() {
-  const { cart, loading, addCouponsToCart } = useCart();
-  const ref = useRef<HTMLInputElement>(null);
-  const displayInput = useSignal(false);
-  const coupon = cart.value?.marketingData?.coupon;
-
-  const onApply = () => {
-    const text = ref.current?.value;
-
-    if (typeof text === "string") {
-      addCouponsToCart({ text });
-    }
-  };
-
-  return (
-    <>
-      <div class="flex justify-between items-center text-lg font-medium">
-        <p>
-          Coupon {coupon ? ":" : ""} <span class="font-semibold">{coupon}</span>
-        </p>
-        {!displayInput.value && (
-          <Button
-            variant="tertiary"
-            onClick={() => {
-              displayInput.value = true;
-            }}
-          >
-            <span class="underline">
-              {coupon ? "Alterar Coupon" : "Adicionar Coupon"}
-            </span>
-          </Button>
-        )}
-        {displayInput.value && (
-          <div class="flex gap-2">
-            <Button
-              variant="secondary"
-              disabled={loading.value}
-              onClick={() => {
-                displayInput.value = false;
-              }}
-            >
-              <span>Fechar</span>
-            </Button>
-            <Button
-              loading={loading.value}
-              variant="primary"
-              onClick={onApply}
-            >
-              <span>Aplicar</span>
-            </Button>
-          </div>
-        )}
-      </div>
-      {displayInput.value && (
-        <div class="flex justify-between items-center gap-2">
-          <input
-            ref={ref}
-            class="flex-grow border rounded p-2"
-            type="text"
-            value={coupon ?? ""}
-            placeholder={"Entre com o seu coupon"}
-          >
-          </input>
-        </div>
-      )}
-    </>
-  );
-}
-
 function Cart() {
+  const { displayCart } = useUI();
   const { cart, loading } = useCart();
   const isCartEmpty = cart.value?.items.length === 0;
+  const total = cart.value?.totalizers.find((item) => item.id === "Items");
+  const discounts = cart.value?.totalizers.find((item) =>
+    item.id === "Discounts"
+  );
+  const locale = cart.value?.clientPreferencesData.locale;
+  const currencyCode = cart.value?.storePreferencesData.currencyCode;
 
   if (cart.value === null) {
     return null;
   }
 
+  // Empty State
+  if (isCartEmpty) {
+    return (
+      <div class="flex flex-col justify-center items-center h-full gap-6">
+        <Text variant="display-strong">Sua sacola está vazia</Text>
+        <Button
+          variant="quiet"
+          onClick={() => {
+            displayCart.value = false;
+          }}
+        >
+          Escolher produtos
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <>
-      <div class="py-4 flex-grow-1 overflow-y-auto">
-        {isCartEmpty
-          ? <p class="text-gray-700">Não há itens no carrinho</p>
-          : (
-            <ul role="list" class="-my-6 divide-y divide-gray-200">
-              {cart.value.items.map((_, index) => (
-                <CartItem
-                  index={index}
-                  key={index}
-                />
-              ))}
-            </ul>
-          )}
-      </div>
-      <div class="pt-4 flex flex-col gap-2">
-        {cart.value.totalizers.map(({ name, value }) => (
-          <div class="flex justify-between items-center text-lg font-medium">
-            <p>{name}</p>
-            <p>{formatPrice(value)}</p>
-          </div>
+      {/* Cart Items */}
+      <ul
+        role="list"
+        class="py-4 flex-grow-1 overflow-y-auto flex flex-col gap-6"
+      >
+        {cart.value.items.map((_, index) => (
+          <li>
+            <CartItem index={index} key={index} />
+          </li>
         ))}
-        <Coupon />
-        <p class="text-sm text-gray-500">
-          Taxas e frete serāo calculados no checkout
-        </p>
-        <div class="">
-          <Button
-            fit="container"
-            onClick={() =>
-              window.open(
-                `${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`,
-                "_blank",
-              )}
-            disabled={loading.value || cart.value.items.length === 0}
-          >
-            Finalizar Compra
-          </Button>
+      </ul>
+
+      {/* Cart Footer */}
+      <footer>
+        {/* Subtotal */}
+        <div class="border-t-1 border-default py-4 flex flex-col gap-4">
+          {discounts?.value && (
+            <div class="flex justify-between items-center">
+              <Text variant="caption-regular">Descontos</Text>
+              <Text variant="caption-regular">
+                {formatPrice(discounts.value / 100, currencyCode!, locale)}
+              </Text>
+            </div>
+          )}
+          <Coupon />
         </div>
-      </div>
+        {/* Total */}
+        {total?.value && (
+          <div class="border-t-1 border-default pt-4 flex flex-col justify-end items-end gap-2">
+            <div class="flex justify-between items-center w-full">
+              <Text variant="body-strong">Total</Text>
+              <Text variant="heading-strong">
+                {formatPrice(total.value / 100, currencyCode!, locale)}
+              </Text>
+            </div>
+            <Text tone="subdued" variant="caption-regular">
+              Taxas e fretes serão calculados no checkout
+            </Text>
+          </div>
+        )}
+        <Button
+          class="mt-4 w-full"
+          as="a"
+          href={`${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`}
+          target="_blank"
+          disabled={loading.value || cart.value.items.length === 0}
+        >
+          Finalizar Compra
+        </Button>
+      </footer>
     </>
   );
 }

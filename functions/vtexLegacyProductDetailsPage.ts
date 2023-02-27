@@ -18,9 +18,9 @@ const legacyProductPageLoader: LoaderFunction<
   req,
   ctx,
 ) => {
-  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
   const url = new URL(req.url);
   const skuId = url.searchParams.get("skuId");
+  const vtexConfig = ctx.state.global.vtexconfig ?? defaultVTEXSettings;
 
   // search products on VTEX. Feel free to change any of these parameters
   const [product] = await vtex.catalog_system.products({
@@ -37,7 +37,7 @@ const legacyProductPageLoader: LoaderFunction<
   }
 
   return {
-    data: toProductPage(product, skuId?.toString()),
+    data: toProductPage(product, skuId?.toString(), { url, ...vtexConfig }),
   };
 };
 
