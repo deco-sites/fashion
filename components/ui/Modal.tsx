@@ -16,7 +16,7 @@ if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
   title?: string;
-  mode?: "sidebar-right" | "sidebar-left" | "center";
+  mode?: "sidebar-right" | "sidebar-left" | "center" | "full";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
 };
@@ -25,6 +25,7 @@ const styles = {
   "sidebar-right": "animate-slide-left sm:ml-auto",
   "sidebar-left": "animate-slide-right",
   center: "",
+  full: "animate-fade-in pt-0 max-h-screen max-w-full sm:max-w-full",
 };
 
 const Modal = ({
@@ -65,6 +66,8 @@ const Modal = ({
       }`}
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
+      // @ts-expect-error - This is a bug in types.
+      onClose={onClose}
     >
       <section class="pt-6 h-full bg-default flex flex-col">
         <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
