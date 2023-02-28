@@ -1,4 +1,4 @@
-import Slider from "$store/components/ui/Slider.tsx";
+import Carousel from "$store/components/ui/Carousel.tsx";
 import Text from "$store/components/ui/Text.tsx";
 
 const messages = [
@@ -15,7 +15,7 @@ export interface Props {
 function Alert({ alerts = messages }: Props) {
   return (
     <div class="hidden md:(flex justify-center) bg-decorative-two text-sm text-white">
-      <Slider class="pt-10 w-[340px] sm:w-[500px]" animationDuration={4}>
+      <Carousel class="pt-10 w-[340px] sm:w-[500px]" animationDuration={4}>
         {alerts.map((alert) => (
           <Text
             class="flex justify-center items-center w-[340px] sm:w-[500px] h-full"
@@ -25,7 +25,7 @@ function Alert({ alerts = messages }: Props) {
             {alert}
           </Text>
         ))}
-      </Slider>
+      </Carousel>
     </div>
   );
 }

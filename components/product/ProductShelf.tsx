@@ -1,10 +1,9 @@
 import ProductCard from "$store/components/product/ProductCard.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
 import type { LoaderReturnType } from "$live/std/types.ts";
 import type { Product } from "$live/std/commerce/types.ts";
-import List from "../ui/List.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
 
 export interface Props {
   title: string;
@@ -22,7 +21,7 @@ function ProductShelf({
           <Text class="uppercase" variant="subheading-strong">{title}</Text>
         </h2>
       )}
-      <List>
+      <Slider>
         {products?.map((product, index) => {
           const ml = index === 0 ? "ml-4" : "";
           const mr = index === products.length - 1 ? "mr-4" : "";
@@ -35,7 +34,7 @@ function ProductShelf({
             </div>
           );
         })}
-      </List>
+      </Slider>
     </Container>
   );
 }

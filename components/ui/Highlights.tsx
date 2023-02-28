@@ -2,7 +2,7 @@ import Image from "$live/std/ui/components/Image.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import type { Image as LiveImage } from "$live/std/ui/types/Image.ts";
-import List from "$store/components/ui/List.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
 
 export interface Highlight {
   src: LiveImage;
@@ -25,7 +25,7 @@ function Highlights({ highlights = [], title }: Props) {
         </h2>
       )}
 
-      <List>
+      <Slider>
         {highlights.map(({ href, src, alt, label }, index) => {
           const ml = index == 0 ? "ml-4" : "";
           const mr = index === highlights.length - 1 ? "mr-4" : "";
@@ -45,7 +45,7 @@ function Highlights({ highlights = [], title }: Props) {
             </a>
           );
         })}
-      </List>
+      </Slider>
     </Container>
   );
 }

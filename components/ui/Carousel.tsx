@@ -1,101 +1,152 @@
-import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
-import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
+import { tw } from "twind";
+import { useId } from "preact/hooks";
+import { animation, css, keyframes } from "twind/css";
+import { ComponentChild, toChildArray } from "preact";
 
-export interface Image {
-  /** @description desktop otimized image */
-  desktop: LiveImage;
-  /** @description mobile otimized image */
-  mobile: LiveImage;
-  /** @description when user clicks on the image, go to this link */
-  href: string;
-  /** @description Image's alt text */
-  alt: string;
-}
-
-interface Dimension {
-  width: number;
-  height: number;
-}
-
-const aspectRatio = ({ width, height }: Dimension) =>
-  ((height / width) * 100).toFixed(2);
-
-export interface Props {
-  images?: Image[];
-  /**
-   * @description Check this option when this banner is the biggest image on the screen for image optimizations
-   */
-  preload?: boolean;
-}
-
-function Carousel({ images, preload }: Props) {
-  const mobileDimension: Dimension = {
-    width: 360,
-    height: 331,
+const getPrevNextIndexes = (index: number, total: number) => {
+  return {
+    prev: (total + (index - 1)) % total,
+    next: (total + (index + 1)) % total,
   };
+};
 
-  const desktopDimension: Dimension = {
-    width: 1366,
-    height: 517,
-  };
+const generateSlideId = (id: string, index: number) => `${id}-slide${index}`;
+
+interface Props {
+  class?: string;
+  children?: ComponentChild[];
+  dot?: ComponentChild;
+  leftArrow?: ComponentChild;
+  rightArrow?: ComponentChild;
+  animationDuration?: number;
+}
+
+function Carousel(
+  {
+    class: _class = "",
+    children,
+    dot,
+    leftArrow,
+    rightArrow,
+    animationDuration = 3,
+  }: Props,
+) {
+  const id = useId();
+
+  if (children === undefined) {
+    return null;
+  }
+
+  const childrenArray = toChildArray(children);
+  const childrenLength = childrenArray.length;
+  const toStart = tw(keyframes`
+            75% { left: 0; }
+            95% { left: -${Math.max(childrenLength - 1, 0)}00%; }
+            98% { left: -${Math.max(childrenLength - 1, 0)}00%; }
+            99% { left: 0; }
+`);
+  const toNext = tw(keyframes`
+    75% { left: 0; }
+    95% { left: 100%; }
+    98% { left: 100%; }
+    99% { left: 0; }
+  `);
+  const snap = tw(keyframes`
+          96% { scroll-snap-align: center; }
+          97% { scroll-snap-align: none; }
+          99% { scroll-snap-align: none; }
+          100% { scroll-snap-align: center; }`);
+
+  const autoPlayAnimation = tw(css(animation({
+    animationDuration: `${animationDuration}s`,
+    animationTimingFunction: "ease",
+    animationIterationCount: "infinite",
+  }, {})));
+
+  // Inline top-[calc(50% - 1.25rem)] doesn't work.
+  // This is 50% - ((arrow svg height + padding) / 2)
+  const arrowTopClass = tw(() => ({ top: "calc(50% - 1.25rem)" }));
 
   return (
-    <Slider
-      // this padding top (pt) is the aspect-ratio (height/width) value from the image below for each viewport
-      class={`w-full pt-[${aspectRatio(mobileDimension)}%] sm:pt-[${
-        aspectRatio(desktopDimension)
-      }%]`}
-      animationDuration={5}
-      leftArrow={
-        <Icon
-          width={24}
-          height={24}
-          id="ChevronLeft"
-          strokeWidth={3}
-        />
-      }
-      rightArrow={
-        <Icon
-          width={24}
-          height={24}
-          id="ChevronRight"
-          strokeWidth={3}
-        />
-      }
-      dot={<Icon id="Circle" width={24} height={24} strokeWidth={2} />}
+    <section
+      class={`relative group ${_class}`}
+      aria-label="Gallery"
+      data-carousel
     >
-      {images?.map(({ mobile, desktop, alt }, index) => {
-        const isFirst = index === 0;
-        const lcp = isFirst && preload;
+      <ol
+        class="absolute inset-0 flex scrollbar-none overflow-x-scroll scroll-smooth scroll-x-mandatory"
+        data-carousel-viewport
+      >
+        {childrenArray?.map((child, index) => {
+          const isFirst = index === 0;
+          const isLast = index === childrenLength - 1;
+          const { next, prev } = getPrevNextIndexes(index, childrenLength);
 
-        return (
-          <Picture class="w-screen block" preload={lcp}>
-            <Source
-              media="(max-width: 767px)"
-              fetchPriority={lcp ? "high" : "auto"}
-              src={mobile}
-              width={360}
-              height={331}
-            />
-            <Source
-              media="(min-width: 768px)"
-              fetchPriority={lcp ? "high" : "auto"}
-              src={desktop}
-              width={1366}
-              height={517}
-            />
-            <img
-              class="object-cover w-full"
-              loading={lcp ? "eager" : "lazy"}
-              src={desktop}
-              alt={alt}
-            />
-          </Picture>
-        );
-      })}
-    </Slider>
+          const prevNextArrows = (!!leftArrow || !!rightArrow) && (
+            <>
+              {!!leftArrow && (
+                <a
+                  class={`absolute ${arrowTopClass} left-0 ml-2 text-white outline-none p-2`}
+                  href={`#${generateSlideId(id, prev)}`}
+                  data-carousel-prev
+                >
+                  {leftArrow}
+                </a>
+              )}
+              {!!rightArrow && (
+                <a
+                  class={`absolute ${arrowTopClass} right-0 mr-2 text-white outline-none p-2`}
+                  href={`#${generateSlideId(id, next)}`}
+                  data-carousel-next
+                >
+                  {rightArrow}
+                </a>
+              )}
+            </>
+          );
+
+          return (
+            <li
+              class="relative w-full"
+              style="flex: 0 0 100%"
+              id={generateSlideId(id, index)}
+              data-carousel-slide
+            >
+              {child}
+              <div
+                class={`absolute top-0 left-0 w-full h-full scroll-snap-center ${autoPlayAnimation} animate-carousel-snap group-hover:animate-none group-focus-within:animate-none`}
+                style={`animation-name: ${isLast ? toStart : toNext}, ${snap};`}
+                data-carousel-snapper
+              >
+                {isFirst && prevNextArrows}
+              </div>
+              {!isFirst && prevNextArrows}
+            </li>
+          );
+        })}
+      </ol>
+      {!!dot && (
+        <aside class="absolute right-0 bottom-0 left-0 text-center">
+          <ol class="inline-block" data-carousel-navigation>
+            {childrenArray.map((_, index) => {
+              return (
+                <li
+                  class="inline-block p-2 rounded-full text-white outline-none"
+                  data-carousel-item
+                >
+                  <a
+                    href={`#${generateSlideId(id, index)}`}
+                    class="focus:text-gray-600"
+                  >
+                    {dot}
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+        </aside>
+      )}
+    </section>
   );
 }
 
