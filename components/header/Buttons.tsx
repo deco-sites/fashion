@@ -1,7 +1,7 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
-import { useCart } from "$store/sdk/cart/useCart.ts";
+import { useCart } from "$live/std/commerce/vtex/cart/useCart.ts";
 
 function SearchButton() {
   const { displaySearchbar } = useUI();

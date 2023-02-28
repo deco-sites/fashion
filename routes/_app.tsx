@@ -1,7 +1,7 @@
 import { AppProps } from "$fresh/server.ts";
 import { context } from "$live/live.ts";
-import GlobalTags from "$store/components/seo/GlobalTags.tsx";
-import GoogleTagManager from "partytown/integrations/GoogleTagManager.tsx";
+import GlobalTags from "$store/components/GlobalTags.tsx";
+import GoogleTagManager from "partytown/integrations/GTM.tsx";
 
 const trackingId = "";
 

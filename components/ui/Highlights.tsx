@@ -1,8 +1,8 @@
-import Image from "$live/std/ui/components/Image.tsx";
+import Image from "$live/std/components/Image.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import type { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import Slider from "$store/components/ui/Slider.tsx";
+import type { Image as LiveImage } from "$live/std/components/types.ts";
 
 export interface Highlight {
   src: LiveImage;

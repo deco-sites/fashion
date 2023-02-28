@@ -1,4 +1,4 @@
-import Image from "$live/std/ui/components/Image.tsx";
+import Image from "$live/std/components/Image.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
@@ -7,7 +7,7 @@ import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
-import type { LoaderReturnType } from "$live/std/types.ts";
+import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "$live/std/commerce/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";

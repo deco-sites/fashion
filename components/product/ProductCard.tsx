@@ -1,4 +1,4 @@
-import Image from "$live/std/ui/components/Image.tsx";
+import Image from "$live/std/components/Image.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
 import Button from "$store/components/ui/Button.tsx";

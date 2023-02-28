@@ -16,7 +16,6 @@ import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
 import * as $$4 from "./islands/SearchControls.tsx";
-import * as $$5 from "./islands/Slick.tsx";
 import * as $$$0 from "./sections/Carousel.tsx";
 import * as $$$1 from "./sections/DesignSystem.story.tsx";
 import * as $$$2 from "./sections/Features.tsx";
@@ -27,27 +26,29 @@ import * as $$$6 from "./sections/ProductDetails.tsx";
 import * as $$$7 from "./sections/ProductGallery.tsx";
 import * as $$$8 from "./sections/ProductShelf.tsx";
 import * as $$$9 from "./sections/SearchControls.tsx";
-import * as $$$10 from "./sections/Seo.tsx";
-import * as $$$11 from "./sections/SeoPDP.tsx";
-import * as $$$12 from "./sections/SeoPLP.tsx";
-import * as $$$13 from "./sections/vtexconfig.global.tsx";
-import * as $$$14 from "$live/sections/Head.tsx";
-import * as $$$$0 from "./functions/occProductDetailsPage.ts";
-import * as $$$$1 from "./functions/shopifyProductDetailsPage.ts";
-import * as $$$$2 from "./functions/shopifyProductList.ts";
-import * as $$$$3 from "./functions/shopifyProductListingPage.ts";
-import * as $$$$4 from "./functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$5 from "./functions/vtexLegacyProductList.ts";
-import * as $$$$6 from "./functions/vtexLegacyProductListingPage.ts";
-import * as $$$$7 from "./functions/vtexProductDetailsPage.ts";
-import * as $$$$8 from "./functions/vtexProductList.ts";
-import * as $$$$9 from "./functions/vtexProductListingPage.ts";
-import * as $$$$10 from "$live/functions/EffectSelectPage.ts";
-import * as $$$$11 from "$live/functions/MatchDate.ts";
-import * as $$$$12 from "$live/functions/MatchEnvironment.ts";
-import * as $$$$13 from "$live/functions/MatchRandom.ts";
-import * as $$$$14 from "$live/functions/MatchSite.ts";
-import * as $$$$15 from "$live/functions/MatchUserAgent.ts";
+import * as $$$10 from "$live/sections/Head.tsx";
+import * as $$$11 from "$live/std/sections/SEO.tsx";
+import * as $$$12 from "$live/std/sections/SEOPDP.tsx";
+import * as $$$13 from "$live/std/sections/SEOPLP.tsx";
+import * as $$$14 from "$live/std/sections/configOCC.global.tsx";
+import * as $$$15 from "$live/std/sections/configShopify.global.tsx";
+import * as $$$16 from "$live/std/sections/configVTEX.global.tsx";
+import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
+import * as $$$$1 from "$live/functions/MatchDate.ts";
+import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
+import * as $$$$3 from "$live/functions/MatchRandom.ts";
+import * as $$$$4 from "$live/functions/MatchSite.ts";
+import * as $$$$5 from "$live/functions/MatchUserAgent.ts";
+import * as $$$$6 from "$live/std/functions/occProductDetailsPage.ts";
+import * as $$$$7 from "$live/std/functions/shopifyProductDetailsPage.ts";
+import * as $$$$8 from "$live/std/functions/shopifyProductList.ts";
+import * as $$$$9 from "$live/std/functions/shopifyProductListingPage.ts";
+import * as $$$$10 from "$live/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$11 from "$live/std/functions/vtexLegacyProductList.ts";
+import * as $$$$12 from "$live/std/functions/vtexLegacyProductListingPage.ts";
+import * as $$$$13 from "$live/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$14 from "$live/std/functions/vtexProductList.ts";
+import * as $$$$15 from "$live/std/functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -64,7 +65,6 @@ const manifest: DecoManifest = {
     "./islands/HeaderModals.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
     "./islands/SearchControls.tsx": $$4,
-    "./islands/Slick.tsx": $$5,
   },
   sections: {
     "./sections/Carousel.tsx": $$$0,
@@ -77,29 +77,31 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$7,
     "./sections/ProductShelf.tsx": $$$8,
     "./sections/SearchControls.tsx": $$$9,
-    "./sections/Seo.tsx": $$$10,
-    "./sections/SeoPDP.tsx": $$$11,
-    "./sections/SeoPLP.tsx": $$$12,
-    "./sections/vtexconfig.global.tsx": $$$13,
-    "$live/sections/Head.tsx": $$$14,
+    "$live/sections/Head.tsx": $$$10,
+    "$live/std/sections/SEO.tsx": $$$11,
+    "$live/std/sections/SEOPDP.tsx": $$$12,
+    "$live/std/sections/SEOPLP.tsx": $$$13,
+    "$live/std/sections/configOCC.global.tsx": $$$14,
+    "$live/std/sections/configShopify.global.tsx": $$$15,
+    "$live/std/sections/configVTEX.global.tsx": $$$16,
   },
   functions: {
-    "./functions/occProductDetailsPage.ts": $$$$0,
-    "./functions/shopifyProductDetailsPage.ts": $$$$1,
-    "./functions/shopifyProductList.ts": $$$$2,
-    "./functions/shopifyProductListingPage.ts": $$$$3,
-    "./functions/vtexLegacyProductDetailsPage.ts": $$$$4,
-    "./functions/vtexLegacyProductList.ts": $$$$5,
-    "./functions/vtexLegacyProductListingPage.ts": $$$$6,
-    "./functions/vtexProductDetailsPage.ts": $$$$7,
-    "./functions/vtexProductList.ts": $$$$8,
-    "./functions/vtexProductListingPage.ts": $$$$9,
-    "$live/functions/EffectSelectPage.ts": $$$$10,
-    "$live/functions/MatchDate.ts": $$$$11,
-    "$live/functions/MatchEnvironment.ts": $$$$12,
-    "$live/functions/MatchRandom.ts": $$$$13,
-    "$live/functions/MatchSite.ts": $$$$14,
-    "$live/functions/MatchUserAgent.ts": $$$$15,
+    "$live/functions/EffectSelectPage.ts": $$$$0,
+    "$live/functions/MatchDate.ts": $$$$1,
+    "$live/functions/MatchEnvironment.ts": $$$$2,
+    "$live/functions/MatchRandom.ts": $$$$3,
+    "$live/functions/MatchSite.ts": $$$$4,
+    "$live/functions/MatchUserAgent.ts": $$$$5,
+    "$live/std/functions/occProductDetailsPage.ts": $$$$6,
+    "$live/std/functions/shopifyProductDetailsPage.ts": $$$$7,
+    "$live/std/functions/shopifyProductList.ts": $$$$8,
+    "$live/std/functions/shopifyProductListingPage.ts": $$$$9,
+    "$live/std/functions/vtexLegacyProductDetailsPage.ts": $$$$10,
+    "$live/std/functions/vtexLegacyProductList.ts": $$$$11,
+    "$live/std/functions/vtexLegacyProductListingPage.ts": $$$$12,
+    "$live/std/functions/vtexProductDetailsPage.ts": $$$$13,
+    "$live/std/functions/vtexProductList.ts": $$$$14,
+    "$live/std/functions/vtexProductListingPage.ts": $$$$15,
   },
   schemas: {
     "./sections/Carousel.tsx": {
@@ -728,537 +730,6 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/Seo.tsx": {
-      "inputSchema": {
-        "title": " Seo",
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "description": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Description",
-          },
-          "url": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Url",
-          },
-          "imageUrl": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Image Url",
-          },
-          "themeColor": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Theme Color",
-          },
-        },
-        "required": [],
-      },
-      "outputSchema": null,
-    },
-    "./sections/SeoPDP.tsx": {
-      "inputSchema": {
-        "title": " Seo P D P",
-        "type": "object",
-        "properties": {
-          "page": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
-            "format": "live-function",
-            "type": "string",
-            "title": "Page",
-          },
-          "titleTemplate": {
-            "type": "string",
-            "title": "Title template",
-            "description":
-              "add a %s whenever you want it to be replaced with the product name",
-            "default": "%s | Fashion Store",
-          },
-          "description": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Meta tag description",
-            "description":
-              "If not set, the product description will be used instead",
-          },
-          "themeColor": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Theme Color",
-          },
-        },
-        "required": [
-          "page",
-          "titleTemplate",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/SeoPLP.tsx": {
-      "inputSchema": {
-        "title": " Seo P L P",
-        "type": "object",
-        "properties": {
-          "page": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
-            "format": "live-function",
-            "type": "string",
-            "title": "Page",
-          },
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "description": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Description",
-          },
-          "url": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Url",
-          },
-          "imageUrl": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Image Url",
-          },
-          "themeColor": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Theme Color",
-          },
-        },
-        "required": [
-          "page",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./sections/vtexconfig.global.tsx": {
-      "inputSchema": {
-        "title": "Vtexconfig.global",
-        "type": "object",
-        "properties": {
-          "account": {
-            "type": "string",
-            "title": "Account",
-            "description":
-              "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
-          },
-          "salesChannel": {
-            "type": "string",
-            "title": "Sales Channel",
-            "description":
-              "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
-          },
-          "locale": {
-            "type": "string",
-            "title": "Locale",
-            "description": "Locale used for VTEX Intelligent Search client.",
-          },
-          "priceCurrency": {
-            "type": "string",
-            "title": "Price Currency",
-            "description": "Default price currency.",
-            "default": "USD",
-          },
-        },
-        "required": [
-          "account",
-          "salesChannel",
-          "locale",
-          "priceCurrency",
-        ],
-      },
-      "outputSchema": null,
-    },
-    "./functions/occProductDetailsPage.ts": {
-      "inputSchema": {
-        "type": "null",
-        "title": "Occ Product Details Page",
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/shopifyProductDetailsPage.ts": {
-      "inputSchema": {
-        "type": "null",
-        "title": "Shopify Product Details Page",
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/shopifyProductList.ts": {
-      "inputSchema": {
-        "title": "Shopify Product List",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": "string",
-            "title": "Query",
-            "description": "search term to use on search",
-          },
-          "count": {
-            "type": "number",
-            "title": "Count",
-            "description": "total number of items to display",
-          },
-        },
-        "required": [
-          "query",
-          "count",
-        ],
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/shopifyProductListingPage.ts": {
-      "inputSchema": {
-        "title": "Shopify Product Listing Page",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Query",
-            "description": "overides the query term",
-          },
-          "count": {
-            "type": "number",
-            "title": "Items per page",
-            "description": "number of products per page to display",
-          },
-        },
-        "required": [
-          "count",
-        ],
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexLegacyProductDetailsPage.ts": {
-      "inputSchema": {
-        "type": "null",
-        "title": "Vtex Legacy Product Details Page",
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexLegacyProductList.ts": {
-      "inputSchema": {
-        "title": "Vtex Legacy Product List",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": "string",
-            "title": "Query",
-            "description": "query to use on search",
-          },
-          "count": {
-            "type": "number",
-            "title": "Count",
-            "description": "total number of items to display",
-          },
-          "sort": {
-            "type": "string",
-            "anyOf": [
-              {
-                "type": "string",
-                "const": "",
-              },
-              {
-                "type": "string",
-                "const": "price:desc",
-              },
-              {
-                "type": "string",
-                "const": "price:asc",
-              },
-              {
-                "type": "string",
-                "const": "orders:desc",
-              },
-              {
-                "type": "string",
-                "const": "name:desc",
-              },
-              {
-                "type": "string",
-                "const": "name:asc",
-              },
-              {
-                "type": "string",
-                "const": "release:desc",
-              },
-              {
-                "type": "string",
-                "const": "discount:desc",
-              },
-            ],
-            "title": "Sort",
-            "description": "search sort parameter",
-          },
-        },
-        "required": [
-          "query",
-          "count",
-        ],
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexLegacyProductListingPage.ts": {
-      "inputSchema": {
-        "title": "Vtex Legacy Product Listing Page",
-        "type": "object",
-        "properties": {
-          "term": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Term",
-            "description": "overides the query term",
-          },
-          "count": {
-            "type": "number",
-            "title": "Items per page",
-            "description": "number of products per page to display",
-          },
-          "ft": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Ft",
-            "description": "FullText term",
-          },
-          "fq": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Fq",
-          },
-          "map": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Map",
-            "description": "map param",
-          },
-        },
-        "required": [
-          "count",
-        ],
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexProductDetailsPage.ts": {
-      "inputSchema": {
-        "type": "null",
-        "title": "Vtex Product Details Page",
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexProductList.ts": {
-      "inputSchema": {
-        "title": "Vtex Product List",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": "string",
-            "title": "Query",
-            "description": "query to use on search",
-          },
-          "count": {
-            "type": "number",
-            "title": "Count",
-            "description": "total number of items to display",
-          },
-          "sort": {
-            "type": "string",
-            "anyOf": [
-              {
-                "type": "string",
-                "const": "",
-              },
-              {
-                "type": "string",
-                "const": "price:desc",
-              },
-              {
-                "type": "string",
-                "const": "price:asc",
-              },
-              {
-                "type": "string",
-                "const": "orders:desc",
-              },
-              {
-                "type": "string",
-                "const": "name:desc",
-              },
-              {
-                "type": "string",
-                "const": "name:asc",
-              },
-              {
-                "type": "string",
-                "const": "release:desc",
-              },
-              {
-                "type": "string",
-                "const": "discount:desc",
-              },
-            ],
-            "title": "Sort",
-            "description": "search sort parameter",
-          },
-        },
-        "required": [
-          "query",
-          "count",
-        ],
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
-    "./functions/vtexProductListingPage.ts": {
-      "inputSchema": {
-        "title": "Vtex Product Listing Page",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Query",
-            "description": "overides the query term",
-          },
-          "count": {
-            "type": "number",
-            "title": "Items per page",
-            "description": "number of products per page to display",
-          },
-        },
-        "required": [
-          "count",
-        ],
-      },
-      "outputSchema": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
-          },
-        },
-        "additionalProperties": true,
-      },
-    },
     "$live/sections/Head.tsx": {
       "inputSchema": {
         "title": " Head",
@@ -1496,6 +967,597 @@ const manifest: DecoManifest = {
         "properties": {
           "data": {
             "$id": "c995d72dc372b1b50bf9f70943e37fc94e1ccac9",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/sections/SEO.tsx": {
+      "inputSchema": {
+        "title": " S E O",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Title",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Description",
+          },
+          "url": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Url",
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Image Url",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
+    },
+    "$live/std/sections/SEOPDP.tsx": {
+      "inputSchema": {
+        "title": " S E O P D P",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+          "titleTemplate": {
+            "type": "string",
+            "title": "Title template",
+            "description":
+              "add a %s whenever you want it to be replaced with the product name",
+            "default": "%s | Fashion Store",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Meta tag description",
+            "description":
+              "If not set, the product description will be used instead",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
+          },
+        },
+        "required": [
+          "page",
+          "titleTemplate",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/std/sections/SEOPLP.tsx": {
+      "inputSchema": {
+        "title": " S E O P L P",
+        "type": "object",
+        "properties": {
+          "page": {
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "format": "live-function",
+            "type": "string",
+            "title": "Page",
+          },
+          "title": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Title",
+          },
+          "description": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Description",
+          },
+          "url": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Url",
+          },
+          "imageUrl": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Image Url",
+          },
+          "themeColor": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Theme Color",
+          },
+        },
+        "required": [
+          "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/std/sections/configOCC.global.tsx": {
+      "inputSchema": {
+        "title": "Config O C C.global",
+        "type": "object",
+        "properties": {
+          "baseUrl": {
+            "type": "string",
+            "title": "Base Url",
+          },
+          "nrpp": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Nrpp",
+          },
+        },
+        "required": [
+          "baseUrl",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/std/sections/configShopify.global.tsx": {
+      "inputSchema": {
+        "title": "Config Shopify.global",
+        "type": "object",
+        "properties": {
+          "storeName": {
+            "type": "string",
+            "title": "Store Name",
+            "description": "Shopify store name.",
+          },
+          "storefrontAccessToken": {
+            "type": "string",
+            "title": "Storefront Access Token",
+            "description": "Shopify storefront access token.",
+          },
+        },
+        "required": [
+          "storeName",
+          "storefrontAccessToken",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/std/sections/configVTEX.global.tsx": {
+      "inputSchema": {
+        "title": "Config V T E X.global",
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "string",
+            "title": "Account",
+            "description":
+              "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
+          },
+          "defaultLocale": {
+            "type": "string",
+            "title": "Default Locale",
+            "description": "Locale used for VTEX Intelligent Search client.",
+          },
+          "defaultPriceCurrency": {
+            "type": "string",
+            "title": "Default Price Currency",
+            "description": "Default price currency.",
+            "default": "USD",
+          },
+          "defaultSalesChannel": {
+            "type": "string",
+            "title": "Default Sales Channel",
+            "description":
+              "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
+          },
+          "defaultRegionId": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Default Region Id",
+          },
+          "defaultHideUnnavailableItems": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Default Hide Unnavailable Items",
+          },
+        },
+        "required": [
+          "account",
+          "defaultLocale",
+          "defaultPriceCurrency",
+          "defaultSalesChannel",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "$live/std/functions/occProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Occ Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/shopifyProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Shopify Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/shopifyProductList.ts": {
+      "inputSchema": {
+        "title": "Shopify Product List",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "search term to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/shopifyProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Shopify Product Listing Page",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Query",
+            "description": "overides the query term",
+          },
+          "count": {
+            "type": "number",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+        },
+        "required": [
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/vtexLegacyProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vtex Legacy Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/vtexLegacyProductList.ts": {
+      "inputSchema": {
+        "title": "Vtex Legacy Product List",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "query to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
+              {
+                "type": "string",
+                "const": "price:desc",
+              },
+              {
+                "type": "string",
+                "const": "price:asc",
+              },
+              {
+                "type": "string",
+                "const": "orders:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:asc",
+              },
+              {
+                "type": "string",
+                "const": "release:desc",
+              },
+              {
+                "type": "string",
+                "const": "discount:desc",
+              },
+            ],
+            "title": "Sort",
+            "description": "search sort parameter",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/vtexLegacyProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Vtex Legacy Product Listing Page",
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Term",
+            "description": "overides the query term",
+          },
+          "count": {
+            "type": "number",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+          "ft": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Ft",
+            "description": "FullText term",
+          },
+          "fq": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Fq",
+          },
+          "map": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Map",
+            "description": "map param",
+          },
+        },
+        "required": [
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/vtexProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vtex Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/vtexProductList.ts": {
+      "inputSchema": {
+        "title": "Vtex Product List",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query",
+            "description": "query to use on search",
+          },
+          "count": {
+            "type": "number",
+            "title": "Count",
+            "description": "total number of items to display",
+          },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
+              {
+                "type": "string",
+                "const": "price:desc",
+              },
+              {
+                "type": "string",
+                "const": "price:asc",
+              },
+              {
+                "type": "string",
+                "const": "orders:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:desc",
+              },
+              {
+                "type": "string",
+                "const": "name:asc",
+              },
+              {
+                "type": "string",
+                "const": "release:desc",
+              },
+              {
+                "type": "string",
+                "const": "discount:desc",
+              },
+            ],
+            "title": "Sort",
+            "description": "search sort parameter",
+          },
+        },
+        "required": [
+          "query",
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "$live/std/functions/vtexProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Vtex Product Listing Page",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Query",
+            "description": "overides the query term",
+          },
+          "count": {
+            "type": "number",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+        },
+        "required": [
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
           },
         },
         "additionalProperties": true,

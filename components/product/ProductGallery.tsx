@@ -3,7 +3,7 @@ import Container from "$store/components/ui/Container.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import type { LoaderReturnType } from "$live/std/types.ts";
+import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "$live/std/commerce/types.ts";
 
 export interface Props {

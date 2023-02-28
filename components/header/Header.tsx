@@ -1,6 +1,6 @@
 import Modals from "$store/islands/HeaderModals.tsx";
 import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import type { LoaderReturnType } from "$live/std/types.ts";
+import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "$live/std/commerce/types.ts";
 
 import Alert from "./Alert.tsx";
