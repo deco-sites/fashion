@@ -49,6 +49,13 @@ const options: Omit<Options, "selfURL"> = {
         display: "none",
       },
     },
+    "animate-carousel-tostart": (args) => {
+      return {
+        animation: `${
+          args[0] ? args[0].substring(1, args[0].length - 1) : "none"
+        } 3s ease infinite`,
+      };
+    },
   },
   theme: {
     extend: {
@@ -109,8 +116,38 @@ const options: Omit<Options, "selfURL"> = {
         "slide-left": "slide-left-frame 0.4s ease normal",
         "slide-right": "slide-right-frame 0.4s ease normal",
         "slide-bottom": "slide-bottom-frame 0.4s ease normal",
+        "carousel-tonext": "carousel-tonext 3s ease infinite",
+        "carousel-snap": "carousel-snap 3s ease infinite",
       },
       keyframes: {
+        "carousel-tonext": {
+          "75%": {
+            left: "0",
+          },
+          "95%": {
+            left: "100%",
+          },
+          "98%": {
+            left: "100%",
+          },
+          "99%": {
+            left: "0",
+          },
+        },
+        "carousel-snap": {
+          "96%": {
+            "scroll-snap-align": "center",
+          },
+          "97%": {
+            "scroll-snap-align": "none",
+          },
+          "99%": {
+            "scroll-snap-align": "none",
+          },
+          "100%": {
+            "scroll-snap-align": "center",
+          },
+        },
         "slide-left-frame": {
           from: { transform: "translateX(100%)" },
           to: { transform: "translateX(0)" },
