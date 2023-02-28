@@ -1,6 +1,7 @@
 import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
-import Slider from "./Slider.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Image {
   /** @description desktop otimized image */
@@ -46,8 +47,23 @@ function Carousel({ images, preload }: Props) {
       class={`w-full pt-[${aspectRatio(mobileDimension)}%] sm:pt-[${
         aspectRatio(desktopDimension)
       }%]`}
-      arrows
-      dots
+      leftArrow={
+        <Icon
+          width={24}
+          height={24}
+          id="ChevronLeft"
+          strokeWidth={3}
+        />
+      }
+      rightArrow={
+        <Icon
+          width={24}
+          height={24}
+          id="ChevronRight"
+          strokeWidth={3}
+        />
+      }
+      dot={<Icon id="Circle" width={24} height={24} strokeWidth={2} />}
     >
       {images?.map(({ mobile, desktop, alt }, index) => {
         const isFirst = index === 0;

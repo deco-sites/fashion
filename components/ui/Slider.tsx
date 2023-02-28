@@ -16,11 +16,14 @@ const generateSlideId = (id: string, index: number) => `${id}-slide${index}`;
 interface Props {
   class?: string;
   children?: ComponentChild[];
-  dots?: boolean;
-  arrows?: boolean;
+  dot?: ComponentChild;
+  leftArrow?: ComponentChild;
+  rightArrow?: ComponentChild;
 }
 
-function Slider({ class: _class = "", children, dots, arrows }: Props) {
+function Slider(
+  { class: _class = "", children, dot, leftArrow, rightArrow }: Props,
+) {
   const id = useId();
 
   if (children === undefined) {
@@ -54,32 +57,26 @@ function Slider({ class: _class = "", children, dots, arrows }: Props) {
           const isLast = index === childrenLength - 1;
           const { next, prev } = getPrevNextIndexes(index, childrenLength);
 
-          const prevNextArrows = arrows && (
+          const prevNextArrows = (!!leftArrow || !!rightArrow) && (
             <>
-              <a
-                class={`absolute ${arrowTopClass} left-0 ml-2 text-white outline-none p-2`}
-                href={`#${generateSlideId(id, prev)}`}
-                data-carousel-prev
-              >
-                <Icon
-                  width={24}
-                  height={24}
-                  id="ChevronLeft"
-                  strokeWidth={3}
-                />
-              </a>
-              <a
-                class={`absolute ${arrowTopClass} right-0 mr-2 text-white outline-none p-2`}
-                href={`#${generateSlideId(id, next)}`}
-                data-carousel-next
-              >
-                <Icon
-                  width={24}
-                  height={24}
-                  id="ChevronRight"
-                  strokeWidth={3}
-                />
-              </a>
+              {!!leftArrow && (
+                <a
+                  class={`absolute ${arrowTopClass} left-0 ml-2 text-white outline-none p-2`}
+                  href={`#${generateSlideId(id, prev)}`}
+                  data-carousel-prev
+                >
+                  {leftArrow}
+                </a>
+              )}
+              {!!rightArrow && (
+                <a
+                  class={`absolute ${arrowTopClass} right-0 mr-2 text-white outline-none p-2`}
+                  href={`#${generateSlideId(id, next)}`}
+                  data-carousel-next
+                >
+                  {rightArrow}
+                </a>
+              )}
             </>
           );
 
@@ -109,7 +106,7 @@ function Slider({ class: _class = "", children, dots, arrows }: Props) {
           );
         })}
       </ol>
-      {dots && (
+      {!!dot && (
         <aside class="absolute right-0 bottom-0 left-0 text-center">
           <ol class="inline-block" data-carousel-navigation>
             {childrenArray.map((_, index) => {
@@ -122,7 +119,7 @@ function Slider({ class: _class = "", children, dots, arrows }: Props) {
                     href={`#${generateSlideId(id, index)}`}
                     class="focus:text-gray-600"
                   >
-                    <Icon id="Circle" width={24} height={24} strokeWidth={2} />
+                    {dot}
                   </a>
                 </li>
               );
