@@ -1,4 +1,3 @@
-import Image from "deco-sites/std/components/Image.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
@@ -8,8 +7,12 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
-import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import type {
+  ImageObject,
+  ProductDetailsPage,
+} from "deco-sites/std/commerce/types.ts";
 
+import ProductImages from "$store/islands/ProductImages.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
@@ -37,15 +40,17 @@ function ProductDetails({ page }: Props) {
 
   /**
    * I did not really liked the images from our default base store.
-   * To overcome this issue without generating another catalog altogheter
-   * I decided to get images from unplash. However, you should get the images
+   * To overcome this issue without generating another catalog altogether
+   * I decided to get images from unsplash. However, you should get the images
    * front the catalog itself. To do this, just uncomment the code below
    */
-  // const [front, back] = images ?? [];
-  const [front, back] = [{
+  // const allImages: ImageObject[] = images ?? [];
+  const allImages: ImageObject[] = [{
+    "@type": "ImageObject",
     url: `https://source.unsplash.com/user/nikutm?v=${productID}`,
     alternateName: "nikutm-front",
   }, {
+    "@type": "ImageObject",
     url: `https://source.unsplash.com/user/nikutm?v=${productID}-2`,
     alternateName: "nikutm-back",
   }];
@@ -55,20 +60,13 @@ function ProductDetails({ page }: Props) {
       <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
         <div class="flex flex-row overflow-auto scroll-x-mandatory scroll-smooth sm:gap-2">
-          {[front, back ?? front].map((img, index) => (
-            <Image
-              style={{ aspectRatio: "360 / 500" }}
-              class="scroll-snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
-              sizes="(max-width: 640px) 100vw, 30vw"
-              src={img.url!}
-              alt={img.alternateName}
-              width={360}
-              height={500}
-              // Preload LCP image for better web vitals
-              preload={index === 0}
-              loading={index === 0 ? "eager" : "lazy"}
-            />
-          ))}
+          <ProductImages
+            width={572}
+            height={572}
+            thumbWidth={46}
+            thumbHeight={46}
+            image={allImages}
+          />
         </div>
         {/* Product Info */}
         <div class="px-4 sm:px-0">

@@ -15,7 +15,8 @@ import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
-import * as $$4 from "./islands/SearchControls.tsx";
+import * as $$4 from "./islands/ProductImages.tsx";
+import * as $$5 from "./islands/SearchControls.tsx";
 import * as $$$0 from "./sections/Carousel.tsx";
 import * as $$$1 from "./sections/DesignSystem.story.tsx";
 import * as $$$2 from "./sections/Features.tsx";
@@ -63,7 +64,8 @@ const manifest: DecoManifest = {
     "./islands/HeaderButton.tsx": $$1,
     "./islands/HeaderModals.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
-    "./islands/SearchControls.tsx": $$4,
+    "./islands/ProductImages.tsx": $$4,
+    "./islands/SearchControls.tsx": $$5,
   },
   sections: {
     "./sections/Carousel.tsx": $$$0,

@@ -16,7 +16,7 @@ if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
   title?: string;
-  mode?: "sidebar-right" | "sidebar-left" | "center";
+  mode?: "sidebar-right" | "sidebar-left" | "center" | "full";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
 };
@@ -25,6 +25,7 @@ const styles = {
   "sidebar-right": "animate-slide-left sm:ml-auto",
   "sidebar-left": "animate-slide-right",
   center: "",
+  full: "animate-fade-in pt-0 max-h-screen max-w-full sm:max-w-full",
 };
 
 const Modal = ({
@@ -63,12 +64,20 @@ const Modal = ({
       class={`bg-transparent p-0 m-0 max-w-full sm:max-w-lg w-full max-h-full h-full backdrop ${variant}`}
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
+      // @ts-expect-error - This is a bug in types.
+      onClose={onClose}
     >
       <section class="py-6 px-4 h-full bg-default flex flex-col">
-        <header class="flex justify-between pb-6 border-b-1 border-default">
-          <h1>
-            <Text variant="heading-strong">{title}</Text>
-          </h1>
+        <header
+          class={`flex justify-between pb-6 ${
+            title ? "border-b-1 border-default" : ""
+          }`}
+        >
+          {title && (
+            <h1>
+              <Text variant="heading-strong">{title}</Text>
+            </h1>
+          )}
           <Button variant="icon" onClick={onClose}>
             <Icon id="XMark" width={20} height={20} strokeWidth={2} />
           </Button>
