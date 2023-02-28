@@ -10,10 +10,10 @@
  */
 import Icon from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import ProductCard from "$store/components/product/ProductCard.tsx";
 import type { Product } from "$live/std/commerce/types.ts";
+import List from "$store/components/ui/List.tsx";
 
 // Editable props
 export interface EditableProps {
@@ -115,13 +115,13 @@ function Searchbar({
         {products && (
           <div class="flex flex-col gap-6 py-6">
             <Text variant="body-strong">Produtos sugeridos</Text>
-            <Slider>
+            <List>
               {products.map((product) => (
                 <div class="min-w-[200px] max-w-[200px]">
                   <ProductCard product={product} />
                 </div>
               ))}
-            </Slider>
+            </List>
           </div>
         )}
       </div>
