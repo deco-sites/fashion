@@ -1,8 +1,7 @@
 import { tw } from "twind";
 import { useId } from "preact/hooks";
-import { keyframes } from "twind/css";
+import { animation, css, keyframes } from "twind/css";
 import { ComponentChild, toChildArray } from "preact";
-import Icon from "$store/components/ui/Icon.tsx";
 
 const getPrevNextIndexes = (index: number, total: number) => {
   return {
@@ -19,10 +18,18 @@ interface Props {
   dot?: ComponentChild;
   leftArrow?: ComponentChild;
   rightArrow?: ComponentChild;
+  animationDuration?: number;
 }
 
 function Slider(
-  { class: _class = "", children, dot, leftArrow, rightArrow }: Props,
+  {
+    class: _class = "",
+    children,
+    dot,
+    leftArrow,
+    rightArrow,
+    animationDuration = 3,
+  }: Props,
 ) {
   const id = useId();
 
@@ -38,6 +45,24 @@ function Slider(
             98% { left: -${Math.max(childrenLength - 1, 0)}00%; }
             99% { left: 0; }
 `);
+  const toNext = tw(keyframes`
+    75% { left: 0; }
+    95% { left: 100%; }
+    98% { left: 100%; }
+    99% { left: 0; }
+  `);
+  const snap = tw(keyframes`
+          96% { scroll-snap-align: center; }
+          97% { scroll-snap-align: none; }
+          99% { scroll-snap-align: none; }
+          100% { scroll-snap-align: center; }`);
+
+  const autoPlayAnimation = tw(css(animation({
+    animationDuration: `${animationDuration}s`,
+    animationTimingFunction: "ease",
+    animationIterationCount: "infinite",
+  }, {})));
+
   // Inline top-[calc(50% - 1.25rem)] doesn't work.
   // This is 50% - ((arrow svg height + padding) / 2)
   const arrowTopClass = tw(() => ({ top: "calc(50% - 1.25rem)" }));
@@ -89,14 +114,8 @@ function Slider(
             >
               {child}
               <div
-                class={`absolute top-0 left-0 w-full h-full scroll-snap-center ${
-                  !isLast
-                    ? "animate-carousel-tonext"
-                    : `animate-carousel-tostart-${toStart}`
-                } animate-carousel-snap group-hover:animate-none group-focus-within:animate-none`}
-                style={`animation-name: ${
-                  !isLast ? "carousel-tonext," : `${toStart},`
-                } carousel-snap`}
+                class={`absolute top-0 left-0 w-full h-full scroll-snap-center ${autoPlayAnimation} animate-carousel-snap group-hover:animate-none group-focus-within:animate-none`}
+                style={`animation-name: ${isLast ? toStart : toNext}, ${snap};`}
                 data-carousel-snapper
               >
                 {isFirst && prevNextArrows}

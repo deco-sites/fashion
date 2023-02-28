@@ -47,6 +47,7 @@ function Carousel({ images, preload }: Props) {
       class={`w-full pt-[${aspectRatio(mobileDimension)}%] sm:pt-[${
         aspectRatio(desktopDimension)
       }%]`}
+      animationDuration={5}
       leftArrow={
         <Icon
           width={24}
