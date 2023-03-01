@@ -4,7 +4,7 @@ import type {
   Filter,
   FilterToggle,
   ProductListingPage,
-} from "$live/std/commerce/types.ts";
+} from "deco-sites/std/commerce/types.ts";
 
 interface Props {
   filters: ProductListingPage["filters"];

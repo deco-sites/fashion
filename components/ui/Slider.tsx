@@ -5,7 +5,7 @@ interface Props {
   children?: ComponentChildren;
 }
 
-export default function Slider({ children }: Props) {
+function Slider({ children }: Props) {
   return (
     <ul class="flex flex-nowrap justify-between overflow-x-auto max-w-full w-full scroll-x-mandatory scroll-smooth scrollbar-none gap-10">
       {Children.map(
@@ -15,3 +15,5 @@ export default function Slider({ children }: Props) {
     </ul>
   );
 }
+
+export default Slider;

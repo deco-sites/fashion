@@ -1,9 +1,9 @@
-import Image from "$live/std/ui/components/Image.tsx";
+import Image from "deco-sites/std/components/Image.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
-import { useCart } from "$store/sdk/cart/useCart.ts";
+import { useCart } from "deco-sites/std/commerce/vtex/cart/useCart.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 
 interface Props {

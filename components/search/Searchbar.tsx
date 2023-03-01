@@ -12,8 +12,8 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import ProductCard from "$store/components/product/ProductCard.tsx";
-import type { Product } from "$live/std/commerce/types.ts";
 import Slider from "$store/components/ui/Slider.tsx";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
 // Editable props
 export interface EditableProps {

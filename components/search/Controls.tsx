@@ -7,8 +7,8 @@ import Sort from "$store/components/search/Sort.tsx";
 import Modal from "$store/components/ui/Modal.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
-import type { ProductListingPage } from "$live/std/commerce/types.ts";
-import type { LoaderReturnType } from "$live/std/types.ts";
+import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
+import type { LoaderReturnType } from "$live/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage>;
