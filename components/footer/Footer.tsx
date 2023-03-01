@@ -134,7 +134,7 @@ export interface Props {
 
 function Footer({ sections = defaultSections }: Props) {
   return (
-    <footer class="w-full bg-decorative-one flex flex-col divide-y-1 divide-default">
+    <footer class="w-full bg-primary flex flex-col divide-y-1 divide-default">
       <div>
         <Container class="w-full flex flex-col divide-y-1 divide-default">
           <FooterContainer>

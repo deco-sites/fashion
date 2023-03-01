@@ -14,7 +14,7 @@ export interface Props {
 
 function Alert({ alerts = messages }: Props) {
   return (
-    <div class="hidden md:(flex justify-center) bg-decorative-two text-sm text-white">
+    <div class="hidden md:(flex justify-center) bg-tertiary text-sm text-white">
       <Carousel class="pt-10 w-[340px] sm:w-[500px]" animationDuration={4}>
         {alerts.map((alert) => (
           <Text

@@ -9,11 +9,11 @@ import type { ComponentChildren } from "preact";
 
 const colors = [
   "default",
-  "decorative-one",
-  "decorative-two",
+  "primary",
+  "tertiary",
   "interactive-default",
   "dark-interactive-default",
-  "icon-brand",
+  "secondary",
   "icon-subdued",
 ] as const;
 
