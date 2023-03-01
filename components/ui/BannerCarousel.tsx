@@ -1,7 +1,7 @@
-import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
-import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
-import Carousel from "$store/components/ui/Carousel.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
+import Carousel from "$store/components/ui/Carousel.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Image {
   /** @description desktop otimized image */

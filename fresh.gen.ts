@@ -27,28 +27,28 @@ import * as $$$7 from "./sections/ProductGallery.tsx";
 import * as $$$8 from "./sections/ProductShelf.tsx";
 import * as $$$9 from "./sections/SearchControls.tsx";
 import * as $$$10 from "$live/sections/Head.tsx";
-import * as $$$11 from "$live/std/sections/SEO.tsx";
-import * as $$$12 from "$live/std/sections/SEOPDP.tsx";
-import * as $$$13 from "$live/std/sections/SEOPLP.tsx";
-import * as $$$14 from "$live/std/sections/configOCC.global.tsx";
-import * as $$$15 from "$live/std/sections/configShopify.global.tsx";
-import * as $$$16 from "$live/std/sections/configVTEX.global.tsx";
+import * as $$$11 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$12 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$13 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$14 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$15 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$16 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
 import * as $$$$3 from "$live/functions/MatchRandom.ts";
 import * as $$$$4 from "$live/functions/MatchSite.ts";
 import * as $$$$5 from "$live/functions/MatchUserAgent.ts";
-import * as $$$$6 from "$live/std/functions/occProductDetailsPage.ts";
-import * as $$$$7 from "$live/std/functions/shopifyProductDetailsPage.ts";
-import * as $$$$8 from "$live/std/functions/shopifyProductList.ts";
-import * as $$$$9 from "$live/std/functions/shopifyProductListingPage.ts";
-import * as $$$$10 from "$live/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$11 from "$live/std/functions/vtexLegacyProductList.ts";
-import * as $$$$12 from "$live/std/functions/vtexLegacyProductListingPage.ts";
-import * as $$$$13 from "$live/std/functions/vtexProductDetailsPage.ts";
-import * as $$$$14 from "$live/std/functions/vtexProductList.ts";
-import * as $$$$15 from "$live/std/functions/vtexProductListingPage.ts";
+import * as $$$$6 from "deco-sites/std/functions/occProductDetailsPage.ts";
+import * as $$$$7 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
+import * as $$$$8 from "deco-sites/std/functions/shopifyProductList.ts";
+import * as $$$$9 from "deco-sites/std/functions/shopifyProductListingPage.ts";
+import * as $$$$10 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$11 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as $$$$13 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$14 from "deco-sites/std/functions/vtexProductList.ts";
+import * as $$$$15 from "deco-sites/std/functions/vtexProductListingPage.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -78,12 +78,12 @@ const manifest: DecoManifest = {
     "./sections/ProductShelf.tsx": $$$8,
     "./sections/SearchControls.tsx": $$$9,
     "$live/sections/Head.tsx": $$$10,
-    "$live/std/sections/SEO.tsx": $$$11,
-    "$live/std/sections/SEOPDP.tsx": $$$12,
-    "$live/std/sections/SEOPLP.tsx": $$$13,
-    "$live/std/sections/configOCC.global.tsx": $$$14,
-    "$live/std/sections/configShopify.global.tsx": $$$15,
-    "$live/std/sections/configVTEX.global.tsx": $$$16,
+    "deco-sites/std/sections/SEO.tsx": $$$11,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$12,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$13,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$14,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$15,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$16,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -92,16 +92,16 @@ const manifest: DecoManifest = {
     "$live/functions/MatchRandom.ts": $$$$3,
     "$live/functions/MatchSite.ts": $$$$4,
     "$live/functions/MatchUserAgent.ts": $$$$5,
-    "$live/std/functions/occProductDetailsPage.ts": $$$$6,
-    "$live/std/functions/shopifyProductDetailsPage.ts": $$$$7,
-    "$live/std/functions/shopifyProductList.ts": $$$$8,
-    "$live/std/functions/shopifyProductListingPage.ts": $$$$9,
-    "$live/std/functions/vtexLegacyProductDetailsPage.ts": $$$$10,
-    "$live/std/functions/vtexLegacyProductList.ts": $$$$11,
-    "$live/std/functions/vtexLegacyProductListingPage.ts": $$$$12,
-    "$live/std/functions/vtexProductDetailsPage.ts": $$$$13,
-    "$live/std/functions/vtexProductList.ts": $$$$14,
-    "$live/std/functions/vtexProductListingPage.ts": $$$$15,
+    "deco-sites/std/functions/occProductDetailsPage.ts": $$$$6,
+    "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$7,
+    "deco-sites/std/functions/shopifyProductList.ts": $$$$8,
+    "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$9,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$10,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$11,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$12,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$13,
+    "deco-sites/std/functions/vtexProductList.ts": $$$$14,
+    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$15,
   },
   schemas: {
     "./sections/Carousel.tsx": {
@@ -972,7 +972,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/sections/SEO.tsx": {
+    "deco-sites/std/sections/SEO.tsx": {
       "inputSchema": {
         "title": " S E O",
         "type": "object",
@@ -1017,7 +1017,7 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "$live/std/sections/SEOPDP.tsx": {
+    "deco-sites/std/sections/SEOPDP.tsx": {
       "inputSchema": {
         "title": " S E O P D P",
         "type": "object",
@@ -1059,7 +1059,7 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "$live/std/sections/SEOPLP.tsx": {
+    "deco-sites/std/sections/SEOPLP.tsx": {
       "inputSchema": {
         "title": " S E O P L P",
         "type": "object",
@@ -1112,7 +1112,7 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "$live/std/sections/configOCC.global.tsx": {
+    "deco-sites/std/sections/configOCC.global.tsx": {
       "inputSchema": {
         "title": "Config O C C.global",
         "type": "object",
@@ -1135,7 +1135,7 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "$live/std/sections/configShopify.global.tsx": {
+    "deco-sites/std/sections/configShopify.global.tsx": {
       "inputSchema": {
         "title": "Config Shopify.global",
         "type": "object",
@@ -1158,7 +1158,7 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "$live/std/sections/configVTEX.global.tsx": {
+    "deco-sites/std/sections/configVTEX.global.tsx": {
       "inputSchema": {
         "title": "Config V T E X.global",
         "type": "object",
@@ -1210,7 +1210,7 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "$live/std/functions/occProductDetailsPage.ts": {
+    "deco-sites/std/functions/occProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
         "title": "Occ Product Details Page",
@@ -1225,7 +1225,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/shopifyProductDetailsPage.ts": {
+    "deco-sites/std/functions/shopifyProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
         "title": "Shopify Product Details Page",
@@ -1240,7 +1240,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/shopifyProductList.ts": {
+    "deco-sites/std/functions/shopifyProductList.ts": {
       "inputSchema": {
         "title": "Shopify Product List",
         "type": "object",
@@ -1271,7 +1271,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/shopifyProductListingPage.ts": {
+    "deco-sites/std/functions/shopifyProductListingPage.ts": {
       "inputSchema": {
         "title": "Shopify Product Listing Page",
         "type": "object",
@@ -1304,7 +1304,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/vtexLegacyProductDetailsPage.ts": {
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
         "title": "Vtex Legacy Product Details Page",
@@ -1319,7 +1319,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/vtexLegacyProductList.ts": {
+    "deco-sites/std/functions/vtexLegacyProductList.ts": {
       "inputSchema": {
         "title": "Vtex Legacy Product List",
         "type": "object",
@@ -1389,7 +1389,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/vtexLegacyProductListingPage.ts": {
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": {
       "inputSchema": {
         "title": "Vtex Legacy Product Listing Page",
         "type": "object",
@@ -1445,7 +1445,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/vtexProductDetailsPage.ts": {
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
         "title": "Vtex Product Details Page",
@@ -1460,7 +1460,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/vtexProductList.ts": {
+    "deco-sites/std/functions/vtexProductList.ts": {
       "inputSchema": {
         "title": "Vtex Product List",
         "type": "object",
@@ -1530,7 +1530,7 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
-    "$live/std/functions/vtexProductListingPage.ts": {
+    "deco-sites/std/functions/vtexProductListingPage.ts": {
       "inputSchema": {
         "title": "Vtex Product Listing Page",
         "type": "object",

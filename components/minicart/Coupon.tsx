@@ -1,6 +1,6 @@
 import { useRef } from "preact/hooks";
 import { useSignal } from "@preact/signals";
-import { useCart } from "$live/std/commerce/vtex/cart/useCart.ts";
+import { useCart } from "deco-sites/std/commerce/vtex/cart/useCart.ts";
 import Button from "$store/components/ui/Button.tsx";
 import Text from "$store/components/ui/Text.tsx";
 

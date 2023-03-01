@@ -1,4 +1,4 @@
-import type { Product } from "$live/std/commerce/types.ts";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
 export const useVariantPossibilities = ({ isVariantOf }: Product) => {
   const allProperties = (isVariantOf?.hasVariant ?? [])

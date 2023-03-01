@@ -1,7 +1,7 @@
 import type {
   AggregateOffer,
   UnitPriceSpecification,
-} from "$live/std/commerce/types.ts";
+} from "deco-sites/std/commerce/types.ts";
 
 const bestInstallment = (
   acc: UnitPriceSpecification | null,

@@ -1,7 +1,7 @@
 import Text from "$store/components/ui/Text.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
-import type { Product } from "$live/std/commerce/types.ts";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
   product: Product;
