@@ -26,13 +26,12 @@ import * as $$$6 from "./sections/ProductDetails.tsx";
 import * as $$$7 from "./sections/ProductGallery.tsx";
 import * as $$$8 from "./sections/ProductShelf.tsx";
 import * as $$$9 from "./sections/SearchControls.tsx";
-import * as $$$10 from "$live/sections/Head.tsx";
-import * as $$$11 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$12 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$13 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$14 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$15 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$16 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$10 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$11 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$12 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$13 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$14 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$15 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -77,13 +76,12 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$7,
     "./sections/ProductShelf.tsx": $$$8,
     "./sections/SearchControls.tsx": $$$9,
-    "$live/sections/Head.tsx": $$$10,
-    "deco-sites/std/sections/SEO.tsx": $$$11,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$12,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$13,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$14,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$15,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$16,
+    "deco-sites/std/sections/SEO.tsx": $$$10,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$11,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$12,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$13,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$14,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$15,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -727,86 +725,6 @@ const manifest: DecoManifest = {
         "required": [
           "page",
         ],
-      },
-      "outputSchema": null,
-    },
-    "$live/sections/Head.tsx": {
-      "inputSchema": {
-        "title": " Head",
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Title",
-          },
-          "description": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Description",
-          },
-          "url": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Url",
-          },
-          "imageUrl": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Image Url",
-          },
-          "faviconUrl": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Favicon Url",
-          },
-          "styleUrls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-            },
-            "title": "Style Urls",
-          },
-          "inlineStyles": {
-            "type": "array",
-            "items": {
-              "type": "string",
-            },
-            "title": "Inline Styles",
-          },
-          "scriptUrls": {
-            "type": "array",
-            "items": {
-              "type": "string",
-            },
-            "title": "Script Urls",
-          },
-          "inlineScripts": {
-            "type": "array",
-            "items": {
-              "type": "string",
-            },
-            "title": "Inline Scripts",
-          },
-          "themeColor": {
-            "type": [
-              "string",
-              "null",
-            ],
-            "title": "Theme Color",
-          },
-        },
-        "required": [],
       },
       "outputSchema": null,
     },
