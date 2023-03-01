@@ -51,7 +51,6 @@ function Header({ alerts, searchbar, products, navItems = item }: Props) {
   return (
     <header class="h-[93px]">
       <div class="bg-default fixed w-full z-50">
-        <Alert alerts={alerts} />
         <Navbar items={navItems} />
       </div>
 

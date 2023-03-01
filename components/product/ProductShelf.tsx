@@ -21,6 +21,7 @@ function ProductShelf({
           <Text class="uppercase" variant="subheading-strong">{title}</Text>
         </h2>
       )}
+      ISSA!!!! 123123
       <Slider>
         {products?.map((product, index) => {
           const ml = index === 0 ? "ml-4" : "";
