@@ -1,9 +1,9 @@
 import ProductCard from "$store/components/product/ProductCard.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Container from "$store/components/ui/Container.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
 import type { LoaderReturnType } from "$live/std/types.ts";
 import type { Product } from "$live/std/commerce/types.ts";
+import Slider from "$store/components/ui/Slider.tsx";
 
 export interface Props {
   title: string;
