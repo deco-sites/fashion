@@ -53,18 +53,6 @@ const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
-        // Tokens to remove
-        primary: "#2FD180",
-        "primary-green-light": "#2EAE80",
-        "primary-green-dark": "#177151",
-        "primary-dark": "#221E1F",
-        "primary-light": "#f4f4f4",
-        "custom-brown": "#f8f5f1",
-        "custom-gray": "#f4f4f4",
-        "primary-red": "#D10923",
-        "primary-red-light": "#DA262B",
-        "primary-red-dark": "#A1061A",
-
         // Tokens from Design System
         "default": "#FFFFFF",
         "decorative-one": "#003232",

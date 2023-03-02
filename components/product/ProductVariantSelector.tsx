@@ -19,7 +19,7 @@ function VariantSelector({ product }: Props) {
           <ul class="flex flex-row gap-2">
             {Object.entries(possibilities[name]).map(([url, value]) => (
               <li>
-                <a href={url}>
+                <a href={url} data-prefetch>
                   <Avatar
                     // deno-lint-ignore no-explicit-any
                     content={value as any}

@@ -197,6 +197,7 @@
     "https://deno.land/x/partytown@0.2.1/mod.ts": "ff75d502e288ca97d66584e3122f4c039736e414819ebbc3bdd67b0ee00d6b32",
     "https://deno.land/x/partytown@0.2.1/shared.ts": "650bfe1dc98199683abd91f8d31cde08c316e99a57084578fbd8f428d1085117",
     "https://deno.land/x/prefetch@0.0.6/mod.ts": "d7c7652ef220611404952e84c7a265f5997173d86828b586ddd6c75d0eef734b",
+    "https://deno.land/x/prefetch@0.1.0/mod.ts": "c381a7fce2f415883505decfe124abc3f69b78ea283c61c3fc9fbda8497b0189",
     "https://deno.land/x/rutt@0.0.14/mod.ts": "5027b8e8b12acca48b396a25aee74ad7ee94a25c24cda75571d7839cbd41113c",
     "https://deno.land/x/ts_morph@16.0.0/common/DenoRuntime.ts": "537800e840d0994f9055164e11bf33eadf96419246af0d3c453793c3ae67bdb3",
     "https://deno.land/x/ts_morph@16.0.0/common/mod.ts": "01985d2ee7da8d1caee318a9d07664774fbee4e31602bc2bb6bb62c3489555ed",

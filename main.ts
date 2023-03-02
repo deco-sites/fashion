@@ -8,12 +8,14 @@ import { start } from "$fresh/server.ts";
 import twindPlugin from "$fresh/plugins/twind.ts";
 import twindConfig from "./twind.config.ts";
 import partytownPlugin from "partytown/mod.ts";
-// import prefetchPlugin from "prefetch";
+import prefetchPlugin from "prefetch";
 
 await start(manifest, {
   plugins: [
     partytownPlugin(),
-    // prefetchPlugin(),
+    prefetchPlugin({
+      strategy: "opt-in",
+    }),
     twindPlugin({
       ...twindConfig,
       selfURL: new URL("./twind.config.ts", import.meta.url).href,
