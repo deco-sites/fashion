@@ -40,7 +40,7 @@ function Sort() {
     <select id="sort" name="sort" onInput={applySort} class="w-min m-2">
       {options.map(({ value, label }) => (
         <option key={value} value={value} selected={value === sort}>
-          <Text variant="caption-regular">{label}</Text>
+          <Text variant="caption">{label}</Text>
         </option>
       ))}
     </select>

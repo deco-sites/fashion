@@ -77,12 +77,12 @@ function ProductDetails({ page }: Props) {
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
-              <Text tone="subdued" variant="subcaption-regular">
+              <Text tone="subdued" variant="caption">
                 Cod. {gtin}
               </Text>
             </div>
             <h1>
-              <Text variant="heading-regular">{name}</Text>
+              <Text variant="heading-3">{name}</Text>
             </h1>
           </div>
           {/* Prices */}
@@ -91,15 +91,15 @@ function ProductDetails({ page }: Props) {
               <Text
                 class="line-through"
                 tone="subdued"
-                variant="subcaption-regular"
+                variant="list-price"
               >
                 {formatPrice(listPrice, offers!.priceCurrency!)}
               </Text>
-              <Text tone="critical" variant="heading-strong">
+              <Text tone="price" variant="heading-3">
                 {formatPrice(price, offers!.priceCurrency!)}
               </Text>
             </div>
-            <Text tone="subdued" variant="caption-regular">
+            <Text tone="subdued" variant="caption">
               {installments}
             </Text>
           </div>
@@ -115,14 +115,14 @@ function ProductDetails({ page }: Props) {
                 sellerId={seller}
               />
             )}
-            <Button variant="quiet">
+            <Button variant="secondary">
               <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
               Favoritar
             </Button>
           </div>
           {/* Description card */}
           <div class="mt-4 sm:mt-6">
-            <Text variant="caption-regular">
+            <Text variant="caption">
               {description && (
                 <details>
                   <summary class="cursor-pointer">Descrição</summary>

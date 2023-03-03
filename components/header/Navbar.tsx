@@ -1,25 +1,9 @@
 import HeaderButton from "$store/islands/HeaderButton.tsx";
+import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import Text from "$store/components/ui/Text.tsx";
-import type { ComponentChildren } from "preact";
 
-import type { NavItem as Item } from "./NavItem.ts";
-
-function NavItem({
-  href,
-  label,
-}: { href: string; label: ComponentChildren }) {
-  return (
-    <a href={href}>
-      <Text
-        class="hover:border-black border-solid border-b border-white"
-        variant="body-regular"
-      >
-        {label}
-      </Text>
-    </a>
-  );
-}
+import NavItem from "./NavItem.tsx";
+import type { INavItem as Item } from "./NavItem.tsx";
 
 function Navbar({ items }: {
   items: Item[];
@@ -31,7 +15,9 @@ function Navbar({ items }: {
         <HeaderButton variant="menu" />
 
         <a href="/" class="flex-grow" aria-label="Store logo">
-          <Icon id="Logo" width={87.5} height={28} />
+          <Button variant="icon">
+            <Icon id="Logo" width={87.5} height={28} />
+          </Button>
         </a>
 
         <div class="flex gap-6">

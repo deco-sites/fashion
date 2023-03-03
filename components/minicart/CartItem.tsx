@@ -36,14 +36,14 @@ function CartItem({ index }: Props) {
         class="object-cover object-center"
       />
       <div class="flex-grow">
-        <Text variant="body-regular">
+        <Text variant="body">
           {name}
         </Text>
         <div class="flex items-center gap-2">
-          <Text tone="subdued" variant="subcaption-regular">
+          <Text tone="subdued" variant="caption">
             {formatPrice(listPrice / 100, currencyCode!, locale)}
           </Text>
-          <Text tone={isGift ? "default" : "critical"} variant="caption-strong">
+          <Text tone="price" variant="caption">
             {isGift
               ? "Grátis"
               : formatPrice(sellingPrice / 100, currencyCode!, locale)}

@@ -75,7 +75,7 @@ function Searchbar({
           htmlFor="searchbar"
         >
           <Icon
-            class="text-icon-subdued"
+            class="text-subdued"
             id="MagnifyingGlass"
             width={20}
             height={20}
@@ -91,12 +91,12 @@ function Searchbar({
       </form>
       <div class="flex flex-col divide-y divide-default">
         <div class="flex flex-col gap-6 py-6">
-          <Text variant="body-strong">Termos mais buscados</Text>
+          <Text variant="heading-3">Termos mais buscados</Text>
           <ul class="flex flex-col gap-6">
             {terms.map((term) => (
               <li>
                 <a href={`/s?q=${term}`} class="flex gap-4 items-center">
-                  <Text variant="body-regular">
+                  <Text variant="body">
                     <Icon
                       id="MagnifyingGlass"
                       width={20}
@@ -104,7 +104,7 @@ function Searchbar({
                       strokeWidth={0.01}
                     />
                   </Text>
-                  <Text variant="body-regular">
+                  <Text variant="body">
                     {term}
                   </Text>
                 </a>
@@ -114,7 +114,7 @@ function Searchbar({
         </div>
         {products && (
           <div class="flex flex-col gap-6 py-6">
-            <Text variant="body-strong">Produtos sugeridos</Text>
+            <Text variant="heading-3">Produtos sugeridos</Text>
             <Slider>
               {products.map((product) => (
                 <div class="min-w-[200px] max-w-[200px]">

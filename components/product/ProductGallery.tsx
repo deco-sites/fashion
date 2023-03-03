@@ -33,7 +33,7 @@ function ProductGallery({ page }: Props) {
             <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
           </Text>
         </Button>
-        <Text variant="caption-regular">
+        <Text variant="caption">
           {page.pageInfo.currentPage + 1}
         </Text>
         <Button

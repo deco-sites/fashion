@@ -1,7 +1,7 @@
-import { NavItem } from "./NavItem.ts";
+import { INavItem } from "./NavItem.tsx";
 
 export interface Props {
-  items: NavItem[];
+  items: INavItem[];
 }
 
 function Menu({ items }: Props) {

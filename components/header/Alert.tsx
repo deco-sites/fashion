@@ -14,13 +14,13 @@ export interface Props {
 
 function Alert({ alerts = messages }: Props) {
   return (
-    <div class="flex justify-center bg-decorative-two text-sm text-white">
+    <div class="flex justify-center bg-badge text-sm text-white">
       <Carousel class="pt-10 w-[340px] sm:w-[500px]" animationDuration={4}>
         {alerts.map((alert) => (
           <Text
             class="flex justify-center items-center w-[340px] sm:w-[500px] h-full"
-            variant="caption-regular"
-            tone="interactive-default"
+            variant="caption"
+            tone="default-inverse"
           >
             {alert}
           </Text>
