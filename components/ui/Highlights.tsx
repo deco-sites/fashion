@@ -21,7 +21,7 @@ function Highlights({ highlights = [], title }: Props) {
     <Container class="flex flex-col items-center gap-10 py-10">
       {title && (
         <h2>
-          <Text class="uppercase" variant="subheading-strong">{title}</Text>
+          <Text variant="heading-2">{title}</Text>
         </h2>
       )}
 
@@ -41,7 +41,7 @@ function Highlights({ highlights = [], title }: Props) {
                 width={200}
                 height={309}
               />
-              <Text variant="body-strong">{label}</Text>
+              <Text variant="body">{label}</Text>
             </a>
           );
         })}

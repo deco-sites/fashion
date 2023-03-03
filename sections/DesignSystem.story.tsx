@@ -9,31 +9,45 @@ import type { ComponentChildren } from "preact";
 
 const colors = [
   "default",
-  "decorative-one",
-  "decorative-two",
-  "interactive-default",
-  "dark-interactive-default",
-  "icon-brand",
-  "icon-subdued",
+  "header",
+  "badge",
+  "footer",
+  "interactive",
+  "interactive-inverse",
+  "hover",
+  "hover-inverse",
 ] as const;
 
 const typography = [
-  "heading-strong",
-  "heading-regular",
-  "subheading-strong",
-  "display-strong",
-  "body-strong",
-  "body-regular",
-  "caption-strong",
-  "caption-regular",
-  "subcaption-regular",
+  "heading-1",
+  "heading-2",
+  "heading-3",
+  "menu",
+  "button",
+  "body",
+  "caption",
+  "list-price",
 ] as const;
 
 const tones = [
   "default",
+  "default-inverse",
   "subdued",
+  "subdued-inverse",
+  "price",
+  "section-title",
+  "positive",
   "critical",
-  "interactive-default",
+] as const;
+
+const buttons = [
+  ["primary", "Primary"],
+  ["secondary", "Secondary"],
+  ["tertiary", "Tertiary"],
+  [
+    "icon",
+    <Icon id="ShoppingCart" width={20} height={20} strokeWidth={0.01} />,
+  ],
 ] as const;
 
 const icons = [
@@ -71,7 +85,7 @@ function DesignSystemItem(
   return (
     <li class="py-4">
       <div class="flex flex-col gap-8">
-        <Text variant="display-strong">{title}</Text>
+        <Text variant="heading-2">{title}</Text>
         {children}
       </div>
     </li>
@@ -86,9 +100,32 @@ function DesignSystem() {
           {colors.map((color) => (
             <li class="flex flex-col items-center">
               <div
-                class={`rounded-full border border-default h-8 w-8 bg-${color}`}
+                class={`rounded-full border border-default h-10 w-10 bg-${color}`}
               />
               bg-{color}
+            </li>
+          ))}
+        </ul>
+      </DesignSystemItem>
+
+      <DesignSystemItem title="Tones - text color">
+        <ul class="grid grid-cols-2 sm:grid-cols-4 items-start gap-4">
+          {tones.map((tone) => (
+            <li class="flex flex-col items-center">
+              <div
+                class={`rounded-full border border-default h-10 w-10 flex justify-center items-center text-${tone}`}
+              >
+                <svg
+                  height={40}
+                  width={40}
+                  fill="currentColor"
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="50" cy="50" r="50" />
+                </svg>
+              </div>
+              text-{tone}
             </li>
           ))}
         </ul>
@@ -98,17 +135,7 @@ function DesignSystem() {
         <ul class="flex flex-col gap-2">
           {typography.map((font) => (
             <li>
-              <Text variant={font}>{font}</Text>
-            </li>
-          ))}
-        </ul>
-      </DesignSystemItem>
-
-      <DesignSystemItem title="Tones">
-        <ul class="flex flex-row gap-2">
-          {tones.map((tone) => (
-            <li>
-              <Text tone={tone}>{tone}</Text>
+              <Text variant={font} class="capitalize">{font}</Text>
             </li>
           ))}
         </ul>
@@ -125,11 +152,12 @@ function DesignSystem() {
       </DesignSystemItem>
 
       <DesignSystemItem title="Button">
-        <ul class="flex flex-row gap-8">
-          {(["default", "quiet", "icon"] as const).map((variant) => (
+        <ul class="flex flex-wrap flex-row gap-8">
+          {buttons.map(([variant, children]) => (
             <li class="flex gap-2">
-              <Button variant={variant}>{variant}</Button>
-              <Button variant={variant} loading></Button>
+              <Button variant={variant}>{children}</Button>
+              <Button variant={variant} disabled>{children}</Button>
+              <Button variant={variant} loading>{children}</Button>
             </li>
           ))}
         </ul>

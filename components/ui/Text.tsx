@@ -2,21 +2,28 @@ import { JSX } from "preact";
 import { forwardRef } from "preact/compat";
 
 type Props = JSX.IntrinsicElements["span"] & {
-  tone?: "default" | "subdued" | "critical" | "interactive-default";
+  tone?:
+    | "default"
+    | "default-inverse"
+    | "subdued"
+    | "subdued-inverse"
+    | "price"
+    | "section-title"
+    | "positive"
+    | "critical";
   variant?:
-    | "body-regular"
-    | "body-strong"
-    | "heading-strong"
-    | "heading-regular"
-    | "subheading-strong"
-    | "display-strong"
-    | "caption-strong"
-    | "caption-regular"
-    | "subcaption-regular";
+    | "heading-1"
+    | "heading-2"
+    | "heading-3"
+    | "menu"
+    | "button"
+    | "body"
+    | "caption"
+    | "list-price";
 };
 
 const Text = forwardRef<HTMLSpanElement, Props>((
-  { tone = "default", variant = "body-regular", class: _class = "", ...props },
+  { tone = "default", variant = "body", class: _class = "", ...props },
   ref,
 ) => {
   return (

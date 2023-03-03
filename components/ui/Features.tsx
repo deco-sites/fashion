@@ -31,15 +31,14 @@ function FeatureHighlights(
           {features.map(({ icon: id = "Truck", title, description }) => (
             <div class="flex flex-row sm:flex-col gap-4 py-6 sm:py-0 sm:px-10">
               <Icon
-                class="text-icon-brand"
                 id={id}
                 width={40}
                 height={40}
                 strokeWidth={2}
               />
               <div class="flex flex-col gap-2">
-                <Text variant="heading-strong">{title}</Text>
-                <Text tone="subdued" variant="caption-regular">
+                <Text variant="heading-3">{title}</Text>
+                <Text tone="subdued" variant="caption">
                   {description}
                 </Text>
               </div>

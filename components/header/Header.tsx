@@ -5,7 +5,7 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
 
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
-import type { NavItem as Item } from "./NavItem.ts";
+import type { INavItem as Item } from "./NavItem.tsx";
 
 const item: Item[] = [
   {

@@ -49,8 +49,8 @@ function FilterValues({ key, values }: FilterToggle) {
         return (
           <a href={url} class="flex items-center gap-2">
             <input type="checkbox" checked={selected} />
-            <Text variant="caption-regular">{label}</Text>
-            <Text tone="subdued" variant="subcaption-regular">
+            <Text variant="caption">{label}</Text>
+            <Text tone="subdued" variant="caption">
               ({quantity})
             </Text>
           </a>
@@ -67,7 +67,7 @@ export default function Filters({ filters }: Props) {
         .filter(isToggle)
         .map((filter) => (
           <li class="flex flex-col gap-4">
-            <Text variant="body-strong">{filter.label}</Text>
+            <Text variant="body">{filter.label}</Text>
             <FilterValues {...filter} />
           </li>
         ))}

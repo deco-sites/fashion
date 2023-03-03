@@ -67,7 +67,7 @@ const Modal = ({
       <section class="py-6 px-4 h-full bg-default flex flex-col">
         <header class="flex justify-between pb-6 border-b-1 border-default">
           <h1>
-            <Text variant="heading-strong">{title}</Text>
+            <Text variant="heading-2">{title}</Text>
           </h1>
           <Button variant="icon" onClick={onClose}>
             <Icon id="XMark" width={20} height={20} strokeWidth={2} />

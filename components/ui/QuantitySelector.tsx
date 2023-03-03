@@ -42,7 +42,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
       </Button>
       <style dangerouslySetInnerHTML={{ __html: innerStyle }} />
       <input
-        class="text-center text-default text-body-strong font-body-strong bg-transparent outline-none disabled:opacity-50"
+        class="text-center text-default text-body font-body bg-transparent outline-none disabled:opacity-50"
         type="number"
         inputMode="numeric"
         pattern="[0-9]*"

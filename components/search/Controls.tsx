@@ -36,7 +36,7 @@ function SearchControls({ page }: Props) {
           }}
         >
           <Icon id="FilterList" width={16} height={16} />
-          <Text variant="caption-regular">
+          <Text variant="caption">
             Filtrar
           </Text>
         </Button>

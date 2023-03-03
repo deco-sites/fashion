@@ -29,9 +29,9 @@ function Cart() {
   if (isCartEmpty) {
     return (
       <div class="flex flex-col justify-center items-center h-full gap-6">
-        <Text variant="display-strong">Sua sacola está vazia</Text>
+        <Text variant="heading-2">Sua sacola está vazia</Text>
         <Button
-          variant="quiet"
+          variant="secondary"
           onClick={() => {
             displayCart.value = false;
           }}
@@ -62,8 +62,8 @@ function Cart() {
         <div class="border-t-1 border-default py-4 flex flex-col gap-4">
           {discounts?.value && (
             <div class="flex justify-between items-center">
-              <Text variant="caption-regular">Descontos</Text>
-              <Text variant="caption-regular">
+              <Text variant="caption">Descontos</Text>
+              <Text variant="caption">
                 {formatPrice(discounts.value / 100, currencyCode!, locale)}
               </Text>
             </div>
@@ -74,12 +74,12 @@ function Cart() {
         {total?.value && (
           <div class="border-t-1 border-default pt-4 flex flex-col justify-end items-end gap-2">
             <div class="flex justify-between items-center w-full">
-              <Text variant="body-strong">Total</Text>
-              <Text variant="heading-strong">
+              <Text variant="body">Total</Text>
+              <Text variant="heading-3">
                 {formatPrice(total.value / 100, currencyCode!, locale)}
               </Text>
             </div>
-            <Text tone="subdued" variant="caption-regular">
+            <Text tone="subdued" variant="caption">
               Taxas e fretes serão calculados no checkout
             </Text>
           </div>

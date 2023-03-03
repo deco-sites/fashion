@@ -14,7 +14,7 @@ function Item({ name, item }: { name?: string; item?: string }) {
   return (
     <li class="whitespace-nowrap overflow-hidden overflow-ellipsis">
       <a href={item}>
-        <Text variant="caption-regular">
+        <Text variant="caption">
           {name}
         </Text>
       </a>

@@ -13,31 +13,38 @@ export type Props =
   };
 
 const variants = {
-  default:
-    "py-2 px-3 text-body-strong font-body-strong text-interactive-default bg-interactive-default disabled:dark-interactive-default border-transparent",
-  quiet:
-    "py-2 px-3 text-body-regular font-body-regular text-default border-default",
-  icon: "text-default border-transparent disabled:opacity-50 bg-transparent",
+  primary:
+    "py-2 px-3 rounded bg-interactive text-default-inverse border-transparent active:bg-interactive-inverse active:text-default disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-interactive ",
+  secondary:
+    "py-2 px-3 rounded bg-interactive-inverse text-default border-default hover:bg-hover active:bg-interactive active:text-interactive-inverse disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-interactive ",
+  tertiary:
+    "py-2 px-3 rounded bg-interactive-inverse text-default border-transparent hover:bg-hover active:bg-interactive active:text-interactive-inverse disabled:border-transparent disabled:text-subdued disabled:bg-interactive-inverse focus:outline-interactive ",
+  icon:
+    "p-2 bg-transparent rounded-full text-default border-transparent active:bg-interactive active:text-default-inverse disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
 };
 
 const Button = forwardRef<HTMLButtonElement, Props>(({
-  variant = "default",
+  variant = "primary",
   as = "button",
   class: _class = "",
   children,
   loading,
+  disabled,
   ...props
 }, ref) => {
-  const Component = as as ComponentType;
+  const Component = as as ComponentType<
+    { disabled?: boolean; className: string }
+  >;
   const styles = variants[variant];
 
   return (
     <Component
-      className={`inline-flex items-center justify-center gap-2 cursor-pointer transition-colors duration-150 ease-in rounded border-1 focus:outline-none ${styles} ${_class}`}
       {...props}
+      className={`inline-flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed transition-colors duration-150 ease-in border ${styles} ${_class}`}
+      disabled={disabled || loading}
       ref={ref}
     >
-      {loading === true ? <Spinner size={20} /> : children}
+      {loading === true ? <Spinner size={24} /> : children}
     </Component>
   );
 });

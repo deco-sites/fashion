@@ -27,10 +27,10 @@ function Coupon() {
 
   return (
     <div class="flex justify-between items-center">
-      <Text variant="caption-regular">Coupon de desconto</Text>
+      <Text variant="caption">Coupon de desconto</Text>
       {!displayInput.value && (
         <Button
-          class="underline text-caption-regular font-caption-regular"
+          class="underline text-caption font-caption"
           onClick={toggleInput}
           variant="icon"
         >
@@ -43,7 +43,7 @@ function Coupon() {
             id="coupon"
             name="coupon"
             ref={ref}
-            class="w-[140px] border rounded p-2 text-caption-regular font-caption-regular"
+            class="w-[140px] border rounded p-2 text-caption font-caption"
             type="text"
             value={coupon ?? ""}
             placeholder={"Coupom"}
