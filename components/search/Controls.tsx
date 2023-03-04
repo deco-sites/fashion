@@ -30,12 +30,12 @@ function SearchControls({ page }: Props) {
       </div>
       <div class="flex flex-row sm:gap-6 items-center justify-between">
         <Button
-          variant="icon"
+          variant="tertiary"
           onClick={() => {
             open.value = true;
           }}
         >
-          <Icon id="FilterList" width={16} height={16} />
+          <Icon id="FilterList" width={16} height={16} strokeWidth={2} />
           <Text variant="caption">
             Filtrar
           </Text>

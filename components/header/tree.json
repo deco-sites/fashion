@@ -1,0 +1,168 @@
+[
+  {
+    "label": "Masculino",
+    "href": "/masculino",
+    "children": []
+  },
+  {
+    "label": "Feminino",
+    "href": "/feminino",
+    "image": {
+      "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/0a89a521-fff9-4d89-a1e0-1017935dc276",
+      "alt": "feminino"
+    },
+    "children": [
+      {
+        "label": "Novidades",
+        "href": "/masculino",
+        "children": [
+          {
+            "label": "Mais vendidos",
+            "href": "/masculino"
+          },
+          {
+            "label": "Parcerias",
+            "href": "/masculino"
+          }
+        ]
+      },
+      {
+        "label": "Roupas",
+        "href": "/feminino/roupas",
+        "children": [
+          {
+            "label": "Camisetas",
+            "href": "/feminino/roupas/camisetas",
+            "children": []
+          },
+          {
+            "label": "Vestidos",
+            "href": "/feminino/roupas/vestidos",
+            "children": []
+          },
+          {
+            "label": "Saias",
+            "href": "/feminino/roupas/saias",
+            "children": []
+          },
+          {
+            "label": "Casacos",
+            "href": "/feminino/roupas/casacos",
+            "children": []
+          },
+          {
+            "label": "Jaquetas",
+            "href": "/feminino/roupas/jaquetas",
+            "children": []
+          },
+          {
+            "label": "Camisas",
+            "href": "/feminino/roupas/camisas",
+            "children": []
+          },
+          {
+            "label": "Jaqueta de Penas",
+            "href": "/feminino/roupas/jaqueta-de-penas",
+            "children": []
+          },
+          {
+            "label": "Camisa Jaqueta",
+            "href": "/feminino/roupas/camisa-jaqueta",
+            "children": []
+          },
+          {
+            "label": "Calças",
+            "href": "/feminino/roupas/calca",
+            "children": []
+          },
+          {
+            "label": "Coletes",
+            "href": "/feminino/roupas/colete",
+            "children": []
+          },
+          {
+            "label": "Pulovers",
+            "href": "/feminino/roupas/pulover",
+            "children": []
+          },
+          {
+            "label": "Blazers",
+            "href": "/feminino/roupas/blazer",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Calçados",
+        "href": "/masculino",
+        "children": [
+          {
+            "label": "Tenis",
+            "href": "/feminino"
+          },
+          {
+            "label": "Sandalias",
+            "href": "/feminino"
+          },
+          {
+            "label": "Botas",
+            "href": "/feminino"
+          },
+          {
+            "label": "Rasteiras",
+            "href": "/feminino"
+          },
+          {
+            "label": "Ofertas",
+            "href": "/feminino"
+          }
+        ]
+      },
+      {
+        "label": "Linhas",
+        "href": "/masculino",
+        "children": [
+          {
+            "label": "Moda Praia",
+            "href": "/feminino"
+          },
+          {
+            "label": "Moleton",
+            "href": "/feminino"
+          },
+          {
+            "label": "Tricot",
+            "href": "/feminino"
+          }
+        ]
+      },
+      {
+        "label": "Accesórios",
+        "href": "/masculino",
+        "children": [
+          {
+            "label": "Óculos",
+            "href": "/feminino"
+          },
+          {
+            "label": "Bolsas e mochilas",
+            "href": "/feminino"
+          },
+          {
+            "label": "Malas",
+            "href": "/feminino"
+          },
+          {
+            "label": "Necessaire",
+            "href": "/feminino"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Brindes",
+    "href": "/brindes",
+    "children": []
+  }
+]
