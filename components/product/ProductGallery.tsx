@@ -22,31 +22,19 @@ function ProductGallery({ page }: Props) {
       </div>
 
       <div class="flex flex-row items-center justify-center gap-2 my-4">
-        <Button
-          as={page.pageInfo.previousPage ? "a" : "button"}
-          rel="prev"
-          disabled={!page.pageInfo.previousPage}
-          href={page.pageInfo.previousPage ?? "#"}
-          variant="icon"
-        >
-          <Text tone={page.pageInfo.previousPage ? "default" : "subdued"}>
+        <a rel="prev" href={page.pageInfo.previousPage ?? "#"}>
+          <Button disabled={!page.pageInfo.previousPage} variant="icon">
             <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
-          </Text>
-        </Button>
+          </Button>
+        </a>
         <Text variant="caption">
           {page.pageInfo.currentPage + 1}
         </Text>
-        <Button
-          as={page.pageInfo.nextPage ? "a" : "button"}
-          rel="next"
-          disabled={!page.pageInfo.nextPage}
-          href={page.pageInfo.nextPage ?? "#"}
-          variant="icon"
-        >
-          <Text tone={page.pageInfo.nextPage ? "default" : "subdued"}>
+        <a rel="next" href={page.pageInfo.nextPage ?? "#"}>
+          <Button disabled={!page.pageInfo.nextPage} variant="icon">
             <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
-          </Text>
-        </Button>
+          </Button>
+        </a>
       </div>
     </Container>
   );

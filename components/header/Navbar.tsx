@@ -1,17 +1,17 @@
 import HeaderButton from "$store/islands/HeaderButton.tsx";
-import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 
 import NavItem from "./NavItem.tsx";
-import type { INavItem as Item } from "./NavItem.tsx";
+import { navbarHeight } from "./constants.ts";
+import type { INavItem } from "./NavItem.tsx";
 
 function Navbar({ items }: {
-  items: Item[];
+  items: INavItem[];
 }) {
   return (
     <>
       {/* Mobile Version */}
-      <div class="md:hidden flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-2 gap-2">
+      <div class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 border-default w-full px-2 gap-2`}>
         <HeaderButton variant="menu" />
 
         <a href="/" class="flex-grow" aria-label="Store logo">

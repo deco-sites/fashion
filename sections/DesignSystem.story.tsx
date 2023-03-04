@@ -46,7 +46,7 @@ const buttons = [
   ["tertiary", "Tertiary"],
   [
     "icon",
-    <Icon id="ShoppingCart" width={20} height={20} strokeWidth={0.01} />,
+    <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />,
   ],
 ] as const;
 
@@ -54,6 +54,8 @@ const icons = [
   "Circle",
   "ChevronLeft",
   "ChevronRight",
+  "ChevronUp",
+  "ChevronDown",
   "QuestionMarkCircle",
   "User",
   "ShoppingCart",
@@ -76,7 +78,10 @@ const icons = [
   "Deco",
   "Discord",
   "FilterList",
-  "ChevronUp",
+  "Plus",
+  "Minus",
+  "MapPin",
+  "Phone",
 ] as const;
 
 function DesignSystemItem(

@@ -192,6 +192,14 @@ const manifest: DecoManifest = {
                     },
                     {
                       "type": "string",
+                      "const": "ChevronUp",
+                    },
+                    {
+                      "type": "string",
+                      "const": "ChevronDown",
+                    },
+                    {
+                      "type": "string",
                       "const": "QuestionMarkCircle",
                     },
                     {
@@ -217,6 +225,22 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "XMark",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Plus",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Minus",
+                    },
+                    {
+                      "type": "string",
+                      "const": "MapPin",
+                    },
+                    {
+                      "type": "string",
+                      "const": "Phone",
                     },
                     {
                       "type": "string",
@@ -277,10 +301,6 @@ const manifest: DecoManifest = {
                     {
                       "type": "string",
                       "const": "FilterList",
-                    },
-                    {
-                      "type": "string",
-                      "const": "ChevronUp",
                     },
                   ],
                   "title": "Icon",
@@ -371,6 +391,14 @@ const manifest: DecoManifest = {
                               },
                               {
                                 "type": "string",
+                                "const": "ChevronUp",
+                              },
+                              {
+                                "type": "string",
+                                "const": "ChevronDown",
+                              },
+                              {
+                                "type": "string",
                                 "const": "QuestionMarkCircle",
                               },
                               {
@@ -396,6 +424,22 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "XMark",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Plus",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Minus",
+                              },
+                              {
+                                "type": "string",
+                                "const": "MapPin",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Phone",
                               },
                               {
                                 "type": "string",
@@ -456,10 +500,6 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "FilterList",
-                              },
-                              {
-                                "type": "string",
-                                "const": "ChevronUp",
                               },
                             ],
                             "title": "Icon",
@@ -545,7 +585,7 @@ const manifest: DecoManifest = {
           "navItems": {
             "type": "array",
             "items": {
-              "title": "Item",
+              "title": "NavItem",
               "type": "object",
               "properties": {
                 "label": {
@@ -570,6 +610,27 @@ const manifest: DecoManifest = {
                         "type": "string",
                         "title": "Href",
                       },
+                      "children": {
+                        "title": "Children",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": "string",
+                              "title": "Label",
+                            },
+                            "href": {
+                              "type": "string",
+                              "title": "Href",
+                            },
+                          },
+                          "required": [
+                            "label",
+                            "href",
+                          ],
+                        },
+                      },
                     },
                     "required": [
                       "label",
@@ -577,11 +638,28 @@ const manifest: DecoManifest = {
                     ],
                   },
                 },
+                "image": {
+                  "title": "Image",
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "format": "image-uri",
+                      "type": "string",
+                      "title": "Src",
+                    },
+                    "alt": {
+                      "type": "string",
+                      "title": "Alt",
+                    },
+                  },
+                  "required": [
+                    "alt",
+                  ],
+                },
               },
               "required": [
                 "label",
                 "href",
-                "children",
               ],
             },
             "title": "Navigation items",
