@@ -648,13 +648,14 @@ const manifest: DecoManifest = {
                       "title": "Src",
                     },
                     "alt": {
-                      "type": "string",
+                      "type": [
+                        "string",
+                        "null",
+                      ],
                       "title": "Alt",
                     },
                   },
-                  "required": [
-                    "alt",
-                  ],
+                  "required": [],
                 },
               },
               "required": [

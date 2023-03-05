@@ -4,7 +4,6 @@ import type { EditableProps as SearchbarProps } from "$store/components/search/S
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
-import items from "./tree.json" assert { type: "json" };
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
@@ -22,7 +21,7 @@ export interface NavItem {
   }>;
   image?: {
     src?: Image;
-    alt: string;
+    alt?: string;
   };
 }
 
@@ -43,7 +42,7 @@ export interface Props {
   products?: LoaderReturnType<Product[]>;
 }
 
-function Header({ alerts, searchbar, products, navItems = items }: Props) {
+function Header({ alerts, searchbar, products, navItems = [] }: Props) {
   return (
     <header class={`h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
