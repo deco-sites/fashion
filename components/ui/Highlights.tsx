@@ -27,8 +27,8 @@ function Highlights({ highlights = [], title }: Props) {
 
       <Slider class="gap-6">
         {highlights.map(({ href, src, alt, label }, index) => {
-          const ml = index == 0 ? "ml-4 sm:ml-0" : "";
-          const mr = index === highlights.length - 1 ? "mr-4 sm:mr-0" : "";
+          const ml = index == 0 ? "ml-6 sm:ml-0" : "";
+          const mr = index === highlights.length - 1 ? "mr-6 sm:mr-0" : "";
 
           return (
             <a
