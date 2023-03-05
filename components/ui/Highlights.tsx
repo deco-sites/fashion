@@ -25,22 +25,22 @@ function Highlights({ highlights = [], title }: Props) {
         </h2>
       )}
 
-      <Slider>
+      <Slider class="gap-6">
         {highlights.map(({ href, src, alt, label }, index) => {
-          const ml = index == 0 ? "ml-4" : "";
-          const mr = index === highlights.length - 1 ? "mr-4" : "";
+          const ml = index == 0 ? "ml-4 sm:ml-0" : "";
+          const mr = index === highlights.length - 1 ? "mr-4 sm:mr-0" : "";
 
           return (
             <a
               href={href}
-              class={`flex flex-col gap-4 items-center min-w-[200px] max-w-[200px] ${ml} ${mr}`}
+              class={`flex flex-col gap-4 items-center min-w-[190px] ${ml} ${mr}`}
             >
               <Image
                 class="rounded-3xl"
                 src={src}
                 alt={alt}
-                width={193}
-                height={268}
+                width={190}
+                height={265}
               />
               <Text variant="body">{label}</Text>
             </a>

@@ -21,7 +21,7 @@ function ProductShelf({
           <Text variant="heading-2">{title}</Text>
         </h2>
       )}
-      <Slider>
+      <Slider class="gap-10">
         {products?.map((product, index) => {
           const ml = index === 0 ? "ml-4" : "";
           const mr = index === products.length - 1 ? "mr-4" : "";

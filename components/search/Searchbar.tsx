@@ -115,7 +115,7 @@ function Searchbar({
         {products && (
           <div class="flex flex-col gap-6 py-6">
             <Text variant="heading-3">Produtos sugeridos</Text>
-            <Slider>
+            <Slider class="gap-10">
               {products.map((product) => (
                 <div class="min-w-[200px] max-w-[200px]">
                   <ProductCard product={product} />
