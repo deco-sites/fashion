@@ -17,21 +17,22 @@ import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
 import * as $$4 from "./islands/SearchControls.tsx";
 import * as $$$0 from "./sections/Carousel.tsx";
-import * as $$$1 from "./sections/DesignSystem.story.tsx";
-import * as $$$2 from "./sections/Features.tsx";
-import * as $$$3 from "./sections/Footer.tsx";
-import * as $$$4 from "./sections/Header.tsx";
-import * as $$$5 from "./sections/Highlights.tsx";
-import * as $$$6 from "./sections/ProductDetails.tsx";
-import * as $$$7 from "./sections/ProductGallery.tsx";
-import * as $$$8 from "./sections/ProductShelf.tsx";
-import * as $$$9 from "./sections/SearchControls.tsx";
-import * as $$$10 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$11 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$12 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$13 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$14 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$15 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$1 from "./sections/CookieConsent.tsx";
+import * as $$$2 from "./sections/DesignSystem.story.tsx";
+import * as $$$3 from "./sections/Features.tsx";
+import * as $$$4 from "./sections/Footer.tsx";
+import * as $$$5 from "./sections/Header.tsx";
+import * as $$$6 from "./sections/Highlights.tsx";
+import * as $$$7 from "./sections/ProductDetails.tsx";
+import * as $$$8 from "./sections/ProductGallery.tsx";
+import * as $$$9 from "./sections/ProductShelf.tsx";
+import * as $$$10 from "./sections/SearchControls.tsx";
+import * as $$$11 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$12 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$13 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$14 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$15 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$16 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -67,21 +68,22 @@ const manifest: DecoManifest = {
   },
   sections: {
     "./sections/Carousel.tsx": $$$0,
-    "./sections/DesignSystem.story.tsx": $$$1,
-    "./sections/Features.tsx": $$$2,
-    "./sections/Footer.tsx": $$$3,
-    "./sections/Header.tsx": $$$4,
-    "./sections/Highlights.tsx": $$$5,
-    "./sections/ProductDetails.tsx": $$$6,
-    "./sections/ProductGallery.tsx": $$$7,
-    "./sections/ProductShelf.tsx": $$$8,
-    "./sections/SearchControls.tsx": $$$9,
-    "deco-sites/std/sections/SEO.tsx": $$$10,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$11,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$12,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$13,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$14,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$15,
+    "./sections/CookieConsent.tsx": $$$1,
+    "./sections/DesignSystem.story.tsx": $$$2,
+    "./sections/Features.tsx": $$$3,
+    "./sections/Footer.tsx": $$$4,
+    "./sections/Header.tsx": $$$5,
+    "./sections/Highlights.tsx": $$$6,
+    "./sections/ProductDetails.tsx": $$$7,
+    "./sections/ProductGallery.tsx": $$$8,
+    "./sections/ProductShelf.tsx": $$$9,
+    "./sections/SearchControls.tsx": $$$10,
+    "deco-sites/std/sections/SEO.tsx": $$$11,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$12,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$13,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$14,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$15,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$16,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -158,6 +160,10 @@ const manifest: DecoManifest = {
         },
         "required": [],
       },
+      "outputSchema": null,
+    },
+    "./sections/CookieConsent.tsx": {
+      "inputSchema": null,
       "outputSchema": null,
     },
     "./sections/DesignSystem.story.tsx": {
