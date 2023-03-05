@@ -77,7 +77,7 @@ function ProductCard({ product, preload }: Props) {
             alt={front.alternateName}
             width={200}
             height={279}
-            class="w-full group-hover:hidden"
+            class="rounded w-full group-hover:hidden"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             sizes="(max-width: 640px) 50vw, 20vw"
@@ -87,7 +87,7 @@ function ProductCard({ product, preload }: Props) {
             alt={back?.alternateName ?? front.alternateName}
             width={200}
             height={279}
-            class="w-full hidden group-hover:block"
+            class="rounded w-full hidden group-hover:block"
             sizes="(max-width: 640px) 50vw, 20vw"
           />
           {seller && (
