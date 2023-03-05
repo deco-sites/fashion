@@ -36,10 +36,11 @@ function Highlights({ highlights = [], title }: Props) {
               class={`flex flex-col gap-4 items-center min-w-[200px] max-w-[200px] ${ml} ${mr}`}
             >
               <Image
+                class="rounded-3xl"
                 src={src}
                 alt={alt}
-                width={200}
-                height={309}
+                width={193}
+                height={268}
               />
               <Text variant="body">{label}</Text>
             </a>
