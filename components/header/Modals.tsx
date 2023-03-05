@@ -1,4 +1,5 @@
 import Modal from "$store/components/ui/Modal.tsx";
+import Spinner from "$store/components/ui/Spinner.tsx";
 import { lazy, Suspense } from "preact/compat";
 import { useUI } from "$store/sdk/useUI.ts";
 
@@ -12,6 +13,14 @@ const Searchbar = lazy(() => import("$store/components/search/Searchbar.tsx"));
 interface Props {
   menu: MenuProps;
   searchbar?: SearchbarProps;
+}
+
+function Loading() {
+  return (
+    <div class="h-screen w-full flex items-center justify-center">
+      <Spinner />
+    </div>
+  );
 }
 
 function Modals({ menu, searchbar }: Props) {
@@ -28,7 +37,7 @@ function Modals({ menu, searchbar }: Props) {
           displayMenu.value = false;
         }}
       >
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <Menu {...menu} />
         </Suspense>
       </Modal>
@@ -42,7 +51,7 @@ function Modals({ menu, searchbar }: Props) {
           displaySearchbar.value = false;
         }}
       >
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <Searchbar {...searchbar} />
         </Suspense>
       </Modal>
@@ -56,7 +65,7 @@ function Modals({ menu, searchbar }: Props) {
           displayCart.value = false;
         }}
       >
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
           <Cart />
         </Suspense>
       </Modal>
