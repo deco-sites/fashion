@@ -36,9 +36,9 @@ function Navbar({ items }: {
         <div class="flex-auto flex justify-center">
           {items.map((item) => <NavItem {...item} />)}
         </div>
-        <div class="flex-none w-44 flex items-center justify-end gap-6">
+        <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />
-          <a href="/login" aria-label="Log in">
+          <a href="/login" aria-label="Log in" class="block p-2">
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </a>
           <HeaderButton variant="cart" />
