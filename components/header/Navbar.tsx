@@ -33,7 +33,7 @@ function Navbar({ items }: {
             <Icon id="Logo" width={87.5} height={28} />
           </a>
         </div>
-        <div class="flex-auto flex gap-6 justify-center">
+        <div class="flex-auto flex justify-center">
           {items.map((item) => <NavItem {...item} />)}
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-6">
