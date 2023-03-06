@@ -44,7 +44,7 @@ function CartButton() {
   return (
     <Button
       variant="icon"
-      class="relative mr-2 rounded-full hover:bg-hover"
+      class="relative rounded-full hover:bg-hover"
       aria-label="open cart"
       disabled={loading.value}
       onClick={() => {

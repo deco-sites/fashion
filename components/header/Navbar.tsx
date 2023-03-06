@@ -11,7 +11,7 @@ function Navbar({ items }: {
   return (
     <>
       {/* Mobile Version */}
-      <div class="md:hidden flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-4 gap-4">
+      <div class="md:hidden flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-2 gap-2">
         <HeaderButton variant="menu" />
 
         <a href="/" class="flex-grow" aria-label="Store logo">
@@ -20,14 +20,14 @@ function Navbar({ items }: {
           </Button>
         </a>
 
-        <div class="flex gap-6">
+        <div class="flex gap-1">
           <HeaderButton variant="search" />
           <HeaderButton variant="cart" />
         </div>
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full">
+      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full px-2">
         <div class="flex-none w-44">
           <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[160px]">
             <Icon id="Logo" width={126} height={16} />
@@ -45,7 +45,7 @@ function Navbar({ items }: {
           >
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </a>
-          <HeaderButton variant="cart" />
+          <HeaderButton variant="cart" class="mr-2" />
         </div>
       </div>
     </>
