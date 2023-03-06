@@ -13,7 +13,7 @@ function Item({ name, item }: { name?: string; item?: string }) {
 
   return (
     <li class="whitespace-nowrap overflow-hidden overflow-ellipsis">
-      <a href={item}>
+      <a href={item} class="hover:underline">
         <Text variant="caption">
           {name}
         </Text>
@@ -26,11 +26,11 @@ function Breadcrumb({ breadcrumbList }: Props) {
   const { itemListElement } = breadcrumbList;
 
   return (
-    <ul class="flex flex-row gap-2 items-center max-w-[360px]">
+    <ul class="flex flex-row gap-2 items-center w-full">
       <Item name="Home" item="/" />
-      {itemListElement.map((item) => (
+      {itemListElement.slice(0, -1).map((item) => (
         <>
-          <li>
+          <li class="mt-0.5">
             <Icon id="ChevronRight" width={16} height={16} strokeWidth={2} />
           </li>
           <Item {...item} />
