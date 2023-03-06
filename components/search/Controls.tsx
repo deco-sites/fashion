@@ -35,10 +35,10 @@ function SearchControls({ page }: Props) {
             open.value = true;
           }}
         >
-          <Icon id="FilterList" width={16} height={16} />
-          <Text variant="caption">
+          <Text variant="button">
             Filtrar
           </Text>
+          <Icon id="FilterList" width={16} height={16} />
         </Button>
         <Sort />
       </div>
