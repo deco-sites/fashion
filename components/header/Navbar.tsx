@@ -27,14 +27,16 @@ function Navbar({ items }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-4">
-        <a href="/" aria-label="Store logo">
-          <Icon id="Logo" width={87.5} height={28} />
-        </a>
-        <div class="flex-grow flex gap-6 justify-center">
+      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full">
+        <div class="flex-none w-44">
+          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[120px]">
+            <Icon id="Logo" width={87.5} height={28} />
+          </a>
+        </div>
+        <div class="flex-auto flex gap-6 justify-center">
           {items.map((item) => <NavItem {...item} />)}
         </div>
-        <div class="flex items-center justify-end gap-6">
+        <div class="flex-none w-44 flex items-center justify-end gap-6">
           <HeaderButton variant="search" />
           <a href="/login" aria-label="Log in">
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
