@@ -16,7 +16,7 @@ function Navbar({ items }: {
 
         <a href="/" class="flex-grow" aria-label="Store logo">
           <Button variant="icon">
-            <Icon id="Logo" width={87.5} height={28} />
+            <Icon id="Logo" width={126} height={16} />
           </Button>
         </a>
 
@@ -29,8 +29,8 @@ function Navbar({ items }: {
       {/* Desktop Version */}
       <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full">
         <div class="flex-none w-44">
-          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[120px]">
-            <Icon id="Logo" width={87.5} height={28} />
+          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[160px]">
+            <Icon id="Logo" width={126} height={16} />
           </a>
         </div>
         <div class="flex-auto flex justify-center">
@@ -38,7 +38,11 @@ function Navbar({ items }: {
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />
-          <a href="/login" aria-label="Log in" class="block p-2 rounded-full hover:bg-hover border border-transparent">
+          <a
+            href="/login"
+            aria-label="Log in"
+            class="block p-2 rounded-full hover:bg-hover border border-transparent"
+          >
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </a>
           <HeaderButton variant="cart" />
