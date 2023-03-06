@@ -7,17 +7,16 @@ function SearchButton() {
   const { displaySearchbar } = useUI();
 
   return (
-    <>
-      <Button
-        variant="icon"
-        aria-label="search icon button"
-        onClick={() => {
-          displaySearchbar.value = true;
-        }}
-      >
-        <Icon id="MagnifyingGlass" width={20} height={20} strokeWidth={0.1} />
-      </Button>
-    </>
+    <Button
+      variant="icon"
+      aria-label="search icon button"
+      class="rounded-full hover:bg-hover"
+      onClick={() => {
+        displaySearchbar.value = true;
+      }}
+    >
+      <Icon id="MagnifyingGlass" width={20} height={20} strokeWidth={0.1} />
+    </Button>
   );
 }
 
@@ -45,7 +44,7 @@ function CartButton() {
   return (
     <Button
       variant="icon"
-      class="relative mr-2"
+      class="relative mr-2 rounded-full hover:bg-hover"
       aria-label="open cart"
       disabled={loading.value}
       onClick={() => {

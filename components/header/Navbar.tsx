@@ -38,7 +38,7 @@ function Navbar({ items }: {
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />
-          <a href="/login" aria-label="Log in" class="block p-2">
+          <a href="/login" aria-label="Log in" class="block p-2 rounded-full hover:bg-hover border border-transparent">
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </a>
           <HeaderButton variant="cart" />
