@@ -64,7 +64,7 @@ function BannerCarousel({ images, preload }: Props) {
           strokeWidth={3}
         />
       }
-      dot={<Icon id="Circle" width={24} height={24} strokeWidth={2} />}
+      dot={<Icon id="Circle" width={16} height={16} strokeWidth={2} />}
     >
       {images?.map(({ mobile, desktop, alt }, index) => {
         const isFirst = index === 0;
