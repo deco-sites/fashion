@@ -4,6 +4,7 @@ import type { BreadcrumbList } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
   breadcrumbList: BreadcrumbList;
+  removeLastItem: boolean;
 }
 
 function Item({ name, item }: { name?: string; item?: string }) {
@@ -22,13 +23,14 @@ function Item({ name, item }: { name?: string; item?: string }) {
   );
 }
 
-function Breadcrumb({ breadcrumbList }: Props) {
-  const { itemListElement } = breadcrumbList;
+function Breadcrumb({ breadcrumbList, removeLastItem = false }: Props) {
+  let { itemListElement } = breadcrumbList;
+  if (removeLastItem) itemListElement = itemListElement.slice(0, -1)
 
   return (
     <ul class="flex flex-row gap-2 items-center w-full">
       <Item name="Home" item="/" />
-      {itemListElement.slice(0, -1).map((item) => (
+      {itemListElement.map((item) => (
         <>
           <li class="mt-0.5">
             <Icon id="ChevronRight" width={16} height={16} strokeWidth={2} />
