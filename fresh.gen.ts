@@ -1291,6 +1291,16 @@ const manifest: DecoManifest = {
             "title": "Sort",
             "description": "search sort parameter",
           },
+          "collection": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Collection",
+            "description":
+              "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
+            "pattern": "\\d*",
+          },
         },
         "required": [
           "query",
@@ -1431,6 +1441,16 @@ const manifest: DecoManifest = {
             ],
             "title": "Sort",
             "description": "search sort parameter",
+          },
+          "collection": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Collection",
+            "description":
+              "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
+            "pattern": "\\d*",
           },
         },
         "required": [
