@@ -64,7 +64,7 @@ function CartItem({ index }: Props) {
         loading={loading.value}
         variant="icon"
       >
-        <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+        <Icon id="Trash" width={20} height={20} />
       </Button>
     </div>
   );
