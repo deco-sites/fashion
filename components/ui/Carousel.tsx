@@ -57,11 +57,11 @@ function Carousel(
           99% { scroll-snap-align: none; }
           100% { scroll-snap-align: center; }`);
 
-  const autoPlayAnimation = tw(css(animation({
-    animationDuration: `${animationDuration}s`,
-    animationTimingFunction: "ease",
-    animationIterationCount: "infinite",
-  }, {})));
+  // const autoPlayAnimation = tw(css(animation({
+  //   animationDuration: `${animationDuration}s`,
+  //   animationTimingFunction: "ease",
+  //   animationIterationCount: "infinite",
+  // }, {})));
 
   // Inline top-[calc(50% - 1.25rem)] doesn't work.
   // This is 50% - ((arrow svg height + padding) / 2)
@@ -114,7 +114,7 @@ function Carousel(
             >
               {child}
               <div
-                class={`absolute top-0 left-0 w-full h-full scroll-snap-center ${autoPlayAnimation} animate-carousel-snap group-hover:animate-none group-focus-within:animate-none`}
+                class={`absolute top-0 left-0 w-full h-full scroll-snap-center group-hover:animate-none group-focus-within:animate-none`}
                 style={`animation-name: ${isLast ? toStart : toNext}, ${snap};`}
                 data-carousel-snapper
               >

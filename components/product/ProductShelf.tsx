@@ -21,10 +21,10 @@ function ProductShelf({
           <Text variant="heading-2">{title}</Text>
         </h2>
       )}
-      <Slider>
+      <Slider class="gap-6">
         {products?.map((product, index) => {
-          const ml = index === 0 ? "ml-4" : "";
-          const mr = index === products.length - 1 ? "mr-4" : "";
+          const ml = index === 0 ? "ml-6 sm:ml-0" : "";
+          const mr = index === products.length - 1 ? "mr-6 sm:mr-0" : "";
 
           return (
             <div

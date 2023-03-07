@@ -5,6 +5,8 @@ export type AvailableIcons =
   | "Circle"
   | "ChevronLeft"
   | "ChevronRight"
+  | "ChevronUp"
+  | "ChevronDown"
   | "QuestionMarkCircle"
   | "User"
   | "ShoppingCart"
@@ -12,6 +14,10 @@ export type AvailableIcons =
   | "Heart"
   | "MagnifyingGlass"
   | "XMark"
+  | "Plus"
+  | "Minus"
+  | "MapPin"
+  | "Phone"
   | "Elo"
   | "Mastercard"
   | "Visa"
@@ -26,8 +32,8 @@ export type AvailableIcons =
   | "CreditCard"
   | "Deco"
   | "Discord"
-  | "FilterList"
-  | "ChevronUp";
+  | "Trash"
+  | "FilterList";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

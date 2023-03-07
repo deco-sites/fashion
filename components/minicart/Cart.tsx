@@ -47,7 +47,7 @@ function Cart() {
       {/* Cart Items */}
       <ul
         role="list"
-        class="py-4 flex-grow-1 overflow-y-auto flex flex-col gap-6"
+        class="px-2 flex-grow-1 overflow-y-auto flex flex-col gap-6"
       >
         {cart.value.items.map((_, index) => (
           <li>
@@ -61,7 +61,7 @@ function Cart() {
         {/* Subtotal */}
         <div class="border-t-1 border-default py-4 flex flex-col gap-4">
           {discounts?.value && (
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center px-4">
               <Text variant="caption">Descontos</Text>
               <Text variant="caption">
                 {formatPrice(discounts.value / 100, currencyCode!, locale)}
@@ -72,7 +72,7 @@ function Cart() {
         </div>
         {/* Total */}
         {total?.value && (
-          <div class="border-t-1 border-default pt-4 flex flex-col justify-end items-end gap-2">
+          <div class="border-t-1 border-default pt-4 flex flex-col justify-end items-end gap-2 mx-4">
             <div class="flex justify-between items-center w-full">
               <Text variant="body">Total</Text>
               <Text variant="heading-3">
@@ -84,15 +84,20 @@ function Cart() {
             </Text>
           </div>
         )}
-        <Button
-          class="mt-4 w-full"
-          as="a"
-          href={`${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`}
-          target="_blank"
-          disabled={loading.value || cart.value.items.length === 0}
-        >
-          Finalizar Compra
-        </Button>
+        <div class="p-4">
+          <a
+            class="inline-block w-full"
+            target="_blank"
+            href={`${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`}
+          >
+            <Button
+              class="w-full"
+              disabled={loading.value || cart.value.items.length === 0}
+            >
+              Finalizar Compra
+            </Button>
+          </a>
+        </div>
       </footer>
     </>
   );

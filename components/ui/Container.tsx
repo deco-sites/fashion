@@ -1,12 +1,9 @@
-import { ComponentChildren } from "preact";
+import type { JSX } from "preact";
 
-interface Props {
-  class?: string;
-  children: ComponentChildren;
-}
+type Props = JSX.IntrinsicElements["div"];
 
-function Container({ children, class: _class = "" }: Props) {
-  return <div class={`max-w-[1280px] mx-auto ${_class}`}>{children}</div>;
+function Container({ class: _class = "", ...props }: Props) {
+  return <div class={`max-w-[1280px] mx-auto ${_class}`} {...props} />;
 }
 
 export default Container;

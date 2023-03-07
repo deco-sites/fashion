@@ -34,21 +34,7 @@ function ProductDetails({ page }: Props) {
     gtin,
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
-
-  /**
-   * I did not really liked the images from our default base store.
-   * To overcome this issue without generating another catalog altogheter
-   * I decided to get images from unplash. However, you should get the images
-   * front the catalog itself. To do this, just uncomment the code below
-   */
-  // const [front, back] = images ?? [];
-  const [front, back] = [{
-    url: `https://source.unsplash.com/user/nikutm?v=${productID}`,
-    alternateName: "nikutm-front",
-  }, {
-    url: `https://source.unsplash.com/user/nikutm?v=${productID}-2`,
-    alternateName: "nikutm-back",
-  }];
+  const [front, back] = images ?? [];
 
   return (
     <Container class="py-0 sm:py-10">
@@ -73,7 +59,9 @@ function ProductDetails({ page }: Props) {
         {/* Product Info */}
         <div class="flex-auto px-4 sm:px-0">
           {/* Breadcrumb */}
-          <Breadcrumb breadcrumbList={breadcrumbList} removeLastItem />
+          <Breadcrumb
+            itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
+          />
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
