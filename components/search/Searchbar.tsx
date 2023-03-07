@@ -67,7 +67,7 @@ function Searchbar({
       <form
         id="searchbar"
         action={action}
-        class="flex gap-3 p-3 border border-default"
+        class="flex gap-3 p-2 border border-default"
       >
         <Button
           variant="icon"
