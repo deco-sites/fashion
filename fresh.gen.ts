@@ -306,6 +306,10 @@ const manifest: DecoManifest = {
                     },
                     {
                       "type": "string",
+                      "const": "Trash",
+                    },
+                    {
+                      "type": "string",
                       "const": "FilterList",
                     },
                   ],
@@ -502,6 +506,10 @@ const manifest: DecoManifest = {
                               {
                                 "type": "string",
                                 "const": "Discord",
+                              },
+                              {
+                                "type": "string",
+                                "const": "Trash",
                               },
                               {
                                 "type": "string",

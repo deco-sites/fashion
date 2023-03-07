@@ -3,8 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import type { BreadcrumbList } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
-  breadcrumbList: BreadcrumbList;
-  removeLastItem: boolean;
+  itemListElement: BreadcrumbList["itemListElement"];
 }
 
 function Item({ name, item }: { name?: string; item?: string }) {
@@ -23,10 +22,7 @@ function Item({ name, item }: { name?: string; item?: string }) {
   );
 }
 
-function Breadcrumb({ breadcrumbList, removeLastItem = false }: Props) {
-  let { itemListElement } = breadcrumbList;
-  if (removeLastItem) itemListElement = itemListElement.slice(0, -1);
-
+function Breadcrumb({ itemListElement = [] }: Props) {
   return (
     <ul class="flex flex-row gap-2 items-center w-full">
       <Item name="Home" item="/" />

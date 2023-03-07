@@ -48,21 +48,7 @@ function ProductCard({ product, preload }: Props) {
     image: images,
     offers,
   } = product;
-
-  /**
-   * I did not really liked the images from our default base store.
-   * To overcome this issue without generating another catalog altogheter
-   * I decided to get images from unplash. However, you should get the images
-   * front the catalog itself. To do this, just uncomment the code below
-   */
-  // const [front, back] = images ?? [];
-  const [front, back] = [{
-    url: `https://source.unsplash.com/user/nikutm?v=${productID}`,
-    alternateName: "nikutm-front",
-  }, {
-    url: `https://source.unsplash.com/user/nikutm?v=${productID}-2`,
-    alternateName: "nikutm-back",
-  }];
+  const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
 
   return (

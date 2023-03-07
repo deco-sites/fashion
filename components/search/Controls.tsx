@@ -1,5 +1,4 @@
 import Container from "$store/components/ui/Container.tsx";
-import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Filters from "$store/components/search/Filters.tsx";
@@ -26,7 +25,7 @@ function SearchControls({ page }: Props) {
   return (
     <Container class="flex flex-col justify-between mb-4 md:mb-0 p-4 md:p-0 sm:gap-4 sm:flex-row sm:h-[53px] md:border-b-1">
       <div class="flex flex-row items-center sm:p-0 mb-2">
-        <Breadcrumb breadcrumbList={breadcrumb} />
+        <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
       </div>
       <div class="flex flex-row sm:gap-4 items-center justify-between border-b-1 border-default md:border-none">
         <Button
