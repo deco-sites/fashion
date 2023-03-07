@@ -27,7 +27,7 @@ function Coupon() {
 
   return (
     <div class="flex justify-between items-center">
-      <Text variant="caption">Coupon de desconto</Text>
+      <Text variant="caption">Cupom de desconto</Text>
       {!displayInput.value && (
         <Button
           class="underline text-caption font-caption"

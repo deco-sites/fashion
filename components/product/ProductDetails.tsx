@@ -71,9 +71,9 @@ function ProductDetails({ page }: Props) {
           ))}
         </div>
         {/* Product Info */}
-        <div class="px-4 sm:px-0">
+        <div class="flex-auto px-4 sm:px-0">
           {/* Breadcrumb */}
-          <Breadcrumb breadcrumbList={breadcrumbList} />
+          <Breadcrumb breadcrumbList={breadcrumbList} removeLastItem />
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>

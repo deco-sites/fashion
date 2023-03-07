@@ -23,7 +23,7 @@ function ProductGallery({ page }: Props) {
 
       <div class="flex flex-row items-center justify-center gap-2 my-4">
         <Button
-          as="a"
+          as={page.pageInfo.previousPage ? "a" : "button"}
           rel="prev"
           disabled={!page.pageInfo.previousPage}
           href={page.pageInfo.previousPage ?? "#"}
@@ -37,7 +37,7 @@ function ProductGallery({ page }: Props) {
           {page.pageInfo.currentPage + 1}
         </Text>
         <Button
-          as="a"
+          as={page.pageInfo.nextPage ? "a" : "button"}
           rel="next"
           disabled={!page.pageInfo.nextPage}
           href={page.pageInfo.nextPage ?? "#"}

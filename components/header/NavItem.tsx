@@ -14,9 +14,9 @@ function NavItem({
   label,
 }: INavItem) {
   return (
-    <a href={href}>
+    <a href={href} class="group px-4 py-3">
       <Text
-        class="hover:border-black border-solid border-b border-white"
+        class="group-hover:border-black border-solid border-b border-white"
         variant="menu"
       >
         {label}

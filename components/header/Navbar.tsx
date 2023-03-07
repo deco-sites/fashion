@@ -11,34 +11,41 @@ function Navbar({ items }: {
   return (
     <>
       {/* Mobile Version */}
-      <div class="md:hidden flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-4 gap-4">
+      <div class="md:hidden flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-2 gap-2">
         <HeaderButton variant="menu" />
 
         <a href="/" class="flex-grow" aria-label="Store logo">
           <Button variant="icon">
-            <Icon id="Logo" width={87.5} height={28} />
+            <Icon id="Logo" width={126} height={16} />
           </Button>
         </a>
 
-        <div class="flex gap-6">
+        <div class="flex gap-1">
           <HeaderButton variant="search" />
           <HeaderButton variant="cart" />
         </div>
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-4">
-        <a href="/" aria-label="Store logo">
-          <Icon id="Logo" width={87.5} height={28} />
-        </a>
-        <div class="flex-grow flex gap-6 justify-center">
+      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3">
+        <div class="flex-none w-44">
+          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[160px]">
+            <Icon id="Logo" width={126} height={16} />
+          </a>
+        </div>
+        <div class="flex-auto flex justify-center">
           {items.map((item) => <NavItem {...item} />)}
         </div>
-        <div class="flex items-center justify-end gap-6">
+        <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />
-          <a href="/login" aria-label="Log in">
+          <Button
+            as="a"
+            variant="icon"
+            href="/login"
+            aria-label="Log in"
+          >
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
-          </a>
+          </Button>
           <HeaderButton variant="cart" />
         </div>
       </div>

@@ -28,17 +28,15 @@ function SearchControls({ page }: Props) {
       <div class="flex flex-row items-center p-2 sm:p-0">
         <Breadcrumb breadcrumbList={breadcrumb} />
       </div>
-      <div class="flex flex-row sm:gap-6 items-center justify-between">
+      <div class="flex flex-row sm:gap-4 items-center justify-between">
         <Button
-          variant="icon"
+          variant="tertiary"
           onClick={() => {
             open.value = true;
           }}
         >
+          Filtrar
           <Icon id="FilterList" width={16} height={16} />
-          <Text variant="caption">
-            Filtrar
-          </Text>
         </Button>
         <Sort />
       </div>
