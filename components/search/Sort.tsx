@@ -37,7 +37,7 @@ function Sort() {
   const sort = useSort();
 
   return (
-    <select id="sort" name="sort" onInput={applySort} class="w-min m-2 text-button font-button text-default">
+    <select id="sort" name="sort" onInput={applySort} class="w-min py-2 px-1 rounded m-2 text-button font-button text-default hover:bg-hover cursor-pointer outline-none">
       {options.map(({ value, label }) => (
         <option key={value} value={value} selected={value === sort}>
           <Text variant="caption">{label}</Text>

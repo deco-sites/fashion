@@ -60,7 +60,7 @@ const options: Omit<Options, "selfURL"> = {
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
-        "hover-inverse": "rgba(255, 255, 255, 0.16)",
+        "hover-inverse": "rgba(0, 0, 0, 0.04)",
       },
       textColor: {
         "default": "#161616",
@@ -88,9 +88,9 @@ const options: Omit<Options, "selfURL"> = {
         "heading-2": ["24px", "28.8px"],
         "heading-3": ["20px", "24px"],
         "menu": ["16px", "20px"],
-        "button": ["14px", "20px"],
+        "button": ["14px", "18px"],
         "body": ["16px", "20px"],
-        "caption": ["13px", "20px"],
+        "caption": ["13px", "16px"],
         "list-price": ["10px", "20px"],
       },
       fontWeight: {
