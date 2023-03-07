@@ -72,7 +72,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
 
 function Menu({ items }: Props) {
   return (
-    <div class="flex flex-col justify-between overflow-y-auto h-full">
+    <div class="flex flex-col justify-between">
       <ul class="flex-grow flex flex-col py-4 divide-y divide-default">
         {items.map((item) => <MenuItem item={item} />)}
       </ul>

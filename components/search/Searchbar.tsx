@@ -63,7 +63,7 @@ function Searchbar({
   products,
 }: Props) {
   return (
-    <div class="mt-6 sm:mt-10 overflow-y-auto">
+    <div class="mt-6 sm:mt-10">
       <form
         id="searchbar"
         action={action}
