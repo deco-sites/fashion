@@ -37,7 +37,7 @@ function CookieConsent() {
     <>
       <div
         id={id}
-        class="transform-gpu translate-y-full transition fixed bottom-0 w-screen"
+        class="transform-gpu translate-y-full transition fixed bottom-0 sm:bottom-4 w-screen"
       >
         <Container class="px-4 py-4 rounded border border-default flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-default z-50">
           <Text class="flex-grow" variant="caption">
