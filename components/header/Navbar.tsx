@@ -17,10 +17,12 @@ function Navbar({ items }: {
       >
         <HeaderButton variant="menu" />
 
-        <a href="/" class="flex-grow" aria-label="Store logo">
-          <Button variant="icon">
-            <Icon id="Logo" width={126} height={16} />
-          </Button>
+        <a
+          href="/"
+          class={`flex-grow inline-flex items-center min-h-[${navbarHeight}]`}
+          aria-label="Store logo"
+        >
+          <Icon id="Logo" width={126} height={16} />
         </a>
 
         <div class="flex gap-1">

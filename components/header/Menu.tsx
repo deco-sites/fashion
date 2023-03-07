@@ -23,14 +23,18 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
 
   return (
     <li class={`py-2 ${level > 0 ? "pl-2" : ""}`}>
-      <div class="flex justify-between items-center w-full">
-        {hasChildren ? title : <a href={item.href}>{title}</a>}
+      <div
+        class="flex justify-between items-center w-full"
+        onClick={() => {
+          if (hasChildren) open.value = !open.value;
+        }}
+      >
+        {hasChildren
+          ? title
+          : <a class="w-full inline-block" href={item.href}>{title}</a>}
 
         {hasChildren && (
-          <Button
-            variant="icon"
-            onClick={() => open.value = !open.value}
-          >
+          <Button variant="icon">
             <Icon
               class={open.value === true ? "hidden" : "block"}
               id="Plus"
@@ -52,7 +56,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
       {hasChildren && (
         <ul class={`flex-col ${open.value === true ? "flex" : "hidden"}`}>
           <li class="py-2">
-            <a href={item.href}>
+            <a href={item.href} class="w-full inline-block">
               <Text class="underline min-h-[40px]" variant="caption">
                 Ver todos
               </Text>
@@ -72,12 +76,12 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
 
 function Menu({ items }: Props) {
   return (
-    <div class="flex flex-col justify-between">
-      <ul class="flex-grow flex flex-col py-4 divide-y divide-default">
+    <>
+      <ul class="px-4 flex-grow flex flex-col divide-y divide-default">
         {items.map((item) => <MenuItem item={item} />)}
       </ul>
 
-      <ul class="flex flex-col gap-4 py-4">
+      <ul class="flex flex-col gap-4 py-4 bg-hover">
         <li class="flex items-center gap-4 px-4">
           <Icon id="Heart" width={20} height={20} strokeWidth={2} />
           <a href="https://www.deco.cx">
@@ -103,7 +107,7 @@ function Menu({ items }: Props) {
           </a>
         </li>
       </ul>
-    </div>
+    </>
   );
 }
 

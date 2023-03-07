@@ -63,34 +63,36 @@ function Searchbar({
   products,
 }: Props) {
   return (
-    <div class="">
-      <form
-        id="searchbar"
-        action={action}
-        class="flex gap-3 p-2 border border-default"
-      >
-        <Button
-          variant="icon"
-          aria-label="Search"
-          htmlFor="searchbar"
+    <>
+      <div class="px-4">
+        <form
+          id="searchbar"
+          action={action}
+          class="flex gap-3 p-2 border border-default"
         >
-          <Icon
-            class="text-subdued"
-            id="MagnifyingGlass"
-            width={20}
-            height={20}
-            strokeWidth={0.01}
+          <Button
+            variant="icon"
+            aria-label="Search"
+            htmlFor="searchbar"
+          >
+            <Icon
+              class="text-subdued"
+              id="MagnifyingGlass"
+              width={20}
+              height={20}
+              strokeWidth={0.01}
+            />
+          </Button>
+          <input
+            class="flex-grow outline-none"
+            name={name}
+            defaultValue={query}
+            placeholder={placeholder}
           />
-        </Button>
-        <input
-          class="flex-grow outline-none"
-          name={name}
-          defaultValue={query}
-          placeholder={placeholder}
-        />
-      </form>
+        </form>
+      </div>
       <div class="flex flex-col divide-y divide-default">
-        <div class="flex flex-col gap-6 py-6">
+        <div class="flex flex-col gap-6 px-4 py-6">
           <Text variant="heading-3">Termos mais buscados</Text>
           <ul class="flex flex-col gap-6">
             {terms.map((term) => (
@@ -114,10 +116,18 @@ function Searchbar({
         </div>
         {products && (
           <div class="flex flex-col gap-6 py-6">
-            <Text variant="heading-3">Produtos sugeridos</Text>
-            <Slider class="gap-10">
-              {products.map((product) => (
-                <div class="min-w-[200px] max-w-[200px]">
+            <Text class="px-4" variant="heading-3">Produtos sugeridos</Text>
+            <Slider class="gap-6">
+              {products.map((product, index) => (
+                <div
+                  class={`${
+                    index === 0
+                      ? "ml-4"
+                      : index === products.length - 1
+                      ? "mr-4"
+                      : ""
+                  } min-w-[200px] max-w-[200px]`}
+                >
                   <ProductCard product={product} />
                 </div>
               ))}
@@ -125,7 +135,7 @@ function Searchbar({
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
 
