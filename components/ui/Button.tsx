@@ -14,13 +14,13 @@ export type Props =
 
 const variants = {
   primary:
-    "py-2 px-3 rounded bg-interactive font-button text-button text-default-inverse border-transparent hover:bg-default hover:text-default hover:border-interactive active:bg-interactive active:text-default-inverse active:border-transparent disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none ",
+    "h-[36px] px-3 rounded bg-interactive font-button text-button text-default-inverse border-transparent hover:bg-default hover:text-default hover:border-interactive active:bg-interactive active:text-default-inverse active:border-transparent disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none ",
   secondary:
-    "py-2 px-3 rounded bg-interactive-inverse font-button text-button border-default hover:bg-hover active:bg-interactive active:text-interactive-inverse disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-interactive ",
+    "h-[36px] px-3 rounded bg-interactive-inverse font-button text-button border-default hover:bg-hover active:bg-interactive active:text-interactive-inverse disabled:border-default disabled:text-subdued disabled:bg-interactive-inverse focus:outline-interactive ",
   tertiary:
-    "py-2 px-3 rounded bg-interactive-inverse font-button text-button border-transparent hover:bg-hover active:border-interactive disabled:border-transparent disabled:text-subdued focus:outline-none",
+    "h-[36px] px-3 rounded bg-interactive-inverse font-button text-button border-transparent hover:bg-hover active:border-interactive disabled:border-transparent disabled:text-subdued focus:outline-none",
   icon:
-    "p-2 bg-transparent rounded-full text-default border-transparent active:bg-interactive active:text-default-inverse disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
+    "h-[36px] px-2 bg-transparent rounded-full text-default border-transparent active:bg-interactive active:text-default-inverse disabled:text-subdued disabled:bg-interactive-inverse focus:outline-none",
 };
 
 const Button = forwardRef<HTMLButtonElement, Props>(({

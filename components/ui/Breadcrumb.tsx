@@ -25,7 +25,7 @@ function Item({ name, item }: { name?: string; item?: string }) {
 
 function Breadcrumb({ breadcrumbList, removeLastItem = false }: Props) {
   let { itemListElement } = breadcrumbList;
-  if (removeLastItem) itemListElement = itemListElement.slice(0, -1)
+  if (removeLastItem) itemListElement = itemListElement.slice(0, -1);
 
   return (
     <ul class="flex flex-row gap-2 items-center w-full">
