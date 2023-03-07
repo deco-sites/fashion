@@ -63,7 +63,7 @@ function Searchbar({
   products,
 }: Props) {
   return (
-    <div class="mt-6 sm:mt-10">
+    <div class="">
       <form
         id="searchbar"
         action={action}
