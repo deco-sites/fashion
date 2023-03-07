@@ -1,5 +1,6 @@
 import HeaderButton from "$store/islands/HeaderButton.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
+import Button from "$store/components/ui/Button.tsx";
 
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
@@ -11,7 +12,9 @@ function Navbar({ items }: {
   return (
     <>
       {/* Mobile Version */}
-      <div class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 border-default w-full px-2 gap-2`}>
+      <div
+        class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 border-default w-full px-2 gap-2`}
+      >
         <HeaderButton variant="menu" />
 
         <a href="/" class="flex-grow" aria-label="Store logo">
@@ -34,7 +37,7 @@ function Navbar({ items }: {
           </a>
         </div>
         <div class="flex-auto flex justify-center">
-          {items.map((item) => <NavItem {...item} />)}
+          {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />

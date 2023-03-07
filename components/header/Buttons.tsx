@@ -30,7 +30,7 @@ function MenuButton() {
         displayMenu.value = true;
       }}
     >
-      <Icon id="Bars3" width={20} height={20} strokeWidth={2} />
+      <Icon id="Bars3" width={20} height={20} strokeWidth={0.01} />
     </Button>
   );
 }
