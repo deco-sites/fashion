@@ -79,11 +79,11 @@ going live, you can learn how to [customize the code](#customize-the-store)
 
 Checklist
 
-- [] Ecommerce platform connected
-- [] Fonts added
-- [] Logo changed
-- [] favicon.ico, robots.txt changed
-- [] Design system changed
+- [ ] Ecommerce platform connected
+- [ ] Fonts added
+- [ ] Logo changed
+- [ ] favicon.ico, robots.txt changed
+- [ ] Design system changed
 
 ### Connecting your e-commerce platform
 
@@ -139,35 +139,66 @@ Open `static` folder and replace `favicon.ico`, `robots.txt` and
    changes.
 
 ## Customize the store
-If you are missing a functionality or the changes in the design system were not enough for accomplishing your project, you can fully customize all HTML/CSS/JS generated on your store by changing the code. 
+
+If you are missing a functionality or the changes in the design system were not
+enough for accomplishing your project, you can fully customize all HTML/CSS/JS
+generated on your store by changing the code.
 
 ### Understanding project structure
+
 This code uses:
+
 1. [Deno](https://deno.land/) as runtime
 2. [Preact](https://preactjs.com/) as rendering engine
 3. [Fresh](https://fresh.deno.dev/) as meta framework.
 4. [Deco.cx](https://www.deco.cx/) as CMS, A/B Tester and Analytics
 
-To better encapsulate the store's code and separate it from framework specific code, all HTML generator code was placed into `components` folder, whereas all logic related code was placed under `sdk`. This means that UI elements, like product shelves, footer, header, product galleries etc are all placed into `components` whereas code for computing the prices, adding to cart etc are placed under `sdk`. Other folders are framework-specific glue code, and serve for:
+To better encapsulate the store's code and separate it from framework specific
+code, all HTML generator code was placed into `components` folder, whereas all
+logic related code was placed under `sdk`. This means that UI elements, like
+product shelves, footer, header, product galleries etc are all placed into
+`components` whereas code for computing the prices, adding to cart etc are
+placed under `sdk`. Other folders are framework-specific glue code, and serve
+for:
 
-1. `islands`: Fresh based folder for adding JavaScript to the frontend. More info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/islands)
-1. `routes`: Fresh based folder for responding custom routes to the store. More info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/routes) 
-1. `static`: Fresh based folder for serving static content (assets). Check out [Fresh's docs](https://fresh.deno.dev/docs/concepts/static-files)
-1. `import_map.json`: File containing your dependencies. Check out [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
+1. `islands`: Fresh based folder for adding JavaScript to the frontend. More
+   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/islands)
+1. `routes`: Fresh based folder for responding custom routes to the store. More
+   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/routes)
+1. `static`: Fresh based folder for serving static content (assets). Check out
+   [Fresh's docs](https://fresh.deno.dev/docs/concepts/static-files)
+1. `import_map.json`: File containing your dependencies. Check out
+   [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
 1. `twind.config.ts`: twind configuration file. [twind docs](https://twind.dev/)
-1. `sections`: deco.cx folder for making components both editable and composable on the CMS. Check out [deco.cx's docs](https://www.deco.cx/en/docs)
-1. `functions`: deco.cx folder for adding dynamic data to sections provenient from third party APIs, like ecommerce platforms, ERPs, contentful, wordpress etc
+1. `sections`: deco.cx folder for making components both editable and composable
+   on the CMS. Check out [deco.cx's docs](https://www.deco.cx/en/docs)
+1. `functions`: deco.cx folder for adding dynamic data to sections provenient
+   from third party APIs, like ecommerce platforms, ERPs, contentful, wordpress
+   etc
 
 ### Recipes
-Deco.cx's commitment to outstanding UX requires minimal work by user's devices. This usually means shipping zero or almost to no JavaScript to browsers. This starter uses state of the art design patterns to create rich UX with HTML and CSS only.
 
-Sometimes, it may be difficult to understand everything that's going on a production-ready code like this starter's components. To learn how to create common UI patterns with HTML and CSS only in a simpler context, take a look at [deco.cx's recipes](https://www.deco.cx/en/docs/recipes)
+Deco.cx's commitment to outstanding UX requires minimal work by user's devices.
+This usually means shipping zero or almost to no JavaScript to browsers. This
+starter uses state of the art design patterns to create rich UX with HTML and
+CSS only.
+
+Sometimes, it may be difficult to understand everything that's going on a
+production-ready code like this starter's components. To learn how to create
+common UI patterns with HTML and CSS only in a simpler context, take a look at
+[deco.cx's recipes](https://www.deco.cx/en/docs/recipes)
 
 ### Best practices
-The best practices for managing the project on the long run rely around respecting folder structure. This means:
+
+The best practices for managing the project on the long run rely around
+respecting folder structure. This means:
+
 1. Add `.tsx` files on `components` folder only
 1. Add preact hooks on `sdk` folder.
-1. To make a component editable, create it on the `components` folder and add an `export { default }` on the `sections` folder
-1. To add JavaScript to the browser, create a component on the `components` folder and add an `export { default }` on the islands folder
+1. To make a component editable, create it on the `components` folder and add an
+   `export { default }` on the `sections` folder
+1. To add JavaScript to the browser, create a component on the `components`
+   folder and add an `export { default }` on the islands folder
 
-Check performance best practices on [deco.cx's docs](https://www.deco.cx/en/docs/best-practices).
+Check performance best practices on
+[deco.cx's docs](https://www.deco.cx/en/docs/best-practices).
