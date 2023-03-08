@@ -68,3 +68,6 @@ yarn-error.log
 
 dist/
 server/
+
+# Deno.lock
+deno.lock
