@@ -3,51 +3,54 @@
 A fully featured starter to help you customize and deploy an ecommerce website
 in minutes
 
-## Features
-
-This starter brings:
-
-<div style="display: flex; justify-content: space-between">
-  <ul>
-    <li>Home, product and listing pages</li>
-    <li>Content editable via CMS</li>
-    <li>A/B test compatible</li>
-    <li>Analytics</li>
-    <li>Integration with VTEX, Shopify and Oracle</li>
-    <li>Minicart with
-      <ul>
-        <li>Coupons</li>
-        <li>Total</li>
-        <li>Subtotal</li>
-        <li>Promotions</li>
-      </ul>
-    </li>
-    <li>SKU selector</li>
-    <li>Full text search</li>
-    <li>Search filters</li>
-    <li>Search pagination</li>
-    <li>SEO optmized
-      <ul>
-        <li>Meta tags</li>
-        <li>Rich results</li>
-        <li>OpenGraph</li>
-      </ul>
-    </li>
-    <li>Cookie consent</li>
-    <li>Carousel</li>
-    <li>Product shelf</li>
-    <li>SKU selector</li>
-    <li>Breadcrumb</li>
-    <li>Search filters</li>
-    <li>Dropdown and hamburger menus</li>
-    <li>Minicart</li>
-    <li>Newsletter</li>
-    <li>Footer</li>
-  </ul>
-
+<div style="display: flex; justify-content: center; gap: 16px; margin: 16px">
+<img width="350px" height="250px"
+    src="https://cdn.discordapp.com/attachments/958870428078731344/1083138245099012250/image.png" />
   <img width="250px" height="250px"
     src="https://cdn.discordapp.com/attachments/958870428078731344/1083130392447561862/CleanShot_2023-03-08_at_17.53.052x.png" />
+  <img width="350px" height="250px"
+    src="https://cdn.discordapp.com/attachments/958870428078731344/1083138168641040414/image.png" />
 </div>
+
+## Features
+This starter brings:
+<ul>
+  <li>Home, product and listing pages</li>
+  <li>Content editable via CMS</li>
+  <li>A/B test compatible</li>
+  <li>Analytics</li>
+  <li>Integration with VTEX, Shopify and Oracle</li>
+  <li>Minicart with
+    <ul>
+      <li>Coupons</li>
+      <li>Total</li>
+      <li>Subtotal</li>
+      <li>Promotions</li>
+    </ul>
+  </li>
+  <li>SKU selector</li>
+  <li>Full text search</li>
+  <li>Search filters</li>
+  <li>Search pagination</li>
+  <li>SEO optmized
+    <ul>
+      <li>Meta tags</li>
+      <li>Rich results</li>
+      <li>OpenGraph</li>
+    </ul>
+  </li>
+  <li>Cookie consent</li>
+  <li>Carousel</li>
+  <li>Product shelf</li>
+  <li>SKU selector</li>
+  <li>Breadcrumb</li>
+  <li>Search filters</li>
+  <li>Dropdown and hamburger menus</li>
+  <li>Minicart</li>
+  <li>Newsletter</li>
+  <li>Footer</li>
+</ul>
+
 
 ## Getting started
 
