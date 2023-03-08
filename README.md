@@ -7,37 +7,52 @@ in minutes
 
 This starter brings:
 
-- Home, product and listing pages
-- Content editable via CMS
-- A/B test compatible
-- Analytics
-- Integration with VTEX, Shopify and Oracle
-- Minicart with:
-  - Coupons
-  - Total
-  - Subtotal
-  - Promotions
-- SKU selector
-- Full text search
-- Search filters
-- Search pagination
-- SEO optmized
-  - Meta tags
-  - Rich results
-  - OpenGraph
-- Cookie consent
-
-Also, this starter has fully featured components, like:
-
-- Carousel
-- Product shelf
-- SKU selector
-- Breadcrumb
-- Search filters
-- Dropdown and hamburger menus
-- Minicart
-- Newsletter
-- Footer
+<div style="display: flex; justify-content: space-between">
+  <ul>
+    <li>Home, product and listing pages</li>
+    <li>Content editable via CMS</li>
+    <li>A/B test compatible</li>
+    <li>Analytics</li>
+    <li>Integration with VTEX, Shopify and Oracle</li>
+    <li>
+      <ul>
+        Minicart with:
+        <li>
+        <li>Coupons</li>
+        <li>Total</li>
+        <li>Subtotal</li>
+        <li>Promotions</li>
+    </li>
+  </ul>
+  </li>
+  <li>SKU selector</li>
+  <li>Full text search</li>
+  <li>Search filters</li>
+  <li>Search pagination</li>
+  <li>
+    SEO optmized
+    <ul>
+      <li>Meta tags</li>
+      <li>Rich results</li>
+      <li>OpenGraph</li>
+    </ul>
+  </li>
+  <li>Cookie consent</li>
+  <li>Carousel</li>
+  <li>Product shelf</li>
+  <li>SKU selector</li>
+  <li>Breadcrumb</li>
+  <li>Search filters</li>
+  <li>Dropdown and hamburger menus</li>
+  <li>Minicart</li>
+  <li>Newsletter</li>
+  <li>Footer</li>
+  </ul>
+  <img
+    width="250px"
+    height="250px"
+    src="https://cdn.discordapp.com/attachments/958870428078731344/1083130392447561862/CleanShot_2023-03-08_at_17.53.052x.png" />
+</div>
 
 ## Getting started
 
