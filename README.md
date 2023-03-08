@@ -4,16 +4,18 @@ A fully featured starter to help you customize and deploy an ecommerce website
 in minutes
 
 <div style="display: flex; justify-content: center; gap: 16px; margin: 16px">
-<img width="350px" height="250px"
+<img width="360px" height="250px"
     src="https://cdn.discordapp.com/attachments/958870428078731344/1083138245099012250/image.png" />
   <img width="250px" height="250px"
     src="https://cdn.discordapp.com/attachments/958870428078731344/1083130392447561862/CleanShot_2023-03-08_at_17.53.052x.png" />
-  <img width="350px" height="250px"
+  <img width="360px" height="250px"
     src="https://cdn.discordapp.com/attachments/958870428078731344/1083138168641040414/image.png" />
 </div>
 
 ## Features
+
 This starter brings:
+
 <ul>
   <li>Home, product and listing pages</li>
   <li>Content editable via CMS</li>
@@ -50,7 +52,6 @@ This starter brings:
   <li>Newsletter</li>
   <li>Footer</li>
 </ul>
-
 
 ## Getting started
 
