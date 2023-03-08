@@ -55,7 +55,7 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
 
       {hasChildren && (
         <ul class={`flex-col ${open.value === true ? "flex" : "hidden"}`}>
-          <li class="py-2">
+          <li class="py-2 pl-2">
             <a href={item.href} class="w-full inline-block">
               <Text class="underline min-h-[40px]" variant="caption">
                 Ver todos
