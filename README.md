@@ -98,11 +98,12 @@ After this, your should be using the products provenient from your ecommerce
 account
 
 ### Adding fonts
+
 1. Copy & paste your font files (.woff/.woff2) to `/static/fonts` folder
 2. Open `/components/GlobalTags.tsx` component and replace `@font-face` tags
    accordingly, i.e. change font-family, font-style and font-weight. Now, change
    the src attribute with the right font path.
-3. Open twind.config.ts and change the `fontFamily` attribute accordingly. 
+3. Open twind.config.ts and change the `fontFamily` attribute accordingly.
 
 > WARNING: Do not forget to use the `asset()` function. Not adding it will
 > increase the traffic on your site and lead to higher costs
@@ -111,19 +112,29 @@ account
 > designer for these values.
 
 ### Adding your logo
+
 1. Make sure you have your logo in `.svg` format
 2. Open your logo in your text editor and copy its content
-2. Open /static/sprites.svg
-3. Replace `<symbol id="Logo" .../>` with the content of your logo's `.svg` file. Make sure all `<svg />` tags are replaced with `<symbol />` tag and add the `id="Logo"` attribute. Also, make sure to have the `xmlns` attribute.
+3. Open /static/sprites.svg
+4. Replace `<symbol id="Logo" .../>` with the content of your logo's `.svg`
+   file. Make sure all `<svg />` tags are replaced with `<symbol />` tag and add
+   the `id="Logo"` attribute. Also, make sure to have the `xmlns` attribute.
 
 ### Adding default assets
-Open `static` folder and replace `favicon.ico`, `robots.txt` and `site.webmanifest` with your own assets
+
+Open `static` folder and replace `favicon.ico`, `robots.txt` and
+`site.webmanifest` with your own assets
 
 ### Changing style (CSS)
+
 1. Run the store (with `deno task start`).
-2. Open the [design system section](http://localhost:8000/_live/workbench/sections/DesignSystem.story.tsx?key=.%2Fsections%2FDesignSystem.story.tsx)
+2. Open the
+   [design system section](http://localhost:8000/_live/workbench/sections/DesignSystem.story.tsx?key=.%2Fsections%2FDesignSystem.story.tsx)
 3. Now, on your text editor, open `twind.config.ts`
-4. Change the default, header, badge, etc colors, text colors and border colors to better fit your desired design and check how the [design system section](http://localhost:8000/_live/workbench/sections/DesignSystem.story.tsx?key=.%2Fsections%2FDesignSystem.story.tsx) changes.
+4. Change the default, header, badge, etc colors, text colors and border colors
+   to better fit your desired design and check how the
+   [design system section](http://localhost:8000/_live/workbench/sections/DesignSystem.story.tsx?key=.%2Fsections%2FDesignSystem.story.tsx)
+   changes.
 
 ## Customize the store
 
