@@ -64,7 +64,7 @@ function Searchbar({
 }: Props) {
   return (
     <>
-      <div class="px-4">
+      <div class="px-4 mt-4">
         <form
           id="searchbar"
           action={action}
