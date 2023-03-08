@@ -3,13 +3,9 @@
 A fully featured starter to help you customize and deploy an ecommerce website
 in minutes
 
-<div style="display: flex; justify-content: center; gap: 16px; margin: 16px">
-<img width="360px" height="250px"
-    src="https://cdn.discordapp.com/attachments/958870428078731344/1083138245099012250/image.png" />
-  <img width="250px" height="250px"
-    src="https://cdn.discordapp.com/attachments/958870428078731344/1083130392447561862/CleanShot_2023-03-08_at_17.53.052x.png" />
-  <img width="360px" height="250px"
-    src="https://cdn.discordapp.com/attachments/958870428078731344/1083138168641040414/image.png" />
+<div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin: 16px">
+<img width="600px" height="147px"
+    src="https://cdn.discordapp.com/attachments/1043241080679841793/1083140431556116553/image.png" />
 </div>
 
 ## Features
