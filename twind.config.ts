@@ -7,49 +7,6 @@
 import type { Options } from "$fresh/plugins/twind.ts";
 
 const options: Omit<Options, "selfURL"> = {
-  preflight: (preflight) => ({
-    ...preflight,
-
-    // Stick footer to the bottom of the page
-    body: {
-      display: "flex",
-      flexDirection: "column",
-      minHeight: "100vh",
-    },
-    'section[data-manifest-key="./sections/Footer.tsx"]': {
-      marginTop: "auto",
-    },
-
-    // Prevent scroll when modal is open
-    "body[no-scroll]": {
-      overflow: "hidden",
-      height: "100vh",
-    },
-  }),
-  plugins: {
-    backdrop: {
-      "&::backdrop": {
-        background: "rgba(0, 0, 0, 0.5)",
-      },
-    },
-    "scroll-snap-center": {
-      "scroll-snap-align": "center",
-    },
-    "scroll-x-mandatory": {
-      "scroll-snap-type": "x mandatory",
-    },
-    "scroll-smooth": {
-      "scroll-behavior": "smooth",
-      "-webkit-overflow-scrolling": "touch",
-    },
-    "scrollbar-none": {
-      "scrollbar-width": "none",
-      "-ms-overflow-style": "none",
-      "&::-webkit-scrollbar": {
-        display: "none",
-      },
-    },
-  },
   theme: {
     extend: {
       colors: {
@@ -133,6 +90,49 @@ const options: Omit<Options, "selfURL"> = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+    },
+  },
+  preflight: (preflight) => ({
+    ...preflight,
+
+    // Stick footer to the bottom of the page
+    body: {
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh",
+    },
+    'section[data-manifest-key="./sections/Footer.tsx"]': {
+      marginTop: "auto",
+    },
+
+    // Prevent scroll when modal is open
+    "body[no-scroll]": {
+      overflow: "hidden",
+      height: "100vh",
+    },
+  }),
+  plugins: {
+    backdrop: {
+      "&::backdrop": {
+        background: "rgba(0, 0, 0, 0.5)",
+      },
+    },
+    "scroll-snap-center": {
+      "scroll-snap-align": "center",
+    },
+    "scroll-x-mandatory": {
+      "scroll-snap-type": "x mandatory",
+    },
+    "scroll-smooth": {
+      "scroll-behavior": "smooth",
+      "-webkit-overflow-scrolling": "touch",
+    },
+    "scrollbar-none": {
+      "scrollbar-width": "none",
+      "-ms-overflow-style": "none",
+      "&::-webkit-scrollbar": {
+        display: "none",
+      },
     },
   },
 };
