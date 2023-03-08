@@ -14,14 +14,13 @@ This starter brings:
     <li>A/B test compatible</li>
     <li>Analytics</li>
     <li>Integration with VTEX, Shopify and Oracle</li>
-    <li>
+    <li>Minicart with
       <ul>
-        Minicart with:
-        <li>
         <li>Coupons</li>
         <li>Total</li>
         <li>Subtotal</li>
         <li>Promotions</li>
+      </ul>
     </li>
   </ul>
   </li>
@@ -29,8 +28,7 @@ This starter brings:
   <li>Full text search</li>
   <li>Search filters</li>
   <li>Search pagination</li>
-  <li>
-    SEO optmized
+  <li>SEO optmized
     <ul>
       <li>Meta tags</li>
       <li>Rich results</li>
