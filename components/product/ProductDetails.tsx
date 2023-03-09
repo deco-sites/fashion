@@ -7,13 +7,12 @@ import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
-import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
-  page: LoaderReturnType<ProductDetailsPage | null>;
+  page: ProductDetailsPage | null;
 }
 
 function ProductDetails({ page }: Props) {

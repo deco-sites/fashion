@@ -2,12 +2,11 @@ import ProductCard from "$store/components/product/ProductCard.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   title: string;
-  products: LoaderReturnType<Product[]>;
+  products: Product[];
 }
 
 function ProductShelf({

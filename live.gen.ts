@@ -144,7 +144,7 @@ const manifest = {
     "definitions": {
       ".": {
         "islands": {
-          "HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8": {
+          "HeaderButton.tsx@0358e83b-43ac-4f47-b439-04e52140b621": {
             "type": "object",
             "allOf": [],
             "properties": {
@@ -158,16 +158,16 @@ const manifest = {
             },
             "required": ["variant"],
             "title":
-              "./islands/HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8",
+              "./islands/HeaderButton.tsx@0358e83b-43ac-4f47-b439-04e52140b621",
             "$id":
-              "./islands/HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8",
+              "./islands/HeaderButton.tsx@0358e83b-43ac-4f47-b439-04e52140b621",
           },
           "HeaderButton.tsx": {
             "title": "./islands/HeaderButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8",
+                "#/definitions/./islands/HeaderButton.tsx@0358e83b-43ac-4f47-b439-04e52140b621",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -178,16 +178,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderButton.tsx",
           },
-          "AddToCartButton.tsx@743ecf25-3217-4a5f-965a-2d2a9bcb6b25": {
+          "AddToCartButton.tsx@bed3a441-44f1-4179-8da6-ee112b8d1365": {
             "$id":
-              "./islands/AddToCartButton.tsx@743ecf25-3217-4a5f-965a-2d2a9bcb6b25",
+              "./islands/AddToCartButton.tsx@bed3a441-44f1-4179-8da6-ee112b8d1365",
           },
           "AddToCartButton.tsx": {
             "title": "./islands/AddToCartButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/AddToCartButton.tsx@743ecf25-3217-4a5f-965a-2d2a9bcb6b25",
+                "#/definitions/./islands/AddToCartButton.tsx@bed3a441-44f1-4179-8da6-ee112b8d1365",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -198,16 +198,16 @@ const manifest = {
             },
             "$id": "./islands/AddToCartButton.tsx",
           },
-          "LiveControls.tsx@cd01c096-10b7-4ee2-925c-b7902ecf0ee6": {
+          "LiveControls.tsx@8272c190-92d2-41c9-bf4b-d2f6bfa74725": {
             "$id":
-              "./islands/LiveControls.tsx@cd01c096-10b7-4ee2-925c-b7902ecf0ee6",
+              "./islands/LiveControls.tsx@8272c190-92d2-41c9-bf4b-d2f6bfa74725",
           },
           "LiveControls.tsx": {
             "title": "./islands/LiveControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/LiveControls.tsx@cd01c096-10b7-4ee2-925c-b7902ecf0ee6",
+                "#/definitions/./islands/LiveControls.tsx@8272c190-92d2-41c9-bf4b-d2f6bfa74725",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -218,16 +218,16 @@ const manifest = {
             },
             "$id": "./islands/LiveControls.tsx",
           },
-          "HeaderModals.tsx@f78064f4-7ddb-4dd0-b74c-d32fba523395": {
+          "HeaderModals.tsx@f04f7dee-11f9-4982-99e3-1cd0c3cff243": {
             "$id":
-              "./islands/HeaderModals.tsx@f78064f4-7ddb-4dd0-b74c-d32fba523395",
+              "./islands/HeaderModals.tsx@f04f7dee-11f9-4982-99e3-1cd0c3cff243",
           },
           "HeaderModals.tsx": {
             "title": "./islands/HeaderModals.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderModals.tsx@f78064f4-7ddb-4dd0-b74c-d32fba523395",
+                "#/definitions/./islands/HeaderModals.tsx@f04f7dee-11f9-4982-99e3-1cd0c3cff243",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -238,16 +238,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderModals.tsx",
           },
-          "SearchControls.tsx@1030a5ec-0ef8-46fc-b717-3c2a3cfa4a47": {
+          "SearchControls.tsx@41056b33-4aa9-42bd-9865-3758bac922aa": {
             "$id":
-              "./islands/SearchControls.tsx@1030a5ec-0ef8-46fc-b717-3c2a3cfa4a47",
+              "./islands/SearchControls.tsx@41056b33-4aa9-42bd-9865-3758bac922aa",
           },
           "SearchControls.tsx": {
             "title": "./islands/SearchControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/SearchControls.tsx@1030a5ec-0ef8-46fc-b717-3c2a3cfa4a47",
+                "#/definitions/./islands/SearchControls.tsx@41056b33-4aa9-42bd-9865-3758bac922aa",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -606,7 +606,11 @@ const manifest = {
               "allOf": [],
               "properties": {
                 "title": { "title": "Title", "type": "string" },
-                "products": { "title": "Products" },
+                "products": {
+                  "title": "Products",
+                  "$ref":
+                    "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Product[]",
+                },
               },
               "required": ["title", "products"],
               "title": "./components/product/ProductShelf.tsx@Props",
@@ -615,7 +619,15 @@ const manifest = {
             "ProductDetails.tsx@Props": {
               "type": "object",
               "allOf": [],
-              "properties": { "page": { "title": "Page" } },
+              "properties": {
+                "page": {
+                  "title": "Page",
+                  "anyOf": [{
+                    "$ref":
+                      "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@ProductDetailsPage",
+                  }, { "type": "null" }],
+                },
+              },
               "required": ["page"],
               "title": "./components/product/ProductDetails.tsx@Props",
               "$id": "./components/product/ProductDetails.tsx@Props",
@@ -623,7 +635,13 @@ const manifest = {
             "ProductGallery.tsx@Props": {
               "type": "object",
               "allOf": [],
-              "properties": { "page": { "title": "Page" } },
+              "properties": {
+                "page": {
+                  "title": "Page",
+                  "$ref":
+                    "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@ProductListingPage",
+                },
+              },
               "required": ["page"],
               "title": "./components/product/ProductGallery.tsx@Props",
               "$id": "./components/product/ProductGallery.tsx@Props",
@@ -716,7 +734,84 @@ const manifest = {
               "$id": "./components/footer/Footer.tsx@Props",
             },
           },
+          "search": {
+            "Searchbar.tsx@EditableProps": {
+              "type": "object",
+              "allOf": [],
+              "properties": {
+                "placeholder": {
+                  "title": "Placeholder",
+                  "type": ["string", "null"],
+                  "description": "Search bar default placeholder message",
+                  "default": "What are you looking for?",
+                },
+                "action": {
+                  "title": "Page path",
+                  "type": ["string", "null"],
+                  "description":
+                    "When user clicks on the search button, navigate it to",
+                  "default": "/s",
+                },
+                "name": {
+                  "title": "Term name",
+                  "type": ["string", "null"],
+                  "description":
+                    "Querystring param used when navigating the user",
+                  "default": "q",
+                },
+                "query": { "title": "Query", "type": ["string", "null"] },
+              },
+              "required": [],
+              "title": "./components/search/Searchbar.tsx@EditableProps",
+              "$id": "./components/search/Searchbar.tsx@EditableProps",
+            },
+            "Controls.tsx@Props": {
+              "type": "object",
+              "allOf": [],
+              "properties": {
+                "page": {
+                  "title": "Page",
+                  "$ref":
+                    "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@ProductListingPage",
+                },
+              },
+              "required": ["page"],
+              "title": "./components/search/Controls.tsx@Props",
+              "$id": "./components/search/Controls.tsx@Props",
+            },
+          },
           "header": {
+            "Header.tsx@NavItem": {
+              "type": "object",
+              "allOf": [],
+              "properties": {
+                "label": { "title": "Label", "type": "string" },
+                "href": { "title": "Href", "type": "string" },
+                "children": {
+                  "title": "Children",
+                  "$ref": "#/definitions/undefined[]",
+                },
+                "image": {
+                  "type": "object",
+                  "allOf": [],
+                  "properties": {
+                    "src": { "title": "Src", "type": "string" },
+                    "alt": { "title": "Alt", "type": ["string", "null"] },
+                  },
+                  "required": [],
+                },
+              },
+              "required": ["label", "href"],
+              "title": "./components/header/Header.tsx@NavItem",
+              "$id": "./components/header/Header.tsx@NavItem",
+            },
+            "Header.tsx@NavItem[]": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/./components/header/Header.tsx@NavItem",
+              },
+              "$id": "./components/header/Header.tsx@NavItem[]",
+            },
             "Header.tsx@Props": {
               "type": "object",
               "allOf": [],
@@ -726,16 +821,22 @@ const manifest = {
                   "type": "array",
                   "items": { "type": "string" },
                 },
-                "searchbar": { "title": "Search Bar" },
+                "searchbar": {
+                  "title": "Search Bar",
+                  "$ref":
+                    "#/definitions/./components/search/Searchbar.tsx@EditableProps",
+                },
                 "navItems": {
                   "title": "Navigation items",
-                  "type": "array",
-                  "items": {},
+                  "$ref":
+                    "#/definitions/./components/header/Header.tsx@NavItem[]",
                   "description":
                     "Navigation items used both on mobile and desktop menus",
                 },
                 "products": {
                   "title": "Product suggestions",
+                  "$ref":
+                    "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Product[]",
                   "description": "Product suggestions displayed on search",
                 },
               },
@@ -744,17 +845,736 @@ const manifest = {
               "$id": "./components/header/Header.tsx@Props",
             },
           },
-          "search": {
-            "Controls.tsx@Props": {
-              "type": "object",
-              "allOf": [],
-              "properties": { "page": { "title": "Page" } },
-              "required": ["page"],
-              "title": "./components/search/Controls.tsx@Props",
-              "$id": "./components/search/Controls.tsx@Props",
+        },
+      },
+      "": {
+        "Users": {
+          "marcoscandeia": {
+            "workspace": {
+              "std": {
+                "commerce": {
+                  "types.ts@PropertyValue": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "PropertyValue",
+                      },
+                      "maxValue": {
+                        "title": "Max Value",
+                        "type": ["number", "null"],
+                      },
+                      "minValue": {
+                        "title": "Min Value",
+                        "type": ["number", "null"],
+                      },
+                      "propertyID": {
+                        "title": "Property I D",
+                        "type": ["string", "null"],
+                      },
+                      "unitCode": {
+                        "title": "Unit Code",
+                        "type": ["string", "null"],
+                      },
+                      "unitText": {
+                        "title": "Unit Text",
+                        "type": ["string", "null"],
+                      },
+                      "value": { "title": "Value", "type": ["string", "null"] },
+                      "valueReference": {
+                        "title": "Value Reference",
+                        "type": ["string", "null"],
+                      },
+                    },
+                    "required": ["@type"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@PropertyValue",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@PropertyValue",
+                  },
+                  "types.ts@PropertyValue[]": {
+                    "type": "array",
+                    "items": {
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@PropertyValue",
+                    },
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@PropertyValue[]",
+                  },
+                  "types.ts@AggregateRating": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "AggregateRating",
+                      },
+                      "ratingCount": {
+                        "title": "Rating Count",
+                        "type": ["number", "null"],
+                      },
+                      "reviewCount": {
+                        "title": "Review Count",
+                        "type": ["number", "null"],
+                      },
+                    },
+                    "required": ["@type"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@AggregateRating",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@AggregateRating",
+                  },
+                  "types.ts@ProductLeaf": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {},
+                    "required": [],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductLeaf",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductLeaf",
+                  },
+                  "types.ts@ProductLeaf[]": {
+                    "type": "array",
+                    "items": {
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@ProductLeaf",
+                    },
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductLeaf[]",
+                  },
+                  "types.ts@ProductGroup": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "ProductGroup",
+                      },
+                      "hasVariant": {
+                        "title": "Has Variant",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@ProductLeaf[]",
+                      },
+                      "productGroupID": {
+                        "title": "Product Group I D",
+                        "type": "string",
+                      },
+                      "additionalProperty": {
+                        "title": "Additional Property",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@PropertyValue[]",
+                      },
+                      "model": {
+                        "title": "Model",
+                        "type": ["string", "null"],
+                        "docs": "https://schema.org/gtin",
+                      },
+                    },
+                    "required": [
+                      "@type",
+                      "hasVariant",
+                      "productGroupID",
+                      "additionalProperty",
+                    ],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductGroup",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductGroup",
+                  },
+                  "types.ts@QuantitativeValue": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "value": { "title": "Value", "type": ["number", "null"] },
+                    },
+                    "required": [],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@QuantitativeValue",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@QuantitativeValue",
+                  },
+                  "types.ts@UnitPriceSpecification": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "UnitPriceSpecification",
+                      },
+                      "priceComponentType": {
+                        "title": "Price Component Type",
+                        "anyOf": [{
+                          "type": "string",
+                          "const": "https://schema.org/ActivationFee",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/CleaningFee",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/DistanceFee",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/Downpayment",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/Installment",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/Subscription",
+                        }],
+                      },
+                      "priceType": {
+                        "title": "Price Type",
+                        "anyOf": [{
+                          "type": "string",
+                          "const": "https://schema.org/InvoicePrice",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/ListPrice",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/MinimumAdvertisedPrice",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/MSRP",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/SalePrice",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/SRP",
+                        }],
+                      },
+                      "billingDuration": {
+                        "title": "Billing Duration",
+                        "type": ["number", "null"],
+                      },
+                      "billingIncrement": {
+                        "title": "Billing Increment",
+                        "type": ["number", "null"],
+                      },
+                    },
+                    "required": ["@type", "priceType"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@UnitPriceSpecification",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@UnitPriceSpecification",
+                  },
+                  "types.ts@UnitPriceSpecification[]": {
+                    "type": "array",
+                    "items": {
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@UnitPriceSpecification",
+                    },
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@UnitPriceSpecification[]",
+                  },
+                  "types.ts@Offer": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "Offer",
+                      },
+                      "availability": {
+                        "title": "Availability",
+                        "anyOf": [{
+                          "type": "string",
+                          "const": "https://schema.org/BackOrder",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/Discontinued",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/InStock",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/InStoreOnly",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/LimitedAvailability",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/OnlineOnly",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/OutOfStock",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/PreOrder",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/PreSale",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/SoldOut",
+                        }],
+                      },
+                      "gtin": { "title": "Gtin", "type": ["string", "null"] },
+                      "inventoryLevel": {
+                        "title": "Inventory Level",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@QuantitativeValue",
+                      },
+                      "itemCondition": {
+                        "title": "Item Condition",
+                        "anyOf": [{
+                          "type": "string",
+                          "const": "https://schema.org/DamagedCondition",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/NewCondition",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/RefurbishedCondition",
+                        }, {
+                          "type": "string",
+                          "const": "https://schema.org/UsedCondition",
+                        }],
+                      },
+                      "price": { "title": "Price", "type": "number" },
+                      "priceSpecification": {
+                        "title": "Price Specification",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@UnitPriceSpecification[]",
+                      },
+                      "priceValidUntil": {
+                        "title": "Price Valid Until",
+                        "type": ["string", "null"],
+                      },
+                      "seller": {
+                        "title": "Seller",
+                        "type": ["string", "null"],
+                      },
+                      "sku": { "title": "Sku", "type": ["string", "null"] },
+                    },
+                    "required": [
+                      "@type",
+                      "availability",
+                      "inventoryLevel",
+                      "price",
+                      "priceSpecification",
+                    ],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Offer",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Offer",
+                  },
+                  "types.ts@Offer[]": {
+                    "type": "array",
+                    "items": {
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Offer",
+                    },
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Offer[]",
+                  },
+                  "types.ts@AggregateOffer": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "AggregateOffer",
+                      },
+                      "highPrice": { "title": "High Price", "type": "number" },
+                      "lowPrice": { "title": "Low Price", "type": "number" },
+                      "offerCount": {
+                        "title": "Offer Count",
+                        "type": "number",
+                      },
+                      "offers": {
+                        "title": "Offers",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Offer[]",
+                      },
+                      "priceCurrency": {
+                        "title": "Price Currency",
+                        "type": ["string", "null"],
+                      },
+                    },
+                    "required": [
+                      "@type",
+                      "highPrice",
+                      "lowPrice",
+                      "offerCount",
+                      "offers",
+                    ],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@AggregateOffer",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@AggregateOffer",
+                  },
+                  "types.ts@Review": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "Review",
+                      },
+                      "itemReviewed": {
+                        "title": "Item Reviewed",
+                        "type": ["string", "null"],
+                      },
+                      "negativeNotes": {
+                        "title": "Negative Notes",
+                        "type": "array",
+                        "items": { "type": "string" },
+                      },
+                      "positiveNotes": {
+                        "title": "Positive Notes",
+                        "type": "array",
+                        "items": { "type": "string" },
+                      },
+                      "reviewAspect": {
+                        "title": "Review Aspect",
+                        "type": ["string", "null"],
+                      },
+                      "reviewBody": {
+                        "title": "Review Body",
+                        "type": ["string", "null"],
+                      },
+                      "reviewRating": {
+                        "title": "Review Rating",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@AggregateRating",
+                      },
+                    },
+                    "required": ["@type"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Review",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Review",
+                  },
+                  "types.ts@Product": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "Product",
+                      },
+                      "additionalProperty": {
+                        "title": "Additional Property",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@PropertyValue[]",
+                      },
+                      "aggregateRating": {
+                        "title": "Aggregate Rating",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@AggregateRating",
+                      },
+                      "award": { "title": "Award", "type": ["string", "null"] },
+                      "brand": { "title": "Brand", "type": ["string", "null"] },
+                      "category": {
+                        "title": "Category",
+                        "type": ["string", "null"],
+                      },
+                      "gtin": { "title": "Gtin", "type": ["string", "null"] },
+                      "inProductGroupWithID": {
+                        "title": "In Product Group With I D",
+                        "type": ["string", "null"],
+                      },
+                      "isVariantOf": {
+                        "title": "Is Variant Of",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@ProductGroup",
+                      },
+                      "offers": {
+                        "title": "Offers",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@AggregateOffer",
+                      },
+                      "productID": { "title": "Product I D", "type": "string" },
+                      "productionDate": {
+                        "title": "Production Date",
+                        "type": ["string", "null"],
+                      },
+                      "releaseDate": {
+                        "title": "Release Date",
+                        "type": ["string", "null"],
+                      },
+                      "review": {
+                        "title": "Review",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Review",
+                      },
+                      "sku": { "title": "Sku", "type": "string" },
+                    },
+                    "required": ["@type", "productID", "sku"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Product",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Product",
+                  },
+                  "types.ts@Product[]": {
+                    "type": "array",
+                    "items": {
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Product",
+                    },
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@Product[]",
+                  },
+                  "types.ts@BreadcrumbList": {
+                    "type": "object",
+                    "allOf": [{}],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "BreadcrumbList",
+                      },
+                    },
+                    "required": ["@type"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@BreadcrumbList",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@BreadcrumbList",
+                  },
+                  "types.ts@ProductDetailsPage": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "breadcrumbList": {
+                        "title": "Breadcrumb List",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@BreadcrumbList",
+                      },
+                      "product": {
+                        "title": "Product",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Product",
+                      },
+                    },
+                    "required": ["breadcrumbList", "product"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductDetailsPage",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductDetailsPage",
+                  },
+                  "types.ts@FilterBase": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "label": { "title": "Label", "type": "string" },
+                      "key": { "title": "Key", "type": "string" },
+                    },
+                    "required": ["label", "key"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterBase",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterBase",
+                  },
+                  "types.ts@FilterToggleValue": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "quantity": { "title": "Quantity", "type": "number" },
+                      "label": { "title": "Label", "type": "string" },
+                      "value": { "title": "Value", "type": "string" },
+                      "selected": { "title": "Selected", "type": "boolean" },
+                      "url": { "title": "Url", "type": "string" },
+                    },
+                    "required": [
+                      "quantity",
+                      "label",
+                      "value",
+                      "selected",
+                      "url",
+                    ],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggleValue",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggleValue",
+                  },
+                  "types.ts@FilterToggleValue[]": {
+                    "type": "array",
+                    "items": {
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggleValue",
+                    },
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggleValue[]",
+                  },
+                  "types.ts@FilterToggle": {
+                    "type": "object",
+                    "allOf": [{
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterBase",
+                    }],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "FilterToggle",
+                      },
+                      "values": {
+                        "title": "Values",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggleValue[]",
+                      },
+                      "quantity": { "title": "Quantity", "type": "number" },
+                    },
+                    "required": ["@type", "values", "quantity"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggle",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggle",
+                  },
+                  "types.ts@FilterRangeValue": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "min": { "title": "Min", "type": "number" },
+                      "max": { "title": "Max", "type": "number" },
+                    },
+                    "required": ["min", "max"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRangeValue",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRangeValue",
+                  },
+                  "types.ts@FilterRange": {
+                    "type": "object",
+                    "allOf": [{
+                      "$ref":
+                        "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterBase",
+                    }],
+                    "properties": {
+                      "@type": {
+                        "title": "@type",
+                        "type": "string",
+                        "const": "FilterRange",
+                      },
+                      "values": {
+                        "title": "Values",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRangeValue",
+                      },
+                    },
+                    "required": ["@type", "values"],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRange",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRange",
+                  },
+                  "types.ts@FilterRange|": {
+                    "Users": {
+                      "marcoscandeia": {
+                        "workspace": {
+                          "std": {
+                            "commerce": {
+                              "types.ts@FilterToggle": {
+                                "anyOf": [{
+                                  "$ref":
+                                    "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggle",
+                                }, {
+                                  "$ref":
+                                    "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRange",
+                                }],
+                                "$id":
+                                  "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRange|/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggle",
+                              },
+                              "types.ts@FilterToggle[]": {
+                                "type": "array",
+                                "items": {
+                                  "$ref":
+                                    "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRange|/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggle",
+                                },
+                                "$id":
+                                  "/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRange|/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggle[]",
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  "types.ts@ProductListingPage": {
+                    "type": "object",
+                    "allOf": [],
+                    "properties": {
+                      "breadcrumb": {
+                        "title": "Breadcrumb",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@BreadcrumbList",
+                      },
+                      "filters": {
+                        "title": "Filters",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@FilterRange|/Users/marcoscandeia/workspace/std/commerce/types.ts@FilterToggle[]",
+                      },
+                      "products": {
+                        "title": "Products",
+                        "$ref":
+                          "#/definitions//Users/marcoscandeia/workspace/std/commerce/types.ts@Product[]",
+                      },
+                      "pageInfo": {
+                        "type": "object",
+                        "allOf": [],
+                        "properties": {
+                          "currentPage": {
+                            "title": "Current Page",
+                            "type": "number",
+                          },
+                          "nextPage": {
+                            "title": "Next Page",
+                            "anyOf": [{ "type": "string" }, {
+                              "type": "undefined",
+                            }],
+                          },
+                          "previousPage": {
+                            "title": "Previous Page",
+                            "anyOf": [{ "type": "string" }, {
+                              "type": "undefined",
+                            }],
+                          },
+                        },
+                        "required": ["currentPage", "nextPage", "previousPage"],
+                      },
+                    },
+                    "required": [
+                      "breadcrumb",
+                      "filters",
+                      "products",
+                      "pageInfo",
+                    ],
+                    "title":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductListingPage",
+                    "$id":
+                      "/Users/marcoscandeia/workspace/std/commerce/types.ts@ProductListingPage",
+                  },
+                },
+              },
             },
           },
         },
+      },
+      "undefined[]": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "allOf": [],
+          "properties": {
+            "label": { "title": "Label", "type": "string" },
+            "href": { "title": "Href", "type": "string" },
+          },
+          "required": ["label", "href"],
+        },
+        "$id": "undefined[]",
       },
       "$live": {
         "routes": {
@@ -1257,17 +2077,17 @@ const manifest = {
             },
             "$id": "deco-sites/std/loaders/vtexProductListingPage.ts",
           },
-          "vtexLegacyProductDetailsPage.ts@5b08d6d4-6f88-4cf8-a7e9-272ee3446418":
+          "vtexLegacyProductDetailsPage.ts@27ab7c90-6681-48d3-8882-41929825dadb":
             {
               "$id":
-                "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@5b08d6d4-6f88-4cf8-a7e9-272ee3446418",
+                "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@27ab7c90-6681-48d3-8882-41929825dadb",
             },
           "vtexLegacyProductDetailsPage.ts": {
             "title": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@5b08d6d4-6f88-4cf8-a7e9-272ee3446418",
+                "#/definitions/deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@27ab7c90-6681-48d3-8882-41929825dadb",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -1373,16 +2193,16 @@ const manifest = {
             },
             "$id": "deco-sites/std/loaders/vtexProductList.ts",
           },
-          "occProductDetailsPage.ts@57a824dd-965e-495e-abcb-1edaf3ab6ee3": {
+          "occProductDetailsPage.ts@6a5f2518-b2f0-4235-8879-622c09889648": {
             "$id":
-              "deco-sites/std/loaders/occProductDetailsPage.ts@57a824dd-965e-495e-abcb-1edaf3ab6ee3",
+              "deco-sites/std/loaders/occProductDetailsPage.ts@6a5f2518-b2f0-4235-8879-622c09889648",
           },
           "occProductDetailsPage.ts": {
             "title": "deco-sites/std/loaders/occProductDetailsPage.ts",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/loaders/occProductDetailsPage.ts@57a824dd-965e-495e-abcb-1edaf3ab6ee3",
+                "#/definitions/deco-sites/std/loaders/occProductDetailsPage.ts@6a5f2518-b2f0-4235-8879-622c09889648",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -1550,16 +2370,16 @@ const manifest = {
             },
             "$id": "deco-sites/std/loaders/shopifyProductList.ts",
           },
-          "shopifyProductDetailsPage.ts@1e915481-c660-432e-907a-fa0a58b3cf51": {
+          "shopifyProductDetailsPage.ts@57ccc203-8e38-43d4-9b0a-d5b3c540af07": {
             "$id":
-              "deco-sites/std/loaders/shopifyProductDetailsPage.ts@1e915481-c660-432e-907a-fa0a58b3cf51",
+              "deco-sites/std/loaders/shopifyProductDetailsPage.ts@57ccc203-8e38-43d4-9b0a-d5b3c540af07",
           },
           "shopifyProductDetailsPage.ts": {
             "title": "deco-sites/std/loaders/shopifyProductDetailsPage.ts",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/loaders/shopifyProductDetailsPage.ts@1e915481-c660-432e-907a-fa0a58b3cf51",
+                "#/definitions/deco-sites/std/loaders/shopifyProductDetailsPage.ts@57ccc203-8e38-43d4-9b0a-d5b3c540af07",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -1573,16 +2393,16 @@ const manifest = {
           },
         },
         "islands": {
-          "LiveControls.tsx@1f51c250-198d-47d0-844d-c2deca070c97": {
+          "LiveControls.tsx@2d068051-c887-4f98-9d09-670408f3db61": {
             "$id":
-              "deco-sites/std/islands/LiveControls.tsx@1f51c250-198d-47d0-844d-c2deca070c97",
+              "deco-sites/std/islands/LiveControls.tsx@2d068051-c887-4f98-9d09-670408f3db61",
           },
           "LiveControls.tsx": {
             "title": "deco-sites/std/islands/LiveControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/islands/LiveControls.tsx@1f51c250-198d-47d0-844d-c2deca070c97",
+                "#/definitions/deco-sites/std/islands/LiveControls.tsx@2d068051-c887-4f98-9d09-670408f3db61",
             }],
             "required": ["__resolveType"],
             "properties": {
