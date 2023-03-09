@@ -3,7 +3,7 @@
 /// <reference lib="deno.ns" />
 /// <reference lib="esnext" />
 
-import manifest from "./fresh.gen.ts";
+import manifest from "./live.gen.ts";
 import { start } from "$fresh/server.ts";
 import twindPlugin from "$fresh/plugins/twind.ts";
 import twindConfig from "./twind.config.ts";
