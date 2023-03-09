@@ -40,7 +40,7 @@ function CartItem({ index }: Props) {
           {name}
         </Text>
         <div class="flex items-center gap-2">
-          <Text tone="subdued" variant="caption">
+          <Text class="line-through" tone="subdued" variant="list-price">
             {formatPrice(listPrice / 100, currencyCode!, locale)}
           </Text>
           <Text tone="price" variant="caption">

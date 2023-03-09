@@ -26,7 +26,7 @@ function Coupon() {
   };
 
   return (
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center px-4">
       <Text variant="caption">Cupom de desconto</Text>
       {!displayInput.value && (
         <Button

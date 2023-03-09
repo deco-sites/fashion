@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Container from "$store/components/ui/Container.tsx";
@@ -6,7 +5,9 @@ import { useId } from "preact/hooks";
 
 const script = (id: string) => `
 const callback = () => {
+
   console.log('running once')
+
   const KEY = 'store-cookie-consent';
   const ACCEPTED = 'accepted';
   const HIDDEN = "translate-y-[200%]";
@@ -25,6 +26,7 @@ const callback = () => {
     elem.classList.remove(HIDDEN);
   }
 };
+
 window.addEventListener('scroll', callback, { once: true });
 `;
 
@@ -61,6 +63,3 @@ function CookieConsent() {
 }
 
 export default CookieConsent;
-=======
-export { default } from "$store/components/ui/CookieConsent.tsx";
->>>>>>> main
