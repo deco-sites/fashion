@@ -47,7 +47,7 @@ function Cart() {
       {/* Cart Items */}
       <ul
         role="list"
-        class="px-2 flex-grow-1 overflow-y-auto flex flex-col gap-6"
+        class="mt-6 px-2 flex-grow-1 overflow-y-auto flex flex-col gap-6"
       >
         {cart.value.items.map((_, index) => (
           <li>
