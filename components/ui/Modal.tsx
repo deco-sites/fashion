@@ -60,12 +60,12 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 max-w-full sm:max-w-lg w-full max-h-screen h-screen backdrop ${variant}`}
+      class={`bg-transparent p-0 m-0 max-w-full sm:max-w-lg w-full max-h-screen min-h-full h-full backdrop ${variant}`}
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
-        <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
+      <section class="h-full bg-default flex flex-col">
+        <header class="flex px-4 justify-between items-center py-6 border-b-1 border-default">
           <h1>
             <Text variant="heading-2">{title}</Text>
           </h1>
