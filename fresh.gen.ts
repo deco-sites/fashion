@@ -49,6 +49,7 @@ import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductListingPage.t
 import * as $$$$13 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
 import * as $$$$14 from "deco-sites/std/functions/vtexProductList.ts";
 import * as $$$$15 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as $$$$16 from "deco-sites/std/functions/vtexSuggestions.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -102,6 +103,7 @@ const manifest: DecoManifest = {
     "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$13,
     "deco-sites/std/functions/vtexProductList.ts": $$$$14,
     "deco-sites/std/functions/vtexProductListingPage.ts": $$$$15,
+    "deco-sites/std/functions/vtexSuggestions.ts": $$$$16,
   },
   schemas: {
     "./sections/Carousel.tsx": {
@@ -687,6 +689,12 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Product suggestions",
             "description": "Product suggestions displayed on search",
+          },
+          "suggestions": {
+            "$id": "ed6dd98378c4000f0975a28f1d78921b8e165be8",
+            "format": "live-function",
+            "type": "string",
+            "title": "Enable Top Search terms",
           },
         },
         "required": [
@@ -1589,6 +1597,33 @@ const manifest: DecoManifest = {
         "properties": {
           "data": {
             "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "deco-sites/std/functions/vtexSuggestions.ts": {
+      "inputSchema": {
+        "title": "Vtex Suggestions",
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Count",
+            "description": "limit the number of searches",
+            "default": "4",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "ed6dd98378c4000f0975a28f1d78921b8e165be8",
           },
         },
         "additionalProperties": true,
