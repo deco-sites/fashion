@@ -1,7 +1,7 @@
 {
   "imports": {
     "$store/": "./",
-    "$live/": "https://raw.githubusercontent.com/deco-cx/live/c6148ba058d4c446344c16dc13e03785a057c8c7/",
+    "$live/": "https://raw.githubusercontent.com/deco-cx/live/08535ceb7c9576f0974b961d4185be45dfd6aabf/",
     "deco-sites/std/": "https://raw.githubusercontent.com/deco-sites/std/32fc6f2ae8036e21272697f90044a129a09afcf8/",
     "partytown/": "https://deno.land/x/partytown@0.2.1/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",

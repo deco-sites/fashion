@@ -144,7 +144,7 @@ const manifest = {
     "definitions": {
       ".": {
         "islands": {
-          "HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46": {
+          "HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8": {
             "type": "object",
             "allOf": [],
             "properties": {
@@ -158,16 +158,16 @@ const manifest = {
             },
             "required": ["variant"],
             "title":
-              "./islands/HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46",
+              "./islands/HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8",
             "$id":
-              "./islands/HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46",
+              "./islands/HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8",
           },
           "HeaderButton.tsx": {
             "title": "./islands/HeaderButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46",
+                "#/definitions/./islands/HeaderButton.tsx@cd926483-c83c-43dc-8820-75f294c53ba8",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -178,16 +178,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderButton.tsx",
           },
-          "AddToCartButton.tsx@b10cec4f-3c4a-49d3-a867-2f2a5c308f37": {
+          "AddToCartButton.tsx@743ecf25-3217-4a5f-965a-2d2a9bcb6b25": {
             "$id":
-              "./islands/AddToCartButton.tsx@b10cec4f-3c4a-49d3-a867-2f2a5c308f37",
+              "./islands/AddToCartButton.tsx@743ecf25-3217-4a5f-965a-2d2a9bcb6b25",
           },
           "AddToCartButton.tsx": {
             "title": "./islands/AddToCartButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/AddToCartButton.tsx@b10cec4f-3c4a-49d3-a867-2f2a5c308f37",
+                "#/definitions/./islands/AddToCartButton.tsx@743ecf25-3217-4a5f-965a-2d2a9bcb6b25",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -198,16 +198,16 @@ const manifest = {
             },
             "$id": "./islands/AddToCartButton.tsx",
           },
-          "LiveControls.tsx@dc38ff22-b6dd-4ea0-b8dd-c4c507e833b1": {
+          "LiveControls.tsx@cd01c096-10b7-4ee2-925c-b7902ecf0ee6": {
             "$id":
-              "./islands/LiveControls.tsx@dc38ff22-b6dd-4ea0-b8dd-c4c507e833b1",
+              "./islands/LiveControls.tsx@cd01c096-10b7-4ee2-925c-b7902ecf0ee6",
           },
           "LiveControls.tsx": {
             "title": "./islands/LiveControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/LiveControls.tsx@dc38ff22-b6dd-4ea0-b8dd-c4c507e833b1",
+                "#/definitions/./islands/LiveControls.tsx@cd01c096-10b7-4ee2-925c-b7902ecf0ee6",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -218,16 +218,16 @@ const manifest = {
             },
             "$id": "./islands/LiveControls.tsx",
           },
-          "HeaderModals.tsx@a49ae1c3-ef78-4c5c-9e3c-9355ee7dfa79": {
+          "HeaderModals.tsx@f78064f4-7ddb-4dd0-b74c-d32fba523395": {
             "$id":
-              "./islands/HeaderModals.tsx@a49ae1c3-ef78-4c5c-9e3c-9355ee7dfa79",
+              "./islands/HeaderModals.tsx@f78064f4-7ddb-4dd0-b74c-d32fba523395",
           },
           "HeaderModals.tsx": {
             "title": "./islands/HeaderModals.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderModals.tsx@a49ae1c3-ef78-4c5c-9e3c-9355ee7dfa79",
+                "#/definitions/./islands/HeaderModals.tsx@f78064f4-7ddb-4dd0-b74c-d32fba523395",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -238,16 +238,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderModals.tsx",
           },
-          "SearchControls.tsx@5656d768-434b-431c-911a-627374a8a88f": {
+          "SearchControls.tsx@1030a5ec-0ef8-46fc-b717-3c2a3cfa4a47": {
             "$id":
-              "./islands/SearchControls.tsx@5656d768-434b-431c-911a-627374a8a88f",
+              "./islands/SearchControls.tsx@1030a5ec-0ef8-46fc-b717-3c2a3cfa4a47",
           },
           "SearchControls.tsx": {
             "title": "./islands/SearchControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/SearchControls.tsx@5656d768-434b-431c-911a-627374a8a88f",
+                "#/definitions/./islands/SearchControls.tsx@1030a5ec-0ef8-46fc-b717-3c2a3cfa4a47",
             }],
             "required": ["__resolveType"],
             "properties": {
