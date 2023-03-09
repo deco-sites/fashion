@@ -60,7 +60,7 @@ This starter brings:
 
 ### Other features
 
-![image](https://user-images.githubusercontent.com/1315451/224067368-ec67f838-7ab5-4739-bc76-90dd401484ad.png)
+![image](https://user-images.githubusercontent.com/1315451/224068874-14cb4e9e-3b67-40b7-8b0a-b07004056919.png)
 
 <ul>
   <li>PageSpeed performance 98 mobile and 100 desktop</li>
