@@ -144,7 +144,7 @@ const manifest = {
     "definitions": {
       ".": {
         "islands": {
-          "HeaderButton.tsx@6d5c2054-59aa-43e5-8aa7-f1add7ca109b": {
+          "HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c": {
             "type": "object",
             "allOf": [],
             "properties": {
@@ -158,16 +158,16 @@ const manifest = {
             },
             "required": ["variant"],
             "title":
-              "./islands/HeaderButton.tsx@6d5c2054-59aa-43e5-8aa7-f1add7ca109b",
+              "./islands/HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c",
             "$id":
-              "./islands/HeaderButton.tsx@6d5c2054-59aa-43e5-8aa7-f1add7ca109b",
+              "./islands/HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c",
           },
           "HeaderButton.tsx": {
             "title": "./islands/HeaderButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderButton.tsx@6d5c2054-59aa-43e5-8aa7-f1add7ca109b",
+                "#/definitions/./islands/HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -178,16 +178,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderButton.tsx",
           },
-          "AddToCartButton.tsx@0b77c3a9-bfe4-4efd-b06d-5261f1159fb5": {
+          "AddToCartButton.tsx@fa11edf5-a7c2-4cb0-ad5f-4ba47504f191": {
             "$id":
-              "./islands/AddToCartButton.tsx@0b77c3a9-bfe4-4efd-b06d-5261f1159fb5",
+              "./islands/AddToCartButton.tsx@fa11edf5-a7c2-4cb0-ad5f-4ba47504f191",
           },
           "AddToCartButton.tsx": {
             "title": "./islands/AddToCartButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/AddToCartButton.tsx@0b77c3a9-bfe4-4efd-b06d-5261f1159fb5",
+                "#/definitions/./islands/AddToCartButton.tsx@fa11edf5-a7c2-4cb0-ad5f-4ba47504f191",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -198,16 +198,16 @@ const manifest = {
             },
             "$id": "./islands/AddToCartButton.tsx",
           },
-          "LiveControls.tsx@06458092-f8c1-4e70-b8e5-ea1591132036": {
+          "LiveControls.tsx@bbd83cb7-7d45-4b90-bd0d-80835adcb844": {
             "$id":
-              "./islands/LiveControls.tsx@06458092-f8c1-4e70-b8e5-ea1591132036",
+              "./islands/LiveControls.tsx@bbd83cb7-7d45-4b90-bd0d-80835adcb844",
           },
           "LiveControls.tsx": {
             "title": "./islands/LiveControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/LiveControls.tsx@06458092-f8c1-4e70-b8e5-ea1591132036",
+                "#/definitions/./islands/LiveControls.tsx@bbd83cb7-7d45-4b90-bd0d-80835adcb844",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -218,16 +218,16 @@ const manifest = {
             },
             "$id": "./islands/LiveControls.tsx",
           },
-          "HeaderModals.tsx@59bbf153-fe53-47f2-ac98-1c29d0994b7c": {
+          "HeaderModals.tsx@b0806d26-b668-4c2b-b115-e32868832466": {
             "$id":
-              "./islands/HeaderModals.tsx@59bbf153-fe53-47f2-ac98-1c29d0994b7c",
+              "./islands/HeaderModals.tsx@b0806d26-b668-4c2b-b115-e32868832466",
           },
           "HeaderModals.tsx": {
             "title": "./islands/HeaderModals.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderModals.tsx@59bbf153-fe53-47f2-ac98-1c29d0994b7c",
+                "#/definitions/./islands/HeaderModals.tsx@b0806d26-b668-4c2b-b115-e32868832466",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -238,16 +238,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderModals.tsx",
           },
-          "SearchControls.tsx@d953b83d-ad2b-4f27-b8e6-e77ba94c79eb": {
+          "SearchControls.tsx@3f370cf4-b1ec-4f18-b333-a382f13ef15c": {
             "$id":
-              "./islands/SearchControls.tsx@d953b83d-ad2b-4f27-b8e6-e77ba94c79eb",
+              "./islands/SearchControls.tsx@3f370cf4-b1ec-4f18-b333-a382f13ef15c",
           },
           "SearchControls.tsx": {
             "title": "./islands/SearchControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/SearchControls.tsx@d953b83d-ad2b-4f27-b8e6-e77ba94c79eb",
+                "#/definitions/./islands/SearchControls.tsx@3f370cf4-b1ec-4f18-b333-a382f13ef15c",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -1245,17 +1245,17 @@ const manifest = {
             },
             "$id": "deco-sites/std/loaders/vtexProductListingPage.ts",
           },
-          "vtexLegacyProductDetailsPage.ts@88c15ab9-7719-4882-afb1-6686cfaa5fbd":
+          "vtexLegacyProductDetailsPage.ts@5b08d6d4-6f88-4cf8-a7e9-272ee3446418":
             {
               "$id":
-                "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@88c15ab9-7719-4882-afb1-6686cfaa5fbd",
+                "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@5b08d6d4-6f88-4cf8-a7e9-272ee3446418",
             },
           "vtexLegacyProductDetailsPage.ts": {
             "title": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@88c15ab9-7719-4882-afb1-6686cfaa5fbd",
+                "#/definitions/deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@5b08d6d4-6f88-4cf8-a7e9-272ee3446418",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -1361,16 +1361,16 @@ const manifest = {
             },
             "$id": "deco-sites/std/loaders/vtexProductList.ts",
           },
-          "occProductDetailsPage.ts@024a253a-0829-4208-8587-bec0b6c328c3": {
+          "occProductDetailsPage.ts@57a824dd-965e-495e-abcb-1edaf3ab6ee3": {
             "$id":
-              "deco-sites/std/loaders/occProductDetailsPage.ts@024a253a-0829-4208-8587-bec0b6c328c3",
+              "deco-sites/std/loaders/occProductDetailsPage.ts@57a824dd-965e-495e-abcb-1edaf3ab6ee3",
           },
           "occProductDetailsPage.ts": {
             "title": "deco-sites/std/loaders/occProductDetailsPage.ts",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/loaders/occProductDetailsPage.ts@024a253a-0829-4208-8587-bec0b6c328c3",
+                "#/definitions/deco-sites/std/loaders/occProductDetailsPage.ts@57a824dd-965e-495e-abcb-1edaf3ab6ee3",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -1538,16 +1538,16 @@ const manifest = {
             },
             "$id": "deco-sites/std/loaders/shopifyProductList.ts",
           },
-          "shopifyProductDetailsPage.ts@d7dc8030-47a3-432a-944b-ede00184f13f": {
+          "shopifyProductDetailsPage.ts@1e915481-c660-432e-907a-fa0a58b3cf51": {
             "$id":
-              "deco-sites/std/loaders/shopifyProductDetailsPage.ts@d7dc8030-47a3-432a-944b-ede00184f13f",
+              "deco-sites/std/loaders/shopifyProductDetailsPage.ts@1e915481-c660-432e-907a-fa0a58b3cf51",
           },
           "shopifyProductDetailsPage.ts": {
             "title": "deco-sites/std/loaders/shopifyProductDetailsPage.ts",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/loaders/shopifyProductDetailsPage.ts@d7dc8030-47a3-432a-944b-ede00184f13f",
+                "#/definitions/deco-sites/std/loaders/shopifyProductDetailsPage.ts@1e915481-c660-432e-907a-fa0a58b3cf51",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -1561,16 +1561,16 @@ const manifest = {
           },
         },
         "islands": {
-          "LiveControls.tsx@4c58100b-7833-4c1f-8004-cd261b3dfec1": {
+          "LiveControls.tsx@1f51c250-198d-47d0-844d-c2deca070c97": {
             "$id":
-              "deco-sites/std/islands/LiveControls.tsx@4c58100b-7833-4c1f-8004-cd261b3dfec1",
+              "deco-sites/std/islands/LiveControls.tsx@1f51c250-198d-47d0-844d-c2deca070c97",
           },
           "LiveControls.tsx": {
             "title": "deco-sites/std/islands/LiveControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/deco-sites/std/islands/LiveControls.tsx@4c58100b-7833-4c1f-8004-cd261b3dfec1",
+                "#/definitions/deco-sites/std/islands/LiveControls.tsx@1f51c250-198d-47d0-844d-c2deca070c97",
             }],
             "required": ["__resolveType"],
             "properties": {
