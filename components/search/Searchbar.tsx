@@ -13,7 +13,7 @@ import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import ProductCard from "$store/components/product/ProductCard.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 
 // Editable props
 export interface EditableProps {
@@ -47,13 +47,8 @@ export type Props = EditableProps & {
    * @description Product suggestions displayed on searchs
    */
   products?: Product[];
+  suggestions?: Suggestion;
 };
-
-const terms = [
-  "Vestido",
-  "Polo",
-  "Saia",
-];
 
 function Searchbar({
   placeholder = "What are you looking for?",
@@ -61,6 +56,7 @@ function Searchbar({
   name = "q",
   query,
   products,
+  suggestions: { searches } = {},
 }: Props) {
   return (
     <>
@@ -92,28 +88,30 @@ function Searchbar({
         </form>
       </div>
       <div class="flex flex-col divide-y divide-default">
-        <div class="flex flex-col gap-6 px-4 py-6">
-          <Text variant="heading-3">Termos mais buscados</Text>
-          <ul class="flex flex-col gap-6">
-            {terms.map((term) => (
-              <li>
-                <a href={`/s?q=${term}`} class="flex gap-4 items-center">
-                  <Text variant="body">
-                    <Icon
-                      id="MagnifyingGlass"
-                      width={20}
-                      height={20}
-                      strokeWidth={0.01}
-                    />
-                  </Text>
-                  <Text variant="body">
-                    {term}
-                  </Text>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {searches && (
+          <div class="flex flex-col gap-6 px-4 py-6">
+            <Text variant="heading-3">Termos mais buscados</Text>
+            <ul class="flex flex-col gap-6">
+              {searches.map(({ term }) => (
+                <li>
+                  <a href={`/s?q=${term}`} class="flex gap-4 items-center">
+                    <Text variant="body">
+                      <Icon
+                        id="MagnifyingGlass"
+                        width={20}
+                        height={20}
+                        strokeWidth={0.01}
+                      />
+                    </Text>
+                    <Text variant="body">
+                      {term}
+                    </Text>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         {products && (
           <div class="flex flex-col gap-6 py-6">
             <Text class="px-4" variant="heading-3">Produtos sugeridos</Text>
