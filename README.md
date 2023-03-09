@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://deco.cx">
     <img alt="Gatsby" src="https://user-images.githubusercontent.com/1315451/224049457-872b944a-0a32-429b-9152-7f4e0c75329a.svg" width="60" />
@@ -18,11 +17,13 @@ in minutes.
 This starter brings:
 
 ### Pages
+
 - Home
 - PLP - Product listing page
 - PDP - Product detail page
 
 ### Blocks and Components
+
 <ul>
   <li>Minicart with
     <ul>
@@ -58,10 +59,9 @@ This starter brings:
 </ul>
 
 ### Other features
-<div style="display: flex; justify-content: center; width: 100%">
-<img width="600px" height="147px"
-    src="https://cdn.discordapp.com/attachments/1043241080679841793/1083140431556116553/image.png" />
-</div>
+
+![image](https://user-images.githubusercontent.com/1315451/224067368-ec67f838-7ab5-4739-bc76-90dd401484ad.png)
+
 <ul>
   <li>PageSpeed performance 98 mobile and 100 desktop</li>
   <li>SEO optimized
@@ -87,6 +87,7 @@ deno task start
 ```
 
 You should see the following output:
+
 ![image](https://user-images.githubusercontent.com/1315451/224055208-23861db0-4c2f-4986-8bc6-da660902571d.png)
 
 Now, open [http://localhost:8000/](http://localhost:8000/). You should see the
@@ -107,11 +108,16 @@ going live, you can learn how to [customize the code](#customize-the-store)
 
 ### Checklist
 
-1. - [ ] Ecommerce platform connected
-1. - [ ] Fonts added
-1. - [ ] Logo changed
-1. - [ ] favicon.ico, robots.txt changed
-1. - [ ] Design system changed
+1.
+   - [ ] Ecommerce platform connected
+1.
+   - [ ] Fonts added
+1.
+   - [ ] Logo changed
+1.
+   - [ ] favicon.ico, robots.txt changed
+1.
+   - [ ] Design system changed
 
 ### 1. Connecting your e-commerce platform
 
@@ -182,36 +188,39 @@ This code uses:
 4. [Deco.cx](https://www.deco.cx/) as CMS, A/B Tester and Analytics
 
 And it has this folder structure:
+
+```
 .
-    ├── components
-    ├── islands
-    ├── routes
-    ├── sdk
-    ├── sections
-    └── static
+├── components
+├── islands
+├── routes
+├── sdk
+├── sections
+└── static
+```
 
 To better encapsulate the store's code and separate it from framework specific
 code, all HTML generator code was placed into `components` folder, whereas all
 logic related code was placed under `sdk`. This means that UI elements, like
 product shelves, footer, header, product galleries etc are all placed into
 `components` whereas code for computing the prices, adding to cart etc are
-placed under `sdk`. Other folders and files are framework-specific glue code, and serve
-for:
+placed under `sdk`. Other folders and files are framework-specific glue code,
+and serve for:
 
 - `functions`: deco.cx folder for adding dynamic data to sections provenient
-   from third party APIs, like ecommerce platforms, ERPs, contentful, wordpress
-   etc
-- `islands`: Fresh based folder for adding JavaScript to the frontend. More
-   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/islands)
--  `routes`: Fresh based folder for responding custom routes to the store. More
-   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/routes)
--  `sections`: deco.cx folder for making components both editable and composable
--  `static`: Fresh based folder for serving static content (assets). Check out
-   [Fresh's docs](https://fresh.deno.dev/docs/concepts/static-files)
-   on the CMS. Check out [deco.cx's docs](https://www.deco.cx/en/docs)
--  `import_map.json`: File containing your dependencies. Check out
-   [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
--  `twind.config.ts`: twind configuration file. [twind docs](https://twind.dev/)
+  from third party APIs, like ecommerce platforms, ERPs, contentful, wordpress
+  etc
+- `islands`: Fresh based folder for adding JavaScript to the frontend. More info
+  at [Fresh's docs](https://fresh.deno.dev/docs/concepts/islands)
+- `routes`: Fresh based folder for responding custom routes to the store. More
+  info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/routes)
+- `sections`: deco.cx folder for making components both editable and composable
+- `static`: Fresh based folder for serving static content (assets). Check out
+  [Fresh's docs](https://fresh.deno.dev/docs/concepts/static-files) on the CMS.
+  Check out [deco.cx's docs](https://www.deco.cx/en/docs)
+- `import_map.json`: File containing your dependencies. Check out
+  [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
+- `twind.config.ts`: twind configuration file. [twind docs](https://twind.dev/)
 
 ### Recipes
 
