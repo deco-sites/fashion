@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Container from "$store/components/ui/Container.tsx";
@@ -61,6 +60,3 @@ function CookieConsent() {
 }
 
 export default CookieConsent;
-=======
-export { default } from "$store/components/ui/CookieConsent.tsx";
->>>>>>> main

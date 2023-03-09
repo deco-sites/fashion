@@ -144,7 +144,7 @@ const manifest = {
     "definitions": {
       ".": {
         "islands": {
-          "HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c": {
+          "HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46": {
             "type": "object",
             "allOf": [],
             "properties": {
@@ -158,16 +158,16 @@ const manifest = {
             },
             "required": ["variant"],
             "title":
-              "./islands/HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c",
+              "./islands/HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46",
             "$id":
-              "./islands/HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c",
+              "./islands/HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46",
           },
           "HeaderButton.tsx": {
             "title": "./islands/HeaderButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderButton.tsx@d122551a-8fd6-4664-afef-57378907755c",
+                "#/definitions/./islands/HeaderButton.tsx@fd8b7207-aa3a-47c5-b6fc-fc37eb629a46",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -178,16 +178,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderButton.tsx",
           },
-          "AddToCartButton.tsx@fa11edf5-a7c2-4cb0-ad5f-4ba47504f191": {
+          "AddToCartButton.tsx@b10cec4f-3c4a-49d3-a867-2f2a5c308f37": {
             "$id":
-              "./islands/AddToCartButton.tsx@fa11edf5-a7c2-4cb0-ad5f-4ba47504f191",
+              "./islands/AddToCartButton.tsx@b10cec4f-3c4a-49d3-a867-2f2a5c308f37",
           },
           "AddToCartButton.tsx": {
             "title": "./islands/AddToCartButton.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/AddToCartButton.tsx@fa11edf5-a7c2-4cb0-ad5f-4ba47504f191",
+                "#/definitions/./islands/AddToCartButton.tsx@b10cec4f-3c4a-49d3-a867-2f2a5c308f37",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -198,16 +198,16 @@ const manifest = {
             },
             "$id": "./islands/AddToCartButton.tsx",
           },
-          "LiveControls.tsx@bbd83cb7-7d45-4b90-bd0d-80835adcb844": {
+          "LiveControls.tsx@dc38ff22-b6dd-4ea0-b8dd-c4c507e833b1": {
             "$id":
-              "./islands/LiveControls.tsx@bbd83cb7-7d45-4b90-bd0d-80835adcb844",
+              "./islands/LiveControls.tsx@dc38ff22-b6dd-4ea0-b8dd-c4c507e833b1",
           },
           "LiveControls.tsx": {
             "title": "./islands/LiveControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/LiveControls.tsx@bbd83cb7-7d45-4b90-bd0d-80835adcb844",
+                "#/definitions/./islands/LiveControls.tsx@dc38ff22-b6dd-4ea0-b8dd-c4c507e833b1",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -218,16 +218,16 @@ const manifest = {
             },
             "$id": "./islands/LiveControls.tsx",
           },
-          "HeaderModals.tsx@b0806d26-b668-4c2b-b115-e32868832466": {
+          "HeaderModals.tsx@a49ae1c3-ef78-4c5c-9e3c-9355ee7dfa79": {
             "$id":
-              "./islands/HeaderModals.tsx@b0806d26-b668-4c2b-b115-e32868832466",
+              "./islands/HeaderModals.tsx@a49ae1c3-ef78-4c5c-9e3c-9355ee7dfa79",
           },
           "HeaderModals.tsx": {
             "title": "./islands/HeaderModals.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/HeaderModals.tsx@b0806d26-b668-4c2b-b115-e32868832466",
+                "#/definitions/./islands/HeaderModals.tsx@a49ae1c3-ef78-4c5c-9e3c-9355ee7dfa79",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -238,16 +238,16 @@ const manifest = {
             },
             "$id": "./islands/HeaderModals.tsx",
           },
-          "SearchControls.tsx@3f370cf4-b1ec-4f18-b333-a382f13ef15c": {
+          "SearchControls.tsx@5656d768-434b-431c-911a-627374a8a88f": {
             "$id":
-              "./islands/SearchControls.tsx@3f370cf4-b1ec-4f18-b333-a382f13ef15c",
+              "./islands/SearchControls.tsx@5656d768-434b-431c-911a-627374a8a88f",
           },
           "SearchControls.tsx": {
             "title": "./islands/SearchControls.tsx",
             "type": "object",
             "allOf": [{
               "$ref":
-                "#/definitions/./islands/SearchControls.tsx@3f370cf4-b1ec-4f18-b333-a382f13ef15c",
+                "#/definitions/./islands/SearchControls.tsx@5656d768-434b-431c-911a-627374a8a88f",
             }],
             "required": ["__resolveType"],
             "properties": {
@@ -437,6 +437,8 @@ const manifest = {
                     { "type": "string", "const": "Circle" },
                     { "type": "string", "const": "ChevronLeft" },
                     { "type": "string", "const": "ChevronRight" },
+                    { "type": "string", "const": "ChevronUp" },
+                    { "type": "string", "const": "ChevronDown" },
                     { "type": "string", "const": "QuestionMarkCircle" },
                     { "type": "string", "const": "User" },
                     { "type": "string", "const": "ShoppingCart" },
@@ -444,6 +446,10 @@ const manifest = {
                     { "type": "string", "const": "Heart" },
                     { "type": "string", "const": "MagnifyingGlass" },
                     { "type": "string", "const": "XMark" },
+                    { "type": "string", "const": "Plus" },
+                    { "type": "string", "const": "Minus" },
+                    { "type": "string", "const": "MapPin" },
+                    { "type": "string", "const": "Phone" },
                     { "type": "string", "const": "Elo" },
                     { "type": "string", "const": "Mastercard" },
                     { "type": "string", "const": "Visa" },
@@ -458,8 +464,8 @@ const manifest = {
                     { "type": "string", "const": "CreditCard" },
                     { "type": "string", "const": "Deco" },
                     { "type": "string", "const": "Discord" },
+                    { "type": "string", "const": "Trash" },
                     { "type": "string", "const": "FilterList" },
-                    { "type": "string", "const": "ChevronUp" },
                   ],
                   "description": "Image src",
                 },
@@ -658,6 +664,8 @@ const manifest = {
                                   { "type": "string", "const": "Circle" },
                                   { "type": "string", "const": "ChevronLeft" },
                                   { "type": "string", "const": "ChevronRight" },
+                                  { "type": "string", "const": "ChevronUp" },
+                                  { "type": "string", "const": "ChevronDown" },
                                   {
                                     "type": "string",
                                     "const": "QuestionMarkCircle",
@@ -671,6 +679,10 @@ const manifest = {
                                     "const": "MagnifyingGlass",
                                   },
                                   { "type": "string", "const": "XMark" },
+                                  { "type": "string", "const": "Plus" },
+                                  { "type": "string", "const": "Minus" },
+                                  { "type": "string", "const": "MapPin" },
+                                  { "type": "string", "const": "Phone" },
                                   { "type": "string", "const": "Elo" },
                                   { "type": "string", "const": "Mastercard" },
                                   { "type": "string", "const": "Visa" },
@@ -685,8 +697,8 @@ const manifest = {
                                   { "type": "string", "const": "CreditCard" },
                                   { "type": "string", "const": "Deco" },
                                   { "type": "string", "const": "Discord" },
+                                  { "type": "string", "const": "Trash" },
                                   { "type": "string", "const": "FilterList" },
-                                  { "type": "string", "const": "ChevronUp" },
                                 ],
                               },
                             },
