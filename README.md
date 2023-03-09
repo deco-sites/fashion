@@ -1,23 +1,29 @@
-# Fashion starter by deco.cx
+
+<p align="center">
+  <a href="https://deco.cx">
+    <img alt="Gatsby" src="https://user-images.githubusercontent.com/1315451/224049457-872b944a-0a32-429b-9152-7f4e0c75329a.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Fashion Starter by deco.cx
+</h1>
 
 A fully featured starter to help you customize and deploy an ecommerce website
-in minutes
+in minutes.
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 16px; margin: 16px">
-<img width="600px" height="147px"
-    src="https://cdn.discordapp.com/attachments/1043241080679841793/1083140431556116553/image.png" />
-</div>
+![screenshots](https://user-images.githubusercontent.com/1315451/224065516-8e193f60-a254-46e7-ba3d-01799e108697.png)
 
-## Features
+## 🎡 Features
 
 This starter brings:
 
+### Pages
+- Home
+- PLP - Product listing page
+- PDP - Product detail page
+
+### Blocks and Components
 <ul>
-  <li>Home, product and listing pages</li>
-  <li>Content editable via CMS</li>
-  <li>A/B test compatible</li>
-  <li>Analytics</li>
-  <li>Integration with VTEX, Shopify and Oracle</li>
   <li>Minicart with
     <ul>
       <li>Coupons</li>
@@ -26,30 +32,52 @@ This starter brings:
       <li>Promotions</li>
     </ul>
   </li>
-  <li>SKU selector</li>
-  <li>Full text search</li>
-  <li>Search filters</li>
-  <li>Search pagination</li>
-  <li>SEO optmized
+  <li>Full text search with
+	  <ul>
+			<li>Suggestions</li>
+			<li>Filters</li>
+			<li>Pagination</li>
+		</ul>
+  </li>
+  <li>Product shelf and product page with
+	  <ul>
+			<li>Images</li>
+			<li>SKU selector</li>
+		</ul>
+  </li>
+  <li>Content and navigation with
+	  <ul>
+			<li>Breadcrumb</li>
+			<li>Dropdown and hamburger menus</li>
+			<li>Carousel</li>
+			<li>Newsletter</li>
+			<li>Footer</li>
+			<li>Cookie consent</li>
+		</ul>
+  </li>
+</ul>
+
+### Other features
+<div style="display: flex; justify-content: center; width: 100%">
+<img width="600px" height="147px"
+    src="https://cdn.discordapp.com/attachments/1043241080679841793/1083140431556116553/image.png" />
+</div>
+<ul>
+  <li>PageSpeed performance 98 mobile and 100 desktop</li>
+  <li>SEO optimized
     <ul>
       <li>Meta tags</li>
       <li>Rich results</li>
       <li>OpenGraph</li>
     </ul>
   </li>
-  <li>Cookie consent</li>
-  <li>Carousel</li>
-  <li>Product shelf</li>
-  <li>SKU selector</li>
-  <li>Breadcrumb</li>
-  <li>Search filters</li>
-  <li>Dropdown and hamburger menus</li>
-  <li>Minicart</li>
-  <li>Newsletter</li>
-  <li>Footer</li>
+  <li>Content editable via CMS</li>
+  <li>A/B test compatible</li>
+  <li>Analytics</li>
+  <li>Integration with VTEX, Shopify and Oracle</li>
 </ul>
 
-## Getting started
+## 🤾🏿‍♂️ Getting started
 
 To execute this website on your machine, clone it to your local machine with
 `git clone`, open the terminal and type
@@ -58,18 +86,8 @@ To execute this website on your machine, clone it to your local machine with
 deno task start
 ```
 
-You should see the following output
-
-```
-$ deno task start
-Task start deno run -A --watch=static/,sections/,functions/ dev.ts
-Watcher Process started.
-Starting live middleware: siteId=538 site=std
-The manifest has been generated for 6 routes, 5 islands, 17 sections and 16 functions.
-Githooks setup successfully: pre-commit
-Starting live middleware: siteId=239 site=fashion
-Listening on http://localhost:8000/
-```
+You should see the following output:
+![image](https://user-images.githubusercontent.com/1315451/224055208-23861db0-4c2f-4986-8bc6-da660902571d.png)
 
 Now, open [http://localhost:8000/](http://localhost:8000/). You should see the
 fashion starter running on your machine!
@@ -79,7 +97,7 @@ To continue from here, you can [perform initial setup](#initial-setup),
 create [common design patterns](#recipes) (components) and comply to
 [best practices](#best-practices)
 
-## Initial setup
+## 🎛 Initial setup
 
 Below is a checklist for the store's initial setup. After completing these
 tasks, your store will be ready to go live and won't need any further changes on
@@ -87,15 +105,15 @@ this repository. If, after changing the content via
 [deco.cx's CMS](https://deco.cx/admin), you feel the store is not ready for
 going live, you can learn how to [customize the code](#customize-the-store)
 
-Checklist
+### Checklist
 
-- [ ] Ecommerce platform connected
-- [ ] Fonts added
-- [ ] Logo changed
-- [ ] favicon.ico, robots.txt changed
-- [ ] Design system changed
+1. - [ ] Ecommerce platform connected
+1. - [ ] Fonts added
+1. - [ ] Logo changed
+1. - [ ] favicon.ico, robots.txt changed
+1. - [ ] Design system changed
 
-### Connecting your e-commerce platform
+### 1. Connecting your e-commerce platform
 
 Products, prices and promotions are provided by an ecommerce platform (VTEX,
 Shopify, Oracle). To connect to a platform:
@@ -109,7 +127,7 @@ account name.
 After this, your should be using the products provenient from your ecommerce
 account
 
-### Adding fonts
+### 2. Adding fonts
 
 1. Copy & paste your font files (.woff/.woff2) to `/static/fonts` folder
 2. Open `/components/GlobalTags.tsx` component and replace `@font-face` tags
@@ -123,7 +141,7 @@ account
 > If your don't know the font-family, font-style and font-weight, ask your
 > designer for these values.
 
-### Adding your logo
+### 3. Adding your logo
 
 1. Make sure you have your logo in `.svg` format
 2. Open your logo in your text editor and copy its content
@@ -132,12 +150,12 @@ account
    file. Make sure all `<svg />` tags are replaced with `<symbol />` tag and add
    the `id="Logo"` attribute. Also, make sure to have the `xmlns` attribute.
 
-### Adding default assets
+### 4. Adding default assets
 
 Open `static` folder and replace `favicon.ico`, `robots.txt` and
 `site.webmanifest` with your own assets
 
-### Changing style (CSS)
+### 5. Changing style (CSS)
 
 1. Run the store (with `deno task start`).
 2. Open the
@@ -148,7 +166,7 @@ Open `static` folder and replace `favicon.ico`, `robots.txt` and
    [design system section](http://localhost:8000/_live/workbench/sections/DesignSystem.story.tsx?key=.%2Fsections%2FDesignSystem.story.tsx)
    changes.
 
-## Customize the store
+## 🧚🏾‍♀️ Customize the store
 
 If you are missing a functionality or the changes in the design system were not
 enough for accomplishing your project, you can fully customize all HTML/CSS/JS
@@ -163,28 +181,37 @@ This code uses:
 3. [Fresh](https://fresh.deno.dev/) as meta framework.
 4. [Deco.cx](https://www.deco.cx/) as CMS, A/B Tester and Analytics
 
+And it has this folder structure:
+.
+    ├── components
+    ├── islands
+    ├── routes
+    ├── sdk
+    ├── sections
+    └── static
+
 To better encapsulate the store's code and separate it from framework specific
 code, all HTML generator code was placed into `components` folder, whereas all
 logic related code was placed under `sdk`. This means that UI elements, like
 product shelves, footer, header, product galleries etc are all placed into
 `components` whereas code for computing the prices, adding to cart etc are
-placed under `sdk`. Other folders are framework-specific glue code, and serve
+placed under `sdk`. Other folders and files are framework-specific glue code, and serve
 for:
 
-1. `islands`: Fresh based folder for adding JavaScript to the frontend. More
-   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/islands)
-1. `routes`: Fresh based folder for responding custom routes to the store. More
-   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/routes)
-1. `static`: Fresh based folder for serving static content (assets). Check out
-   [Fresh's docs](https://fresh.deno.dev/docs/concepts/static-files)
-1. `import_map.json`: File containing your dependencies. Check out
-   [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
-1. `twind.config.ts`: twind configuration file. [twind docs](https://twind.dev/)
-1. `sections`: deco.cx folder for making components both editable and composable
-   on the CMS. Check out [deco.cx's docs](https://www.deco.cx/en/docs)
-1. `functions`: deco.cx folder for adding dynamic data to sections provenient
+- `functions`: deco.cx folder for adding dynamic data to sections provenient
    from third party APIs, like ecommerce platforms, ERPs, contentful, wordpress
    etc
+- `islands`: Fresh based folder for adding JavaScript to the frontend. More
+   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/islands)
+-  `routes`: Fresh based folder for responding custom routes to the store. More
+   info at [Fresh's docs](https://fresh.deno.dev/docs/concepts/routes)
+-  `sections`: deco.cx folder for making components both editable and composable
+-  `static`: Fresh based folder for serving static content (assets). Check out
+   [Fresh's docs](https://fresh.deno.dev/docs/concepts/static-files)
+   on the CMS. Check out [deco.cx's docs](https://www.deco.cx/en/docs)
+-  `import_map.json`: File containing your dependencies. Check out
+   [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
+-  `twind.config.ts`: twind configuration file. [twind docs](https://twind.dev/)
 
 ### Recipes
 
