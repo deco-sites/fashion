@@ -1,6 +1,6 @@
-import { tw } from "twind";
+// import { tw } from "twind";
 import { useId } from "preact/hooks";
-import { animation, css, keyframes } from "twind/css";
+// import { animation, css, keyframes } from "twind/css";
 import { ComponentChild, toChildArray } from "preact";
 
 const getPrevNextIndexes = (index: number, total: number) => {
@@ -39,23 +39,23 @@ function Carousel(
 
   const childrenArray = toChildArray(children);
   const childrenLength = childrenArray.length;
-  const toStart = tw(keyframes`
-            75% { left: 0; }
-            95% { left: -${Math.max(childrenLength - 1, 0)}00%; }
-            98% { left: -${Math.max(childrenLength - 1, 0)}00%; }
-            99% { left: 0; }
-`);
-  const toNext = tw(keyframes`
-    75% { left: 0; }
-    95% { left: 100%; }
-    98% { left: 100%; }
-    99% { left: 0; }
-  `);
-  const snap = tw(keyframes`
-          96% { scroll-snap-align: center; }
-          97% { scroll-snap-align: none; }
-          99% { scroll-snap-align: none; }
-          100% { scroll-snap-align: center; }`);
+  //   const toStart = tw(keyframes`
+  //             75% { left: 0; }
+  //             95% { left: -${Math.max(childrenLength - 1, 0)}00%; }
+  //             98% { left: -${Math.max(childrenLength - 1, 0)}00%; }
+  //             99% { left: 0; }
+  // `);
+  //   const toNext = tw(keyframes`
+  //     75% { left: 0; }
+  //     95% { left: 100%; }
+  //     98% { left: 100%; }
+  //     99% { left: 0; }
+  //   `);
+  //   const snap = tw(keyframes`
+  //           96% { scroll-snap-align: center; }
+  //           97% { scroll-snap-align: none; }
+  //           99% { scroll-snap-align: none; }
+  //           100% { scroll-snap-align: center; }`);
 
   // const autoPlayAnimation = tw(css(animation({
   //   animationDuration: `${animationDuration}s`,
@@ -65,7 +65,7 @@ function Carousel(
 
   // Inline top-[calc(50% - 1.25rem)] doesn't work.
   // This is 50% - ((arrow svg height + padding) / 2)
-  const arrowTopClass = tw(() => ({ top: "calc(50% - 1.25rem)" }));
+  // const arrowTopClass = tw(() => ({ top: "calc(50% - 1.25rem)" }));
 
   return (
     <section
@@ -74,7 +74,7 @@ function Carousel(
       data-carousel
     >
       <ol
-        class="absolute inset-0 flex scrollbar-none overflow-x-scroll scroll-smooth scroll-x-mandatory"
+        class="absolute inset-0 flex scrollbar-none overflow-x-scroll scroll-smooth snap-x snap-mandatory"
         data-carousel-viewport
       >
         {childrenArray?.map((child, index) => {
@@ -86,7 +86,7 @@ function Carousel(
             <>
               {!!leftArrow && (
                 <a
-                  class={`absolute ${arrowTopClass} left-0 ml-2 text-white outline-none p-2`}
+                  // class={`absolute ${arrowTopClass} left-0 ml-2 text-white outline-none p-2`}
                   href={`#${generateSlideId(id, prev)}`}
                   data-carousel-prev
                 >
@@ -95,7 +95,7 @@ function Carousel(
               )}
               {!!rightArrow && (
                 <a
-                  class={`absolute ${arrowTopClass} right-0 mr-2 text-white outline-none p-2`}
+                  // class={`absolute ${arrowTopClass} right-0 mr-2 text-white outline-none p-2`}
                   href={`#${generateSlideId(id, next)}`}
                   data-carousel-next
                 >
@@ -114,8 +114,8 @@ function Carousel(
             >
               {child}
               <div
-                class={`absolute top-0 left-0 w-full h-full scroll-snap-center group-hover:animate-none group-focus-within:animate-none`}
-                style={`animation-name: ${isLast ? toStart : toNext}, ${snap};`}
+                class={`absolute top-0 left-0 w-full h-full snap-center group-hover:animate-none group-focus-within:animate-none`}
+                // style={`animation-name: ${isLast ? toStart : toNext}, ${snap};`}
                 data-carousel-snapper
               >
                 {isFirst && prevNextArrows}

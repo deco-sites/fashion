@@ -40,11 +40,11 @@ function ProductDetails({ page }: Props) {
     <Container class="py-0 sm:py-10">
       <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
-        <div class="flex flex-row overflow-auto scroll-x-mandatory scroll-smooth sm:gap-2">
+        <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">
           {[front, back ?? front].map((img, index) => (
             <Image
               style={{ aspectRatio: "360 / 500" }}
-              class="scroll-snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
+              class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={img.url!}
               alt={img.alternateName}
