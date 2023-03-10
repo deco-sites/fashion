@@ -6,7 +6,7 @@
 import manifest from "./fresh.gen.ts";
 import { start } from "$fresh/server.ts";
 import twindPlugin from "$fresh/plugins/twindv1.ts";
-import twindConfig from "./twind.config.ts";
+import twindOptions from "./twind.options.ts";
 import prefetchPlugin from "prefetch";
 import partytownPlugin from "partytown/mod.ts";
 
@@ -14,9 +14,6 @@ await start(manifest, {
   plugins: [
     partytownPlugin(),
     prefetchPlugin(),
-    twindPlugin({
-      ...twindConfig,
-      selfURL: new URL("./twind.config.ts", import.meta.url).href,
-    }),
+    twindPlugin(twindOptions),
   ],
 });
