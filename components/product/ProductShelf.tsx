@@ -18,7 +18,7 @@ function ProductShelf({
     <Container class="flex flex-col items-center gap-10 py-10">
       {title && (
         <h2>
-          <Text variant="heading-2">{title}</Text>
+          <Text variant="heading-2">Olá</Text>
         </h2>
       )}
       <Slider class="gap-6">
