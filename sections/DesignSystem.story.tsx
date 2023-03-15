@@ -51,7 +51,6 @@ const buttons = [
 ] as const;
 
 const icons = [
-  "Circle",
   "ChevronLeft",
   "ChevronRight",
   "ChevronUp",

@@ -16,6 +16,7 @@ import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
 import * as $$4 from "./islands/SearchControls.tsx";
+import * as $$5 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
@@ -67,6 +68,7 @@ const manifest: DecoManifest = {
     "./islands/HeaderModals.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
     "./islands/SearchControls.tsx": $$4,
+    "./islands/SliderJS.tsx": $$5,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -216,7 +218,7 @@ const manifest: DecoManifest = {
           "images": {
             "type": "array",
             "items": {
-              "title": "Image",
+              "title": "Banner",
               "type": "object",
               "properties": {
                 "desktop": {
@@ -231,22 +233,43 @@ const manifest: DecoManifest = {
                   "title": "Mobile",
                   "description": "mobile otimized image",
                 },
-                "href": {
-                  "type": "string",
-                  "title": "Href",
-                  "description":
-                    "when user clicks on the image, go to this link",
-                },
                 "alt": {
                   "type": "string",
                   "title": "Alt",
                   "description": "Image's alt text",
                 },
+                "action": {
+                  "title": "Action",
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "type": "string",
+                      "title": "Href",
+                    },
+                    "title": {
+                      "type": "string",
+                      "title": "Title",
+                    },
+                    "subTitle": {
+                      "type": "string",
+                      "title": "Sub Title",
+                    },
+                    "label": {
+                      "type": "string",
+                      "title": "Label",
+                    },
+                  },
+                  "required": [
+                    "href",
+                    "title",
+                    "subTitle",
+                    "label",
+                  ],
+                },
               },
               "required": [
                 "desktop",
                 "mobile",
-                "href",
                 "alt",
               ],
             },
@@ -260,6 +283,14 @@ const manifest: DecoManifest = {
             "title": "Preload",
             "description":
               "Check this option when this banner is the biggest image on the screen for image optimizations",
+          },
+          "interval": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Autoplay interval",
+            "description": "time (in seconds) to start the carousel autoplay",
           },
         },
         "required": [],
@@ -288,10 +319,6 @@ const manifest: DecoManifest = {
                 "icon": {
                   "type": "string",
                   "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Circle",
-                    },
                     {
                       "type": "string",
                       "const": "ChevronLeft",
@@ -491,10 +518,6 @@ const manifest: DecoManifest = {
                           "icon": {
                             "type": "string",
                             "anyOf": [
-                              {
-                                "type": "string",
-                                "const": "Circle",
-                              },
                               {
                                 "type": "string",
                                 "const": "ChevronLeft",
@@ -904,6 +927,13 @@ const manifest: DecoManifest = {
             "format": "live-function",
             "type": "string",
             "title": "Products",
+          },
+          "itemsPerPage": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Items Per Page",
           },
         },
         "required": [

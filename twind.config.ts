@@ -17,7 +17,7 @@ const options: Omit<Options, "selfURL"> = {
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
-        "hover-inverse": "rgba(0, 0, 0, 0.04)",
+        "hover-inverse": "rgba(255, 255, 255, 0.4)",
       },
       textColor: {
         "default": "#161616",
@@ -122,6 +122,35 @@ const options: Omit<Options, "selfURL"> = {
     },
     "scroll-x-mandatory": {
       "scroll-snap-type": "x mandatory",
+    },
+    "snap-x": {
+      "scroll-snap-type": "x var(--tw-scroll-snap-strictness)",
+    },
+    "snap-mandatory": {
+      "--tw-scroll-snap-strictness": "mandatory",
+    },
+    "fill": (parts) => ({ "fill": parts.join("-") }),
+    "max-h-min": {
+      "max-height": "min-content",
+    },
+    "snap": ([mod]) => ({ "scroll-snap-align": mod }),
+    "grid-cols": ([arg]) => {
+      const template = Number.isInteger(Number(arg))
+        ? `repeat(${arg}, minmax(0, 1fr))`
+        : arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ");
+
+      return {
+        "grid-template-columns": template,
+      };
+    },
+    "grid-rows": ([arg]) => {
+      const template = Number.isInteger(Number(arg))
+        ? `repeat(${arg}, minmax(0, 1fr))`
+        : arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ");
+
+      return {
+        "grid-template-rows": template,
+      };
     },
     "scroll-smooth": {
       "scroll-behavior": "smooth",

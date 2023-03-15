@@ -10,14 +10,16 @@
   "lint": {
     "files": {
       "exclude": [
-        "static/"
+        "static/",
+        "README.md"
       ]
     }
   },
   "fmt": {
     "files": {
       "exclude": [
-        "static/"
+        "static/",
+        "README.md"
       ]
     }
   },
