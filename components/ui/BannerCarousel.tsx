@@ -5,8 +5,7 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
-import { animation, keyframes } from "twind/css";
-import { css, tw } from "twind/css";
+import { animation, keyframes, tw } from "twind/css";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Banner {
@@ -114,7 +113,7 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       >
       </style>
-      <ol class="flex items-center justify-center col-span-full gap-2 z-10 row-start-4">
+      <ol class="flex items-center justify-center col-span-full gap-4 z-10 row-start-4">
         {images?.map((_, index) => (
           <li class="h-full">
             <button
@@ -138,7 +137,7 @@ function Dots({ images, interval = 0 }: Props) {
                 } w-16 sm:w-20 h-0.5`}
                 style={{
                   background:
-                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.16) var(--dot-progress))",
+                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
                 }}
               />
             </button>
