@@ -3,7 +3,7 @@
     "deco-sites/fashion/": "./",
     "$store/": "./",
     "$live/": "https://raw.githubusercontent.com/deco-cx/live/730c47e22af0992ea724650396f7ee49b49953a4/",
-    "deco-sites/std/": "https://raw.githubusercontent.com/deco-sites/std/2f1c8c5f47fc8333975813b5b89ea2708773d871/",
+    "deco-sites/std/": "https://raw.githubusercontent.com/deco-sites/std/ab3550cf5b7c5cc625fe76fc7709eda75d5c177f/",
     "partytown/": "https://deno.land/x/partytown@0.2.1/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
     "$fresh/": "https://deno.land/x/fresh@1.1.3/",

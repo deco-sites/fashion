@@ -1,12 +1,12 @@
 import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import Modals from "$store/islands/HeaderModals.tsx";
+import Modals from "deco-sites/fashion/islands/HeaderModals.tsx";
+import { Product } from "deco-sites/std/commerce/types.ts";
+import { Suggestion } from "deco-sites/std/commerce/vtex/types.ts";
 import type { Image } from "deco-sites/std/components/types.ts";
-import { Product } from "../../../std/commerce/types.ts";
-import { Suggestion } from "../../../std/commerce/vtex/types.ts";
 
-import Alert from "./Alert.tsx";
-import { headerHeight } from "./constants.ts";
-import Navbar from "./Navbar.tsx";
+import Alert from "deco-sites/fashion/components/header/Alert.tsx";
+import { headerHeight } from "deco-sites/fashion/components/header/constants.ts";
+import Navbar from "deco-sites/fashion/components/header/Navbar.tsx";
 
 export interface NavItem {
   label: string;
