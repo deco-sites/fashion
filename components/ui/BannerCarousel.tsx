@@ -40,19 +40,12 @@ export interface Props {
   interval?: number;
 }
 
-const defaultAction = {
-  href: "/feminino",
-  title: "Nova coleçāo",
-  subTitle: "Blooming",
-  label: "Conferir agora",
-};
-
 function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   const {
     alt,
     mobile,
     desktop,
-    action = defaultAction,
+    action,
   } = image;
 
   return (
@@ -185,7 +178,7 @@ function Controls() {
   );
 }
 
-function BannerCarousel({ images, preload, interval = 8 }: Props) {
+function BannerCarousel({ images, preload, interval }: Props) {
   const id = useId();
 
   return (
