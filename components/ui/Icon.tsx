@@ -42,11 +42,19 @@ interface Props extends JSX.SVGAttributes<SVGSVGElement> {
    * Example: <Icon id="Bell" />
    */
   id: AvailableIcons;
+  size?: number;
 }
 
-function Icon({ id, strokeWidth = 16, ...otherProps }: Props) {
+function Icon(
+  { id, strokeWidth = 16, size, width, height, ...otherProps }: Props,
+) {
   return (
-    <svg {...otherProps} strokeWidth={strokeWidth}>
+    <svg
+      {...otherProps}
+      width={width ?? size}
+      height={height ?? size}
+      strokeWidth={strokeWidth}
+    >
       <use href={asset(`/sprites.svg#${id}`)} />
     </svg>
   );

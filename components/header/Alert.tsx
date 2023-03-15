@@ -1,31 +1,35 @@
-import Carousel from "$store/components/ui/Carousel.tsx";
 import Text from "$store/components/ui/Text.tsx";
-
-const messages = [
-  "Parcelamento em até 10x no cartão",
-  "Devolução Garantida",
-  "Entrega para todo Brasil",
-  "Pagamento por Pix",
-];
+import SliderControllerJS from "$store/islands/SliderJS.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
+import { useId } from "preact/hooks";
 
 export interface Props {
   alerts: string[];
+  /**
+   * @title Autoplay interval
+   * @description time (in seconds) to start the carousel autoplay
+   */
+  interval?: number;
 }
 
-function Alert({ alerts = messages }: Props) {
+function Alert({ alerts = [], interval = 5 }: Props) {
+  const id = useId();
+
   return (
-    <div class="flex justify-center bg-badge text-sm text-white">
-      <Carousel class="pt-10 w-[340px] sm:w-[500px]" animationDuration={4}>
-        {alerts.map((alert) => (
+    <div id={id}>
+      <Slider class="bg-badge gap-6 scrollbar-none">
+        {alerts.map((alert, index) => (
           <Text
-            class="flex justify-center items-center w-[340px] sm:w-[500px] h-full"
+            class="flex justify-center items-center w-screen h-[38px]"
             variant="caption"
             tone="default-inverse"
           >
             {alert}
           </Text>
         ))}
-      </Carousel>
+      </Slider>
+
+      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
     </div>
   );
 }

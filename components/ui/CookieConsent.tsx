@@ -5,9 +5,6 @@ import { useId } from "preact/hooks";
 
 const script = (id: string) => `
 const callback = () => {
-
-  console.log('running once')
-
   const KEY = 'store-cookie-consent';
   const ACCEPTED = 'accepted';
   const HIDDEN = "translate-y-[200%]";

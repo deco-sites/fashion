@@ -26,6 +26,7 @@ const variants = {
 const Button = forwardRef<HTMLButtonElement, Props>(({
   variant = "primary",
   as = "button",
+  type = "button",
   class: _class = "",
   children,
   loading,
@@ -33,7 +34,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
   ...props
 }, ref) => {
   const Component = as as ComponentType<
-    { disabled?: boolean; className: string }
+    { disabled?: boolean; className: string; type: string }
   >;
   const styles = variants[variant];
 
@@ -42,6 +43,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
       {...props}
       className={`inline-flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed transition-colors duration-150 ease-in border ${styles} ${_class}`}
       disabled={disabled || loading}
+      type={type}
       ref={ref}
     >
       {loading === true ? <Spinner size={24} /> : children}
