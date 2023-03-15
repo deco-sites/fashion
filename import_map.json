@@ -1,8 +1,9 @@
 {
   "imports": {
+    "deco-sites/fashion/": "./",
     "$store/": "./",
-    "$live/": "https://raw.githubusercontent.com/deco-cx/live/08535ceb7c9576f0974b961d4185be45dfd6aabf/",
-    "deco-sites/std/": "https://raw.githubusercontent.com/deco-sites/std/32fc6f2ae8036e21272697f90044a129a09afcf8/",
+    "$live/": "../live/",
+    "deco-sites/std/": "../std/",
     "partytown/": "https://deno.land/x/partytown@0.2.1/",
     "inspect_vscode/": "https://deno.land/x/inspect_vscode@0.1.2/",
     "$fresh/": "https://deno.land/x/fresh@1.1.3/",
