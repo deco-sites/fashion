@@ -56,8 +56,8 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative">
-      <Picture class="w-screen block" preload={lcp}>
+    <div class="relative h-[600px] min-w-[100vw]">
+      <Picture class="w-full" preload={lcp}>
         <Source
           media="(max-width: 767px)"
           fetchPriority={lcp ? "high" : "auto"}
@@ -69,11 +69,11 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={desktop}
-          width={1366}
-          height={517}
+          width={1440}
+          height={600}
         />
         <img
-          class="object-cover w-full"
+          class="object-cover w-full sm:h-full"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}
