@@ -5,6 +5,8 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
+import { animation, keyframes } from "twind/css";
+import { css, tw } from "twind/css";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Banner {
@@ -98,6 +100,15 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   );
 }
 
+const progressFrameName = keyframes`
+from: {
+  --dot-progress: 0%;
+}
+to {
+  --dot-progress: 100%;
+}
+`;
+
 function BannerCarousel({ images, preload, interval = 8 }: Props) {
   const id = useId();
 
@@ -157,6 +168,18 @@ function BannerCarousel({ images, preload, interval = 8 }: Props) {
         </div>
       </>
 
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @property --dot-progress {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+          }`,
+        }}
+      >
+      </style>
+
       <ol
         class="flex items-center justify-center col-span-full gap-2 z-10"
         style={{ gridRow: 4 }}
@@ -166,7 +189,16 @@ function BannerCarousel({ images, preload, interval = 8 }: Props) {
             <button
               data-dot={index}
               aria-label={`go to slider item ${index}`}
-              class="w-16 sm:w-20 h-1 rounded bg-hover-inverse disabled:bg-interactive-inverse"
+              class={tw`w-16 sm:w-20 h-0.5 rounded bg-hover-inverse disabled:${
+                animation(
+                  `${interval || 0}s ease-out 1 forwards`,
+                  progressFrameName,
+                )
+              }`}
+              style={{
+                background:
+                  "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.16) var(--dot-progress))",
+              }}
             />
           </li>
         ))}

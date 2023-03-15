@@ -321,10 +321,6 @@ const manifest: DecoManifest = {
                   "anyOf": [
                     {
                       "type": "string",
-                      "const": "Circle",
-                    },
-                    {
-                      "type": "string",
                       "const": "ChevronLeft",
                     },
                     {
@@ -522,10 +518,6 @@ const manifest: DecoManifest = {
                           "icon": {
                             "type": "string",
                             "anyOf": [
-                              {
-                                "type": "string",
-                                "const": "Circle",
-                              },
                               {
                                 "type": "string",
                                 "const": "ChevronLeft",
