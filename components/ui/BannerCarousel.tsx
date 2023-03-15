@@ -114,10 +114,7 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       >
       </style>
-      <ol
-        class="flex items-center justify-center col-span-full gap-2 z-10"
-        style={{ gridRow: 4 }}
-      >
+      <ol class="flex items-center justify-center col-span-full gap-2 z-10 row-start-4">
         {images?.map((_, index) => (
           <li class="h-full">
             <button
@@ -155,13 +152,7 @@ function Dots({ images, interval = 0 }: Props) {
 function Controls() {
   return (
     <>
-      <div
-        class="flex items-center justify-center z-10"
-        style={{
-          gridColumn: 1,
-          gridRow: 2,
-        }}
-      >
+      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Button
           class="h-12 w-12"
           variant="icon"
@@ -176,13 +167,7 @@ function Controls() {
           />
         </Button>
       </div>
-      <div
-        class="flex items-center justify-center z-10"
-        style={{
-          gridColumn: 3,
-          gridRow: 2,
-        }}
-      >
+      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
         <Button
           class="h-12 w-12"
           variant="icon"
@@ -209,7 +194,7 @@ function BannerCarousel({ images, preload, interval = 8 }: Props) {
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_48px]"
     >
-      <Slider style={{ gridRow: "1/-1", gridColumn: "1/-1" }}>
+      <Slider class="col-span-full row-span-full">
         {images?.map((image, index) => (
           <BannerItem image={image} lcp={index === 0 && preload} />
         ))}
