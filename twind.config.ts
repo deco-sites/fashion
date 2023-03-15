@@ -133,6 +133,7 @@ const options: Omit<Options, "selfURL"> = {
     "max-h-min": {
       "max-height": "min-content",
     },
+    "snap": ([mod]) => ({ "scroll-snap-align": mod }),
     "grid-cols": ([arg]) => {
       const template = Number.isInteger(Number(arg))
         ? `repeat(${arg}, minmax(0, 1fr))`

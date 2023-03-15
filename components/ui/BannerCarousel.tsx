@@ -158,23 +158,16 @@ function BannerCarousel({ images, preload, interval = 8 }: Props) {
       </>
 
       <ol
-        class="flex items-center justify-center col-span-full gap-1 z-10"
+        class="flex items-center justify-center col-span-full gap-2 z-10"
         style={{ gridRow: 4 }}
       >
         {images?.map((_, index) => (
           <li>
-            <Button
+            <button
               data-dot={index}
-              class="h-12 w-12 !text-default-inverse !disabled:bg-transparent fill-transparent !disabled:fill-current"
-              variant="icon"
               aria-label={`go to slider item ${index}`}
-            >
-              <Icon
-                id="Circle"
-                size={20}
-                strokeWidth={2}
-              />
-            </Button>
+              class="w-16 sm:w-20 h-1 rounded bg-hover-inverse disabled:bg-interactive-inverse"
+            />
           </li>
         ))}
       </ol>
