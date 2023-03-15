@@ -16,38 +16,6 @@ export interface Props {
   title: string;
 }
 
-function HighlightItem(
-  {
-    highlight,
-    first,
-    last,
-  }: {
-    highlight: Highlight;
-    first: boolean;
-    last: boolean;
-  },
-) {
-  const { href, src, alt, label } = highlight;
-  const ml = first ? "ml-6 sm:ml-0" : "";
-  const mr = last ? "mr-6 sm:mr-0" : "";
-
-  return (
-    <a
-      href={href}
-      class={`flex flex-col gap-4 items-center min-w-[190px] ${ml} ${mr}`}
-    >
-      <Image
-        class="rounded-[40px]"
-        src={src}
-        alt={alt}
-        width={190}
-        height={265}
-      />
-      <Text variant="body">{label}</Text>
-    </a>
-  );
-}
-
 function Highlights({ highlights = [], title }: Props) {
   return (
     <Container class="grid grid-cols-1 grid-rows-[48px_1fr] py-10">
@@ -55,13 +23,21 @@ function Highlights({ highlights = [], title }: Props) {
         <Text variant="heading-2">{title}</Text>
       </h2>
 
-      <Slider>
-        {highlights.map((highlight, index) => (
-          <HighlightItem
-            highlight={highlight}
-            first={index === 0}
-            last={index === highlights.length - 1}
-          />
+      <Slider snap="snap-center sm:snap-start block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0">
+        {highlights.map(({ href, src, alt, label }) => (
+          <a
+            href={href}
+            class="flex flex-col gap-4 items-center min-w-[190px]"
+          >
+            <Image
+              class="rounded-[40px]"
+              src={src}
+              alt={alt}
+              width={190}
+              height={265}
+            />
+            <Text variant="body">{label}</Text>
+          </a>
         ))}
       </Slider>
     </Container>

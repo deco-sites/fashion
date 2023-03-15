@@ -15,21 +15,6 @@ export interface Props {
   itemsPerPage?: number;
 }
 
-function ProductShelfItem(
-  { product, first, last }: { product: Product; first: boolean; last: boolean },
-) {
-  const ml = first ? "ml-6 sm:ml-0" : "";
-  const mr = last ? "mr-6 sm:mr-0" : "";
-
-  return (
-    <div
-      class={`min-w-[270px] max-w-[270px] sm:min-w-[302px] sm:max-w-[302px] ${ml} ${mr}`}
-    >
-      <ProductCard product={product} />
-    </div>
-  );
-}
-
 function ProductShelf({
   title,
   products,
@@ -47,15 +32,13 @@ function ProductShelf({
 
       <Slider
         class="gap-6"
-        snap="snap-center sm:snap-start"
+        snap="snap-center sm:snap-start block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
         style={{ gridRow: "2/5", gridColumn: "1/-1" }}
       >
-        {products?.map((product, index) => (
-          <ProductShelfItem
-            product={product}
-            first={index === 0}
-            last={index === products.length - 1}
-          />
+        {products?.map((product) => (
+          <div class="min-w-[270px] max-w-[270px] sm:min-w-[302px] sm:max-w-[302px]">
+            <ProductCard product={product} />
+          </div>
         ))}
       </Slider>
 
