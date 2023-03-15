@@ -157,12 +157,6 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   prev?.addEventListener("click", onClickPrev);
   next?.addEventListener("click", onClickNext);
 
-  // Prevent scrolling when user is interacting with slider
-  root.addEventListener("mouseenter", stopAutoplay, { passive: true });
-  root.addEventListener("mouseleave", restartAutoplay, { passive: true });
-  root.addEventListener("touchstart", stopAutoplay, { passive: true });
-  root.addEventListener("touchend", restartAutoplay, { passive: true });
-
   restartAutoplay();
 
   // Unregister callbacks
@@ -173,11 +167,6 @@ const setup = ({ rootId, behavior, interval }: Props) => {
 
     prev?.removeEventListener("click", onClickPrev);
     next?.removeEventListener("click", onClickNext);
-
-    root.removeEventListener("mouseenter", stopAutoplay);
-    root.removeEventListener("mouseleave", restartAutoplay);
-    root.removeEventListener("touchstart", stopAutoplay);
-    root.removeEventListener("touchend", restartAutoplay);
 
     observer.disconnect();
 
