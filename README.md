@@ -52,7 +52,9 @@ This starter brings:
 ## Getting started
 
 To execute this website on your machine, clone it to your local machine with
-`git clone`, open the terminal and type
+`git clone` and make sure [deno is installed](https://deno.land/manual@v1.31.1/getting_started/installation).
+
+Then open the terminal, change the directory to where fashion was cloned and type
 
 ```sh
 deno task start

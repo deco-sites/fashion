@@ -16,15 +16,16 @@ import * as $$$3 from "./islands/HeaderModals.tsx";
 import * as $$$4 from "./islands/SearchControls.tsx";
 import * as $$$$$$0 from "deco-sites/fashion/sections/DesignSystem.story.tsx";
 import * as $$$$$$1 from "deco-sites/fashion/sections/Features.tsx";
-import * as $$$$$$2 from "deco-sites/fashion/sections/ProductShelf.tsx";
-import * as $$$$$$3 from "deco-sites/fashion/sections/Footer.tsx";
-import * as $$$$$$4 from "deco-sites/fashion/sections/CookieConsent.tsx";
-import * as $$$$$$5 from "deco-sites/fashion/sections/Header.tsx";
-import * as $$$$$$6 from "deco-sites/fashion/sections/ProductDetails.tsx";
-import * as $$$$$$7 from "deco-sites/fashion/sections/ProductGallery.tsx";
-import * as $$$$$$8 from "deco-sites/fashion/sections/Highlights.tsx";
-import * as $$$$$$9 from "deco-sites/fashion/sections/SearchControls.tsx";
-import * as $$$$$$10 from "deco-sites/fashion/sections/Carousel.tsx";
+import * as $$$$$$2 from "deco-sites/fashion/sections/BannerGrid.tsx";
+import * as $$$$$$3 from "deco-sites/fashion/sections/ProductShelf.tsx";
+import * as $$$$$$4 from "deco-sites/fashion/sections/Footer.tsx";
+import * as $$$$$$5 from "deco-sites/fashion/sections/CookieConsent.tsx";
+import * as $$$$$$6 from "deco-sites/fashion/sections/Header.tsx";
+import * as $$$$$$7 from "deco-sites/fashion/sections/ProductDetails.tsx";
+import * as $$$$$$8 from "deco-sites/fashion/sections/ProductGallery.tsx";
+import * as $$$$$$9 from "deco-sites/fashion/sections/Highlights.tsx";
+import * as $$$$$$10 from "deco-sites/fashion/sections/SearchControls.tsx";
+import * as $$$$$$11 from "deco-sites/fashion/sections/Carousel.tsx";
 import { configurable } from "$live/engine/fresh/manifest.ts";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
 import * as i2$$$0 from "$live/handlers/routesSelection.ts";
@@ -42,14 +43,15 @@ import * as i2$$$$$$0 from "$live/flags/audience.ts";
 import * as i2$$$$$$1 from "$live/flags/everyone.ts";
 import * as i2$0 from "deco-sites/std/loaders/vtexProductListingPage.ts";
 import * as i2$1 from "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts";
-import * as i2$2 from "deco-sites/std/loaders/shopifyProductListingPage.ts";
-import * as i2$3 from "deco-sites/std/loaders/vtexProductList.ts";
-import * as i2$4 from "deco-sites/std/loaders/occProductDetailsPage.ts";
-import * as i2$5 from "deco-sites/std/loaders/vtexLegacyProductListingPage.ts";
-import * as i2$6 from "deco-sites/std/loaders/vtexProductDetailsPage.ts";
-import * as i2$7 from "deco-sites/std/loaders/vtexLegacyProductList.ts";
-import * as i2$8 from "deco-sites/std/loaders/shopifyProductList.ts";
-import * as i2$9 from "deco-sites/std/loaders/shopifyProductDetailsPage.ts";
+import * as i2$2 from "deco-sites/std/loaders/vtexSuggestions.ts";
+import * as i2$3 from "deco-sites/std/loaders/shopifyProductListingPage.ts";
+import * as i2$4 from "deco-sites/std/loaders/vtexProductList.ts";
+import * as i2$5 from "deco-sites/std/loaders/occProductDetailsPage.ts";
+import * as i2$6 from "deco-sites/std/loaders/vtexLegacyProductListingPage.ts";
+import * as i2$7 from "deco-sites/std/loaders/vtexProductDetailsPage.ts";
+import * as i2$8 from "deco-sites/std/loaders/vtexLegacyProductList.ts";
+import * as i2$9 from "deco-sites/std/loaders/shopifyProductList.ts";
+import * as i2$10 from "deco-sites/std/loaders/shopifyProductDetailsPage.ts";
 import * as i2$$0 from "deco-sites/std/sections/SEO.tsx";
 import * as i2$$1 from "deco-sites/std/sections/SEOPLP.tsx";
 import * as i2$$2 from "deco-sites/std/sections/configOCC.global.tsx";
@@ -75,15 +77,16 @@ const manifest: DecoManifest = {
   "sections": {
     "deco-sites/fashion/sections/DesignSystem.story.tsx": $$$$$$0,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$1,
-    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$2,
-    "deco-sites/fashion/sections/Footer.tsx": $$$$$$3,
-    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$4,
-    "deco-sites/fashion/sections/Header.tsx": $$$$$$5,
-    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$6,
-    "deco-sites/fashion/sections/ProductGallery.tsx": $$$$$$7,
-    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$8,
-    "deco-sites/fashion/sections/SearchControls.tsx": $$$$$$9,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$10,
+    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$2,
+    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$3,
+    "deco-sites/fashion/sections/Footer.tsx": $$$$$$4,
+    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$5,
+    "deco-sites/fashion/sections/Header.tsx": $$$$$$6,
+    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$7,
+    "deco-sites/fashion/sections/ProductGallery.tsx": $$$$$$8,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$9,
+    "deco-sites/fashion/sections/SearchControls.tsx": $$$$$$10,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$11,
     "deco-sites/std/sections/SEO.tsx": i2$$0,
     "deco-sites/std/sections/SEOPLP.tsx": i2$$1,
     "deco-sites/std/sections/configOCC.global.tsx": i2$$2,
@@ -115,14 +118,15 @@ const manifest: DecoManifest = {
   "loaders": {
     "deco-sites/std/loaders/vtexProductListingPage.ts": i2$0,
     "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts": i2$1,
-    "deco-sites/std/loaders/shopifyProductListingPage.ts": i2$2,
-    "deco-sites/std/loaders/vtexProductList.ts": i2$3,
-    "deco-sites/std/loaders/occProductDetailsPage.ts": i2$4,
-    "deco-sites/std/loaders/vtexLegacyProductListingPage.ts": i2$5,
-    "deco-sites/std/loaders/vtexProductDetailsPage.ts": i2$6,
-    "deco-sites/std/loaders/vtexLegacyProductList.ts": i2$7,
-    "deco-sites/std/loaders/shopifyProductList.ts": i2$8,
-    "deco-sites/std/loaders/shopifyProductDetailsPage.ts": i2$9,
+    "deco-sites/std/loaders/vtexSuggestions.ts": i2$2,
+    "deco-sites/std/loaders/shopifyProductListingPage.ts": i2$3,
+    "deco-sites/std/loaders/vtexProductList.ts": i2$4,
+    "deco-sites/std/loaders/occProductDetailsPage.ts": i2$5,
+    "deco-sites/std/loaders/vtexLegacyProductListingPage.ts": i2$6,
+    "deco-sites/std/loaders/vtexProductDetailsPage.ts": i2$7,
+    "deco-sites/std/loaders/vtexLegacyProductList.ts": i2$8,
+    "deco-sites/std/loaders/shopifyProductList.ts": i2$9,
+    "deco-sites/std/loaders/shopifyProductDetailsPage.ts": i2$10,
   },
   "config": config,
   "baseUrl": import.meta.url,
@@ -1373,7 +1377,7 @@ const manifest: DecoManifest = {
           "type": "object",
           "allOf": [{
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@4f7b442d-4d90-4f0e-a9d9-b90a2f42aacd",
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@238661e4-5e0c-48cd-85d8-3a82268e2afb",
           }],
           "required": ["__resolveType"],
           "properties": {
@@ -1389,7 +1393,7 @@ const manifest: DecoManifest = {
           "type": "object",
           "allOf": [{
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@4aa9fc22-17a1-4632-a59b-0df9cab15e59",
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d763a4af-f791-4325-81d0-ea916988505f",
           }],
           "required": ["__resolveType"],
           "properties": {
@@ -1419,7 +1423,7 @@ const manifest: DecoManifest = {
           "type": "object",
           "allOf": [{
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@c0fde23f-8561-4ea2-98b9-9479abfaf896",
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@e1f967a1-bd65-424a-a64a-4ad8e6e27e0a",
           }],
           "required": ["__resolveType"],
           "properties": {
@@ -1432,7 +1436,7 @@ const manifest: DecoManifest = {
         }],
         "$id": "deco-sites/std/commerce/types.ts@ProductDetailsPage",
       },
-      "877d962c-c45d-415a-929b-30fdf591c1f9": {
+      "d9df1095-1129-45d4-b06e-e13f65a55e29": {
         "anyOf": [{
           "type": "null",
           "$id": "undefined@undefined",
@@ -1442,7 +1446,7 @@ const manifest: DecoManifest = {
           "type": "object",
           "allOf": [{
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@4f7b442d-4d90-4f0e-a9d9-b90a2f42aacd",
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@238661e4-5e0c-48cd-85d8-3a82268e2afb",
           }],
           "required": ["__resolveType"],
           "properties": {
@@ -1456,20 +1460,20 @@ const manifest: DecoManifest = {
         }],
         "$id": "undefined@undefined",
       },
-      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@f2102da5-ba32-493b-8ca9-ba00bfd252ac":
+      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@3f7bcfd1-f817-48a9-913f-e1beee3b2fa0":
         {
           "anyOf": [
             {
               "$ref":
                 "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage",
             },
-            { "$ref": "#/definitions/877d962c-c45d-415a-929b-30fdf591c1f9" },
+            { "$ref": "#/definitions/d9df1095-1129-45d4-b06e-e13f65a55e29" },
             {
               "title": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts",
               "type": "object",
               "allOf": [{
                 "$ref":
-                  "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@4f7b442d-4d90-4f0e-a9d9-b90a2f42aacd",
+                  "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@238661e4-5e0c-48cd-85d8-3a82268e2afb",
               }],
               "required": ["__resolveType"],
               "properties": {
@@ -1483,15 +1487,78 @@ const manifest: DecoManifest = {
             },
           ],
           "$id":
-            "deco-sites/std/commerce/types.ts@f2102da5-ba32-493b-8ca9-ba00bfd252ac",
+            "deco-sites/std/commerce/types.ts@3f7bcfd1-f817-48a9-913f-e1beee3b2fa0",
         },
-      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@4f7b442d-4d90-4f0e-a9d9-b90a2f42aacd":
+      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@238661e4-5e0c-48cd-85d8-3a82268e2afb":
         {
           "$id":
-            "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@4f7b442d-4d90-4f0e-a9d9-b90a2f42aacd",
+            "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@238661e4-5e0c-48cd-85d8-3a82268e2afb",
           "title":
-            "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@4f7b442d-4d90-4f0e-a9d9-b90a2f42aacd",
+            "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@238661e4-5e0c-48cd-85d8-3a82268e2afb",
         },
+      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search": {
+        "type": "object",
+        "allOf": [],
+        "properties": { "term": { "title": "Term", "type": "string" } },
+        "required": ["term"],
+        "title": "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search",
+        "$id": "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search",
+      },
+      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search[]": {
+        "type": "array",
+        "items": {
+          "$ref":
+            "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search",
+        },
+        "$id": "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search[]",
+      },
+      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion": {
+        "anyOf": [{
+          "type": "object",
+          "allOf": [],
+          "properties": {
+            "searches": {
+              "title": "Searches",
+              "$ref":
+                "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search[]",
+            },
+          },
+          "required": [],
+          "title": "deco-sites/std/commerce/types.ts@Suggestion",
+          "$id": "deco-sites/std/commerce/types.ts@Suggestion",
+        }, {
+          "title": "deco-sites/std/loaders/vtexSuggestions.ts",
+          "type": "object",
+          "allOf": [{
+            "$ref":
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4U3VnZ2VzdGlvbnMudHM=@Props",
+          }],
+          "required": ["__resolveType"],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "default": "deco-sites/std/loaders/vtexSuggestions.ts",
+            },
+          },
+          "$id": "deco-sites/std/loaders/vtexSuggestions.ts",
+        }],
+        "$id": "deco-sites/std/commerce/types.ts@Suggestion",
+      },
+      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4U3VnZ2VzdGlvbnMudHM=@Props": {
+        "type": "object",
+        "allOf": [],
+        "properties": {
+          "count": {
+            "title": "Count",
+            "type": ["number", "null"],
+            "description": "limit the number of searches",
+            "default": "4",
+          },
+        },
+        "required": [],
+        "title": "deco-sites/std/loaders/vtexSuggestions.ts@Props",
+        "$id": "deco-sites/std/loaders/vtexSuggestions.ts@Props",
+      },
       "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props":
         {
           "type": "object",
@@ -1553,7 +1620,7 @@ const manifest: DecoManifest = {
         "title": "deco-sites/std/loaders/vtexProductList.ts@Props",
         "$id": "deco-sites/std/loaders/vtexProductList.ts@Props",
       },
-      "5e752d4c-39df-4548-90a4-5761c40ee305": {
+      "ec4de9c7-006b-4d8a-8806-2896de128fb0": {
         "anyOf": [{
           "type": "null",
           "$id": "undefined@undefined",
@@ -1563,7 +1630,7 @@ const manifest: DecoManifest = {
           "type": "object",
           "allOf": [{
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@4aa9fc22-17a1-4632-a59b-0df9cab15e59",
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d763a4af-f791-4325-81d0-ea916988505f",
           }],
           "required": ["__resolveType"],
           "properties": {
@@ -1576,20 +1643,20 @@ const manifest: DecoManifest = {
         }],
         "$id": "undefined@undefined",
       },
-      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@6ec83578-e1fb-41e3-84f9-edca9934ac64":
+      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@d3ac5269-78a1-46c2-ab66-626fd90de9b3":
         {
           "anyOf": [
             {
               "$ref":
                 "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage",
             },
-            { "$ref": "#/definitions/5e752d4c-39df-4548-90a4-5761c40ee305" },
+            { "$ref": "#/definitions/ec4de9c7-006b-4d8a-8806-2896de128fb0" },
             {
               "title": "deco-sites/std/loaders/occProductDetailsPage.ts",
               "type": "object",
               "allOf": [{
                 "$ref":
-                  "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@4aa9fc22-17a1-4632-a59b-0df9cab15e59",
+                  "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d763a4af-f791-4325-81d0-ea916988505f",
               }],
               "required": ["__resolveType"],
               "properties": {
@@ -1602,14 +1669,14 @@ const manifest: DecoManifest = {
             },
           ],
           "$id":
-            "deco-sites/std/commerce/types.ts@6ec83578-e1fb-41e3-84f9-edca9934ac64",
+            "deco-sites/std/commerce/types.ts@d3ac5269-78a1-46c2-ab66-626fd90de9b3",
         },
-      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@4aa9fc22-17a1-4632-a59b-0df9cab15e59":
+      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d763a4af-f791-4325-81d0-ea916988505f":
         {
           "$id":
-            "deco-sites/std/loaders/occProductDetailsPage.ts@4aa9fc22-17a1-4632-a59b-0df9cab15e59",
+            "deco-sites/std/loaders/occProductDetailsPage.ts@d763a4af-f791-4325-81d0-ea916988505f",
           "title":
-            "deco-sites/std/loaders/occProductDetailsPage.ts@4aa9fc22-17a1-4632-a59b-0df9cab15e59",
+            "deco-sites/std/loaders/occProductDetailsPage.ts@d763a4af-f791-4325-81d0-ea916988505f",
         },
       "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props":
         {
@@ -1643,7 +1710,7 @@ const manifest: DecoManifest = {
             "deco-sites/std/loaders/vtexLegacyProductListingPage.ts@Props",
           "$id": "deco-sites/std/loaders/vtexLegacyProductListingPage.ts@Props",
         },
-      "e0dfdd43-8373-4703-8f7c-e04798ea401a": {
+      "d83c3456-6d19-4932-9bc1-83e1f0732572": {
         "anyOf": [{
           "type": "null",
           "$id": "undefined@undefined",
@@ -1666,14 +1733,14 @@ const manifest: DecoManifest = {
         }],
         "$id": "undefined@undefined",
       },
-      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@c926fd47-621d-4657-a985-ef31754a4e97":
+      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@9f333412-bd5c-4671-95ed-89129410eb8a":
         {
           "anyOf": [
             {
               "$ref":
                 "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage",
             },
-            { "$ref": "#/definitions/e0dfdd43-8373-4703-8f7c-e04798ea401a" },
+            { "$ref": "#/definitions/d83c3456-6d19-4932-9bc1-83e1f0732572" },
             {
               "title": "deco-sites/std/loaders/vtexProductDetailsPage.ts",
               "type": "object",
@@ -1692,7 +1759,7 @@ const manifest: DecoManifest = {
             },
           ],
           "$id":
-            "deco-sites/std/commerce/types.ts@c926fd47-621d-4657-a985-ef31754a4e97",
+            "deco-sites/std/commerce/types.ts@9f333412-bd5c-4671-95ed-89129410eb8a",
         },
       "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdExpc3QudHM=@Props":
         {
@@ -1755,7 +1822,7 @@ const manifest: DecoManifest = {
         "title": "deco-sites/std/loaders/shopifyProductList.ts@Props",
         "$id": "deco-sites/std/loaders/shopifyProductList.ts@Props",
       },
-      "1ec4672d-48d3-4635-bf1b-21beaa9257cb": {
+      "aae62cd0-70c1-41c0-8331-a1300cff3a1a": {
         "anyOf": [{
           "type": "null",
           "$id": "undefined@undefined",
@@ -1765,7 +1832,7 @@ const manifest: DecoManifest = {
           "type": "object",
           "allOf": [{
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@c0fde23f-8561-4ea2-98b9-9479abfaf896",
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@e1f967a1-bd65-424a-a64a-4ad8e6e27e0a",
           }],
           "required": ["__resolveType"],
           "properties": {
@@ -1778,20 +1845,20 @@ const manifest: DecoManifest = {
         }],
         "$id": "undefined@undefined",
       },
-      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@e61062de-8232-4a7d-9f36-99038a39fbec":
+      "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@b5b2f20a-a9f5-43b9-85ba-ee62e8400f25":
         {
           "anyOf": [
             {
               "$ref":
                 "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage",
             },
-            { "$ref": "#/definitions/1ec4672d-48d3-4635-bf1b-21beaa9257cb" },
+            { "$ref": "#/definitions/aae62cd0-70c1-41c0-8331-a1300cff3a1a" },
             {
               "title": "deco-sites/std/loaders/shopifyProductDetailsPage.ts",
               "type": "object",
               "allOf": [{
                 "$ref":
-                  "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@c0fde23f-8561-4ea2-98b9-9479abfaf896",
+                  "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@e1f967a1-bd65-424a-a64a-4ad8e6e27e0a",
               }],
               "required": ["__resolveType"],
               "properties": {
@@ -1805,21 +1872,21 @@ const manifest: DecoManifest = {
             },
           ],
           "$id":
-            "deco-sites/std/commerce/types.ts@e61062de-8232-4a7d-9f36-99038a39fbec",
+            "deco-sites/std/commerce/types.ts@b5b2f20a-a9f5-43b9-85ba-ee62e8400f25",
         },
-      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@c0fde23f-8561-4ea2-98b9-9479abfaf896":
+      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@e1f967a1-bd65-424a-a64a-4ad8e6e27e0a":
         {
           "$id":
-            "deco-sites/std/loaders/shopifyProductDetailsPage.ts@c0fde23f-8561-4ea2-98b9-9479abfaf896",
+            "deco-sites/std/loaders/shopifyProductDetailsPage.ts@e1f967a1-bd65-424a-a64a-4ad8e6e27e0a",
           "title":
-            "deco-sites/std/loaders/shopifyProductDetailsPage.ts@c0fde23f-8561-4ea2-98b9-9479abfaf896",
+            "deco-sites/std/loaders/shopifyProductDetailsPage.ts@e1f967a1-bd65-424a-a64a-4ad8e6e27e0a",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvY29tcG9uZW50cy9MaXZlQ29udHJvbHMudHN4@61f8f918-aae4-4e7c-8207-c9e141b94614":
+      "ZGVjby1jeC9saXZlL2NvbXBvbmVudHMvTGl2ZUNvbnRyb2xzLnRzeA==@51fc91db-98fb-4cb8-926e-98e9105e1d7f":
         {
           "$id":
-            "/Users/marcoscandeia/workspace/live/components/LiveControls.tsx@61f8f918-aae4-4e7c-8207-c9e141b94614",
+            "deco-cx/live/components/LiveControls.tsx@51fc91db-98fb-4cb8-926e-98e9105e1d7f",
           "title":
-            "/Users/marcoscandeia/workspace/live/components/LiveControls.tsx@61f8f918-aae4-4e7c-8207-c9e141b94614",
+            "deco-cx/live/components/LiveControls.tsx@51fc91db-98fb-4cb8-926e-98e9105e1d7f",
         },
       "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPQmFzZS50c3g=@Props": {
         "type": "object",
@@ -1982,7 +2049,7 @@ const manifest: DecoManifest = {
           "type": "object",
           "allOf": [{
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@4f7b442d-4d90-4f0e-a9d9-b90a2f42aacd",
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@238661e4-5e0c-48cd-85d8-3a82268e2afb",
           }],
           "required": ["__resolveType"],
           "properties": {
@@ -1994,6 +2061,22 @@ const manifest: DecoManifest = {
           },
           "$id": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts",
         },
+      "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4U3VnZ2VzdGlvbnMudHM=": {
+        "title": "deco-sites/std/loaders/vtexSuggestions.ts",
+        "type": "object",
+        "allOf": [{
+          "$ref":
+            "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4U3VnZ2VzdGlvbnMudHM=@Props",
+        }],
+        "required": ["__resolveType"],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "default": "deco-sites/std/loaders/vtexSuggestions.ts",
+          },
+        },
+        "$id": "deco-sites/std/loaders/vtexSuggestions.ts",
+      },
       "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdExpc3RpbmdQYWdlLnRz": {
         "title": "deco-sites/std/loaders/shopifyProductListingPage.ts",
         "type": "object",
@@ -2031,7 +2114,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@4aa9fc22-17a1-4632-a59b-0df9cab15e59",
+            "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9vY2NQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d763a4af-f791-4325-81d0-ea916988505f",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -2113,7 +2196,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@c0fde23f-8561-4ea2-98b9-9479abfaf896",
+            "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdERldGFpbHNQYWdlLnRz@e1f967a1-bd65-424a-a64a-4ad8e6e27e0a",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -2165,7 +2248,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvY29tcG9uZW50cy9MaXZlQ29udHJvbHMudHN4@61f8f918-aae4-4e7c-8207-c9e141b94614",
+            "#/definitions/ZGVjby1jeC9saXZlL2NvbXBvbmVudHMvTGl2ZUNvbnRyb2xzLnRzeA==@51fc91db-98fb-4cb8-926e-98e9105e1d7f",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -2272,7 +2355,7 @@ const manifest: DecoManifest = {
         },
         "$id": "deco-sites/std/sections/SEOPDP.tsx",
       },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@b8703d9b-68bf-4b35-a12c-e0b937e11428":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@3a0d981e-aeb5-49be-bc9f-9ee4cb47c598":
         {
           "type": "object",
           "allOf": [],
@@ -2287,175 +2370,447 @@ const manifest: DecoManifest = {
           },
           "required": ["variant"],
           "title":
-            "deco-sites/fashion/components/header/Buttons.tsx@b8703d9b-68bf-4b35-a12c-e0b937e11428",
+            "deco-sites/fashion/components/header/Buttons.tsx@3a0d981e-aeb5-49be-bc9f-9ee4cb47c598",
           "$id":
-            "deco-sites/fashion/components/header/Buttons.tsx@b8703d9b-68bf-4b35-a12c-e0b937e11428",
+            "deco-sites/fashion/components/header/Buttons.tsx@3a0d981e-aeb5-49be-bc9f-9ee4cb47c598",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@9164f2c3-783c-40bb-91f2-55d6ab904077":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@3da7eeb3-37bb-4fe6-a409-bfcda08ef903":
         {
           "$id":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@9164f2c3-783c-40bb-91f2-55d6ab904077",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@3da7eeb3-37bb-4fe6-a409-bfcda08ef903",
           "title":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@9164f2c3-783c-40bb-91f2-55d6ab904077",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@3da7eeb3-37bb-4fe6-a409-bfcda08ef903",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvY29tcG9uZW50cy9MaXZlQ29udHJvbHMudHN4@e328d591-a6f7-428a-9081-6cc2561fe879":
+      "ZGVjby1jeC9saXZlL2NvbXBvbmVudHMvTGl2ZUNvbnRyb2xzLnRzeA==@618a4f13-c859-41bb-8ac5-6ac976f7d2a3":
         {
           "$id":
-            "/Users/marcoscandeia/workspace/live/components/LiveControls.tsx@e328d591-a6f7-428a-9081-6cc2561fe879",
+            "deco-cx/live/components/LiveControls.tsx@618a4f13-c859-41bb-8ac5-6ac976f7d2a3",
           "title":
-            "/Users/marcoscandeia/workspace/live/components/LiveControls.tsx@e328d591-a6f7-428a-9081-6cc2561fe879",
+            "deco-cx/live/components/LiveControls.tsx@618a4f13-c859-41bb-8ac5-6ac976f7d2a3",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@6575f571-3db2-49d6-b87a-2c5a7db86a92":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@0e146c2f-f751-4160-8979-76f82fb49c7a":
         {
           "$id":
-            "deco-sites/fashion/components/header/Modals.tsx@6575f571-3db2-49d6-b87a-2c5a7db86a92",
+            "deco-sites/fashion/components/header/Modals.tsx@0e146c2f-f751-4160-8979-76f82fb49c7a",
           "title":
-            "deco-sites/fashion/components/header/Modals.tsx@6575f571-3db2-49d6-b87a-2c5a7db86a92",
+            "deco-sites/fashion/components/header/Modals.tsx@0e146c2f-f751-4160-8979-76f82fb49c7a",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@BreadcrumbList":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL0NvbnRyb2xzLnRzeA==@Props":
         {
           "type": "object",
           "allOf": [],
           "properties": {
-            "@type": {
-              "title": "@type",
-              "type": "string",
-              "const": "BreadcrumbList",
+            "page": {
+              "title": "Page",
+              "$ref":
+                "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage",
             },
           },
-          "required": ["@type"],
-          "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@BreadcrumbList",
-          "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@BreadcrumbList",
+          "required": ["page"],
+          "title": "deco-sites/fashion/components/search/Controls.tsx@Props",
+          "$id": "deco-sites/fashion/components/search/Controls.tsx@Props",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterBase":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "label": { "title": "Label", "type": "string" },
-            "key": { "title": "Key", "type": "string" },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature": {
+        "type": "object",
+        "allOf": [],
+        "properties": {
+          "icon": {
+            "title": "Icon",
+            "anyOf": [
+              { "type": "string", "const": "Circle" },
+              { "type": "string", "const": "ChevronLeft" },
+              { "type": "string", "const": "ChevronRight" },
+              { "type": "string", "const": "ChevronUp" },
+              { "type": "string", "const": "ChevronDown" },
+              { "type": "string", "const": "QuestionMarkCircle" },
+              { "type": "string", "const": "User" },
+              { "type": "string", "const": "ShoppingCart" },
+              { "type": "string", "const": "Bars3" },
+              { "type": "string", "const": "Heart" },
+              { "type": "string", "const": "MagnifyingGlass" },
+              { "type": "string", "const": "XMark" },
+              { "type": "string", "const": "Plus" },
+              { "type": "string", "const": "Minus" },
+              { "type": "string", "const": "MapPin" },
+              { "type": "string", "const": "Phone" },
+              { "type": "string", "const": "Elo" },
+              { "type": "string", "const": "Mastercard" },
+              { "type": "string", "const": "Visa" },
+              { "type": "string", "const": "Pix" },
+              { "type": "string", "const": "Logo" },
+              { "type": "string", "const": "Facebook" },
+              { "type": "string", "const": "Instagram" },
+              { "type": "string", "const": "Tiktok" },
+              { "type": "string", "const": "Truck" },
+              { "type": "string", "const": "Discount" },
+              { "type": "string", "const": "Return" },
+              { "type": "string", "const": "CreditCard" },
+              { "type": "string", "const": "Deco" },
+              { "type": "string", "const": "Discord" },
+              { "type": "string", "const": "Trash" },
+              { "type": "string", "const": "FilterList" },
+            ],
+            "description": "Image src",
           },
-          "required": ["label", "key"],
-          "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterBase",
-          "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterBase",
-        },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggleValue":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "quantity": { "title": "Quantity", "type": "number" },
-            "label": { "title": "Label", "type": "string" },
-            "value": { "title": "Value", "type": "string" },
-            "selected": { "title": "Selected", "type": "boolean" },
-            "url": { "title": "Url", "type": "string" },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "description": "Title",
           },
-          "required": ["quantity", "label", "value", "selected", "url"],
-          "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggleValue",
-          "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggleValue",
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "Description and Image alt text",
+          },
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggleValue[]":
+        "required": ["icon", "title", "description"],
+        "title":
+          "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature",
+        "$id":
+          "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature",
+      },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]":
         {
           "type": "array",
           "items": {
             "$ref":
-              "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggleValue",
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature",
           },
           "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggleValue[]",
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggle":
-        {
-          "type": "object",
-          "allOf": [{
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Props": {
+        "type": "object",
+        "allOf": [],
+        "properties": {
+          "features": {
+            "title": "Features",
             "$ref":
-              "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterBase",
-          }],
-          "properties": {
-            "@type": {
-              "title": "@type",
-              "type": "string",
-              "const": "FilterToggle",
-            },
-            "values": {
-              "title": "Values",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggleValue[]",
-            },
-            "quantity": { "title": "Quantity", "type": "number" },
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]",
           },
-          "required": ["@type", "values", "quantity"],
-          "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggle",
-          "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggle",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRangeValue":
+        "required": ["features"],
+        "title": "deco-sites/fashion/components/ui/Features.tsx@Props",
+        "$id": "deco-sites/fashion/components/ui/Features.tsx@Props",
+      },
+      "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+        "type": "string",
+        "$id": "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+      },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner": {
+        "type": "object",
+        "allOf": [],
+        "properties": {
+          "srcMobile": {
+            "title": "Src Mobile",
+            "$ref":
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          },
+          "srcDesktop": {
+            "title": "Src Desktop",
+            "$ref":
+              "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          },
+          "alt": {
+            "title": "Alt",
+            "type": "string",
+            "description": "Image alt text",
+          },
+          "href": {
+            "title": "Href",
+            "type": "string",
+            "description": "When you click you go to",
+          },
+        },
+        "required": ["srcMobile", "alt", "href"],
+        "title":
+          "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner",
+        "$id":
+          "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner",
+      },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner[]": {
+        "type": "array",
+        "items": {
+          "$ref":
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner",
+        },
+        "$id":
+          "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner[]",
+      },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Props": {
+        "type": "object",
+        "allOf": [],
+        "properties": {
+          "title": { "title": "Title", "type": ["string", "null"] },
+          "itemsPerLine": {
+            "type": "object",
+            "allOf": [],
+            "properties": {
+              "mobile": { "title": "Mobile", "type": ["number", "null"] },
+              "desktop": { "title": "Desktop", "type": ["number", "null"] },
+            },
+            "required": [],
+            "description": "Default is 2 for mobile and all for desktop",
+          },
+          "borderRadius": {
+            "type": "object",
+            "allOf": [],
+            "properties": {
+              "mobile": { "title": "Mobile", "type": ["number", "null"] },
+              "desktop": { "title": "Desktop", "type": ["number", "null"] },
+            },
+            "required": [],
+            "description": "Item's border radius in px",
+          },
+          "banners": {
+            "title": "Banners",
+            "$ref":
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner[]",
+          },
+        },
+        "required": ["itemsPerLine", "borderRadius", "banners"],
+        "title": "deco-sites/fashion/sections/BannerGrid.tsx@Props",
+        "$id": "deco-sites/fashion/sections/BannerGrid.tsx@Props",
+      },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props":
         {
           "type": "object",
           "allOf": [],
           "properties": {
-            "min": { "title": "Min", "type": "number" },
-            "max": { "title": "Max", "type": "number" },
+            "title": { "title": "Title", "type": "string" },
+            "products": {
+              "title": "Products",
+              "$ref":
+                "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]",
+            },
           },
-          "required": ["min", "max"],
+          "required": ["title", "products"],
           "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRangeValue",
-          "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRangeValue",
+            "deco-sites/fashion/components/product/ProductShelf.tsx@Props",
+          "$id": "deco-sites/fashion/components/product/ProductShelf.tsx@Props",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem":
         {
           "type": "object",
-          "allOf": [{
-            "$ref":
-              "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterBase",
-          }],
+          "allOf": [],
           "properties": {
-            "@type": {
-              "title": "@type",
-              "type": "string",
-              "const": "FilterRange",
-            },
-            "values": {
-              "title": "Values",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRangeValue",
+            "label": { "title": "Label", "type": "string" },
+            "href": { "title": "Href", "type": "string" },
+          },
+          "required": ["label", "href"],
+          "title":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem",
+          "$id":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem",
+        },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem":
+        {
+          "type": "object",
+          "allOf": [],
+          "properties": {
+            "icon": {
+              "title": "Icon",
+              "anyOf": [
+                { "type": "string", "const": "Circle" },
+                { "type": "string", "const": "ChevronLeft" },
+                { "type": "string", "const": "ChevronRight" },
+                { "type": "string", "const": "ChevronUp" },
+                { "type": "string", "const": "ChevronDown" },
+                { "type": "string", "const": "QuestionMarkCircle" },
+                { "type": "string", "const": "User" },
+                { "type": "string", "const": "ShoppingCart" },
+                { "type": "string", "const": "Bars3" },
+                { "type": "string", "const": "Heart" },
+                { "type": "string", "const": "MagnifyingGlass" },
+                { "type": "string", "const": "XMark" },
+                { "type": "string", "const": "Plus" },
+                { "type": "string", "const": "Minus" },
+                { "type": "string", "const": "MapPin" },
+                { "type": "string", "const": "Phone" },
+                { "type": "string", "const": "Elo" },
+                { "type": "string", "const": "Mastercard" },
+                { "type": "string", "const": "Visa" },
+                { "type": "string", "const": "Pix" },
+                { "type": "string", "const": "Logo" },
+                { "type": "string", "const": "Facebook" },
+                { "type": "string", "const": "Instagram" },
+                { "type": "string", "const": "Tiktok" },
+                { "type": "string", "const": "Truck" },
+                { "type": "string", "const": "Discount" },
+                { "type": "string", "const": "Return" },
+                { "type": "string", "const": "CreditCard" },
+                { "type": "string", "const": "Deco" },
+                { "type": "string", "const": "Discord" },
+                { "type": "string", "const": "Trash" },
+                { "type": "string", "const": "FilterList" },
+              ],
             },
           },
-          "required": ["@type", "values"],
+          "required": ["icon"],
           "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange",
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem",
           "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange",
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange|FilterToggle":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem":
         {
           "anyOf": [{
             "$ref":
-              "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterToggle",
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem",
           }, {
             "$ref":
-              "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange",
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem",
           }],
           "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange|FilterToggle",
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange|FilterToggle[]":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]":
         {
           "type": "array",
           "items": {
             "$ref":
-              "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange|FilterToggle",
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem",
           },
           "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange|FilterToggle[]",
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]",
+        },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section":
+        {
+          "type": "object",
+          "allOf": [],
+          "properties": {
+            "label": { "title": "Label", "type": "string" },
+            "children": {
+              "title": "Children",
+              "$ref":
+                "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]",
+            },
+          },
+          "required": ["label", "children"],
+          "title":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section",
+          "$id":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section",
+        },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]":
+        {
+          "type": "array",
+          "items": {
+            "$ref":
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section",
+          },
+          "$id":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]",
+        },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props":
+        {
+          "type": "object",
+          "allOf": [],
+          "properties": {
+            "sections": {
+              "title": "Sections",
+              "$ref":
+                "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]",
+            },
+          },
+          "required": [],
+          "title": "deco-sites/fashion/components/footer/Footer.tsx@Props",
+          "$id": "deco-sites/fashion/components/footer/Footer.tsx@Props",
+        },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps":
+        {
+          "type": "object",
+          "allOf": [],
+          "properties": {
+            "placeholder": {
+              "title": "Placeholder",
+              "type": ["string", "null"],
+              "description": "Search bar default placeholder message",
+              "default": "What are you looking for?",
+            },
+            "action": {
+              "title": "Page path",
+              "type": ["string", "null"],
+              "description":
+                "When user clicks on the search button, navigate it to",
+              "default": "/s",
+            },
+            "name": {
+              "title": "Term name",
+              "type": ["string", "null"],
+              "description": "Querystring param used when navigating the user",
+              "default": "q",
+            },
+            "query": { "title": "Query", "type": ["string", "null"] },
+          },
+          "required": [],
+          "title":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
+          "$id":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
+        },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem":
+        {
+          "type": "object",
+          "allOf": [],
+          "properties": {
+            "label": { "title": "Label", "type": "string" },
+            "href": { "title": "Href", "type": "string" },
+            "children": {
+              "title": "Children",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "allOf": [],
+                "properties": {
+                  "label": { "title": "Label", "type": "string" },
+                  "href": { "title": "Href", "type": "string" },
+                  "children": {
+                    "title": "Children",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "allOf": [],
+                      "properties": {
+                        "label": { "title": "Label", "type": "string" },
+                        "href": { "title": "Href", "type": "string" },
+                      },
+                      "required": ["label", "href"],
+                    },
+                  },
+                },
+                "required": ["label", "href"],
+              },
+            },
+            "image": {
+              "type": "object",
+              "allOf": [],
+              "properties": {
+                "src": {
+                  "title": "Src",
+                  "$ref":
+                    "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+                },
+                "alt": { "title": "Alt", "type": ["string", "null"] },
+              },
+              "required": [],
+            },
+          },
+          "required": ["label", "href"],
+          "title":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem",
+          "$id":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem",
+        },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]":
+        {
+          "type": "array",
+          "items": {
+            "$ref":
+              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem",
+          },
+          "$id":
+            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
         },
       "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@PropertyValue":
         {
@@ -2892,392 +3247,46 @@ const manifest: DecoManifest = {
           "$id":
             "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@Product[]",
         },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductListingPage":
+      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Search":
         {
           "type": "object",
           "allOf": [],
           "properties": {
-            "breadcrumb": {
-              "title": "Breadcrumb",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@BreadcrumbList",
-            },
-            "filters": {
-              "title": "Filters",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@FilterRange|FilterToggle[]",
-            },
-            "products": {
-              "title": "Products",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@Product[]",
-            },
-            "pageInfo": {
-              "type": "object",
-              "allOf": [],
-              "properties": {
-                "currentPage": { "title": "Current Page", "type": "number" },
-                "nextPage": {
-                  "title": "Next Page",
-                  "anyOf": [{ "type": "string" }, { "type": "null" }],
-                },
-                "previousPage": {
-                  "title": "Previous Page",
-                  "anyOf": [{ "type": "string" }, { "type": "null" }],
-                },
-              },
-              "required": ["currentPage", "nextPage", "previousPage"],
-            },
+            "term": { "title": "Term", "type": "string" },
+            "count": { "title": "Count", "type": "number" },
           },
-          "required": ["breadcrumb", "filters", "products", "pageInfo"],
+          "required": ["term", "count"],
           "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductListingPage",
+            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Search",
           "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductListingPage",
+            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Search",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL0NvbnRyb2xzLnRzeA==@Props":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "page": {
-              "title": "Page",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductListingPage",
-            },
-          },
-          "required": ["page"],
-          "title": "deco-sites/fashion/components/search/Controls.tsx@Props",
-          "$id": "deco-sites/fashion/components/search/Controls.tsx@Props",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature": {
-        "type": "object",
-        "allOf": [],
-        "properties": {
-          "icon": {
-            "title": "Icon",
-            "anyOf": [
-              { "type": "string", "const": "Circle" },
-              { "type": "string", "const": "ChevronLeft" },
-              { "type": "string", "const": "ChevronRight" },
-              { "type": "string", "const": "ChevronUp" },
-              { "type": "string", "const": "ChevronDown" },
-              { "type": "string", "const": "QuestionMarkCircle" },
-              { "type": "string", "const": "User" },
-              { "type": "string", "const": "ShoppingCart" },
-              { "type": "string", "const": "Bars3" },
-              { "type": "string", "const": "Heart" },
-              { "type": "string", "const": "MagnifyingGlass" },
-              { "type": "string", "const": "XMark" },
-              { "type": "string", "const": "Plus" },
-              { "type": "string", "const": "Minus" },
-              { "type": "string", "const": "MapPin" },
-              { "type": "string", "const": "Phone" },
-              { "type": "string", "const": "Elo" },
-              { "type": "string", "const": "Mastercard" },
-              { "type": "string", "const": "Visa" },
-              { "type": "string", "const": "Pix" },
-              { "type": "string", "const": "Logo" },
-              { "type": "string", "const": "Facebook" },
-              { "type": "string", "const": "Instagram" },
-              { "type": "string", "const": "Tiktok" },
-              { "type": "string", "const": "Truck" },
-              { "type": "string", "const": "Discount" },
-              { "type": "string", "const": "Return" },
-              { "type": "string", "const": "CreditCard" },
-              { "type": "string", "const": "Deco" },
-              { "type": "string", "const": "Discord" },
-              { "type": "string", "const": "Trash" },
-              { "type": "string", "const": "FilterList" },
-            ],
-            "description": "Image src",
-          },
-          "title": {
-            "title": "Title",
-            "type": "string",
-            "description": "Title",
-          },
-          "description": {
-            "title": "Description",
-            "type": "string",
-            "description": "Description and Image alt text",
-          },
-        },
-        "required": ["icon", "title", "description"],
-        "title":
-          "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature",
-        "$id":
-          "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature",
-      },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]":
+      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Search[]":
         {
           "type": "array",
           "items": {
             "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature",
+              "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Search",
           },
           "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]",
+            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Search[]",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Props": {
-        "type": "object",
-        "allOf": [],
-        "properties": {
-          "features": {
-            "title": "Features",
-            "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]",
-          },
-        },
-        "required": ["features"],
-        "title": "deco-sites/fashion/components/ui/Features.tsx@Props",
-        "$id": "deco-sites/fashion/components/ui/Features.tsx@Props",
-      },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props":
+      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Suggestion":
         {
           "type": "object",
           "allOf": [],
           "properties": {
-            "title": { "title": "Title", "type": "string" },
-            "products": {
-              "title": "Products",
+            "searches": {
+              "title": "Searches",
               "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@Product[]",
+                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Search[]",
             },
           },
-          "required": ["title", "products"],
+          "required": ["searches"],
           "title":
-            "deco-sites/fashion/components/product/ProductShelf.tsx@Props",
-          "$id": "deco-sites/fashion/components/product/ProductShelf.tsx@Props",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "label": { "title": "Label", "type": "string" },
-            "href": { "title": "Href", "type": "string" },
-          },
-          "required": ["label", "href"],
-          "title":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem",
+            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Suggestion",
           "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "icon": {
-              "title": "Icon",
-              "anyOf": [
-                { "type": "string", "const": "Circle" },
-                { "type": "string", "const": "ChevronLeft" },
-                { "type": "string", "const": "ChevronRight" },
-                { "type": "string", "const": "ChevronUp" },
-                { "type": "string", "const": "ChevronDown" },
-                { "type": "string", "const": "QuestionMarkCircle" },
-                { "type": "string", "const": "User" },
-                { "type": "string", "const": "ShoppingCart" },
-                { "type": "string", "const": "Bars3" },
-                { "type": "string", "const": "Heart" },
-                { "type": "string", "const": "MagnifyingGlass" },
-                { "type": "string", "const": "XMark" },
-                { "type": "string", "const": "Plus" },
-                { "type": "string", "const": "Minus" },
-                { "type": "string", "const": "MapPin" },
-                { "type": "string", "const": "Phone" },
-                { "type": "string", "const": "Elo" },
-                { "type": "string", "const": "Mastercard" },
-                { "type": "string", "const": "Visa" },
-                { "type": "string", "const": "Pix" },
-                { "type": "string", "const": "Logo" },
-                { "type": "string", "const": "Facebook" },
-                { "type": "string", "const": "Instagram" },
-                { "type": "string", "const": "Tiktok" },
-                { "type": "string", "const": "Truck" },
-                { "type": "string", "const": "Discount" },
-                { "type": "string", "const": "Return" },
-                { "type": "string", "const": "CreditCard" },
-                { "type": "string", "const": "Deco" },
-                { "type": "string", "const": "Discord" },
-                { "type": "string", "const": "Trash" },
-                { "type": "string", "const": "FilterList" },
-              ],
-            },
-          },
-          "required": ["icon"],
-          "title":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem",
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem":
-        {
-          "anyOf": [{
-            "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem",
-          }, {
-            "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem",
-          }],
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]":
-        {
-          "type": "array",
-          "items": {
-            "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem",
-          },
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "label": { "title": "Label", "type": "string" },
-            "children": {
-              "title": "Children",
-              "$ref":
-                "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]",
-            },
-          },
-          "required": ["label", "children"],
-          "title":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section",
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]":
-        {
-          "type": "array",
-          "items": {
-            "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section",
-          },
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "sections": {
-              "title": "Sections",
-              "$ref":
-                "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]",
-            },
-          },
-          "required": [],
-          "title": "deco-sites/fashion/components/footer/Footer.tsx@Props",
-          "$id": "deco-sites/fashion/components/footer/Footer.tsx@Props",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "placeholder": {
-              "title": "Placeholder",
-              "type": ["string", "null"],
-              "description": "Search bar default placeholder message",
-              "default": "What are you looking for?",
-            },
-            "action": {
-              "title": "Page path",
-              "type": ["string", "null"],
-              "description":
-                "When user clicks on the search button, navigate it to",
-              "default": "/s",
-            },
-            "name": {
-              "title": "Term name",
-              "type": ["string", "null"],
-              "description": "Querystring param used when navigating the user",
-              "default": "q",
-            },
-            "query": { "title": "Query", "type": ["string", "null"] },
-          },
-          "required": [],
-          "title":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
-        },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image":
-        {
-          "type": "string",
-          "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "label": { "title": "Label", "type": "string" },
-            "href": { "title": "Href", "type": "string" },
-            "children": {
-              "title": "Children",
-              "type": "array",
-              "items": {
-                "type": "object",
-                "allOf": [],
-                "properties": {
-                  "label": { "title": "Label", "type": "string" },
-                  "href": { "title": "Href", "type": "string" },
-                  "children": {
-                    "title": "Children",
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "allOf": [],
-                      "properties": {
-                        "label": { "title": "Label", "type": "string" },
-                        "href": { "title": "Href", "type": "string" },
-                      },
-                      "required": ["label", "href"],
-                    },
-                  },
-                },
-                "required": ["label", "href"],
-              },
-            },
-            "image": {
-              "type": "object",
-              "allOf": [],
-              "properties": {
-                "src": {
-                  "title": "Src",
-                  "$ref":
-                    "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image",
-                },
-                "alt": { "title": "Alt", "type": ["string", "null"] },
-              },
-              "required": [],
-            },
-          },
-          "required": ["label", "href"],
-          "title":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem",
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem",
-        },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]":
-        {
-          "type": "array",
-          "items": {
-            "$ref":
-              "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem",
-          },
-          "$id":
-            "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
+            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Suggestion",
         },
       "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props":
         {
@@ -3307,32 +3316,15 @@ const manifest: DecoManifest = {
                 "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@Product[]",
               "description": "Product suggestions displayed on search",
             },
+            "suggestions": {
+              "title": "Enable Top Search terms",
+              "$ref":
+                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS92dGV4L3R5cGVzLnRz@Suggestion",
+            },
           },
           "required": ["alerts"],
           "title": "deco-sites/fashion/components/header/Header.tsx@Props",
           "$id": "deco-sites/fashion/components/header/Header.tsx@Props",
-        },
-      "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductDetailsPage":
-        {
-          "type": "object",
-          "allOf": [],
-          "properties": {
-            "breadcrumbList": {
-              "title": "Breadcrumb List",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@BreadcrumbList",
-            },
-            "product": {
-              "title": "Product",
-              "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@Product",
-            },
-          },
-          "required": ["breadcrumbList", "product"],
-          "title":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductDetailsPage",
-          "$id":
-            "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductDetailsPage",
         },
       "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0RGV0YWlscy50c3g=@Props":
         {
@@ -3343,7 +3335,7 @@ const manifest: DecoManifest = {
               "title": "Page",
               "anyOf": [{
                 "$ref":
-                  "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductDetailsPage",
+                  "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage",
               }, { "type": "null" }],
             },
           },
@@ -3361,7 +3353,7 @@ const manifest: DecoManifest = {
             "page": {
               "title": "Page",
               "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21tZXJjZS90eXBlcy50cw==@ProductListingPage",
+                "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage",
             },
           },
           "required": ["page"],
@@ -3378,7 +3370,7 @@ const manifest: DecoManifest = {
             "src": {
               "title": "Src",
               "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image",
+                "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
             },
             "alt": { "title": "Alt", "type": "string" },
             "href": { "title": "Href", "type": "string" },
@@ -3424,13 +3416,13 @@ const manifest: DecoManifest = {
             "desktop": {
               "title": "Desktop",
               "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image",
+                "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
               "description": "desktop otimized image",
             },
             "mobile": {
               "title": "Mobile",
               "$ref":
-                "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image",
+                "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
               "description": "mobile otimized image",
             },
             "href": {
@@ -3535,7 +3527,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@b8703d9b-68bf-4b35-a12c-e0b937e11428",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@3a0d981e-aeb5-49be-bc9f-9ee4cb47c598",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -3551,7 +3543,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@9164f2c3-783c-40bb-91f2-55d6ab904077",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@3da7eeb3-37bb-4fe6-a409-bfcda08ef903",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -3567,7 +3559,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvY29tcG9uZW50cy9MaXZlQ29udHJvbHMudHN4@e328d591-a6f7-428a-9081-6cc2561fe879",
+            "#/definitions/ZGVjby1jeC9saXZlL2NvbXBvbmVudHMvTGl2ZUNvbnRyb2xzLnRzeA==@618a4f13-c859-41bb-8ac5-6ac976f7d2a3",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -3583,7 +3575,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@6575f571-3db2-49d6-b87a-2c5a7db86a92",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@0e146c2f-f751-4160-8979-76f82fb49c7a",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -3638,6 +3630,22 @@ const manifest: DecoManifest = {
           },
         },
         "$id": "deco-sites/fashion/sections/Features.tsx",
+      },
+      "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4": {
+        "title": "deco-sites/fashion/sections/BannerGrid.tsx",
+        "type": "object",
+        "allOf": [{
+          "$ref":
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Props",
+        }],
+        "required": ["__resolveType"],
+        "properties": {
+          "__resolveType": {
+            "type": "string",
+            "default": "deco-sites/fashion/sections/BannerGrid.tsx",
+          },
+        },
+        "$id": "deco-sites/fashion/sections/BannerGrid.tsx",
       },
       "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZi50c3g=": {
         "title": "deco-sites/fashion/sections/ProductShelf.tsx",
@@ -3858,6 +3866,9 @@ const manifest: DecoManifest = {
             "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz",
         }, {
           "$ref":
+            "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4U3VnZ2VzdGlvbnMudHM=",
+        }, {
+          "$ref":
             "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9zaG9waWZ5UHJvZHVjdExpc3RpbmdQYWdlLnRz",
         }, {
           "$ref":
@@ -3959,6 +3970,9 @@ const manifest: DecoManifest = {
         }, {
           "$ref":
             "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZlYXR1cmVzLnRzeA==",
+        }, {
+          "$ref":
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4",
         }, {
           "$ref":
             "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZi50c3g=",

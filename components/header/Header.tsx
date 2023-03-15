@@ -1,7 +1,8 @@
 import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Modals from "$store/islands/HeaderModals.tsx";
-import type { Product } from "deco-sites/std/commerce/types.ts";
 import type { Image } from "deco-sites/std/components/types.ts";
+import { Product } from "../../../std/commerce/types.ts";
+import { Suggestion } from "../../../std/commerce/vtex/types.ts";
 
 import Alert from "./Alert.tsx";
 import { headerHeight } from "./constants.ts";
@@ -39,9 +40,16 @@ export interface Props {
    * @description Product suggestions displayed on search
    */
   products?: Product[];
+
+  /**
+   * @title Enable Top Search terms
+   */
+  suggestions?: Suggestion;
 }
 
-function Header({ alerts, searchbar, products, navItems = [] }: Props) {
+function Header(
+  { alerts, searchbar, products, navItems = [], suggestions }: Props,
+) {
   return (
     <header class={`h-[${headerHeight}]`}>
       <div class="bg-default fixed w-full z-50">
@@ -51,7 +59,7 @@ function Header({ alerts, searchbar, products, navItems = [] }: Props) {
 
       <Modals
         menu={{ items: navItems }}
-        searchbar={{ ...searchbar, products }}
+        searchbar={{ ...searchbar, products, suggestions }}
       />
     </header>
   );
