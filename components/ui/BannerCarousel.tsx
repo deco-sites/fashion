@@ -50,44 +50,44 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
 
   return (
     <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
-      <Picture class="w-full" preload={lcp}>
-        <Source
-          media="(max-width: 767px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={mobile}
-          width={360}
-          height={600}
-        />
-        <Source
-          media="(min-width: 768px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={desktop}
-          width={1440}
-          height={600}
-        />
-        <img
-          class="object-cover w-full sm:h-full"
-          loading={lcp ? "eager" : "lazy"}
-          src={desktop}
-          alt={alt}
-        />
-      </Picture>
-      {action && (
-        <div
-          class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
-          style={{ backdropFilter: "blur(8px)" }}
-        >
-          <Text variant="heading-1" tone="default-inverse">
-            {action.title}
-          </Text>
-          <Text variant="heading-3" tone="default-inverse">
-            {action.subTitle}
-          </Text>
-          <a href={action.href} aria-label={action.label}>
+      <a href={action?.href ?? "#"} aria-label={action?.label}>
+        <Picture class="w-full" preload={lcp}>
+          <Source
+            media="(max-width: 767px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={mobile}
+            width={360}
+            height={600}
+          />
+          <Source
+            media="(min-width: 768px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={desktop}
+            width={1440}
+            height={600}
+          />
+          <img
+            class="object-cover w-full sm:h-full"
+            loading={lcp ? "eager" : "lazy"}
+            src={desktop}
+            alt={alt}
+          />
+        </Picture>
+        {action && (
+          <div
+            class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
+            style={{ backdropFilter: "blur(8px)" }}
+          >
+            <Text variant="heading-1" tone="default-inverse">
+              {action.title}
+            </Text>
+            <Text variant="heading-3" tone="default-inverse">
+              {action.subTitle}
+            </Text>
             <Button variant="secondary">{action.label}</Button>
-          </a>
-        </div>
-      )}
+          </div>
+        )}
+      </a>
     </div>
   );
 }
