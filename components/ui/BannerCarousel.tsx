@@ -100,14 +100,106 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   );
 }
 
-const progressFrameName = keyframes`
-from: {
-  --dot-progress: 0%;
+function Dots({ images, interval = 0 }: Props) {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @property --dot-progress {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+          }`,
+        }}
+      >
+      </style>
+      <ol
+        class="flex items-center justify-center col-span-full gap-2 z-10"
+        style={{ gridRow: 4 }}
+      >
+        {images?.map((_, index) => (
+          <li class="h-full">
+            <button
+              data-dot={index}
+              aria-label={`go to slider item ${index}`}
+              class="h-full rounded focus:outline-none group"
+            >
+              <div
+                class={tw`group-disabled:${
+                  animation(
+                    `${interval}s ease-out 1 forwards`,
+                    keyframes`
+                      from: {
+                        --dot-progress: 0%;
+                      }
+                      to {
+                        --dot-progress: 100%;
+                      }
+                    `,
+                  )
+                } w-16 sm:w-20 h-0.5`}
+                style={{
+                  background:
+                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.16) var(--dot-progress))",
+                }}
+              />
+            </button>
+          </li>
+        ))}
+      </ol>
+    </>
+  );
 }
-to {
-  --dot-progress: 100%;
+
+function Controls() {
+  return (
+    <>
+      <div
+        class="flex items-center justify-center z-10"
+        style={{
+          gridColumn: 1,
+          gridRow: 2,
+        }}
+      >
+        <Button
+          class="h-12 w-12"
+          variant="icon"
+          data-slide="prev"
+          aria-label="Previous item"
+        >
+          <Icon
+            class="text-default-inverse"
+            size={20}
+            id="ChevronLeft"
+            strokeWidth={3}
+          />
+        </Button>
+      </div>
+      <div
+        class="flex items-center justify-center z-10"
+        style={{
+          gridColumn: 3,
+          gridRow: 2,
+        }}
+      >
+        <Button
+          class="h-12 w-12"
+          variant="icon"
+          data-slide="next"
+          aria-label="Next item"
+        >
+          <Icon
+            class="text-default-inverse"
+            size={20}
+            id="ChevronRight"
+            strokeWidth={3}
+          />
+        </Button>
+      </div>
+    </>
+  );
 }
-`;
 
 function BannerCarousel({ images, preload, interval = 8 }: Props) {
   const id = useId();
@@ -123,86 +215,9 @@ function BannerCarousel({ images, preload, interval = 8 }: Props) {
         ))}
       </Slider>
 
-      <>
-        <div
-          class="flex items-center justify-center z-10"
-          style={{
-            gridColumn: 1,
-            gridRow: 2,
-          }}
-        >
-          <Button
-            class="h-12 w-12"
-            variant="icon"
-            data-slide="prev"
-            aria-label="Previous item"
-          >
-            <Icon
-              class="text-default-inverse"
-              size={20}
-              id="ChevronLeft"
-              strokeWidth={3}
-            />
-          </Button>
-        </div>
-        <div
-          class="flex items-center justify-center z-10"
-          style={{
-            gridColumn: 3,
-            gridRow: 2,
-          }}
-        >
-          <Button
-            class="h-12 w-12"
-            variant="icon"
-            data-slide="next"
-            aria-label="Next item"
-          >
-            <Icon
-              class="text-default-inverse"
-              size={20}
-              id="ChevronRight"
-              strokeWidth={3}
-            />
-          </Button>
-        </div>
-      </>
+      <Controls />
 
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          @property --dot-progress {
-            syntax: '<percentage>';
-            inherits: false;
-            initial-value: 0%;
-          }`,
-        }}
-      >
-      </style>
-
-      <ol
-        class="flex items-center justify-center col-span-full gap-2 z-10"
-        style={{ gridRow: 4 }}
-      >
-        {images?.map((_, index) => (
-          <li>
-            <button
-              data-dot={index}
-              aria-label={`go to slider item ${index}`}
-              class={tw`w-16 sm:w-20 h-0.5 rounded bg-hover-inverse disabled:${
-                animation(
-                  `${interval || 0}s ease-out 1 forwards`,
-                  progressFrameName,
-                )
-              }`}
-              style={{
-                background:
-                  "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.16) var(--dot-progress))",
-              }}
-            />
-          </li>
-        ))}
-      </ol>
+      <Dots images={images} interval={interval} />
 
       <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
     </div>

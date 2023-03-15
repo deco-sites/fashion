@@ -123,15 +123,6 @@ const setup = ({ rootId, behavior, interval }: Props) => {
     goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
   };
 
-  let timeout: number | undefined;
-  const stopAutoplay = () => {
-    clearInterval(timeout);
-  };
-  const restartAutoplay = () => {
-    timeout && clearInterval(timeout);
-    timeout = interval && setInterval(onClickNext, interval);
-  };
-
   const observer = new IntersectionObserver(
     (items) =>
       items.forEach((item) => {
@@ -157,7 +148,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   prev?.addEventListener("click", onClickPrev);
   next?.addEventListener("click", onClickNext);
 
-  restartAutoplay();
+  const timeout = interval && setInterval(onClickNext, interval);
 
   // Unregister callbacks
   return () => {
@@ -170,7 +161,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
 
     observer.disconnect();
 
-    clearTimeout(timeout);
+    clearInterval(timeout);
   };
 };
 
