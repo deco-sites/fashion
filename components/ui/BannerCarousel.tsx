@@ -49,7 +49,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[600px] min-w-[100vw]">
+    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
       <Picture class="w-full" preload={lcp}>
         <Source
           media="(max-width: 767px)"
