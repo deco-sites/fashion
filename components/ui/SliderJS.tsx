@@ -14,6 +14,10 @@ const ATTRIBUTES = {
   "data-dot": "data-dot",
 };
 
+// Percentage of the item that has to be inside the container
+// for it it be considered as inside the container
+const THRESHOLD = 0.6;
+
 const intersectionX = (element: DOMRect, container: DOMRect): number => {
   const delta = container.width / 1_000;
 
@@ -35,8 +39,6 @@ const intersectionX = (element: DOMRect, container: DOMRect): number => {
 
   return element.width;
 };
-
-const threshold = 0.6;
 
 // as any are ok in typeguard functions
 const isHTMLElement = (x: Element): x is HTMLElement =>
@@ -73,7 +75,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
         sliderRect,
       ) / rect.width;
 
-      if (ratio > threshold) {
+      if (ratio > THRESHOLD) {
         indices.push(index);
       }
     }
@@ -136,7 +138,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
           dot?.removeAttribute("disabled");
         }
       }),
-    { threshold: threshold, root: slider },
+    { threshold: THRESHOLD, root: slider },
   );
 
   items.forEach((item) => observer.observe(item));
