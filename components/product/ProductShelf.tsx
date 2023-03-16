@@ -11,7 +11,7 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   title: string;
-  products: LoaderReturnType<Product[]>;
+  products: LoaderReturnType<Product[] | null>;
   itemsPerPage?: number;
 }
 

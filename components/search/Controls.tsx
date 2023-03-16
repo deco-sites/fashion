@@ -10,17 +10,17 @@ import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 
 export interface Props {
-  page: LoaderReturnType<ProductListingPage>;
+  page: LoaderReturnType<ProductListingPage | null>;
 }
 
-function SearchControls({ page }: Props) {
+function NotFound() {
+  return <div />;
+}
+
+function Controls({ page }: { page: ProductListingPage }) {
   const open = useSignal(false);
   const filters = page?.filters;
   const breadcrumb = page?.breadcrumb;
-
-  if (!filters || filters.length === 0) {
-    return <div />;
-  }
 
   return (
     <Container class="flex flex-col justify-between mb-4 md:mb-0 p-4 md:p-0 sm:gap-4 sm:flex-row sm:h-[53px] md:border-b-1">
@@ -52,6 +52,14 @@ function SearchControls({ page }: Props) {
       </Modal>
     </Container>
   );
+}
+
+function SearchControls({ page }: Props) {
+  if (!page || !page.filters || page.filters.length === 0) {
+    return <NotFound />;
+  }
+
+  return <Controls page={page} />;
 }
 
 export default SearchControls;

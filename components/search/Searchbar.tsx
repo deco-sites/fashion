@@ -46,8 +46,8 @@ export type Props = EditableProps & {
    * @title Product suggestions
    * @description Product suggestions displayed on searchs
    */
-  products?: Product[];
-  suggestions?: Suggestion;
+  products?: Product[] | null;
+  suggestions?: Suggestion | null;
 };
 
 function Searchbar({
@@ -56,8 +56,10 @@ function Searchbar({
   name = "q",
   query,
   products,
-  suggestions: { searches } = {},
+  suggestions,
 }: Props) {
+  const searches = suggestions?.searches;
+
   return (
     <>
       <div class="px-4 mt-4">
