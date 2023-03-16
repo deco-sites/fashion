@@ -22,77 +22,6 @@ const isIcon = (item: Item): item is IconItem =>
   // deno-lint-ignore no-explicit-any
   typeof (item as any)?.icon === "string";
 
-const defaultSections: Section[] = [
-  {
-    label: "Sobre",
-    children: [
-      {
-        label: "Quem somos",
-        href: "https://www.deco.cx",
-      },
-      {
-        label: "Privacidade e segurança",
-        href: "https://www.deco.cx",
-      },
-      {
-        label: "Termos de uso",
-        href: "https://www.deco.cx",
-      },
-      {
-        label: "Trabalhe Conosco",
-        href: "https://www.deco.cx",
-      },
-    ],
-  },
-  {
-    label: "Atendimento",
-    children: [
-      {
-        label: "Central de Atendimento",
-        href: "https://www.deco.cx",
-      },
-      {
-        label: "Fale conosco pelo WhatsApp",
-        href: "https://www.deco.cx",
-      },
-      {
-        label: "Troca e Devolução",
-        href: "https://www.deco.cx",
-      },
-    ],
-  },
-  {
-    label: "Minha Conta",
-    children: [
-      {
-        label: "Login/Cadastro",
-        href: "https://www.deco.cx",
-      },
-      {
-        label: "Meus pedidos",
-        href: "https://www.deco.cx",
-      },
-    ],
-  },
-  {
-    label: "Formas de Pagamento",
-    children: [
-      {
-        icon: "Pix",
-      },
-      {
-        icon: "Visa",
-      },
-      {
-        icon: "Elo",
-      },
-      {
-        icon: "Mastercard",
-      },
-    ],
-  },
-];
-
 function SectionItem({ item }: { item: Item }) {
   return (
     <Text variant="caption" tone="default-inverse">
@@ -129,7 +58,7 @@ export interface Props {
   sections?: Section[];
 }
 
-function Footer({ sections = defaultSections }: Props) {
+function Footer({ sections = [] }: Props) {
   return (
     <footer class="w-full bg-footer flex flex-col divide-y-1 divide-default">
       <div>
