@@ -13,8 +13,9 @@ import * as $4 from "./routes/index.tsx";
 import * as $$0 from "./islands/AddToCartButton.tsx";
 import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
-import * as $$3 from "./islands/SearchControls.tsx";
-import * as $$4 from "./islands/SliderJS.tsx";
+import * as $$3 from "./islands/HeaderSearchMenu.tsx";
+import * as $$4 from "./islands/SearchControls.tsx";
+import * as $$5 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
@@ -43,13 +44,14 @@ import * as $$$$6 from "deco-sites/std/functions/occProductDetailsPage.ts";
 import * as $$$$7 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
 import * as $$$$8 from "deco-sites/std/functions/shopifyProductList.ts";
 import * as $$$$9 from "deco-sites/std/functions/shopifyProductListingPage.ts";
-import * as $$$$10 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$11 from "deco-sites/std/functions/vtexLegacyProductList.ts";
-import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as $$$$13 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as $$$$14 from "deco-sites/std/functions/vtexProductList.ts";
-import * as $$$$15 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as $$$$16 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as $$$$10 from "deco-sites/std/functions/vtexConfig.ts";
+import * as $$$$11 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as $$$$14 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$15 from "deco-sites/std/functions/vtexProductList.ts";
+import * as $$$$16 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as $$$$17 from "deco-sites/std/functions/vtexSuggestions.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -63,8 +65,9 @@ const manifest: DecoManifest = {
     "./islands/AddToCartButton.tsx": $$0,
     "./islands/HeaderButton.tsx": $$1,
     "./islands/HeaderModals.tsx": $$2,
-    "./islands/SearchControls.tsx": $$3,
-    "./islands/SliderJS.tsx": $$4,
+    "./islands/HeaderSearchMenu.tsx": $$3,
+    "./islands/SearchControls.tsx": $$4,
+    "./islands/SliderJS.tsx": $$5,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -97,13 +100,14 @@ const manifest: DecoManifest = {
     "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$7,
     "deco-sites/std/functions/shopifyProductList.ts": $$$$8,
     "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$9,
-    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$10,
-    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$11,
-    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$12,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$13,
-    "deco-sites/std/functions/vtexProductList.ts": $$$$14,
-    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$15,
-    "deco-sites/std/functions/vtexSuggestions.ts": $$$$16,
+    "deco-sites/std/functions/vtexConfig.ts": $$$$10,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$11,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$12,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$13,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$14,
+    "deco-sites/std/functions/vtexProductList.ts": $$$$15,
+    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$16,
+    "deco-sites/std/functions/vtexSuggestions.ts": $$$$17,
   },
   schemas: {
     "./sections/BannerGrid.tsx": {
@@ -812,10 +816,17 @@ const manifest: DecoManifest = {
             "description": "Product suggestions displayed on search",
           },
           "suggestions": {
-            "$id": "9eacf861fb2b53de69284b63e9bc22217300cc3c",
+            "$id": "664f9b3b60b4a75294c340d8218b4ad76821fd58",
             "format": "live-function",
             "type": "string",
             "title": "Enable Top Search terms",
+          },
+          "configVTEX": {
+            "$id": "4a94f4ff0e8e4441f26651aaed22f0df82f38c93",
+            "format": "live-function",
+            "type": "string",
+            "title": "Config V T E X",
+            "description": "vtex config used for search autocompletion;",
           },
         },
         "required": [
@@ -1412,7 +1423,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
           },
         },
         "additionalProperties": true,
@@ -1445,7 +1456,22 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "deco-sites/std/functions/vtexConfig.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vtex Config",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "4a94f4ff0e8e4441f26651aaed22f0df82f38c93",
           },
         },
         "additionalProperties": true,
@@ -1540,7 +1566,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
           },
         },
         "additionalProperties": true,
@@ -1596,7 +1622,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
           },
         },
         "additionalProperties": true,
@@ -1691,7 +1717,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
           },
         },
         "additionalProperties": true,
@@ -1724,7 +1750,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
           },
         },
         "additionalProperties": true,
@@ -1751,7 +1777,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9eacf861fb2b53de69284b63e9bc22217300cc3c",
+            "$id": "8d4ae3ade2168c42837ce1dfda9948c60fc311ae",
           },
         },
         "additionalProperties": true,

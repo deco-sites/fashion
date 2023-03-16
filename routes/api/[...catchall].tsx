@@ -120,12 +120,17 @@ const proxy: Handlers["GET"] = async (req, ctx) => {
 
   hopByHop.forEach((h) => headers.delete(h));
 
-  const response = await fetch(`${proxyTo}/${ctx.params.catchall}`, {
-    headers,
-    redirect: "manual",
-    method: req.method,
-    body: req.body,
-  });
+  const qs = url.searchParams.toString();
+
+  const response = await fetch(
+    `${proxyTo}/${ctx.params.catchall}?${qs}`,
+    {
+      headers,
+      redirect: "manual",
+      method: req.method,
+      body: req.body,
+    },
+  );
 
   // Change cookies domain
   const responseHeaders = new Headers(response.headers);
