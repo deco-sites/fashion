@@ -6,6 +6,30 @@
  */
 import type { Options } from "$fresh/plugins/twind.ts";
 
+const gridCols = ([arg]: string[]) => {
+  const template = Number.isInteger(Number(arg))
+    ? `repeat(${arg}, minmax(0, 1fr))`
+    : arg
+    ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
+    : arg;
+
+  return {
+    "grid-template-columns": template,
+  };
+};
+
+const gridRows = ([arg]: string[]) => {
+  const template = Number.isInteger(Number(arg))
+    ? `repeat(${arg}, minmax(0, 1fr))`
+    : arg
+    ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
+    : arg;
+
+  return {
+    "grid-template-rows": template,
+  };
+};
+
 const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
@@ -140,24 +164,8 @@ const options: Omit<Options, "selfURL"> = {
       "max-height": "min-content",
     },
     "snap": ([mod]) => ({ "scroll-snap-align": mod }),
-    "grid-cols": ([arg]) => {
-      const template = Number.isInteger(Number(arg))
-        ? `repeat(${arg}, minmax(0, 1fr))`
-        : arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ");
-
-      return {
-        "grid-template-columns": template,
-      };
-    },
-    "grid-rows": ([arg]) => {
-      const template = Number.isInteger(Number(arg))
-        ? `repeat(${arg}, minmax(0, 1fr))`
-        : arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ");
-
-      return {
-        "grid-template-rows": template,
-      };
-    },
+    "grid-cols": gridCols,
+    "grid-rows": gridRows,
     "scroll-smooth": {
       "scroll-behavior": "smooth",
       "-webkit-overflow-scrolling": "touch",
