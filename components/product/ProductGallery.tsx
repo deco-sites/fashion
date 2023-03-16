@@ -7,14 +7,22 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
-  page: LoaderReturnType<ProductListingPage>;
+  page: LoaderReturnType<ProductListingPage | null>;
 }
 
-function ProductGallery({ page }: Props) {
+function NotFound() {
+  return (
+    <div class="w-full flex justify-center items-center py-10">
+      <Text>Not Found!</Text>
+    </div>
+  );
+}
+
+function Gallery({ page }: { page: ProductListingPage }) {
   return (
     <Container class="px-4 sm:py-10">
       <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
-        {page?.products?.map((product, index) => (
+        {page.products?.map((product, index) => (
           <div class="w-full list-none">
             <ProductCard product={product} preload={index === 0} />
           </div>
@@ -38,6 +46,14 @@ function ProductGallery({ page }: Props) {
       </div>
     </Container>
   );
+}
+
+function ProductGallery({ page }: Props) {
+  if (!page) {
+    return <NotFound />;
+  }
+
+  return <Gallery page={page} />;
 }
 
 export default ProductGallery;

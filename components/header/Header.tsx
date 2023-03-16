@@ -39,12 +39,12 @@ export interface Props {
    * @title Product suggestions
    * @description Product suggestions displayed on search
    */
-  products?: LoaderReturnType<Product[]>;
+  products?: LoaderReturnType<Product[] | null>;
 
   /**
    * @title Enable Top Search terms
    */
-  suggestions?: LoaderReturnType<Suggestion>;
+  suggestions?: LoaderReturnType<Suggestion | null>;
 }
 
 function Header(

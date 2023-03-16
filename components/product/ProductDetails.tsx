@@ -16,11 +16,20 @@ export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
 }
 
-function ProductDetails({ page }: Props) {
-  if (!page) {
-    return null;
-  }
+function NotFound() {
+  return (
+    <div class="w-full flex justify-center items-center py-28">
+      <div class="flex flex-col items-center justify-center gap-6">
+        <Text variant="heading-2">Página não encontrada</Text>
+        <a href="/">
+          <Button>Voltar à página inicial</Button>
+        </a>
+      </div>
+    </div>
+  );
+}
 
+function Details({ page }: { page: ProductDetailsPage }) {
   const {
     breadcrumbList,
     product,
@@ -123,6 +132,14 @@ function ProductDetails({ page }: Props) {
       </div>
     </Container>
   );
+}
+
+function ProductDetails({ page }: Props) {
+  if (page) {
+    return <Details page={page} />;
+  }
+
+  return <NotFound />;
 }
 
 export default ProductDetails;

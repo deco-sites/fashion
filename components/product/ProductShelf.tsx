@@ -11,7 +11,7 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   title: string;
-  products: LoaderReturnType<Product[]>;
+  products: LoaderReturnType<Product[] | null>;
   itemsPerPage?: number;
 }
 
@@ -20,6 +20,10 @@ function ProductShelf({
   products,
 }: Props) {
   const id = useId();
+
+  if (!products || products.length === 0) {
+    return null;
+  }
 
   return (
     <Container
