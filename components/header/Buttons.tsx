@@ -1,7 +1,7 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
-import { useCart } from "deco-sites/std/commerce/vtex/cart/useCart.ts";
+import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 
 function SearchButton() {
   const { displaySearchbar } = useUI();
@@ -11,7 +11,7 @@ function SearchButton() {
       variant="icon"
       aria-label="search icon button"
       onClick={() => {
-        displaySearchbar.value = true;
+        displaySearchbar.value = !displaySearchbar.peek();
       }}
     >
       <Icon id="MagnifyingGlass" width={20} height={20} strokeWidth={0.1} />

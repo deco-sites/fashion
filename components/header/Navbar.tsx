@@ -5,9 +5,12 @@ import Button from "$store/components/ui/Button.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
+import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import HeaderSearchMenu from "$store/islands/HeaderSearchMenu.tsx";
 
-function Navbar({ items }: {
+function Navbar({ items, searchbar }: {
   items: INavItem[];
+  searchbar: SearchbarProps;
 }) {
   return (
     <>
@@ -43,6 +46,7 @@ function Navbar({ items }: {
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
           <HeaderButton variant="search" />
+          <HeaderSearchMenu searchbar={searchbar} />
           <Button
             as="a"
             variant="icon"
