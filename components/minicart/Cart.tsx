@@ -1,4 +1,4 @@
-import { useCart } from "deco-sites/std/commerce/vtex/cart/useCart.ts";
+import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import Button from "$store/components/ui/Button.tsx";
 import Text from "$store/components/ui/Text.tsx";
