@@ -19,7 +19,7 @@ function SearchControls({ page }: Props) {
   const breadcrumb = page?.breadcrumb;
 
   if (!filters || filters.length === 0) {
-    return null;
+    return <div />;
   }
 
   return (
