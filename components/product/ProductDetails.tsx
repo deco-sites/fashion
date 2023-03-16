@@ -18,7 +18,11 @@ export interface Props {
 
 function ProductDetails({ page }: Props) {
   if (!page) {
-    return null;
+    return (
+      <div class="w-full flex justify-center items-center py-10">
+        <Text>Not Found!</Text>
+      </div>
+    );
   }
 
   const {

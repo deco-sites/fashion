@@ -11,10 +11,18 @@ export interface Props {
 }
 
 function ProductGallery({ page }: Props) {
+  if (!page) {
+    return (
+      <div class="w-full flex justify-center items-center py-10">
+        <Text>Not Found!</Text>
+      </div>
+    );
+  }
+
   return (
     <Container class="px-4 sm:py-10">
       <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
-        {page?.products?.map((product, index) => (
+        {page.products?.map((product, index) => (
           <div class="w-full list-none">
             <ProductCard product={product} preload={index === 0} />
           </div>
