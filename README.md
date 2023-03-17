@@ -183,7 +183,7 @@ for:
    [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
 1. `twind.config.ts`: twind configuration file. [twind docs](https://twind.dev/)
 1. `sections`: deco.cx folder for making components both editable and composable
-   on the CMS. Check out [deco.cx's docs](https://www.deco.cx/en/docs)
+   on the CMS. Check out [deco.cx's docs](https://www.deco.cx/docs/en)
 1. `functions`: deco.cx folder for adding dynamic data to sections provenient
    from third party APIs, like ecommerce platforms, ERPs, contentful, wordpress
    etc
@@ -198,7 +198,7 @@ CSS only.
 Sometimes, it may be difficult to understand everything that's going on a
 production-ready code like this starter's components. To learn how to create
 common UI patterns with HTML and CSS only in a simpler context, take a look at
-[deco.cx's recipes](https://www.deco.cx/en/docs/recipes)
+[deco.cx's recipes](https://www.deco.cx/docs/en/recipes/customizable-sections)
 
 ### Best practices
 
@@ -213,4 +213,4 @@ respecting folder structure. This means:
    folder and add an `export { default }` on the islands folder
 
 Check performance best practices on
-[deco.cx's docs](https://www.deco.cx/en/docs/best-practices).
+[deco.cx's docs](https://www.deco.cx/docs).
