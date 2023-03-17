@@ -177,13 +177,13 @@ const manifest: DecoManifest = {
         }],
         "$id": "JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
       },
-      "4e89f0bf-d60a-4d4c-aefe-5f3b79624a08@Handler@record": {
+      "1e8479e1-75fd-44f4-919c-33fd5b3944f4@Handler@record": {
         "title": "Unknown record",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/definitions/JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
         },
-        "$id": "4e89f0bf-d60a-4d4c-aefe-5f3b79624a08@Handler@record",
+        "$id": "1e8479e1-75fd-44f4-919c-33fd5b3944f4@Handler@record",
       },
       "JGxpdmUvaGFuZGxlcnMvcm91dGVyLnRz@RouterConfig": {
         "anyOf": [{
@@ -194,7 +194,7 @@ const manifest: DecoManifest = {
             "routes": {
               "title": "Routes",
               "$ref":
-                "#/definitions/4e89f0bf-d60a-4d4c-aefe-5f3b79624a08@Handler@record",
+                "#/definitions/1e8479e1-75fd-44f4-919c-33fd5b3944f4@Handler@record",
             },
           },
           "required": ["routes"],
@@ -378,13 +378,13 @@ const manifest: DecoManifest = {
         }],
         "$id": "$live/matchers/MatchEnvironment.ts@Props",
       },
-      "2f433d99-1b4f-47c9-a830-dbd2136ead18@Handler@record": {
+      "f46d0ef4-842d-4911-95a1-ee0b31ab9648@Handler@record": {
         "title": "Unknown record",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/definitions/JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
         },
-        "$id": "2f433d99-1b4f-47c9-a830-dbd2136ead18@Handler@record",
+        "$id": "f46d0ef4-842d-4911-95a1-ee0b31ab9648@Handler@record",
       },
       "JGxpdmUvZmxhZ3MvYXVkaWVuY2UudHM=@Audience": {
         "anyOf": [{
@@ -399,7 +399,7 @@ const manifest: DecoManifest = {
             "routes": {
               "title": "Routes",
               "$ref":
-                "#/definitions/2f433d99-1b4f-47c9-a830-dbd2136ead18@Handler@record",
+                "#/definitions/f46d0ef4-842d-4911-95a1-ee0b31ab9648@Handler@record",
             },
             "overrides": {
               "title": "Unknown record",
@@ -413,13 +413,13 @@ const manifest: DecoManifest = {
         }],
         "$id": "$live/flags/audience.ts@Audience",
       },
-      "59239740-2417-4fae-8cb0-4fbacbeaadd6@Handler@record": {
+      "d0cc2965-9fd3-4eaf-ad2e-ffec48990a39@Handler@record": {
         "title": "Unknown record",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/definitions/JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
         },
-        "$id": "59239740-2417-4fae-8cb0-4fbacbeaadd6@Handler@record",
+        "$id": "d0cc2965-9fd3-4eaf-ad2e-ffec48990a39@Handler@record",
       },
       "JGxpdmUvZmxhZ3MvZXZlcnlvbmUudHM=@EveryoneConfig": {
         "anyOf": [{
@@ -429,7 +429,7 @@ const manifest: DecoManifest = {
             "routes": {
               "title": "Routes",
               "$ref":
-                "#/definitions/59239740-2417-4fae-8cb0-4fbacbeaadd6@Handler@record",
+                "#/definitions/d0cc2965-9fd3-4eaf-ad2e-ffec48990a39@Handler@record",
             },
             "overrides": {
               "title": "Unknown record",
@@ -683,12 +683,12 @@ const manifest: DecoManifest = {
         }],
         "$id": "$live/flags/everyone.ts",
       },
-      "JGxpdmUvcm91dGVzL2xpdmUvcHJldmlld3MvWy4uLmJsb2NrXS50c3g=@f46aba4f-92d6-4ec0-95b4-2d8a304ab2eb":
+      "JGxpdmUvcm91dGVzL2xpdmUvcHJldmlld3MvWy4uLmJsb2NrXS50c3g=@666148e8-c1b7-40f5-9694-13715e47f2b9":
         {
           "$id":
-            "$live/routes/live/previews/[...block].tsx@f46aba4f-92d6-4ec0-95b4-2d8a304ab2eb",
+            "$live/routes/live/previews/[...block].tsx@666148e8-c1b7-40f5-9694-13715e47f2b9",
           "title":
-            "$live/routes/live/previews/[...block].tsx@f46aba4f-92d6-4ec0-95b4-2d8a304ab2eb",
+            "$live/routes/live/previews/[...block].tsx@666148e8-c1b7-40f5-9694-13715e47f2b9",
         },
       "JGxpdmUvcm91dGVzL1suLi5jYXRjaGFsbF0udHN4@Entrypoint": {
         "anyOf": [{
@@ -2712,7 +2712,7 @@ const manifest: DecoManifest = {
         },
         "$id": "deco-sites/std/sections/SEOPDP.tsx",
       },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@65b8ab51-9d8c-4630-8727-21d63b37cfef":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@bd7f6996-d20b-43f0-be00-5d7afb01a9f1":
         {
           "type": "object",
           "allOf": [],
@@ -2727,37 +2727,37 @@ const manifest: DecoManifest = {
           },
           "required": ["variant"],
           "title":
-            "deco-sites/fashion/components/header/Buttons.tsx@65b8ab51-9d8c-4630-8727-21d63b37cfef",
+            "deco-sites/fashion/components/header/Buttons.tsx@bd7f6996-d20b-43f0-be00-5d7afb01a9f1",
           "$id":
-            "deco-sites/fashion/components/header/Buttons.tsx@65b8ab51-9d8c-4630-8727-21d63b37cfef",
+            "deco-sites/fashion/components/header/Buttons.tsx@bd7f6996-d20b-43f0-be00-5d7afb01a9f1",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@11172dd9-c615-4133-a0d1-cf8cd36eb286":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@3b553e4b-7e48-41b1-acff-db071c8ee7c8":
         {
           "$id":
-            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@11172dd9-c615-4133-a0d1-cf8cd36eb286",
+            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@3b553e4b-7e48-41b1-acff-db071c8ee7c8",
           "title":
-            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@11172dd9-c615-4133-a0d1-cf8cd36eb286",
+            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@3b553e4b-7e48-41b1-acff-db071c8ee7c8",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@222b244e-f844-45aa-bb08-033cd08674b0":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@99195afc-9e39-452a-89de-3f143767b9d7":
         {
           "$id":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@222b244e-f844-45aa-bb08-033cd08674b0",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@99195afc-9e39-452a-89de-3f143767b9d7",
           "title":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@222b244e-f844-45aa-bb08-033cd08674b0",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@99195afc-9e39-452a-89de-3f143767b9d7",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@dae7b38d-5c0d-418e-819a-0aebad7f351c":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@81a049e7-70a5-45f4-84cd-05a60d0b6840":
         {
           "$id":
-            "deco-sites/fashion/components/header/Modals.tsx@dae7b38d-5c0d-418e-819a-0aebad7f351c",
+            "deco-sites/fashion/components/header/Modals.tsx@81a049e7-70a5-45f4-84cd-05a60d0b6840",
           "title":
-            "deco-sites/fashion/components/header/Modals.tsx@dae7b38d-5c0d-418e-819a-0aebad7f351c",
+            "deco-sites/fashion/components/header/Modals.tsx@81a049e7-70a5-45f4-84cd-05a60d0b6840",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@31e6bbdf-e97d-480c-9c28-3c9c24214b4b":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@dbbcdfcb-9d6a-46c1-a23f-fdde30b38872":
         {
           "$id":
-            "deco-sites/fashion/components/ui/SliderJS.tsx@31e6bbdf-e97d-480c-9c28-3c9c24214b4b",
+            "deco-sites/fashion/components/ui/SliderJS.tsx@dbbcdfcb-9d6a-46c1-a23f-fdde30b38872",
           "title":
-            "deco-sites/fashion/components/ui/SliderJS.tsx@31e6bbdf-e97d-480c-9c28-3c9c24214b4b",
+            "deco-sites/fashion/components/ui/SliderJS.tsx@dbbcdfcb-9d6a-46c1-a23f-fdde30b38872",
         },
       "ZGVjby1zaXRlcy9zdGQ=@BreadcrumbList": {
         "type": "object",
@@ -3965,7 +3965,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@65b8ab51-9d8c-4630-8727-21d63b37cfef",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@bd7f6996-d20b-43f0-be00-5d7afb01a9f1",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -3981,7 +3981,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@11172dd9-c615-4133-a0d1-cf8cd36eb286",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@3b553e4b-7e48-41b1-acff-db071c8ee7c8",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -3997,7 +3997,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@222b244e-f844-45aa-bb08-033cd08674b0",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@99195afc-9e39-452a-89de-3f143767b9d7",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4013,7 +4013,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@dae7b38d-5c0d-418e-819a-0aebad7f351c",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@81a049e7-70a5-45f4-84cd-05a60d0b6840",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4029,7 +4029,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@31e6bbdf-e97d-480c-9c28-3c9c24214b4b",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@dbbcdfcb-9d6a-46c1-a23f-fdde30b38872",
         }],
         "required": ["__resolveType"],
         "properties": {
