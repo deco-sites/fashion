@@ -80,11 +80,11 @@ const options: Omit<Options, "selfURL"> = {
         },
       },
       boxShadow: {
-        sm: '0px 1px 3px 0px #00000014',
-        default: '0px 1px 4px 0px #0000001F',
-        md: '0px 1px 5px 0px #00000024',
-        lg: '0px 4px 10px 0px #0000001F'
-      }
+        sm: "0px 1px 3px 0px #00000014",
+        default: "0px 1px 4px 0px #0000001F",
+        md: "0px 1px 5px 0px #00000024",
+        lg: "0px 4px 10px 0px #0000001F",
+      },
     },
     fontFamily: {
       sans: ["Albert Sans", "sans-serif"],
