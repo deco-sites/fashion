@@ -34,9 +34,9 @@ function CookieConsent() {
     <>
       <div
         id={id}
-        class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen"
+        class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
       >
-        <Container class="px-4 py-4 rounded border border-default flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-default z-50">
+        <Container class="px-4 py-4 rounded border border-default flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-default">
           <Text class="flex-grow" variant="caption">
             Utilizamos cookies em nosso site para melhorar seu desempenho,
             segurança e personalizar conteúdo e anúncios.
