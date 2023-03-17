@@ -162,7 +162,7 @@ function Searchbar({
         </form>
         {variant === "desktop" && <CloseButton />}
       </div>
-      <div class="flex flex-col divide-y divide-default mt-6 empty:mt-0 md:(flex-row divide-y-0)">
+      <div class="flex flex-col gap-6 divide-y divide-default mt-6 empty:mt-0 md:(flex-row divide-y-0)">
         {searches && searches.length > 0 && !hasSuggestions && (
           <SearchTermList title="Mais buscados" terms={searches} />
         )}
@@ -174,7 +174,7 @@ function Searchbar({
           />
         )}
         {hasSuggestions && emptySuggestions && (
-          <div class="py-16 px-4 md:(py-6! px-0) flex flex-col gap-4 w-full">
+          <div class="py-16 md:(py-6!) flex flex-col gap-4 w-full">
             <Text
               variant="heading-3"
               class="text-center"
@@ -190,7 +190,7 @@ function Searchbar({
           </div>
         )}
         {_products && !emptySuggestions && (
-          <div class="flex flex-col gap-6 overflow-x-hidden">
+          <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
             <Text class="px-4" variant="heading-3">Produtos sugeridos</Text>
             <Slider>
               {_products.map((
