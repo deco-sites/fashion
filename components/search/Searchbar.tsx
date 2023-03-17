@@ -101,10 +101,14 @@ function Searchbar({
 
   const hasSuggestions = !!suggestions.value;
   const emptySuggestions = suggestions.value?.searches?.length === 0;
+  const _products = suggestions.value?.products &&
+      suggestions.value?.products?.length !== 0
+    ? suggestions.value.products
+    : products;
 
   return (
-    <>
-      <div class="mt-4 px-4 md:px-0 flex gap-4">
+    <div class="flex flex-col p-4 md:(py-6 px-20)">
+      <div class="flex gap-4">
         <form
           id="searchbar"
           action={action}
@@ -138,6 +142,7 @@ function Searchbar({
             placeholder={placeholder}
             role="combobox"
             aria-controls="search-suggestion"
+            autocomplete="off"
           />
           <button
             type="button"
@@ -157,11 +162,7 @@ function Searchbar({
         </form>
         {variant === "desktop" && <CloseButton />}
       </div>
-      <div
-        class={`flex ${
-          variant === "mobile" ? "flex-col divide-y divide-default" : ""
-        }`}
-      >
+      <div class="flex flex-col gap-6 divide-y divide-default mt-6 empty:mt-0 md:(flex-row divide-y-0)">
         {searches && searches.length > 0 && !hasSuggestions && (
           <SearchTermList title="Mais buscados" terms={searches} />
         )}
@@ -173,7 +174,7 @@ function Searchbar({
           />
         )}
         {hasSuggestions && emptySuggestions && (
-          <div class="my-6 py-16 px-4 md:(py-6! px-0) flex flex-col gap-4 w-full">
+          <div class="py-16 md:(py-6!) flex flex-col gap-4 w-full">
             <Text
               variant="heading-3"
               class="text-center"
@@ -188,34 +189,31 @@ function Searchbar({
             </Text>
           </div>
         )}
-        {products && !emptySuggestions && (
-          <div class="flex flex-col gap-6 py-6 overflow-x-hidden">
+        {_products && !emptySuggestions && (
+          <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
             <Text class="px-4" variant="heading-3">Produtos sugeridos</Text>
             <Slider>
-              {(suggestions.value?.products &&
-                  suggestions.value?.products?.length !== 0
-                ? suggestions.value.products
-                : products).map((
-                  product,
-                  index,
-                ) => (
-                  <div
-                    class={`${
-                      index === 0
-                        ? "ml-4"
-                        : index === products.length - 1
-                        ? "mr-4"
-                        : ""
-                    } min-w-[200px] max-w-[200px]`}
-                  >
-                    <ProductCard product={product} />
-                  </div>
-                ))}
+              {_products.map((
+                product,
+                index,
+              ) => (
+                <div
+                  class={`${
+                    index === 0
+                      ? "ml-4"
+                      : index === _products.length - 1
+                      ? "mr-4"
+                      : ""
+                  } min-w-[200px] max-w-[200px]`}
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
             </Slider>
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
