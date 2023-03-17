@@ -101,6 +101,10 @@ function Searchbar({
 
   const hasSuggestions = !!suggestions.value;
   const emptySuggestions = suggestions.value?.searches?.length === 0;
+  const _products = suggestions.value?.products &&
+      suggestions.value?.products?.length !== 0
+    ? suggestions.value.products
+    : products;
 
   return (
     <>
@@ -188,29 +192,26 @@ function Searchbar({
             </Text>
           </div>
         )}
-        {products && !emptySuggestions && (
+        {_products && !emptySuggestions && (
           <div class="flex flex-col gap-6 py-6 overflow-x-hidden">
             <Text class="px-4" variant="heading-3">Produtos sugeridos</Text>
             <Slider>
-              {(suggestions.value?.products &&
-                  suggestions.value?.products?.length !== 0
-                ? suggestions.value.products
-                : products).map((
-                  product,
-                  index,
-                ) => (
-                  <div
-                    class={`${
-                      index === 0
-                        ? "ml-4"
-                        : index === products.length - 1
-                        ? "mr-4"
-                        : ""
-                    } min-w-[200px] max-w-[200px]`}
-                  >
-                    <ProductCard product={product} />
-                  </div>
-                ))}
+              {_products.map((
+                product,
+                index,
+              ) => (
+                <div
+                  class={`${
+                    index === 0
+                      ? "ml-4"
+                      : index === _products.length - 1
+                      ? "mr-4"
+                      : ""
+                  } min-w-[200px] max-w-[200px]`}
+                >
+                  <ProductCard product={product} />
+                </div>
+              ))}
             </Slider>
           </div>
         )}
