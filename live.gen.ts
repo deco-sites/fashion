@@ -179,13 +179,13 @@ const manifest: DecoManifest = {
         }],
         "$id": "JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
       },
-      "c1e8bfc3-4d3d-456a-b3e8-aea7d37f9cb4@Handler@record": {
+      "00581062-3325-4a5e-b9f2-b7a1326090d8@Handler@record": {
         "title": "Unknown record",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/definitions/JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
         },
-        "$id": "c1e8bfc3-4d3d-456a-b3e8-aea7d37f9cb4@Handler@record",
+        "$id": "00581062-3325-4a5e-b9f2-b7a1326090d8@Handler@record",
       },
       "JGxpdmUvaGFuZGxlcnMvcm91dGVyLnRz@RouterConfig": {
         "anyOf": [{
@@ -196,7 +196,7 @@ const manifest: DecoManifest = {
             "routes": {
               "title": "Routes",
               "$ref":
-                "#/definitions/c1e8bfc3-4d3d-456a-b3e8-aea7d37f9cb4@Handler@record",
+                "#/definitions/00581062-3325-4a5e-b9f2-b7a1326090d8@Handler@record",
             },
           },
           "required": ["routes"],
@@ -400,13 +400,13 @@ const manifest: DecoManifest = {
         }],
         "$id": "$live/matchers/MatchEnvironment.ts@Props",
       },
-      "61f5f54d-5724-4b07-a34a-b2e5279236fa@Handler@record": {
+      "910936c8-40d4-47bf-ba18-f3f9c2c952d3@Handler@record": {
         "title": "Unknown record",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/definitions/JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
         },
-        "$id": "61f5f54d-5724-4b07-a34a-b2e5279236fa@Handler@record",
+        "$id": "910936c8-40d4-47bf-ba18-f3f9c2c952d3@Handler@record",
       },
       "JGxpdmUvZmxhZ3MvYXVkaWVuY2UudHM=@Audience": {
         "anyOf": [{
@@ -421,7 +421,7 @@ const manifest: DecoManifest = {
             "routes": {
               "title": "Routes",
               "$ref":
-                "#/definitions/61f5f54d-5724-4b07-a34a-b2e5279236fa@Handler@record",
+                "#/definitions/910936c8-40d4-47bf-ba18-f3f9c2c952d3@Handler@record",
             },
             "overrides": {
               "title": "Unknown record",
@@ -435,13 +435,13 @@ const manifest: DecoManifest = {
         }],
         "$id": "$live/flags/audience.ts@Audience",
       },
-      "f2433285-d7f1-4cae-b5a3-6aa9d8b71ca4@Handler@record": {
+      "c781cb97-c5f1-426d-8b20-a024a457d7a6@Handler@record": {
         "title": "Unknown record",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/definitions/JGxpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler",
         },
-        "$id": "f2433285-d7f1-4cae-b5a3-6aa9d8b71ca4@Handler@record",
+        "$id": "c781cb97-c5f1-426d-8b20-a024a457d7a6@Handler@record",
       },
       "JGxpdmUvZmxhZ3MvZXZlcnlvbmUudHM=@EveryoneConfig": {
         "anyOf": [{
@@ -451,7 +451,7 @@ const manifest: DecoManifest = {
             "routes": {
               "title": "Routes",
               "$ref":
-                "#/definitions/f2433285-d7f1-4cae-b5a3-6aa9d8b71ca4@Handler@record",
+                "#/definitions/c781cb97-c5f1-426d-8b20-a024a457d7a6@Handler@record",
             },
             "overrides": {
               "title": "Unknown record",
@@ -2727,7 +2727,7 @@ const manifest: DecoManifest = {
         },
         "$id": "deco-sites/std/sections/SEOPDP.tsx",
       },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@4b62d12d-0921-4ac3-8a42-6920cd084d3e":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@4ad22813-7604-4d17-b045-21ada4d68012":
         {
           "type": "object",
           "allOf": [],
@@ -2742,37 +2742,37 @@ const manifest: DecoManifest = {
           },
           "required": ["variant"],
           "title":
-            "deco-sites/fashion/components/header/Buttons.tsx@4b62d12d-0921-4ac3-8a42-6920cd084d3e",
+            "deco-sites/fashion/components/header/Buttons.tsx@4ad22813-7604-4d17-b045-21ada4d68012",
           "$id":
-            "deco-sites/fashion/components/header/Buttons.tsx@4b62d12d-0921-4ac3-8a42-6920cd084d3e",
+            "deco-sites/fashion/components/header/Buttons.tsx@4ad22813-7604-4d17-b045-21ada4d68012",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@2f48c9d3-1fe6-4ee9-8f0b-ddadb913e559":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@6dbe67d4-3765-43fd-aa53-e879c4d2d842":
         {
           "$id":
-            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@2f48c9d3-1fe6-4ee9-8f0b-ddadb913e559",
+            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@6dbe67d4-3765-43fd-aa53-e879c4d2d842",
           "title":
-            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@2f48c9d3-1fe6-4ee9-8f0b-ddadb913e559",
+            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@6dbe67d4-3765-43fd-aa53-e879c4d2d842",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@e44ce863-bd8a-4309-8ad2-b5c8a9a9c48c":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@38686e19-887c-4bdd-8999-36ffa09aee02":
         {
           "$id":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@e44ce863-bd8a-4309-8ad2-b5c8a9a9c48c",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@38686e19-887c-4bdd-8999-36ffa09aee02",
           "title":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@e44ce863-bd8a-4309-8ad2-b5c8a9a9c48c",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@38686e19-887c-4bdd-8999-36ffa09aee02",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@c19b86c7-cea3-4373-b4ae-025d91cdb78a":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@eee85295-8023-4622-a10d-45c3fb66e965":
         {
           "$id":
-            "deco-sites/fashion/components/header/Modals.tsx@c19b86c7-cea3-4373-b4ae-025d91cdb78a",
+            "deco-sites/fashion/components/header/Modals.tsx@eee85295-8023-4622-a10d-45c3fb66e965",
           "title":
-            "deco-sites/fashion/components/header/Modals.tsx@c19b86c7-cea3-4373-b4ae-025d91cdb78a",
+            "deco-sites/fashion/components/header/Modals.tsx@eee85295-8023-4622-a10d-45c3fb66e965",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@6f30e0fc-3b43-444c-802e-b6c606e0ec5f":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@6c1fef5f-0d46-4fe1-bf9a-776e000e6067":
         {
           "$id":
-            "deco-sites/fashion/components/ui/SliderJS.tsx@6f30e0fc-3b43-444c-802e-b6c606e0ec5f",
+            "deco-sites/fashion/components/ui/SliderJS.tsx@6c1fef5f-0d46-4fe1-bf9a-776e000e6067",
           "title":
-            "deco-sites/fashion/components/ui/SliderJS.tsx@6f30e0fc-3b43-444c-802e-b6c606e0ec5f",
+            "deco-sites/fashion/components/ui/SliderJS.tsx@6c1fef5f-0d46-4fe1-bf9a-776e000e6067",
         },
       "ZGVjby1zaXRlcy9zdGQ=@BreadcrumbList": {
         "type": "object",
@@ -3979,7 +3979,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@4b62d12d-0921-4ac3-8a42-6920cd084d3e",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@4ad22813-7604-4d17-b045-21ada4d68012",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -3995,7 +3995,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@2f48c9d3-1fe6-4ee9-8f0b-ddadb913e559",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@6dbe67d4-3765-43fd-aa53-e879c4d2d842",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4011,7 +4011,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@e44ce863-bd8a-4309-8ad2-b5c8a9a9c48c",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@38686e19-887c-4bdd-8999-36ffa09aee02",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4027,7 +4027,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@c19b86c7-cea3-4373-b4ae-025d91cdb78a",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@eee85295-8023-4622-a10d-45c3fb66e965",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4043,7 +4043,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@6f30e0fc-3b43-444c-802e-b6c606e0ec5f",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@6c1fef5f-0d46-4fe1-bf9a-776e000e6067",
         }],
         "required": ["__resolveType"],
         "properties": {

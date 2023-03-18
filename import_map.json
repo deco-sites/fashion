@@ -2,7 +2,7 @@
   "imports": {
     "deco-sites/fashion/": "./",
     "$store/": "./",
-    "$live/": "https://denopkg.com/deco-cx/live@e5075cc977bad3c325a96403e46e570de8b087ef/",
+    "$live/": "https://denopkg.com/deco-cx/live@7971f7fa27785278b6af72913883856da689e922/",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@16899c1dc383a09de5978db5c8b2ca513e45d49b/",
     "partytown/": "https://deno.land/x/partytown@0.2.1/",
     "$fresh/": "https://deno.land/x/fresh@1.1.3/",
