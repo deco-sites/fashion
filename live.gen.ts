@@ -2749,7 +2749,7 @@ const manifest: DecoManifest = {
         },
         "$id": "deco-sites/std/sections/SEOPDP.tsx",
       },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@2aa261cb-e928-446b-9ab0-efd5dff9b6e3":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@a6fb60c2-9f19-40ce-bd36-ec9a5421781e":
         {
           "type": "object",
           "allOf": [],
@@ -2764,37 +2764,37 @@ const manifest: DecoManifest = {
           },
           "required": ["variant"],
           "title":
-            "deco-sites/fashion/components/header/Buttons.tsx@2aa261cb-e928-446b-9ab0-efd5dff9b6e3",
+            "deco-sites/fashion/components/header/Buttons.tsx@a6fb60c2-9f19-40ce-bd36-ec9a5421781e",
           "$id":
-            "deco-sites/fashion/components/header/Buttons.tsx@2aa261cb-e928-446b-9ab0-efd5dff9b6e3",
+            "deco-sites/fashion/components/header/Buttons.tsx@a6fb60c2-9f19-40ce-bd36-ec9a5421781e",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@aab5f94f-0ba0-451e-a6b3-6af049193a8d":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@3cc3f0a1-33cb-4871-8050-ff012be11945":
         {
           "$id":
-            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@aab5f94f-0ba0-451e-a6b3-6af049193a8d",
+            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@3cc3f0a1-33cb-4871-8050-ff012be11945",
           "title":
-            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@aab5f94f-0ba0-451e-a6b3-6af049193a8d",
+            "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@3cc3f0a1-33cb-4871-8050-ff012be11945",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@fc2e122e-625c-4c7a-b93e-94b11b325991":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@54d9e14f-b086-4538-ba4e-175de56661e5":
         {
           "$id":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@fc2e122e-625c-4c7a-b93e-94b11b325991",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@54d9e14f-b086-4538-ba4e-175de56661e5",
           "title":
-            "deco-sites/fashion/components/product/AddToCartButton.tsx@fc2e122e-625c-4c7a-b93e-94b11b325991",
+            "deco-sites/fashion/components/product/AddToCartButton.tsx@54d9e14f-b086-4538-ba4e-175de56661e5",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@9cd080da-9b77-4d17-b54b-1e6b9faba4d1":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@3fae08d9-e2f8-44bc-8cb9-b05555230c58":
         {
           "$id":
-            "deco-sites/fashion/components/header/Modals.tsx@9cd080da-9b77-4d17-b54b-1e6b9faba4d1",
+            "deco-sites/fashion/components/header/Modals.tsx@3fae08d9-e2f8-44bc-8cb9-b05555230c58",
           "title":
-            "deco-sites/fashion/components/header/Modals.tsx@9cd080da-9b77-4d17-b54b-1e6b9faba4d1",
+            "deco-sites/fashion/components/header/Modals.tsx@3fae08d9-e2f8-44bc-8cb9-b05555230c58",
         },
-      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@a5e5c086-517d-4d6a-96a3-c2cba05ef95b":
+      "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@abef94bb-8551-437b-99d7-83d17e189818":
         {
           "$id":
-            "deco-sites/fashion/components/ui/SliderJS.tsx@a5e5c086-517d-4d6a-96a3-c2cba05ef95b",
+            "deco-sites/fashion/components/ui/SliderJS.tsx@abef94bb-8551-437b-99d7-83d17e189818",
           "title":
-            "deco-sites/fashion/components/ui/SliderJS.tsx@a5e5c086-517d-4d6a-96a3-c2cba05ef95b",
+            "deco-sites/fashion/components/ui/SliderJS.tsx@abef94bb-8551-437b-99d7-83d17e189818",
         },
       "ZGVjby1zaXRlcy9zdGQ=@BreadcrumbList": {
         "type": "object",
@@ -4014,7 +4014,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@2aa261cb-e928-446b-9ab0-efd5dff9b6e3",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@a6fb60c2-9f19-40ce-bd36-ec9a5421781e",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4030,7 +4030,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@aab5f94f-0ba0-451e-a6b3-6af049193a8d",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@3cc3f0a1-33cb-4871-8050-ff012be11945",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4046,7 +4046,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@fc2e122e-625c-4c7a-b93e-94b11b325991",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@54d9e14f-b086-4538-ba4e-175de56661e5",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4062,7 +4062,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@9cd080da-9b77-4d17-b54b-1e6b9faba4d1",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@3fae08d9-e2f8-44bc-8cb9-b05555230c58",
         }],
         "required": ["__resolveType"],
         "properties": {
@@ -4078,7 +4078,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "allOf": [{
           "$ref":
-            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@a5e5c086-517d-4d6a-96a3-c2cba05ef95b",
+            "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@abef94bb-8551-437b-99d7-83d17e189818",
         }],
         "required": ["__resolveType"],
         "properties": {
