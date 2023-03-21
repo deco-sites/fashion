@@ -28,7 +28,7 @@ window.addEventListener('scroll', callback, { once: true });
 `;
 
 function CookieConsent() {
-  const id = useId();
+  const id = `cookie-consent-${useId()}`;
 
   return (
     <>
