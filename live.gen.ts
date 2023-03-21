@@ -27,7 +27,6 @@ import * as $$$$$$$$9 from "deco-sites/fashion/sections/Highlights.tsx";
 import * as $$$$$$$$10 from "deco-sites/fashion/sections/WhatsApp.tsx";
 import * as $$$$$$$$11 from "deco-sites/fashion/sections/SearchControls.tsx";
 import * as $$$$$$$$12 from "deco-sites/fashion/sections/Carousel.tsx";
-import { $live } from "$live/engine/fresh/manifest.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_inspect from "$live/routes/live/inspect.ts";
 import * as $live_schema from "$live/routes/live/schema.ts";
@@ -148,4 +147,4 @@ const manifest: DecoManifest = {
 context.namespace = "deco-sites/fashion";
 context.siteId = 239;
 
-export default $live(manifest);
+export default manifest;
