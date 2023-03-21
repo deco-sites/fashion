@@ -57,9 +57,9 @@ import * as i2$8 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
 import * as i2$9 from "deco-sites/std/functions/vtexLegacyProductList.ts";
 import * as i2$10 from "deco-sites/std/functions/shopifyProductList.ts";
 import * as i2$11 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
-import * as i2$$0 from "deco-sites/std/accounts/vtexAccount.ts";
-import * as i2$$1 from "deco-sites/std/accounts/shopifyAccount.ts";
-import * as i2$$2 from "deco-sites/std/accounts/occAccount.ts";
+import * as i2$$0 from "deco-sites/std/accounts/vtex.ts";
+import * as i2$$1 from "deco-sites/std/accounts/shopify.ts";
+import * as i2$$2 from "deco-sites/std/accounts/occ.ts";
 import * as i2$$$0 from "deco-sites/std/sections/SEO.tsx";
 import * as i2$$$1 from "deco-sites/std/sections/SEOPLP.tsx";
 import * as i2$$$2 from "deco-sites/std/sections/SEOPDP.tsx";
@@ -136,9 +136,9 @@ const manifest: DecoManifest = {
     "deco-sites/std/functions/shopifyProductDetailsPage.ts": i2$11,
   },
   "accounts": {
-    "deco-sites/std/accounts/vtexAccount.ts": i2$$0,
-    "deco-sites/std/accounts/shopifyAccount.ts": i2$$1,
-    "deco-sites/std/accounts/occAccount.ts": i2$$2,
+    "deco-sites/std/accounts/vtex.ts": i2$$0,
+    "deco-sites/std/accounts/shopify.ts": i2$$1,
+    "deco-sites/std/accounts/occ.ts": i2$$2,
   },
   "config": config,
   "baseUrl": import.meta.url,
