@@ -39,9 +39,11 @@ function CartButton() {
   const { displayCart } = useUI();
   const { loading, cart } = useCart();
   const totalItems = cart.value?.items.length || null;
+  const dataDeco = displayCart.value ? {} : { "data-deco": "open-cart" };
 
   return (
     <Button
+      {...dataDeco}
       variant="icon"
       class="relative"
       aria-label="open cart"
