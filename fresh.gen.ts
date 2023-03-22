@@ -50,10 +50,11 @@ import * as $$$$10 from "deco-sites/std/functions/vtexConfig.ts";
 import * as $$$$11 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
 import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductList.ts";
 import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as $$$$14 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as $$$$15 from "deco-sites/std/functions/vtexProductList.ts";
-import * as $$$$16 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as $$$$17 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as $$$$14 from "deco-sites/std/functions/vtexNavbar.ts";
+import * as $$$$15 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$16 from "deco-sites/std/functions/vtexProductList.ts";
+import * as $$$$17 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as $$$$18 from "deco-sites/std/functions/vtexSuggestions.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -108,10 +109,11 @@ const manifest: DecoManifest = {
     "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$11,
     "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$12,
     "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$13,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$14,
-    "deco-sites/std/functions/vtexProductList.ts": $$$$15,
-    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$16,
-    "deco-sites/std/functions/vtexSuggestions.ts": $$$$17,
+    "deco-sites/std/functions/vtexNavbar.ts": $$$$14,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$15,
+    "deco-sites/std/functions/vtexProductList.ts": $$$$16,
+    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$17,
+    "deco-sites/std/functions/vtexSuggestions.ts": $$$$18,
   },
   schemas: {
     "./sections/BannerGrid.tsx": {
@@ -1673,6 +1675,33 @@ const manifest: DecoManifest = {
         "properties": {
           "data": {
             "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "deco-sites/std/functions/vtexNavbar.ts": {
+      "inputSchema": {
+        "title": "Vtex Navbar",
+        "type": "object",
+        "properties": {
+          "levels": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Levels",
+            "description": "Number of levels of categories to be returned",
+            "default": "2",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "0244534df7e3d23a94046f4c6f7086c2b72853b8",
           },
         },
         "additionalProperties": true,
