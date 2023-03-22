@@ -35,6 +35,7 @@ import * as $$$15 from "deco-sites/std/sections/SEOPLP.tsx";
 import * as $$$16 from "deco-sites/std/sections/configOCC.global.tsx";
 import * as $$$17 from "deco-sites/std/sections/configShopify.global.tsx";
 import * as $$$18 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -90,6 +91,7 @@ const manifest: DecoManifest = {
     "deco-sites/std/sections/configOCC.global.tsx": $$$16,
     "deco-sites/std/sections/configShopify.global.tsx": $$$17,
     "deco-sites/std/sections/configVTEX.global.tsx": $$$18,
+    "deco-sites/std/sections/configYourViews.tsx": $$$19,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -819,14 +821,14 @@ const manifest: DecoManifest = {
               "Navigation items used both on mobile and desktop menus",
           },
           "products": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
             "format": "live-function",
             "type": "string",
             "title": "Product suggestions",
             "description": "Product suggestions displayed on search",
           },
           "suggestions": {
-            "$id": "664f9b3b60b4a75294c340d8218b4ad76821fd58",
+            "$id": "fa622ecbfb24e1b878a945d22f51f46a3e939525",
             "format": "live-function",
             "type": "string",
             "title": "Enable Top Search terms",
@@ -900,7 +902,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "$id": "bf6c5311c35f44b8ba333ce3c2acd5fed0d8ad8a",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -918,7 +920,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -940,7 +942,7 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "products": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
             "format": "live-function",
             "type": "string",
             "title": "Products",
@@ -966,7 +968,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1208,7 +1210,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "$id": "bf6c5311c35f44b8ba333ce3c2acd5fed0d8ad8a",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1250,7 +1252,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
+            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1395,6 +1397,27 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
+    "deco-sites/std/sections/configYourViews.tsx": {
+      "inputSchema": {
+        "title": "Config Your Views",
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "title": "Token",
+          },
+          "appId": {
+            "type": "string",
+            "title": "App Id",
+          },
+        },
+        "required": [
+          "token",
+          "appId",
+        ],
+      },
+      "outputSchema": null,
+    },
     "deco-sites/std/functions/occProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
@@ -1404,7 +1427,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "$id": "bf6c5311c35f44b8ba333ce3c2acd5fed0d8ad8a",
           },
         },
         "additionalProperties": true,
@@ -1419,7 +1442,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "$id": "bf6c5311c35f44b8ba333ce3c2acd5fed0d8ad8a",
           },
         },
         "additionalProperties": true,
@@ -1450,7 +1473,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
           },
         },
         "additionalProperties": true,
@@ -1483,7 +1506,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
           },
         },
         "additionalProperties": true,
@@ -1513,7 +1536,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "$id": "bf6c5311c35f44b8ba333ce3c2acd5fed0d8ad8a",
           },
         },
         "additionalProperties": true,
@@ -1593,7 +1616,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
           },
         },
         "additionalProperties": true,
@@ -1649,7 +1672,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
           },
         },
         "additionalProperties": true,
@@ -1664,7 +1687,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
+            "$id": "bf6c5311c35f44b8ba333ce3c2acd5fed0d8ad8a",
           },
         },
         "additionalProperties": true,
@@ -1744,7 +1767,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "1f15a836acd2ecbefef6eaf34ebcff98e39811f3",
+            "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
           },
         },
         "additionalProperties": true,
@@ -1777,7 +1800,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9ba29fcac079080c6f7cf16f40f91cf15a25d53f",
+            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
           },
         },
         "additionalProperties": true,
@@ -1804,7 +1827,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "664f9b3b60b4a75294c340d8218b4ad76821fd58",
+            "$id": "fa622ecbfb24e1b878a945d22f51f46a3e939525",
           },
         },
         "additionalProperties": true,
