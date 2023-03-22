@@ -53,6 +53,7 @@ function ProductCard({ product, preload }: Props) {
 
   return (
     <div
+      data-deco="view-product"
       id={`product-card-${productID}`}
       class="w-full group"
     >
