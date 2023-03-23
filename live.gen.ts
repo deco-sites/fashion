@@ -34,7 +34,8 @@ import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
 import * as i2$$$$0 from "$live/handlers/routesSelection.ts";
 import * as i2$$$$1 from "$live/handlers/router.ts";
-import * as i2$$$$2 from "$live/handlers/fresh.ts";
+import * as i2$$$$2 from "$live/handlers/devPage.ts";
+import * as i2$$$$3 from "$live/handlers/fresh.ts";
 import * as i2$$$$$0 from "$live/pages/LivePage.tsx";
 import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$1 from "$live/matchers/MatchUserAgent.ts";
@@ -103,7 +104,8 @@ const manifest: DecoManifest = {
   "handlers": {
     "$live/handlers/routesSelection.ts": i2$$$$0,
     "$live/handlers/router.ts": i2$$$$1,
-    "$live/handlers/fresh.ts": i2$$$$2,
+    "$live/handlers/devPage.ts": i2$$$$2,
+    "$live/handlers/fresh.ts": i2$$$$3,
   },
   "pages": {
     "$live/pages/LivePage.tsx": i2$$$$$0,
