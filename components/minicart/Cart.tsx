@@ -91,6 +91,7 @@ function Cart() {
             href={`${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`}
           >
             <Button
+              data-deco="buy-button"
               class="w-full"
               disabled={loading.value || cart.value.items.length === 0}
             >

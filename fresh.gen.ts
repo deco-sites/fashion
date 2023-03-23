@@ -1829,6 +1829,33 @@ const manifest: DecoManifest = {
         "additionalProperties": true,
       },
     },
+    "deco-sites/std/functions/vtexNavbar.ts": {
+      "inputSchema": {
+        "title": "Vtex Navbar",
+        "type": "object",
+        "properties": {
+          "levels": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Levels",
+            "description": "Number of levels of categories to be returned",
+            "default": "2",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "0244534df7e3d23a94046f4c6f7086c2b72853b8",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
     "deco-sites/std/functions/vtexProductDetailsPage.ts": {
       "inputSchema": {
         "type": "null",
