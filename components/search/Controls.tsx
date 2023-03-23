@@ -37,7 +37,7 @@ function Controls({ page }: { page: ProductListingPage }) {
           Filtrar
           <Icon id="FilterList" width={16} height={16} />
         </Button>
-        <Sort />
+        <Sort options={page.sortOptions} />
       </div>
 
       <Modal

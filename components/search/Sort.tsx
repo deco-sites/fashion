@@ -1,12 +1,12 @@
+import type { JSX } from "preact";
 import { useMemo } from "preact/hooks";
 import Text from "$store/components/ui/Text.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import type { JSX } from "preact";
+import { SortOption } from "deco-sites/std/commerce/types.ts";
 
 const SORT_QUERY_PARAM = "sort";
 
 // TODO: The search query should also be from a commerce schema
-const options = [
+const DEFAULT_OPTIONS = [
   { value: "", label: "Relevância" },
   { value: "price:desc", label: "Maior Preço" },
   { value: "price:asc", label: "Menor Preço" },
@@ -26,14 +26,15 @@ const useSort = () =>
 // TODO: Replace with "search utils"
 const applySort = (e: JSX.TargetedEvent<HTMLSelectElement, Event>) => {
   const urlSearchParams = new URLSearchParams(window.location.search);
-
-  console.log(e.currentTarget.value);
-
   urlSearchParams.set(SORT_QUERY_PARAM, e.currentTarget.value);
   window.location.search = urlSearchParams.toString();
 };
 
-function Sort() {
+interface Props {
+  options?: SortOption[];
+}
+
+function Sort({ options = DEFAULT_OPTIONS }: Props) {
   const sort = useSort();
 
   return (
