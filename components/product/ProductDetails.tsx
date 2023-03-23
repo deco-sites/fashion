@@ -1,5 +1,6 @@
 import { useId } from "preact/hooks";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
+import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
@@ -12,6 +13,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
@@ -47,10 +49,8 @@ function NotFound() {
   );
 }
 
-/**
- * Breadcrumbs, prices, addToCart and more
- */
 function ProductInfo({ page }: { page: ProductDetailsPage }) {
+
   const {
     breadcrumbList,
     product,
@@ -114,6 +114,16 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         <Button variant="secondary">
           <Icon id="Heart" width={20} height={20} strokeWidth={2} /> Favoritar
         </Button>
+      </div>
+      {/* Shipping Simulation */}
+      <div class="mt-8">
+        <ShippingSimulation 
+          item={{
+            id: Number(product.sku),
+            quantity: 1,
+            seller: seller ?? "1",
+          }}
+        />
       </div>
       {/* Description card */}
       <div class="mt-4 sm:mt-6">
