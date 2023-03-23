@@ -15,7 +15,8 @@ import * as $$1 from "./islands/HeaderButton.tsx";
 import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/HeaderSearchMenu.tsx";
 import * as $$4 from "./islands/SearchControls.tsx";
-import * as $$5 from "./islands/SliderJS.tsx";
+import * as $$5 from "./islands/ShippingSimulation.tsx";
+import * as $$6 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/Carousel.tsx";
 import * as $$$2 from "./sections/CookieConsent.tsx";
@@ -70,7 +71,8 @@ const manifest: DecoManifest = {
     "./islands/HeaderModals.tsx": $$2,
     "./islands/HeaderSearchMenu.tsx": $$3,
     "./islands/SearchControls.tsx": $$4,
-    "./islands/SliderJS.tsx": $$5,
+    "./islands/ShippingSimulation.tsx": $$5,
+    "./islands/SliderJS.tsx": $$6,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -908,6 +910,13 @@ const manifest: DecoManifest = {
             "format": "live-function",
             "type": "string",
             "title": "Page",
+          },
+          "configVTEX": {
+            "$id": "4a94f4ff0e8e4441f26651aaed22f0df82f38c93",
+            "format": "live-function",
+            "type": "string",
+            "title": "Config V T E X",
+            "description": "vtex config used for simulation",
           },
         },
         "required": [

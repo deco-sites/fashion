@@ -1,5 +1,6 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
+import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
@@ -9,11 +10,16 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
+  /**
+   * @description vtex config used for simulation
+   */
+  configVTEX?: LoaderReturnType<ClientConfigVTEX>;
 }
 
 function NotFound() {
@@ -29,7 +35,7 @@ function NotFound() {
   );
 }
 
-function Details({ page }: { page: ProductDetailsPage }) {
+function Details({ page, configVTEX }: { page: ProductDetailsPage; configVTEX?: ClientConfigVTEX; }) {
   const {
     breadcrumbList,
     product,
@@ -53,7 +59,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
           {[front, back ?? front].map((img, index) => (
             <Image
               style={{ aspectRatio: "360 / 500" }}
-              class="snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
+              class="scroll-snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={img.url!}
               alt={img.alternateName}
@@ -116,6 +122,16 @@ function Details({ page }: { page: ProductDetailsPage }) {
               <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
               Favoritar
             </Button>
+          </div>
+          {/* Shipping Simulation */}
+          <div class="mt-8">
+            <ShippingSimulation 
+              item={{
+                id: Number(product.sku),
+                quantity: 1,
+                seller: seller ?? "1",
+              }}
+            />
           </div>
           {/* Description card */}
           <div class="mt-4 sm:mt-6">
