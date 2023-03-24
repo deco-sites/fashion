@@ -62,7 +62,10 @@ function LinkTree({
         <ul class="flex flex-row gap-4">
           {social?.map((link) => (
             <li>
-              <a href={link.href} class="text-interactive-inverse block rounded">
+              <a
+                href={link.href}
+                class="text-interactive-inverse block rounded"
+              >
                 <Icon id={link.label} size={36} strokeWidth={0.8} />
               </a>
             </li>
