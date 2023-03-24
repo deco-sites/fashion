@@ -1,7 +1,7 @@
 {
   "imports": {
     "$store/": "./",
-    "$live/": "https://denopkg.com/deco-cx/live@1.0.0-rc.0/",
+    "$live/": "https://denopkg.com/deco-cx/live@96955402830cd26349b35b018f54e7a7001a9346/",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@8eb7468440d77a1d8a32e71d81eb7f6ad976622a/",
     "partytown/": "https://deno.land/x/partytown@0.2.1/",
     "$fresh/": "https://deno.land/x/fresh@1.1.3/",

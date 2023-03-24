@@ -14,19 +14,20 @@ import * as $$$$$2 from "./islands/AddToCartButton.tsx";
 import * as $$$$$3 from "./islands/HeaderModals.tsx";
 import * as $$$$$4 from "./islands/SliderJS.tsx";
 import * as $$$$$5 from "./islands/SearchControls.tsx";
-import * as $$$$$$$$0 from "deco-sites/fashion/sections/DesignSystem.story.tsx";
-import * as $$$$$$$$1 from "deco-sites/fashion/sections/Features.tsx";
-import * as $$$$$$$$2 from "deco-sites/fashion/sections/BannerGrid.tsx";
-import * as $$$$$$$$3 from "deco-sites/fashion/sections/ProductShelf.tsx";
-import * as $$$$$$$$4 from "deco-sites/fashion/sections/Footer.tsx";
-import * as $$$$$$$$5 from "deco-sites/fashion/sections/CookieConsent.tsx";
-import * as $$$$$$$$6 from "deco-sites/fashion/sections/Header.tsx";
-import * as $$$$$$$$7 from "deco-sites/fashion/sections/ProductDetails.tsx";
-import * as $$$$$$$$8 from "deco-sites/fashion/sections/ProductGallery.tsx";
-import * as $$$$$$$$9 from "deco-sites/fashion/sections/Highlights.tsx";
-import * as $$$$$$$$10 from "deco-sites/fashion/sections/WhatsApp.tsx";
-import * as $$$$$$$$11 from "deco-sites/fashion/sections/SearchControls.tsx";
-import * as $$$$$$$$12 from "deco-sites/fashion/sections/Carousel.tsx";
+import * as $$$$$$$$0 from "deco-sites/fashion/sections/LinkTree.tsx";
+import * as $$$$$$$$1 from "deco-sites/fashion/sections/DesignSystem.story.tsx";
+import * as $$$$$$$$2 from "deco-sites/fashion/sections/Features.tsx";
+import * as $$$$$$$$3 from "deco-sites/fashion/sections/BannerGrid.tsx";
+import * as $$$$$$$$4 from "deco-sites/fashion/sections/ProductShelf.tsx";
+import * as $$$$$$$$5 from "deco-sites/fashion/sections/Footer.tsx";
+import * as $$$$$$$$6 from "deco-sites/fashion/sections/CookieConsent.tsx";
+import * as $$$$$$$$7 from "deco-sites/fashion/sections/Header.tsx";
+import * as $$$$$$$$8 from "deco-sites/fashion/sections/ProductDetails.tsx";
+import * as $$$$$$$$9 from "deco-sites/fashion/sections/ProductGallery.tsx";
+import * as $$$$$$$$10 from "deco-sites/fashion/sections/Highlights.tsx";
+import * as $$$$$$$$11 from "deco-sites/fashion/sections/WhatsApp.tsx";
+import * as $$$$$$$$12 from "deco-sites/fashion/sections/SearchControls.tsx";
+import * as $$$$$$$$13 from "deco-sites/fashion/sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_inspect from "$live/routes/live/inspect.ts";
 import * as $live_schema from "$live/routes/live/schema.ts";
@@ -84,19 +85,20 @@ const manifest: DecoManifest = {
     "./islands/SearchControls.tsx": $$$$$5,
   },
   "sections": {
-    "deco-sites/fashion/sections/DesignSystem.story.tsx": $$$$$$$$0,
-    "deco-sites/fashion/sections/Features.tsx": $$$$$$$$1,
-    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$2,
-    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$3,
-    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$4,
-    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$5,
-    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$6,
-    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$7,
-    "deco-sites/fashion/sections/ProductGallery.tsx": $$$$$$$$8,
-    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$9,
-    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$10,
-    "deco-sites/fashion/sections/SearchControls.tsx": $$$$$$$$11,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$0,
+    "deco-sites/fashion/sections/DesignSystem.story.tsx": $$$$$$$$1,
+    "deco-sites/fashion/sections/Features.tsx": $$$$$$$$2,
+    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$3,
+    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$4,
+    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$5,
+    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$6,
+    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$7,
+    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$8,
+    "deco-sites/fashion/sections/ProductGallery.tsx": $$$$$$$$9,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$10,
+    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$11,
+    "deco-sites/fashion/sections/SearchControls.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$13,
     "deco-sites/std/sections/SEO.tsx": i2$$$0,
     "deco-sites/std/sections/SEOPLP.tsx": i2$$$1,
     "deco-sites/std/sections/SEOPDP.tsx": i2$$$2,
@@ -147,6 +149,6 @@ const manifest: DecoManifest = {
 };
 
 context.namespace = "deco-sites/fashion";
-context.siteId = 239;
+context.siteId = -1;
 
 export default manifest;

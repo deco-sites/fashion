@@ -47,6 +47,7 @@ This starter brings:
   <li>Minicart</li>
   <li>Newsletter</li>
   <li>Footer</li>
+  <li>Link Tree</li>
 </ul>
 
 ## Getting started
