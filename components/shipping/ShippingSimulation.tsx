@@ -104,17 +104,14 @@ function ShippingSimulation({ item }: Props) {
             postalCode: postalCode.value,
             country: "BRA",
         }
-        loading.value = true 
 
-        simulateShipping(simulationData)
-        .then(() => {loading.value = false})
-        .catch(() => {
-            loading.value = false;
+        if(postalCode.value.length == 8){
+            loading.value = true 
+            simulateShipping(simulationData)
+            .then(() => {loading.value = false})
+        }else{
             simulation.value = "error"
-        })
-
-        
-
+        }
     }, []);
     
     return(
@@ -139,6 +136,8 @@ function ShippingSimulation({ item }: Props) {
                             simulation.value = undefined
                         }}
                         value={postalCode.value}
+                        maxlength={8}
+                        minlenth={8}
                     ></Button>
                     <Button 
                         class="ml-[-5px]" 
