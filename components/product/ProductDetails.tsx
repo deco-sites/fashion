@@ -10,16 +10,11 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
-  /**
-   * @description vtex config used for simulation
-   */
-  configVTEX?: LoaderReturnType<ClientConfigVTEX>;
 }
 
 function NotFound() {
@@ -35,7 +30,7 @@ function NotFound() {
   );
 }
 
-function Details({ page, configVTEX }: { page: ProductDetailsPage; configVTEX?: ClientConfigVTEX; }) {
+function Details({ page }: { page: ProductDetailsPage }) {
   const {
     breadcrumbList,
     product,

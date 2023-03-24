@@ -911,13 +911,6 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Page",
           },
-          "configVTEX": {
-            "$id": "4a94f4ff0e8e4441f26651aaed22f0df82f38c93",
-            "format": "live-function",
-            "type": "string",
-            "title": "Config V T E X",
-            "description": "vtex config used for simulation",
-          },
         },
         "required": [
           "page",
