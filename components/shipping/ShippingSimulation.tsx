@@ -3,39 +3,26 @@ import Text from "$store/components/ui/Text.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts"
-import { SimulationData } from "deco-sites/std/commerce/vtex/types.ts"
-import { createClient } from "deco-sites/std/commerce/vtex/client.ts";
 import { fetchAPI } from "deco-sites/std/utils/fetchAPI.ts"
-
-import { useSignal, signal } from "@preact/signals";
-import { useCallback } from "preact/hooks";
-
 import type {
-    OrderForm,
     SimulationData,
     SimulationOrderForm,
     SKU
 } from "deco-sites/std/commerce/vtex/types.ts";
 
-export interface Props {
-    item: SKU;
-}
+import { useSignal, signal } from "@preact/signals";
+import { useCallback } from "preact/hooks";
 
 export interface Props {
-    simulation?: SimulationOrderForm;
-    simulationType: ShippingTypes;
+    items: Array<SKU>;
 }
 
-function ShippingContentError(params:type) {
+function ShippingContentError() {
     return(
         <div class="p-2">
             <span>CEP inválido</span>
         </div>
     )
-}
-
-function  ShippingContentSuccess(params:type) {
-    
 }
 
 function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
@@ -47,13 +34,13 @@ function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
         return <ShippingContentError />;
     }
 
-    const methods = simulation.logisticsInfo.reduce<Sla[]>(
+    const methods = simulation.logisticsInfo.reduce(
         (initial, logistic) => {
           return [...initial, ...logistic.slas];
-        }, [],);
+        }, []);
 
     if (!methods?.length) {
-        return <SimulationError type="delivery" />;
+        return <ShippingContentError />;
     }
 
     const handleShippingTime = (estimate: string) => {
@@ -63,8 +50,6 @@ function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
         if (type === "d") return `${time} dias`;
         if (type === "h") return `${time} horas`;
     };
-
-    console.log(simulation.logisticsInfo)
 
     return(
         <ul class="p-2">
@@ -90,13 +75,12 @@ function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
     )
 }
 
-
 function ShippingSimulation({ items }: Props) {
 
     const postalCode = useSignal("");
     const loading = useSignal(false)
 
-    const {simulation} = useCart()
+    const { simulation } = useCart()
 
     const handleSimulation = useCallback(() => {
         const {simulateShipping} = useCart()
