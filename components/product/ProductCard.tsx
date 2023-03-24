@@ -20,16 +20,20 @@ function Sizes(product: Product) {
 
   return (
     <ul class="flex justify-center items-center gap-2">
-      {options.map(([url, value]) => (
-        <a href={url}>
-          <Avatar
-            class="bg-default"
-            variant="abbreviation"
-            content={value}
-            disabled={url === product.url}
-          />
-        </a>
-      ))}
+      {options.map(([value, urls]) => {
+        const url = urls.find((url) => url === product.url) || urls[0];
+
+        return (
+          <a href={url}>
+            <Avatar
+              class="bg-default"
+              variant="abbreviation"
+              content={value}
+              disabled={url === product.url}
+            />
+          </a>
+        );
+      })}
     </ul>
   );
 }
