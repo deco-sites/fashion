@@ -2,7 +2,6 @@ import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import Button from "$store/components/ui/Button.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 
 import { useUI } from "../../sdk/useUI.ts";
 import CartItem from "./CartItem.tsx";
@@ -21,13 +20,6 @@ function Cart() {
   );
   const locale = cart.value?.clientPreferencesData.locale;
   const currencyCode = cart.value?.storePreferencesData.currencyCode;
-  const itemsToShipping = cart.value.items.map((item) => {
-    return {
-      id: Number(item.id),
-      quantity: item.quantity,
-      seller: item.seller ?? "1",
-    }
-  })
 
   if (cart.value === null) {
     return null;
@@ -66,10 +58,6 @@ function Cart() {
 
       {/* Cart Footer */}
       <footer>
-        {/* Shipping Simulation */}
-        <div class="p-4">
-          <ShippingSimulation items={itemsToShipping}/>
-        </div>
         {/* Subtotal */}
         <div class="border-t-1 border-default py-4 flex flex-col gap-4">
           {discounts?.value && (
