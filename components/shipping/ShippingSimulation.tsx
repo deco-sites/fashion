@@ -31,7 +31,6 @@ function ShippingContentError(params:type) {
         <div class="p-2">
             <span>CEP inválido</span>
         </div>
-        
     )
 }
 
@@ -65,6 +64,8 @@ function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
         if (type === "h") return `${time} horas`;
     };
 
+    console.log(simulation.logisticsInfo)
+
     return(
         <ul class="p-2">
             {methods.map((method) => (
@@ -90,7 +91,7 @@ function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
 }
 
 
-function ShippingSimulation({ item }: Props) {
+function ShippingSimulation({ items }: Props) {
 
     const postalCode = useSignal("");
     const loading = useSignal(false)
@@ -100,7 +101,7 @@ function ShippingSimulation({ item }: Props) {
     const handleSimulation = useCallback(() => {
         const {simulateShipping} = useCart()
         const simulationData = {
-            items: [item],
+            items: items,
             postalCode: postalCode.value,
             country: "BRA",
         }
