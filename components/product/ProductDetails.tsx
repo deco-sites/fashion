@@ -13,7 +13,6 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
