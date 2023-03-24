@@ -17,18 +17,22 @@ function VariantSelector({ product }: Props) {
         <li class="flex flex-col gap-2">
           <Text variant="caption">{name}</Text>
           <ul class="flex flex-row gap-2">
-            {Object.entries(possibilities[name]).map(([url, value]) => (
-              <li>
-                <a href={url}>
-                  <Avatar
-                    // deno-lint-ignore no-explicit-any
-                    content={value as any}
-                    disabled={url === currentUrl}
-                    variant={name === "COR" ? "color" : "abbreviation"}
-                  />
-                </a>
-              </li>
-            ))}
+            {Object.entries(possibilities[name]).map(([value, urls]) => {
+              const url = urls.find((url) => url === currentUrl) || urls[0];
+
+              return (
+                <li>
+                  <a href={url}>
+                    <Avatar
+                      // deno-lint-ignore no-explicit-any
+                      content={value as any}
+                      disabled={url === currentUrl}
+                      variant={name === "COR" ? "color" : "abbreviation"}
+                    />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </li>
       ))}

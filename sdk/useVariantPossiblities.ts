@@ -11,15 +11,20 @@ export const useVariantPossibilities = ({ isVariantOf }: Product) => {
   const possibilities = allProperties.reduce((acc, { property, url }) => {
     const { name = "", value = "" } = property;
 
+    if (!acc[name]) {
+      acc[name] = {};
+    }
+
+    if (!acc[name][value]) {
+      acc[name][value] = [];
+    }
+
     if (url) {
-      acc[name] = {
-        ...acc[name],
-        [url]: value,
-      };
+      acc[name][value].push(url);
     }
 
     return acc;
-  }, {} as Record<string, Record<string, string>>);
+  }, {} as Record<string, Record<string, string[]>>);
 
   return possibilities;
 };
