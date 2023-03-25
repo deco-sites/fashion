@@ -29,6 +29,8 @@ import * as $$$$$$$$11 from "deco-sites/fashion/sections/WhatsApp.tsx";
 import * as $$$$$$$$12 from "deco-sites/fashion/sections/SearchControls.tsx";
 import * as $$$$$$$$13 from "deco-sites/fashion/sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
+import * as $live_workbench from "$live/routes/live/workbench.ts";
+import * as $live_editorData from "$live/routes/live/editorData.ts";
 import * as $live_inspect from "$live/routes/live/inspect.ts";
 import * as $live_schema from "$live/routes/live/schema.ts";
 import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
@@ -71,6 +73,8 @@ const manifest: DecoManifest = {
     "./routes/api/[...catchall].tsx": $$$$0,
     "./routes/_app.tsx": $$$$1,
     "./routes/_middleware.ts": $live_middleware,
+    "./routes/live/workbench.ts": $live_workbench,
+    "./routes/live/editorData.ts": $live_editorData,
     "./routes/live/inspect.ts": $live_inspect,
     "./routes/live/schema.ts": $live_schema,
     "./routes/live/previews/[...block].tsx": $live_previews,
@@ -149,6 +153,6 @@ const manifest: DecoManifest = {
 };
 
 context.namespace = "deco-sites/fashion";
-context.siteId = -1;
+context.siteId = 239;
 
 export default manifest;
