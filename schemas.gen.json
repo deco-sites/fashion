@@ -46,7 +46,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@dc4e0bfa-624f-4874-b2f9-084dab77d192"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@db12ee6e-1593-40f5-a74c-05a32fb37ef8"
             }
           ],
           "required": [
@@ -64,9 +64,9 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@dc4e0bfa-624f-4874-b2f9-084dab77d192": {
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@db12ee6e-1593-40f5-a74c-05a32fb37ef8": {
       "type": "null",
-      "title": "deco-sites/std/functions/vtexConfig.ts@dc4e0bfa-624f-4874-b2f9-084dab77d192"
+      "title": "deco-sites/std/functions/vtexConfig.ts@db12ee6e-1593-40f5-a74c-05a32fb37ef8"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList": {
       "type": "object",
@@ -1001,7 +1001,7 @@
         }
       ]
     },
-    "71075708-fc21-4004-be1a-b6b8652a9e14": {
+    "21620d0d-0acf-4dd8-98ba-2dd2dd1f2340": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1032,7 +1032,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@941dd328-2709-4683-a698-d96128691bd4": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@f4a288e7-fdb1-4e74-975a-4dbc58622ee1": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1041,7 +1041,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage"
         },
         {
-          "$ref": "#/definitions/71075708-fc21-4004-be1a-b6b8652a9e14"
+          "$ref": "#/definitions/21620d0d-0acf-4dd8-98ba-2dd2dd1f2340"
         },
         {
           "title": "deco-sites/std/functions/vtexProductListingPage.ts",
@@ -1116,7 +1116,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@caa61e3d-a625-420a-ad27-1ec113346be8"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@6becdb38-5896-44ba-a912-0e9fce304884"
             }
           ],
           "required": [
@@ -1137,7 +1137,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@e49e2a3b-6292-48db-b6cf-06ae5695d430"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@9b1a3761-01c9-49e8-9e77-11aa5eb66323"
             }
           ],
           "required": [
@@ -1158,7 +1158,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@450183e9-4208-4e34-8bbd-da29b45af761"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@208a08c0-1dae-44fd-8c6e-01a049f78817"
             }
           ],
           "required": [
@@ -1179,7 +1179,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d4fffcc9-619a-485a-8f39-f8725c29f835"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@546a6dff-1a8e-4822-9d09-716edeeb1c03"
             }
           ],
           "required": [
@@ -1197,7 +1197,7 @@
         }
       ]
     },
-    "b98f50ad-94b6-4775-aee4-451a5ebf48d4": {
+    "9f8b7539-87e8-4d75-baed-ed474340470d": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1210,7 +1210,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@caa61e3d-a625-420a-ad27-1ec113346be8"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@6becdb38-5896-44ba-a912-0e9fce304884"
             }
           ],
           "required": [
@@ -1228,7 +1228,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@77b4e785-0797-4e34-a6dd-d9d36bc3f903": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@f361c105-d492-4ded-96ce-3c8bfbc21a74": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1237,14 +1237,14 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage"
         },
         {
-          "$ref": "#/definitions/b98f50ad-94b6-4775-aee4-451a5ebf48d4"
+          "$ref": "#/definitions/9f8b7539-87e8-4d75-baed-ed474340470d"
         },
         {
           "title": "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@caa61e3d-a625-420a-ad27-1ec113346be8"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@6becdb38-5896-44ba-a912-0e9fce304884"
             }
           ],
           "required": [
@@ -1262,9 +1262,9 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@caa61e3d-a625-420a-ad27-1ec113346be8": {
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@6becdb38-5896-44ba-a912-0e9fce304884": {
       "type": "null",
-      "title": "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts@caa61e3d-a625-420a-ad27-1ec113346be8"
+      "title": "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts@6becdb38-5896-44ba-a912-0e9fce304884"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search": {
       "type": "object",
@@ -1328,7 +1328,7 @@
         }
       ]
     },
-    "81e2b670-dc6d-4064-971a-0f83e1e0746a": {
+    "54c26cca-7096-4cbe-bc25-182813d4df04": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1359,7 +1359,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@5fb36b91-6490-4889-a469-f3a045c3521e": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@3cbdecd5-438c-49bb-a9ae-8e3cc9b3ea4f": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1368,7 +1368,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion"
         },
         {
-          "$ref": "#/definitions/81e2b670-dc6d-4064-971a-0f83e1e0746a"
+          "$ref": "#/definitions/54c26cca-7096-4cbe-bc25-182813d4df04"
         },
         {
           "title": "deco-sites/std/functions/vtexSuggestions.ts",
@@ -1409,7 +1409,7 @@
       "required": [],
       "title": "deco-sites/std/functions/vtexSuggestions.ts@Props"
     },
-    "445516d5-59e9-4a15-af0b-83731fbb8ead": {
+    "640fdd82-65c1-41c3-9f10-d6729e526e0b": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1440,7 +1440,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@bcaab719-4be9-4c20-876a-2bb8f18d2b53": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ac5874b6-969c-4537-b163-8536ec5397dd": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1449,7 +1449,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage"
         },
         {
-          "$ref": "#/definitions/445516d5-59e9-4a15-af0b-83731fbb8ead"
+          "$ref": "#/definitions/640fdd82-65c1-41c3-9f10-d6729e526e0b"
         },
         {
           "title": "deco-sites/std/functions/shopifyProductListingPage.ts",
@@ -1496,7 +1496,7 @@
       ],
       "title": "deco-sites/std/functions/shopifyProductListingPage.ts@Props"
     },
-    "1cf621f8-c6c7-4d9b-9989-c2ae740d97ce": {
+    "35ba1876-e90f-42f6-a4d9-5b7248305ce3": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1527,7 +1527,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@2e4d7304-ce55-4943-897e-e465c9e9601b": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@b8152375-6336-4162-bc62-51ed32d8880a": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1536,7 +1536,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
         },
         {
-          "$ref": "#/definitions/1cf621f8-c6c7-4d9b-9989-c2ae740d97ce"
+          "$ref": "#/definitions/35ba1876-e90f-42f6-a4d9-5b7248305ce3"
         },
         {
           "title": "deco-sites/std/functions/vtexProductList.ts",
@@ -1628,7 +1628,7 @@
       ],
       "title": "deco-sites/std/functions/vtexProductList.ts@Props"
     },
-    "f634b46b-261c-48a9-8982-bac63e5d945c": {
+    "7a1bbd7f-1862-4557-bbc8-add3215df16b": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1641,7 +1641,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@e49e2a3b-6292-48db-b6cf-06ae5695d430"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@9b1a3761-01c9-49e8-9e77-11aa5eb66323"
             }
           ],
           "required": [
@@ -1659,7 +1659,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@1e1b96cf-a83a-4958-94fa-668c9760359a": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@18f12ffc-16fb-45d6-830a-803f214d14d9": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1668,14 +1668,14 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage"
         },
         {
-          "$ref": "#/definitions/f634b46b-261c-48a9-8982-bac63e5d945c"
+          "$ref": "#/definitions/7a1bbd7f-1862-4557-bbc8-add3215df16b"
         },
         {
           "title": "deco-sites/std/functions/occProductDetailsPage.ts",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@e49e2a3b-6292-48db-b6cf-06ae5695d430"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@9b1a3761-01c9-49e8-9e77-11aa5eb66323"
             }
           ],
           "required": [
@@ -1693,11 +1693,11 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@e49e2a3b-6292-48db-b6cf-06ae5695d430": {
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@9b1a3761-01c9-49e8-9e77-11aa5eb66323": {
       "type": "null",
-      "title": "deco-sites/std/functions/occProductDetailsPage.ts@e49e2a3b-6292-48db-b6cf-06ae5695d430"
+      "title": "deco-sites/std/functions/occProductDetailsPage.ts@9b1a3761-01c9-49e8-9e77-11aa5eb66323"
     },
-    "8d3ab4ff-88f9-4898-9c44-9f92ff9b574f": {
+    "032b72b9-14d3-4753-b270-7fc1503cacf4": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1728,7 +1728,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@c81a7241-ae35-4fd5-a1c6-be6dc38e6094": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@98491ef9-4a82-4763-8738-b5fcc9499f1a": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1737,7 +1737,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage"
         },
         {
-          "$ref": "#/definitions/8d3ab4ff-88f9-4898-9c44-9f92ff9b574f"
+          "$ref": "#/definitions/032b72b9-14d3-4753-b270-7fc1503cacf4"
         },
         {
           "title": "deco-sites/std/functions/vtexLegacyProductListingPage.ts",
@@ -1807,7 +1807,7 @@
       ],
       "title": "deco-sites/std/functions/vtexLegacyProductListingPage.ts@Props"
     },
-    "9b2b229e-0181-4736-bd01-051ff2264000": {
+    "1048466f-2782-4f6f-9b53-e94947372c4a": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1820,7 +1820,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@450183e9-4208-4e34-8bbd-da29b45af761"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@208a08c0-1dae-44fd-8c6e-01a049f78817"
             }
           ],
           "required": [
@@ -1838,7 +1838,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@157f43dc-64e6-4d4c-9abc-0aa509a0de64": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@f9eb268f-c63c-4392-aec8-1a38c149e04d": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1847,14 +1847,14 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage"
         },
         {
-          "$ref": "#/definitions/9b2b229e-0181-4736-bd01-051ff2264000"
+          "$ref": "#/definitions/1048466f-2782-4f6f-9b53-e94947372c4a"
         },
         {
           "title": "deco-sites/std/functions/vtexProductDetailsPage.ts",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@450183e9-4208-4e34-8bbd-da29b45af761"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@208a08c0-1dae-44fd-8c6e-01a049f78817"
             }
           ],
           "required": [
@@ -1872,11 +1872,11 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@450183e9-4208-4e34-8bbd-da29b45af761": {
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@208a08c0-1dae-44fd-8c6e-01a049f78817": {
       "type": "null",
-      "title": "deco-sites/std/functions/vtexProductDetailsPage.ts@450183e9-4208-4e34-8bbd-da29b45af761"
+      "title": "deco-sites/std/functions/vtexProductDetailsPage.ts@208a08c0-1dae-44fd-8c6e-01a049f78817"
     },
-    "441f3e32-f196-43b9-853f-018b3dc98438": {
+    "fb3472c8-321e-4f4d-a051-43d744219594": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1907,7 +1907,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@e31bd966-b3f9-47ae-b5d9-65675bb3cedf": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@5188fa53-a87c-4944-8e5b-ee6e2d645216": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -1916,7 +1916,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
         },
         {
-          "$ref": "#/definitions/441f3e32-f196-43b9-853f-018b3dc98438"
+          "$ref": "#/definitions/fb3472c8-321e-4f4d-a051-43d744219594"
         },
         {
           "title": "deco-sites/std/functions/vtexLegacyProductList.ts",
@@ -2008,7 +2008,7 @@
       ],
       "title": "deco-sites/std/functions/vtexLegacyProductList.ts@Props"
     },
-    "4dbb981a-2a8e-40e4-a412-b03dec4bbad7": {
+    "ff3217e2-e055-43fb-86bb-dae018c3cee6": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -2039,7 +2039,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@97643d95-424d-4635-bf13-13b56142a302": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@64728c3a-851a-4567-a168-7af3c37d65a5": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -2048,7 +2048,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
         },
         {
-          "$ref": "#/definitions/4dbb981a-2a8e-40e4-a412-b03dec4bbad7"
+          "$ref": "#/definitions/ff3217e2-e055-43fb-86bb-dae018c3cee6"
         },
         {
           "title": "deco-sites/std/functions/shopifyProductList.ts",
@@ -2093,7 +2093,7 @@
       ],
       "title": "deco-sites/std/functions/shopifyProductList.ts@Props"
     },
-    "23f8492a-3098-4e1c-9336-7b3315403e6f": {
+    "e08f9567-69ec-48f4-a991-50bb36d64c70": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -2106,7 +2106,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d4fffcc9-619a-485a-8f39-f8725c29f835"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@546a6dff-1a8e-4822-9d09-716edeeb1c03"
             }
           ],
           "required": [
@@ -2124,7 +2124,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@8c026bc7-acbd-471d-8aba-d266d50f5c4e": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@4b9a1b20-c1a8-4605-a64e-902a126b51bc": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -2133,14 +2133,14 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage"
         },
         {
-          "$ref": "#/definitions/23f8492a-3098-4e1c-9336-7b3315403e6f"
+          "$ref": "#/definitions/e08f9567-69ec-48f4-a991-50bb36d64c70"
         },
         {
           "title": "deco-sites/std/functions/shopifyProductDetailsPage.ts",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d4fffcc9-619a-485a-8f39-f8725c29f835"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@546a6dff-1a8e-4822-9d09-716edeeb1c03"
             }
           ],
           "required": [
@@ -2158,9 +2158,9 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d4fffcc9-619a-485a-8f39-f8725c29f835": {
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@546a6dff-1a8e-4822-9d09-716edeeb1c03": {
       "type": "null",
-      "title": "deco-sites/std/functions/shopifyProductDetailsPage.ts@d4fffcc9-619a-485a-8f39-f8725c29f835"
+      "title": "deco-sites/std/functions/shopifyProductDetailsPage.ts@546a6dff-1a8e-4822-9d09-716edeeb1c03"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
       "type": "object",
@@ -2270,7 +2270,7 @@
       ],
       "title": "deco-sites/std/commerce/occ/client.ts@ConfigOCC"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@77d4c337-c19b-4918-80dd-df55901c09e0": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@f9f99d30-a1aa-4f9f-9015-293a1b33ef32": {
       "type": "object",
       "properties": {
         "variant": {
@@ -2294,19 +2294,19 @@
       "required": [
         "variant"
       ],
-      "title": "deco-sites/fashion/components/header/Buttons.tsx@77d4c337-c19b-4918-80dd-df55901c09e0"
+      "title": "deco-sites/fashion/components/header/Buttons.tsx@f9f99d30-a1aa-4f9f-9015-293a1b33ef32"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@eb0e8543-b86c-4543-a752-cdead75de3b3": {
-      "title": "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@eb0e8543-b86c-4543-a752-cdead75de3b3"
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@bcdfe01c-01df-41b6-b043-0a814be9aa1d": {
+      "title": "deco-sites/fashion/components/header/HeaderSearchMenu.tsx@bcdfe01c-01df-41b6-b043-0a814be9aa1d"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@a0721883-bb59-41ee-8881-a9585b2ce4be": {
-      "title": "deco-sites/fashion/components/product/AddToCartButton.tsx@a0721883-bb59-41ee-8881-a9585b2ce4be"
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@e0d9413a-6f34-4942-86d8-ba9a8ca1fdb4": {
+      "title": "deco-sites/fashion/components/product/AddToCartButton.tsx@e0d9413a-6f34-4942-86d8-ba9a8ca1fdb4"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@a068be83-023a-4d88-b570-3ac0d7b47be9": {
-      "title": "deco-sites/fashion/components/header/Modals.tsx@a068be83-023a-4d88-b570-3ac0d7b47be9"
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@0b35f633-89ad-4acf-ae93-038b927ff8cc": {
+      "title": "deco-sites/fashion/components/header/Modals.tsx@0b35f633-89ad-4acf-ae93-038b927ff8cc"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@c25e7400-b071-454b-9e0f-45d0d2780362": {
-      "title": "deco-sites/fashion/components/ui/SliderJS.tsx@c25e7400-b071-454b-9e0f-45d0d2780362"
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@824c18e6-91af-4e63-ac60-59afdea683cf": {
+      "title": "deco-sites/fashion/components/ui/SliderJS.tsx@824c18e6-91af-4e63-ac60-59afdea683cf"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL0NvbnRyb2xzLnRzeA==@Props": {
       "type": "object",
@@ -2353,7 +2353,7 @@
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
       "$ref": "#/root/handlers"
     },
-    "c7714ec6-d51c-42ce-864d-6de8a83d0ad2@Handler@record": {
+    "98075a43-1542-411a-889d-01feacc8bc50@Handler@record": {
       "title": "Unknown record",
       "type": "object",
       "additionalProperties": {
@@ -2372,7 +2372,7 @@
         },
         "routes": {
           "title": "Routes",
-          "$ref": "#/definitions/c7714ec6-d51c-42ce-864d-6de8a83d0ad2@Handler@record"
+          "$ref": "#/definitions/98075a43-1542-411a-889d-01feacc8bc50@Handler@record"
         }
       },
       "required": [
@@ -3686,7 +3686,7 @@
       ],
       "title": "deco-cx/live/matchers/MatchEnvironment.ts@Props"
     },
-    "c6ed1130-cab9-4e41-bbcc-572d21701520@Handler@record": {
+    "ed01ba1c-03b6-45fc-be43-f4abf5ecb910@Handler@record": {
       "title": "Unknown record",
       "type": "object",
       "additionalProperties": {
@@ -3706,7 +3706,7 @@
         },
         "routes": {
           "title": "Routes",
-          "$ref": "#/definitions/c6ed1130-cab9-4e41-bbcc-572d21701520@Handler@record"
+          "$ref": "#/definitions/ed01ba1c-03b6-45fc-be43-f4abf5ecb910@Handler@record"
         },
         "overrides": {
           "title": "Unknown record",
@@ -3723,7 +3723,7 @@
       ],
       "title": "deco-cx/live/flags/audience.ts@Audience"
     },
-    "7aeaffbf-b829-4325-bd72-48a488cd1549@Handler@record": {
+    "a9035d81-7e8c-4378-a9cb-6e824d4448e8@Handler@record": {
       "title": "Unknown record",
       "type": "object",
       "additionalProperties": {
@@ -3735,7 +3735,7 @@
       "properties": {
         "routes": {
           "title": "Routes",
-          "$ref": "#/definitions/7aeaffbf-b829-4325-bd72-48a488cd1549@Handler@record"
+          "$ref": "#/definitions/a9035d81-7e8c-4378-a9cb-6e824d4448e8@Handler@record"
         },
         "overrides": {
           "title": "Unknown record",
@@ -3753,7 +3753,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@dc4e0bfa-624f-4874-b2f9-084dab77d192"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@db12ee6e-1593-40f5-a74c-05a32fb37ef8"
         }
       ],
       "required": [
@@ -3795,7 +3795,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@caa61e3d-a625-420a-ad27-1ec113346be8"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@6becdb38-5896-44ba-a912-0e9fce304884"
         }
       ],
       "required": [
@@ -3879,7 +3879,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@e49e2a3b-6292-48db-b6cf-06ae5695d430"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==@9b1a3761-01c9-49e8-9e77-11aa5eb66323"
         }
       ],
       "required": [
@@ -3921,7 +3921,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@450183e9-4208-4e34-8bbd-da29b45af761"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@208a08c0-1dae-44fd-8c6e-01a049f78817"
         }
       ],
       "required": [
@@ -3984,7 +3984,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@d4fffcc9-619a-485a-8f39-f8725c29f835"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=@546a6dff-1a8e-4822-9d09-716edeeb1c03"
         }
       ],
       "required": [
@@ -4068,7 +4068,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@77d4c337-c19b-4918-80dd-df55901c09e0"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0J1dHRvbnMudHN4@f9f99d30-a1aa-4f9f-9015-293a1b33ef32"
         }
       ],
       "required": [
@@ -4089,7 +4089,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@eb0e8543-b86c-4543-a752-cdead75de3b3"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlclNlYXJjaE1lbnUudHN4@bcdfe01c-01df-41b6-b043-0a814be9aa1d"
         }
       ],
       "required": [
@@ -4110,7 +4110,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@a0721883-bb59-41ee-8881-a9585b2ce4be"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9BZGRUb0NhcnRCdXR0b24udHN4@e0d9413a-6f34-4942-86d8-ba9a8ca1fdb4"
         }
       ],
       "required": [
@@ -4131,7 +4131,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@a068be83-023a-4d88-b570-3ac0d7b47be9"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL01vZGFscy50c3g=@0b35f633-89ad-4acf-ae93-038b927ff8cc"
         }
       ],
       "required": [
@@ -4152,7 +4152,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@c25e7400-b071-454b-9e0f-45d0d2780362"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVySlMudHN4@824c18e6-91af-4e63-ac60-59afdea683cf"
         }
       ],
       "required": [
@@ -4846,8 +4846,8 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3JvdXRlcy9saXZlL3ByZXZpZXdzL1suLi5ibG9ja10udHN4@43b4914d-e607-46ef-ae6c-9048e034e55e": {
-      "title": "deco-sites/fashion/routes/live/previews/[...block].tsx@43b4914d-e607-46ef-ae6c-9048e034e55e"
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3JvdXRlcy9saXZlL3ByZXZpZXdzL1suLi5ibG9ja10udHN4@75a6489a-f1cd-478b-86e7-9ff6ae8bf0fb": {
+      "title": "deco-sites/fashion/routes/live/previews/[...block].tsx@75a6489a-f1cd-478b-86e7-9ff6ae8bf0fb"
     },
     "ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint": {
       "type": "object",
@@ -5095,7 +5095,7 @@
       ],
       "properties": {
         "./routes/live/previews/[...block].tsx": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3JvdXRlcy9saXZlL3ByZXZpZXdzL1suLi5ibG9ja10udHN4@43b4914d-e607-46ef-ae6c-9048e034e55e"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3JvdXRlcy9saXZlL3ByZXZpZXdzL1suLi5ibG9ja10udHN4@75a6489a-f1cd-478b-86e7-9ff6ae8bf0fb"
         },
         "./routes/[...catchall].tsx": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint"
