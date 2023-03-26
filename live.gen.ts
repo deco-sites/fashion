@@ -40,7 +40,7 @@ import * as i2$$$$1 from "$live/handlers/router.ts";
 import * as i2$$$$2 from "$live/handlers/devPage.ts";
 import * as i2$$$$3 from "$live/handlers/fresh.ts";
 import * as i2$$$$$0 from "$live/pages/LivePage.tsx";
-import * as i1$$$0 from "$live/sections/PageInclude.tsx";
+import * as i2$$$8 from "$live/sections/PageInclude.tsx";
 import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$1 from "$live/matchers/MatchUserAgent.ts";
 import * as i2$$$$$$2 from "$live/matchers/MatchSite.ts";
@@ -71,7 +71,7 @@ import * as i2$$1 from "deco-sites/std/accounts/yourViews.ts";
 import * as i2$$2 from "deco-sites/std/accounts/vtex.ts";
 import * as i2$$3 from "deco-sites/std/accounts/shopify.ts";
 import * as i2$$4 from "deco-sites/std/accounts/occ.ts";
-import * as i2$$$0 from "deco-sites/std/sections/configYourViews.tsx";
+import * as i2$$$0 from "deco-sites/std/sections/configYourViews.global.tsx";
 import * as i2$$$1 from "deco-sites/std/sections/SEO.tsx";
 import * as i2$$$2 from "deco-sites/std/sections/SEOPLP.tsx";
 import * as i2$$$3 from "deco-sites/std/sections/configOCC.global.tsx";
@@ -115,8 +115,8 @@ const manifest: DecoManifest = {
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/SearchControls.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$13,
-    "$live/sections/PageInclude.tsx": i1$$$0,
-    "deco-sites/std/sections/configYourViews.tsx": i2$$$0,
+    "$live/sections/PageInclude.tsx": i2$$$8,
+    "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,
     "deco-sites/std/sections/SEOPLP.tsx": i2$$$2,
     "deco-sites/std/sections/configOCC.global.tsx": i2$$$3,
