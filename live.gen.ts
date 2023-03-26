@@ -52,22 +52,33 @@ import * as i2$$$$$$$0 from "$live/flags/audience.ts";
 import * as i2$$$$$$$1 from "$live/flags/everyone.ts";
 import * as i2$0 from "deco-sites/std/functions/vtexConfig.ts";
 import * as i2$1 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as i2$2 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as i2$3 from "deco-sites/std/functions/vtexSuggestions.ts";
-import * as i2$4 from "deco-sites/std/functions/shopifyProductListingPage.ts";
-import * as i2$5 from "deco-sites/std/functions/vtexProductList.ts";
-import * as i2$6 from "deco-sites/std/functions/occProductDetailsPage.ts";
-import * as i2$7 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as i2$8 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as i2$9 from "deco-sites/std/functions/vtexLegacyProductList.ts";
-import * as i2$10 from "deco-sites/std/functions/shopifyProductList.ts";
-import * as i2$11 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
-import * as i2$$0 from "deco-sites/std/accounts/vtex.ts";
-import * as i2$$1 from "deco-sites/std/accounts/shopify.ts";
-import * as i2$$2 from "deco-sites/std/accounts/occ.ts";
-import * as i2$$$0 from "deco-sites/std/sections/SEO.tsx";
-import * as i2$$$1 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as i2$$$2 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as i2$2 from "deco-sites/std/functions/vndaProductList.ts";
+import * as i2$3 from "deco-sites/std/functions/vndaProductDetailsPage.ts";
+import * as i2$4 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as i2$5 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as i2$6 from "deco-sites/std/functions/vtexNavbar.ts";
+import * as i2$7 from "deco-sites/std/functions/shopifyProductListingPage.ts";
+import * as i2$8 from "deco-sites/std/functions/vtexProductList.ts";
+import * as i2$9 from "deco-sites/std/functions/occProductDetailsPage.ts";
+import * as i2$10 from "deco-sites/std/functions/vndaProductListingPage.ts";
+import * as i2$11 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as i2$12 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as i2$13 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as i2$14 from "deco-sites/std/functions/shopifyProductList.ts";
+import * as i2$15 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
+import * as i2$$0 from "deco-sites/std/accounts/vnda.ts";
+import * as i2$$1 from "deco-sites/std/accounts/yourViews.ts";
+import * as i2$$2 from "deco-sites/std/accounts/vtex.ts";
+import * as i2$$3 from "deco-sites/std/accounts/shopify.ts";
+import * as i2$$4 from "deco-sites/std/accounts/occ.ts";
+import * as i2$$$0 from "deco-sites/std/sections/configYourViews.tsx";
+import * as i2$$$1 from "deco-sites/std/sections/SEO.tsx";
+import * as i2$$$2 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as i2$$$3 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as i2$$$4 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as i2$$$5 from "deco-sites/std/sections/configVNDA.global.tsx";
+import * as i2$$$6 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as i2$$$7 from "deco-sites/std/sections/SEOPDP.tsx";
 
 const manifest: DecoManifest = {
   "routes": {
@@ -105,9 +116,14 @@ const manifest: DecoManifest = {
     "deco-sites/fashion/sections/SearchControls.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$13,
     "$live/sections/PageInclude.tsx": i1$$$0,
-    "deco-sites/std/sections/SEO.tsx": i2$$$0,
-    "deco-sites/std/sections/SEOPLP.tsx": i2$$$1,
-    "deco-sites/std/sections/SEOPDP.tsx": i2$$$2,
+    "deco-sites/std/sections/configYourViews.tsx": i2$$$0,
+    "deco-sites/std/sections/SEO.tsx": i2$$$1,
+    "deco-sites/std/sections/SEOPLP.tsx": i2$$$2,
+    "deco-sites/std/sections/configOCC.global.tsx": i2$$$3,
+    "deco-sites/std/sections/configShopify.global.tsx": i2$$$4,
+    "deco-sites/std/sections/configVNDA.global.tsx": i2$$$5,
+    "deco-sites/std/sections/configVTEX.global.tsx": i2$$$6,
+    "deco-sites/std/sections/SEOPDP.tsx": i2$$$7,
   },
   "handlers": {
     "$live/handlers/routesSelection.ts": i2$$$$0,
@@ -134,21 +150,27 @@ const manifest: DecoManifest = {
   "functions": {
     "deco-sites/std/functions/vtexConfig.ts": i2$0,
     "deco-sites/std/functions/vtexProductListingPage.ts": i2$1,
-    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": i2$2,
-    "deco-sites/std/functions/vtexSuggestions.ts": i2$3,
-    "deco-sites/std/functions/shopifyProductListingPage.ts": i2$4,
-    "deco-sites/std/functions/vtexProductList.ts": i2$5,
-    "deco-sites/std/functions/occProductDetailsPage.ts": i2$6,
-    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": i2$7,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": i2$8,
-    "deco-sites/std/functions/vtexLegacyProductList.ts": i2$9,
-    "deco-sites/std/functions/shopifyProductList.ts": i2$10,
-    "deco-sites/std/functions/shopifyProductDetailsPage.ts": i2$11,
+    "deco-sites/std/functions/vndaProductList.ts": i2$2,
+    "deco-sites/std/functions/vndaProductDetailsPage.ts": i2$3,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": i2$4,
+    "deco-sites/std/functions/vtexSuggestions.ts": i2$5,
+    "deco-sites/std/functions/vtexNavbar.ts": i2$6,
+    "deco-sites/std/functions/shopifyProductListingPage.ts": i2$7,
+    "deco-sites/std/functions/vtexProductList.ts": i2$8,
+    "deco-sites/std/functions/occProductDetailsPage.ts": i2$9,
+    "deco-sites/std/functions/vndaProductListingPage.ts": i2$10,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": i2$11,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": i2$12,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": i2$13,
+    "deco-sites/std/functions/shopifyProductList.ts": i2$14,
+    "deco-sites/std/functions/shopifyProductDetailsPage.ts": i2$15,
   },
   "accounts": {
-    "deco-sites/std/accounts/vtex.ts": i2$$0,
-    "deco-sites/std/accounts/shopify.ts": i2$$1,
-    "deco-sites/std/accounts/occ.ts": i2$$2,
+    "deco-sites/std/accounts/vnda.ts": i2$$0,
+    "deco-sites/std/accounts/yourViews.ts": i2$$1,
+    "deco-sites/std/accounts/vtex.ts": i2$$2,
+    "deco-sites/std/accounts/shopify.ts": i2$$3,
+    "deco-sites/std/accounts/occ.ts": i2$$4,
   },
   "config": config,
   "baseUrl": import.meta.url,
