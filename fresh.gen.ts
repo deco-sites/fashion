@@ -1009,9 +1009,24 @@ const manifest: DecoManifest = {
             "type": "string",
             "title": "Page",
           },
+          "variant": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "front-back",
+              },
+              {
+                "type": "string",
+                "const": "slider",
+              },
+            ],
+            "title": "Variant",
+          },
         },
         "required": [
           "page",
+          "variant",
         ],
       },
       "outputSchema": null,
