@@ -22,13 +22,16 @@
           "type": "object",
           "properties": {
             "account": {
-              "type": "string"
+              "type": "string",
+              "title": "Account"
             },
             "defaultLocale": {
-              "type": "string"
+              "type": "string",
+              "title": "Default Locale"
             },
             "defaultPriceCurrency": {
-              "type": "string"
+              "type": "string",
+              "title": "Default Price Currency"
             }
           },
           "required": [
@@ -61,7 +64,8 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "BreadcrumbList"
+          "const": "BreadcrumbList",
+          "title": "@type"
         }
       },
       "required": [
@@ -73,10 +77,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "key": {
-          "type": "string"
+          "type": "string",
+          "title": "Key"
         }
       },
       "required": [
@@ -89,19 +95,24 @@
       "type": "object",
       "properties": {
         "quantity": {
-          "type": "number"
+          "type": "number",
+          "title": "Quantity"
         },
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "value": {
-          "type": "string"
+          "type": "string",
+          "title": "Value"
         },
         "selected": {
-          "type": "boolean"
+          "type": "boolean",
+          "title": "Selected"
         },
         "url": {
-          "type": "string"
+          "type": "string",
+          "title": "Url"
         }
       },
       "required": [
@@ -129,14 +140,16 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "FilterToggle"
+          "const": "FilterToggle",
+          "title": "@type"
         },
         "values": {
-          "title": "Values",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggleValue[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggleValue[]",
+          "title": "Values"
         },
         "quantity": {
-          "type": "number"
+          "type": "number",
+          "title": "Quantity"
         }
       },
       "required": [
@@ -150,10 +163,12 @@
       "type": "object",
       "properties": {
         "min": {
-          "type": "number"
+          "type": "number",
+          "title": "Min"
         },
         "max": {
-          "type": "number"
+          "type": "number",
+          "title": "Max"
         }
       },
       "required": [
@@ -172,11 +187,12 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "FilterRange"
+          "const": "FilterRange",
+          "title": "@type"
         },
         "values": {
-          "title": "Values",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRangeValue"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRangeValue",
+          "title": "Values"
         }
       },
       "required": [
@@ -206,49 +222,57 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "PropertyValue"
+          "const": "PropertyValue",
+          "title": "@type"
         },
         "maxValue": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Max Value"
         },
         "minValue": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Min Value"
         },
         "propertyID": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Property I D"
         },
         "unitCode": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Unit Code"
         },
         "unitText": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Unit Text"
         },
         "value": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Value"
         },
         "valueReference": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Value Reference"
         }
       },
       "required": [
@@ -267,25 +291,29 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "AggregateRating"
+          "const": "AggregateRating",
+          "title": "@type"
         },
         "ratingCount": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Rating Count"
         },
         "reviewCount": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Review Count"
         },
         "ratingValue": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Rating Value"
         }
       },
       "required": [
@@ -310,24 +338,27 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "ProductGroup"
+          "const": "ProductGroup",
+          "title": "@type"
         },
         "hasVariant": {
-          "title": "Has Variant",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]",
+          "title": "Has Variant"
         },
         "productGroupID": {
-          "type": "string"
+          "type": "string",
+          "title": "Product Group I D"
         },
         "additionalProperty": {
-          "title": "Additional Property",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
+          "title": "Additional Property"
         },
         "model": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Model"
         }
       },
       "required": [
@@ -345,7 +376,8 @@
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Value"
         }
       },
       "required": [],
@@ -356,7 +388,8 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "UnitPriceSpecification"
+          "const": "UnitPriceSpecification",
+          "title": "@type"
         },
         "priceComponentType": {
           "anyOf": [
@@ -384,7 +417,8 @@
               "type": "string",
               "const": "https://schema.org/Subscription"
             }
-          ]
+          ],
+          "title": "Price Component Type"
         },
         "priceType": {
           "anyOf": [
@@ -412,19 +446,22 @@
               "type": "string",
               "const": "https://schema.org/SRP"
             }
-          ]
+          ],
+          "title": "Price Type"
         },
         "billingDuration": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Billing Duration"
         },
         "billingIncrement": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Billing Increment"
         }
       },
       "required": [
@@ -444,7 +481,8 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "Offer"
+          "const": "Offer",
+          "title": "@type"
         },
         "availability": {
           "anyOf": [
@@ -488,17 +526,19 @@
               "type": "string",
               "const": "https://schema.org/SoldOut"
             }
-          ]
+          ],
+          "title": "Availability"
         },
         "gtin": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Gtin"
         },
         "inventoryLevel": {
-          "title": "Inventory Level",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@QuantitativeValue"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@QuantitativeValue",
+          "title": "Inventory Level"
         },
         "itemCondition": {
           "anyOf": [
@@ -518,32 +558,37 @@
               "type": "string",
               "const": "https://schema.org/UsedCondition"
             }
-          ]
+          ],
+          "title": "Item Condition"
         },
         "price": {
-          "type": "number"
+          "type": "number",
+          "title": "Price"
         },
         "priceSpecification": {
-          "title": "Price Specification",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification[]",
+          "title": "Price Specification"
         },
         "priceValidUntil": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Price Valid Until"
         },
         "seller": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Seller"
         },
         "sku": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Sku"
         }
       },
       "required": [
@@ -566,26 +611,31 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "AggregateOffer"
+          "const": "AggregateOffer",
+          "title": "@type"
         },
         "highPrice": {
-          "type": "number"
+          "type": "number",
+          "title": "High Price"
         },
         "lowPrice": {
-          "type": "number"
+          "type": "number",
+          "title": "Low Price"
         },
         "offerCount": {
-          "type": "number"
+          "type": "number",
+          "title": "Offer Count"
         },
         "offers": {
-          "title": "Offers",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer[]",
+          "title": "Offers"
         },
         "priceCurrency": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Price Currency"
         }
       },
       "required": [
@@ -602,41 +652,47 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "Review"
+          "const": "Review",
+          "title": "@type"
         },
         "itemReviewed": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Item Reviewed"
         },
         "negativeNotes": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Negative Notes"
         },
         "positiveNotes": {
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Positive Notes"
         },
         "reviewAspect": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Review Aspect"
         },
         "reviewBody": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Review Body"
         },
         "reviewRating": {
-          "title": "Review Rating",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating",
+          "title": "Review Rating"
         }
       },
       "required": [
@@ -649,75 +705,85 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "Product"
+          "const": "Product",
+          "title": "@type"
         },
         "additionalProperty": {
-          "title": "Additional Property",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
+          "title": "Additional Property"
         },
         "aggregateRating": {
-          "title": "Aggregate Rating",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating",
+          "title": "Aggregate Rating"
         },
         "award": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Award"
         },
         "brand": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Brand"
         },
         "category": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Category"
         },
         "gtin": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Gtin"
         },
         "inProductGroupWithID": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "In Product Group With I D"
         },
         "isVariantOf": {
-          "title": "Is Variant Of",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup",
+          "title": "Is Variant Of"
         },
         "offers": {
-          "title": "Offers",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateOffer"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateOffer",
+          "title": "Offers"
         },
         "productID": {
-          "type": "string"
+          "type": "string",
+          "title": "Product I D"
         },
         "productionDate": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Production Date"
         },
         "releaseDate": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Release Date"
         },
         "review": {
-          "title": "Review",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Review"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Review",
+          "title": "Review"
         },
         "sku": {
-          "type": "string"
+          "type": "string",
+          "title": "Sku"
         }
       },
       "required": [
@@ -828,10 +894,12 @@
       "type": "object",
       "properties": {
         "value": {
-          "type": "string"
+          "type": "string",
+          "title": "Value"
         },
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         }
       },
       "required": [
@@ -856,25 +924,27 @@
           "properties": {
             "@type": {
               "type": "string",
-              "const": "ProductListingPage"
+              "const": "ProductListingPage",
+              "title": "@type"
             },
             "breadcrumb": {
-              "title": "Breadcrumb",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList",
+              "title": "Breadcrumb"
             },
             "filters": {
-              "title": "Filters",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange|FilterToggle[]"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange|FilterToggle[]",
+              "title": "Filters"
             },
             "products": {
-              "title": "Products",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]",
+              "title": "Products"
             },
             "pageInfo": {
               "type": "object",
               "properties": {
                 "currentPage": {
-                  "type": "number"
+                  "type": "number",
+                  "title": "Current Page"
                 },
                 "nextPage": {
                   "anyOf": [
@@ -884,7 +954,8 @@
                     {
                       "type": "null"
                     }
-                  ]
+                  ],
+                  "title": "Next Page"
                 },
                 "previousPage": {
                   "anyOf": [
@@ -894,18 +965,20 @@
                     {
                       "type": "null"
                     }
-                  ]
+                  ],
+                  "title": "Previous Page"
                 }
               },
               "required": [
                 "currentPage",
                 "nextPage",
                 "previousPage"
-              ]
+              ],
+              "title": "Page Info"
             },
             "sortOptions": {
-              "title": "Sort Options",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@SortOption[]"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@SortOption[]",
+              "title": "Sort Options"
             }
           },
           "required": [
@@ -1314,11 +1387,12 @@
             "string",
             "null"
           ],
+          "title": "Query",
           "description": "overides the query term"
         },
         "count": {
-          "title": "Items per page",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         }
       },
@@ -1332,6 +1406,7 @@
       "properties": {
         "limit": {
           "type": "number",
+          "title": "Limit",
           "description": "total number of items to display"
         },
         "term": {
@@ -1339,6 +1414,7 @@
             "string",
             "null"
           ],
+          "title": "Term",
           "description": "query to use on search"
         },
         "wildcard": {
@@ -1346,6 +1422,7 @@
             "boolean",
             "null"
           ],
+          "title": "Wildcard",
           "description": "search for term anywhere"
         },
         "sort": {
@@ -1367,6 +1444,7 @@
               "const": "highest_price"
             }
           ],
+          "title": "Sort",
           "description": "search sort parameter"
         },
         "tags": {
@@ -1374,6 +1452,7 @@
           "items": {
             "type": "string"
           },
+          "title": "Tags",
           "description": "search for products that have certain tag"
         }
       },
@@ -1390,6 +1469,7 @@
             "number",
             "null"
           ],
+          "title": "Count",
           "description": "limit the number of searches",
           "default": "4"
         }
@@ -1405,6 +1485,7 @@
             "number",
             "null"
           ],
+          "title": "Levels",
           "description": "Number of levels of categories to be returned",
           "default": "2"
         }
@@ -1420,11 +1501,12 @@
             "string",
             "null"
           ],
+          "title": "Query",
           "description": "overides the query term"
         },
         "count": {
-          "title": "Items per page",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         }
       },
@@ -1438,10 +1520,12 @@
       "properties": {
         "query": {
           "type": "string",
+          "title": "Query",
           "description": "query to use on search"
         },
         "count": {
           "type": "number",
+          "title": "Count",
           "description": "total number of items to display"
         },
         "sort": {
@@ -1479,6 +1563,7 @@
               "const": "discount:desc"
             }
           ],
+          "title": "Sort",
           "description": "search sort parameter"
         },
         "collection": {
@@ -1486,6 +1571,7 @@
           "items": {
             "type": "string"
           },
+          "title": "Collection",
           "description": "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
           "pattern": "\\d*"
         }
@@ -1504,6 +1590,7 @@
             "string",
             "null"
           ],
+          "title": "Term",
           "description": "overides the query term"
         },
         "tags": {
@@ -1511,11 +1598,12 @@
           "items": {
             "type": "string"
           },
+          "title": "Tags",
           "description": "filter products by tag"
         },
         "count": {
-          "title": "Items per page",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         }
       },
@@ -1532,11 +1620,12 @@
             "string",
             "null"
           ],
+          "title": "Term",
           "description": "overides the query term"
         },
         "count": {
-          "title": "Items per page",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         },
         "ft": {
@@ -1544,19 +1633,22 @@
             "string",
             "null"
           ],
+          "title": "Ft",
           "description": "FullText term"
         },
         "fq": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Fq"
         },
         "map": {
           "type": [
             "string",
             "null"
           ],
+          "title": "Map",
           "description": "map param"
         }
       },
@@ -1570,10 +1662,12 @@
       "properties": {
         "query": {
           "type": "string",
+          "title": "Query",
           "description": "query to use on search"
         },
         "count": {
           "type": "number",
+          "title": "Count",
           "description": "total number of items to display"
         },
         "sort": {
@@ -1611,6 +1705,7 @@
               "const": "discount:desc"
             }
           ],
+          "title": "Sort",
           "description": "search sort parameter"
         },
         "collection": {
@@ -1618,6 +1713,7 @@
           "items": {
             "type": "string"
           },
+          "title": "Collection",
           "description": "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
           "pattern": "\\d*"
         }
@@ -1633,10 +1729,12 @@
       "properties": {
         "query": {
           "type": "string",
+          "title": "Query",
           "description": "search term to use on search"
         },
         "count": {
           "type": "number",
+          "title": "Count",
           "description": "total number of items to display"
         }
       },
@@ -1651,18 +1749,22 @@
       "properties": {
         "domain": {
           "type": "string",
+          "title": "Domain",
           "description": "Your VNDA domain name. For example, https://mystore.vnda.com.br"
         },
         "authToken": {
           "type": "string",
+          "title": "Auth Token",
           "description": "The token generated from admin panel. Read here: https://developers.vnda.com.br/docs/chave-de-acesso-e-requisicoes. Do not add any other permissions than catalog."
         },
         "useSandbox": {
           "type": "boolean",
+          "title": "Use Sandbox",
           "description": "Define if sandbox environment should be used"
         },
         "defaultPriceCurrency": {
           "type": "string",
+          "title": "Default Price Currency",
           "description": "Default price currency.",
           "default": "USD"
         }
@@ -1679,10 +1781,12 @@
       "type": "object",
       "properties": {
         "token": {
-          "type": "string"
+          "type": "string",
+          "title": "Token"
         },
         "appId": {
-          "type": "string"
+          "type": "string",
+          "title": "App Id"
         }
       },
       "required": [
@@ -1691,7 +1795,7 @@
       ],
       "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2FjY291bnQudHM=@Account": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
       "type": "object",
       "properties": {},
       "required": [],
@@ -1701,38 +1805,44 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2FjY291bnQudHM=@Account"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
         }
       ],
       "properties": {
         "account": {
           "type": "string",
+          "title": "Account",
           "description": "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC."
         },
         "defaultLocale": {
           "type": "string",
+          "title": "Default Locale",
           "description": "Locale used for VTEX Intelligent Search client."
         },
         "defaultPriceCurrency": {
           "type": "string",
+          "title": "Default Price Currency",
           "description": "Default price currency.",
           "default": "USD"
         },
         "defaultSalesChannel": {
           "type": "string",
+          "title": "Default Sales Channel",
           "description": "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV"
         },
         "defaultRegionId": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Default Region Id"
         },
         "defaultHideUnnavailableItems": {
           "type": [
             "boolean",
             "null"
-          ]
+          ],
+          "title": "Default Hide Unnavailable Items"
         }
       },
       "required": [
@@ -1747,16 +1857,18 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2FjY291bnQudHM=@Account"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
         }
       ],
       "properties": {
         "storeName": {
           "type": "string",
+          "title": "Store Name",
           "description": "Shopify store name."
         },
         "storefrontAccessToken": {
           "type": "string",
+          "title": "Storefront Access Token",
           "description": "Shopify storefront access token."
         }
       },
@@ -1770,18 +1882,20 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2FjY291bnQudHM=@Account"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
         }
       ],
       "properties": {
         "baseUrl": {
-          "type": "string"
+          "type": "string",
+          "title": "Base Url"
         },
         "nrpp": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Nrpp"
         }
       },
       "required": [
@@ -1800,7 +1914,8 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "title": "Page"
         }
       },
       "required": [
@@ -1808,116 +1923,119 @@
       ],
       "title": "deco-sites/fashion/components/search/Controls.tsx@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2ZsYWcudHM=@Flag": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2ZsYWcudHM=@Flag[]": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2ZsYWcudHM=@Flag"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
       }
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvcm91dGVzU2VsZWN0aW9uLnRz@SelectionConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig": {
       "type": "object",
       "properties": {
         "flags": {
-          "title": "Flags",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2ZsYWcudHM=@Flag[]"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag[]",
+          "title": "Flags"
         }
       },
       "required": [
         "flags"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/handlers/routesSelection.ts@SelectionConfig"
+      "title": "deco-cx/live/handlers/routesSelection.ts@SelectionConfig"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
       "$ref": "#/root/handlers"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler@record": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record": {
       "title": "Unknown record",
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
       }
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvcm91dGVyLnRz@RouterConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig": {
       "type": "object",
       "properties": {
         "base": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Base"
         },
         "routes": {
-          "title": "Routes",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler@record"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+          "title": "Routes"
         }
       },
       "required": [
         "routes"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/handlers/router.ts@RouterConfig"
+      "title": "deco-cx/live/handlers/router.ts@RouterConfig"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3BhZ2UudHM=@Page": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
       "$ref": "#/root/pages"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvZGV2UGFnZS50cw==@DevConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
       "type": "object",
       "properties": {
         "page": {
-          "title": "Page",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3BhZ2UudHM=@Page"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+          "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/handlers/devPage.ts@DevConfig"
+      "title": "deco-cx/live/handlers/devPage.ts@DevConfig"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvZnJlc2gudHM=@FreshConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig": {
       "type": "object",
       "properties": {
         "page": {
-          "title": "Page",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3BhZ2UudHM=@Page"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+          "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/handlers/fresh.ts@FreshConfig"
+      "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3NlY3Rpb24udHM=@Section": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
       "$ref": "#/root/sections"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3NlY3Rpb24udHM=@Section[]": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3NlY3Rpb24udHM=@Section"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
       }
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvcGFnZXMvTGl2ZVBhZ2UudHN4@Props": {
+    "ZGVjby1jeC9saXZlL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "sections": {
-          "title": "Sections",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3NlY3Rpb24udHM=@Section[]"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "title": "Sections"
         }
       },
       "required": [
         "sections"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/pages/LivePage.tsx@Props"
+      "title": "deco-cx/live/pages/LivePage.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
       "type": "object",
       "properties": {
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "href": {
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         }
       },
       "required": [
@@ -1949,10 +2067,12 @@
               "type": "string",
               "const": "Facebook"
             }
-          ]
+          ],
+          "title": "Label"
         },
         "href": {
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         }
       },
       "required": [
@@ -1974,29 +2094,31 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Title"
         },
         "description": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Description"
         },
         "links": {
-          "title": "Links",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]",
+          "title": "Links"
         },
         "bgImage": {
-          "title": "Bg Image",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Bg Image"
         },
         "avatar": {
-          "title": "Avatar",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Avatar"
         },
         "social": {
-          "title": "Social",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social[]",
+          "title": "Social"
         }
       },
       "required": [],
@@ -2136,14 +2258,17 @@
               "const": "WhatsApp"
             }
           ],
+          "title": "Icon",
           "description": "Image src"
         },
         "title": {
           "type": "string",
+          "title": "Title",
           "description": "Title"
         },
         "description": {
           "type": "string",
+          "title": "Description",
           "description": "Description and Image alt text"
         }
       },
@@ -2164,8 +2289,8 @@
       "type": "object",
       "properties": {
         "features": {
-          "title": "Features",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]",
+          "title": "Features"
         }
       },
       "required": [
@@ -2177,19 +2302,21 @@
       "type": "object",
       "properties": {
         "srcMobile": {
-          "title": "Src Mobile",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Mobile"
         },
         "srcDesktop": {
-          "title": "Src Desktop",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Desktop"
         },
         "alt": {
           "type": "string",
+          "title": "Alt",
           "description": "Image alt text"
         },
         "href": {
           "type": "string",
+          "title": "Href",
           "description": "When you click you go to"
         }
       },
@@ -2213,7 +2340,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Title"
         },
         "itemsPerLine": {
           "type": "object",
@@ -2222,16 +2350,19 @@
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Mobile"
             },
             "desktop": {
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Desktop"
             }
           },
           "required": [],
+          "title": "Items Per Line",
           "description": "Default is 2 for mobile and all for desktop"
         },
         "borderRadius": {
@@ -2241,21 +2372,24 @@
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Mobile"
             },
             "desktop": {
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Desktop"
             }
           },
           "required": [],
+          "title": "Border Radius",
           "description": "Item's border radius in px"
         },
         "banners": {
-          "title": "Banners",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4@Banner[]",
+          "title": "Banners"
         }
       },
       "required": [
@@ -2269,7 +2403,8 @@
       "type": "object",
       "properties": {
         "title": {
-          "type": "string"
+          "type": "string",
+          "title": "Title"
         },
         "products": {
           "anyOf": [
@@ -2279,13 +2414,15 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "title": "Products"
         },
         "itemsPerPage": {
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Items Per Page"
         }
       },
       "required": [
@@ -2298,10 +2435,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "href": {
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         }
       },
       "required": [
@@ -2443,7 +2582,8 @@
               "type": "string",
               "const": "WhatsApp"
             }
-          ]
+          ],
+          "title": "Icon"
         }
       },
       "required": [
@@ -2471,11 +2611,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "children": {
-          "title": "Children",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]",
+          "title": "Children"
         }
       },
       "required": [
@@ -2494,8 +2635,8 @@
       "type": "object",
       "properties": {
         "sections": {
-          "title": "Sections",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]",
+          "title": "Sections"
         }
       },
       "required": [],
@@ -2505,29 +2646,29 @@
       "type": "object",
       "properties": {
         "placeholder": {
-          "title": "Placeholder",
           "type": [
             "string",
             "null"
           ],
+          "title": "Placeholder",
           "description": "Search bar default placeholder message",
           "default": "What are you looking for?"
         },
         "action": {
-          "title": "Page path",
           "type": [
             "string",
             "null"
           ],
+          "title": "Action",
           "description": "When user clicks on the search button, navigate it to",
           "default": "/s"
         },
         "name": {
-          "title": "Term name",
           "type": [
             "string",
             "null"
           ],
+          "title": "Name",
           "description": "Querystring param used when navigating the user",
           "default": "q"
         },
@@ -2535,7 +2676,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Query"
         }
       },
       "required": [],
@@ -2545,10 +2687,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "href": {
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         },
         "children": {
           "type": "array",
@@ -2556,10 +2700,12 @@
             "type": "object",
             "properties": {
               "label": {
-                "type": "string"
+                "type": "string",
+                "title": "Label"
               },
               "href": {
-                "type": "string"
+                "type": "string",
+                "title": "Href"
               },
               "children": {
                 "type": "array",
@@ -2567,40 +2713,46 @@
                   "type": "object",
                   "properties": {
                     "label": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Label"
                     },
                     "href": {
-                      "type": "string"
+                      "type": "string",
+                      "title": "Href"
                     }
                   },
                   "required": [
                     "label",
                     "href"
                   ]
-                }
+                },
+                "title": "Children"
               }
             },
             "required": [
               "label",
               "href"
             ]
-          }
+          },
+          "title": "Children"
         },
         "image": {
           "type": "object",
           "properties": {
             "src": {
-              "title": "Src",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
             },
             "alt": {
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "title": "Alt"
             }
           },
-          "required": []
+          "required": [],
+          "title": "Image"
         }
       },
       "required": [
@@ -2619,7 +2771,8 @@
       "type": "object",
       "properties": {
         "term": {
-          "type": "string"
+          "type": "string",
+          "title": "Term"
         }
       },
       "required": [
@@ -2642,12 +2795,12 @@
           "type": "object",
           "properties": {
             "searches": {
-              "title": "Searches",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search[]"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search[]",
+              "title": "Searches"
             },
             "products": {
-              "title": "Products",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]",
+              "title": "Products"
             }
           },
           "required": [],
@@ -2683,19 +2836,19 @@
           "type": "array",
           "items": {
             "type": "string"
-          }
+          },
+          "title": "Alerts"
         },
         "searchbar": {
-          "title": "Search Bar",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
+          "title": "Searchbar"
         },
         "navItems": {
-          "title": "Navigation items",
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
+          "title": "Nav Items",
           "description": "Navigation items used both on mobile and desktop menus"
         },
         "products": {
-          "title": "Product suggestions",
           "anyOf": [
             {
               "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
@@ -2704,10 +2857,10 @@
               "type": "null"
             }
           ],
+          "title": "Products",
           "description": "Product suggestions displayed on search"
         },
         "suggestions": {
-          "title": "Enable Top Search terms",
           "anyOf": [
             {
               "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion"
@@ -2715,12 +2868,13 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "title": "Suggestions"
         },
         "configVTEX": {
-          "title": "Config V T E X",
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@ClientConfigVTEX",
-          "description": "vtex config used for search autocompletion;"
+          "description": "vtex config used for search autocompletion;",
+          "title": "Config V T E X"
         }
       },
       "required": [
@@ -2738,15 +2892,16 @@
           "properties": {
             "@type": {
               "type": "string",
-              "const": "ProductDetailsPage"
+              "const": "ProductDetailsPage",
+              "title": "@type"
             },
             "breadcrumbList": {
-              "title": "Breadcrumb List",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList",
+              "title": "Breadcrumb List"
             },
             "product": {
-              "title": "Product",
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product",
+              "title": "Product"
             }
           },
           "required": [
@@ -2849,7 +3004,8 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "title": "Page"
         }
       },
       "required": [
@@ -2868,7 +3024,8 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "title": "Page"
         }
       },
       "required": [
@@ -2880,17 +3037,20 @@
       "type": "object",
       "properties": {
         "src": {
-          "title": "Src",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src"
         },
         "alt": {
-          "type": "string"
+          "type": "string",
+          "title": "Alt"
         },
         "href": {
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         },
         "label": {
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         }
       },
       "required": [
@@ -2911,11 +3071,12 @@
       "type": "object",
       "properties": {
         "highlights": {
-          "title": "Highlights",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]",
+          "title": "Highlights"
         },
         "title": {
-          "type": "string"
+          "type": "string",
+          "title": "Title"
         }
       },
       "required": [
@@ -2930,7 +3091,8 @@
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Phone"
         }
       },
       "required": [],
@@ -2940,33 +3102,38 @@
       "type": "object",
       "properties": {
         "desktop": {
-          "title": "Desktop",
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "desktop otimized image"
+          "description": "desktop otimized image",
+          "title": "Desktop"
         },
         "mobile": {
-          "title": "Mobile",
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "mobile otimized image"
+          "description": "mobile otimized image",
+          "title": "Mobile"
         },
         "alt": {
           "type": "string",
+          "title": "Alt",
           "description": "Image's alt text"
         },
         "action": {
           "type": "object",
           "properties": {
             "href": {
-              "type": "string"
+              "type": "string",
+              "title": "Href"
             },
             "title": {
-              "type": "string"
+              "type": "string",
+              "title": "Title"
             },
             "subTitle": {
-              "type": "string"
+              "type": "string",
+              "title": "Sub Title"
             },
             "label": {
-              "type": "string"
+              "type": "string",
+              "title": "Label"
             }
           },
           "required": [
@@ -2974,7 +3141,8 @@
             "title",
             "subTitle",
             "label"
-          ]
+          ],
+          "title": "Action"
         }
       },
       "required": [
@@ -2994,40 +3162,41 @@
       "type": "object",
       "properties": {
         "images": {
-          "title": "Images",
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner[]"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner[]",
+          "title": "Images"
         },
         "preload": {
           "type": [
             "boolean",
             "null"
           ],
+          "title": "Preload",
           "description": "Check this option when this banner is the biggest image on the screen for image optimizations"
         },
         "interval": {
-          "title": "Autoplay interval",
           "type": [
             "number",
             "null"
           ],
+          "title": "Interval",
           "description": "time (in seconds) to start the carousel autoplay"
         }
       },
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerCarousel.tsx@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4@Props": {
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "page": {
-          "title": "Page",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL3BhZ2UudHM=@Page"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+          "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/sections/PageInclude.tsx@Props"
+      "title": "deco-cx/live/sections/PageInclude.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPQmFzZS50c3g=@Props": {
       "type": "object",
@@ -3036,31 +3205,36 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Title"
         },
         "description": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Description"
         },
         "url": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Url"
         },
         "imageUrl": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Image Url"
         },
         "themeColor": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Theme Color"
         }
       },
       "required": [],
@@ -3077,37 +3251,43 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "title": "Page"
         },
         "title": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Title"
         },
         "description": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Description"
         },
         "url": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Url"
         },
         "imageUrl": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Image Url"
         },
         "themeColor": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Theme Color"
         }
       },
       "required": [
@@ -3126,27 +3306,29 @@
             {
               "type": "null"
             }
-          ]
+          ],
+          "title": "Page"
         },
         "titleTemplate": {
-          "title": "Title template",
           "type": "string",
+          "title": "Title Template",
           "description": "add a %s whenever you want it to be replaced with the product name",
           "default": "%s | Fashion Store"
         },
         "description": {
-          "title": "Meta tag description",
           "type": [
             "string",
             "null"
           ],
+          "title": "Description",
           "description": "If not set, the product description will be used instead"
         },
         "themeColor": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Theme Color"
         }
       },
       "required": [
@@ -3155,7 +3337,7 @@
       ],
       "title": "deco-sites/std/components/seo/SEOPDP.tsx@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hEYXRlLnRz@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props": {
       "type": "object",
       "properties": {
         "start": {
@@ -3163,6 +3345,7 @@
             "string",
             "null"
           ],
+          "title": "Start",
           "format": "date-time"
         },
         "end": {
@@ -3170,53 +3353,57 @@
             "string",
             "null"
           ],
+          "title": "End",
           "format": "date-time"
         }
       },
       "required": [],
-      "title": "/Users/marcoscandeia/workspace/live/matchers/MatchDate.ts@Props"
+      "title": "deco-cx/live/matchers/MatchDate.ts@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hVc2VyQWdlbnQudHM=@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props": {
       "type": "object",
       "properties": {
         "includes": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Includes"
         },
         "match": {
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Match"
         }
       },
       "required": [],
-      "title": "/Users/marcoscandeia/workspace/live/matchers/MatchUserAgent.ts@Props"
+      "title": "deco-cx/live/matchers/MatchUserAgent.ts@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hTaXRlLnRz@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props": {
       "type": "object",
       "properties": {
         "siteId": {
-          "type": "number"
+          "type": "number",
+          "title": "Site Id"
         }
       },
       "required": [
         "siteId"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/matchers/MatchSite.ts@Props"
+      "title": "deco-cx/live/matchers/MatchSite.ts@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL21hdGNoZXIudHM=@Matcher": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
       "$ref": "#/root/matchers"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL21hdGNoZXIudHM=@Matcher[]": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL21hdGNoZXIudHM=@Matcher"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher"
       }
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hNdWx0aS50cw==@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props": {
       "type": "object",
       "properties": {
         "op": {
@@ -3229,32 +3416,34 @@
               "type": "string",
               "const": "and"
             }
-          ]
+          ],
+          "title": "Op"
         },
         "matchers": {
-          "title": "Matchers",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL21hdGNoZXIudHM=@Matcher[]"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]",
+          "title": "Matchers"
         }
       },
       "required": [
         "op",
         "matchers"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/matchers/MatchMulti.ts@Props"
+      "title": "deco-cx/live/matchers/MatchMulti.ts@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hSYW5kb20udHM=@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props": {
       "type": "object",
       "properties": {
         "traffic": {
-          "type": "number"
+          "type": "number",
+          "title": "Traffic"
         }
       },
       "required": [
         "traffic"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/matchers/MatchRandom.ts@Props"
+      "title": "deco-cx/live/matchers/MatchRandom.ts@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hFbnZpcm9ubWVudC50cw==@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props": {
       "type": "object",
       "properties": {
         "environment": {
@@ -3267,30 +3456,32 @@
               "type": "string",
               "const": "development"
             }
-          ]
+          ],
+          "title": "Environment"
         }
       },
       "required": [
         "environment"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/matchers/MatchEnvironment.ts@Props"
+      "title": "deco-cx/live/matchers/MatchEnvironment.ts@Props"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvZmxhZ3MvYXVkaWVuY2UudHM=@Audience": {
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience": {
       "type": "object",
       "properties": {
         "matcher": {
-          "title": "Matcher",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL21hdGNoZXIudHM=@Matcher"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
+          "title": "Matcher"
         },
         "name": {
-          "type": "string"
+          "type": "string",
+          "title": "Name"
         },
         "routes": {
-          "title": "Routes",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler@record"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+          "title": "Routes"
         },
         "overrides": {
-          "title": "Unknown record",
+          "title": "Overrides",
           "type": "object",
           "additionalProperties": {
             "type": "string"
@@ -3302,17 +3493,17 @@
         "name",
         "routes"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/flags/audience.ts@Audience"
+      "title": "deco-cx/live/flags/audience.ts@Audience"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvZmxhZ3MvZXZlcnlvbmUudHM=@EveryoneConfig": {
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig": {
       "type": "object",
       "properties": {
         "routes": {
-          "title": "Routes",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler@record"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+          "title": "Routes"
         },
         "overrides": {
-          "title": "Unknown record",
+          "title": "Overrides",
           "type": "object",
           "additionalProperties": {
             "type": "string"
@@ -3320,7 +3511,7 @@
         }
       },
       "required": [],
-      "title": "/Users/marcoscandeia/workspace/live/flags/everyone.ts@EveryoneConfig"
+      "title": "deco-cx/live/flags/everyone.ts@EveryoneConfig"
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=": {
       "title": "deco-sites/std/functions/vtexConfig.ts",
@@ -3839,7 +4030,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvcm91dGVzU2VsZWN0aW9uLnRz@SelectionConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig"
         }
       ],
       "required": [
@@ -3860,7 +4051,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvcm91dGVyLnRz@RouterConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig"
         }
       ],
       "required": [
@@ -3881,7 +4072,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvZGV2UGFnZS50cw==@DevConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig"
         }
       ],
       "required": [
@@ -3902,7 +4093,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvaGFuZGxlcnMvZnJlc2gudHM=@FreshConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig"
         }
       ],
       "required": [
@@ -3923,7 +4114,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvcGFnZXMvTGl2ZVBhZ2UudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props"
         }
       ],
       "required": [
@@ -4228,7 +4419,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props"
         }
       ],
       "required": [
@@ -4417,7 +4608,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hEYXRlLnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props"
         }
       ],
       "required": [
@@ -4438,7 +4629,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hVc2VyQWdlbnQudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props"
         }
       ],
       "required": [
@@ -4459,7 +4650,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hTaXRlLnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props"
         }
       ],
       "required": [
@@ -4480,7 +4671,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hNdWx0aS50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props"
         }
       ],
       "required": [
@@ -4501,7 +4692,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hSYW5kb20udHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props"
         }
       ],
       "required": [
@@ -4522,7 +4713,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvbWF0Y2hlcnMvTWF0Y2hFbnZpcm9ubWVudC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props"
         }
       ],
       "required": [
@@ -4559,7 +4750,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvZmxhZ3MvYXVkaWVuY2UudHM=@Audience"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience"
         }
       ],
       "required": [
@@ -4580,7 +4771,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvZmxhZ3MvZXZlcnlvbmUudHM=@EveryoneConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig"
         }
       ],
       "required": [
@@ -4596,11 +4787,11 @@
         }
       }
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvcm91dGVzL19taWRkbGV3YXJlLnRz@MiddlewareConfig": {
+    "ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig": {
       "type": "object",
       "properties": {
         "state": {
-          "title": "Unknown record",
+          "title": "State",
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/Resolvable"
@@ -4610,20 +4801,20 @@
       "required": [
         "state"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/routes/_middleware.ts@MiddlewareConfig"
+      "title": "deco-cx/live/routes/_middleware.ts@MiddlewareConfig"
     },
-    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvcm91dGVzL1suLi5jYXRjaGFsbF0udHN4@Entrypoint": {
+    "ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint": {
       "type": "object",
       "properties": {
         "handler": {
-          "title": "Handler",
-          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvYmxvY2tzL2hhbmRsZXIudHM=@Handler"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
+          "title": "Handler"
         }
       },
       "required": [
         "handler"
       ],
-      "title": "/Users/marcoscandeia/workspace/live/routes/[...catchall].tsx@Entrypoint"
+      "title": "deco-cx/live/routes/[...catchall].tsx@Entrypoint"
     }
   },
   "root": {
@@ -4893,14 +5084,14 @@
         "./routes/_middleware.ts": {
           "anyOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvcm91dGVzL19taWRkbGV3YXJlLnRz@MiddlewareConfig"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig"
             }
           ]
         },
         "./routes/[...catchall].tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2xpdmUvcm91dGVzL1suLi5jYXRjaGFsbF0udHN4@Entrypoint"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint"
             }
           ]
         }
