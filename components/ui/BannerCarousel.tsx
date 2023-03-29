@@ -108,7 +108,7 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
       </style>
       <SliderDots class="col-span-full gap-4 z-10 row-start-4">
         {images?.map((_) => (
-          <div class="py-4">
+          <div class="py-6">
             <div
               class={tw`group-disabled:${
                 animation(

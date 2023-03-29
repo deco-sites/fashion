@@ -20,9 +20,9 @@ export type Variant = "front-back" | "slider" | "auto";
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
   /**
-   * @title Product view  
-   * @description Ask for the developer to remove this option since this is here to help development only and should not be used in production 
-   * */
+   * @title Product view
+   * @description Ask for the developer to remove this option since this is here to help development only and should not be used in production
+   */
   variant?: Variant;
 }
 
@@ -214,10 +214,7 @@ function Details({
    * reached causing a scrollbar to be rendered.
    */
   return (
-    <div
-      id={id}
-      class={`grid grid-cols-1 gap-4 sm:(grid-cols-[50vw_25vw] grid-rows-1 justify-center)`}
-    >
+    <div class="grid grid-cols-1 gap-4 sm:(grid-cols-[50vw_25vw] grid-rows-1 justify-center)">
       {/* Image slider */}
       <Slider class="gap-6">
         {[images[0], images[1] ?? images[0]].map((img, index) => (
