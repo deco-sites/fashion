@@ -35,8 +35,9 @@ import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
 import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
 import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
 import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$20 from "deco-sites/std/sections/configYourViews.tsx";
+import * as $$$19 from "deco-sites/std/sections/configVNDA.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$21 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -47,15 +48,19 @@ import * as $$$$6 from "deco-sites/std/functions/occProductDetailsPage.ts";
 import * as $$$$7 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
 import * as $$$$8 from "deco-sites/std/functions/shopifyProductList.ts";
 import * as $$$$9 from "deco-sites/std/functions/shopifyProductListingPage.ts";
-import * as $$$$10 from "deco-sites/std/functions/vtexConfig.ts";
-import * as $$$$11 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as $$$$12 from "deco-sites/std/functions/vtexLegacyProductList.ts";
-import * as $$$$13 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as $$$$14 from "deco-sites/std/functions/vtexNavbar.ts";
-import * as $$$$15 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as $$$$16 from "deco-sites/std/functions/vtexProductList.ts";
-import * as $$$$17 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as $$$$18 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as $$$$10 from "deco-sites/std/functions/vndaProductDetailsPage.ts";
+import * as $$$$11 from "deco-sites/std/functions/vndaProductList.ts";
+import * as $$$$12 from "deco-sites/std/functions/vndaProductListingPage.ts";
+import * as $$$$13 from "deco-sites/std/functions/vtexConfig.ts";
+import * as $$$$14 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as $$$$15 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as $$$$16 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as $$$$17 from "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts";
+import * as $$$$18 from "deco-sites/std/functions/vtexNavbar.ts";
+import * as $$$$19 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as $$$$20 from "deco-sites/std/functions/vtexProductList.ts";
+import * as $$$$21 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as $$$$22 from "deco-sites/std/functions/vtexSuggestions.ts";
 
 const manifest: DecoManifest = {
   routes: {
@@ -93,8 +98,9 @@ const manifest: DecoManifest = {
     "deco-sites/std/sections/SEOPLP.tsx": $$$16,
     "deco-sites/std/sections/configOCC.global.tsx": $$$17,
     "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
-    "deco-sites/std/sections/configYourViews.tsx": $$$20,
+    "deco-sites/std/sections/configVNDA.global.tsx": $$$19,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$20,
+    "deco-sites/std/sections/configYourViews.tsx": $$$21,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -107,15 +113,19 @@ const manifest: DecoManifest = {
     "deco-sites/std/functions/shopifyProductDetailsPage.ts": $$$$7,
     "deco-sites/std/functions/shopifyProductList.ts": $$$$8,
     "deco-sites/std/functions/shopifyProductListingPage.ts": $$$$9,
-    "deco-sites/std/functions/vtexConfig.ts": $$$$10,
-    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$11,
-    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$12,
-    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$13,
-    "deco-sites/std/functions/vtexNavbar.ts": $$$$14,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$15,
-    "deco-sites/std/functions/vtexProductList.ts": $$$$16,
-    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$17,
-    "deco-sites/std/functions/vtexSuggestions.ts": $$$$18,
+    "deco-sites/std/functions/vndaProductDetailsPage.ts": $$$$10,
+    "deco-sites/std/functions/vndaProductList.ts": $$$$11,
+    "deco-sites/std/functions/vndaProductListingPage.ts": $$$$12,
+    "deco-sites/std/functions/vtexConfig.ts": $$$$13,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": $$$$14,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": $$$$15,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": $$$$16,
+    "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts": $$$$17,
+    "deco-sites/std/functions/vtexNavbar.ts": $$$$18,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": $$$$19,
+    "deco-sites/std/functions/vtexProductList.ts": $$$$20,
+    "deco-sites/std/functions/vtexProductListingPage.ts": $$$$21,
+    "deco-sites/std/functions/vtexSuggestions.ts": $$$$22,
   },
   schemas: {
     "./sections/BannerGrid.tsx": {
@@ -1012,7 +1022,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
+            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1060,7 +1070,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
+            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1270,12 +1280,13 @@ const manifest: DecoManifest = {
             ],
             "title": "Description",
           },
-          "url": {
+          "canonical": {
             "type": [
               "string",
               "null",
             ],
-            "title": "Url",
+            "title": "Canonical URL",
+            "default": "https://example.com",
           },
           "imageUrl": {
             "type": [
@@ -1344,7 +1355,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
+            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1433,6 +1444,44 @@ const manifest: DecoManifest = {
         "required": [
           "storeName",
           "storefrontAccessToken",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "deco-sites/std/sections/configVNDA.global.tsx": {
+      "inputSchema": {
+        "title": "Config V N D A.global",
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "title": "Domain",
+            "description":
+              "Your VNDA domain name. For example, https://mystore.vnda.com.br",
+          },
+          "authToken": {
+            "type": "string",
+            "title": "Auth Token",
+            "description":
+              "The token generated from admin panel. Read here: https://developers.vnda.com.br/docs/chave-de-acesso-e-requisicoes. Do not add any other permissions than catalog.",
+          },
+          "useSandbox": {
+            "type": "boolean",
+            "title": "Use Sandbox",
+            "description": "Define if sandbox environment should be used",
+          },
+          "defaultPriceCurrency": {
+            "type": "string",
+            "title": "Default Price Currency",
+            "description": "Default price currency.",
+            "default": "USD",
+          },
+        },
+        "required": [
+          "domain",
+          "authToken",
+          "useSandbox",
+          "defaultPriceCurrency",
         ],
       },
       "outputSchema": null,
@@ -1598,7 +1647,135 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
+            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "deco-sites/std/functions/vndaProductDetailsPage.ts": {
+      "inputSchema": {
+        "type": "null",
+        "title": "Vnda Product Details Page",
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "bf6c5311c35f44b8ba333ce3c2acd5fed0d8ad8a",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "deco-sites/std/functions/vndaProductList.ts": {
+      "inputSchema": {
+        "title": "Vnda Product List",
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number",
+            "title": "Limit",
+            "description": "total number of items to display",
+          },
+          "term": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Term",
+            "description": "query to use on search",
+          },
+          "wildcard": {
+            "type": [
+              "boolean",
+              "null",
+            ],
+            "title": "Wildcard",
+            "description": "search for term anywhere",
+          },
+          "sort": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "newest",
+              },
+              {
+                "type": "string",
+                "const": "oldest",
+              },
+              {
+                "type": "string",
+                "const": "lowest_price",
+              },
+              {
+                "type": "string",
+                "const": "highest_price",
+              },
+            ],
+            "title": "Sort",
+            "description": "search sort parameter",
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Tags",
+            "description": "search for products that have certain tag",
+          },
+        },
+        "required": [
+          "limit",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "deco-sites/std/functions/vndaProductListingPage.ts": {
+      "inputSchema": {
+        "title": "Vnda Product Listing Page",
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": [
+              "string",
+              "null",
+            ],
+            "title": "Term",
+            "description": "overides the query term",
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Tags",
+            "description": "filter products by tag",
+          },
+          "count": {
+            "type": "number",
+            "title": "Items per page",
+            "description": "number of products per page to display",
+          },
+        },
+        "required": [
+          "count",
+        ],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
           },
         },
         "additionalProperties": true,
@@ -1764,7 +1941,78 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
+            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
+          },
+        },
+        "additionalProperties": true,
+      },
+    },
+    "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts": {
+      "inputSchema": {
+        "title": "Vtex Legacy Related Products Loader",
+        "type": "object",
+        "properties": {
+          "crossSelling": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "",
+              },
+              {
+                "type": "string",
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "whosawalsosaw",
+                  },
+                  {
+                    "type": "string",
+                    "const": "whosawalsobought",
+                  },
+                  {
+                    "type": "string",
+                    "const": "whoboughtalsobought",
+                  },
+                  {
+                    "type": "string",
+                    "const": "showtogether",
+                  },
+                  {
+                    "type": "string",
+                    "const": "accessories",
+                  },
+                  {
+                    "type": "string",
+                    "const": "similars",
+                  },
+                  {
+                    "type": "string",
+                    "const": "suggestions",
+                  },
+                ],
+                "title": "CrossSellingType",
+              },
+            ],
+            "title": "Related Products",
+            "description":
+              "VTEX Cross Selling API. This loader only works on routes of type /:slug/p",
+          },
+          "count": {
+            "type": [
+              "number",
+              "null",
+            ],
+            "title": "Count",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$id": "bae848f3957be1cb6ed2c2ac3847787272389ee9",
           },
         },
         "additionalProperties": true,
@@ -1919,7 +2167,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "dc324bcbdc313fdca3eaf23a9c1547d4702ee1ce",
+            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
           },
         },
         "additionalProperties": true,
