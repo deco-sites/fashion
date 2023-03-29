@@ -1,1 +1,1 @@
-export { default } from '$store/components/product/ProductImageZoom.tsx'
+export { default } from "$store/components/product/ProductImageZoom.tsx";
