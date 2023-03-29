@@ -65,6 +65,7 @@ import * as i2$12 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
 import * as i2$13 from "deco-sites/std/functions/vtexLegacyProductList.ts";
 import * as i2$14 from "deco-sites/std/functions/shopifyProductList.ts";
 import * as i2$15 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
+import * as i2$16 from "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts";
 import * as i2$$0 from "deco-sites/std/accounts/vnda.ts";
 import * as i2$$1 from "deco-sites/std/accounts/yourViews.ts";
 import * as i2$$2 from "deco-sites/std/accounts/vtex.ts";
@@ -162,6 +163,7 @@ const manifest: DecoManifest = {
     "deco-sites/std/functions/vtexLegacyProductList.ts": i2$13,
     "deco-sites/std/functions/shopifyProductList.ts": i2$14,
     "deco-sites/std/functions/shopifyProductDetailsPage.ts": i2$15,
+    "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts": i2$16,
   },
   "accounts": {
     "deco-sites/std/accounts/vnda.ts": i2$$0,
