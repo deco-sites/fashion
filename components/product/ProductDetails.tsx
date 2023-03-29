@@ -6,8 +6,7 @@ import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import Dots from "$store/components/ui/Dots.tsx";
+import { Slider, SliderDots } from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/components/ui/SliderJS.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
@@ -25,6 +24,7 @@ export interface Props {
 
 const WIDTH = 360;
 const HEIGHT = 500;
+const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 function NotFound() {
   return (
@@ -125,23 +125,25 @@ function Details({
 }: { page: ProductDetailsPage; variant: Variant }) {
   const id = `product-image-gallery:${useId()}`;
   const { product: { image = [] } } = page;
-  const images = [...image, ...image, ...image];
+  const images = [...image, ...image, ...image, ...image, ...image, ...image, ...image, ...image, ...image];
 
   return (
     <>
       <Container class="py-0 sm:py-10">
         <div
           id={id}
-          class="grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_30vw_minmax(min-content,25vw)] grid-rows-1 justify-center gap-10)"
+          class={`grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_35vw_minmax(min-content,35vw)] grid-rows-1 justify-between max-h-[calc(${
+            (HEIGHT / WIDTH).toFixed(2)
+          }*35vw)])`}
         >
           {/* Image Slider */}
           <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
             <Slider class="gap-6">
               {images.map((img, index) => (
                 <Image
-                  style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
-                  class={`scroll-snap-center min-w-[100vw] sm:(min-w-[30vw])`}
-                  sizes="(max-width: 640px) 100vw, 30vw"
+                  style={{ aspectRatio: ASPECT_RATIO }}
+                  class={`scroll-snap-center min-w-[100vw] sm:(min-w-[35vw])`}
+                  sizes="(max-width: 640px) 100vw, 35vw"
                   src={img.url!}
                   alt={img.alternateName}
                   width={WIDTH}
@@ -164,26 +166,27 @@ function Details({
             </div>
           </div>
 
-          {/* Dots preview */}
-          <Dots class="gap-2 sm:(flex-col justify-start col-start-1 col-span-1 row-start-1)">
+          {/* Dots */}
+          <SliderDots class="gap-2 override:(justify-start) overflow-auto px-4 sm:(px-0 flex-col col-start-1 col-span-1 row-start-1)">
             {images.map((img, _) => (
               <Image
-                class="group-disabled:(border-interactive border) rounded w-[63px] w-[100px]"
-                width={100}
-                height={100}
+                style={{ aspectRatio: ASPECT_RATIO }}
+                class="group-disabled:(border-interactive) border rounded min-w-[63px] sm:min-w-[100px]"
+                width={63}
+                height={87.5}
                 src={img.url!}
                 alt={img.alternateName}
               />
             ))}
-          </Dots>
+          </SliderDots>
 
           {/* Product Info */}
           <div class="px-4 sm:(px-0 col-start-3 col-span-1 row-start-1)">
             <ProductInfo page={page} />
           </div>
         </div>
+        <SliderJS rootId={id}></SliderJS>
       </Container>
-      <SliderJS rootId={id}></SliderJS>
     </>
   );
 }
