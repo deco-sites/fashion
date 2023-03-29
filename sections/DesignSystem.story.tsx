@@ -82,6 +82,8 @@ const icons = [
   "MapPin",
   "Phone",
   "Trash",
+  "WhatsApp",
+  "ArrowsPointingOut",
 ] as const;
 
 function DesignSystemItem(

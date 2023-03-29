@@ -14,6 +14,7 @@ import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
+import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -180,6 +181,14 @@ function Details({
               <Button variant="icon" data-slide="next" aria-label="Next">
                 <Icon size={20} id="ChevronRight" strokeWidth={3} />
               </Button>
+            </div>
+
+            <div class="absolute top-2 right-2 bg-interactive-inverse rounded-full">
+              <ProductImageZoom
+                images={images}
+                width={1280}
+                height={1280 * HEIGHT / WIDTH}
+              />
             </div>
           </div>
 
