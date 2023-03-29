@@ -15,17 +15,24 @@ import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 
-export type Variant = "front-back" | "slider";
+export type Variant = "front-back" | "slider" | "auto";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
-  variant: Variant;
+  /**
+   * @title Product view  
+   * @description Ask for the developer to remove this option since this is here to help development only and should not be used in production 
+   * */
+  variant?: Variant;
 }
 
 const WIDTH = 360;
 const HEIGHT = 500;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
+/**
+ * Rendered when a not found is returned by any of the loaders run on this page
+ */
 function NotFound() {
   return (
     <div class="w-full flex justify-center items-center py-28">
@@ -39,6 +46,9 @@ function NotFound() {
   );
 }
 
+/**
+ * Breadcrumbs, prices, addToCart and more
+ */
 function ProductInfo({ page }: { page: ProductDetailsPage }) {
   const {
     breadcrumbList,
@@ -54,7 +64,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
   const { price, listPrice, seller, installments } = useOffer(offers);
 
   return (
-    <div class="">
+    <>
       {/* Breadcrumb */}
       <Breadcrumb
         itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
@@ -115,7 +125,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           )}
         </Text>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -124,26 +134,32 @@ function Details({
   variant,
 }: { page: ProductDetailsPage; variant: Variant }) {
   const id = `product-image-gallery:${useId()}`;
-  const { product: { image = [] } } = page;
-  const images = [...image, ...image, ...image, ...image, ...image, ...image, ...image, ...image, ...image];
+  const { product: { image: images = [] } } = page;
 
-  return (
-    <>
-      <Container class="py-0 sm:py-10">
+  /**
+   * Product slider variant
+   *
+   * Creates a three columned grid on destkop, one for the dots preview, one for the image slider and the other for product info
+   * On mobile, there's one single column with 3 rows. Note that the orders are different from desktop to mobile, that's why
+   * we rearrange each cell with col-start- directives
+   */
+  if (variant === "slider") {
+    return (
+      <>
         <div
           id={id}
-          class={`grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_35vw_minmax(min-content,35vw)] grid-rows-1 justify-between max-h-[calc(${
+          class={`grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-1 justify-center max-h-[calc(${
             (HEIGHT / WIDTH).toFixed(2)
-          }*35vw)])`}
+          }*40vw)])`}
         >
           {/* Image Slider */}
           <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
             <Slider class="gap-6">
               {images.map((img, index) => (
                 <Image
+                  class={`scroll-snap-center min-w-[100vw] sm:(min-w-[40vw])`}
+                  sizes="(max-width: 640px) 100vw, 40vw"
                   style={{ aspectRatio: ASPECT_RATIO }}
-                  class={`scroll-snap-center min-w-[100vw] sm:(min-w-[35vw])`}
-                  sizes="(max-width: 640px) 100vw, 35vw"
                   src={img.url!}
                   alt={img.alternateName}
                   width={WIDTH}
@@ -154,6 +170,7 @@ function Details({
                 />
               ))}
             </Slider>
+
             <div class="absolute left-2 top-1/2  bg-interactive-inverse rounded-full border-default border">
               <Button variant="icon" data-slide="prev" aria-label="Previous">
                 <Icon size={20} id="ChevronLeft" strokeWidth={3} />
@@ -181,22 +198,69 @@ function Details({
           </SliderDots>
 
           {/* Product Info */}
-          <div class="px-4 sm:(px-0 col-start-3 col-span-1 row-start-1)">
+          <div class="px-4 sm:(pr-0 pl-6 col-start-3 col-span-1 row-start-1)">
             <ProductInfo page={page} />
           </div>
         </div>
         <SliderJS rootId={id}></SliderJS>
-      </Container>
-    </>
+      </>
+    );
+  }
+
+  /**
+   * Product front-back variant.
+   *
+   * Renders two images side by side both on mobile and on desktop. On mobile, the overflow is
+   * reached causing a scrollbar to be rendered.
+   */
+  return (
+    <div
+      id={id}
+      class={`grid grid-cols-1 gap-4 sm:(grid-cols-[50vw_25vw] grid-rows-1 justify-center)`}
+    >
+      {/* Image slider */}
+      <Slider class="gap-6">
+        {[images[0], images[1] ?? images[0]].map((img, index) => (
+          <Image
+            class={`scroll-snap-center min-w-[100vw] sm:(min-w-[24vw])`}
+            sizes="(max-width: 640px) 100vw, 24vw"
+            style={{ aspectRatio: ASPECT_RATIO }}
+            src={img.url!}
+            alt={img.alternateName}
+            width={WIDTH}
+            height={HEIGHT}
+            // Preload LCP image for better web vitals
+            preload={index === 0}
+            loading={index === 0 ? "eager" : "lazy"}
+          />
+        ))}
+      </Slider>
+
+      {/* Product Info */}
+      <div class="px-4 sm:(pr-0 pl-6)">
+        <ProductInfo page={page} />
+      </div>
+    </div>
   );
 }
 
-function ProductDetails({ page, variant }: Props) {
-  if (page) {
-    return <Details page={page} variant={variant} />;
-  }
+function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
+  /**
+   * Showcase the different product views we have on this template. In case there are less
+   * than two images, render a front-back, otherwhise render a slider
+   * Remove one of them and go with the best suited for your use case.
+   */
+  const variant = maybeVar === "auto"
+    ? page?.product.image?.length && page?.product.image?.length < 2
+      ? "front-back"
+      : "slider"
+    : maybeVar;
 
-  return <NotFound />;
+  return (
+    <Container class="py-0 sm:py-10">
+      {page ? <Details page={page} variant={variant} /> : <NotFound />}
+    </Container>
+  );
 }
 
 export default ProductDetails;

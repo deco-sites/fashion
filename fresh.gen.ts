@@ -1020,13 +1020,18 @@ const manifest: DecoManifest = {
                 "type": "string",
                 "const": "slider",
               },
+              {
+                "type": "string",
+                "const": "auto",
+              },
             ],
-            "title": "Variant",
+            "title": "Product view",
+            "description":
+              "Ask for the developer to remove this option since this is here to help development only and should not be used in production",
           },
         },
         "required": [
           "page",
-          "variant",
         ],
       },
       "outputSchema": null,
