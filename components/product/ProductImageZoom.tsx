@@ -39,29 +39,26 @@ function ProductImageZoom({ images, width, height }: Props) {
         }}
       >
         <div class="relative" id="product-zoom">
-          <Slider class="max-w-[100vw]">
+          <Slider class="max-w-[100vw] overflow-y-auto">
             {images.map((image) => (
-              <div class="w-screen flex justify-center">
-                <Image
-                  style={{
-                    aspectRatio: `${width} / ${height}`,
-                    maxHeight: "90vh",
-                    maxWidth: `calc(${width / height} * 90vh)`,
-                  }}
-                  src={image.url!}
-                  alt={image.alternateName}
-                  width={width}
-                  height={height}
-                />
-              </div>
+              <Image
+                style={{
+                  aspectRatio: `${width} / ${height}`,
+                  minWidth: `100vw`,
+                }}
+                src={image.url!}
+                alt={image.alternateName}
+                width={width}
+                height={height}
+              />
             ))}
           </Slider>
-          <div class="absolute left-8 top-1/2  bg-interactive-inverse rounded-full border-default border">
+          <div class="absolute left-8 top-[50vh]  bg-interactive-inverse rounded-full border-default border">
             <Button variant="icon" data-slide="prev" aria-label="Previous">
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
             </Button>
           </div>
-          <div class="absolute right-8 top-1/2 bg-interactive-inverse rounded-full border-default border">
+          <div class="absolute right-8 top-[50vh] bg-interactive-inverse rounded-full border-default border">
             <Button variant="icon" data-slide="next" aria-label="Next">
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
             </Button>
