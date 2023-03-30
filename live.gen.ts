@@ -31,7 +31,7 @@ import * as $$$$$$$$13 from "deco-sites/fashion/sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
 import * as $live_inspect from "$live/routes/live/inspect.ts";
-import * as $live_schema from "$live/routes/live/schema.ts";
+import * as $live_meta from "$live/routes/live/_meta.ts";
 import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
 import * as i2$$$$0 from "$live/handlers/routesSelection.ts";
@@ -87,7 +87,7 @@ const manifest: DecoManifest = {
     "./routes/_middleware.ts": $live_middleware,
     "./routes/live/editorData.ts": $live_editorData,
     "./routes/live/inspect.ts": $live_inspect,
-    "./routes/live/schema.ts": $live_schema,
+    "./routes/live/_meta.ts": $live_meta,
     "./routes/live/previews/[...block].tsx": $live_previews,
     "./routes/[...catchall].tsx": $live_catchall,
   },
