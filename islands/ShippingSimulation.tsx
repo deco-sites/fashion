@@ -1,1 +1,1 @@
-export { default } from "$store/components/shipping/ShippingSimulation.tsx"
+export { default } from "$store/components/ui/ShippingSimulation.tsx"
