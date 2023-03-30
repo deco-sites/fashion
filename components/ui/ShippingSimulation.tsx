@@ -4,14 +4,14 @@ import Text from "$store/components/ui/Text.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts"
-import { fetchAPI } from "deco-sites/std/utils/fetchAPI.ts"
+
 import type {
-    SimulationData,
     SimulationOrderForm,
-    SKU
+    SKU,
+    Sla
 } from "deco-sites/std/commerce/vtex/types.ts";
 
-import { useSignal, signal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 
 export interface Props {
@@ -35,12 +35,11 @@ function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
         return <ShippingContentError />;
     }
 
-    const methods = simulation.logisticsInfo.reduce(
-        (initial, logistic) => {
+    const methods = simulation.logisticsInfo.reduce<Sla[]>((initial, logistic) => {
           return [...initial, ...logistic.slas];
-        }, []);
+    }, []);
 
-    if (!methods?.length) {
+    if (!methods.length) {
         return <ShippingContentError />;
     }
 
@@ -80,11 +79,11 @@ function ShippingSimulation({ items }: Props) {
 
     const postalCode = useSignal("");
     const loading = useSignal(false)
+    const simulateResult = useSignal<SimulationOrderForm | null>(null)
 
-    const { simulation } = useCart()
+    const { simulate } = useCart()
 
     const handleSimulation = useCallback(() => {
-        const {simulateShipping} = useCart()
         const simulationData = {
             items: items,
             postalCode: postalCode.value,
@@ -93,11 +92,13 @@ function ShippingSimulation({ items }: Props) {
 
         if(postalCode.value.length == 8){
             loading.value = true 
-            simulateShipping(simulationData)
-            .then(() => {loading.value = false})
-        }else{
-            simulation.value = "error"
+            simulate(simulationData)
+            .then((result) => {
+               simulateResult.value = result
+               loading.value = false
+            })
         }
+
     }, []);
     
     return(
@@ -117,9 +118,9 @@ function ShippingSimulation({ items }: Props) {
                         variant="input" 
                         class="w-full" 
                         placeholder="Digite seu cep"
-                        onChange={(e) => {
+                        onChange={(e: { currentTarget: { value: string; }; }) => {
                             postalCode.value = e.currentTarget.value
-                            simulation.value = undefined
+
                         }}
                         value={postalCode.value}
                         maxlength={8}
@@ -134,10 +135,10 @@ function ShippingSimulation({ items }: Props) {
                 </form>
                 
             </div>
-            <div>
+            <div>             
                 {
-                    simulation.value && <div>
-                        <ShippingContent simulation={simulation.value} />
+                    simulateResult.value && <div>
+                        <ShippingContent simulation={simulateResult.value} />
                     </div>
                 }
 
