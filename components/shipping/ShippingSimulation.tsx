@@ -100,7 +100,7 @@ function ShippingSimulation({ items }: Props) {
     }, []);
     
     return(
-        <div>
+        <>
             <Text>Consulte o frete</Text>
             <div>
                 <form 
@@ -142,7 +142,7 @@ function ShippingSimulation({ items }: Props) {
                 }
 
             </div>
-        </div>
+        </>
     )
 }
 
