@@ -26,10 +26,7 @@ function ShippingContentError() {
     )
 }
 
-function ShippingContent({ simulation }:{ simulation: SimulationOrderForm }) {
-    const { cart } = useCart();
-    const locale = cart.value?.clientPreferencesData.locale;
-    const currencyCode = cart.value?.storePreferencesData.currencyCode;
+function ShippingContent({ simulation, locale, currencyCode }:{ simulation: SimulationOrderForm; locale: string; currencyCode: string }) {
 
     if (!simulation.logisticsInfo?.length) {
         return <ShippingContentError />;
@@ -81,14 +78,19 @@ function ShippingSimulation({ items }: Props) {
     const loading = useSignal(false)
     const simulateResult = useSignal<SimulationOrderForm | null>(null)
 
-    const { simulate } = useCart()
+    const { simulate, cart } = useCart()
+
+    const locale = cart.value?.clientPreferencesData.locale || "pt-BR";
+    const currencyCode = cart.value?.storePreferencesData.currencyCode || "BRL";
 
     const handleSimulation = useCallback(() => {
         const simulationData = {
             items: items,
             postalCode: postalCode.value,
-            country: "BRA",
+            country: cart.value?.storePreferencesData.countryCode || "BRA"
         }
+
+        console.log(simulationData)
 
         if(postalCode.value.length == 8){
             loading.value = true 
@@ -138,7 +140,11 @@ function ShippingSimulation({ items }: Props) {
             <div>             
                 {
                     simulateResult.value && <div>
-                        <ShippingContent simulation={simulateResult.value} />
+                        <ShippingContent 
+                            simulation={simulateResult.value}
+                            locale={locale}
+                            currencyCode={currencyCode} 
+                        />
                     </div>
                 }
 
