@@ -1,4 +1,5 @@
 import Button from "$store/components/ui/Button.tsx";
+import Input from "$store/components/ui/Input.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 
@@ -110,7 +111,7 @@ function ShippingSimulation({ items }: Props) {
                         handleSimulation();
                     }}
                 >
-                    <Button 
+                    <Input 
                         as="input" 
                         type="text" 
                         variant="input" 
@@ -122,8 +123,7 @@ function ShippingSimulation({ items }: Props) {
                         }}
                         value={postalCode.value}
                         maxlength={8}
-                        minlenth={8}
-                    ></Button>
+                    ></Input>
                     <Button 
                         class="ml-[-5px]" 
                         type="submit" 
