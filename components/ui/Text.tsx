@@ -1,7 +1,7 @@
 import { JSX } from "preact";
 import { forwardRef } from "preact/compat";
 
-type Props = JSX.IntrinsicElements["span"] & {
+type Props = Omit<JSX.IntrinsicElements["span"], "aria-level"> & {
   tone?:
     | "default"
     | "default-inverse"
@@ -20,6 +20,7 @@ type Props = JSX.IntrinsicElements["span"] & {
     | "body"
     | "caption"
     | "list-price";
+  "aria-level"?: number;
 };
 
 const Text = forwardRef<HTMLSpanElement, Props>((
