@@ -10,7 +10,7 @@ const Input = (({
   return (
     <input
       {...props}
-      className={`${_class}`}
+      className={`h-9 text-subdued ${_class}`}
       type={type}
     />
   );
