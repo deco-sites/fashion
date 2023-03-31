@@ -179,7 +179,7 @@ function Searchbar({
               variant="heading-3"
               class="text-center"
               role="heading"
-              aria-level="3"
+              aria-level={3}
             >
               Nenhum resultado encontrado
             </Text>
