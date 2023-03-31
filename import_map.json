@@ -12,7 +12,7 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
     "twind": "https://esm.sh/v96/twind@0.16.17",
     "twind/": "https://esm.sh/v96/twind@0.16.17/",
-    "std/": "https://deno.land/std@0.162.0/",
+    "std/": "https://deno.land/std@0.181.0/",
     "prefetch": "https://deno.land/x/prefetch@0.0.6/mod.ts"
   }
 }
