@@ -1,7 +1,7 @@
 import ProductCard from "$store/components/product/ProductCard.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
+import { Slider } from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";

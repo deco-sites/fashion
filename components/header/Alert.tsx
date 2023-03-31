@@ -1,6 +1,6 @@
 import Text from "$store/components/ui/Text.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
+import { Slider } from "$store/components/ui/Slider.tsx";
 import { useId } from "preact/hooks";
 
 export interface Props {
