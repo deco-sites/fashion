@@ -29,7 +29,7 @@ export function Slider({
   );
 }
 
-type SliderDotsProps = JSX.IntrinsicElements["ul"];
+type SliderDotsProps = JSX.IntrinsicElements["ol"];
 
 export function SliderDots({ children, class: _class }: SliderDotsProps) {
   return (
