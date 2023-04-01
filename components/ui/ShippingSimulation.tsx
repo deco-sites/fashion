@@ -119,7 +119,7 @@ function ShippingSimulation({ items }: Props) {
                         as="input" 
                         type="text" 
                         variant="input" 
-                        class="w-[120px] py-2 px-3 rounded-[4px] border-1 border-default" 
+                        class="w-[120px] p-2 rounded-[4px] border-1 border-default" 
                         placeholder="Seu cep aqui"
                         onChange={(e: { currentTarget: { value: string; }; }) => {
                             postalCode.value = e.currentTarget.value
