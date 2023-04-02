@@ -31,7 +31,7 @@ function Gallery({ page }: { page: ProductListingPage }) {
 
       <div class="flex flex-row items-center justify-center gap-2 my-4">
         <a rel="prev" href={page.pageInfo.previousPage ?? "#"}>
-          <Button disabled={!page.pageInfo.previousPage} variant="icon">
+          <Button disabled={!page.pageInfo.previousPage} variant="icon" aria-label="previous page">
             <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
           </Button>
         </a>
@@ -39,7 +39,7 @@ function Gallery({ page }: { page: ProductListingPage }) {
           {page.pageInfo.currentPage + 1}
         </Text>
         <a rel="next" href={page.pageInfo.nextPage ?? "#"}>
-          <Button disabled={!page.pageInfo.nextPage} variant="icon">
+          <Button disabled={!page.pageInfo.nextPage} variant="icon" aria-label="next page">
             <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
           </Button>
         </a>
