@@ -1098,10 +1098,35 @@ const manifest: DecoManifest = {
               },
             ],
             "title": "Variant",
+            "description":
+              "Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products",
+          },
+          "columns": {
+            "title": "Columns",
+            "type": "object",
+            "properties": {
+              "mobile": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Mobile",
+              },
+              "desktop": {
+                "type": [
+                  "number",
+                  "null",
+                ],
+                "title": "Desktop",
+              },
+            },
+            "required": [],
+            "description": "Number of products per line on grid",
           },
         },
         "required": [
           "page",
+          "columns",
         ],
       },
       "outputSchema": null,

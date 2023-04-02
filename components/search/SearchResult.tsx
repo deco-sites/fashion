@@ -10,7 +10,17 @@ import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
+  /**
+   * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
+   */
   variant?: "aside" | "drawer";
+  /**
+   * @description Number of products per line on grid
+   */
+  columns: {
+    mobile?: number;
+    desktop?: number;
+  };
 }
 
 function NotFound() {
@@ -24,8 +34,10 @@ function NotFound() {
 function Result({
   page,
   variant,
-}: { page: ProductListingPage; variant: Props["variant"] }) {
+  columns,
+}: Omit<Props, "page"> & { page: ProductListingPage }) {
   const { products, filters, breadcrumb, pageInfo } = page;
+  const { desktop = 4, mobile = 2 } = columns ?? {};
 
   return (
     <Container class="px-4 sm:py-10">
@@ -37,14 +49,12 @@ function Result({
 
       <div class="flex flex-row">
         {variant === "aside" && (
-          <aside class="hidden sm:block w-min min-w-[250px] row-start-1 row-span-full col-start-1 col-span-1">
+          <aside class="hidden sm:block w-min min-w-[250px]">
             <Filters filters={filters} />
           </aside>
         )}
         <div
-          class={`flex-grow grid grid-cols-2 gap-2 items-center sm:(grid-cols-${
-            variant === "aside" ? 3 : 4
-          } gap-10)`}
+          class={`flex-grow grid grid-cols-${mobile} gap-2 items-center sm:(grid-cols-${desktop} gap-10)`}
         >
           {products?.map((product, index) => (
             <ProductCard product={product} preload={index === 0} />
@@ -79,12 +89,12 @@ function Result({
   );
 }
 
-function SearchResult({ page, variant = "aside" }: Props) {
+function SearchResult({ page, ...props }: Props) {
   if (!page) {
     return <NotFound />;
   }
 
-  return <Result page={page} variant={variant} />;
+  return <Result {...props} page={page} />;
 }
 
 export default SearchResult;
