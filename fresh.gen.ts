@@ -27,18 +27,17 @@ import * as $$$6 from "./sections/Header.tsx";
 import * as $$$7 from "./sections/Highlights.tsx";
 import * as $$$8 from "./sections/LinkTree.tsx";
 import * as $$$9 from "./sections/ProductDetails.tsx";
-import * as $$$10 from "./sections/ProductGallery.tsx";
-import * as $$$11 from "./sections/ProductShelf.tsx";
-import * as $$$12 from "./sections/SearchControls.tsx";
-import * as $$$13 from "./sections/WhatsApp.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVNDA.global.tsx";
-import * as $$$20 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$21 from "deco-sites/std/sections/configYourViews.tsx";
+import * as $$$10 from "./sections/ProductShelf.tsx";
+import * as $$$11 from "./sections/SearchResult.tsx";
+import * as $$$12 from "./sections/WhatsApp.tsx";
+import * as $$$13 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$14 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$16 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$17 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$18 from "deco-sites/std/sections/configVNDA.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -91,18 +90,17 @@ const manifest: DecoManifest = {
     "./sections/Highlights.tsx": $$$7,
     "./sections/LinkTree.tsx": $$$8,
     "./sections/ProductDetails.tsx": $$$9,
-    "./sections/ProductGallery.tsx": $$$10,
-    "./sections/ProductShelf.tsx": $$$11,
-    "./sections/SearchControls.tsx": $$$12,
-    "./sections/WhatsApp.tsx": $$$13,
-    "deco-sites/std/sections/SEO.tsx": $$$14,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVNDA.global.tsx": $$$19,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$20,
-    "deco-sites/std/sections/configYourViews.tsx": $$$21,
+    "./sections/ProductShelf.tsx": $$$10,
+    "./sections/SearchResult.tsx": $$$11,
+    "./sections/WhatsApp.tsx": $$$12,
+    "deco-sites/std/sections/SEO.tsx": $$$13,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$14,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$15,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$16,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$17,
+    "deco-sites/std/sections/configVNDA.global.tsx": $$$18,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
+    "deco-sites/std/sections/configYourViews.tsx": $$$20,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -1046,24 +1044,6 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/ProductGallery.tsx": {
-      "inputSchema": {
-        "title": " Product Gallery",
-        "type": "object",
-        "properties": {
-          "page": {
-            "$id": "93678a2f6c9ab06d039c9fcd9714055f1a81449f",
-            "format": "live-function",
-            "type": "string",
-            "title": "Page",
-          },
-        },
-        "required": [
-          "page",
-        ],
-      },
-      "outputSchema": null,
-    },
     "./sections/ProductShelf.tsx": {
       "inputSchema": {
         "title": " Product Shelf",
@@ -1094,9 +1074,9 @@ const manifest: DecoManifest = {
       },
       "outputSchema": null,
     },
-    "./sections/SearchControls.tsx": {
+    "./sections/SearchResult.tsx": {
       "inputSchema": {
-        "title": " Search Controls",
+        "title": " Search Result",
         "type": "object",
         "properties": {
           "page": {
@@ -1104,6 +1084,20 @@ const manifest: DecoManifest = {
             "format": "live-function",
             "type": "string",
             "title": "Page",
+          },
+          "variant": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "sidebar",
+              },
+              {
+                "type": "string",
+                "const": "drawer",
+              },
+            ],
+            "title": "Variant",
           },
         },
         "required": [

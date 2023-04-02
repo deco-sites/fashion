@@ -60,7 +60,7 @@ function FilterValues({ key, values }: FilterToggle) {
   );
 }
 
-export default function Filters({ filters }: Props) {
+function Filters({ filters }: Props) {
   return (
     <ul class="flex flex-col gap-6 p-4">
       {filters
@@ -74,3 +74,5 @@ export default function Filters({ filters }: Props) {
     </ul>
   );
 }
+
+export default Filters;
