@@ -1090,7 +1090,7 @@ const manifest: DecoManifest = {
             "anyOf": [
               {
                 "type": "string",
-                "const": "sidebar",
+                "const": "aside",
               },
               {
                 "type": "string",

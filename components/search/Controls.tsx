@@ -23,7 +23,7 @@ function SearchControls({ filters, breadcrumb, displayFilter }: Props) {
 
       <div class="flex flex-row items-center justify-between border-b-1 border-default sm:(gap-4 border-none)">
         <Button
-          class={displayFilter ? '' : 'sm:hidden'}
+          class={displayFilter ? "" : "sm:hidden"}
           variant="tertiary"
           onClick={() => {
             open.value = true;

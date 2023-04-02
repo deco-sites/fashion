@@ -10,7 +10,7 @@ import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
-  variant?: "sidebar" | "drawer";
+  variant?: "aside" | "drawer";
 }
 
 function NotFound() {
@@ -36,14 +36,14 @@ function Result({
       />
 
       <div class="flex flex-row">
-        {variant === "sidebar" && (
+        {variant === "aside" && (
           <aside class="hidden sm:block w-min min-w-[250px] row-start-1 row-span-full col-start-1 col-span-1">
             <Filters filters={filters} />
           </aside>
         )}
         <div
           class={`flex-grow grid grid-cols-2 gap-2 items-center sm:(grid-cols-${
-            variant === "sidebar" ? 3 : 4
+            variant === "aside" ? 3 : 4
           } gap-10)`}
         >
           {products?.map((product, index) => (
@@ -79,7 +79,7 @@ function Result({
   );
 }
 
-function SearchResult({ page, variant = "sidebar" }: Props) {
+function SearchResult({ page, variant = "aside" }: Props) {
   if (!page) {
     return <NotFound />;
   }
