@@ -2,8 +2,9 @@ import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import Button from "$store/components/ui/Button.tsx";
 import Text from "$store/components/ui/Text.tsx";
+import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
 
-import { useUI } from "../../sdk/useUI.ts";
+import { useUI } from "$store/sdk/useUI.ts";
 import CartItem from "./CartItem.tsx";
 import Coupon from "./Coupon.tsx";
 
@@ -12,7 +13,7 @@ const CHECKOUT_URL =
 
 function Cart() {
   const { displayCart } = useUI();
-  const { cart, loading } = useCart();
+  const { cart, loading, mapItemsToAnalyticsItems } = useCart();
   const isCartEmpty = cart.value?.items.length === 0;
   const total = cart.value?.totalizers.find((item) => item.id === "Items");
   const discounts = cart.value?.totalizers.find((item) =>
@@ -94,6 +95,22 @@ function Cart() {
               data-deco="buy-button"
               class="w-full"
               disabled={loading.value || cart.value.items.length === 0}
+              onClick={() => {
+                sendAnalyticsEvent({
+                  name: "begin_checkout",
+                  params: {
+                    currency: cart.value ? currencyCode! : "",
+                    value: total?.value
+                      ? (total?.value - (discounts?.value ?? 0)) / 100
+                      : 0,
+                    coupon: cart.value?.marketingData?.coupon ?? undefined,
+
+                    items: cart.value
+                      ? mapItemsToAnalyticsItems(cart.value)
+                      : [],
+                  },
+                });
+              }}
             >
               Finalizar Compra
             </Button>

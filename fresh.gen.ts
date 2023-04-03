@@ -16,8 +16,10 @@ import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/HeaderSearchMenu.tsx";
 import * as $$4 from "./islands/ProductImageZoom.tsx";
 import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/ShippingSimulation.tsx";
-import * as $$7 from "./islands/SliderJS.tsx";
+import * as $$6 from "./islands/SendEventButton.tsx";
+import * as $$7 from "./islands/ShippingSimulation.tsx";
+import * as $$8 from "./islands/SliderJS.tsx";
+import * as $$9 from "./islands/ViewSendEvent.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/BannerPLP.tsx";
 import * as $$$2 from "./sections/Carousel.tsx";
@@ -32,14 +34,15 @@ import * as $$$10 from "./sections/ProductDetails.tsx";
 import * as $$$11 from "./sections/ProductShelf.tsx";
 import * as $$$12 from "./sections/SearchResult.tsx";
 import * as $$$13 from "./sections/WhatsApp.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$19 from "deco-sites/std/sections/configVNDA.global.tsx";
-import * as $$$20 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as $$$21 from "deco-sites/std/sections/configYourViews.tsx";
+import * as $$$14 from "deco-sites/std/sections/Analytics.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$17 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$18 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$20 from "deco-sites/std/sections/configVNDA.global.tsx";
+import * as $$$21 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$22 from "deco-sites/std/sections/configYourViews.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -79,8 +82,10 @@ const manifest: DecoManifest = {
     "./islands/HeaderSearchMenu.tsx": $$3,
     "./islands/ProductImageZoom.tsx": $$4,
     "./islands/SearchControls.tsx": $$5,
-    "./islands/ShippingSimulation.tsx": $$6,
-    "./islands/SliderJS.tsx": $$7,
+    "./islands/SendEventButton.tsx": $$6,
+    "./islands/ShippingSimulation.tsx": $$7,
+    "./islands/SliderJS.tsx": $$8,
+    "./islands/ViewSendEvent.tsx": $$9,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
@@ -97,14 +102,15 @@ const manifest: DecoManifest = {
     "./sections/ProductShelf.tsx": $$$11,
     "./sections/SearchResult.tsx": $$$12,
     "./sections/WhatsApp.tsx": $$$13,
-    "deco-sites/std/sections/SEO.tsx": $$$14,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
-    "deco-sites/std/sections/configVNDA.global.tsx": $$$19,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$20,
-    "deco-sites/std/sections/configYourViews.tsx": $$$21,
+    "deco-sites/std/sections/Analytics.tsx": $$$14,
+    "deco-sites/std/sections/SEO.tsx": $$$15,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$16,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$17,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$18,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$19,
+    "deco-sites/std/sections/configVNDA.global.tsx": $$$20,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$21,
+    "deco-sites/std/sections/configYourViews.tsx": $$$22,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -1392,6 +1398,25 @@ const manifest: DecoManifest = {
         },
         "additionalProperties": true,
       },
+    },
+    "deco-sites/std/sections/Analytics.tsx": {
+      "inputSchema": {
+        "title": " Analytics",
+        "type": "object",
+        "properties": {
+          "trackingIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Tracking Ids",
+            "description":
+              "google tag manager container id. For more info: https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation .",
+          },
+        },
+        "required": [],
+      },
+      "outputSchema": null,
     },
     "deco-sites/std/sections/SEO.tsx": {
       "inputSchema": {
