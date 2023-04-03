@@ -88,8 +88,6 @@ function ShippingSimulation({ item }: Props) {
             country: cart.value?.storePreferencesData.countryCode || "BRA"
         }
 
-        console.log(simulationData)
-
         if(postalCode.value.length == 8){
             loading.value = true 
             simulate(simulationData)
