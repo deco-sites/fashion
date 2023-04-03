@@ -1,12 +1,9 @@
-
-const Input = (({
+const Input = ({
   variant = "primary",
   type = "text",
   class: _class = "",
   ...props
 }) => {
-
-
   return (
     <input
       {...props}
@@ -14,6 +11,6 @@ const Input = (({
       type={type}
     />
   );
-});
+};
 
 export default Input;

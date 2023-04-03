@@ -49,7 +49,6 @@ function NotFound() {
 }
 
 function ProductInfo({ page }: { page: ProductDetailsPage }) {
-
   const {
     breadcrumbList,
     product,
@@ -116,7 +115,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       </div>
       {/* Shipping Simulation */}
       <div class="mt-8">
-        <ShippingSimulation 
+        <ShippingSimulation
           items={[{
             id: Number(product.sku),
             quantity: 1,
