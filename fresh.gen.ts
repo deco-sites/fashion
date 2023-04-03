@@ -2290,6 +2290,24 @@ const manifest: DecoManifest = {
             "title": "Items per page",
             "description": "number of products per page to display",
           },
+          "fuzzy": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "automatic",
+              },
+              {
+                "type": "string",
+                "const": "disabled",
+              },
+              {
+                "type": "string",
+                "const": "enabled",
+              },
+            ],
+            "title": "Fuzzy",
+          },
         },
         "required": [
           "count",
