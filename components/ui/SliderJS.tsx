@@ -56,7 +56,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   if (!root || !slider || !items || items.length === 0) {
     console.warn(
       "Missing necessary slider attributes. It will not work as intended. Necessary elements:",
-      { root, slider, items },
+      { root, slider, items, rootId },
     );
 
     return;

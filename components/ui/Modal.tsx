@@ -21,9 +21,21 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   loading?: "lazy" | "eager";
 };
 
-const styles = {
-  "sidebar-right": "animate-slide-left sm:ml-auto",
+const dialogStyles = {
+  "sidebar-right": "animate-slide-left",
   "sidebar-left": "animate-slide-right",
+  center: "animate-fade-in",
+};
+
+const sectionStyles = {
+  "sidebar-right": "justify-end",
+  "sidebar-left": "justify-start",
+  center: "justify-center items-center",
+};
+
+const containerStyles = {
+  "sidebar-right": "h-full w-full sm:(max-w-lg)",
+  "sidebar-left": "h-full w-full sm:(max-w-lg)",
   center: "",
 };
 
@@ -38,20 +50,19 @@ const Modal = ({
 }: Props) => {
   const lazy = useSignal(false);
   const ref = useRef<HTMLDialogElement>(null);
-  const variant = styles[mode];
 
   useEffect(() => {
-    if (ref.current?.open === true && open === false) {
+    if (open === false) {
       document.getElementsByTagName("body").item(0)?.removeAttribute(
         "no-scroll",
       );
-      ref.current.close();
-    } else if (ref.current?.open === false && open === true) {
+      ref.current?.open === true && ref.current.close();
+    } else if (open === true) {
       document.getElementsByTagName("body").item(0)?.setAttribute(
         "no-scroll",
         "",
       );
-      ref.current.showModal();
+      ref.current?.open === false && ref.current.showModal();
       lazy.value = true;
     }
   }, [open]);
@@ -60,23 +71,31 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 max-w-full sm:max-w-lg w-full max-h-full h-full backdrop ${variant} ${
-        props.class ?? ""
-      }`}
+      class={`bg-transparent p-0 m-0 max-w-full w-full max-h-full h-full backdrop ${
+        dialogStyles[mode]
+      } ${props.class ?? ""}`}
       onClick={(e) =>
-        (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
+        (e.target as HTMLDialogElement).tagName === "SECTION" && onClose?.()}
+      // @ts-expect-error - This is a bug in types.
+      onClose={onClose}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
-        <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
-          <h1>
-            <Text variant="heading-2">{title}</Text>
-          </h1>
-          <Button variant="icon" onClick={onClose}>
-            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-          </Button>
-        </header>
-        <div class="overflow-y-auto h-full flex flex-col">
-          {loading === "lazy" ? lazy.value && children : children}
+      <section
+        class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
+      >
+        <div
+          class={`bg-default flex flex-col max-h-full ${containerStyles[mode]}`}
+        >
+          <header class="flex px-4 py-6 justify-between items-center border-b-1 border-default">
+            <h1>
+              <Text variant="heading-2">{title}</Text>
+            </h1>
+            <Button variant="icon" onClick={onClose}>
+              <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+            </Button>
+          </header>
+          <div class="overflow-y-auto flex-grow flex flex-col">
+            {loading === "lazy" ? lazy.value && children : children}
+          </div>
         </div>
       </section>
     </dialog>

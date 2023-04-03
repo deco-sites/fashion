@@ -17,7 +17,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import ProductCard from "$store/components/product/ProductCard.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
+import { Slider } from "$store/components/ui/Slider.tsx";
 import useAutocomplete from "deco-sites/std/commerce/vtex/hooks/useAutocomplete.ts";
 import SearchTermList from "./SearchTermList.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
@@ -179,7 +179,7 @@ function Searchbar({
               variant="heading-3"
               class="text-center"
               role="heading"
-              aria-level="3"
+              aria-level={3}
             >
               Nenhum resultado encontrado
             </Text>

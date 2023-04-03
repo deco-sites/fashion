@@ -1,4 +1,3 @@
-import Button from "$store/components/ui/Button.tsx";
 import type { JSX } from "preact";
 
 /**
@@ -35,7 +34,7 @@ const colors = {
 };
 
 type Props =
-  & JSX.IntrinsicElements["button"]
+  & Omit<JSX.IntrinsicElements["button"], "content">
   & (Abbreviation | Color | Idempotent);
 
 function Avatar({ variant, content, class: _class = "", ...btnProps }: Props) {

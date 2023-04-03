@@ -1,7 +1,7 @@
 import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
+import { Slider, SliderDots } from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
@@ -92,7 +92,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   );
 }
 
-function Dots({ images, interval = 0 }: Props) {
+function ProgressiveDots({ images, interval = 0 }: Props) {
   return (
     <>
       <style
@@ -106,37 +106,31 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       >
       </style>
-      <ol class="flex items-center justify-center col-span-full gap-4 z-10 row-start-4">
-        {images?.map((_, index) => (
-          <li class="h-full">
-            <button
-              data-dot={index}
-              aria-label={`go to slider item ${index}`}
-              class="h-full rounded focus:outline-none group"
-            >
-              <div
-                class={tw`group-disabled:${
-                  animation(
-                    `${interval}s ease-out 1 forwards`,
-                    keyframes`
-                      from: {
-                        --dot-progress: 0%;
-                      }
-                      to {
-                        --dot-progress: 100%;
-                      }
-                    `,
-                  )
-                } w-16 sm:w-20 h-0.5`}
-                style={{
-                  background:
-                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
-                }}
-              />
-            </button>
-          </li>
+      <SliderDots class="col-span-full gap-4 z-10 row-start-4">
+        {images?.map((_) => (
+          <div class="py-6">
+            <div
+              class={tw`group-disabled:${
+                animation(
+                  `${interval}s ease-out 1 forwards`,
+                  keyframes`
+                          from: {
+                            --dot-progress: 0%;
+                          }
+                          to {
+                            --dot-progress: 100%;
+                          }
+                        `,
+                )
+              } w-16 sm:w-20 h-0.5 rounded`}
+              style={{
+                background:
+                  "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
+              }}
+            />
+          </div>
         ))}
-      </ol>
+      </SliderDots>
     </>
   );
 }
@@ -194,7 +188,7 @@ function BannerCarousel({ images, preload, interval }: Props) {
 
       <Controls />
 
-      <Dots images={images} interval={interval} />
+      <ProgressiveDots images={images} interval={interval} />
 
       <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
     </div>

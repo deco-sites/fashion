@@ -34,7 +34,11 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
   ...props
 }, ref) => {
   const Component = as as ComponentType<
-    { disabled?: boolean; className: string; type: string }
+    {
+      disabled?: boolean | JSX.SignalLike<boolean | undefined>;
+      className: string;
+      type: string | JSX.SignalLike<string | undefined>;
+    }
   >;
   const styles = variants[variant];
 

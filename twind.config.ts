@@ -30,6 +30,12 @@ const gridRows = ([arg]: string[]) => {
   };
 };
 
+const scrollSnap = ([arg]: string[]) => {
+  return {
+    "scroll-snap-align": arg,
+  };
+};
+
 const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
@@ -147,9 +153,8 @@ const options: Omit<Options, "selfURL"> = {
         background: "rgba(0, 0, 0, 0.5)",
       },
     },
-    "scroll-snap-center": {
-      "scroll-snap-align": "center",
-    },
+    "scroll-snap-center": scrollSnap(["center"]),
+    "scroll-snap-start": scrollSnap(["start"]),
     "scroll-x-mandatory": {
       "scroll-snap-type": "x mandatory",
     },
