@@ -1,15 +1,26 @@
 import Button from "$store/components/ui/Button.tsx";
-import { useAddToCart } from "$store/sdk/useAddToCart.ts";
+import {
+  Options as UseAddToCartProps,
+  useAddToCart,
+} from "$store/sdk/useAddToCart.ts";
 
-interface Props {
-  skuId: string;
+interface Props extends UseAddToCartProps {
+  /**
+   * @description Product id
+   */
   sellerId: string;
 }
 
-function AddToCartButton({ skuId, sellerId }: Props) {
+function AddToCartButton(
+  { skuId, sellerId, discount, price, productGroupId, name }: Props,
+) {
   const props = useAddToCart({
     skuId,
     sellerId,
+    discount,
+    price,
+    productGroupId,
+    name,
   });
 
   return (
