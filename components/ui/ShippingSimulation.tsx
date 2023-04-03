@@ -18,6 +18,14 @@ export interface Props {
     items: Array<SKU>;
 }
 
+const handleShippingTime = (estimate: string) => {
+    const [, time, type] = estimate.split(/(\d+)/);
+
+    if (type === "bd") return `${time} dias úteis`;
+    if (type === "d") return `${time} dias`;
+    if (type === "h") return `${time} horas`;
+};
+
 function ShippingContentError() {
     return(
         <div class="p-2">
@@ -40,19 +48,11 @@ function ShippingContent({ simulation, locale, currencyCode }:{ simulation: Simu
         return <ShippingContentError />;
     }
 
-    const handleShippingTime = (estimate: string) => {
-        const [, time, type] = estimate.split(/(\d+)/);
-    
-        if (type === "bd") return `${time} dias úteis`;
-        if (type === "d") return `${time} dias`;
-        if (type === "h") return `${time} horas`;
-    };
-
     return(
         <ul class="flex flex-col gap-4 p-4 bg-hover rounded-[4px]">
             {methods.map((method) => (
-                <li class="flex justify-between items-center border-[#e4e4e4] not-first-child:border-t-1">
-                    <Text variant="body" class="text-button text-center text-[13px]">
+                <li class="flex justify-between items-center border-default not-first-child:border-t-1">
+                    <Text variant="body" class="text-button text-center">
                        Entrega {method.name}
                     </Text>
                     <Text variant="body" class="text-button">
@@ -65,7 +65,7 @@ function ShippingContent({ simulation, locale, currencyCode }:{ simulation: Simu
                     </Text>
                 </li>
             ))}
-            <Text class="text-[13px] text-subdued">Os prazos de entrega começam a contar a partir da confirmação do pagamento e podem variar de acordo com a quantidade de produtos na sacola.</Text>
+            <Text class="text-subdued">Os prazos de entrega começam a contar a partir da confirmação do pagamento e podem variar de acordo com a quantidade de produtos na sacola.</Text>
         </ul>
     )
 }
@@ -103,7 +103,7 @@ function ShippingSimulation({ items }: Props) {
         <div class="flex flex-col gap-2">
             <div class="flex flex-col">
                 <Text>Calcular frete</Text>
-                <Text class="text-[13px]">Informe seu CEP para consultar os prazos de entrega</Text>
+                <Text variant="body">Informe seu CEP para consultar os prazos de entrega</Text>
             </div>
             <div>
                 <form 
