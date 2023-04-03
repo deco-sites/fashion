@@ -70,7 +70,7 @@ function ShippingContent({ simulation, locale, currencyCode }:{ simulation: Simu
     )
 }
 
-function ShippingSimulation({ items }: Props) {
+function ShippingSimulation({ item }: Props) {
 
     const postalCode = useSignal("");
     const loading = useSignal(false)
@@ -83,7 +83,7 @@ function ShippingSimulation({ items }: Props) {
 
     const handleSimulation = useCallback(() => {
         const simulationData = {
-            items: items,
+            items: [item],
             postalCode: postalCode.value,
             country: cart.value?.storePreferencesData.countryCode || "BRA"
         }
