@@ -16,7 +16,8 @@ import * as $$2 from "./islands/HeaderModals.tsx";
 import * as $$3 from "./islands/HeaderSearchMenu.tsx";
 import * as $$4 from "./islands/ProductImageZoom.tsx";
 import * as $$5 from "./islands/SearchControls.tsx";
-import * as $$6 from "./islands/SliderJS.tsx";
+import * as $$6 from "./islands/ShippingSimulation.tsx";
+import * as $$7 from "./islands/SliderJS.tsx";
 import * as $$$0 from "./sections/BannerGrid.tsx";
 import * as $$$1 from "./sections/BannerPLP.tsx";
 import * as $$$2 from "./sections/Carousel.tsx";
@@ -78,7 +79,8 @@ const manifest: DecoManifest = {
     "./islands/HeaderSearchMenu.tsx": $$3,
     "./islands/ProductImageZoom.tsx": $$4,
     "./islands/SearchControls.tsx": $$5,
-    "./islands/SliderJS.tsx": $$6,
+    "./islands/ShippingSimulation.tsx": $$6,
+    "./islands/SliderJS.tsx": $$7,
   },
   sections: {
     "./sections/BannerGrid.tsx": $$$0,
