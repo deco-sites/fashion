@@ -8,6 +8,9 @@ import Icon from "$store/components/ui/Icon.tsx";
 import { useId } from "preact/hooks";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import ViewSendEvent from "$store/islands/ViewSendEvent.tsx";
+import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import { useOffer } from "$store/sdk/useOffer.ts";
 
 export interface Props {
   title: string;
@@ -40,7 +43,7 @@ function ProductShelf({
       >
         {products?.map((product) => (
           <div class="min-w-[270px] max-w-[270px] sm:min-w-[292px] sm:max-w-[292px]">
-            <ProductCard product={product} />
+            <ProductCard product={product} itemListName={title} />
           </div>
         ))}
       </Slider>
@@ -63,6 +66,21 @@ function ProductShelf({
       </>
 
       <SliderControllerJS rootId={id} />
+
+      <ViewSendEvent
+        event={{
+          name: "view_item_list",
+          params: {
+            item_list_name: title,
+            items: products.map((product) =>
+              mapProductToAnalyticsItem({
+                product,
+                ...(useOffer(product.offers)),
+              })
+            ),
+          },
+        }}
+      />
     </Container>
   );
 }

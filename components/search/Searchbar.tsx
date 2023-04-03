@@ -21,6 +21,7 @@ import { Slider } from "$store/components/ui/Slider.tsx";
 import useAutocomplete from "deco-sites/std/commerce/vtex/hooks/useAutocomplete.ts";
 import SearchTermList from "./SearchTermList.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
+import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
 
 function CloseButton() {
   const { displaySearchbar } = useUI();
@@ -136,6 +137,13 @@ function Searchbar({
             defaultValue={query}
             onInput={(e) => {
               const value = e.currentTarget.value;
+
+              if (value) {
+                sendAnalyticsEvent({
+                  name: "search",
+                  params: { search_term: value },
+                });
+              }
 
               setSearch(value);
             }}

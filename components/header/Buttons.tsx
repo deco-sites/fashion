@@ -2,6 +2,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
+import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
 
 function SearchButton() {
   const { displaySearchbar } = useUI();
@@ -37,9 +38,14 @@ function MenuButton() {
 
 function CartButton() {
   const { displayCart } = useUI();
-  const { loading, cart } = useCart();
+  const { loading, cart, mapItemsToAnalyticsItems } = useCart();
   const totalItems = cart.value?.items.length || null;
   const dataDeco = displayCart.value ? {} : { "data-deco": "open-cart" };
+  const currencyCode = cart.value?.storePreferencesData.currencyCode;
+  const total = cart.value?.totalizers.find((item) => item.id === "Items");
+  const discounts = cart.value?.totalizers.find((item) =>
+    item.id === "Discounts"
+  );
 
   return (
     <Button
@@ -50,6 +56,17 @@ function CartButton() {
       disabled={loading.value}
       onClick={() => {
         displayCart.value = true;
+        sendAnalyticsEvent({
+          name: "view_cart",
+          params: {
+            currency: cart.value ? currencyCode! : "",
+            value: total?.value
+              ? (total?.value - (discounts?.value ?? 0)) / 100
+              : 0,
+
+            items: cart.value ? mapItemsToAnalyticsItems(cart.value) : [],
+          },
+        });
       }}
     >
       <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />

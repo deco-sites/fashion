@@ -13,6 +13,8 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import ViewSendEvent from "$store/islands/ViewSendEvent.tsx";
+import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
@@ -107,6 +109,10 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           <AddToCartButton
             skuId={productID}
             sellerId={seller}
+            price={price ?? 0}
+            discount={price && listPrice ? listPrice - price : 0}
+            name={product.name ?? ""}
+            productGroupId={product.isVariantOf?.productGroupID ?? ""}
           />
         )}
         <Button variant="secondary">
@@ -134,6 +140,21 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           )}
         </Text>
       </div>
+      <ViewSendEvent
+        event={{
+          name: "view_item",
+          params: {
+            items: [
+              mapProductToAnalyticsItem({
+                product,
+                breadcrumbList,
+                price,
+                listPrice,
+              }),
+            ],
+          },
+        }}
+      />
     </>
   );
 }

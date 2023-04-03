@@ -10,12 +10,14 @@ import * as $$$$0 from "./routes/api/[...catchall].tsx";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/ShippingSimulation.tsx";
 import * as $$$$$1 from "./islands/HeaderButton.tsx";
-import * as $$$$$2 from "./islands/HeaderSearchMenu.tsx";
-import * as $$$$$3 from "./islands/AddToCartButton.tsx";
-import * as $$$$$4 from "./islands/HeaderModals.tsx";
-import * as $$$$$5 from "./islands/SliderJS.tsx";
-import * as $$$$$6 from "./islands/ProductImageZoom.tsx";
-import * as $$$$$7 from "./islands/SearchControls.tsx";
+import * as $$$$$2 from "./islands/SendEventButton.tsx";
+import * as $$$$$3 from "./islands/HeaderSearchMenu.tsx";
+import * as $$$$$4 from "./islands/AddToCartButton.tsx";
+import * as $$$$$5 from "./islands/HeaderModals.tsx";
+import * as $$$$$6 from "./islands/SliderJS.tsx";
+import * as $$$$$7 from "./islands/ProductImageZoom.tsx";
+import * as $$$$$8 from "./islands/ViewSendEvent.tsx";
+import * as $$$$$9 from "./islands/SearchControls.tsx";
 import * as $$$$$$$$0 from "deco-sites/fashion/sections/LinkTree.tsx";
 import * as $$$$$$$$1 from "deco-sites/fashion/sections/DesignSystem.story.tsx";
 import * as $$$$$$$$2 from "deco-sites/fashion/sections/Features.tsx";
@@ -42,7 +44,7 @@ import * as i2$$$$1 from "$live/handlers/router.ts";
 import * as i2$$$$2 from "$live/handlers/devPage.ts";
 import * as i2$$$$3 from "$live/handlers/fresh.ts";
 import * as i2$$$$$0 from "$live/pages/LivePage.tsx";
-import * as i2$$$8 from "$live/sections/PageInclude.tsx";
+import * as i2$$$9 from "$live/sections/PageInclude.tsx";
 import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$1 from "$live/matchers/MatchUserAgent.ts";
 import * as i2$$$$$$2 from "$live/matchers/MatchSite.ts";
@@ -78,10 +80,11 @@ import * as i2$$$0 from "deco-sites/std/sections/configYourViews.global.tsx";
 import * as i2$$$1 from "deco-sites/std/sections/SEO.tsx";
 import * as i2$$$2 from "deco-sites/std/sections/SEOPLP.tsx";
 import * as i2$$$3 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as i2$$$4 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as i2$$$5 from "deco-sites/std/sections/configVNDA.global.tsx";
-import * as i2$$$6 from "deco-sites/std/sections/configVTEX.global.tsx";
-import * as i2$$$7 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as i2$$$4 from "deco-sites/std/sections/Analytics.tsx";
+import * as i2$$$5 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as i2$$$6 from "deco-sites/std/sections/configVNDA.global.tsx";
+import * as i2$$$7 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as i2$$$8 from "deco-sites/std/sections/SEOPDP.tsx";
 
 const manifest: DecoManifest = {
   "routes": {
@@ -98,12 +101,14 @@ const manifest: DecoManifest = {
   "islands": {
     "./islands/ShippingSimulation.tsx": $$$$$0,
     "./islands/HeaderButton.tsx": $$$$$1,
-    "./islands/HeaderSearchMenu.tsx": $$$$$2,
-    "./islands/AddToCartButton.tsx": $$$$$3,
-    "./islands/HeaderModals.tsx": $$$$$4,
-    "./islands/SliderJS.tsx": $$$$$5,
-    "./islands/ProductImageZoom.tsx": $$$$$6,
-    "./islands/SearchControls.tsx": $$$$$7,
+    "./islands/SendEventButton.tsx": $$$$$2,
+    "./islands/HeaderSearchMenu.tsx": $$$$$3,
+    "./islands/AddToCartButton.tsx": $$$$$4,
+    "./islands/HeaderModals.tsx": $$$$$5,
+    "./islands/SliderJS.tsx": $$$$$6,
+    "./islands/ProductImageZoom.tsx": $$$$$7,
+    "./islands/ViewSendEvent.tsx": $$$$$8,
+    "./islands/SearchControls.tsx": $$$$$9,
   },
   "sections": {
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$0,
@@ -120,15 +125,16 @@ const manifest: DecoManifest = {
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$13,
-    "$live/sections/PageInclude.tsx": i2$$$8,
+    "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,
     "deco-sites/std/sections/SEOPLP.tsx": i2$$$2,
     "deco-sites/std/sections/configOCC.global.tsx": i2$$$3,
-    "deco-sites/std/sections/configShopify.global.tsx": i2$$$4,
-    "deco-sites/std/sections/configVNDA.global.tsx": i2$$$5,
-    "deco-sites/std/sections/configVTEX.global.tsx": i2$$$6,
-    "deco-sites/std/sections/SEOPDP.tsx": i2$$$7,
+    "deco-sites/std/sections/Analytics.tsx": i2$$$4,
+    "deco-sites/std/sections/configShopify.global.tsx": i2$$$5,
+    "deco-sites/std/sections/configVNDA.global.tsx": i2$$$6,
+    "deco-sites/std/sections/configVTEX.global.tsx": i2$$$7,
+    "deco-sites/std/sections/SEOPDP.tsx": i2$$$8,
   },
   "handlers": {
     "$live/handlers/routesSelection.ts": i2$$$$0,

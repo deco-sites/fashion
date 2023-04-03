@@ -3331,6 +3331,21 @@
       ],
       "title": "deco-sites/std/components/seo/SEOPLP.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "trackingIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Tracking Ids",
+          "description": "google tag manager container id. For more info: https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation ."
+        }
+      },
+      "required": [],
+      "title": "deco-sites/std/components/Analytics.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUERQLnRzeA==@Props": {
       "type": "object",
       "properties": {
@@ -4011,6 +4026,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvU2VuZEV2ZW50QnV0dG9uLnRzeA==": {
+      "title": "./islands/SendEventButton.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/SendEventButton.tsx"
+          ],
+          "default": "./islands/SendEventButton.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvSGVhZGVyU2VhcmNoTWVudS50c3g=": {
       "title": "./islands/HeaderSearchMenu.tsx",
       "type": "object",
@@ -4088,6 +4119,22 @@
             "./islands/ProductImageZoom.tsx"
           ],
           "default": "./islands/ProductImageZoom.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvVmlld1NlbmRFdmVudC50c3g=": {
+      "title": "./islands/ViewSendEvent.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ViewSendEvent.tsx"
+          ],
+          "default": "./islands/ViewSendEvent.tsx"
         }
       }
     },
@@ -4601,6 +4648,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA==": {
+      "title": "deco-sites/std/sections/Analytics.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/Analytics.tsx"
+          ],
+          "default": "deco-sites/std/sections/Analytics.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnU2hvcGlmeS5nbG9iYWwudHN4": {
       "title": "deco-sites/std/sections/configShopify.global.tsx",
       "type": "object",
@@ -4995,6 +5063,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvSGVhZGVyQnV0dG9uLnRzeA=="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvU2VuZEV2ZW50QnV0dG9uLnRzeA=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvSGVhZGVyU2VhcmNoTWVudS50c3g="
         },
         {
@@ -5008,6 +5079,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvUHJvZHVjdEltYWdlWm9vbS50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvVmlld1NlbmRFdmVudC50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvU2VhcmNoQ29udHJvbHMudHN4"
@@ -5107,6 +5181,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnT0NDLmdsb2JhbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnU2hvcGlmeS5nbG9iYWwudHN4"

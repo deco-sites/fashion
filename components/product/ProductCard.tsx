@@ -1,11 +1,12 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
-import Button from "$store/components/ui/Button.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import SendEventButton from "$store/islands/SendEventButton.tsx";
+import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -42,9 +43,12 @@ interface Props {
   product: Product;
   /** Preload card image */
   preload?: boolean;
+
+  /** @description used for analytics event */
+  itemListName?: string;
 }
 
-function ProductCard({ product, preload }: Props) {
+function ProductCard({ product, preload, itemListName }: Props) {
   const {
     url,
     productID,
@@ -90,7 +94,25 @@ function ProductCard({ product, preload }: Props) {
               }}
             >
               <Sizes {...product} />
-              <Button as="a" href={product.url}>Visualizar Produto</Button>
+              <SendEventButton
+                as="a"
+                href={product.url}
+                event={{
+                  name: "select_item",
+                  params: {
+                    item_list_name: itemListName,
+                    items: [
+                      mapProductToAnalyticsItem({
+                        product,
+                        price,
+                        listPrice,
+                      }),
+                    ],
+                  },
+                }}
+              >
+                Visualizar Produto
+              </SendEventButton>
             </div>
           )}
         </div>

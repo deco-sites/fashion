@@ -5,13 +5,14 @@ import Button from "$store/components/ui/Button.tsx";
 import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { formatPrice } from "$store/sdk/format.ts";
+import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
 
 interface Props {
   index: number;
 }
 
 function CartItem({ index }: Props) {
-  const { loading, cart, updateItems } = useCart();
+  const { loading, cart, updateItems, mapItemsToAnalyticsItems } = useCart();
   const item = cart.value!.items[index];
   const locale = cart.value?.clientPreferencesData.locale;
   const currencyCode = cart.value?.storePreferencesData.currencyCode;
@@ -53,13 +54,42 @@ function CartItem({ index }: Props) {
           <QuantitySelector
             disabled={loading.value || isGift}
             quantity={quantity}
-            onChange={(quantity) =>
-              updateItems({ orderItems: [{ index, quantity }] })}
+            onChange={(quantity) => {
+              updateItems({ orderItems: [{ index, quantity }] });
+              const quantityDiff = quantity - item.quantity;
+
+              if (!cart.value) return;
+
+              sendAnalyticsEvent({
+                name: quantityDiff < 0 ? "remove_from_cart" : "add_to_cart",
+                params: {
+                  items: mapItemsToAnalyticsItems({
+                    items: [{
+                      ...item,
+                      quantity: Math.abs(quantityDiff),
+                    }],
+                    marketingData: cart.value.marketingData,
+                  }),
+                },
+              });
+            }}
           />
         </div>
       </div>
       <Button
-        onClick={() => updateItems({ orderItems: [{ index, quantity: 0 }] })}
+        onClick={() => {
+          updateItems({ orderItems: [{ index, quantity: 0 }] });
+          if (!cart.value) return;
+          sendAnalyticsEvent({
+            name: "remove_from_cart",
+            params: {
+              items: mapItemsToAnalyticsItems({
+                items: [item],
+                marketingData: cart.value.marketingData,
+              }),
+            },
+          });
+        }}
         disabled={loading.value || isGift}
         loading={loading.value}
         variant="icon"
