@@ -6,6 +6,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Banner {
+  /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
   matcher: string;
   title?: string;
   subtitle?: string;

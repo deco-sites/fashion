@@ -250,6 +250,8 @@ const manifest: DecoManifest = {
                 "matcher": {
                   "type": "string",
                   "title": "Matcher",
+                  "description":
+                    "RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category",
                 },
                 "title": {
                   "type": [
