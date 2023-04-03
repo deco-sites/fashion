@@ -117,11 +117,11 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       {/* Shipping Simulation */}
       <div class="mt-8">
         <ShippingSimulation 
-          items={{
+          items={[{
             id: Number(product.sku),
             quantity: 1,
             seller: seller ?? "1",
-          }}
+          }]}
         />
       </div>
       {/* Description card */}

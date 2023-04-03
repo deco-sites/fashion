@@ -83,7 +83,7 @@ function ShippingSimulation({ items }: Props) {
 
     const handleSimulation = useCallback(() => {
         const simulationData = {
-            items: [items],
+            items: items,
             postalCode: postalCode.value,
             country: cart.value?.storePreferencesData.countryCode || "BRA"
         }
