@@ -8,11 +8,16 @@ import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 export interface Banner {
   /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
   matcher: string;
+  /** @description text to be rendered on top of the image */
   title?: string;
+  /** @description text to be rendered on top of the image */
   subtitle?: string;
   image: {
+    /** @description Image for big screens */
     desktop: LiveImage;
+    /** @description Image for small screens */
     mobile: LiveImage;
+    /** @description image alt text */
     alt?: string;
   };
 }

@@ -259,6 +259,7 @@ const manifest: DecoManifest = {
                     "null",
                   ],
                   "title": "Title",
+                  "description": "text to be rendered on top of the image",
                 },
                 "subtitle": {
                   "type": [
@@ -266,6 +267,7 @@ const manifest: DecoManifest = {
                     "null",
                   ],
                   "title": "Subtitle",
+                  "description": "text to be rendered on top of the image",
                 },
                 "image": {
                   "title": "Image",
