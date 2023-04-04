@@ -7,6 +7,7 @@ import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import SendEventButton from "$store/islands/SendEventButton.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import Button from "../ui/Button.tsx";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -94,7 +95,10 @@ function ProductCard({ product, preload, itemListName }: Props) {
               }}
             >
               <Sizes {...product} />
-              <SendEventButton
+              <Button as="a" href={product.url}>Visualizar Produto</Button>
+              {/* FIXME: Understand why fresh breaks rendering this component */}
+              {
+                /* <SendEventButton
                 as="a"
                 href={product.url}
                 event={{
@@ -112,7 +116,8 @@ function ProductCard({ product, preload, itemListName }: Props) {
                 }}
               >
                 Visualizar Produto
-              </SendEventButton>
+              </SendEventButton> */
+              }
             </div>
           )}
         </div>
