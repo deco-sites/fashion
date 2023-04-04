@@ -418,6 +418,7 @@
               "const": "https://schema.org/Subscription"
             }
           ],
+          "type": "string",
           "title": "Price Component Type"
         },
         "priceType": {
@@ -447,6 +448,7 @@
               "const": "https://schema.org/SRP"
             }
           ],
+          "type": "string",
           "title": "Price Type"
         },
         "billingDuration": {
@@ -527,6 +529,7 @@
               "const": "https://schema.org/SoldOut"
             }
           ],
+          "type": "string",
           "title": "Availability"
         },
         "gtin": {
@@ -559,6 +562,7 @@
               "const": "https://schema.org/UsedCondition"
             }
           ],
+          "type": "string",
           "title": "Item Condition"
         },
         "price": {
@@ -1022,6 +1026,7 @@
               "const": "enabled"
             }
           ],
+          "type": "string",
           "title": "Fuzzy"
         }
       },
@@ -1191,6 +1196,7 @@
               "const": "highest_price"
             }
           ],
+          "type": "string",
           "title": "Sort",
           "description": "search sort parameter"
         },
@@ -1593,6 +1599,7 @@
               "const": "discount:desc"
             }
           ],
+          "type": "string",
           "title": "Sort",
           "description": "search sort parameter"
         },
@@ -1735,6 +1742,7 @@
               "const": "discount:desc"
             }
           ],
+          "type": "string",
           "title": "Sort",
           "description": "search sort parameter"
         },
@@ -1813,9 +1821,11 @@
                   "type": "string",
                   "const": "suggestions"
                 }
-              ]
+              ],
+              "type": "string"
             }
           ],
+          "type": "string",
           "title": "Cross Selling",
           "description": "VTEX Cross Selling API. This loader only works on routes of type /:slug/p"
         },
@@ -2178,6 +2188,7 @@
               "const": "Facebook"
             }
           ],
+          "type": "string",
           "title": "Label"
         },
         "href": {
@@ -2372,6 +2383,7 @@
               "const": "ArrowsPointingOut"
             }
           ],
+          "type": "string",
           "title": "Icon",
           "description": "Image src"
         },
@@ -2608,6 +2620,7 @@
               "const": "drawer"
             }
           ],
+          "type": "string",
           "title": "Variant",
           "description": "Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products"
         },
@@ -2821,6 +2834,7 @@
               "const": "ArrowsPointingOut"
             }
           ],
+          "type": "string",
           "title": "Icon"
         }
       },
@@ -3066,6 +3080,7 @@
               "const": "auto"
             }
           ],
+          "type": "string",
           "title": "Variant",
           "description": "Ask for the developer to remove this option since this is here to help development only and should not be used in production"
         }
@@ -3461,6 +3476,7 @@
               "const": "and"
             }
           ],
+          "type": "string",
           "title": "Op"
         },
         "matchers": {
@@ -3501,6 +3517,7 @@
               "const": "development"
             }
           ],
+          "type": "string",
           "title": "Environment"
         }
       },
