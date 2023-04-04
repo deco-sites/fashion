@@ -4,7 +4,6 @@
 
 import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
-import { context } from "$live/live.ts";
 
 import * as $$$$0 from "./routes/api/[...catchall].tsx";
 import * as $$$$1 from "./routes/_app.tsx";
@@ -18,20 +17,20 @@ import * as $$$$$6 from "./islands/SliderJS.tsx";
 import * as $$$$$7 from "./islands/ProductImageZoom.tsx";
 import * as $$$$$8 from "./islands/ViewSendEvent.tsx";
 import * as $$$$$9 from "./islands/SearchControls.tsx";
-import * as $$$$$$$$0 from "deco-sites/fashion/sections/LinkTree.tsx";
-import * as $$$$$$$$1 from "deco-sites/fashion/sections/DesignSystem.story.tsx";
-import * as $$$$$$$$2 from "deco-sites/fashion/sections/Features.tsx";
-import * as $$$$$$$$3 from "deco-sites/fashion/sections/BannerPLP.tsx";
-import * as $$$$$$$$4 from "deco-sites/fashion/sections/BannerGrid.tsx";
-import * as $$$$$$$$5 from "deco-sites/fashion/sections/SearchResult.tsx";
-import * as $$$$$$$$6 from "deco-sites/fashion/sections/ProductShelf.tsx";
-import * as $$$$$$$$7 from "deco-sites/fashion/sections/Footer.tsx";
-import * as $$$$$$$$8 from "deco-sites/fashion/sections/CookieConsent.tsx";
-import * as $$$$$$$$9 from "deco-sites/fashion/sections/Header.tsx";
-import * as $$$$$$$$10 from "deco-sites/fashion/sections/ProductDetails.tsx";
-import * as $$$$$$$$11 from "deco-sites/fashion/sections/Highlights.tsx";
-import * as $$$$$$$$12 from "deco-sites/fashion/sections/WhatsApp.tsx";
-import * as $$$$$$$$13 from "deco-sites/fashion/sections/Carousel.tsx";
+import * as $$$$$$$$0 from "./sections/LinkTree.tsx";
+import * as $$$$$$$$1 from "./sections/DesignSystem.story.tsx";
+import * as $$$$$$$$2 from "./sections/Features.tsx";
+import * as $$$$$$$$3 from "./sections/BannerPLP.tsx";
+import * as $$$$$$$$4 from "./sections/BannerGrid.tsx";
+import * as $$$$$$$$5 from "./sections/SearchResult.tsx";
+import * as $$$$$$$$6 from "./sections/ProductShelf.tsx";
+import * as $$$$$$$$7 from "./sections/Footer.tsx";
+import * as $$$$$$$$8 from "./sections/CookieConsent.tsx";
+import * as $$$$$$$$9 from "./sections/Header.tsx";
+import * as $$$$$$$$10 from "./sections/ProductDetails.tsx";
+import * as $$$$$$$$11 from "./sections/Highlights.tsx";
+import * as $$$$$$$$12 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$13 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
@@ -187,8 +186,5 @@ const manifest: DecoManifest = {
   "config": config,
   "baseUrl": import.meta.url,
 };
-
-context.namespace = "deco-sites/fashion";
-context.siteId = 239;
 
 export default manifest;
