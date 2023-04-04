@@ -1,15 +1,15 @@
-import Filters from "$store/components/search/Filters.tsx";
-import ProductCard from "$store/components/product/ProductCard.tsx";
-import Container from "$store/components/ui/Container.tsx";
-import Button from "$store/components/ui/Button.tsx";
-import Text from "$store/components/ui/Text.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import SearchControls from "$store/islands/SearchControls.tsx";
+import Filters from "deco-sites/fashion/components/search/Filters.tsx";
+import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
+import Container from "deco-sites/fashion/components/ui/Container.tsx";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import SearchControls from "deco-sites/fashion/islands/SearchControls.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
-import ViewSendEvent from "$store/islands/ViewSendEvent.tsx";
+import ViewSendEvent from "deco-sites/fashion/islands/ViewSendEvent.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import { useOffer } from "$store/sdk/useOffer.ts";
+import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;

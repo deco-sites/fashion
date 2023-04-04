@@ -1,6 +1,6 @@
 import ProductDetails, {
   Props,
-} from "$store/components/product/ProductDetails.tsx";
+} from "deco-sites/fashion/components/product/ProductDetails.tsx";
 
 function ProductDetailsSection(props: Props) {
   return <ProductDetails {...props} />;

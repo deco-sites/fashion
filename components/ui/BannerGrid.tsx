@@ -1,4 +1,4 @@
-import Container from "$store/components/ui/Container.tsx";
+import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 

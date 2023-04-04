@@ -1,8 +1,8 @@
 import { useRef } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
-import Button from "$store/components/ui/Button.tsx";
-import Text from "$store/components/ui/Text.tsx";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
 
 function Coupon() {
   const { cart, loading, addCouponsToCart } = useCart();

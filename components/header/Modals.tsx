@@ -1,14 +1,14 @@
-import Modal from "$store/components/ui/Modal.tsx";
+import Modal from "deco-sites/fashion/components/ui/Modal.tsx";
 import { lazy, Suspense } from "preact/compat";
-import { useUI } from "$store/sdk/useUI.ts";
+import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 
-import type { Props as MenuProps } from "$store/components/header/Menu.tsx";
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import Loading from "$store/components/ui/Loading.tsx";
+import type { Props as MenuProps } from "deco-sites/fashion/components/header/Menu.tsx";
+import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
+import Loading from "deco-sites/fashion/components/ui/Loading.tsx";
 
-const Menu = lazy(() => import("$store/components/header/Menu.tsx"));
-const Cart = lazy(() => import("$store/components/minicart/Cart.tsx"));
-const Searchbar = lazy(() => import("$store/components/search/Searchbar.tsx"));
+const Menu = lazy(() => import("deco-sites/fashion/components/header/Menu.tsx"));
+const Cart = lazy(() => import("deco-sites/fashion/components/minicart/Cart.tsx"));
+const Searchbar = lazy(() => import("deco-sites/fashion/components/search/Searchbar.tsx"));
 
 interface Props {
   menu: MenuProps;

@@ -1,7 +1,7 @@
-import Button from "$store/components/ui/Button.tsx";
-import Input from "$store/components/ui/Input.tsx";
-import Text from "$store/components/ui/Text.tsx";
-import { formatPrice } from "$store/sdk/format.ts";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import Input from "deco-sites/fashion/components/ui/Input.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 

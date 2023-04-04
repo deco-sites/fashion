@@ -1,9 +1,9 @@
-export { default } from "$store/components/footer/Footer.tsx";
+export { default } from "deco-sites/fashion/components/footer/Footer.tsx";
 export type {
   IconItem,
   Item,
   Props,
   Section,
   StringItem,
-} from "$store/components/footer/Footer.tsx";
-export type { AvailableIcons } from "$store/components/ui/Icon.tsx";
+} from "deco-sites/fashion/components/footer/Footer.tsx";
+export type { AvailableIcons } from "deco-sites/fashion/components/ui/Icon.tsx";
