@@ -1,6 +1,8 @@
 import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
 import type { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
-import Button, { Props as ButtonProps } from "deco-sites/fashion/components/ui/Button.tsx";
+import Button, {
+  Props as ButtonProps,
+} from "deco-sites/fashion/components/ui/Button.tsx";
 
 type Props<E extends AnalyticsEvent> = ButtonProps & {
   event: E;

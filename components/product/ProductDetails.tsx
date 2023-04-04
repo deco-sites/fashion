@@ -7,7 +7,10 @@ import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import { Slider, SliderDots } from "deco-sites/fashion/components/ui/Slider.tsx";
+import {
+  Slider,
+  SliderDots,
+} from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";

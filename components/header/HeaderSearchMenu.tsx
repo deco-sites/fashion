@@ -5,7 +5,9 @@ import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import Loading from "deco-sites/fashion/components/ui/Loading.tsx";
 import { headerHeight } from "deco-sites/fashion/components/header/constants.ts";
 
-const Searchbar = lazy(() => import("deco-sites/fashion/components/search/Searchbar.tsx"));
+const Searchbar = lazy(() =>
+  import("deco-sites/fashion/components/search/Searchbar.tsx")
+);
 
 interface Props {
   searchbar: SearchbarProps;

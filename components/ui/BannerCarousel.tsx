@@ -1,7 +1,10 @@
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import { Slider, SliderDots } from "deco-sites/fashion/components/ui/Slider.tsx";
+import {
+  Slider,
+  SliderDots,
+} from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
