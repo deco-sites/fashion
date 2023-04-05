@@ -1,1 +1,1 @@
-export { default } from "$store/components/header/HeaderSearchMenu.tsx";
+export { default } from "deco-sites/fashion/components/header/HeaderSearchMenu.tsx";

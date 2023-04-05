@@ -1,11 +1,11 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import Text from "$store/components/ui/Text.tsx";
-import Avatar from "$store/components/ui/Avatar.tsx";
-import { useOffer } from "$store/sdk/useOffer.ts";
-import { formatPrice } from "$store/sdk/format.ts";
-import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
+import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
+import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
+import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
-import SendEventButton from "$store/islands/SendEventButton.tsx";
+import SendEventButton from "deco-sites/fashion/islands/SendEventButton.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import Button from "../ui/Button.tsx";
 

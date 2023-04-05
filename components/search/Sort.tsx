@@ -1,6 +1,6 @@
 import { useMemo } from "preact/hooks";
-import Text from "$store/components/ui/Text.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import type { JSX } from "preact";
 
 const SORT_QUERY_PARAM = "sort";

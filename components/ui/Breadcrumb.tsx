@@ -1,5 +1,5 @@
-import Text from "$store/components/ui/Text.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import type { BreadcrumbList } from "deco-sites/std/commerce/types.ts";
 
 interface Props {

@@ -1,4 +1,4 @@
-import Text from "$store/components/ui/Text.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import { headerHeight } from "./constants.ts";
 

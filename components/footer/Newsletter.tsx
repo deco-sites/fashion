@@ -1,4 +1,4 @@
-import Text from "$store/components/ui/Text.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
 
 function Newsletter() {
   return (

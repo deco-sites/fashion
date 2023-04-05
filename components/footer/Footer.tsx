@@ -1,6 +1,8 @@
-import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Text from "$store/components/ui/Text.tsx";
-import Container from "$store/components/ui/Container.tsx";
+import Icon, {
+  AvailableIcons,
+} from "deco-sites/fashion/components/ui/Icon.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Container from "deco-sites/fashion/components/ui/Container.tsx";
 
 import Newsletter from "./Newsletter.tsx";
 import type { ComponentChildren } from "preact";

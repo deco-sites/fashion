@@ -13,14 +13,14 @@ import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 import { useEffect, useRef } from "preact/compat";
 
-import Icon from "$store/components/ui/Icon.tsx";
-import Text from "$store/components/ui/Text.tsx";
-import Button from "$store/components/ui/Button.tsx";
-import ProductCard from "$store/components/product/ProductCard.tsx";
-import { Slider } from "$store/components/ui/Slider.tsx";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
+import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
 import useAutocomplete from "deco-sites/std/commerce/vtex/hooks/useAutocomplete.ts";
 import SearchTermList from "./SearchTermList.tsx";
-import { useUI } from "$store/sdk/useUI.ts";
+import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
 
 function CloseButton() {

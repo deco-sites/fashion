@@ -1,6 +1,6 @@
 import ProductShelf, {
   Props,
-} from "$store/components/product/ProductShelf.tsx";
+} from "deco-sites/fashion/components/product/ProductShelf.tsx";
 
 function ProductShelfSection(props: Props) {
   return <ProductShelf {...props} />;

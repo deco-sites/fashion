@@ -1,10 +1,10 @@
-import Button from "$store/components/ui/Button.tsx";
-import Container from "$store/components/ui/Container.tsx";
-import Text from "$store/components/ui/Text.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Avatar from "$store/components/ui/Avatar.tsx";
-import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
-import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import Container from "deco-sites/fashion/components/ui/Container.tsx";
+import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
+import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
+import QuantitySelector from "deco-sites/fashion/components/ui/QuantitySelector.tsx";
 import type { ComponentChildren } from "preact";
 
 const colors = [

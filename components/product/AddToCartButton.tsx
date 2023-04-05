@@ -1,8 +1,8 @@
-import Button from "$store/components/ui/Button.tsx";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import {
   Options as UseAddToCartProps,
   useAddToCart,
-} from "$store/sdk/useAddToCart.ts";
+} from "deco-sites/fashion/sdk/useAddToCart.ts";
 
 interface Props extends UseAddToCartProps {
   /**
