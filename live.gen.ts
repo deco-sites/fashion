@@ -31,7 +31,8 @@ import * as $$$$$$$$10 from "./sections/Header.tsx";
 import * as $$$$$$$$11 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$12 from "./sections/Highlights.tsx";
 import * as $$$$$$$$13 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$14 from "./sections/Carousel.tsx";
+import * as $$$$$$$$14 from "./sections/ProductShelfGetProps.tsx";
+import * as $$$$$$$$15 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
@@ -125,7 +126,8 @@ const manifest: DecoManifest = {
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$13,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$14,
+    "deco-sites/fashion/sections/ProductShelfGetProps.tsx": $$$$$$$$14,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$15,
     "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,
