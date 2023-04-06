@@ -2605,10 +2605,6 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
         "itemsPerPage": {
           "type": [
             "number",
@@ -2617,9 +2613,7 @@
           "title": "Items Per Page"
         }
       },
-      "required": [
-        "title"
-      ],
+      "required": [],
       "title": "Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Z0ZXhQcm9kdWN0U2hlbGYudHN4@Props&Props": {

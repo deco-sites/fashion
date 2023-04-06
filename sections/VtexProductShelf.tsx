@@ -18,9 +18,9 @@ export async function getProps(
     unknown,
     LiveConfig<LoaderProps, StateVTEX>
   >,
-): Promise<Pick<ProductShelfProps, "products">> {
+): Promise<Pick<ProductShelfProps, "products" | "title">> {
   const { data: products } = await loader(request, ctx, ctx.state.$live);
-  return { products };
+  return { products, title: "Marcos Candeia" };
 }
 
 export default ProductShelfSection;
