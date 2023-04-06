@@ -59,8 +59,174 @@
         }
       ]
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject": {
+      "type": "object",
+      "allOf": [
+        {}
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "ImageObject",
+          "title": "@type"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "title": "ImageObject"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject"
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "@id"
+        },
+        "additionalType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Additional Type"
+        },
+        "alternateName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alternate Name"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "disambiguatingDescription": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Disambiguating Description"
+        },
+        "identifier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Identifier"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject[]",
+          "title": "Image"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Name"
+        },
+        "sameAs": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Same As"
+        },
+        "subjectOf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subject Of"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Url"
+        }
+      },
+      "required": [],
+      "title": "omitQHR5cGU=Thing"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ListItem": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "ListItem",
+          "title": "@type"
+        },
+        "item": {
+          "title": "Item"
+        },
+        "position": {
+          "type": "number",
+          "title": "Position"
+        }
+      },
+      "required": [
+        "@type",
+        "item",
+        "position"
+      ],
+      "title": "ListItem"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ListItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ListItem"
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=ItemList": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "itemListElement": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ListItem[]",
+          "title": "Item List Element"
+        },
+        "numberOfItems": {
+          "type": "number",
+          "title": "Number Of Items"
+        }
+      },
+      "required": [
+        "itemListElement",
+        "numberOfItems"
+      ],
+      "title": "omitQHR5cGU=ItemList"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList": {
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=ItemList"
+        }
+      ],
       "properties": {
         "@type": {
           "type": "string",
@@ -219,6 +385,11 @@
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue": {
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
       "properties": {
         "@type": {
           "type": "string",
@@ -321,54 +492,6 @@
       ],
       "title": "AggregateRating"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf": {
-      "type": "object",
-      "properties": {},
-      "required": [],
-      "title": "ProductLeaf"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf"
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string",
-          "const": "ProductGroup",
-          "title": "@type"
-        },
-        "hasVariant": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]",
-          "title": "Has Variant"
-        },
-        "productGroupID": {
-          "type": "string",
-          "title": "Product Group I D"
-        },
-        "additionalProperty": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
-          "title": "Additional Property"
-        },
-        "model": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Model"
-        }
-      },
-      "required": [
-        "@type",
-        "hasVariant",
-        "productGroupID",
-        "additionalProperty"
-      ],
-      "title": "ProductGroup"
-    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@QuantitativeValue": {
       "type": "object",
       "properties": {
@@ -383,8 +506,42 @@
       "required": [],
       "title": "QuantitativeValue"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=PriceSpecification": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "eligibleQuantity": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@QuantitativeValue",
+          "title": "Eligible Quantity"
+        },
+        "price": {
+          "type": "number",
+          "title": "Price"
+        },
+        "priceCurrency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Price Currency"
+        }
+      },
+      "required": [
+        "price"
+      ],
+      "title": "omitQHR5cGU=PriceSpecification"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification": {
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=PriceSpecification"
+        }
+      ],
       "properties": {
         "@type": {
           "type": "string",
@@ -480,6 +637,11 @@
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer": {
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
       "properties": {
         "@type": {
           "type": "string",
@@ -653,6 +815,11 @@
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Review": {
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
       "properties": {
         "@type": {
           "type": "string",
@@ -704,8 +871,165 @@
       ],
       "title": "Review"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitaXNWYXJpYW50T2Y=Product": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "Product",
+          "title": "@type"
+        },
+        "additionalProperty": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
+          "title": "Additional Property"
+        },
+        "aggregateRating": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating",
+          "title": "Aggregate Rating"
+        },
+        "award": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Award"
+        },
+        "brand": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Brand"
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Category"
+        },
+        "gtin": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Gtin"
+        },
+        "inProductGroupWithID": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "In Product Group With I D"
+        },
+        "offers": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateOffer",
+          "title": "Offers"
+        },
+        "productID": {
+          "type": "string",
+          "title": "Product I D"
+        },
+        "productionDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Production Date"
+        },
+        "releaseDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Release Date"
+        },
+        "review": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Review",
+          "title": "Review"
+        },
+        "sku": {
+          "type": "string",
+          "title": "Sku"
+        }
+      },
+      "required": [
+        "@type",
+        "productID",
+        "sku"
+      ],
+      "title": "omitaXNWYXJpYW50T2Y=Product"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitaXNWYXJpYW50T2Y=Product"
+        }
+      ],
+      "properties": {},
+      "required": [],
+      "title": "ProductLeaf"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf"
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "ProductGroup",
+          "title": "@type"
+        },
+        "hasVariant": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]",
+          "title": "Has Variant"
+        },
+        "productGroupID": {
+          "type": "string",
+          "title": "Product Group I D"
+        },
+        "additionalProperty": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
+          "title": "Additional Property"
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Model"
+        }
+      },
+      "required": [
+        "@type",
+        "hasVariant",
+        "productGroupID",
+        "additionalProperty"
+      ],
+      "title": "ProductGroup"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product": {
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
+        }
+      ],
       "properties": {
         "@type": {
           "type": "string",
@@ -3186,6 +3510,30 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/WhatsApp.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@Category": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "children": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@Category[]",
+          "title": "Children"
+        }
+      },
+      "required": [
+        "name",
+        "children"
+      ],
+      "title": "Category"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@Category[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@Category"
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@PlatformVTEX": {
       "type": "object",
       "properties": {
@@ -3194,10 +3542,15 @@
           "const": "VTEX",
           "title": "Type",
           "default": "VTEX"
+        },
+        "category": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@Category",
+          "title": "Category"
         }
       },
       "required": [
-        "type"
+        "type",
+        "category"
       ],
       "title": "PlatformVTEX"
     },

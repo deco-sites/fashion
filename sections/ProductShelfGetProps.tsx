@@ -1,4 +1,4 @@
-import { HandlerContext } from "$fresh/src/server/types.ts";
+import { LoaderContext } from "$live/types.ts";
 import ProductShelf, {
   Props as ProductShelfProps,
 } from "deco-sites/fashion/components/product/ProductShelf.tsx";
@@ -24,11 +24,17 @@ export interface OtherProps {
   props: string;
 }
 
+export interface Category {
+  name: string;
+  children: Category[];
+}
+
 export interface PlatformVTEX {
   /**
    * @default VTEX
    */
   type: "VTEX";
+  category: Category;
 }
 export interface PlatformShopify {
   /**
@@ -36,10 +42,9 @@ export interface PlatformShopify {
    */
   type: "Shopify";
 }
-export async function getProps(
+export async function loadData(
   request: Request,
-  ctx: HandlerContext<
-    unknown,
+  ctx: LoaderContext<
     LiveConfig<
       | VtexLoaderProps & PlatformVTEX
       | ShopifyLoaderProps & PlatformShopify,

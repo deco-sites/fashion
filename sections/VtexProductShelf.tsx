@@ -1,4 +1,4 @@
-import { HandlerContext } from "$fresh/src/server/types.ts";
+import { LoaderContext } from "$live/types.ts";
 import ProductShelf, {
   Props as ProductShelfProps,
 } from "deco-sites/fashion/components/product/ProductShelf.tsx";
@@ -13,10 +13,9 @@ import { LiveConfig } from "https://denopkg.com/deco-cx/live@1.0.0-rc.36/blocks/
 function ProductShelfSection(props: ProductShelfProps) {
   return <ProductShelf {...props} />;
 }
-export async function getProps(
+export async function loadData(
   request: Request,
-  ctx: HandlerContext<
-    unknown,
+  ctx: LoaderContext<
     LiveConfig<
       VtexLoaderProps,
       StateVTEX
