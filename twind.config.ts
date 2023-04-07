@@ -1,42 +1,10 @@
 /**
  * WARNING: DO NOT USE ANY TWIND FUNCTIONS in here otherwise the
  * vscode-twind-intellisense plugin may stop working. To overcome
- * this issue, use animations and keyframes intead of twind's animation
- * function.
+ * this issue, add any functions on twind.options.ts instead
  */
-import type { Options } from "$fresh/plugins/twind.ts";
 
-const gridCols = ([arg]: string[]) => {
-  const template = Number.isInteger(Number(arg))
-    ? `repeat(${arg}, minmax(0, 1fr))`
-    : arg
-    ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
-    : arg;
-
-  return {
-    "grid-template-columns": template,
-  };
-};
-
-const gridRows = ([arg]: string[]) => {
-  const template = Number.isInteger(Number(arg))
-    ? `repeat(${arg}, minmax(0, 1fr))`
-    : arg
-    ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
-    : arg;
-
-  return {
-    "grid-template-rows": template,
-  };
-};
-
-const scrollSnap = ([arg]: string[]) => {
-  return {
-    "scroll-snap-align": arg,
-  };
-};
-
-const options: Omit<Options, "selfURL"> = {
+export default {
   theme: {
     extend: {
       colors: {
@@ -47,7 +15,7 @@ const options: Omit<Options, "selfURL"> = {
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
-        "hover-inverse": "rgba(255, 255, 255, 0.4)",
+        "hover-inverse": "rgba(0, 0, 0, 0.04)",
       },
       textColor: {
         "default": "#161616",
@@ -109,12 +77,6 @@ const options: Omit<Options, "selfURL"> = {
           to: { transform: "translateY(0)" },
         },
       },
-      boxShadow: {
-        sm: "0px 1px 3px 0px #00000014",
-        default: "0px 1px 4px 0px #0000001F",
-        md: "0px 1px 5px 0px #00000024",
-        lg: "0px 4px 10px 0px #0000001F",
-      },
     },
     fontFamily: {
       sans: ["Albert Sans", "sans-serif"],
@@ -128,61 +90,4 @@ const options: Omit<Options, "selfURL"> = {
       "2xl": "1536px",
     },
   },
-  preflight: (preflight) => ({
-    ...preflight,
-
-    // Stick footer to the bottom of the page
-    body: {
-      display: "flex",
-      flexDirection: "column",
-      minHeight: "100vh",
-    },
-    'section[data-manifest-key="./sections/Footer.tsx"]': {
-      marginTop: "auto",
-    },
-
-    // Prevent scroll when modal is open
-    "body[no-scroll]": {
-      overflow: "hidden",
-      height: "100vh",
-    },
-  }),
-  plugins: {
-    backdrop: {
-      "&::backdrop": {
-        background: "rgba(0, 0, 0, 0.5)",
-      },
-    },
-    "scroll-snap-center": scrollSnap(["center"]),
-    "scroll-snap-start": scrollSnap(["start"]),
-    "scroll-x-mandatory": {
-      "scroll-snap-type": "x mandatory",
-    },
-    "snap-x": {
-      "scroll-snap-type": "x var(--tw-scroll-snap-strictness)",
-    },
-    "snap-mandatory": {
-      "--tw-scroll-snap-strictness": "mandatory",
-    },
-    "fill": (parts) => ({ "fill": parts.join("-") }),
-    "max-h-min": {
-      "max-height": "min-content",
-    },
-    "snap": ([mod]) => ({ "scroll-snap-align": mod }),
-    "grid-cols": gridCols,
-    "grid-rows": gridRows,
-    "scroll-smooth": {
-      "scroll-behavior": "smooth",
-      "-webkit-overflow-scrolling": "touch",
-    },
-    "scrollbar-none": {
-      "scrollbar-width": "none",
-      "-ms-overflow-style": "none",
-      "&::-webkit-scrollbar": {
-        display: "none",
-      },
-    },
-  },
 };
-
-export default options;
