@@ -1,4 +1,4 @@
-import { PropsResolver } from "$live/blocks/propsResolver.ts";
+import { PropsLoader } from "$live/mod.ts";
 import { LoaderContext } from "$live/types.ts";
 import ProductShelf, {
   Props as ProductShelfProps,
@@ -33,7 +33,7 @@ export async function loadData(
 
 export default ProductShelfSection;
 
-export const resolveProps: PropsResolver<
+export const loader: PropsLoader<
   ProductShelfProps,
   LoaderInput
 > = {

@@ -1,4 +1,4 @@
-import { PropsResolver } from "$live/blocks/propsResolver.ts";
+import { PropsLoader } from "$live/mod.ts";
 import dogApiFacts, {
   DogFact,
   Props as DogFactsProps,
@@ -25,7 +25,7 @@ export interface LoadProps extends DogFactsProps {
   title: string;
 }
 
-export const resolveProps: PropsResolver<
+export const loader: PropsLoader<
   Props,
   LoadProps
 > = {

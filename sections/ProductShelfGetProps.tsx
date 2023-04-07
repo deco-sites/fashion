@@ -8,7 +8,7 @@ import {
   Props as VtexLoaderProps,
 } from "deco-sites/std/functions/vtexProductList.ts";
 
-import { PropsResolver } from "$live/blocks/propsResolver.ts";
+import { PropsLoader } from "$live/mod.ts";
 import { ConfigShopify } from "deco-sites/std/commerce/shopify/client.ts";
 import {
   default as shopifyLoader,
@@ -41,21 +41,18 @@ export type LoaderProps =
     | ShopifyLoaderProps & PlatformShopify
   );
 
-export const resolveProps: PropsResolver<ProductShelfProps, LoaderProps> =
-  async (
-    request: Request,
-    ctx: LoaderContext<
-      LoaderProps,
-      LiveState<{ configVTEX?: ConfigVTEX; configShopify: ConfigShopify }> & {
-        segment?: Partial<Segment>;
-      }
-    >,
-  ): Promise<ProductShelfProps> => {
-    const loader = (ctx.state.$live.type === "VTEX")
-      ? vtexLoader
-      : shopifyLoader;
-    const { data: products } = await loader(request, ctx, ctx.state.$live);
-    return { ...ctx.state.$live, products };
-  };
+export const loader: PropsLoader<ProductShelfProps, LoaderProps> = async (
+  request: Request,
+  ctx: LoaderContext<
+    LoaderProps,
+    LiveState<{ configVTEX?: ConfigVTEX; configShopify: ConfigShopify }> & {
+      segment?: Partial<Segment>;
+    }
+  >,
+): Promise<ProductShelfProps> => {
+  const loader = (ctx.state.$live.type === "VTEX") ? vtexLoader : shopifyLoader;
+  const { data: products } = await loader(request, ctx, ctx.state.$live);
+  return { ...ctx.state.$live, products };
+};
 
 export default ProductShelfSection;
