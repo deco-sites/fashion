@@ -2920,7 +2920,7 @@
       ],
       "title": "omitcHJvZHVjdHM=Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@2&omitcHJvZHVjdHM=Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@cd6fe400c08631e5c1c2a9b91520991e&omitcHJvZHVjdHM=Props": {
       "allOf": [
         {
           "type": "object",
@@ -2938,7 +2938,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@omitcHJvZHVjdHM=Props"
         }
       ],
-      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@2&omitcHJvZHVjdHM=Props"
+      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@cd6fe400c08631e5c1c2a9b91520991e&omitcHJvZHVjdHM=Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props": {
       "type": "object",
@@ -3510,6 +3510,77 @@
       },
       "required": [],
       "title": "deco-sites/fashion/components/ui/WhatsApp.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@PlatformVTEX": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "VTEX",
+          "default": "VTEX",
+          "title": "Type"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "PlatformVTEX"
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@PlatformVTEX&Props": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@Props"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@PlatformVTEX"
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@PlatformShopify": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "Shopify",
+          "default": "Shopify",
+          "title": "Type"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "PlatformShopify"
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdC50cw==@PlatformShopify&Props": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdC50cw==@Props"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZkdldFByb3BzLnRzeA==@PlatformShopify"
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@PlatformShopify&Props|PlatformVTEX&Props": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@PlatformVTEX&Props"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdC50cw==@PlatformShopify&Props"
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@PlatformShopify&Props|PlatformVTEX&Props&omitcHJvZHVjdHM=Props": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@omitcHJvZHVjdHM=Props"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@PlatformShopify&Props|PlatformVTEX&Props"
+        }
+      ],
+      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@PlatformShopify&Props|PlatformVTEX&Props&omitcHJvZHVjdHM=Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
@@ -4758,7 +4829,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@2&omitcHJvZHVjdHM=Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@cd6fe400c08631e5c1c2a9b91520991e&omitcHJvZHVjdHM=Props"
         }
       ],
       "required": [
@@ -4963,7 +5034,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@PlatformShopify&Props|PlatformVTEX&Props&omitcHJvZHVjdHM=Props"
         }
       ],
       "required": [
