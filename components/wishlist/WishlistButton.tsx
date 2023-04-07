@@ -2,7 +2,7 @@ import { useComputed, useSignal } from "@preact/signals";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { useWishlist } from "deco-sites/std/commerce/vtex/hooks/useWishlist.ts";
-import { WishlistItem } from "../../../std/commerce/vtex/types.ts";
+import { WishlistItem } from "deco-sites/std/commerce/vtex/types.ts";
 
 interface Props extends Partial<WishlistItem> {
   variant?: "icon" | "full";
