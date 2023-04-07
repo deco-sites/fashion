@@ -12,6 +12,9 @@ const hopByHop = [
   "Upgrade",
   "Proxy-Authorization",
   "Proxy-Authenticate",
+
+  // Somehow some APIs at VTEX break when using this
+  "origin",
 ];
 
 const proxy: Handlers["GET"] = async (req, ctx) => {

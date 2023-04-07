@@ -21,6 +21,7 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "deco-sites/fashion/islands/ProductImageZoom.tsx";
+import WishlistButton from "../wishlist/WishlistButton.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -64,6 +65,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
     offers,
     name,
     gtin,
+    isVariantOf,
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
 
@@ -118,9 +120,12 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
             productGroupId={product.isVariantOf?.productGroupID ?? ""}
           />
         )}
-        <Button variant="secondary">
-          <Icon id="Heart" width={20} height={20} strokeWidth={2} /> Favoritar
-        </Button>
+        <WishlistButton
+          variant="full"
+          productId={isVariantOf?.productGroupID}
+          sku={productID}
+          title={name}
+        />
       </div>
       {/* Shipping Simulation */}
       <div class="mt-8">

@@ -1,15 +1,17 @@
 import Filters from "deco-sites/fashion/components/search/Filters.tsx";
-import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
 import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import SearchControls from "deco-sites/fashion/islands/SearchControls.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
-import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 import ViewSendEvent from "deco-sites/fashion/islands/ViewSendEvent.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
+import ProductGallery, {
+  Props as GalleryProps,
+} from "../product/ProductGallery.tsx";
+import type { LoaderReturnType } from "$live/types.ts";
+import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
@@ -20,10 +22,7 @@ export interface Props {
   /**
    * @description Number of products per line on grid
    */
-  columns: {
-    mobile?: number;
-    desktop?: number;
-  };
+  columns: GalleryProps["columns"];
 }
 
 function NotFound() {
@@ -40,7 +39,6 @@ function Result({
   columns,
 }: Omit<Props, "page"> & { page: ProductListingPage }) {
   const { products, filters, breadcrumb, pageInfo } = page;
-  const { desktop = 4, mobile = 2 } = columns ?? {};
 
   return (
     <>
@@ -57,12 +55,8 @@ function Result({
               <Filters filters={filters} />
             </aside>
           )}
-          <div
-            class={`flex-grow grid grid-cols-${mobile} gap-2 items-center sm:(grid-cols-${desktop} gap-10)`}
-          >
-            {products?.map((product, index) => (
-              <ProductCard product={product} preload={index === 0} />
-            ))}
+          <div class="flex-grow">
+            <ProductGallery products={products} columns={columns} />
           </div>
         </div>
 

@@ -1,10 +1,9 @@
 {
   "imports": {
-    "$live/": "https://denopkg.com/deco-cx/live@1.0.0-rc.45/",
-    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.0.0-rc.12/",
     "deco-sites/fashion/": "./",
-    "partytown/": "https://deno.land/x/partytown@0.2.1/",
-    "$fresh/": "https://deno.land/x/fresh@1.1.4/",
+    "deco-sites/std/": "https://denopkg.com/deco-sites/std@f9435d3/",
+    "$live/": "https://denopkg.com/deco-cx/live@3a902f5/",
+    "$fresh/": "https://deno.land/x/fresh@1.1.5/",
     "preact": "https://esm.sh/preact@10.13.2",
     "preact/": "https://esm.sh/preact@10.13.2/",
     "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.0.2",
@@ -12,6 +11,7 @@
     "@preact/signals-core": "https://esm.sh/@preact/signals-core@1.2.3",
     "twind": "https://esm.sh/v96/twind@0.16.17",
     "twind/": "https://esm.sh/v96/twind@0.16.17/",
-    "std/": "https://deno.land/std@0.181.0/"
+    "std/": "https://deno.land/std@0.181.0/",
+    "partytown/": "https://deno.land/x/partytown@0.2.1/"
   }
 }

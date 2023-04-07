@@ -4,9 +4,9 @@ import Button from "deco-sites/fashion/components/ui/Button.tsx";
 
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
+import HeaderSearchMenu from "deco-sites/fashion/islands/HeaderSearchMenu.tsx";
 import type { INavItem } from "./NavItem.tsx";
 import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
-import HeaderSearchMenu from "deco-sites/fashion/islands/HeaderSearchMenu.tsx";
 
 function Navbar({ items, searchbar }: {
   items: INavItem[];
@@ -54,6 +54,20 @@ function Navbar({ items, searchbar }: {
             aria-label="Log in"
           >
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
+          </Button>
+          <Button
+            as="a"
+            variant="icon"
+            href="/wishlist"
+            aria-label="Wishlist"
+          >
+            <Icon
+              id="Heart"
+              width={20}
+              height={20}
+              strokeWidth={2}
+              fill="none"
+            />
           </Button>
           <HeaderButton variant="cart" />
         </div>

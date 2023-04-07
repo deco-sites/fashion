@@ -13,7 +13,7 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@ClientConfigVTEX": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4Q29uZmlnLnRz@ClientConfigVTEX": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -39,7 +39,7 @@
             "defaultLocale",
             "defaultPriceCurrency"
           ],
-          "title": "deco-sites/std/functions/vtexConfig.ts@ClientConfigVTEX"
+          "title": "/Users/gimenes/Documents/code/std/functions/vtexConfig.ts@ClientConfigVTEX"
         },
         {
           "title": "deco-sites/std/functions/vtexConfig.ts",
@@ -59,6 +59,7 @@
         }
       ]
     },
+<<<<<<< HEAD
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing": {
       "title": "Thing"
     },
@@ -121,6 +122,9 @@
       "title": "omitQHR5cGU=ItemList"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList": {
+=======
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@BreadcrumbList": {
+>>>>>>> e9fff36 (add wishlist support)
       "type": "object",
       "allOf": [
         {
@@ -139,7 +143,7 @@
       ],
       "title": "BreadcrumbList"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterBase": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterBase": {
       "type": "object",
       "properties": {
         "label": {
@@ -157,7 +161,7 @@
       ],
       "title": "FilterBase"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggleValue": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterToggleValue": {
       "type": "object",
       "properties": {
         "quantity": {
@@ -190,18 +194,23 @@
       ],
       "title": "FilterToggleValue"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggleValue[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterToggleValue[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggleValue"
       },
       "title": "FilterToggleValue[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterToggleValue"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggle": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterToggle": {
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterBase"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterBase"
         }
       ],
       "properties": {
@@ -211,7 +220,7 @@
           "title": "@type"
         },
         "values": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggleValue[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterToggleValue[]",
           "title": "Values"
         },
         "quantity": {
@@ -226,7 +235,7 @@
       ],
       "title": "FilterToggle"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRangeValue": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRangeValue": {
       "type": "object",
       "properties": {
         "min": {
@@ -244,11 +253,15 @@
       ],
       "title": "FilterRangeValue"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRange": {
       "type": "object",
       "allOf": [
         {
+<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange"
+=======
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterBase"
+>>>>>>> e9fff36 (add wishlist support)
         }
       ],
       "properties": {
@@ -258,7 +271,7 @@
           "title": "@type"
         },
         "values": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRangeValue",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRangeValue",
           "title": "Values"
         }
       },
@@ -268,20 +281,21 @@
       ],
       "title": "FilterRange"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange|FilterToggle": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRange|FilterToggle": {
       "anyOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggle"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterToggle"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRange"
         }
       ],
       "title": "FilterRange|FilterToggle"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange|FilterToggle[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRange|FilterToggle[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange|FilterToggle"
       },
       "title": "FilterRange|FilterToggle[]"
@@ -392,8 +406,12 @@
       },
       "required": [],
       "title": "omitQHR5cGU=Thing"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRange|FilterToggle"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@PropertyValue": {
       "type": "object",
       "allOf": [
         {
@@ -461,14 +479,19 @@
       ],
       "title": "PropertyValue"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@PropertyValue[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue"
       },
       "title": "PropertyValue[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@PropertyValue"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@AggregateRating": {
       "type": "object",
       "properties": {
         "@type": {
@@ -503,7 +526,7 @@
       ],
       "title": "AggregateRating"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductLeaf": {
       "type": "object",
       "allOf": [
         {
@@ -514,14 +537,19 @@
       "required": [],
       "title": "ProductLeaf"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductLeaf[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf"
       },
       "title": "ProductLeaf[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductLeaf"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductGroup": {
       "type": "object",
       "allOf": [
         {
@@ -535,7 +563,7 @@
           "title": "@type"
         },
         "hasVariant": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductLeaf[]",
           "title": "Has Variant"
         },
         "productGroupID": {
@@ -543,10 +571,14 @@
           "title": "Product Group I D"
         },
         "additionalProperty": {
+<<<<<<< HEAD
           "type": "array",
           "items": {
             "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue"
           },
+=======
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@PropertyValue[]",
+>>>>>>> e9fff36 (add wishlist support)
           "title": "Additional Property"
         },
         "model": {
@@ -565,7 +597,7 @@
       ],
       "title": "ProductGroup"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@QuantitativeValue": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@QuantitativeValue": {
       "type": "object",
       "properties": {
         "value": {
@@ -579,6 +611,7 @@
       "required": [],
       "title": "QuantitativeValue"
     },
+<<<<<<< HEAD
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=PriceSpecification": {
       "type": "object",
       "allOf": [
@@ -609,6 +642,9 @@
       "title": "omitQHR5cGU=PriceSpecification"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification": {
+=======
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@UnitPriceSpecification": {
+>>>>>>> e9fff36 (add wishlist support)
       "type": "object",
       "allOf": [
         {
@@ -702,14 +738,19 @@
       ],
       "title": "UnitPriceSpecification"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@UnitPriceSpecification[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification"
       },
       "title": "UnitPriceSpecification[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@UnitPriceSpecification"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Offer": {
       "type": "object",
       "allOf": [
         {
@@ -776,7 +817,7 @@
           "title": "Gtin"
         },
         "inventoryLevel": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@QuantitativeValue",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@QuantitativeValue",
           "title": "Inventory Level"
         },
         "itemCondition": {
@@ -806,7 +847,7 @@
           "title": "Price"
         },
         "priceSpecification": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@UnitPriceSpecification[]",
           "title": "Price Specification"
         },
         "priceValidUntil": {
@@ -840,14 +881,19 @@
       ],
       "title": "Offer"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Offer[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer"
       },
       "title": "Offer[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Offer"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateOffer": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@AggregateOffer": {
       "type": "object",
       "properties": {
         "@type": {
@@ -868,7 +914,7 @@
           "title": "Offer Count"
         },
         "offers": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Offer[]",
           "title": "Offers"
         },
         "priceCurrency": {
@@ -888,7 +934,7 @@
       ],
       "title": "AggregateOffer"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Review": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Review": {
       "type": "object",
       "allOf": [
         {
@@ -937,7 +983,7 @@
           "title": "Review Body"
         },
         "reviewRating": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@AggregateRating",
           "title": "Review Rating"
         }
       },
@@ -946,7 +992,7 @@
       ],
       "title": "Review"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product": {
       "type": "object",
       "allOf": [
         {
@@ -960,11 +1006,11 @@
           "title": "@type"
         },
         "additionalProperty": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@PropertyValue[]",
           "title": "Additional Property"
         },
         "aggregateRating": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@AggregateRating",
           "title": "Aggregate Rating"
         },
         "award": {
@@ -1003,11 +1049,11 @@
           "title": "In Product Group With I D"
         },
         "isVariantOf": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductGroup",
           "title": "Is Variant Of"
         },
         "offers": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateOffer",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@AggregateOffer",
           "title": "Offers"
         },
         "productID": {
@@ -1029,7 +1075,7 @@
           "title": "Release Date"
         },
         "review": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Review",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Review",
           "title": "Review"
         },
         "sku": {
@@ -1044,14 +1090,19 @@
       ],
       "title": "Product"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product"
       },
       "title": "Product[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@SortOption": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@SortOption": {
       "type": "object",
       "properties": {
         "value": {
@@ -1069,14 +1120,19 @@
       ],
       "title": "SortOption"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@SortOption[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@SortOption[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@SortOption"
       },
       "title": "SortOption[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@SortOption"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductListingPage": {
       "type": "object",
       "properties": {
         "@type": {
@@ -1085,15 +1141,15 @@
           "title": "@type"
         },
         "breadcrumb": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@BreadcrumbList",
           "title": "Breadcrumb"
         },
         "filters": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange|FilterToggle[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@FilterRange|FilterToggle[]",
           "title": "Filters"
         },
         "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]",
           "title": "Products"
         },
         "pageInfo": {
@@ -1134,7 +1190,7 @@
           "title": "Page Info"
         },
         "sortOptions": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@SortOption[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@SortOption[]",
           "title": "Sort Options"
         }
       },
@@ -1147,13 +1203,13 @@
       ],
       "title": "ProductListingPage"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductListingPage|null": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductListingPage"
         },
         {
           "type": "null"
@@ -1163,7 +1219,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
             }
           ],
           "required": [
@@ -1184,7 +1240,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy9zaG9waWZ5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
             }
           ],
           "required": [
@@ -1205,7 +1261,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92bmRhUHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
             }
           ],
           "required": [
@@ -1226,7 +1282,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
             }
           ],
           "required": [
@@ -1244,7 +1300,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props": {
       "type": "object",
       "properties": {
         "query": {
@@ -1282,15 +1338,15 @@
       "required": [
         "count"
       ],
-      "title": "deco-sites/std/functions/vtexProductListingPage.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vtexProductListingPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]|null": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]"
         },
         {
           "type": "null"
@@ -1300,7 +1356,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92bmRhUHJvZHVjdExpc3QudHM=@Props"
             }
           ],
           "required": [
@@ -1317,11 +1373,27 @@
           }
         },
         {
+          "title": "deco-sites/std/functions/vtexWishlist.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/vtexWishlist.ts"
+              ],
+              "default": "deco-sites/std/functions/vtexWishlist.ts"
+            }
+          }
+        },
+        {
           "title": "deco-sites/std/functions/vtexProductList.ts",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4UHJvZHVjdExpc3QudHM=@Props"
             }
           ],
           "required": [
@@ -1342,7 +1414,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UHJvZHVjdExpc3QudHM=@Props"
             }
           ],
           "required": [
@@ -1363,7 +1435,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdC50cw==@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy9zaG9waWZ5UHJvZHVjdExpc3QudHM=@Props"
             }
           ],
           "required": [
@@ -1384,7 +1456,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lSZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz@Props"
             }
           ],
           "required": [
@@ -1402,7 +1474,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92bmRhUHJvZHVjdExpc3QudHM=@Props": {
       "type": "object",
       "properties": {
         "limit": {
@@ -1461,9 +1533,9 @@
       "required": [
         "limit"
       ],
-      "title": "deco-sites/std/functions/vndaProductList.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vndaProductList.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductDetailsPage": {
       "type": "object",
       "properties": {
         "@type": {
@@ -1472,11 +1544,11 @@
           "title": "@type"
         },
         "breadcrumbList": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@BreadcrumbList",
           "title": "Breadcrumb List"
         },
         "product": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product",
           "title": "Product"
         }
       },
@@ -1487,13 +1559,13 @@
       ],
       "title": "ProductDetailsPage"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductDetailsPage|null": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductDetailsPage"
         },
         {
           "type": "null"
@@ -1580,7 +1652,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Search": {
       "type": "object",
       "properties": {
         "term": {
@@ -1593,35 +1665,40 @@
       ],
       "title": "Search"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Search[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search"
       },
       "title": "Search[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Search"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Suggestion": {
       "type": "object",
       "properties": {
         "searches": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Search[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Search[]",
           "title": "Searches"
         },
         "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]",
           "title": "Products"
         }
       },
       "required": [],
       "title": "Suggestion"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Suggestion|null": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Suggestion"
         },
         {
           "type": "null"
@@ -1631,7 +1708,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhTdWdnZXN0aW9ucy50cw==@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4U3VnZ2VzdGlvbnMudHM=@Props"
             }
           ],
           "required": [
@@ -1649,7 +1726,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhTdWdnZXN0aW9ucy50cw==@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4U3VnZ2VzdGlvbnMudHM=@Props": {
       "type": "object",
       "properties": {
         "count": {
@@ -1663,9 +1740,9 @@
         }
       },
       "required": [],
-      "title": "deco-sites/std/functions/vtexSuggestions.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vtexSuggestions.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@NavItem": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@NavItem": {
       "type": "object",
       "properties": {
         "label": {
@@ -1704,11 +1781,11 @@
       ],
       "title": "NavItem"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Navbar": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Navbar": {
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@NavItem"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@NavItem"
         }
       ],
       "properties": {
@@ -1723,20 +1800,25 @@
       "required": [],
       "title": "Navbar"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Navbar[]": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Navbar[]": {
       "type": "array",
       "items": {
+<<<<<<< HEAD
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Navbar"
       },
       "title": "Navbar[]"
+=======
+        "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Navbar"
+      }
+>>>>>>> e9fff36 (add wishlist support)
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Navbar[]|null": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Navbar[]|null": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Navbar[]"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Navbar[]"
         },
         {
           "type": "null"
@@ -1746,7 +1828,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhOYXZiYXIudHM=@Props"
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TmF2YmFyLnRz@Props"
             }
           ],
           "required": [
@@ -1764,7 +1846,7 @@
         }
       ]
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhOYXZiYXIudHM=@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TmF2YmFyLnRz@Props": {
       "type": "object",
       "properties": {
         "levels": {
@@ -1778,9 +1860,9 @@
         }
       },
       "required": [],
-      "title": "deco-sites/std/functions/vtexNavbar.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vtexNavbar.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy9zaG9waWZ5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props": {
       "type": "object",
       "properties": {
         "query": {
@@ -1800,9 +1882,9 @@
       "required": [
         "count"
       ],
-      "title": "deco-sites/std/functions/shopifyProductListingPage.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/shopifyProductListingPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4UHJvZHVjdExpc3QudHM=@Props": {
       "type": "object",
       "properties": {
         "query": {
@@ -1868,9 +1950,9 @@
         "query",
         "count"
       ],
-      "title": "deco-sites/std/functions/vtexProductList.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vtexProductList.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92bmRhUHJvZHVjdExpc3RpbmdQYWdlLnRz@Props": {
       "type": "object",
       "properties": {
         "term": {
@@ -1898,9 +1980,9 @@
       "required": [
         "count"
       ],
-      "title": "deco-sites/std/functions/vndaProductListingPage.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vndaProductListingPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props": {
       "type": "object",
       "properties": {
         "term": {
@@ -1943,9 +2025,9 @@
       "required": [
         "count"
       ],
-      "title": "deco-sites/std/functions/vtexLegacyProductListingPage.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vtexLegacyProductListingPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UHJvZHVjdExpc3QudHM=@Props": {
       "type": "object",
       "properties": {
         "query": {
@@ -2011,9 +2093,9 @@
         "query",
         "count"
       ],
-      "title": "deco-sites/std/functions/vtexLegacyProductList.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vtexLegacyProductList.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdC50cw==@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy9zaG9waWZ5UHJvZHVjdExpc3QudHM=@Props": {
       "type": "object",
       "properties": {
         "query": {
@@ -2031,9 +2113,9 @@
         "query",
         "count"
       ],
-      "title": "deco-sites/std/functions/shopifyProductList.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/shopifyProductList.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lSZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz@Props": {
       "type": "object",
       "properties": {
         "crossSelling": {
@@ -2089,9 +2171,9 @@
         }
       },
       "required": [],
-      "title": "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts@Props"
+      "title": "/Users/gimenes/Documents/code/std/functions/vtexLegacyRelatedProductsLoader.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvdm5kYS90eXBlcy50cw==@ConfigVNDA": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3ZuZGEvdHlwZXMudHM=@ConfigVNDA": {
       "type": "object",
       "properties": {
         "domain": {
@@ -2122,9 +2204,9 @@
         "useSandbox",
         "defaultPriceCurrency"
       ],
-      "title": "deco-sites/std/commerce/vnda/types.ts@ConfigVNDA"
+      "title": "/Users/gimenes/Documents/code/std/commerce/vnda/types.ts@ConfigVNDA"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3lvdXJWaWV3cy9jbGllbnQudHM=@ConfigYourViews": {
       "type": "object",
       "properties": {
         "token": {
@@ -2140,7 +2222,7 @@
         "token",
         "appId"
       ],
-      "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
+      "title": "/Users/gimenes/Documents/code/std/commerce/yourViews/client.ts@ConfigYourViews"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
       "type": "object",
@@ -2148,7 +2230,7 @@
       "required": [],
       "title": "Account"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Z0ZXgvY2xpZW50LnRz@ConfigVTEX": {
       "type": "object",
       "allOf": [
         {
@@ -2198,9 +2280,9 @@
         "defaultPriceCurrency",
         "defaultSalesChannel"
       ],
-      "title": "deco-sites/std/commerce/vtex/client.ts@ConfigVTEX"
+      "title": "/Users/gimenes/Documents/code/std/commerce/vtex/client.ts@ConfigVTEX"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Nob3BpZnkvY2xpZW50LnRz@ConfigShopify": {
       "type": "object",
       "allOf": [
         {
@@ -2223,9 +2305,9 @@
         "storeName",
         "storefrontAccessToken"
       ],
-      "title": "deco-sites/std/commerce/shopify/client.ts@ConfigShopify"
+      "title": "/Users/gimenes/Documents/code/std/commerce/shopify/client.ts@ConfigShopify"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvb2NjL2NsaWVudC50cw==@ConfigOCC": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL29jYy9jbGllbnQudHM=@ConfigOCC": {
       "type": "object",
       "allOf": [
         {
@@ -2248,9 +2330,9 @@
       "required": [
         "baseUrl"
       ],
-      "title": "deco-sites/std/commerce/occ/client.ts@ConfigOCC"
+      "title": "/Users/gimenes/Documents/code/std/commerce/occ/client.ts@ConfigOCC"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC90eXBlcy50cw==@SKU": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Z0ZXgvdHlwZXMudHM=@SKU": {
       "type": "object",
       "properties": {
         "id": {
@@ -2279,7 +2361,7 @@
         "items": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC90eXBlcy50cw==@SKU"
+            "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Z0ZXgvdHlwZXMudHM=@SKU"
           },
           "title": "Items"
         }
@@ -2418,6 +2500,45 @@
       ],
       "title": "deco-cx/live/pages/LivePage.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0R2FsbGVyeS50c3g=@Columns": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Mobile"
+        },
+        "desktop": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Columns"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvd2lzaGxpc3QvV2lzaGxpc3RHYWxsZXJ5LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0R2FsbGVyeS50c3g=@Columns",
+          "title": "Columns"
+        },
+        "products": {
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]|null",
+          "title": "Products"
+        }
+      },
+      "required": [
+        "columns",
+        "products"
+      ],
+      "title": "deco-sites/fashion/components/wishlist/WishlistGallery.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
       "type": "object",
       "properties": {
@@ -2443,7 +2564,7 @@
       },
       "title": "Link[]"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image": {
       "type": "string",
       "format": "image-uri",
       "title": "Image"
@@ -2505,11 +2626,11 @@
           "title": "Links"
         },
         "bgImage": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
           "title": "Bg Image"
         },
         "avatar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
           "title": "Avatar"
         },
         "social": {
@@ -2728,11 +2849,11 @@
           "type": "object",
           "properties": {
             "desktop": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
               "title": "Desktop"
             },
             "mobile": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
               "title": "Mobile"
             },
             "alt": {
@@ -2767,7 +2888,7 @@
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductListingPage|null",
           "title": "Page"
         },
         "banners": {
@@ -2782,11 +2903,11 @@
       "type": "object",
       "properties": {
         "srcMobile": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
           "title": "Src Mobile"
         },
         "srcDesktop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
           "title": "Src Desktop"
         },
         "alt": {
@@ -2884,7 +3005,7 @@
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductListingPage|null",
           "title": "Page"
         },
         "variant": {
@@ -2903,24 +3024,6 @@
           "title": "Variant"
         },
         "columns": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Mobile"
-            },
-            "desktop": {
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "Desktop"
-            }
-          },
-          "required": [],
           "title": "Columns",
           "description": "Number of products per line on grid"
         }
@@ -2939,7 +3042,7 @@
           "title": "Title"
         },
         "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]|null",
           "title": "Products"
         },
         "itemsPerPage": {
@@ -3273,7 +3376,7 @@
           "type": "object",
           "properties": {
             "src": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
               "title": "Src"
             },
             "alt": {
@@ -3321,18 +3424,13 @@
           "description": "Navigation items used both on mobile and desktop menus"
         },
         "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Product[]|null",
           "title": "Products",
           "description": "Product suggestions displayed on search"
         },
         "suggestions": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@Suggestion|null",
           "title": "Suggestions"
-        },
-        "configVTEX": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@ClientConfigVTEX",
-          "description": "vtex config used for search autocompletion;",
-          "title": "Config V T E X"
         }
       },
       "required": [
@@ -3344,7 +3442,7 @@
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductDetailsPage|null",
           "title": "Page"
         },
         "variant": {
@@ -3376,7 +3474,7 @@
       "type": "object",
       "properties": {
         "src": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
           "title": "Src"
         },
         "alt": {
@@ -3442,12 +3540,12 @@
       "type": "object",
       "properties": {
         "desktop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
           "description": "desktop otimized image",
           "title": "Desktop"
         },
         "mobile": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
           "description": "mobile otimized image",
           "title": "Mobile"
         },
@@ -3539,7 +3637,7 @@
       ],
       "title": "deco-cx/live/sections/PageInclude.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPQmFzZS50c3g=@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvc2VvL1NFT0Jhc2UudHN4@Props": {
       "type": "object",
       "properties": {
         "title": {
@@ -3580,13 +3678,13 @@
         }
       },
       "required": [],
-      "title": "deco-sites/std/components/seo/SEOBase.tsx@Props"
+      "title": "/Users/gimenes/Documents/code/std/components/seo/SEOBase.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUExQLnRzeA==@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvc2VvL1NFT1BMUC50c3g=@Props": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductListingPage|null",
           "title": "Page"
         },
         "title": {
@@ -3628,9 +3726,9 @@
       "required": [
         "page"
       ],
-      "title": "deco-sites/std/components/seo/SEOPLP.tsx@Props"
+      "title": "/Users/gimenes/Documents/code/std/components/seo/SEOPLP.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvQW5hbHl0aWNzLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "trackingIds": {
@@ -3643,13 +3741,13 @@
         }
       },
       "required": [],
-      "title": "deco-sites/std/components/Analytics.tsx@Props"
+      "title": "/Users/gimenes/Documents/code/std/components/Analytics.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUERQLnRzeA==@Props": {
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvc2VvL1NFT1BEUC50c3g=@Props": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3R5cGVzLnRz@ProductDetailsPage|null",
           "title": "Page"
         },
         "titleTemplate": {
@@ -3678,7 +3776,7 @@
         "page",
         "titleTemplate"
       ],
-      "title": "deco-sites/std/components/seo/SEOPDP.tsx@Props"
+      "title": "/Users/gimenes/Documents/code/std/components/seo/SEOPDP.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props": {
       "type": "object",
@@ -3881,7 +3979,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
         }
       ],
       "required": [
@@ -3902,7 +4000,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92bmRhUHJvZHVjdExpc3QudHM=@Props"
         }
       ],
       "required": [
@@ -3955,7 +4053,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhTdWdnZXN0aW9ucy50cw==@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4U3VnZ2VzdGlvbnMudHM=@Props"
         }
       ],
       "required": [
@@ -3976,7 +4074,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhOYXZiYXIudHM=@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TmF2YmFyLnRz@Props"
         }
       ],
       "required": [
@@ -3992,12 +4090,28 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhXaXNobGlzdC50cw==": {
+      "title": "deco-sites/std/functions/vtexWishlist.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/vtexWishlist.ts"
+          ],
+          "default": "deco-sites/std/functions/vtexWishlist.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
       "title": "deco-sites/std/functions/shopifyProductListingPage.ts",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy9zaG9waWZ5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
         }
       ],
       "required": [
@@ -4018,7 +4132,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4UHJvZHVjdExpc3QudHM=@Props"
         }
       ],
       "required": [
@@ -4055,7 +4169,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92bmRhUHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
         }
       ],
       "required": [
@@ -4076,7 +4190,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UHJvZHVjdExpc3RpbmdQYWdlLnRz@Props"
         }
       ],
       "required": [
@@ -4113,7 +4227,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UHJvZHVjdExpc3QudHM=@Props"
         }
       ],
       "required": [
@@ -4134,7 +4248,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdC50cw==@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy9zaG9waWZ5UHJvZHVjdExpc3QudHM=@Props"
         }
       ],
       "required": [
@@ -4171,7 +4285,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lSZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz@Props"
         }
       ],
       "required": [
@@ -4192,7 +4306,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvdm5kYS90eXBlcy50cw==@ConfigVNDA"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3ZuZGEvdHlwZXMudHM=@ConfigVNDA"
         }
       ],
       "required": [
@@ -4213,7 +4327,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3lvdXJWaWV3cy9jbGllbnQudHM=@ConfigYourViews"
         }
       ],
       "required": [
@@ -4234,7 +4348,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Z0ZXgvY2xpZW50LnRz@ConfigVTEX"
         }
       ],
       "required": [
@@ -4255,7 +4369,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Nob3BpZnkvY2xpZW50LnRz@ConfigShopify"
         }
       ],
       "required": [
@@ -4276,7 +4390,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvb2NjL2NsaWVudC50cw==@ConfigOCC"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL29jYy9jbGllbnQudHM=@ConfigOCC"
         }
       ],
       "required": [
@@ -4292,7 +4406,27 @@
         }
       }
     },
+<<<<<<< HEAD
     "Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g=": {
+=======
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvV2lzaGxpc3RCdXR0b24udHN4": {
+      "title": "./islands/WishlistButton.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/WishlistButton.tsx"
+          ],
+          "default": "./islands/WishlistButton.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvU2hpcHBpbmdTaW11bGF0aW9uLnRzeA==": {
+>>>>>>> e9fff36 (add wishlist support)
       "title": "./islands/ShippingSimulation.tsx",
       "type": "object",
       "allOf": [
@@ -4559,6 +4693,27 @@
             "$live/pages/LivePage.tsx"
           ],
           "default": "$live/pages/LivePage.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1dpc2hsaXN0R2FsbGVyeS50c3g=": {
+      "title": "deco-sites/fashion/sections/WishlistGallery.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvd2lzaGxpc3QvV2lzaGxpc3RHYWxsZXJ5LnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/WishlistGallery.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/WishlistGallery.tsx"
         }
       }
     },
@@ -4872,7 +5027,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3lvdXJWaWV3cy9jbGllbnQudHM=@ConfigYourViews"
         }
       ],
       "required": [
@@ -4893,7 +5048,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPQmFzZS50c3g=@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvc2VvL1NFT0Jhc2UudHN4@Props"
         }
       ],
       "required": [
@@ -4914,7 +5069,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUExQLnRzeA==@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvc2VvL1NFT1BMUC50c3g=@Props"
         }
       ],
       "required": [
@@ -4935,7 +5090,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvb2NjL2NsaWVudC50cw==@ConfigOCC"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL29jYy9jbGllbnQudHM=@ConfigOCC"
         }
       ],
       "required": [
@@ -4956,7 +5111,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvQW5hbHl0aWNzLnRzeA==@Props"
         }
       ],
       "required": [
@@ -4977,7 +5132,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Nob3BpZnkvY2xpZW50LnRz@ConfigShopify"
         }
       ],
       "required": [
@@ -4998,7 +5153,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvdm5kYS90eXBlcy50cw==@ConfigVNDA"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3ZuZGEvdHlwZXMudHM=@ConfigVNDA"
         }
       ],
       "required": [
@@ -5019,7 +5174,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbW1lcmNlL3Z0ZXgvY2xpZW50LnRz@ConfigVTEX"
         }
       ],
       "required": [
@@ -5040,7 +5195,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUERQLnRzeA==@Props"
+          "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvc2VvL1NFT1BEUC50c3g=@Props"
         }
       ],
       "required": [
@@ -5299,6 +5454,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhOYXZiYXIudHM="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhXaXNobGlzdC50cw=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdGluZ1BhZ2UudHM="
         },
         {
@@ -5360,7 +5518,14 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
+<<<<<<< HEAD
           "$ref": "#/definitions/Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g="
+=======
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvV2lzaGxpc3RCdXR0b24udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvU2hpcHBpbmdTaW11bGF0aW9uLnRzeA=="
+>>>>>>> e9fff36 (add wishlist support)
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
@@ -5427,6 +5592,9 @@
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1dpc2hsaXN0R2FsbGVyeS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtUcmVlLnRzeA=="
