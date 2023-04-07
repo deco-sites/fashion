@@ -14,7 +14,6 @@ import {
   Props as ShopifyLoaderProps,
 } from "deco-sites/std/functions/shopifyProductList.ts";
 import { ConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
-import { LiveConfig } from "https://denopkg.com/deco-cx/live@1.0.0-rc.36/blocks/handler.ts";
 import { LiveState } from "../../live/types.ts";
 
 function ProductShelfSection(props: ProductShelfProps) {
@@ -45,13 +44,11 @@ export interface PlatformShopify {
 export async function loadData(
   request: Request,
   ctx: LoaderContext<
-    LiveConfig<
-      | VtexLoaderProps & PlatformVTEX
-      | ShopifyLoaderProps & PlatformShopify,
-      LiveState<{ configVTEX?: ConfigVTEX; configShopify: ConfigShopify }> & {
-        segment?: Partial<Segment>;
-      }
-    >
+    | VtexLoaderProps & PlatformVTEX
+    | ShopifyLoaderProps & PlatformShopify,
+    LiveState<{ configVTEX?: ConfigVTEX; configShopify: ConfigShopify }> & {
+      segment?: Partial<Segment>;
+    }
   >,
 ): Promise<Pick<ProductShelfProps, "products">> {
   const loader = (ctx.state.$live.type === "VTEX") ? vtexLoader : shopifyLoader;

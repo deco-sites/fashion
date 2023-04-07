@@ -5,6 +5,7 @@
 import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
 
+import * as $$$0 from "./loaders/dogApiFacts.ts";
 import * as $$$$0 from "./routes/api/[...catchall].tsx";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/ShippingSimulation.tsx";
@@ -28,11 +29,12 @@ import * as $$$$$$$$7 from "./sections/ProductShelf.tsx";
 import * as $$$$$$$$8 from "./sections/Footer.tsx";
 import * as $$$$$$$$9 from "./sections/CookieConsent.tsx";
 import * as $$$$$$$$10 from "./sections/Header.tsx";
-import * as $$$$$$$$11 from "./sections/ProductDetails.tsx";
-import * as $$$$$$$$12 from "./sections/Highlights.tsx";
-import * as $$$$$$$$13 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$14 from "./sections/ProductShelfGetProps.tsx";
-import * as $$$$$$$$15 from "./sections/Carousel.tsx";
+import * as $$$$$$$$11 from "./sections/DogFacts.tsx";
+import * as $$$$$$$$12 from "./sections/ProductDetails.tsx";
+import * as $$$$$$$$13 from "./sections/Highlights.tsx";
+import * as $$$$$$$$14 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$15 from "./sections/ProductShelfGetProps.tsx";
+import * as $$$$$$$$16 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
@@ -88,6 +90,9 @@ import * as i2$$$7 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as i2$$$8 from "deco-sites/std/sections/SEOPDP.tsx";
 
 const manifest: DecoManifest = {
+  "loaders": {
+    "deco-sites/fashion/loaders/dogApiFacts.ts": $$$0,
+  },
   "routes": {
     "./routes/api/[...catchall].tsx": $$$$0,
     "./routes/_app.tsx": $$$$1,
@@ -123,11 +128,12 @@ const manifest: DecoManifest = {
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$9,
     "deco-sites/fashion/sections/Header.tsx": $$$$$$$$10,
-    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$11,
-    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$12,
-    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$13,
-    "deco-sites/fashion/sections/ProductShelfGetProps.tsx": $$$$$$$$14,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/DogFacts.tsx": $$$$$$$$11,
+    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$13,
+    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$14,
+    "deco-sites/fashion/sections/ProductShelfGetProps.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$16,
     "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,
