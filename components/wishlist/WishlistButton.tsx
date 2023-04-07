@@ -2,30 +2,45 @@ import { useComputed, useSignal } from "@preact/signals";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { useWishlist } from "deco-sites/std/commerce/vtex/hooks/useWishlist.ts";
-import { WishlistItem } from "deco-sites/std/commerce/vtex/types.ts";
+import { useUser } from "deco-sites/std/commerce/vtex/hooks/useUser.ts";
+import type { WishlistItem } from "deco-sites/std/commerce/vtex/types.ts";
+import { load } from "https://deno.land/x/deno_graph@0.43.1/lib/loader.ts";
 
 interface Props extends Partial<WishlistItem> {
   variant?: "icon" | "full";
 }
 
 function WishlistButton({ variant = "icon", ...item }: Props) {
+  const user = useUser();
   const { loading, addItem, removeItem, getItem } = useWishlist();
   const listItem = useComputed(() => getItem(item));
   const fetching = useSignal(false);
 
+  const isUserLoggedIn = Boolean(user.value?.email);
+  const isInsideWishlist = Boolean(listItem.value);
+
   return (
     <Button
       variant={variant === "icon" ? "icon" : "secondary"}
-      disabled={loading} // It's always loading untill the user logs in
       loading={fetching.value}
       onClick={async (e) => {
         e.stopPropagation();
         e.preventDefault();
 
+        if (!isUserLoggedIn) {
+          window.alert("Please log in before adding to your wishlist");
+
+          return;
+        }
+
+        if (loading.value) {
+          return;
+        }
+
         try {
           fetching.value = true;
-          listItem.value
-            ? await removeItem(listItem.value.id)
+          isInsideWishlist
+            ? await removeItem(listItem.value!.id)
             : await addItem(item);
         } finally {
           fetching.value = false;
@@ -37,9 +52,9 @@ function WishlistButton({ variant = "icon", ...item }: Props) {
         width={20}
         height={20}
         strokeWidth={2}
-        fill={listItem.value ? "black" : "none"}
+        fill={isInsideWishlist ? "black" : "none"}
       />
-      {variant === "icon" ? null : listItem.value ? "Remover" : "Favoritar"}
+      {variant === "icon" ? null : isInsideWishlist ? "Remover" : "Favoritar"}
     </Button>
   );
 }
