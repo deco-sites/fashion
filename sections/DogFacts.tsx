@@ -1,8 +1,8 @@
-import { PropsResolver } from "../../live/blocks/propsResolver.ts";
+import { PropsResolver } from "$live/blocks/propsResolver.ts";
 import dogApiFacts, {
   DogFact,
   Props as DogFactsProps,
-} from "../loaders/dogApiFacts.ts";
+} from "deco-sites/fashion/loaders/dogApiFacts.ts";
 
 export interface Props {
   title: string;

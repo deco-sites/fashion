@@ -15,7 +15,7 @@ import {
   Props as ShopifyLoaderProps,
 } from "deco-sites/std/functions/shopifyProductList.ts";
 import { ConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
-import { LiveState } from "../../live/types.ts";
+import { LiveState } from "$live/types.ts";
 
 function ProductShelfSection(props: ProductShelfProps) {
   return <ProductShelf {...props} />;
