@@ -17,7 +17,8 @@ import * as $$$$$5 from "./islands/HeaderModals.tsx";
 import * as $$$$$6 from "./islands/SliderJS.tsx";
 import * as $$$$$7 from "./islands/ProductImageZoom.tsx";
 import * as $$$$$8 from "./islands/ViewSendEvent.tsx";
-import * as $$$$$9 from "./islands/SearchControls.tsx";
+import * as $$$$$9 from "./islands/DogFacts.tsx";
+import * as $$$$$10 from "./islands/SearchControls.tsx";
 import * as $$$$$$$$0 from "./sections/LinkTree.tsx";
 import * as $$$$$$$$1 from "./sections/DesignSystem.story.tsx";
 import * as $$$$$$$$2 from "./sections/Features.tsx";
@@ -114,7 +115,8 @@ const manifest: DecoManifest = {
     "./islands/SliderJS.tsx": $$$$$6,
     "./islands/ProductImageZoom.tsx": $$$$$7,
     "./islands/ViewSendEvent.tsx": $$$$$8,
-    "./islands/SearchControls.tsx": $$$$$9,
+    "./islands/DogFacts.tsx": $$$$$9,
+    "./islands/SearchControls.tsx": $$$$$10,
   },
   "sections": {
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$0,
