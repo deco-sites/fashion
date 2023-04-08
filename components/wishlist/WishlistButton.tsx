@@ -4,7 +4,6 @@ import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { useWishlist } from "deco-sites/std/commerce/vtex/hooks/useWishlist.ts";
 import { useUser } from "deco-sites/std/commerce/vtex/hooks/useUser.ts";
 import type { WishlistItem } from "deco-sites/std/commerce/vtex/types.ts";
-import { load } from "https://deno.land/x/deno_graph@0.43.1/lib/loader.ts";
 
 interface Props extends Partial<WishlistItem> {
   variant?: "icon" | "full";
