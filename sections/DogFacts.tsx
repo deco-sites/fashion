@@ -1,33 +1,20 @@
-import { PropsLoader } from "$live/mod.ts";
-import dogApiFacts, {
-  DogFact,
-  Props as DogFactsProps,
-} from "deco-sites/fashion/loaders/dogApiFacts.ts";
-
+// Props type that will be configured in deco.cx's Admin
 export interface Props {
   title: string;
-  dogFacts: DogFact[];
+  numberOfFacts?: number;
 }
 
-export default function DogFacts({ title, dogFacts }: Props) {
-  return (
+export default async function DogFacts({ title, numberOfFacts }: Props) {
+  const { facts } = (await fetch(
+    `https://dogapi.dog/api/facts?number=${numberOfFacts ?? 1}`,
+  ).then((r) => r.json())) as { facts: string[] };
+
+  return () => (
     <div class="p-4">
       <h1 class="font-bold">{title}</h1>
       <ul>
-        {dogFacts.map(({ fact }) => <li>{fact}</li>)}
+        {facts.map((fact) => <li>{fact}</li>)}
       </ul>
     </div>
   );
 }
-
-// Props type that will be configured in deco.cx's Admin
-export interface LoadProps extends DogFactsProps {
-  title: string;
-}
-
-export const loader: PropsLoader<
-  Props,
-  LoadProps
-> = {
-  dogFacts: dogApiFacts,
-};
