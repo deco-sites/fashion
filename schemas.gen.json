@@ -22,16 +22,16 @@
           "type": "object",
           "properties": {
             "account": {
-              "title": "Account",
-              "type": "string"
+              "type": "string",
+              "title": "Account"
             },
             "defaultLocale": {
-              "title": "Default Locale",
-              "type": "string"
+              "type": "string",
+              "title": "Default Locale"
             },
             "defaultPriceCurrency": {
-              "title": "Default Price Currency",
-              "type": "string"
+              "type": "string",
+              "title": "Default Price Currency"
             }
           },
           "required": [
@@ -71,16 +71,16 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "ListItem"
+          "const": "ListItem",
+          "title": "@type"
         },
         "item": {
           "title": "Item"
         },
         "position": {
-          "title": "Position",
-          "type": "number"
+          "type": "number",
+          "title": "Position"
         }
       },
       "required": [
@@ -110,8 +110,8 @@
           "title": "Item List Element"
         },
         "numberOfItems": {
-          "title": "Number Of Items",
-          "type": "number"
+          "type": "number",
+          "title": "Number Of Items"
         }
       },
       "required": [
@@ -129,9 +129,9 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "BreadcrumbList"
+          "const": "BreadcrumbList",
+          "title": "@type"
         }
       },
       "required": [
@@ -143,12 +143,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "key": {
-          "title": "Key",
-          "type": "string"
+          "type": "string",
+          "title": "Key"
         }
       },
       "required": [
@@ -161,24 +161,24 @@
       "type": "object",
       "properties": {
         "quantity": {
-          "title": "Quantity",
-          "type": "number"
+          "type": "number",
+          "title": "Quantity"
         },
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "value": {
-          "title": "Value",
-          "type": "string"
+          "type": "string",
+          "title": "Value"
         },
         "selected": {
-          "title": "Selected",
-          "type": "boolean"
+          "type": "boolean",
+          "title": "Selected"
         },
         "url": {
-          "title": "Url",
-          "type": "string"
+          "type": "string",
+          "title": "Url"
         }
       },
       "required": [
@@ -206,17 +206,17 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "FilterToggle"
+          "const": "FilterToggle",
+          "title": "@type"
         },
         "values": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterToggleValue[]",
           "title": "Values"
         },
         "quantity": {
-          "title": "Quantity",
-          "type": "number"
+          "type": "number",
+          "title": "Quantity"
         }
       },
       "required": [
@@ -230,12 +230,12 @@
       "type": "object",
       "properties": {
         "min": {
-          "title": "Min",
-          "type": "number"
+          "type": "number",
+          "title": "Min"
         },
         "max": {
-          "title": "Max",
-          "type": "number"
+          "type": "number",
+          "title": "Max"
         }
       },
       "required": [
@@ -253,9 +253,9 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "FilterRange"
+          "const": "FilterRange",
+          "title": "@type"
         },
         "values": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRangeValue",
@@ -295,9 +295,9 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "ImageObject"
+          "const": "ImageObject",
+          "title": "@type"
         }
       },
       "required": [
@@ -316,78 +316,78 @@
       "type": "object",
       "properties": {
         "@id": {
-          "title": "@id",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "@id"
         },
         "additionalType": {
-          "title": "Additional Type",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Additional Type"
         },
         "alternateName": {
-          "title": "Alternate Name",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Alternate Name"
         },
         "description": {
-          "title": "Description",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Description"
         },
         "disambiguatingDescription": {
-          "title": "Disambiguating Description",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Disambiguating Description"
         },
         "identifier": {
-          "title": "Identifier",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Identifier"
         },
         "image": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject[]",
           "title": "Image"
         },
         "name": {
-          "title": "Name",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Name"
         },
         "sameAs": {
-          "title": "Same As",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Same As"
         },
         "subjectOf": {
-          "title": "Subject Of",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Subject Of"
         },
         "url": {
-          "title": "Url",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Url"
         }
       },
       "required": [],
@@ -402,58 +402,58 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "PropertyValue"
+          "const": "PropertyValue",
+          "title": "@type"
         },
         "maxValue": {
-          "title": "Max Value",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Max Value"
         },
         "minValue": {
-          "title": "Min Value",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Min Value"
         },
         "propertyID": {
-          "title": "Property I D",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Property I D"
         },
         "unitCode": {
-          "title": "Unit Code",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Unit Code"
         },
         "unitText": {
-          "title": "Unit Text",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Unit Text"
         },
         "value": {
-          "title": "Value",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Value"
         },
         "valueReference": {
-          "title": "Value Reference",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Value Reference"
         }
       },
       "required": [
@@ -472,30 +472,30 @@
       "type": "object",
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "AggregateRating"
+          "const": "AggregateRating",
+          "title": "@type"
         },
         "ratingCount": {
-          "title": "Rating Count",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Rating Count"
         },
         "reviewCount": {
-          "title": "Review Count",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Review Count"
         },
         "ratingValue": {
-          "title": "Rating Value",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Rating Value"
         }
       },
       "required": [
@@ -530,17 +530,17 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "ProductGroup"
+          "const": "ProductGroup",
+          "title": "@type"
         },
         "hasVariant": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]",
           "title": "Has Variant"
         },
         "productGroupID": {
-          "title": "Product Group I D",
-          "type": "string"
+          "type": "string",
+          "title": "Product Group I D"
         },
         "additionalProperty": {
           "type": "array",
@@ -550,11 +550,11 @@
           "title": "Additional Property"
         },
         "model": {
-          "title": "Model",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Model"
         }
       },
       "required": [
@@ -569,11 +569,11 @@
       "type": "object",
       "properties": {
         "value": {
-          "title": "Value",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Value"
         }
       },
       "required": [],
@@ -592,15 +592,15 @@
           "title": "Eligible Quantity"
         },
         "price": {
-          "title": "Price",
-          "type": "number"
+          "type": "number",
+          "title": "Price"
         },
         "priceCurrency": {
-          "title": "Price Currency",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Price Currency"
         }
       },
       "required": [
@@ -617,39 +617,33 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "UnitPriceSpecification"
+          "const": "UnitPriceSpecification",
+          "title": "@type"
         },
         "priceComponentType": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/ActivationFee"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/CleaningFee"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/DistanceFee"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/Downpayment"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/Installment"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/Subscription"
             }
@@ -660,32 +654,26 @@
         "priceType": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/InvoicePrice"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/ListPrice"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/MinimumAdvertisedPrice"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/MSRP"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/SalePrice"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/SRP"
             }
@@ -694,18 +682,18 @@
           "title": "Price Type"
         },
         "billingDuration": {
-          "title": "Billing Duration",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Billing Duration"
         },
         "billingIncrement": {
-          "title": "Billing Increment",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Billing Increment"
         }
       },
       "required": [
@@ -730,59 +718,49 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "Offer"
+          "const": "Offer",
+          "title": "@type"
         },
         "availability": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/BackOrder"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/Discontinued"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/InStock"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/InStoreOnly"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/LimitedAvailability"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/OnlineOnly"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/OutOfStock"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/PreOrder"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/PreSale"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/SoldOut"
             }
@@ -791,11 +769,11 @@
           "title": "Availability"
         },
         "gtin": {
-          "title": "Gtin",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Gtin"
         },
         "inventoryLevel": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@QuantitativeValue",
@@ -804,22 +782,18 @@
         "itemCondition": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/DamagedCondition"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/NewCondition"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/RefurbishedCondition"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "https://schema.org/UsedCondition"
             }
@@ -828,33 +802,33 @@
           "title": "Item Condition"
         },
         "price": {
-          "title": "Price",
-          "type": "number"
+          "type": "number",
+          "title": "Price"
         },
         "priceSpecification": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@UnitPriceSpecification[]",
           "title": "Price Specification"
         },
         "priceValidUntil": {
-          "title": "Price Valid Until",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Price Valid Until"
         },
         "seller": {
-          "title": "Seller",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Seller"
         },
         "sku": {
-          "title": "Sku",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Sku"
         }
       },
       "required": [
@@ -877,32 +851,32 @@
       "type": "object",
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "AggregateOffer"
+          "const": "AggregateOffer",
+          "title": "@type"
         },
         "highPrice": {
-          "title": "High Price",
-          "type": "number"
+          "type": "number",
+          "title": "High Price"
         },
         "lowPrice": {
-          "title": "Low Price",
-          "type": "number"
+          "type": "number",
+          "title": "Low Price"
         },
         "offerCount": {
-          "title": "Offer Count",
-          "type": "number"
+          "type": "number",
+          "title": "Offer Count"
         },
         "offers": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Offer[]",
           "title": "Offers"
         },
         "priceCurrency": {
-          "title": "Price Currency",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Price Currency"
         }
       },
       "required": [
@@ -923,21 +897,20 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "Review"
+          "const": "Review",
+          "title": "@type"
         },
         "itemReviewed": {
-          "title": "Item Reviewed",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Item Reviewed"
         },
         "negativeNotes": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "title": "Negative Notes"
@@ -945,24 +918,23 @@
         "positiveNotes": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "title": "Positive Notes"
         },
         "reviewAspect": {
-          "title": "Review Aspect",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Review Aspect"
         },
         "reviewBody": {
-          "title": "Review Body",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Review Body"
         },
         "reviewRating": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@AggregateRating",
@@ -983,9 +955,9 @@
       ],
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "Product"
+          "const": "Product",
+          "title": "@type"
         },
         "additionalProperty": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
@@ -996,39 +968,39 @@
           "title": "Aggregate Rating"
         },
         "award": {
-          "title": "Award",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Award"
         },
         "brand": {
-          "title": "Brand",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Brand"
         },
         "category": {
-          "title": "Category",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Category"
         },
         "gtin": {
-          "title": "Gtin",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Gtin"
         },
         "inProductGroupWithID": {
-          "title": "In Product Group With I D",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "In Product Group With I D"
         },
         "isVariantOf": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup",
@@ -1039,30 +1011,30 @@
           "title": "Offers"
         },
         "productID": {
-          "title": "Product I D",
-          "type": "string"
+          "type": "string",
+          "title": "Product I D"
         },
         "productionDate": {
-          "title": "Production Date",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Production Date"
         },
         "releaseDate": {
-          "title": "Release Date",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Release Date"
         },
         "review": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Review",
           "title": "Review"
         },
         "sku": {
-          "title": "Sku",
-          "type": "string"
+          "type": "string",
+          "title": "Sku"
         }
       },
       "required": [
@@ -1083,12 +1055,12 @@
       "type": "object",
       "properties": {
         "value": {
-          "title": "Value",
-          "type": "string"
+          "type": "string",
+          "title": "Value"
         },
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         }
       },
       "required": [
@@ -1108,9 +1080,9 @@
       "type": "object",
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "ProductListingPage"
+          "const": "ProductListingPage",
+          "title": "@type"
         },
         "breadcrumb": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList",
@@ -1128,17 +1100,15 @@
           "type": "object",
           "properties": {
             "currentPage": {
-              "title": "Current Page",
-              "type": "number"
+              "type": "number",
+              "title": "Current Page"
             },
             "nextPage": {
               "anyOf": [
                 {
-                  "title": "Inline string",
                   "type": "string"
                 },
                 {
-                  "title": "Inline null",
                   "type": "null"
                 }
               ],
@@ -1147,11 +1117,9 @@
             "previousPage": {
               "anyOf": [
                 {
-                  "title": "Inline string",
                   "type": "string"
                 },
                 {
-                  "title": "Inline null",
                   "type": "null"
                 }
               ],
@@ -1188,7 +1156,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage"
         },
         {
-          "title": "Inline null",
           "type": "null"
         },
         {
@@ -1281,32 +1248,29 @@
       "type": "object",
       "properties": {
         "query": {
-          "title": "Query",
           "type": [
             "string",
             "null"
           ],
-          "description": "overides the query term"
+          "description": "overides the query term",
+          "title": "Query"
         },
         "count": {
-          "title": "Count",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         },
         "fuzzy": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "automatic"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "disabled"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "enabled"
             }
@@ -1329,7 +1293,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]"
         },
         {
-          "title": "Inline null",
           "type": "null"
         },
         {
@@ -1443,45 +1406,41 @@
       "type": "object",
       "properties": {
         "limit": {
-          "title": "Limit",
           "type": "number",
-          "description": "total number of items to display"
+          "description": "total number of items to display",
+          "title": "Limit"
         },
         "term": {
-          "title": "Term",
           "type": [
             "string",
             "null"
           ],
-          "description": "query to use on search"
+          "description": "query to use on search",
+          "title": "Term"
         },
         "wildcard": {
-          "title": "Wildcard",
           "type": [
             "boolean",
             "null"
           ],
-          "description": "search for term anywhere"
+          "description": "search for term anywhere",
+          "title": "Wildcard"
         },
         "sort": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "newest"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "oldest"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "lowest_price"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "highest_price"
             }
@@ -1493,7 +1452,6 @@
         "tags": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "description": "search for products that have certain tag",
@@ -1509,9 +1467,9 @@
       "type": "object",
       "properties": {
         "@type": {
-          "title": "@type",
           "type": "string",
-          "const": "ProductDetailsPage"
+          "const": "ProductDetailsPage",
+          "title": "@type"
         },
         "breadcrumbList": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@BreadcrumbList",
@@ -1538,7 +1496,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage"
         },
         {
-          "title": "Inline null",
           "type": "null"
         },
         {
@@ -1627,8 +1584,8 @@
       "type": "object",
       "properties": {
         "term": {
-          "title": "Term",
-          "type": "string"
+          "type": "string",
+          "title": "Term"
         }
       },
       "required": [
@@ -1667,7 +1624,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion"
         },
         {
-          "title": "Inline null",
           "type": "null"
         },
         {
@@ -1697,13 +1653,13 @@
       "type": "object",
       "properties": {
         "count": {
-          "title": "Count",
           "type": [
             "number",
             "null"
           ],
           "description": "limit the number of searches",
-          "default": "4"
+          "default": "4",
+          "title": "Count"
         }
       },
       "required": [],
@@ -1713,29 +1669,29 @@
       "type": "object",
       "properties": {
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "href": {
-          "title": "Href",
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         },
         "image": {
           "type": "object",
           "properties": {
             "src": {
-              "title": "Src",
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "title": "Src"
             },
             "alt": {
-              "title": "Alt",
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "title": "Alt"
             }
           },
           "required": [],
@@ -1759,7 +1715,6 @@
         "children": {
           "type": "array",
           "items": {
-            "title": "Inline object",
             "type": "object"
           },
           "title": "Children"
@@ -1784,7 +1739,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Navbar[]"
         },
         {
-          "title": "Inline null",
           "type": "null"
         },
         {
@@ -1814,13 +1768,13 @@
       "type": "object",
       "properties": {
         "levels": {
-          "title": "Levels",
           "type": [
             "number",
             "null"
           ],
           "description": "Number of levels of categories to be returned",
-          "default": "2"
+          "default": "2",
+          "title": "Levels"
         }
       },
       "required": [],
@@ -1830,16 +1784,16 @@
       "type": "object",
       "properties": {
         "query": {
-          "title": "Query",
           "type": [
             "string",
             "null"
           ],
-          "description": "overides the query term"
+          "description": "overides the query term",
+          "title": "Query"
         },
         "count": {
-          "title": "Count",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         }
       },
@@ -1852,54 +1806,46 @@
       "type": "object",
       "properties": {
         "query": {
-          "title": "Query",
           "type": "string",
-          "description": "query to use on search"
+          "description": "query to use on search",
+          "title": "Query"
         },
         "count": {
-          "title": "Count",
           "type": "number",
-          "description": "total number of items to display"
+          "description": "total number of items to display",
+          "title": "Count"
         },
         "sort": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": ""
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "price:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "price:asc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "orders:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "name:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "name:asc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "release:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "discount:desc"
             }
@@ -1911,7 +1857,6 @@
         "collection": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "description": "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
@@ -1929,25 +1874,24 @@
       "type": "object",
       "properties": {
         "term": {
-          "title": "Term",
           "type": [
             "string",
             "null"
           ],
-          "description": "overides the query term"
+          "description": "overides the query term",
+          "title": "Term"
         },
         "tags": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "description": "filter products by tag",
           "title": "Tags"
         },
         "count": {
-          "title": "Count",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         }
       },
@@ -1960,40 +1904,40 @@
       "type": "object",
       "properties": {
         "term": {
-          "title": "Term",
           "type": [
             "string",
             "null"
           ],
-          "description": "overides the query term"
+          "description": "overides the query term",
+          "title": "Term"
         },
         "count": {
-          "title": "Count",
           "type": "number",
+          "title": "Count",
           "description": "number of products per page to display"
         },
         "ft": {
-          "title": "Ft",
           "type": [
             "string",
             "null"
           ],
-          "description": "FullText term"
+          "description": "FullText term",
+          "title": "Ft"
         },
         "fq": {
-          "title": "Fq",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "map": {
-          "title": "Map",
           "type": [
             "string",
             "null"
           ],
-          "description": "map param"
+          "title": "Fq"
+        },
+        "map": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "map param",
+          "title": "Map"
         }
       },
       "required": [
@@ -2005,54 +1949,46 @@
       "type": "object",
       "properties": {
         "query": {
-          "title": "Query",
           "type": "string",
-          "description": "query to use on search"
+          "description": "query to use on search",
+          "title": "Query"
         },
         "count": {
-          "title": "Count",
           "type": "number",
-          "description": "total number of items to display"
+          "description": "total number of items to display",
+          "title": "Count"
         },
         "sort": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": ""
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "price:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "price:asc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "orders:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "name:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "name:asc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "release:desc"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "discount:desc"
             }
@@ -2064,7 +2000,6 @@
         "collection": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "description": "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
@@ -2082,14 +2017,14 @@
       "type": "object",
       "properties": {
         "query": {
-          "title": "Query",
           "type": "string",
-          "description": "search term to use on search"
+          "description": "search term to use on search",
+          "title": "Query"
         },
         "count": {
-          "title": "Count",
           "type": "number",
-          "description": "total number of items to display"
+          "description": "total number of items to display",
+          "title": "Count"
         }
       },
       "required": [
@@ -2104,44 +2039,36 @@
         "crossSelling": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": ""
             },
             {
               "anyOf": [
                 {
-                  "title": "Inline string",
                   "type": "string",
                   "const": "whosawalsosaw"
                 },
                 {
-                  "title": "Inline string",
                   "type": "string",
                   "const": "whosawalsobought"
                 },
                 {
-                  "title": "Inline string",
                   "type": "string",
                   "const": "whoboughtalsobought"
                 },
                 {
-                  "title": "Inline string",
                   "type": "string",
                   "const": "showtogether"
                 },
                 {
-                  "title": "Inline string",
                   "type": "string",
                   "const": "accessories"
                 },
                 {
-                  "title": "Inline string",
                   "type": "string",
                   "const": "similars"
                 },
                 {
-                  "title": "Inline string",
                   "type": "string",
                   "const": "suggestions"
                 }
@@ -2154,11 +2081,11 @@
           "description": "VTEX Cross Selling API. This loader only works on routes of type /:slug/p"
         },
         "count": {
-          "title": "Count",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Count"
         }
       },
       "required": [],
@@ -2168,25 +2095,25 @@
       "type": "object",
       "properties": {
         "domain": {
-          "title": "Domain",
           "type": "string",
-          "description": "Your VNDA domain name. For example, https://mystore.vnda.com.br"
+          "description": "Your VNDA domain name. For example, https://mystore.vnda.com.br",
+          "title": "Domain"
         },
         "authToken": {
-          "title": "Auth Token",
           "type": "string",
-          "description": "The token generated from admin panel. Read here: https://developers.vnda.com.br/docs/chave-de-acesso-e-requisicoes. Do not add any other permissions than catalog."
+          "description": "The token generated from admin panel. Read here: https://developers.vnda.com.br/docs/chave-de-acesso-e-requisicoes. Do not add any other permissions than catalog.",
+          "title": "Auth Token"
         },
         "useSandbox": {
-          "title": "Use Sandbox",
           "type": "boolean",
-          "description": "Define if sandbox environment should be used"
+          "description": "Define if sandbox environment should be used",
+          "title": "Use Sandbox"
         },
         "defaultPriceCurrency": {
-          "title": "Default Price Currency",
           "type": "string",
           "description": "Default price currency.",
-          "default": "USD"
+          "default": "USD",
+          "title": "Default Price Currency"
         }
       },
       "required": [
@@ -2201,12 +2128,12 @@
       "type": "object",
       "properties": {
         "token": {
-          "title": "Token",
-          "type": "string"
+          "type": "string",
+          "title": "Token"
         },
         "appId": {
-          "title": "App Id",
-          "type": "string"
+          "type": "string",
+          "title": "App Id"
         }
       },
       "required": [
@@ -2230,39 +2157,39 @@
       ],
       "properties": {
         "account": {
-          "title": "Account",
           "type": "string",
-          "description": "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC."
+          "description": "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
+          "title": "Account"
         },
         "defaultLocale": {
-          "title": "Default Locale",
           "type": "string",
-          "description": "Locale used for VTEX Intelligent Search client."
+          "description": "Locale used for VTEX Intelligent Search client.",
+          "title": "Default Locale"
         },
         "defaultPriceCurrency": {
-          "title": "Default Price Currency",
           "type": "string",
           "description": "Default price currency.",
-          "default": "USD"
+          "default": "USD",
+          "title": "Default Price Currency"
         },
         "defaultSalesChannel": {
-          "title": "Default Sales Channel",
           "type": "string",
-          "description": "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV"
+          "description": "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
+          "title": "Default Sales Channel"
         },
         "defaultRegionId": {
-          "title": "Default Region Id",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Default Region Id"
         },
         "defaultHideUnnavailableItems": {
-          "title": "Default Hide Unnavailable Items",
           "type": [
             "boolean",
             "null"
-          ]
+          ],
+          "title": "Default Hide Unnavailable Items"
         }
       },
       "required": [
@@ -2282,14 +2209,14 @@
       ],
       "properties": {
         "storeName": {
-          "title": "Store Name",
           "type": "string",
-          "description": "Shopify store name."
+          "description": "Shopify store name.",
+          "title": "Store Name"
         },
         "storefrontAccessToken": {
-          "title": "Storefront Access Token",
           "type": "string",
-          "description": "Shopify storefront access token."
+          "description": "Shopify storefront access token.",
+          "title": "Storefront Access Token"
         }
       },
       "required": [
@@ -2307,15 +2234,15 @@
       ],
       "properties": {
         "baseUrl": {
-          "title": "Base Url",
-          "type": "string"
+          "type": "string",
+          "title": "Base Url"
         },
         "nrpp": {
-          "title": "Nrpp",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Nrpp"
         }
       },
       "required": [
@@ -2327,8 +2254,8 @@
       "type": "object",
       "properties": {
         "fact": {
-          "title": "Fact",
-          "type": "string"
+          "type": "string",
+          "title": "Fact"
         }
       },
       "required": [
@@ -2375,11 +2302,11 @@
       "type": "object",
       "properties": {
         "numberOfFacts": {
-          "title": "Number Of Facts",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Number Of Facts"
         }
       },
       "required": [],
@@ -2389,16 +2316,16 @@
       "type": "object",
       "properties": {
         "id": {
-          "title": "Id",
-          "type": "number"
+          "type": "number",
+          "title": "Id"
         },
         "quantity": {
-          "title": "Quantity",
-          "type": "number"
+          "type": "number",
+          "title": "Quantity"
         },
         "seller": {
-          "title": "Seller",
-          "type": "string"
+          "type": "string",
+          "title": "Seller"
         }
       },
       "required": [
@@ -2428,15 +2355,15 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
-          "type": "string"
+          "type": "string",
+          "title": "Title"
         },
         "numberOfFacts": {
-          "title": "Number Of Facts",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Number Of Facts"
         }
       },
       "required": [
@@ -2483,11 +2410,11 @@
       "type": "object",
       "properties": {
         "base": {
-          "title": "Base",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Base"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
@@ -2533,22 +2460,37 @@
       "$ref": "#/root/sections",
       "title": "Section"
     },
-    "ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]": {
+    "ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9pc2xhbmQudHM=@Island": {
+      "$ref": "#/root/islands",
+      "title": "Island"
+    },
+    "ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Island|Section": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9pc2xhbmQudHM=@Island"
+        }
+      ],
+      "title": "Island|Section"
+    },
+    "ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Island|Section[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Island|Section"
       },
-      "title": "Section[]"
+      "title": "Island|Section[]"
     },
     "ZGVjby1jeC9saXZlLnRzL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "name": {
-          "title": "Name",
-          "type": "string"
+          "type": "string",
+          "title": "Name"
         },
         "sections": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9zZWN0aW9uLnRz@Island|Section[]",
           "title": "Sections"
         }
       },
@@ -2562,12 +2504,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "href": {
-          "title": "Href",
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         }
       },
       "required": [
@@ -2584,9 +2526,9 @@
       "title": "Link[]"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "title": "Inline string",
       "type": "string",
-      "format": "image-uri"
+      "format": "image-uri",
+      "title": "Image"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social": {
       "type": "object",
@@ -2594,12 +2536,10 @@
         "label": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Instagram"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Facebook"
             }
@@ -2608,8 +2548,8 @@
           "title": "Label"
         },
         "href": {
-          "title": "Href",
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         }
       },
       "required": [
@@ -2629,18 +2569,18 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Title"
         },
         "description": {
-          "title": "Description",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Description"
         },
         "links": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]",
@@ -2668,167 +2608,134 @@
         "icon": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronLeft"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronRight"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronUp"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronDown"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "QuestionMarkCircle"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "User"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ShoppingCart"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Bars3"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Heart"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "MagnifyingGlass"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "XMark"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Plus"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Minus"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "MapPin"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Phone"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Elo"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Mastercard"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Visa"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Pix"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Logo"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Facebook"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Instagram"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Tiktok"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Truck"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Discount"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Return"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "CreditCard"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Deco"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Discord"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Trash"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "FilterList"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "WhatsApp"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ArrowsPointingOut"
             }
@@ -2838,14 +2745,14 @@
           "title": "Icon"
         },
         "title": {
-          "title": "Title",
           "type": "string",
-          "description": "Title"
+          "description": "Title",
+          "title": "Title"
         },
         "description": {
-          "title": "Description",
           "type": "string",
-          "description": "Description and Image alt text"
+          "description": "Description and Image alt text",
+          "title": "Description"
         }
       },
       "required": [
@@ -2879,25 +2786,25 @@
       "type": "object",
       "properties": {
         "matcher": {
-          "title": "Matcher",
           "type": "string",
-          "description": "RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category"
+          "description": "RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category",
+          "title": "Matcher"
         },
         "title": {
-          "title": "Title",
           "type": [
             "string",
             "null"
           ],
-          "description": "text to be rendered on top of the image"
+          "description": "text to be rendered on top of the image",
+          "title": "Title"
         },
         "subtitle": {
-          "title": "Subtitle",
           "type": [
             "string",
             "null"
           ],
-          "description": "text to be rendered on top of the image"
+          "description": "text to be rendered on top of the image",
+          "title": "Subtitle"
         },
         "image": {
           "type": "object",
@@ -2911,11 +2818,11 @@
               "title": "Mobile"
             },
             "alt": {
-              "title": "Alt",
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "title": "Alt"
             }
           },
           "required": [
@@ -2953,6 +2860,26 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerPLP.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0RvZ0ZhY3RzX3YyLnRzeA==@LoadProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "numberOfFacts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Number Of Facts"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "deco-sites/fashion/sections/DogFacts_v2.tsx@LoadProps"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
       "type": "object",
       "properties": {
@@ -2965,14 +2892,14 @@
           "title": "Src Desktop"
         },
         "alt": {
-          "title": "Alt",
           "type": "string",
-          "description": "Image alt text"
+          "description": "Image alt text",
+          "title": "Alt"
         },
         "href": {
-          "title": "Href",
           "type": "string",
-          "description": "When you click you go to"
+          "description": "When you click you go to",
+          "title": "Href"
         }
       },
       "required": [
@@ -2993,28 +2920,28 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Title"
         },
         "itemsPerLine": {
           "type": "object",
           "properties": {
             "mobile": {
-              "title": "Mobile",
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Mobile"
             },
             "desktop": {
-              "title": "Desktop",
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Desktop"
             }
           },
           "required": [],
@@ -3025,18 +2952,18 @@
           "type": "object",
           "properties": {
             "mobile": {
-              "title": "Mobile",
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Mobile"
             },
             "desktop": {
-              "title": "Desktop",
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Desktop"
             }
           },
           "required": [],
@@ -3059,15 +2986,15 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
-          "type": "string"
+          "type": "string",
+          "title": "Title"
         },
         "itemsPerPage": {
-          "title": "Items Per Page",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Items Per Page"
         }
       },
       "required": [
@@ -3075,7 +3002,7 @@
       ],
       "title": "omitcHJvZHVjdHM=Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@667018fc6b0c5c75c94a2edfc11a277b&omitcHJvZHVjdHM=Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@cd6fe400c08631e5c1c2a9b91520991e&omitcHJvZHVjdHM=Props": {
       "allOf": [
         {
           "type": "object",
@@ -3093,7 +3020,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@omitcHJvZHVjdHM=Props"
         }
       ],
-      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@667018fc6b0c5c75c94a2edfc11a277b&omitcHJvZHVjdHM=Props"
+      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@cd6fe400c08631e5c1c2a9b91520991e&omitcHJvZHVjdHM=Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props": {
       "type": "object",
@@ -3105,12 +3032,10 @@
         "variant": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "aside"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "drawer"
             }
@@ -3123,18 +3048,18 @@
           "type": "object",
           "properties": {
             "mobile": {
-              "title": "Mobile",
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Mobile"
             },
             "desktop": {
-              "title": "Desktop",
               "type": [
                 "number",
                 "null"
-              ]
+              ],
+              "title": "Desktop"
             }
           },
           "required": [],
@@ -3152,19 +3077,19 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
-          "type": "string"
+          "type": "string",
+          "title": "Title"
         },
         "products": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
           "title": "Products"
         },
         "itemsPerPage": {
-          "title": "Items Per Page",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Items Per Page"
         }
       },
       "required": [
@@ -3177,12 +3102,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "href": {
-          "title": "Href",
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         }
       },
       "required": [
@@ -3197,167 +3122,134 @@
         "icon": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronLeft"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronRight"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronUp"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ChevronDown"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "QuestionMarkCircle"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "User"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ShoppingCart"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Bars3"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Heart"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "MagnifyingGlass"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "XMark"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Plus"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Minus"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "MapPin"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Phone"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Elo"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Mastercard"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Visa"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Pix"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Logo"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Facebook"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Instagram"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Tiktok"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Truck"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Discount"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Return"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "CreditCard"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Deco"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Discord"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "Trash"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "FilterList"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "WhatsApp"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "ArrowsPointingOut"
             }
@@ -3393,8 +3285,8 @@
       "type": "object",
       "properties": {
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "children": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]",
@@ -3429,38 +3321,38 @@
       "type": "object",
       "properties": {
         "placeholder": {
-          "title": "Placeholder",
           "type": [
             "string",
             "null"
           ],
+          "title": "Placeholder",
           "description": "Search bar default placeholder message",
           "default": "What are you looking for?"
         },
         "action": {
-          "title": "Action",
           "type": [
             "string",
             "null"
           ],
+          "title": "Action",
           "description": "When user clicks on the search button, navigate it to",
           "default": "/s"
         },
         "name": {
-          "title": "Name",
           "type": [
             "string",
             "null"
           ],
+          "title": "Name",
           "description": "Querystring param used when navigating the user",
           "default": "q"
         },
         "query": {
-          "title": "Query",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Query"
         }
       },
       "required": [],
@@ -3470,12 +3362,12 @@
       "type": "object",
       "properties": {
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         },
         "href": {
-          "title": "Href",
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         },
         "children": {
           "type": "array",
@@ -3483,12 +3375,12 @@
             "type": "object",
             "properties": {
               "label": {
-                "title": "Label",
-                "type": "string"
+                "type": "string",
+                "title": "Label"
               },
               "href": {
-                "title": "Href",
-                "type": "string"
+                "type": "string",
+                "title": "Href"
               },
               "children": {
                 "type": "array",
@@ -3496,12 +3388,12 @@
                   "type": "object",
                   "properties": {
                     "label": {
-                      "title": "Label",
-                      "type": "string"
+                      "type": "string",
+                      "title": "Label"
                     },
                     "href": {
-                      "title": "Href",
-                      "type": "string"
+                      "type": "string",
+                      "title": "Href"
                     }
                   },
                   "required": [
@@ -3527,11 +3419,11 @@
               "title": "Src"
             },
             "alt": {
-              "title": "Alt",
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "title": "Alt"
             }
           },
           "required": [],
@@ -3557,7 +3449,6 @@
         "alerts": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "title": "Alerts"
@@ -3595,15 +3486,15 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
-          "type": "string"
+          "type": "string",
+          "title": "Title"
         },
         "numberOfFacts": {
-          "title": "Number Of Facts",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Number Of Facts"
         }
       },
       "required": [
@@ -3621,17 +3512,14 @@
         "variant": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "front-back"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "slider"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "auto"
             }
@@ -3654,16 +3542,16 @@
           "title": "Src"
         },
         "alt": {
-          "title": "Alt",
-          "type": "string"
+          "type": "string",
+          "title": "Alt"
         },
         "href": {
-          "title": "Href",
-          "type": "string"
+          "type": "string",
+          "title": "Href"
         },
         "label": {
-          "title": "Label",
-          "type": "string"
+          "type": "string",
+          "title": "Label"
         }
       },
       "required": [
@@ -3689,8 +3577,8 @@
           "title": "Highlights"
         },
         "title": {
-          "title": "Title",
-          "type": "string"
+          "type": "string",
+          "title": "Title"
         }
       },
       "required": [
@@ -3702,11 +3590,11 @@
       "type": "object",
       "properties": {
         "phone": {
-          "title": "Phone",
           "type": [
             "number",
             "null"
-          ]
+          ],
+          "title": "Phone"
         }
       },
       "required": [],
@@ -3716,10 +3604,10 @@
       "type": "object",
       "properties": {
         "type": {
-          "title": "Type",
           "type": "string",
           "const": "VTEX",
-          "default": "VTEX"
+          "default": "VTEX",
+          "title": "Type"
         }
       },
       "required": [
@@ -3742,10 +3630,10 @@
       "type": "object",
       "properties": {
         "type": {
-          "title": "Type",
           "type": "string",
           "const": "Shopify",
-          "default": "Shopify"
+          "default": "Shopify",
+          "title": "Type"
         }
       },
       "required": [
@@ -3800,28 +3688,28 @@
           "title": "Mobile"
         },
         "alt": {
-          "title": "Alt",
           "type": "string",
-          "description": "Image's alt text"
+          "description": "Image's alt text",
+          "title": "Alt"
         },
         "action": {
           "type": "object",
           "properties": {
             "href": {
-              "title": "Href",
-              "type": "string"
+              "type": "string",
+              "title": "Href"
             },
             "title": {
-              "title": "Title",
-              "type": "string"
+              "type": "string",
+              "title": "Title"
             },
             "subTitle": {
-              "title": "Sub Title",
-              "type": "string"
+              "type": "string",
+              "title": "Sub Title"
             },
             "label": {
-              "title": "Label",
-              "type": "string"
+              "type": "string",
+              "title": "Label"
             }
           },
           "required": [
@@ -3855,19 +3743,19 @@
           "title": "Images"
         },
         "preload": {
-          "title": "Preload",
           "type": [
             "boolean",
             "null"
           ],
-          "description": "Check this option when this banner is the biggest image on the screen for image optimizations"
+          "description": "Check this option when this banner is the biggest image on the screen for image optimizations",
+          "title": "Preload"
         },
         "interval": {
-          "title": "Interval",
           "type": [
             "number",
             "null"
           ],
+          "title": "Interval",
           "description": "time (in seconds) to start the carousel autoplay"
         }
       },
@@ -3891,40 +3779,40 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "Title",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "description": {
-          "title": "Description",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "canonical": {
-          "title": "Canonical",
           "type": [
             "string",
             "null"
           ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "canonical": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Canonical",
           "default": "https://example.com"
         },
         "imageUrl": {
-          "title": "Image Url",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Image Url"
         },
         "themeColor": {
-          "title": "Theme Color",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Theme Color"
         }
       },
       "required": [],
@@ -3938,39 +3826,39 @@
           "title": "Page"
         },
         "title": {
-          "title": "Title",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Title"
         },
         "description": {
-          "title": "Description",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Description"
         },
         "url": {
-          "title": "Url",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Url"
         },
         "imageUrl": {
-          "title": "Image Url",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Image Url"
         },
         "themeColor": {
-          "title": "Theme Color",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Theme Color"
         }
       },
       "required": [
@@ -3984,7 +3872,6 @@
         "trackingIds": {
           "type": "array",
           "items": {
-            "title": "Inline string",
             "type": "string"
           },
           "description": "google tag manager container id. For more info: https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation .",
@@ -4002,25 +3889,25 @@
           "title": "Page"
         },
         "titleTemplate": {
-          "title": "Title Template",
           "type": "string",
+          "title": "Title Template",
           "description": "add a %s whenever you want it to be replaced with the product name",
           "default": "%s | Fashion Store"
         },
         "description": {
-          "title": "Description",
           "type": [
             "string",
             "null"
           ],
+          "title": "Description",
           "description": "If not set, the product description will be used instead"
         },
         "themeColor": {
-          "title": "Theme Color",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Theme Color"
         }
       },
       "required": [
@@ -4033,20 +3920,20 @@
       "type": "object",
       "properties": {
         "start": {
-          "title": "Start",
           "type": [
             "string",
             "null"
           ],
-          "format": "date-time"
+          "format": "date-time",
+          "title": "Start"
         },
         "end": {
-          "title": "End",
           "type": [
             "string",
             "null"
           ],
-          "format": "date-time"
+          "format": "date-time",
+          "title": "End"
         }
       },
       "required": [],
@@ -4056,18 +3943,18 @@
       "type": "object",
       "properties": {
         "includes": {
-          "title": "Includes",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Includes"
         },
         "match": {
-          "title": "Match",
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "title": "Match"
         }
       },
       "required": [],
@@ -4077,8 +3964,8 @@
       "type": "object",
       "properties": {
         "siteId": {
-          "title": "Site Id",
-          "type": "number"
+          "type": "number",
+          "title": "Site Id"
         }
       },
       "required": [
@@ -4103,12 +3990,10 @@
         "op": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "or"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "and"
             }
@@ -4131,8 +4016,8 @@
       "type": "object",
       "properties": {
         "traffic": {
-          "title": "Traffic",
-          "type": "number"
+          "type": "number",
+          "title": "Traffic"
         }
       },
       "required": [
@@ -4146,12 +4031,10 @@
         "environment": {
           "anyOf": [
             {
-              "title": "Inline string",
               "type": "string",
               "const": "production"
             },
             {
-              "title": "Inline string",
               "type": "string",
               "const": "development"
             }
@@ -4173,8 +4056,8 @@
           "title": "Matcher"
         },
         "name": {
-          "title": "Name",
-          "type": "string"
+          "type": "string",
+          "title": "Name"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
@@ -4184,7 +4067,6 @@
           "title": "Overrides",
           "type": "object",
           "additionalProperties": {
-            "title": "Inline string",
             "type": "string"
           }
         }
@@ -4207,7 +4089,6 @@
           "title": "Overrides",
           "type": "object",
           "additionalProperties": {
-            "title": "Inline string",
             "type": "string"
           }
         }
@@ -5038,6 +4919,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0RvZ0ZhY3RzX3YyLnRzeA==": {
+      "title": "deco-sites/fashion/sections/DogFacts_v2.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0RvZ0ZhY3RzX3YyLnRzeA==@LoadProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/DogFacts_v2.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/DogFacts_v2.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4": {
       "title": "deco-sites/fashion/sections/BannerGrid.tsx",
       "type": "object",
@@ -5064,7 +4966,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@667018fc6b0c5c75c94a2edfc11a277b&omitcHJvZHVjdHM=Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@cd6fe400c08631e5c1c2a9b91520991e&omitcHJvZHVjdHM=Props"
         }
       ],
       "required": [
@@ -5915,6 +5817,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lclBMUC50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0RvZ0ZhY3RzX3YyLnRzeA=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4"
         },
         {
@@ -6032,10 +5937,18 @@
       "type": "object",
       "required": [
         "./routes/_middleware.ts",
+        "./routes/live/rpc/[func].ts",
         "./routes/[...catchall].tsx"
       ],
       "properties": {
         "./routes/_middleware.ts": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig"
+            }
+          ]
+        },
+        "./routes/live/rpc/[func].ts": {
           "anyOf": [
             {
               "$ref": "#/definitions/ZGVjby1jeC9saXZlLnRzL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig"

@@ -23,20 +23,22 @@ import * as $$$$$$$$0 from "./sections/LinkTree.tsx";
 import * as $$$$$$$$1 from "./sections/DesignSystem.story.tsx";
 import * as $$$$$$$$2 from "./sections/Features.tsx";
 import * as $$$$$$$$3 from "./sections/BannerPLP.tsx";
-import * as $$$$$$$$4 from "./sections/BannerGrid.tsx";
-import * as $$$$$$$$5 from "./sections/VtexProductShelf.tsx";
-import * as $$$$$$$$6 from "./sections/SearchResult.tsx";
-import * as $$$$$$$$7 from "./sections/ProductShelf.tsx";
-import * as $$$$$$$$8 from "./sections/Footer.tsx";
-import * as $$$$$$$$9 from "./sections/CookieConsent.tsx";
-import * as $$$$$$$$10 from "./sections/Header.tsx";
-import * as $$$$$$$$11 from "./sections/DogFacts.tsx";
-import * as $$$$$$$$12 from "./sections/ProductDetails.tsx";
-import * as $$$$$$$$13 from "./sections/Highlights.tsx";
-import * as $$$$$$$$14 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$15 from "./sections/ProductShelfGetProps.tsx";
-import * as $$$$$$$$16 from "./sections/Carousel.tsx";
+import * as $$$$$$$$4 from "./sections/DogFacts_v2.tsx";
+import * as $$$$$$$$5 from "./sections/BannerGrid.tsx";
+import * as $$$$$$$$6 from "./sections/VtexProductShelf.tsx";
+import * as $$$$$$$$7 from "./sections/SearchResult.tsx";
+import * as $$$$$$$$8 from "./sections/ProductShelf.tsx";
+import * as $$$$$$$$9 from "./sections/Footer.tsx";
+import * as $$$$$$$$10 from "./sections/CookieConsent.tsx";
+import * as $$$$$$$$11 from "./sections/Header.tsx";
+import * as $$$$$$$$12 from "./sections/DogFacts.tsx";
+import * as $$$$$$$$13 from "./sections/ProductDetails.tsx";
+import * as $$$$$$$$14 from "./sections/Highlights.tsx";
+import * as $$$$$$$$15 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$16 from "./sections/ProductShelfGetProps.tsx";
+import * as $$$$$$$$17 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
+import * as $live_rpc from "$live/routes/live/rpc/[func].ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
 import * as $live_inspect from "$live/routes/live/inspect.ts";
@@ -98,6 +100,7 @@ const manifest: DecoManifest = {
     "./routes/api/[...catchall].tsx": $$$$0,
     "./routes/_app.tsx": $$$$1,
     "./routes/_middleware.ts": $live_middleware,
+    "./routes/live/rpc/[func].ts": $live_rpc,
     "./routes/live/workbench.ts": $live_workbench,
     "./routes/live/editorData.ts": $live_editorData,
     "./routes/live/inspect.ts": $live_inspect,
@@ -123,19 +126,20 @@ const manifest: DecoManifest = {
     "deco-sites/fashion/sections/DesignSystem.story.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$2,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$3,
-    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$4,
-    "deco-sites/fashion/sections/VtexProductShelf.tsx": $$$$$$$$5,
-    "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$6,
-    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$7,
-    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$8,
-    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$9,
-    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$10,
-    "deco-sites/fashion/sections/DogFacts.tsx": $$$$$$$$11,
-    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$12,
-    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$13,
-    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$14,
-    "deco-sites/fashion/sections/ProductShelfGetProps.tsx": $$$$$$$$15,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$16,
+    "deco-sites/fashion/sections/DogFacts_v2.tsx": $$$$$$$$4,
+    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$5,
+    "deco-sites/fashion/sections/VtexProductShelf.tsx": $$$$$$$$6,
+    "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$7,
+    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$8,
+    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$9,
+    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$10,
+    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$11,
+    "deco-sites/fashion/sections/DogFacts.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$13,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$14,
+    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/ProductShelfGetProps.tsx": $$$$$$$$16,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$17,
     "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,

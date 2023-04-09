@@ -1,6 +1,11 @@
 import type { SectionProps } from "$live/mod.ts";
+import { onServer } from "$live/routes/live/rpc/[func].ts";
 import type { LoaderContext } from "$live/types.ts";
 import { useCallback, useState } from "preact/compat";
+
+const getEnvVar = onServer("myIslandFunc", (_, envVar: string) => {
+  return Deno.env.get(envVar);
+});
 
 export default function DogFacts(
   { title, dogFacts }: SectionProps<typeof loader>,
@@ -9,6 +14,10 @@ export default function DogFacts(
   const increment = useCallback(() => {
     setValue(value + 1);
   }, [value]);
+
+  const [envVarKey, setEnvVarKey] = useState("");
+
+  const [envVarValue, setEnvVarValue] = useState<string | undefined>(undefined);
   return (
     <>
       <div class="p-4">
@@ -19,6 +28,18 @@ export default function DogFacts(
       </div>
       <p>Counter: {value}</p>
       <button onClick={increment}>Click me!</button>
+      <input
+        type="text"
+        value={envVarKey}
+        onChange={(e) => setEnvVarKey(e?.currentTarget?.value ?? "")}
+      />
+      <p>EnvVar value: {envVarValue}</p>
+      <button
+        onClick={() =>
+          getEnvVar(envVarKey).then((data) => setEnvVarValue(data))}
+      >
+        Update env var
+      </button>
     </>
   );
 }
