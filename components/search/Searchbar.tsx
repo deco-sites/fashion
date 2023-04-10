@@ -9,19 +9,18 @@
  * no JavaScript is shipped to the browser!
  */
 
-import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
-import type { ClientConfigVTEX } from "deco-sites/std/functions/vtexConfig.ts";
 import { useEffect, useRef } from "preact/compat";
-
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
 import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
-import useAutocomplete from "deco-sites/std/commerce/vtex/hooks/useAutocomplete.ts";
-import SearchTermList from "./SearchTermList.tsx";
+import { useAutocomplete } from "deco-sites/std/commerce/vtex/hooks/useAutocomplete.ts";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
+import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
+
+import SearchTermList from "./SearchTermList.tsx";
 
 function CloseButton() {
   const { displaySearchbar } = useUI();
@@ -70,9 +69,6 @@ export type Props = EditableProps & {
   products?: Product[] | null;
   suggestions?: Suggestion | null;
 
-  /** used for autocomplete */
-  configVTEX?: ClientConfigVTEX;
-
   variant?: "desktop" | "mobile";
 };
 
@@ -83,14 +79,11 @@ function Searchbar({
   query,
   products,
   suggestions: _suggestions,
-  configVTEX,
   variant = "mobile",
 }: Props) {
   const searches = _suggestions?.searches;
   const searchInputRef = useRef<HTMLInputElement>(null);
-  const { setSearch, suggestions } = useAutocomplete({
-    configVTEX,
-  });
+  const { setSearch, suggestions } = useAutocomplete();
 
   useEffect(() => {
     if (!searchInputRef.current) {
@@ -178,7 +171,7 @@ function Searchbar({
           <SearchTermList
             id="search-suggestion"
             title="Sugestões"
-            terms={suggestions.value.searches!}
+            terms={suggestions.value?.searches ?? []}
           />
         )}
         {hasSuggestions && emptySuggestions && (

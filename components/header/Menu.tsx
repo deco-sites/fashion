@@ -87,7 +87,7 @@ function Menu({ items }: Props) {
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
+            href="/wishlist"
           >
             <Icon id="Heart" width={20} height={20} strokeWidth={2} />
             <Text variant="caption">Lista de desejos</Text>

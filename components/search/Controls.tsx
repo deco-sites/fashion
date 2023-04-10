@@ -8,11 +8,15 @@ import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
-type Props = Pick<ProductListingPage, "filters" | "breadcrumb"> & {
-  displayFilter?: boolean;
-};
+type Props =
+  & Pick<ProductListingPage, "filters" | "breadcrumb" | "sortOptions">
+  & {
+    displayFilter?: boolean;
+  };
 
-function SearchControls({ filters, breadcrumb, displayFilter }: Props) {
+function SearchControls(
+  { filters, breadcrumb, displayFilter, sortOptions }: Props,
+) {
   const open = useSignal(false);
 
   return (
@@ -32,7 +36,7 @@ function SearchControls({ filters, breadcrumb, displayFilter }: Props) {
           Filtrar
           <Icon id="FilterList" width={16} height={16} />
         </Button>
-        <Sort />
+        {sortOptions.length > 0 && <Sort sortOptions={sortOptions} />}
       </div>
 
       <Modal

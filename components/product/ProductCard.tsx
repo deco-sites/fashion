@@ -1,13 +1,12 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
+import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import WishlistIcon from "deco-sites/fashion/islands/WishlistButton.tsx";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
-import SendEventButton from "deco-sites/fashion/islands/SendEventButton.tsx";
-import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import Button from "../ui/Button.tsx";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -56,6 +55,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
     name,
     image: images,
     offers,
+    isVariantOf,
   } = product;
   const [front, back] = images ?? [];
   const { listPrice, price, seller } = useOffer(offers);
@@ -68,6 +68,13 @@ function ProductCard({ product, preload, itemListName }: Props) {
     >
       <a href={url} aria-label="product link">
         <div class="relative w-full">
+          <div class="absolute top-0 right-0">
+            <WishlistIcon
+              productId={isVariantOf?.productGroupID}
+              sku={productID}
+              title={name}
+            />
+          </div>
           <Image
             src={front.url!}
             alt={front.alternateName}
