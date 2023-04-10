@@ -7,9 +7,7 @@ import SearchControls from "deco-sites/fashion/islands/SearchControls.tsx";
 import ViewSendEvent from "deco-sites/fashion/islands/ViewSendEvent.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
-import ProductGallery, {
-  Props as GalleryProps,
-} from "../product/ProductGallery.tsx";
+import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
@@ -22,7 +20,7 @@ export interface Props {
   /**
    * @description Number of products per line on grid
    */
-  columns: GalleryProps["columns"];
+  columns: Columns;
 }
 
 function NotFound() {
@@ -38,19 +36,20 @@ function Result({
   variant,
   columns,
 }: Omit<Props, "page"> & { page: ProductListingPage }) {
-  const { products, filters, breadcrumb, pageInfo } = page;
+  const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
 
   return (
     <>
       <Container class="px-4 sm:py-10">
         <SearchControls
+          sortOptions={sortOptions}
           filters={filters}
           breadcrumb={breadcrumb}
           displayFilter={variant === "drawer"}
         />
 
         <div class="flex flex-row">
-          {variant === "aside" && (
+          {variant === "aside" && filters.length > 0 && (
             <aside class="hidden sm:block w-min min-w-[250px]">
               <Filters filters={filters} />
             </aside>
