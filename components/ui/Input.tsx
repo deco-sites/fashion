@@ -7,7 +7,7 @@ const Input = ({
   return (
     <input
       {...props}
-      className={`h-9 text-subdued ${_class}`}
+      className={`h-9 text-base-300 ${_class}`}
       type={type}
     />
   );

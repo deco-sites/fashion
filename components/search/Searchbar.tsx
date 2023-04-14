@@ -115,7 +115,7 @@ function Searchbar({
             tabIndex={-1}
           >
             <Icon
-              class="text-subdued"
+              class="text-base-300"
               id="MagnifyingGlass"
               width={20}
               height={20}
@@ -163,7 +163,7 @@ function Searchbar({
         </form>
         {variant === "desktop" && <CloseButton />}
       </div>
-      <div class="flex flex-col gap-6 divide-y divide-default mt-6 empty:mt-0 md:(flex-row divide-y-0)">
+      <div class="flex flex-col gap-6 divide-y divide-base-200 mt-6 empty:mt-0 md:(flex-row divide-y-0)">
         {searches && searches.length > 0 && !hasSuggestions && (
           <SearchTermList title="Mais buscados" terms={searches} />
         )}

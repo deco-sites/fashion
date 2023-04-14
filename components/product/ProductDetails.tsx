@@ -234,7 +234,7 @@ function Details({
             {images.map((img, _) => (
               <Image
                 style={{ aspectRatio: ASPECT_RATIO }}
-                class="group-disabled:(border-interactive) border rounded min-w-[63px] sm:min-w-[100px]"
+                class="group-disabled:(border-base-300) border rounded min-w-[63px] sm:min-w-[100px]"
                 width={63}
                 height={87.5}
                 src={img.url!}

@@ -74,36 +74,9 @@ const pallet = {
 const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
-      colors: {
-        "default": "var(--colors-default)",
-        "header": "var(--colors-header)",
-
-        "interactive": "var(--colors-interactive)",
-        "interactive-inverse": "var(--colors-interactive-inverse)",
-        "hover": "var(--colors-hover)",
-        "hover-inverse": "var(--colors-hover-inverse)",
-        ...pallet,
-      },
-      textColor: {
-        "default": "var(--text-color-default)",
-        "default-inverse": "var(--text-color-default-inverse)",
-        "subdued": "var(--text-color-subdued)",
-        "subdued-inverse": "var(--text-color-subdued-inverse)",
-        "price": "var(--text-color-price)",
-        "section-title": "var(--text-color-section-title)",
-        "positive": "var(--text-color-positive)",
-        "critical": "var(--text-color-critical)",
-        ...pallet,
-      },
-      borderColor: {
-        "default": "var(--border-color-default)",
-        "default-inverse": "var(--border-color-default-inverse)",
-        "interactive": "var(--border-color-interactive)",
-        "focus": "var(--border-color-focus)",
-        "positive": "var(--border-color-positive)",
-        "critical": "var(--border-color-critical)",
-        ...pallet,
-      },
+      colors: pallet,
+      textColor: pallet,
+      borderColor: pallet,
       outline: Object.fromEntries(
         Object.entries(pallet).map((
           [key, value],
