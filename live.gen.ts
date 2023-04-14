@@ -28,11 +28,10 @@ import * as $$$$$$$$7 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$8 from "./sections/WhatsApp.tsx";
 import * as $$$$$$$$9 from "./sections/BannerPLP.tsx";
 import * as $$$$$$$$10 from "./sections/ProductShelf.tsx";
-import * as $$$$$$$$11 from "./sections/TestSection.tsx";
-import * as $$$$$$$$12 from "./sections/Footer.tsx";
-import * as $$$$$$$$13 from "./sections/Carousel.tsx";
-import * as $$$$$$$$14 from "./sections/SearchResult.tsx";
-import * as $$$$$$$$15 from "./sections/WishlistGallery.tsx";
+import * as $$$$$$$$11 from "./sections/Footer.tsx";
+import * as $$$$$$$$12 from "./sections/Carousel.tsx";
+import * as $$$$$$$$13 from "./sections/SearchResult.tsx";
+import * as $$$$$$$$14 from "./sections/WishlistGallery.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -127,11 +126,10 @@ const manifest = {
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$9,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$10,
-    "deco-sites/fashion/sections/TestSection.tsx": $$$$$$$$11,
-    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$12,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$13,
-    "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$14,
-    "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$11,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$13,
+    "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$14,
     "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,
