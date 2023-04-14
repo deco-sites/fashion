@@ -30,7 +30,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="flex border-1 border-default">
+    <div class="flex border-1 border-base-200">
       <Button
         class="h-9 w-9"
         variant="icon"
@@ -42,7 +42,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
       </Button>
       <style dangerouslySetInnerHTML={{ __html: innerStyle }} />
       <input
-        class="text-center text-default text-body font-body bg-transparent outline-none disabled:opacity-50"
+        class="text-center text-base-content text-body font-body bg-transparent outline-none disabled:opacity-50"
         type="number"
         inputMode="numeric"
         pattern="[0-9]*"

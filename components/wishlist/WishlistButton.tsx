@@ -20,7 +20,7 @@ function WishlistButton({ variant = "icon", ...item }: Props) {
 
   return (
     <Button
-      variant={variant === "icon" ? "icon" : "secondary"}
+      variant={variant === "icon" ? "icon" : "outline"}
       loading={fetching.value}
       onClick={async (e) => {
         e.stopPropagation();

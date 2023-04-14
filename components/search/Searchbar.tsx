@@ -106,7 +106,7 @@ function Searchbar({
         <form
           id="searchbar"
           action={action}
-          class="flex-grow flex gap-3 px-3 py-2 border border-default"
+          class="flex-grow flex gap-3 px-3 py-2 border border-base-200"
         >
           <Button
             variant="icon"
@@ -158,7 +158,7 @@ function Searchbar({
               setSearch("");
             }}
           >
-            <Text variant="caption" tone="default">limpar</Text>
+            <Text variant="caption">limpar</Text>
           </button>
         </form>
         {variant === "desktop" && <CloseButton />}
@@ -184,7 +184,7 @@ function Searchbar({
             >
               Nenhum resultado encontrado
             </Text>
-            <Text variant="body" tone="subdued" class="text-center">
+            <Text variant="body" tone="base-300" class="text-center">
               Vamos tentar de outro jeito? Verifique a ortografia ou use um
               termo diferente
             </Text>

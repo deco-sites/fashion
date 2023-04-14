@@ -25,10 +25,10 @@ function SearchControls(
         <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
       </div>
 
-      <div class="flex flex-row items-center justify-between border-b-1 border-default sm:(gap-4 border-none)">
+      <div class="flex flex-row items-center justify-between border-b-1 border-base-200 sm:(gap-4 border-none)">
         <Button
           class={displayFilter ? "" : "sm:hidden"}
-          variant="tertiary"
+          variant="ghost"
           onClick={() => {
             open.value = true;
           }}

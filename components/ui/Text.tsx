@@ -1,16 +1,9 @@
 import { JSX } from "preact";
 import { forwardRef } from "preact/compat";
+import type { Colors } from "deco-sites/fashion/sections/DesignSystem.tsx";
 
 type Props = Omit<JSX.IntrinsicElements["span"], "aria-level"> & {
-  tone?:
-    | "default"
-    | "default-inverse"
-    | "subdued"
-    | "subdued-inverse"
-    | "price"
-    | "section-title"
-    | "positive"
-    | "critical";
+  tone?: keyof Colors;
   variant?:
     | "heading-1"
     | "heading-2"
@@ -24,7 +17,7 @@ type Props = Omit<JSX.IntrinsicElements["span"], "aria-level"> & {
 };
 
 const Text = forwardRef<HTMLSpanElement, Props>((
-  { tone = "default", variant = "body", class: _class = "", ...props },
+  { tone = "base-content", variant = "body", class: _class = "", ...props },
   ref,
 ) => {
   return (
