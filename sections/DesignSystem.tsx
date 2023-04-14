@@ -1,14 +1,12 @@
 import { Color } from "https://denopkg.com/tlgimenes/color@9176dca/mod.ts";
 
+import { Head } from "$fresh/runtime.ts";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
 import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
 import QuantitySelector from "deco-sites/fashion/components/ui/QuantitySelector.tsx";
-import { Head } from "$fresh/runtime.ts";
-import type { ComponentChildren } from "preact";
 
 export interface Colors {
   /**
@@ -305,28 +303,75 @@ export function Preview(props: Props) {
     <>
       <Section {...props} />
 
-      <div class="p-4">
-        <div class="flex flex-wrap gap-1">
-          <Button variant="primary">primary</Button>
-          <Button variant="outline">outline</Button>
-          <Button variant="ghost">ghost</Button>
-          <Button variant="icon">
-            <Icon id="Bars3" strokeWidth={0.1} />
-          </Button>
+      <div class="p-4 bg-base-100">
+        <div class="flex flex-wrap gap-10 items-center">
+          <div class="flex flex-row gap-1 items-center">
+            <Button variant="primary">primary</Button>
+            <Button variant="outline">outline</Button>
+            <Button variant="ghost">ghost</Button>
+            <Button variant="icon">
+              <Icon id="Bars3" strokeWidth={0.1} size={20} />
+            </Button>
+          </div>
 
-          <Button variant="primary" disabled>primary</Button>
-          <Button variant="outline" disabled>outline</Button>
-          <Button variant="ghost" disabled>ghost</Button>
-          <Button variant="icon" disabled>
-            <Icon id="Bars3" strokeWidth={0.1} />
-          </Button>
+          <div class="flex flex-row gap-1 items-center">
+            <Button variant="primary" disabled>primary</Button>
+            <Button variant="outline" disabled>outline</Button>
+            <Button variant="ghost" disabled>ghost</Button>
+            <Button variant="icon" disabled>
+              <Icon id="Bars3" strokeWidth={0.1} size={20} />
+            </Button>
+          </div>
 
-          <Button variant="primary" loading>primary</Button>
-          <Button variant="outline" loading>outline</Button>
-          <Button variant="ghost" loading>ghost</Button>
-          <Button variant="icon" loading>
-            <Icon id="Bars3" strokeWidth={0.1} />
-          </Button>
+          <div class="flex flex-row gap-1 items-center">
+            <Button variant="primary" loading>primary</Button>
+            <Button variant="outline" loading>outline</Button>
+            <Button variant="ghost" loading>ghost</Button>
+            <Button variant="icon" loading>
+              <Icon id="Bars3" strokeWidth={0.1} size={20} />
+            </Button>
+          </div>
+
+          <div class="flex flex-row gap-1 items-center">
+            <Avatar variant="color" content="branca" />
+            <Avatar variant="color" content="preta" />
+            <Avatar variant="color" content="azul-marinho" />
+
+            <Avatar variant="abbreviation" content="P" />
+            <Avatar variant="abbreviation" content="M" />
+          </div>
+
+          <QuantitySelector quantity={10} />
+
+          <div class="w-min">
+            <Breadcrumb
+              itemListElement={[
+                {
+                  "@type": "ListItem",
+                  name: "Segment A",
+                  item: "http://localhost:8000/a",
+                  position: 1,
+                },
+                {
+                  "@type": "ListItem",
+                  name: "Segment B",
+                  item: "http://localhost:8000/a/b",
+                  position: 2,
+                },
+              ]}
+            />
+          </div>
+
+          <div class="flex flex-col ">
+            <Text variant="heading-1">heading-1</Text>
+            <Text variant="heading-2">heading-2</Text>
+            <Text variant="heading-3">heading-3</Text>
+            <Text variant="menu">menu</Text>
+            <Text variant="button">button</Text>
+            <Text variant="body">body</Text>
+            <Text variant="caption">caption</Text>
+            <Text variant="list-price">list-price</Text>
+          </div>
         </div>
       </div>
     </>

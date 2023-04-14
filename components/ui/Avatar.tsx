@@ -42,7 +42,7 @@ function Avatar({ variant, content, class: _class = "", ...btnProps }: Props) {
     return (
       <button
         {...btnProps}
-        class={`rounded-full border border-base-200 w-8 h-8 ${_class}`}
+        class={`rounded-full border border-base-200 w-8 h-8 hover:opacity-75 ${_class}`}
         style={{ backgroundColor: colors[content] ?? "#FFF" }}
       />
     );
