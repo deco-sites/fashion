@@ -1,4 +1,4 @@
-import { Color } from "../../color/mod.ts";
+import { Color } from "https://denopkg.com/tlgimenes/color@9176dca/mod.ts";
 
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Container from "deco-sites/fashion/components/ui/Container.tsx";
