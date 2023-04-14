@@ -26,7 +26,7 @@ function NavItem({ item }: { item: INavItem }) {
       {children && children.length > 0 &&
         (
           <div
-            class={`fixed invisible hover:visible group-hover:visible bg-default z-50 flex items-start justify-center gap-6 border-t-1 border-b-2 border-default w-screen mt-[${headerHeight}]`}
+            class={`fixed hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t-1 border-b-2 border-base-200 w-screen mt-[${headerHeight}]`}
             style={{ top: "0px", left: "0px" }}
           >
             {image?.src && (

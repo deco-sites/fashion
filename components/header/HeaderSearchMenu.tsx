@@ -21,7 +21,7 @@ export default function HeaderSearchMenu({ searchbar }: Props) {
   return (
     <div
       class={`${
-        open ? "block border-t-1 border-default shadow" : "hidden"
+        open ? "block border-t-1 border-base-200 shadow" : "hidden"
       } absolute left-0 w-screen z-50 bg-white top-[${headerHeight}]`}
     >
       {open && (

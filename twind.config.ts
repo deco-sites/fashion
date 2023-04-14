@@ -36,40 +36,79 @@ const scrollSnap = ([arg]: string[]) => {
   };
 };
 
+const pallet = {
+  "primary": "var(--color-primary)",
+  "primary-focus": "var(--color-primary-focus)",
+  "primary-content": "var(--color-primary-content)",
+
+  "secondary": "var(--color-secondary)",
+  "secondary-focus": "var(--color-secondary-focus)",
+  "secondary-content": "var(--color-secondary-content)",
+
+  "accent": "var(--color-accent)",
+  "accent-focus": "var(--color-accent-focus)",
+  "accent-content": "var(--color-accent-content)",
+
+  "neutral": "var(--color-neutral)",
+  "neutral-focus": "var(--color-neutral-focus)",
+  "neutral-content": "var(--color-neutral-content)",
+
+  "base-100": "var(--color-base-100)",
+  "base-200": "var(--color-base-200)",
+  "base-300": "var(--color-base-300)",
+  "base-content": "var(--color-base-content)",
+
+  "success": "var(--color-success)",
+  "success-content": "var(--color-success-content)",
+
+  "warning": "var(--color-warning)",
+  "warning-content": "var(--color-warning-content)",
+
+  "error": "var(--color-error)",
+  "error-content": "var(--color-error-content)",
+
+  "info": "var(--color-info)",
+  "info-content": "var(--color-info-content)",
+};
+
 const options: Omit<Options, "selfURL"> = {
   theme: {
     extend: {
       colors: {
-        "default": "#FFFFFF",
-        "header": "#FFFFFF",
-        "badge": "#8C3D3D", // shopping cart tem isso tambem
-        "footer": "#003232",
-        "interactive": "#161616",
-        "interactive-inverse": "#FFFFFF",
-        "hover": "rgba(0, 0, 0, 0.04)",
-        "hover-inverse": "rgba(255, 255, 255, 0.4)",
+        "default": "var(--colors-default)",
+        "header": "var(--colors-header)",
+
+        "interactive": "var(--colors-interactive)",
+        "interactive-inverse": "var(--colors-interactive-inverse)",
+        "hover": "var(--colors-hover)",
+        "hover-inverse": "var(--colors-hover-inverse)",
+        ...pallet,
       },
       textColor: {
-        "default": "#161616",
-        "default-inverse": "#FFFFFF",
-        "subdued": "#66736C",
-        "subdued-inverse": "#C6C6C6",
-        "price": "#8C3D3D",
-        "section-title": "#161616",
-        "positive": "#1A7346",
-        "critical": "#B44125",
+        "default": "var(--text-color-default)",
+        "default-inverse": "var(--text-color-default-inverse)",
+        "subdued": "var(--text-color-subdued)",
+        "subdued-inverse": "var(--text-color-subdued-inverse)",
+        "price": "var(--text-color-price)",
+        "section-title": "var(--text-color-section-title)",
+        "positive": "var(--text-color-positive)",
+        "critical": "var(--text-color-critical)",
+        ...pallet,
       },
       borderColor: {
-        "default": "#D4DBD7",
-        "default-inverse": "#FFFFFF",
-        "interactive": "#161616",
-        "focus": "#3379EF",
-        "positive": "#1A7346",
-        "critical": "#B44125",
+        "default": "var(--border-color-default)",
+        "default-inverse": "var(--border-color-default-inverse)",
+        "interactive": "var(--border-color-interactive)",
+        "focus": "var(--border-color-focus)",
+        "positive": "var(--border-color-positive)",
+        "critical": "var(--border-color-critical)",
+        ...pallet,
       },
-      outline: {
-        interactive: ["2px solid #3379EF", "2px"],
-      },
+      outline: Object.fromEntries(
+        Object.entries(pallet).map((
+          [key, value],
+        ) => [key, [`1px solid ${value}`, "1px"]]),
+      ),
       fontSize: {
         "heading-1": ["56px", "67.2px"],
         "heading-2": ["24px", "28.8px"],

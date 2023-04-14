@@ -41,10 +41,10 @@ function CartItem({ index }: Props) {
           {name}
         </Text>
         <div class="flex items-center gap-2">
-          <Text class="line-through" tone="subdued" variant="list-price">
+          <Text class="line-through" tone="base-300" variant="list-price">
             {formatPrice(listPrice / 100, currencyCode!, locale)}
           </Text>
-          <Text tone="price" variant="caption">
+          <Text tone="secondary" variant="caption">
             {isGift
               ? "Grátis"
               : formatPrice(sellingPrice / 100, currencyCode!, locale)}

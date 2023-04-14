@@ -27,7 +27,6 @@ function Sizes(product: Product) {
         return (
           <a href={url}>
             <Avatar
-              class="bg-default"
               variant="abbreviation"
               content={value}
               disabled={url === product.url}
@@ -137,14 +136,10 @@ function ProductCard({ product, preload, itemListName }: Props) {
             {name}
           </Text>
           <div class="flex items-center gap-2">
-            <Text
-              class="line-through"
-              variant="list-price"
-              tone="subdued"
-            >
+            <Text class="line-through" variant="list-price" tone="base-300">
               {formatPrice(listPrice, offers!.priceCurrency!)}
             </Text>
-            <Text variant="caption" tone="price">
+            <Text variant="caption" tone="secondary">
               {formatPrice(price, offers!.priceCurrency!)}
             </Text>
           </div>

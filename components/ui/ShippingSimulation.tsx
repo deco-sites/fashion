@@ -56,7 +56,7 @@ function ShippingContent(
   return (
     <ul class="flex flex-col gap-4 p-4 bg-hover rounded-[4px]">
       {methods.map((method) => (
-        <li class="flex justify-between items-center border-default not-first-child:border-t-1">
+        <li class="flex justify-between items-center border-base-200 not-first-child:border-t-1">
           <Text variant="body" class="text-button text-center">
             Entrega {method.name}
           </Text>
@@ -126,7 +126,7 @@ function ShippingSimulation({ items }: Props) {
             as="input"
             type="text"
             variant="input"
-            class="w-[120px] p-2 rounded-[4px] border-1 border-default"
+            class="w-[120px] p-2 rounded-[4px] border-1 border-base-200"
             placeholder="Seu cep aqui"
             onChange={(e: { currentTarget: { value: string } }) => {
               postalCode.value = e.currentTarget.value;

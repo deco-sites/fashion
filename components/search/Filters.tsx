@@ -50,7 +50,7 @@ function FilterValues({ key, values }: FilterToggle) {
           <a href={url} class="flex items-center gap-2">
             <input type="checkbox" checked={selected} class="hidden" />
             <Text variant="caption">{label}</Text>
-            <Text tone="subdued" variant="caption">
+            <Text tone="base-300" variant="caption">
               ({quantity})
             </Text>
           </a>
