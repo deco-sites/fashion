@@ -4,7 +4,6 @@
 
 import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
-
 import * as $$$$0 from "./routes/api/[...catchall].tsx";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/WishlistButton.tsx";
@@ -35,6 +34,7 @@ import * as $$$$$$$$13 from "./sections/WhatsApp.tsx";
 import * as $$$$$$$$14 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
+import * as $live_invoke from "$live/routes/live/invoke/index.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
 import * as $live_inspect from "$live/routes/live/inspect.ts";
 import * as $live_meta from "$live/routes/live/_meta.ts";
@@ -88,12 +88,13 @@ import * as i2$$$6 from "deco-sites/std/sections/configVNDA.global.tsx";
 import * as i2$$$7 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as i2$$$8 from "deco-sites/std/sections/SEOPDP.tsx";
 
-const manifest: DecoManifest = {
+const manifest = {
   "routes": {
     "./routes/api/[...catchall].tsx": $$$$0,
     "./routes/_app.tsx": $$$$1,
     "./routes/_middleware.ts": $live_middleware,
     "./routes/live/workbench.ts": $live_workbench,
+    "./routes/live/invoke/index.ts": $live_invoke,
     "./routes/live/editorData.ts": $live_editorData,
     "./routes/live/inspect.ts": $live_inspect,
     "./routes/live/_meta.ts": $live_meta,
@@ -193,4 +194,6 @@ const manifest: DecoManifest = {
   "baseUrl": import.meta.url,
 };
 
-export default manifest;
+export type Manifest = typeof manifest;
+
+export default manifest satisfies DecoManifest;
