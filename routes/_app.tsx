@@ -1,5 +1,6 @@
 import { AppProps } from "$fresh/server.ts";
 import GlobalTags from "deco-sites/fashion/components/GlobalTags.tsx";
+import DesignSystem from "../sections/DesignSystem.tsx";
 
 function App(props: AppProps) {
   return (
