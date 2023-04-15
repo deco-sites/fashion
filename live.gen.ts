@@ -32,6 +32,8 @@ import * as $$$$$$$$11 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$12 from "./sections/Highlights.tsx";
 import * as $$$$$$$$13 from "./sections/WhatsApp.tsx";
 import * as $$$$$$$$14 from "./sections/Carousel.tsx";
+import * as $$$$$$$$$$$0 from "./extensions/changeProductCategory.ts";
+import * as $$$$$$$$$$$1 from "./extensions/changeProductPrice.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -140,6 +142,13 @@ const manifest = {
     "deco-sites/std/sections/configVNDA.global.tsx": i2$$$6,
     "deco-sites/std/sections/configVTEX.global.tsx": i2$$$7,
     "deco-sites/std/sections/SEOPDP.tsx": i2$$$8,
+  },
+  "extensions": {
+    "deco-sites/fashion/extensions/changeProductCategory.ts": $$$$$$$$$$$0,
+    "deco-sites/fashion/extensions/changeProductPrice.ts": $$$$$$$$$$$1,
+  },
+  "loaders": {
+    "$live/loaders/addExtensions.ts": i1$0,
   },
   "handlers": {
     "$live/handlers/routesSelection.ts": i2$$$$0,
