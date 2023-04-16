@@ -1,8 +1,8 @@
 {
   "imports": {
     "deco-sites/fashion/": "./",
-    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.0.0-rc.14/",
-    "$live/": "https://denopkg.com/deco-cx/live@61abf642bb8965e5588e37e6bddecc1153143488/",
+    "deco-sites/std/": "https://denopkg.com/deco-sites/std@review-ratings/",
+    "$live/": "https://denopkg.com/deco-cx/live@extension-loaders/",
     "$fresh/": "https://deno.land/x/fresh@1.1.5/",
     "preact": "https://esm.sh/preact@10.13.2",
     "preact/": "https://esm.sh/preact@10.13.2/",
