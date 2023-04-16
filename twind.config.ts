@@ -11,8 +11,8 @@ const gridCols = ([arg]: string[]) => {
   const template = Number.isInteger(Number(arg))
     ? `repeat(${arg}, minmax(0, 1fr))`
     : arg
-      ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
-      : arg;
+    ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
+    : arg;
 
   return {
     "grid-template-columns": template,
@@ -23,8 +23,8 @@ const gridRows = ([arg]: string[]) => {
   const template = Number.isInteger(Number(arg))
     ? `repeat(${arg}, minmax(0, 1fr))`
     : arg
-      ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
-      : arg;
+    ? arg.replace(/(^\[)|(\])$/g, "").replace(/_/g, " ")
+    : arg;
 
   return {
     "grid-template-rows": template,
@@ -203,4 +203,4 @@ export default defineConfig({
   // },
   presets: [presetTailwind()],
   darkMode: false,
-})
+});
