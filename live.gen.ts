@@ -40,19 +40,19 @@ import * as $live_inspect from "$live/routes/live/inspect.ts";
 import * as $live_meta from "$live/routes/live/_meta.ts";
 import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
-import * as i2$$$$3 from "$live/handlers/fresh.ts";
-import * as i2$$$$2 from "$live/handlers/devPage.ts";
-import * as i2$$$$1 from "$live/handlers/router.ts";
 import * as i2$$$$0 from "$live/handlers/routesSelection.ts";
+import * as i2$$$$1 from "$live/handlers/router.ts";
+import * as i2$$$$2 from "$live/handlers/devPage.ts";
+import * as i2$$$$3 from "$live/handlers/fresh.ts";
 import * as i2$$$$$0 from "$live/pages/LivePage.tsx";
 import * as i2$$$9 from "$live/sections/PageInclude.tsx";
+import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$1 from "$live/matchers/MatchUserAgent.ts";
-import * as i2$$$$$$4 from "$live/matchers/MatchRandom.ts";
-import * as i2$$$$$$3 from "$live/matchers/MatchMulti.ts";
 import * as i2$$$$$$2 from "$live/matchers/MatchSite.ts";
+import * as i2$$$$$$3 from "$live/matchers/MatchMulti.ts";
+import * as i2$$$$$$4 from "$live/matchers/MatchRandom.ts";
 import * as i2$$$$$$5 from "$live/matchers/MatchEnvironment.ts";
 import * as i2$$$$$$6 from "$live/matchers/MatchAlways.ts";
-import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$$0 from "$live/flags/audience.ts";
 import * as i2$$$$$$$1 from "$live/flags/everyone.ts";
 import * as i2$0 from "deco-sites/std/functions/vtexConfig.ts";
@@ -142,22 +142,22 @@ const manifest = {
     "deco-sites/std/sections/SEOPDP.tsx": i2$$$8,
   },
   "handlers": {
-    "$live/handlers/fresh.ts": i2$$$$3,
-    "$live/handlers/devPage.ts": i2$$$$2,
-    "$live/handlers/router.ts": i2$$$$1,
     "$live/handlers/routesSelection.ts": i2$$$$0,
+    "$live/handlers/router.ts": i2$$$$1,
+    "$live/handlers/devPage.ts": i2$$$$2,
+    "$live/handlers/fresh.ts": i2$$$$3,
   },
   "pages": {
     "$live/pages/LivePage.tsx": i2$$$$$0,
   },
   "matchers": {
+    "$live/matchers/MatchDate.ts": i2$$$$$$0,
     "$live/matchers/MatchUserAgent.ts": i2$$$$$$1,
-    "$live/matchers/MatchRandom.ts": i2$$$$$$4,
-    "$live/matchers/MatchMulti.ts": i2$$$$$$3,
     "$live/matchers/MatchSite.ts": i2$$$$$$2,
+    "$live/matchers/MatchMulti.ts": i2$$$$$$3,
+    "$live/matchers/MatchRandom.ts": i2$$$$$$4,
     "$live/matchers/MatchEnvironment.ts": i2$$$$$$5,
     "$live/matchers/MatchAlways.ts": i2$$$$$$6,
-    "$live/matchers/MatchDate.ts": i2$$$$$$0,
   },
   "flags": {
     "$live/flags/audience.ts": i2$$$$$$$0,
