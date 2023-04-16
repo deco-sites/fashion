@@ -14,6 +14,9 @@ import site from "./site.json" assert { type: "json" };
 await start($live(manifest, site), {
   plugins: [
     partytownPlugin(),
-    twindPlugin(twindConfig),
+    twindPlugin({
+      ...twindConfig,
+      selfURL: new URL("./twind.config.ts", import.meta.url).href,
+    }),
   ],
 });
