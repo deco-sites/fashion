@@ -6,32 +6,32 @@ import config from "./deno.json" assert { type: "json" };
 import { DecoManifest } from "$live/types.ts";
 import * as $$$$0 from "./routes/api/[...catchall].tsx";
 import * as $$$$1 from "./routes/_app.tsx";
-import * as $$$$$0 from "./islands/HeaderButton.tsx";
+import * as $$$$$0 from "./islands/WishlistButton.tsx";
 import * as $$$$$1 from "./islands/ShippingSimulation.tsx";
-import * as $$$$$2 from "./islands/SearchControls.tsx";
-import * as $$$$$3 from "./islands/HeaderSearchMenu.tsx";
-import * as $$$$$4 from "./islands/SliderJS.tsx";
-import * as $$$$$5 from "./islands/HeaderModals.tsx";
-import * as $$$$$6 from "./islands/AddToCartButton.tsx";
-import * as $$$$$7 from "./islands/WishlistButton.tsx";
-import * as $$$$$8 from "./islands/SendEventButton.tsx";
-import * as $$$$$9 from "./islands/ProductImageZoom.tsx";
-import * as $$$$$10 from "./islands/ViewSendEvent.tsx";
-import * as $$$$$$$$0 from "./sections/Features.tsx";
-import * as $$$$$$$$1 from "./sections/CookieConsent.tsx";
+import * as $$$$$2 from "./islands/HeaderButton.tsx";
+import * as $$$$$3 from "./islands/SendEventButton.tsx";
+import * as $$$$$4 from "./islands/HeaderSearchMenu.tsx";
+import * as $$$$$5 from "./islands/AddToCartButton.tsx";
+import * as $$$$$6 from "./islands/HeaderModals.tsx";
+import * as $$$$$7 from "./islands/SliderJS.tsx";
+import * as $$$$$8 from "./islands/ProductImageZoom.tsx";
+import * as $$$$$9 from "./islands/ViewSendEvent.tsx";
+import * as $$$$$10 from "./islands/SearchControls.tsx";
+import * as $$$$$$$$0 from "./sections/WishlistGallery.tsx";
+import * as $$$$$$$$1 from "./sections/LinkTree.tsx";
 import * as $$$$$$$$2 from "./sections/DesignSystem.story.tsx";
-import * as $$$$$$$$3 from "./sections/Highlights.tsx";
-import * as $$$$$$$$4 from "./sections/BannerGrid.tsx";
-import * as $$$$$$$$5 from "./sections/LinkTree.tsx";
-import * as $$$$$$$$6 from "./sections/Header.tsx";
-import * as $$$$$$$$7 from "./sections/ProductDetails.tsx";
-import * as $$$$$$$$8 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$9 from "./sections/BannerPLP.tsx";
-import * as $$$$$$$$10 from "./sections/ProductShelf.tsx";
-import * as $$$$$$$$11 from "./sections/Footer.tsx";
-import * as $$$$$$$$12 from "./sections/Carousel.tsx";
-import * as $$$$$$$$13 from "./sections/SearchResult.tsx";
-import * as $$$$$$$$14 from "./sections/WishlistGallery.tsx";
+import * as $$$$$$$$3 from "./sections/Features.tsx";
+import * as $$$$$$$$4 from "./sections/BannerPLP.tsx";
+import * as $$$$$$$$5 from "./sections/BannerGrid.tsx";
+import * as $$$$$$$$6 from "./sections/SearchResult.tsx";
+import * as $$$$$$$$7 from "./sections/ProductShelf.tsx";
+import * as $$$$$$$$8 from "./sections/Footer.tsx";
+import * as $$$$$$$$9 from "./sections/CookieConsent.tsx";
+import * as $$$$$$$$10 from "./sections/Header.tsx";
+import * as $$$$$$$$11 from "./sections/ProductDetails.tsx";
+import * as $$$$$$$$12 from "./sections/Highlights.tsx";
+import * as $$$$$$$$13 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$14 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -40,19 +40,19 @@ import * as $live_inspect from "$live/routes/live/inspect.ts";
 import * as $live_meta from "$live/routes/live/_meta.ts";
 import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
-import * as i2$$$$3 from "$live/handlers/fresh.ts";
-import * as i2$$$$2 from "$live/handlers/devPage.ts";
-import * as i2$$$$1 from "$live/handlers/router.ts";
 import * as i2$$$$0 from "$live/handlers/routesSelection.ts";
+import * as i2$$$$1 from "$live/handlers/router.ts";
+import * as i2$$$$2 from "$live/handlers/devPage.ts";
+import * as i2$$$$3 from "$live/handlers/fresh.ts";
 import * as i2$$$$$0 from "$live/pages/LivePage.tsx";
 import * as i2$$$9 from "$live/sections/PageInclude.tsx";
+import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$1 from "$live/matchers/MatchUserAgent.ts";
-import * as i2$$$$$$4 from "$live/matchers/MatchRandom.ts";
-import * as i2$$$$$$3 from "$live/matchers/MatchMulti.ts";
 import * as i2$$$$$$2 from "$live/matchers/MatchSite.ts";
+import * as i2$$$$$$3 from "$live/matchers/MatchMulti.ts";
+import * as i2$$$$$$4 from "$live/matchers/MatchRandom.ts";
 import * as i2$$$$$$5 from "$live/matchers/MatchEnvironment.ts";
 import * as i2$$$$$$6 from "$live/matchers/MatchAlways.ts";
-import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$$0 from "$live/flags/audience.ts";
 import * as i2$$$$$$$1 from "$live/flags/everyone.ts";
 import * as i2$0 from "deco-sites/std/functions/vtexConfig.ts";
@@ -102,34 +102,34 @@ const manifest = {
     "./routes/[...catchall].tsx": $live_catchall,
   },
   "islands": {
-    "./islands/HeaderButton.tsx": $$$$$0,
+    "./islands/WishlistButton.tsx": $$$$$0,
     "./islands/ShippingSimulation.tsx": $$$$$1,
-    "./islands/SearchControls.tsx": $$$$$2,
-    "./islands/HeaderSearchMenu.tsx": $$$$$3,
-    "./islands/SliderJS.tsx": $$$$$4,
-    "./islands/HeaderModals.tsx": $$$$$5,
-    "./islands/AddToCartButton.tsx": $$$$$6,
-    "./islands/WishlistButton.tsx": $$$$$7,
-    "./islands/SendEventButton.tsx": $$$$$8,
-    "./islands/ProductImageZoom.tsx": $$$$$9,
-    "./islands/ViewSendEvent.tsx": $$$$$10,
+    "./islands/HeaderButton.tsx": $$$$$2,
+    "./islands/SendEventButton.tsx": $$$$$3,
+    "./islands/HeaderSearchMenu.tsx": $$$$$4,
+    "./islands/AddToCartButton.tsx": $$$$$5,
+    "./islands/HeaderModals.tsx": $$$$$6,
+    "./islands/SliderJS.tsx": $$$$$7,
+    "./islands/ProductImageZoom.tsx": $$$$$8,
+    "./islands/ViewSendEvent.tsx": $$$$$9,
+    "./islands/SearchControls.tsx": $$$$$10,
   },
   "sections": {
-    "deco-sites/fashion/sections/Features.tsx": $$$$$$$$0,
-    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$1,
+    "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$0,
+    "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/DesignSystem.story.tsx": $$$$$$$$2,
-    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$3,
-    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$4,
-    "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$5,
-    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$6,
-    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$7,
-    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$8,
-    "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$9,
-    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$10,
-    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$11,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$12,
-    "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$13,
-    "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$14,
+    "deco-sites/fashion/sections/Features.tsx": $$$$$$$$3,
+    "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$4,
+    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$5,
+    "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$6,
+    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$7,
+    "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$8,
+    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$9,
+    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$10,
+    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$11,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$13,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$14,
     "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,
@@ -142,22 +142,22 @@ const manifest = {
     "deco-sites/std/sections/SEOPDP.tsx": i2$$$8,
   },
   "handlers": {
-    "$live/handlers/fresh.ts": i2$$$$3,
-    "$live/handlers/devPage.ts": i2$$$$2,
-    "$live/handlers/router.ts": i2$$$$1,
     "$live/handlers/routesSelection.ts": i2$$$$0,
+    "$live/handlers/router.ts": i2$$$$1,
+    "$live/handlers/devPage.ts": i2$$$$2,
+    "$live/handlers/fresh.ts": i2$$$$3,
   },
   "pages": {
     "$live/pages/LivePage.tsx": i2$$$$$0,
   },
   "matchers": {
+    "$live/matchers/MatchDate.ts": i2$$$$$$0,
     "$live/matchers/MatchUserAgent.ts": i2$$$$$$1,
-    "$live/matchers/MatchRandom.ts": i2$$$$$$4,
-    "$live/matchers/MatchMulti.ts": i2$$$$$$3,
     "$live/matchers/MatchSite.ts": i2$$$$$$2,
+    "$live/matchers/MatchMulti.ts": i2$$$$$$3,
+    "$live/matchers/MatchRandom.ts": i2$$$$$$4,
     "$live/matchers/MatchEnvironment.ts": i2$$$$$$5,
     "$live/matchers/MatchAlways.ts": i2$$$$$$6,
-    "$live/matchers/MatchDate.ts": i2$$$$$$0,
   },
   "flags": {
     "$live/flags/audience.ts": i2$$$$$$$0,
