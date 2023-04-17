@@ -2573,9 +2573,9 @@
           "type": "string",
           "title": "Name"
         },
-        "extends": {
+        "inherits": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
-          "title": "Extends"
+          "title": "Inherits"
         },
         "sections": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
@@ -3944,12 +3944,12 @@
             }
           ],
           "type": "string",
+          "description": "The name of the slot.",
+          "default": "content",
           "title": "Name"
         }
       },
-      "required": [
-        "name"
-      ],
+      "required": [],
       "title": "deco-cx/live/sections/Slot.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
