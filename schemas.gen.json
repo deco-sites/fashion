@@ -514,13 +514,6 @@
       "required": [],
       "title": "ProductLeaf"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf"
-      },
-      "title": "ProductLeaf[]"
-    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductGroup": {
       "type": "object",
       "allOf": [
@@ -535,7 +528,10 @@
           "title": "@type"
         },
         "hasVariant": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf"
+          },
           "title": "Has Variant"
         },
         "productGroupID": {
@@ -946,6 +942,13 @@
       ],
       "title": "Review"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf"
+      },
+      "title": "ProductLeaf[]"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product": {
       "type": "object",
       "allOf": [
@@ -1035,6 +1038,10 @@
         "sku": {
           "type": "string",
           "title": "Sku"
+        },
+        "isAccessoryOrSparePartFor": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductLeaf[]",
+          "title": "Is Accessory Or Spare Part For"
         }
       },
       "required": [
@@ -2161,24 +2168,6 @@
       ],
       "title": "deco-sites/std/commerce/vnda/types.ts@ConfigVNDA"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews": {
-      "type": "object",
-      "properties": {
-        "token": {
-          "type": "string",
-          "title": "Token"
-        },
-        "appId": {
-          "type": "string",
-          "title": "App Id"
-        }
-      },
-      "required": [
-        "token",
-        "appId"
-      ],
-      "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
-    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
       "type": "object",
       "properties": {},
@@ -2286,6 +2275,28 @@
         "baseUrl"
       ],
       "title": "deco-sites/std/commerce/occ/client.ts@ConfigOCC"
+    },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9leHRlbnNpb24udHM=@Extension": {
+      "$ref": "#/root/extensions",
+      "title": "Extension"
+    },
+    "ZGVjby1jeC9saXZlL2xvYWRlcnMvd2l0aEV4dGVuc2lvbnMudHM=@Props": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/root/functions",
+          "title": "Data"
+        },
+        "extension": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9leHRlbnNpb24udHM=@Extension",
+          "title": "Extension"
+        }
+      },
+      "required": [
+        "data",
+        "extension"
+      ],
+      "title": "deco-cx/live/loaders/withExtensions.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
@@ -3881,6 +3892,44 @@
       "required": [],
       "title": "deco-cx/live/flags/everyone.ts@EveryoneConfig"
     },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9leHRlbnNpb24udHM=@Extension[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9leHRlbnNpb24udHM=@Extension"
+      },
+      "title": "Extension[]"
+    },
+    "ZGVjby1jeC9saXZlL2V4dGVuc2lvbnMvY29tcG9zaXRlLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "extensions": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9leHRlbnNpb24udHM=@Extension[]",
+          "title": "Extensions"
+        }
+      },
+      "required": [
+        "extensions"
+      ],
+      "title": "deco-cx/live/extensions/composite.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "title": "Token"
+        },
+        "appId": {
+          "type": "string",
+          "title": "App Id"
+        }
+      },
+      "required": [
+        "token",
+        "appId"
+      ],
+      "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
+    },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=": {
       "title": "deco-sites/std/functions/vtexConfig.ts",
       "type": "object",
@@ -4229,6 +4278,22 @@
         }
       }
     },
+    "JGxpdmUvYWNjb3VudHMvc3R1Yi50cw==": {
+      "title": "$live/accounts/stub.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/accounts/stub.ts"
+          ],
+          "default": "$live/accounts/stub.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMvdm5kYS50cw==": {
       "title": "deco-sites/std/accounts/vnda.ts",
       "type": "object",
@@ -4247,27 +4312,6 @@
             "deco-sites/std/accounts/vnda.ts"
           ],
           "default": "deco-sites/std/accounts/vnda.ts"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMveW91clZpZXdzLnRz": {
-      "title": "deco-sites/std/accounts/yourViews.ts",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/accounts/yourViews.ts"
-          ],
-          "default": "deco-sites/std/accounts/yourViews.ts"
         }
       }
     },
@@ -4331,6 +4375,27 @@
             "deco-sites/std/accounts/occ.ts"
           ],
           "default": "deco-sites/std/accounts/occ.ts"
+        }
+      }
+    },
+    "JGxpdmUvbG9hZGVycy93aXRoRXh0ZW5zaW9ucy50cw==": {
+      "title": "$live/loaders/withExtensions.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd2l0aEV4dGVuc2lvbnMudHM=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/loaders/withExtensions.ts"
+          ],
+          "default": "$live/loaders/withExtensions.ts"
         }
       }
     },
@@ -4946,27 +5011,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnWW91clZpZXdzLmdsb2JhbC50c3g=": {
-      "title": "deco-sites/std/sections/configYourViews.global.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/configYourViews.global.tsx"
-          ],
-          "default": "deco-sites/std/sections/configYourViews.global.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPLnRzeA==": {
       "title": "deco-sites/std/sections/SEO.tsx",
       "type": "object",
@@ -5319,6 +5363,48 @@
         }
       }
     },
+    "JGxpdmUvZXh0ZW5zaW9ucy9jb21wb3NpdGUudHM=": {
+      "title": "$live/extensions/composite.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2V4dGVuc2lvbnMvY29tcG9zaXRlLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/extensions/composite.ts"
+          ],
+          "default": "$live/extensions/composite.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZXh0ZW5zaW9ucy95b3VyVmlld3MudHM=": {
+      "title": "deco-sites/std/extensions/yourViews.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/extensions/yourViews.ts"
+          ],
+          "default": "deco-sites/std/extensions/yourViews.ts"
+        }
+      }
+    },
     "ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig": {
       "type": "object",
       "properties": {
@@ -5419,10 +5505,10 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMvdm5kYS50cw=="
+          "$ref": "#/definitions/JGxpdmUvYWNjb3VudHMvc3R1Yi50cw=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMveW91clZpZXdzLnRz"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMvdm5kYS50cw=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMvdnRleC50cw=="
@@ -5432,6 +5518,17 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMvb2NjLnRz"
+        }
+      ]
+    },
+    "loaders": {
+      "title": "loaders",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/JGxpdmUvbG9hZGVycy93aXRoRXh0ZW5zaW9ucy50cw=="
         }
       ]
     },
@@ -5562,9 +5659,6 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnWW91clZpZXdzLmdsb2JhbC50c3g="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPLnRzeA=="
         },
         {
@@ -5633,6 +5727,20 @@
         }
       ]
     },
+    "extensions": {
+      "title": "extensions",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/JGxpdmUvZXh0ZW5zaW9ucy9jb21wb3NpdGUudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZXh0ZW5zaW9ucy95b3VyVmlld3MudHM="
+        }
+      ]
+    },
     "state": {
       "type": "object",
       "required": [
@@ -5664,6 +5772,9 @@
             "$ref": "#/root/accounts"
           },
           {
+            "$ref": "#/root/loaders"
+          },
+          {
             "$ref": "#/root/islands"
           },
           {
@@ -5680,6 +5791,9 @@
           },
           {
             "$ref": "#/root/flags"
+          },
+          {
+            "$ref": "#/root/extensions"
           }
         ]
       }
