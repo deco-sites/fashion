@@ -3845,6 +3845,46 @@
       "type": "object",
       "properties": {
         "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "content"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "footer"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "header"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "analytics"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "design-system"
+                  ]
+                }
+              ],
+              "type": "string"
+            }
+          ],
           "type": "string",
           "title": "Name"
         },
@@ -3859,29 +3899,51 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
-    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots": {
-      "type": "string",
-      "enum": [
-        "content"
-      ],
-      "title": "WellKnownSlots"
-    },
-    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots|f4e2fa6a639dd0d858a2d18a5c9d2890": {
-      "anyOf": [
-        {
-          "type": "string"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots"
-        }
-      ],
-      "title": "WellKnownSlots|f4e2fa6a639dd0d858a2d18a5c9d2890"
-    },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@Props": {
       "type": "object",
       "properties": {
         "name": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots|f4e2fa6a639dd0d858a2d18a5c9d2890",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "content"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "footer"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "header"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "analytics"
+                  ]
+                },
+                {
+                  "type": "string",
+                  "enum": [
+                    "design-system"
+                  ]
+                }
+              ],
+              "type": "string"
+            }
+          ],
+          "type": "string",
           "title": "Name"
         }
       },
