@@ -40,6 +40,8 @@ import * as $live_inspect from "$live/routes/live/inspect.ts";
 import * as $live_meta from "$live/routes/live/_meta.ts";
 import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
+import * as i1$0 from "$live/accounts/stub.ts";
+import * as i2$$$$$0 from "$live/loaders/withExtensions.ts";
 import * as i2$$$$$$0 from "$live/handlers/routesSelection.ts";
 import * as i2$$$$$$1 from "$live/handlers/router.ts";
 import * as i2$$$$$$2 from "$live/handlers/devPage.ts";
@@ -140,6 +142,13 @@ const manifest = {
     "deco-sites/std/sections/configVTEX.global.tsx": i2$$$6,
     "deco-sites/std/sections/SEOPDP.tsx": i2$$$7,
   },
+  "accounts": {
+    "$live/accounts/stub.ts": i1$0,
+    "deco-sites/std/accounts/vnda.ts": i2$$0,
+    "deco-sites/std/accounts/vtex.ts": i2$$1,
+    "deco-sites/std/accounts/shopify.ts": i2$$2,
+    "deco-sites/std/accounts/occ.ts": i2$$3,
+  },
   "loaders": {
     "$live/loaders/withExtensions.ts": i2$$$$$0,
   },
@@ -188,12 +197,6 @@ const manifest = {
     "deco-sites/std/functions/shopifyProductList.ts": i2$15,
     "deco-sites/std/functions/shopifyProductDetailsPage.ts": i2$16,
     "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts": i2$17,
-  },
-  "accounts": {
-    "deco-sites/std/accounts/vnda.ts": i2$$0,
-    "deco-sites/std/accounts/vtex.ts": i2$$1,
-    "deco-sites/std/accounts/shopify.ts": i2$$2,
-    "deco-sites/std/accounts/occ.ts": i2$$3,
   },
   "config": config,
   "baseUrl": import.meta.url,
