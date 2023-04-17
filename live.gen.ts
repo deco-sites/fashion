@@ -45,6 +45,8 @@ import * as i2$$$$1 from "$live/handlers/router.ts";
 import * as i2$$$$2 from "$live/handlers/devPage.ts";
 import * as i2$$$$3 from "$live/handlers/fresh.ts";
 import * as i2$$$$$0 from "$live/pages/LivePage.tsx";
+import * as i1$$$0 from "$live/sections/UseSlot.tsx";
+import * as i1$$$1 from "$live/sections/Slot.tsx";
 import * as i2$$$9 from "$live/sections/PageInclude.tsx";
 import * as i2$$$$$$0 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$1 from "$live/matchers/MatchUserAgent.ts";
@@ -130,6 +132,8 @@ const manifest = {
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$13,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$14,
+    "$live/sections/UseSlot.tsx": i1$$$0,
+    "$live/sections/Slot.tsx": i1$$$1,
     "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,
