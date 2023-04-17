@@ -72,7 +72,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "ListItem",
+          "enum": [
+            "ListItem"
+          ],
           "title": "@type"
         },
         "item": {
@@ -130,7 +132,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "BreadcrumbList",
+          "enum": [
+            "BreadcrumbList"
+          ],
           "title": "@type"
         }
       },
@@ -207,7 +211,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "FilterToggle",
+          "enum": [
+            "FilterToggle"
+          ],
           "title": "@type"
         },
         "values": {
@@ -254,7 +260,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "FilterRange",
+          "enum": [
+            "FilterRange"
+          ],
           "title": "@type"
         },
         "values": {
@@ -296,7 +304,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "ImageObject",
+          "enum": [
+            "ImageObject"
+          ],
           "title": "@type"
         }
       },
@@ -403,7 +413,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "PropertyValue",
+          "enum": [
+            "PropertyValue"
+          ],
           "title": "@type"
         },
         "maxValue": {
@@ -473,7 +485,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "AggregateRating",
+          "enum": [
+            "AggregateRating"
+          ],
           "title": "@type"
         },
         "ratingCount": {
@@ -531,7 +545,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "ProductGroup",
+          "enum": [
+            "ProductGroup"
+          ],
           "title": "@type"
         },
         "hasVariant": {
@@ -618,34 +634,48 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "UnitPriceSpecification",
+          "enum": [
+            "UnitPriceSpecification"
+          ],
           "title": "@type"
         },
         "priceComponentType": {
           "anyOf": [
             {
               "type": "string",
-              "const": "https://schema.org/ActivationFee"
+              "enum": [
+                "https://schema.org/ActivationFee"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/CleaningFee"
+              "enum": [
+                "https://schema.org/CleaningFee"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/DistanceFee"
+              "enum": [
+                "https://schema.org/DistanceFee"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/Downpayment"
+              "enum": [
+                "https://schema.org/Downpayment"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/Installment"
+              "enum": [
+                "https://schema.org/Installment"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/Subscription"
+              "enum": [
+                "https://schema.org/Subscription"
+              ]
             }
           ],
           "type": "string",
@@ -655,27 +685,39 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "https://schema.org/InvoicePrice"
+              "enum": [
+                "https://schema.org/InvoicePrice"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/ListPrice"
+              "enum": [
+                "https://schema.org/ListPrice"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/MinimumAdvertisedPrice"
+              "enum": [
+                "https://schema.org/MinimumAdvertisedPrice"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/MSRP"
+              "enum": [
+                "https://schema.org/MSRP"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/SalePrice"
+              "enum": [
+                "https://schema.org/SalePrice"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/SRP"
+              "enum": [
+                "https://schema.org/SRP"
+              ]
             }
           ],
           "type": "string",
@@ -719,50 +761,72 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "Offer",
+          "enum": [
+            "Offer"
+          ],
           "title": "@type"
         },
         "availability": {
           "anyOf": [
             {
               "type": "string",
-              "const": "https://schema.org/BackOrder"
+              "enum": [
+                "https://schema.org/BackOrder"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/Discontinued"
+              "enum": [
+                "https://schema.org/Discontinued"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/InStock"
+              "enum": [
+                "https://schema.org/InStock"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/InStoreOnly"
+              "enum": [
+                "https://schema.org/InStoreOnly"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/LimitedAvailability"
+              "enum": [
+                "https://schema.org/LimitedAvailability"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/OnlineOnly"
+              "enum": [
+                "https://schema.org/OnlineOnly"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/OutOfStock"
+              "enum": [
+                "https://schema.org/OutOfStock"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/PreOrder"
+              "enum": [
+                "https://schema.org/PreOrder"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/PreSale"
+              "enum": [
+                "https://schema.org/PreSale"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/SoldOut"
+              "enum": [
+                "https://schema.org/SoldOut"
+              ]
             }
           ],
           "type": "string",
@@ -783,19 +847,27 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "https://schema.org/DamagedCondition"
+              "enum": [
+                "https://schema.org/DamagedCondition"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/NewCondition"
+              "enum": [
+                "https://schema.org/NewCondition"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/RefurbishedCondition"
+              "enum": [
+                "https://schema.org/RefurbishedCondition"
+              ]
             },
             {
               "type": "string",
-              "const": "https://schema.org/UsedCondition"
+              "enum": [
+                "https://schema.org/UsedCondition"
+              ]
             }
           ],
           "type": "string",
@@ -852,7 +924,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "AggregateOffer",
+          "enum": [
+            "AggregateOffer"
+          ],
           "title": "@type"
         },
         "highPrice": {
@@ -898,7 +972,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "Review",
+          "enum": [
+            "Review"
+          ],
           "title": "@type"
         },
         "itemReviewed": {
@@ -956,7 +1032,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "Product",
+          "enum": [
+            "Product"
+          ],
           "title": "@type"
         },
         "additionalProperty": {
@@ -1081,7 +1159,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "ProductListingPage",
+          "enum": [
+            "ProductListingPage"
+          ],
           "title": "@type"
         },
         "breadcrumb": {
@@ -1286,15 +1366,21 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "automatic"
+              "enum": [
+                "automatic"
+              ]
             },
             {
               "type": "string",
-              "const": "disabled"
+              "enum": [
+                "disabled"
+              ]
             },
             {
               "type": "string",
-              "const": "enabled"
+              "enum": [
+                "enabled"
+              ]
             }
           ],
           "type": "string",
@@ -1452,19 +1538,27 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "newest"
+              "enum": [
+                "newest"
+              ]
             },
             {
               "type": "string",
-              "const": "oldest"
+              "enum": [
+                "oldest"
+              ]
             },
             {
               "type": "string",
-              "const": "lowest_price"
+              "enum": [
+                "lowest_price"
+              ]
             },
             {
               "type": "string",
-              "const": "highest_price"
+              "enum": [
+                "highest_price"
+              ]
             }
           ],
           "type": "string",
@@ -1490,7 +1584,9 @@
       "properties": {
         "@type": {
           "type": "string",
-          "const": "ProductDetailsPage",
+          "enum": [
+            "ProductDetailsPage"
+          ],
           "title": "@type"
         },
         "breadcrumbList": {
@@ -1856,35 +1952,51 @@
           "anyOf": [
             {
               "type": "string",
-              "const": ""
+              "enum": [
+                ""
+              ]
             },
             {
               "type": "string",
-              "const": "price:desc"
+              "enum": [
+                "price:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "price:asc"
+              "enum": [
+                "price:asc"
+              ]
             },
             {
               "type": "string",
-              "const": "orders:desc"
+              "enum": [
+                "orders:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "name:desc"
+              "enum": [
+                "name:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "name:asc"
+              "enum": [
+                "name:asc"
+              ]
             },
             {
               "type": "string",
-              "const": "release:desc"
+              "enum": [
+                "release:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "discount:desc"
+              "enum": [
+                "discount:desc"
+              ]
             }
           ],
           "type": "string",
@@ -1999,35 +2111,51 @@
           "anyOf": [
             {
               "type": "string",
-              "const": ""
+              "enum": [
+                ""
+              ]
             },
             {
               "type": "string",
-              "const": "price:desc"
+              "enum": [
+                "price:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "price:asc"
+              "enum": [
+                "price:asc"
+              ]
             },
             {
               "type": "string",
-              "const": "orders:desc"
+              "enum": [
+                "orders:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "name:desc"
+              "enum": [
+                "name:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "name:asc"
+              "enum": [
+                "name:asc"
+              ]
             },
             {
               "type": "string",
-              "const": "release:desc"
+              "enum": [
+                "release:desc"
+              ]
             },
             {
               "type": "string",
-              "const": "discount:desc"
+              "enum": [
+                "discount:desc"
+              ]
             }
           ],
           "type": "string",
@@ -2077,37 +2205,53 @@
           "anyOf": [
             {
               "type": "string",
-              "const": ""
+              "enum": [
+                ""
+              ]
             },
             {
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "whosawalsosaw"
+                  "enum": [
+                    "whosawalsosaw"
+                  ]
                 },
                 {
                   "type": "string",
-                  "const": "whosawalsobought"
+                  "enum": [
+                    "whosawalsobought"
+                  ]
                 },
                 {
                   "type": "string",
-                  "const": "whoboughtalsobought"
+                  "enum": [
+                    "whoboughtalsobought"
+                  ]
                 },
                 {
                   "type": "string",
-                  "const": "showtogether"
+                  "enum": [
+                    "showtogether"
+                  ]
                 },
                 {
                   "type": "string",
-                  "const": "accessories"
+                  "enum": [
+                    "accessories"
+                  ]
                 },
                 {
                   "type": "string",
-                  "const": "similars"
+                  "enum": [
+                    "similars"
+                  ]
                 },
                 {
                   "type": "string",
-                  "const": "suggestions"
+                  "enum": [
+                    "suggestions"
+                  ]
                 }
               ],
               "type": "string"
@@ -2429,6 +2573,10 @@
           "type": "string",
           "title": "Name"
         },
+        "extends": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+          "title": "Extends"
+        },
         "sections": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Sections"
@@ -2472,11 +2620,15 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "aside"
+              "enum": [
+                "aside"
+              ]
             },
             {
               "type": "string",
-              "const": "drawer"
+              "enum": [
+                "drawer"
+              ]
             }
           ],
           "type": "string",
@@ -2532,11 +2684,15 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "Instagram"
+              "enum": [
+                "Instagram"
+              ]
             },
             {
               "type": "string",
-              "const": "Facebook"
+              "enum": [
+                "Facebook"
+              ]
             }
           ],
           "type": "string",
@@ -2604,135 +2760,201 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "ChevronLeft"
+              "enum": [
+                "ChevronLeft"
+              ]
             },
             {
               "type": "string",
-              "const": "ChevronRight"
+              "enum": [
+                "ChevronRight"
+              ]
             },
             {
               "type": "string",
-              "const": "ChevronUp"
+              "enum": [
+                "ChevronUp"
+              ]
             },
             {
               "type": "string",
-              "const": "ChevronDown"
+              "enum": [
+                "ChevronDown"
+              ]
             },
             {
               "type": "string",
-              "const": "QuestionMarkCircle"
+              "enum": [
+                "QuestionMarkCircle"
+              ]
             },
             {
               "type": "string",
-              "const": "User"
+              "enum": [
+                "User"
+              ]
             },
             {
               "type": "string",
-              "const": "ShoppingCart"
+              "enum": [
+                "ShoppingCart"
+              ]
             },
             {
               "type": "string",
-              "const": "Bars3"
+              "enum": [
+                "Bars3"
+              ]
             },
             {
               "type": "string",
-              "const": "Heart"
+              "enum": [
+                "Heart"
+              ]
             },
             {
               "type": "string",
-              "const": "MagnifyingGlass"
+              "enum": [
+                "MagnifyingGlass"
+              ]
             },
             {
               "type": "string",
-              "const": "XMark"
+              "enum": [
+                "XMark"
+              ]
             },
             {
               "type": "string",
-              "const": "Plus"
+              "enum": [
+                "Plus"
+              ]
             },
             {
               "type": "string",
-              "const": "Minus"
+              "enum": [
+                "Minus"
+              ]
             },
             {
               "type": "string",
-              "const": "MapPin"
+              "enum": [
+                "MapPin"
+              ]
             },
             {
               "type": "string",
-              "const": "Phone"
+              "enum": [
+                "Phone"
+              ]
             },
             {
               "type": "string",
-              "const": "Elo"
+              "enum": [
+                "Elo"
+              ]
             },
             {
               "type": "string",
-              "const": "Mastercard"
+              "enum": [
+                "Mastercard"
+              ]
             },
             {
               "type": "string",
-              "const": "Visa"
+              "enum": [
+                "Visa"
+              ]
             },
             {
               "type": "string",
-              "const": "Pix"
+              "enum": [
+                "Pix"
+              ]
             },
             {
               "type": "string",
-              "const": "Logo"
+              "enum": [
+                "Logo"
+              ]
             },
             {
               "type": "string",
-              "const": "Facebook"
+              "enum": [
+                "Facebook"
+              ]
             },
             {
               "type": "string",
-              "const": "Instagram"
+              "enum": [
+                "Instagram"
+              ]
             },
             {
               "type": "string",
-              "const": "Tiktok"
+              "enum": [
+                "Tiktok"
+              ]
             },
             {
               "type": "string",
-              "const": "Truck"
+              "enum": [
+                "Truck"
+              ]
             },
             {
               "type": "string",
-              "const": "Discount"
+              "enum": [
+                "Discount"
+              ]
             },
             {
               "type": "string",
-              "const": "Return"
+              "enum": [
+                "Return"
+              ]
             },
             {
               "type": "string",
-              "const": "CreditCard"
+              "enum": [
+                "CreditCard"
+              ]
             },
             {
               "type": "string",
-              "const": "Deco"
+              "enum": [
+                "Deco"
+              ]
             },
             {
               "type": "string",
-              "const": "Discord"
+              "enum": [
+                "Discord"
+              ]
             },
             {
               "type": "string",
-              "const": "Trash"
+              "enum": [
+                "Trash"
+              ]
             },
             {
               "type": "string",
-              "const": "FilterList"
+              "enum": [
+                "FilterList"
+              ]
             },
             {
               "type": "string",
-              "const": "WhatsApp"
+              "enum": [
+                "WhatsApp"
+              ]
             },
             {
               "type": "string",
-              "const": "ArrowsPointingOut"
+              "enum": [
+                "ArrowsPointingOut"
+              ]
             }
           ],
           "type": "string",
@@ -3007,135 +3229,201 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "ChevronLeft"
+              "enum": [
+                "ChevronLeft"
+              ]
             },
             {
               "type": "string",
-              "const": "ChevronRight"
+              "enum": [
+                "ChevronRight"
+              ]
             },
             {
               "type": "string",
-              "const": "ChevronUp"
+              "enum": [
+                "ChevronUp"
+              ]
             },
             {
               "type": "string",
-              "const": "ChevronDown"
+              "enum": [
+                "ChevronDown"
+              ]
             },
             {
               "type": "string",
-              "const": "QuestionMarkCircle"
+              "enum": [
+                "QuestionMarkCircle"
+              ]
             },
             {
               "type": "string",
-              "const": "User"
+              "enum": [
+                "User"
+              ]
             },
             {
               "type": "string",
-              "const": "ShoppingCart"
+              "enum": [
+                "ShoppingCart"
+              ]
             },
             {
               "type": "string",
-              "const": "Bars3"
+              "enum": [
+                "Bars3"
+              ]
             },
             {
               "type": "string",
-              "const": "Heart"
+              "enum": [
+                "Heart"
+              ]
             },
             {
               "type": "string",
-              "const": "MagnifyingGlass"
+              "enum": [
+                "MagnifyingGlass"
+              ]
             },
             {
               "type": "string",
-              "const": "XMark"
+              "enum": [
+                "XMark"
+              ]
             },
             {
               "type": "string",
-              "const": "Plus"
+              "enum": [
+                "Plus"
+              ]
             },
             {
               "type": "string",
-              "const": "Minus"
+              "enum": [
+                "Minus"
+              ]
             },
             {
               "type": "string",
-              "const": "MapPin"
+              "enum": [
+                "MapPin"
+              ]
             },
             {
               "type": "string",
-              "const": "Phone"
+              "enum": [
+                "Phone"
+              ]
             },
             {
               "type": "string",
-              "const": "Elo"
+              "enum": [
+                "Elo"
+              ]
             },
             {
               "type": "string",
-              "const": "Mastercard"
+              "enum": [
+                "Mastercard"
+              ]
             },
             {
               "type": "string",
-              "const": "Visa"
+              "enum": [
+                "Visa"
+              ]
             },
             {
               "type": "string",
-              "const": "Pix"
+              "enum": [
+                "Pix"
+              ]
             },
             {
               "type": "string",
-              "const": "Logo"
+              "enum": [
+                "Logo"
+              ]
             },
             {
               "type": "string",
-              "const": "Facebook"
+              "enum": [
+                "Facebook"
+              ]
             },
             {
               "type": "string",
-              "const": "Instagram"
+              "enum": [
+                "Instagram"
+              ]
             },
             {
               "type": "string",
-              "const": "Tiktok"
+              "enum": [
+                "Tiktok"
+              ]
             },
             {
               "type": "string",
-              "const": "Truck"
+              "enum": [
+                "Truck"
+              ]
             },
             {
               "type": "string",
-              "const": "Discount"
+              "enum": [
+                "Discount"
+              ]
             },
             {
               "type": "string",
-              "const": "Return"
+              "enum": [
+                "Return"
+              ]
             },
             {
               "type": "string",
-              "const": "CreditCard"
+              "enum": [
+                "CreditCard"
+              ]
             },
             {
               "type": "string",
-              "const": "Deco"
+              "enum": [
+                "Deco"
+              ]
             },
             {
               "type": "string",
-              "const": "Discord"
+              "enum": [
+                "Discord"
+              ]
             },
             {
               "type": "string",
-              "const": "Trash"
+              "enum": [
+                "Trash"
+              ]
             },
             {
               "type": "string",
-              "const": "FilterList"
+              "enum": [
+                "FilterList"
+              ]
             },
             {
               "type": "string",
-              "const": "WhatsApp"
+              "enum": [
+                "WhatsApp"
+              ]
             },
             {
               "type": "string",
-              "const": "ArrowsPointingOut"
+              "enum": [
+                "ArrowsPointingOut"
+              ]
             }
           ],
           "type": "string",
@@ -3372,15 +3660,21 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "front-back"
+              "enum": [
+                "front-back"
+              ]
             },
             {
               "type": "string",
-              "const": "slider"
+              "enum": [
+                "slider"
+              ]
             },
             {
               "type": "string",
-              "const": "auto"
+              "enum": [
+                "auto"
+              ]
             }
           ],
           "type": "string",
@@ -3546,6 +3840,55 @@
       },
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerCarousel.tsx@Props"
+    },
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "sections": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "title": "Sections"
+        }
+      },
+      "required": [
+        "name",
+        "sections"
+      ],
+      "title": "deco-cx/live/sections/UseSlot.tsx@Props"
+    },
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots": {
+      "type": "string",
+      "enum": [
+        "content"
+      ],
+      "title": "WellKnownSlots"
+    },
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots|f4e2fa6a639dd0d858a2d18a5c9d2890": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots"
+        }
+      ],
+      "title": "WellKnownSlots|f4e2fa6a639dd0d858a2d18a5c9d2890"
+    },
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@WellKnownSlots|f4e2fa6a639dd0d858a2d18a5c9d2890",
+          "title": "Name"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "deco-cx/live/sections/Slot.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
@@ -3776,11 +4119,15 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "or"
+              "enum": [
+                "or"
+              ]
             },
             {
               "type": "string",
-              "const": "and"
+              "enum": [
+                "and"
+              ]
             }
           ],
           "type": "string",
@@ -3817,11 +4164,15 @@
           "anyOf": [
             {
               "type": "string",
-              "const": "production"
+              "enum": [
+                "production"
+              ]
             },
             {
               "type": "string",
-              "const": "development"
+              "enum": [
+                "development"
+              ]
             }
           ],
           "type": "string",
@@ -4925,6 +5276,48 @@
         }
       }
     },
+    "JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g=": {
+      "title": "$live/sections/UseSlot.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/sections/UseSlot.tsx"
+          ],
+          "default": "$live/sections/UseSlot.tsx"
+        }
+      }
+    },
+    "JGxpdmUvc2VjdGlvbnMvU2xvdC50c3g=": {
+      "title": "$live/sections/Slot.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/sections/Slot.tsx"
+          ],
+          "default": "$live/sections/Slot.tsx"
+        }
+      }
+    },
     "JGxpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4": {
       "title": "$live/sections/PageInclude.tsx",
       "type": "object",
@@ -5557,6 +5950,12 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvU2xvdC50c3g="
         },
         {
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvUGFnZUluY2x1ZGUudHN4"
