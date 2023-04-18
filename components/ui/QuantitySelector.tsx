@@ -10,7 +10,7 @@ interface Props {
 const QUANTITY_MAX_VALUE = 100;
 
 // Remove default browser behavior: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
-// TODO: Figure out how to add it via twind config.
+// TODO: Figure out how to add it via tailwind config.
 const innerStyle = `
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

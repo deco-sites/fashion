@@ -38,35 +38,35 @@ const pallet = {
 module.exports = {
   content: ["./**/*.tsx"],
   theme: {
-    colors: pallet,
-    textColor: pallet,
-    borderColor: pallet,
-    outline: Object.fromEntries(
-      Object.entries(pallet).map((
-        [key, value],
-      ) => [key, [`1px solid ${value}`, "1px"]]),
-    ),
-    fontSize: {
-      "heading-1": ["56px", "67.2px"],
-      "heading-2": ["24px", "28.8px"],
-      "heading-3": ["20px", "24px"],
-      "menu": ["16px", "20px"],
-      "button": ["14px", "18px"],
-      "body": ["16px", "20px"],
-      "caption": ["13px", "16px"],
-      "list-price": ["10px", "20px"],
-    },
-    fontWeight: {
-      "heading-1": "500",
-      "heading-2": "500",
-      "heading-3": "500",
-      "menu": "400",
-      "button": "700",
-      "body": "400",
-      "caption": "400",
-      "list-price": "400",
-    },
     extend: {
+      colors: pallet,
+      textColor: pallet,
+      borderColor: pallet,
+      outline: Object.fromEntries(
+        Object.entries(pallet).map((
+          [key, value],
+        ) => [key, [`1px solid ${value}`, "1px"]]),
+      ),
+      fontSize: {
+        "heading-1": ["56px", "67.2px"],
+        "heading-2": ["24px", "28.8px"],
+        "heading-3": ["20px", "24px"],
+        "menu": ["16px", "20px"],
+        "button": ["14px", "18px"],
+        "body": ["16px", "20px"],
+        "caption": ["13px", "16px"],
+        "list-price": ["10px", "20px"],
+      },
+      fontWeight: {
+        "heading-1": "500",
+        "heading-2": "500",
+        "heading-3": "500",
+        "menu": "400",
+        "button": "700",
+        "body": "400",
+        "caption": "400",
+        "list-price": "400",
+      },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
         "slide-right": "slide-right-frame 0.4s ease normal",
