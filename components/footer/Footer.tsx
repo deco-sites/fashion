@@ -29,7 +29,7 @@ function SectionItem({ item }: { item: Item }) {
     <Text variant="caption" tone="primary-content">
       {isIcon(item)
         ? (
-          <div class="border-base-100 border-1 py-1.5 px-2.5">
+          <div class="border-base-100 border border-solid py-1.5 px-2.5">
             <Icon
               id={item.icon}
               width={25}
@@ -62,9 +62,9 @@ export interface Props {
 
 function Footer({ sections = [] }: Props) {
   return (
-    <footer class="w-full bg-primary flex flex-col divide-y-1 divide-primary-content">
+    <footer class="w-full bg-primary flex flex-col divide-y divide-primary-content">
       <div>
-        <Container class="w-full flex flex-col divide-y-1 divide-primary-content">
+        <Container class="w-full flex flex-col divide-y divide-primary-content">
           <FooterContainer>
             <Newsletter />
           </FooterContainer>

@@ -10,7 +10,7 @@ interface Props
 
 export default function SearchTermList({ terms, title, ...ulProps }: Props) {
   return (
-    <div class="flex flex-col gap-6 md:(w-[15.25rem] max-w-[15.25rem])">
+    <div class="flex flex-col gap-6 md:w-[15.25rem] md:max-w-[15.25rem]">
       <Text variant="heading-3" role="heading" aria-level={3}>{title}</Text>
       <ul {...ulProps} class="flex flex-col gap-6">
         {terms.map(({ term }) => (

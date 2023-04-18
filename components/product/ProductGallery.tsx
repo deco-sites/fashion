@@ -9,19 +9,11 @@ export interface Columns {
 
 export interface Props {
   products: Product[] | null;
-  /**
-   * @description Number of products per line on grid
-   */
-  columns: Columns;
 }
 
-function ProductGallery({ columns, products }: Props) {
-  const { desktop = 4, mobile = 2 } = columns ?? {};
-
+function ProductGallery({ products }: Props) {
   return (
-    <div
-      class={`grid grid-cols-${mobile} gap-2 items-center sm:(grid-cols-${desktop} gap-10)`}
-    >
+    <div class="grid grid-cols-2 gap-2 items-center sm:grid-cols-4 sm:gap-10">
       {products?.map((product, index) => (
         <ProductCard product={product} preload={index === 0} />
       ))}

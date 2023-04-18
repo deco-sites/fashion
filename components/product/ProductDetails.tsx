@@ -186,16 +186,16 @@ function Details({
       <>
         <div
           id={id}
-          class={`grid grid-cols-1 gap-4 sm:(grid-cols-[max-content_40vw_40vw] grid-rows-1 justify-center max-h-[calc(${
+          class={`grid grid-cols-1 gap-4 sm:grid-cols-[max-content_40vw_40vw] sm:grid-rows-1 sm:justify-center sm:max-h-[calc(${
             (HEIGHT / WIDTH).toFixed(2)
-          }*40vw)])`}
+          }*40vw)]`}
         >
           {/* Image Slider */}
-          <div class="relative sm:(col-start-2 col-span-1 row-start-1)">
+          <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
             <Slider class="gap-6">
               {images.map((img, index) => (
                 <Image
-                  class={`scroll-snap-center min-w-[100vw] sm:(min-w-[40vw])`}
+                  class="snap-center min-w-[100vw] sm:min-w-[40vw]"
                   sizes="(max-width: 640px) 100vw, 40vw"
                   style={{ aspectRatio: ASPECT_RATIO }}
                   src={img.url!}
@@ -230,11 +230,11 @@ function Details({
           </div>
 
           {/* Dots */}
-          <SliderDots class="gap-2 override:(justify-start) overflow-auto px-4 sm:(px-0 flex-col col-start-1 col-span-1 row-start-1)">
+          <SliderDots class="gap-2 override:justify-start overflow-auto px-4 sm:px-0 flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
             {images.map((img, _) => (
               <Image
                 style={{ aspectRatio: ASPECT_RATIO }}
-                class="group-disabled:(border-base-300) border rounded min-w-[63px] sm:min-w-[100px]"
+                class="group-disabled:border-base-300 border rounded min-w-[63px] sm:min-w-[100px]"
                 width={63}
                 height={87.5}
                 src={img.url!}
@@ -244,7 +244,7 @@ function Details({
           </SliderDots>
 
           {/* Product Info */}
-          <div class="px-4 sm:(pr-0 pl-6 col-start-3 col-span-1 row-start-1)">
+          <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1">
             <ProductInfo page={page} />
           </div>
         </div>
@@ -260,12 +260,12 @@ function Details({
    * reached causing a scrollbar to be rendered.
    */
   return (
-    <div class="grid grid-cols-1 gap-4 sm:(grid-cols-[50vw_25vw] grid-rows-1 justify-center)">
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-[50vw_25vw] sm:grid-rows-1 sm:justify-center">
       {/* Image slider */}
       <Slider class="gap-6">
         {[images[0], images[1] ?? images[0]].map((img, index) => (
           <Image
-            class={`scroll-snap-center min-w-[100vw] sm:(min-w-[24vw])`}
+            class="snap-center min-w-[100vw] sm:min-w-[24vw]"
             sizes="(max-width: 640px) 100vw, 24vw"
             style={{ aspectRatio: ASPECT_RATIO }}
             src={img.url!}
@@ -280,7 +280,7 @@ function Details({
       </Slider>
 
       {/* Product Info */}
-      <div class="px-4 sm:(pr-0 pl-6)">
+      <div class="px-4 sm:pr-0 sm:pl-6">
         <ProductInfo page={page} />
       </div>
     </div>

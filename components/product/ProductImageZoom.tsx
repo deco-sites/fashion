@@ -53,7 +53,7 @@ function ProductImageZoom({ images, width, height }: Props) {
               />
             ))}
           </Slider>
-          <div class="absolute left-8 top-[50vh]  bg-base-300 rounded-full border-base-200 border">
+          <div class="absolute left-8 top-[50vh] bg-base-300 rounded-full border-base-200 border">
             <Button variant="icon" data-slide="prev" aria-label="Previous">
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
             </Button>

@@ -30,7 +30,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="flex border-1 border-base-200">
+    <div class="flex border border-solid border-base-200">
       <Button
         class="h-9 w-9"
         variant="icon"

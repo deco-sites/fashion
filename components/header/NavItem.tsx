@@ -15,10 +15,7 @@ function NavItem({ item }: { item: INavItem }) {
   return (
     <li class="group flex items-center">
       <a href={href} class="px-4 py-3">
-        <Text
-          class="group-hover:border-black border-solid border-b border-white"
-          variant="menu"
-        >
+        <Text class="group-hover:underline" variant="menu">
           {label}
         </Text>
       </a>
@@ -26,8 +23,8 @@ function NavItem({ item }: { item: INavItem }) {
       {children && children.length > 0 &&
         (
           <div
-            class={`fixed hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t-1 border-b-2 border-base-200 w-screen mt-[${headerHeight}]`}
-            style={{ top: "0px", left: "0px" }}
+            class="fixed hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
+            style={{ top: "0px", left: "0px", marginTop: headerHeight }}
           >
             {image?.src && (
               <Image
