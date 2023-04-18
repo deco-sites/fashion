@@ -1,4 +1,4 @@
-import { Color } from "https://denopkg.com/tlgimenes/color@9176dca/mod.ts";
+import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 
 import { Head } from "$fresh/runtime.ts";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
