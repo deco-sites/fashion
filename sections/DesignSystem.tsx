@@ -1,3 +1,7 @@
+/** 
+ * Theme generator inspired by Daisy UI: 
+ * https://github.com/saadeghi/daisyui/blob/37bca23444bc9e4d304362c14b7088f9a08f1c74/src/docs/src/routes/theme-generator.svelte
+ **/
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 
 import { Head } from "$fresh/runtime.ts";
