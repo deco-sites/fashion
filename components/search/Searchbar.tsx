@@ -106,7 +106,7 @@ function Searchbar({
         <form
           id="searchbar"
           action={action}
-          class="flex-grow flex gap-3 px-3 py-2 border border-default"
+          class="flex-grow flex gap-3 px-3 py-2 border border-base-200"
         >
           <Button
             variant="icon"
@@ -115,7 +115,7 @@ function Searchbar({
             tabIndex={-1}
           >
             <Icon
-              class="text-subdued"
+              class="text-base-300"
               id="MagnifyingGlass"
               width={20}
               height={20}
@@ -158,12 +158,12 @@ function Searchbar({
               setSearch("");
             }}
           >
-            <Text variant="caption" tone="default">limpar</Text>
+            <Text variant="caption">limpar</Text>
           </button>
         </form>
         {variant === "desktop" && <CloseButton />}
       </div>
-      <div class="flex flex-col gap-6 divide-y divide-default mt-6 empty:mt-0 md:(flex-row divide-y-0)">
+      <div class="flex flex-col gap-6 divide-y divide-base-200 mt-6 empty:mt-0 md:(flex-row divide-y-0)">
         {searches && searches.length > 0 && !hasSuggestions && (
           <SearchTermList title="Mais buscados" terms={searches} />
         )}
@@ -184,7 +184,7 @@ function Searchbar({
             >
               Nenhum resultado encontrado
             </Text>
-            <Text variant="body" tone="subdued" class="text-center">
+            <Text variant="body" tone="base-300" class="text-center">
               Vamos tentar de outro jeito? Verifique a ortografia ou use um
               termo diferente
             </Text>

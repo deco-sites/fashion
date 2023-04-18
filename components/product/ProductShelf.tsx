@@ -50,14 +50,14 @@ function ProductShelf({
 
       <>
         <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-          <div class="absolute right-1/2 bg-interactive-inverse rounded-full border-default border">
+          <div class="absolute right-1/2 bg-base-100 rounded-full border-base-content border">
             <Button variant="icon" data-slide="prev" aria-label="Previous item">
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
             </Button>
           </div>
         </div>
         <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-          <div class="absolute left-1/2 bg-interactive-inverse rounded-full border-default border">
+          <div class="absolute left-1/2 bg-base-100 rounded-full border-base-content border">
             <Button variant="icon" data-slide="next" aria-label="Next item">
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
             </Button>

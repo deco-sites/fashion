@@ -50,12 +50,12 @@ function BannerUI({ banner }: { banner: Banner }) {
 
       <Container class="flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
         <h1>
-          <Text variant="heading-1" tone="default-inverse">
+          <Text variant="heading-1" tone="base-100">
             {title}
           </Text>
         </h1>
         <h2>
-          <Text variant="heading-3" tone="default-inverse">
+          <Text variant="heading-3" tone="base-100">
             {subtitle}
           </Text>
         </h2>

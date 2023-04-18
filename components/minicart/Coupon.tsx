@@ -32,7 +32,7 @@ function Coupon() {
         <Button
           class="underline text-caption font-caption"
           onClick={toggleInput}
-          variant="icon"
+          variant="ghost"
         >
           {coupon || "Adicionar"}
         </Button>

@@ -79,11 +79,11 @@ function MenuItem({ item, level = 0 }: { item: INavItem; level?: number }) {
 function Menu({ items }: Props) {
   return (
     <>
-      <ul class="px-4 flex-grow flex flex-col divide-y divide-default">
+      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200">
         {items.map((item) => <MenuItem item={item} />)}
       </ul>
 
-      <ul class="flex flex-col py-2 bg-hover">
+      <ul class="flex flex-col py-2 bg-base-300">
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"

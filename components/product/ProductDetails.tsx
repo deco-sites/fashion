@@ -78,7 +78,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
-          <Text tone="subdued" variant="caption">
+          <Text tone="base-300" variant="caption">
             Cod. {gtin}
           </Text>
         </div>
@@ -91,16 +91,16 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         <div class="flex flex-row gap-2 items-center">
           <Text
             class="line-through"
-            tone="subdued"
+            tone="base-300"
             variant="list-price"
           >
             {formatPrice(listPrice, offers!.priceCurrency!)}
           </Text>
-          <Text tone="price" variant="heading-3">
+          <Text tone="secondary" variant="heading-3">
             {formatPrice(price, offers!.priceCurrency!)}
           </Text>
         </div>
-        <Text tone="subdued" variant="caption">
+        <Text tone="base-300" variant="caption">
           {installments}
         </Text>
       </div>
@@ -209,18 +209,18 @@ function Details({
               ))}
             </Slider>
 
-            <div class="absolute left-2 top-1/2  bg-interactive-inverse rounded-full border-default border">
+            <div class="absolute left-2 top-1/2  bg-base-100 rounded-full border-base-200 border">
               <Button variant="icon" data-slide="prev" aria-label="Previous">
                 <Icon size={20} id="ChevronLeft" strokeWidth={3} />
               </Button>
             </div>
-            <div class="absolute right-2 top-1/2 bg-interactive-inverse rounded-full border-default border">
+            <div class="absolute right-2 top-1/2 bg-base-100 rounded-full border-base-200 border">
               <Button variant="icon" data-slide="next" aria-label="Next">
                 <Icon size={20} id="ChevronRight" strokeWidth={3} />
               </Button>
             </div>
 
-            <div class="absolute top-2 right-2 bg-interactive-inverse rounded-full">
+            <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <ProductImageZoom
                 images={images}
                 width={1280}
@@ -234,7 +234,7 @@ function Details({
             {images.map((img, _) => (
               <Image
                 style={{ aspectRatio: ASPECT_RATIO }}
-                class="group-disabled:(border-interactive) border rounded min-w-[63px] sm:min-w-[100px]"
+                class="group-disabled:(border-base-300) border rounded min-w-[63px] sm:min-w-[100px]"
                 width={63}
                 height={87.5}
                 src={img.url!}

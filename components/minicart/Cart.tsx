@@ -32,7 +32,7 @@ function Cart() {
       <div class="flex flex-col justify-center items-center h-full gap-6">
         <Text variant="heading-2">Sua sacola está vazia</Text>
         <Button
-          variant="secondary"
+          variant="outline"
           onClick={() => {
             displayCart.value = false;
           }}
@@ -60,7 +60,7 @@ function Cart() {
       {/* Cart Footer */}
       <footer>
         {/* Subtotal */}
-        <div class="border-t-1 border-default py-4 flex flex-col gap-4">
+        <div class="border-t-1 border-base-200 py-4 flex flex-col gap-4">
           {discounts?.value && (
             <div class="flex justify-between items-center px-4">
               <Text variant="caption">Descontos</Text>
@@ -73,14 +73,14 @@ function Cart() {
         </div>
         {/* Total */}
         {total?.value && (
-          <div class="border-t-1 border-default pt-4 flex flex-col justify-end items-end gap-2 mx-4">
+          <div class="border-t-1 border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
             <div class="flex justify-between items-center w-full">
               <Text variant="body">Total</Text>
               <Text variant="heading-3">
                 {formatPrice(total.value / 100, currencyCode!, locale)}
               </Text>
             </div>
-            <Text tone="subdued" variant="caption">
+            <Text tone="base-300" variant="caption">
               Taxas e fretes serão calculados no checkout
             </Text>
           </div>
