@@ -289,15 +289,6 @@ const icons = [
   "ArrowsPointingOut",
 ] as const;
 
-// export const preview = async (...args) => {
-//   const json = await fetch("http://localhost:8000/?asJson").then((res) =>
-//     res.json()
-//   );
-//   const pageId = json.page.metadata.id;
-
-//   console.log("Im here", Deno.inspect(args, { colors: true, depth: 2 }));
-// };
-
 export function Preview(props: Props) {
   return (
     <>
