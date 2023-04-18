@@ -62,11 +62,118 @@
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing": {
       "title": "Thing"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ListItem": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject": {
       "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing"
+        }
+      ],
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "ImageObject",
+          "title": "@type"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "title": "ImageObject"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject"
+      },
+      "title": "ImageObject[]"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "@id"
+        },
+        "additionalType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Additional Type"
+        },
+        "alternateName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alternate Name"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "disambiguatingDescription": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Disambiguating Description"
+        },
+        "identifier": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Identifier"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject[]",
+          "title": "Image"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Name"
+        },
+        "sameAs": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Same As"
+        },
+        "subjectOf": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subject Of"
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Url"
+        }
+      },
+      "required": [],
+      "title": "omitQHR5cGU=Thing"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ListItem": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
         }
       ],
       "properties": {
@@ -101,7 +208,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
         }
       ],
       "properties": {
@@ -248,7 +355,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterBase"
         }
       ],
       "properties": {
@@ -285,113 +392,6 @@
         "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@FilterRange|FilterToggle"
       },
       "title": "FilterRange|FilterToggle[]"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing"
-        }
-      ],
-      "properties": {
-        "@type": {
-          "type": "string",
-          "const": "ImageObject",
-          "title": "@type"
-        }
-      },
-      "required": [
-        "@type"
-      ],
-      "title": "ImageObject"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject"
-      },
-      "title": "ImageObject[]"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing": {
-      "type": "object",
-      "properties": {
-        "@id": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "@id"
-        },
-        "additionalType": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Additional Type"
-        },
-        "alternateName": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Alternate Name"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "disambiguatingDescription": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Disambiguating Description"
-        },
-        "identifier": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Identifier"
-        },
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ImageObject[]",
-          "title": "Image"
-        },
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Name"
-        },
-        "sameAs": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Same As"
-        },
-        "subjectOf": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Subject Of"
-        },
-        "url": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Url"
-        }
-      },
-      "required": [],
-      "title": "omitQHR5cGU=Thing"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue": {
       "type": "object",
@@ -525,7 +525,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
         }
       ],
       "properties": {
@@ -543,10 +543,7 @@
           "title": "Product Group I D"
         },
         "additionalProperty": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue"
-          },
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@PropertyValue[]",
           "title": "Additional Property"
         },
         "model": {
@@ -583,7 +580,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
         }
       ],
       "properties": {
@@ -713,7 +710,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
         }
       ],
       "properties": {
@@ -892,7 +889,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@omitQHR5cGU=Thing"
         }
       ],
       "properties": {
@@ -5551,26 +5548,30 @@
           "type": "object",
           "additionalProperties": {
             "$ref": "#/definitions/Resolvable"
-          }
+          },
+          "description": "Configure your loaders global state."
         }
       },
       "required": [
         "state"
       ],
-      "title": "deco-cx/live/routes/_middleware.ts@MiddlewareConfig"
+      "title": "deco-cx/live/routes/_middleware.ts@MiddlewareConfig",
+      "description": "Global configurations for ./routes/_middleware.ts route"
     },
     "ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint": {
       "type": "object",
       "properties": {
         "handler": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
+          "description": "configure how to handle requests.",
           "title": "Handler"
         }
       },
       "required": [
         "handler"
       ],
-      "title": "deco-cx/live/routes/[...catchall].tsx@Entrypoint"
+      "title": "deco-cx/live/routes/[...catchall].tsx@Entrypoint",
+      "description": "Site entrypoint, configure your audiences and routes."
     }
   },
   "root": {
@@ -5857,7 +5858,7 @@
         }
       ]
     },
-    "state": {
+    "entrypoint": {
       "type": "object",
       "required": [
         "./routes/_middleware.ts",
@@ -5878,7 +5879,14 @@
             }
           ]
         }
-      },
+      }
+    },
+    "state": {
+      "allOf": [
+        {
+          "$ref": "#/root/entrypoint"
+        }
+      ],
       "additionalProperties": {
         "anyOf": [
           {
