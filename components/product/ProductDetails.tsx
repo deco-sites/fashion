@@ -230,7 +230,7 @@ function Details({
           </div>
 
           {/* Dots */}
-          <SliderDots class="gap-2 override:justify-start overflow-auto px-4 sm:px-0 flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
+          <SliderDots class="gap-2 sm:justify-start overflow-auto px-4 sm:px-0 flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
             {images.map((img, _) => (
               <Image
                 style={{ aspectRatio: ASPECT_RATIO }}

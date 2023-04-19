@@ -19,7 +19,7 @@ function ProductImageZoom({ images, width, height }: Props) {
   return (
     <>
       <Button
-        class="hidden sm:inline-flex override:cursor-zoom-in"
+        class="hidden sm:inline-flex cursor-zoom-in"
         variant="icon"
         onClick={() => open.value = true}
       >
