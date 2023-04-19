@@ -168,7 +168,7 @@ const THEME_DEFAULT = {
   "info": "#F0F5FF",
 };
 
-export const createPallet = (
+export const createPalette = (
   theme: Colors = THEME_DEFAULT,
 ): Required<Colors> => ({
   ...theme,
@@ -220,7 +220,7 @@ export const createPallet = (
  * }
  */
 function Section({ colors }: Props) {
-  const pallet = createPallet({ ...THEME_DEFAULT, ...colors });
+  const palette = createPalette({ ...THEME_DEFAULT, ...colors });
 
   return (
     <Head>
@@ -228,7 +228,7 @@ function Section({ colors }: Props) {
         id="__DECO_DESIGN_SYSTEM"
         dangerouslySetInnerHTML={{
           __html: `:root {${
-            Object.entries(pallet)
+            Object.entries(palette)
               .map(([key, value]) => `--color-${key}: ${value}`)
               .join("; ")
           }}`,
