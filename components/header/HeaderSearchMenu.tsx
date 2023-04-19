@@ -1,9 +1,9 @@
 import { lazy, Suspense } from "preact/compat";
 
-import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import Loading from "deco-sites/fashion/components/ui/Loading.tsx";
 import { headerHeight } from "deco-sites/fashion/components/header/constants.ts";
+import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
 
 const Searchbar = lazy(() =>
   import("deco-sites/fashion/components/search/Searchbar.tsx")
@@ -21,8 +21,9 @@ export default function HeaderSearchMenu({ searchbar }: Props) {
   return (
     <div
       class={`${
-        open ? "block border-t-1 border-base-200 shadow" : "hidden"
-      } absolute left-0 w-screen z-50 bg-white top-[${headerHeight}]`}
+        open ? "block border-y border-base-200 shadow" : "hidden"
+      } absolute left-0 top-0 w-screen z-50 bg-base-100`}
+      style={{ marginTop: headerHeight }}
     >
       {open && (
         <Suspense fallback={<Loading />}>

@@ -30,7 +30,7 @@ function Coupon() {
       <Text variant="caption">Cupom de desconto</Text>
       {!displayInput.value && (
         <Button
-          class="underline text-caption font-caption"
+          class="underline"
           onClick={toggleInput}
           variant="ghost"
         >

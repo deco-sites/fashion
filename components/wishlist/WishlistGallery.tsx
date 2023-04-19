@@ -9,7 +9,7 @@ function WishlistGallery(props: Props) {
 
   if (isEmpty) {
     return (
-      <Container class="override:(mx-4 sm:mx-auto)">
+      <Container class="mx-4 sm:mx-auto">
         <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
           <Text variant="heading-2">
             Your wishlist is empty

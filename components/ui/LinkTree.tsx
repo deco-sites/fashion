@@ -50,7 +50,7 @@ function LinkTree({
             <li class="w-full">
               <a
                 href={link.href}
-                class="text-base-100 text-caption rounded-3xl text-center w-full flex justify-center items-center min-h-[36px] hover:(bg-base-100 text-base-content) border border-base-100"
+                class="text-base-100 text-caption rounded-3xl text-center w-full flex justify-center items-center min-h-[36px] hover:bg-base-100 hover:text-base-content border border-base-100"
               >
                 {link.label}
               </a>
@@ -64,7 +64,7 @@ function LinkTree({
             <li>
               <a
                 href={link.href}
-                class="text-base-100 block rounded-full hover:(text-base-content bg-base-100) p-2"
+                class="text-base-100 block rounded-full hover:text-base-content hover:bg-base-100 p-2"
               >
                 <Icon id={link.label} size={36} strokeWidth={0.8} />
               </a>

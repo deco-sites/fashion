@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,sections/,functions/ dev.ts",
+    "start": "deno run -A --watch=sections/,functions/ dev.ts",
+    "tailwindcss": "deno run -A npm:tailwindcss@3.3.1 -i ./tailwind.css -o ./static/main.css --minify",
     "component": "deno eval 'import \"$live/scripts/component.ts\"'",
     "check": "deno fmt && deno lint && deno check dev.ts main.ts"
   },

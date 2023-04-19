@@ -12,7 +12,7 @@ function Item({ name, item }: { name?: string; item?: string }) {
   }
 
   return (
-    <li class="whitespace-nowrap overflow-hidden overflow-ellipsis">
+    <li class="whitespace-nowrap overflow-hidden text-ellipsis">
       <a href={item} class="hover:underline">
         <Text variant="caption">
           {name}

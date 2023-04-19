@@ -8,7 +8,6 @@ import {
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
-import { animation, keyframes, tw } from "twind/css";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Banner {
@@ -105,7 +104,8 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
             syntax: '<percentage>';
             inherits: false;
             initial-value: 0%;
-          }`,
+          }
+          `,
         }}
       >
       </style>
@@ -113,23 +113,8 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
         {images?.map((_) => (
           <div class="py-6">
             <div
-              class={tw`group-disabled:${
-                animation(
-                  `${interval}s ease-out 1 forwards`,
-                  keyframes`
-                          from: {
-                            --dot-progress: 0%;
-                          }
-                          to {
-                            --dot-progress: 100%;
-                          }
-                        `,
-                )
-              } w-16 sm:w-20 h-0.5 rounded`}
-              style={{
-                background:
-                  "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
-              }}
+              class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
+              style={{ animationDuration: `${interval}s` }}
             />
           </div>
         ))}
@@ -143,7 +128,6 @@ function Controls() {
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Button
-          class="h-12 w-12"
           variant="icon"
           data-slide="prev"
           aria-label="Previous item"
@@ -158,7 +142,6 @@ function Controls() {
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
         <Button
-          class="h-12 w-12"
           variant="icon"
           data-slide="next"
           aria-label="Next item"

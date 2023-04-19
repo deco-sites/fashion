@@ -22,6 +22,7 @@ function WishlistButton({ variant = "icon", ...item }: Props) {
     <Button
       variant={variant === "icon" ? "icon" : "outline"}
       loading={fetching.value}
+      aria-label="Add to wishlist"
       onClick={async (e) => {
         e.stopPropagation();
         e.preventDefault();

@@ -14,7 +14,7 @@ function Newsletter() {
       </div>
       <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px]">
         <input
-          class="py-2 px-3 flex-grow bg-primary rounded text-primary-content border-1 border-base-100"
+          class="py-2 px-3 flex-grow bg-primary rounded text-primary-content border border-solid border-base-100"
           placeholder="Seu e-mail"
         />
         <button

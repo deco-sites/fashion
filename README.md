@@ -118,7 +118,7 @@ account
 2. Open `/components/GlobalTags.tsx` component and replace `@font-face` tags
    accordingly, i.e. change font-family, font-style and font-weight. Now, change
    the src attribute with the right font path.
-3. Open twind.config.ts and change the `fontFamily` attribute accordingly.
+3. Open tailwind.config.ts and change the `fontFamily` attribute accordingly.
 
 > WARNING: Do not forget to use the `asset()` function. Not adding it will
 > increase the traffic on your site and lead to higher costs
@@ -145,7 +145,7 @@ Open `static` folder and replace `favicon.ico`, `robots.txt` and
 1. Run the store (with `deno task start`).
 2. Open the
    [design system section](http://localhost:8000/_live/workbench/sections/DesignSystem.story.tsx?key=.%2Fsections%2FDesignSystem.story.tsx)
-3. Now, on your text editor, open `twind.config.ts`
+3. Now, on your text editor, open `tailwind.config.ts`
 4. Change the default, header, badge, etc colors, text colors and border colors
    to better fit your desired design and check how the
    [design system section](http://localhost:8000/_live/workbench/sections/DesignSystem.story.tsx?key=.%2Fsections%2FDesignSystem.story.tsx)
@@ -182,7 +182,7 @@ for:
    [Fresh's docs](https://fresh.deno.dev/docs/concepts/static-files)
 1. `import_map.json`: File containing your dependencies. Check out
    [Deno's docs](https://deno.land/manual@v1.31.0/basics/import_maps)
-1. `twind.config.ts`: twind configuration file. [twind docs](https://twind.dev/)
+1. `tailwind.config.ts`: tailwindcss configuration file. [tailwind docs](https://tailwindcss.com/)
 1. `sections`: deco.cx folder for making components both editable and composable
    on the CMS. Check out [deco.cx's docs](https://www.deco.cx/docs/en)
 1. `functions`: deco.cx folder for adding dynamic data to sections provenient

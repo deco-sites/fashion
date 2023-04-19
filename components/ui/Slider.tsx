@@ -7,7 +7,7 @@ type SliderProps = JSX.IntrinsicElements["ul"] & {
 
 export function Slider({
   children,
-  snap = "scroll-snap-center",
+  snap = "snap-center",
   class: _class = "gap-6 scrollbar-none",
   ...props
 }: SliderProps) {
@@ -37,7 +37,7 @@ export function SliderDots({ children, class: _class }: SliderDotsProps) {
       class={`flex items-center justify-center overflow-auto overscroll-contain snap-x snap-mandatory ${_class}`}
     >
       {Children.map(children, (child, index) => (
-        <li class="scroll-snap-center">
+        <li class="snap-center">
           <button
             data-dot={index}
             aria-label={`go to slider item ${index}`}

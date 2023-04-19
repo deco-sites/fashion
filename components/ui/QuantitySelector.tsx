@@ -10,7 +10,7 @@ interface Props {
 const QUANTITY_MAX_VALUE = 100;
 
 // Remove default browser behavior: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
-// TODO: Figure out how to add it via twind config.
+// TODO: Figure out how to add it via tailwind config.
 const innerStyle = `
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -30,7 +30,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="flex border-1 border-base-200">
+    <div class="flex border border-solid border-base-200">
       <Button
         class="h-9 w-9"
         variant="icon"
