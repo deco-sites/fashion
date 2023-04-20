@@ -2,7 +2,15 @@ import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
-import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
+import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+
+declare global {
+  interface Window {
+    DECO_SITES_STD: {
+      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+    };
+  }
+}
 
 function SearchButton() {
   const { displaySearchbar } = useUI();
@@ -56,7 +64,7 @@ function CartButton() {
       disabled={loading.value}
       onClick={() => {
         displayCart.value = true;
-        sendAnalyticsEvent({
+        window.DECO_SITES_STD.sendAnalyticsEvent({
           name: "view_cart",
           params: {
             currency: cart.value ? currencyCode! : "",

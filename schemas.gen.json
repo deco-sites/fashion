@@ -4856,22 +4856,6 @@
         }
       }
     },
-    "Li9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g=": {
-      "title": "./islands/SendEventButton.tsx",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/SendEventButton.tsx"
-          ],
-          "default": "./islands/SendEventButton.tsx"
-        }
-      }
-    },
     "Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g=": {
       "title": "./islands/ShippingSimulation.tsx",
       "type": "object",
@@ -4906,22 +4890,6 @@
             "./islands/SliderJS.tsx"
           ],
           "default": "./islands/SliderJS.tsx"
-        }
-      }
-    },
-    "Li9pc2xhbmRzL1ZpZXdTZW5kRXZlbnQudHN4": {
-      "title": "./islands/ViewSendEvent.tsx",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/ViewSendEvent.tsx"
-          ],
-          "default": "./islands/ViewSendEvent.tsx"
         }
       }
     },
@@ -5937,16 +5905,10 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="
         },
         {
-          "$ref": "#/definitions/Li9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g="
-        },
-        {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/Li9pc2xhbmRzL1ZpZXdTZW5kRXZlbnQudHN4"
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA=="
