@@ -1,52 +1,7 @@
-const pallet = {
-  "primary": "var(--color-primary)",
-  "primary-focus": "var(--color-primary-focus)",
-  "primary-content": "var(--color-primary-content)",
-
-  "secondary": "var(--color-secondary)",
-  "secondary-focus": "var(--color-secondary-focus)",
-  "secondary-content": "var(--color-secondary-content)",
-
-  "accent": "var(--color-accent)",
-  "accent-focus": "var(--color-accent-focus)",
-  "accent-content": "var(--color-accent-content)",
-
-  "neutral": "var(--color-neutral)",
-  "neutral-focus": "var(--color-neutral-focus)",
-  "neutral-content": "var(--color-neutral-content)",
-
-  "base-100": "var(--color-base-100)",
-  "base-200": "var(--color-base-200)",
-  "base-300": "var(--color-base-300)",
-  "base-content": "var(--color-base-content)",
-
-  "success": "var(--color-success)",
-  "success-content": "var(--color-success-content)",
-
-  "warning": "var(--color-warning)",
-  "warning-content": "var(--color-warning-content)",
-
-  "error": "var(--color-error)",
-  "error-content": "var(--color-error-content)",
-
-  "info": "var(--color-info)",
-  "info-content": "var(--color-info-content)",
-
-  "transparent": "transparent",
-};
-
-module.exports = {
+export default {
   content: ["./**/*.tsx"],
   theme: {
     extend: {
-      colors: pallet,
-      textColor: pallet,
-      borderColor: pallet,
-      outline: Object.fromEntries(
-        Object.entries(pallet).map((
-          [key, value],
-        ) => [key, [`1px solid ${value}`, "1px"]]),
-      ),
       fontSize: {
         "heading-1": ["56px", "67.2px"],
         "heading-2": ["24px", "28.8px"],
@@ -114,5 +69,4 @@ module.exports = {
       "2xl": "1536px",
     },
   },
-  plugins: [],
 };

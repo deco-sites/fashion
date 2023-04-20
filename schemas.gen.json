@@ -3036,9 +3036,7 @@
           "title": "Colors"
         }
       },
-      "required": [
-        "colors"
-      ],
+      "required": [],
       "title": "deco-sites/fashion/sections/DesignSystem.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature": {

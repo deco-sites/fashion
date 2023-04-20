@@ -5,7 +5,6 @@
  * https://github.com/saadeghi/daisyui/blob/37bca23444bc9e4d304362c14b7088f9a08f1c74/src/docs/src/routes/theme-generator.svelte
  */
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
-
 import { Head } from "$fresh/runtime.ts";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Text from "deco-sites/fashion/components/ui/Text.tsx";
@@ -146,17 +145,23 @@ export interface Colors {
 }
 
 export interface Props {
-  colors: Colors;
+  colors?: Colors;
 }
 
-const darken = (color: Color, percentage = 0.2) => color.darken(percentage);
+type Palette = [string, string][];
 
-const contrasted = (color: Color, percentage = 0.8) =>
-  color.isDark()
-    ? color.mix(Color.rgb(255, 255, 255), percentage).saturate(.10)
-    : color.mix(Color.rgb(0, 0, 0), percentage).saturate(.10);
+const darken = (color: string, percentage = 0.2) =>
+  Color.string(color).darken(percentage);
 
-const THEME_DEFAULT = {
+const contrasted = (color: string, percentage = 0.8) => {
+  const c = Color.string(color);
+
+  return c.isDark()
+    ? c.mix(Color.rgb(255, 255, 255), percentage).saturate(.1)
+    : c.mix(Color.rgb(0, 0, 0), percentage).saturate(.1);
+};
+
+export const THEME_DEFAULT = {
   "primary": "#003232",
   "secondary": "#8C3D3D",
   "accent": "#00FF7F",
@@ -168,47 +173,49 @@ const THEME_DEFAULT = {
   "info": "#F0F5FF",
 };
 
-export const createPallet = (
+export const createPalette = (
   theme: Colors = THEME_DEFAULT,
-): Required<Colors> => ({
-  ...theme,
+): Palette => {
+  const toValue = (color: string | Color) => {
+    const hsl = typeof color === "string" ? Color.string(color) : color;
+    return `${hsl.hue()} ${hsl.saturation()}% ${hsl.lightness()}%`;
+  };
 
-  "primary-focus": theme["primary-focus"] ??
-    darken(Color.string(theme["primary"])).string(),
-  "primary-content": theme["primary-content"] ??
-    contrasted(Color.string(theme["primary"])).string(),
+  return Object.entries({
+    "--p": theme["primary"],
+    "--pf": theme["primary-focus"] ?? darken(theme["primary"]),
+    "--pc": theme["primary-content"] ?? contrasted(theme["primary"]),
 
-  "secondary-focus": theme["secondary-focus"] ??
-    darken(Color.string(theme["secondary"])).string(),
-  "secondary-content": theme["secondary-content"] ??
-    contrasted(Color.string(theme["secondary"])).string(),
+    "--s": theme["secondary"],
+    "--sf": theme["secondary-focus"] ?? darken(theme["secondary"]),
+    "--sc": theme["secondary-content"] ?? contrasted(theme["secondary"]),
 
-  "accent-focus": theme["accent-focus"] ??
-    darken(Color.string(theme["accent"])).string(),
-  "accent-content": theme["accent-content"] ??
-    contrasted(Color.string(theme["accent"])).string(),
+    "--a": theme["accent"],
+    "--af": theme["accent-focus"] ?? darken(theme["accent"]),
+    "--ac": theme["accent-content"] ?? contrasted(theme["accent"]),
 
-  "neutral-focus": theme["neutral-focus"] ??
-    darken(Color.string(theme["neutral"])).string(),
-  "neutral-content": theme["neutral-content"] ??
-    contrasted(Color.string(theme["neutral"])).string(),
+    "--n": theme["neutral"],
+    "--nf": theme["neutral-focus"] ?? darken(theme["neutral"]),
+    "--nc": theme["neutral-content"] ?? contrasted(theme["neutral"]),
 
-  "base-200": theme["base-200"] ??
-    darken(Color.string(theme["base-100"]), 0.1).string(),
-  "base-300": theme["base-300"] ??
-    darken(Color.string(theme["base-100"]), 0.5).string(),
-  "base-content": theme["base-content"] ??
-    contrasted(Color.string(theme["base-100"])).string(),
+    "--b1": theme["base-100"],
+    "--b2": theme["base-200"] ?? darken(theme["base-100"], 0.1),
+    "--b3": theme["base-300"] ?? darken(theme["base-100"], 0.5),
+    "--bc": theme["base-content"] ?? contrasted(theme["base-100"]),
 
-  "success-content": theme["success-content"] ??
-    contrasted(Color.string(theme["success"])).string(),
-  "warning-content": theme["warning-content"] ??
-    contrasted(Color.string(theme["warning"])).string(),
-  "error-content": theme["error-content"] ??
-    contrasted(Color.string(theme["error"])).string(),
-  "info-content": theme["info-content"] ??
-    contrasted(Color.string(theme["info"])).string(),
-});
+    "--su": theme["success"],
+    "--suc": theme["success-content"] ?? contrasted(theme["success"]),
+
+    "--wa": theme["warning"],
+    "--wac": theme["warning-content"] ?? contrasted(theme["warning"]),
+
+    "--er": theme["error"],
+    "--erc": theme["error-content"] ?? contrasted(theme["error"]),
+
+    "--in": theme["info"],
+    "--inc": theme["info-content"] ?? contrasted(theme["info"]),
+  }).map(([key, color]) => [key, toValue(color)]);
+};
 
 /**
  * This section merges the DESIGN_SYTEM variable with incoming props into a css sheet with variables, i.e.
@@ -220,7 +227,7 @@ export const createPallet = (
  * }
  */
 function Section({ colors }: Props) {
-  const pallet = createPallet({ ...THEME_DEFAULT, ...colors });
+  const palette = createPalette({ ...THEME_DEFAULT, ...colors });
 
   return (
     <Head>
@@ -228,9 +235,9 @@ function Section({ colors }: Props) {
         id="__DECO_DESIGN_SYSTEM"
         dangerouslySetInnerHTML={{
           __html: `:root {${
-            Object.entries(pallet)
-              .map(([key, value]) => `--color-${key}: ${value}`)
-              .join("; ")
+            palette
+              .map(([cssVar, value]) => `${cssVar}: ${value}`)
+              .join(";")
           }}`,
         }}
       />
