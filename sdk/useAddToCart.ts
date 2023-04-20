@@ -2,7 +2,13 @@ import { useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
-import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
+import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+
+declare global {
+  interface Window {
+    sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+  }
+}
 
 export interface Options {
   skuId: string;
@@ -37,7 +43,7 @@ export const useAddToCart = (
         orderItems: [{ id: skuId, seller: sellerId, quantity: 1 }],
       });
 
-      sendAnalyticsEvent({
+      window.sendAnalyticsEvent({
         name: "add_to_cart",
         params: {
           items: [{

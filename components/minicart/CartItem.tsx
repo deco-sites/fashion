@@ -5,7 +5,13 @@ import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import QuantitySelector from "deco-sites/fashion/components/ui/QuantitySelector.tsx";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
-import { sendAnalyticsEvent } from "deco-sites/std/commerce/sdk/sendAnalyticsEvent.ts";
+import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+
+declare global {
+  interface Window {
+    sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+  }
+}
 
 interface Props {
   index: number;
@@ -60,7 +66,7 @@ function CartItem({ index }: Props) {
 
               if (!cart.value) return;
 
-              sendAnalyticsEvent({
+              window.sendAnalyticsEvent({
                 name: quantityDiff < 0 ? "remove_from_cart" : "add_to_cart",
                 params: {
                   items: mapItemsToAnalyticsItems({
@@ -80,7 +86,7 @@ function CartItem({ index }: Props) {
         onClick={() => {
           updateItems({ orderItems: [{ index, quantity: 0 }] });
           if (!cart.value) return;
-          sendAnalyticsEvent({
+          window.sendAnalyticsEvent({
             name: "remove_from_cart",
             params: {
               items: mapItemsToAnalyticsItems({

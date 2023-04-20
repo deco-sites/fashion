@@ -7,6 +7,8 @@ import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import ButtonSendEvent from "deco-sites/fashion/components/ButtonSendEvent.tsx";
+import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -101,10 +103,8 @@ function ProductCard({ product, preload, itemListName }: Props) {
               }}
             >
               <Sizes {...product} />
-              <Button as="a" href={product.url}>Visualizar Produto</Button>
               {/* FIXME: Understand why fresh breaks rendering this component */}
-              {
-                /* <SendEventButton
+              <ButtonSendEvent
                 as="a"
                 href={product.url}
                 event={{
@@ -122,8 +122,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
                 }}
               >
                 Visualizar Produto
-              </SendEventButton> */
-              }
+              </ButtonSendEvent>
             </div>
           )}
         </div>
