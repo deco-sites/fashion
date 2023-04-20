@@ -1,7 +1,43 @@
+// Daisi UI theme
+export const theme = {
+  "primary": "hsl(180 100% 10%)",
+  "secondary": "hsl(0 39% 39%)",
+  "accent": "hsl(150 100% 50%)",
+  "neutral": "hsl(0 0% 20%)",
+  "base-100": "hsl(0 0% 100%)",
+  "success": "hsl(150 62% 95%)",
+  "warning": "hsl(43 100% 95%)",
+  "error": "hsl(9 100% 95%)",
+  "info": "hsl(220 100% 97%)",
+};
+
+// derived colors: Only used for tailwind intellisense
+const palette = {
+  ...theme,
+  "primary-focus": "hsl(180 100% 8%)",
+  "primary-content": "hsl(180 12% 82%)",
+  "secondary-focus": "hsl(0 39% 31%)",
+  "secondary-content": "hsl(0 28% 88%)",
+  "accent-focus": "hsl(150 100% 40%)",
+  "accent-content": "hsl(149 112% 10%)",
+  "neutral-focus": "hsl(0 0% 16%)",
+  "neutral-content": "hsl(0 0% 84%)",
+  "base-200": "hsl(0 0% 90%)",
+  "base-300": "hsl(0 0% 50%)",
+  "base-content": "hsl(0 0% 20%)",
+  "success-content": "hsl(140 3% 19%)",
+  "warning-content": "hsl(48 5% 19%)",
+  "error-content": "hsl(12 5% 19%)",
+  "info-content": "hsl(220 3% 19%)",
+};
+
 export default {
   content: ["./**/*.tsx"],
   theme: {
     extend: {
+      colors: palette,
+      textColor: palette,
+      borderColor: palette,
       fontSize: {
         "heading-1": ["56px", "67.2px"],
         "heading-2": ["24px", "28.8px"],

@@ -6,6 +6,7 @@
  */
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { Head } from "$fresh/runtime.ts";
+import { theme } from "deco-sites/fashion/tailwind.config.ts";
 
 export interface Colors {
   /**
@@ -155,20 +156,8 @@ const contrasted = (color: string, percentage = 0.8) => {
     : c.mix(Color.rgb(0, 0, 0), percentage).saturate(.1);
 };
 
-export const THEME_DEFAULT = {
-  "primary": "#003232",
-  "secondary": "#8C3D3D",
-  "accent": "#00FF7F",
-  "neutral": "#333333",
-  "base-100": "#FFFFFF",
-  "success": "#EAFAF2",
-  "warning": "#FFF8E6",
-  "error": "#FFE9E5",
-  "info": "#F0F5FF",
-};
-
 export const createPalette = (
-  theme: Colors = THEME_DEFAULT,
+  t: Colors = theme,
 ): Palette => {
   const toValue = (color: string | Color) => {
     const hsl = typeof color === "string" ? Color.string(color) : color;
@@ -176,38 +165,38 @@ export const createPalette = (
   };
 
   return Object.entries({
-    "--p": theme["primary"],
-    "--pf": theme["primary-focus"] ?? darken(theme["primary"]),
-    "--pc": theme["primary-content"] ?? contrasted(theme["primary"]),
+    "--p": t["primary"],
+    "--pf": t["primary-focus"] ?? darken(t["primary"]),
+    "--pc": t["primary-content"] ?? contrasted(t["primary"]),
 
-    "--s": theme["secondary"],
-    "--sf": theme["secondary-focus"] ?? darken(theme["secondary"]),
-    "--sc": theme["secondary-content"] ?? contrasted(theme["secondary"]),
+    "--s": t["secondary"],
+    "--sf": t["secondary-focus"] ?? darken(t["secondary"]),
+    "--sc": t["secondary-content"] ?? contrasted(t["secondary"]),
 
-    "--a": theme["accent"],
-    "--af": theme["accent-focus"] ?? darken(theme["accent"]),
-    "--ac": theme["accent-content"] ?? contrasted(theme["accent"]),
+    "--a": t["accent"],
+    "--af": t["accent-focus"] ?? darken(t["accent"]),
+    "--ac": t["accent-content"] ?? contrasted(t["accent"]),
 
-    "--n": theme["neutral"],
-    "--nf": theme["neutral-focus"] ?? darken(theme["neutral"]),
-    "--nc": theme["neutral-content"] ?? contrasted(theme["neutral"]),
+    "--n": t["neutral"],
+    "--nf": t["neutral-focus"] ?? darken(t["neutral"]),
+    "--nc": t["neutral-content"] ?? contrasted(t["neutral"]),
 
-    "--b1": theme["base-100"],
-    "--b2": theme["base-200"] ?? darken(theme["base-100"], 0.1),
-    "--b3": theme["base-300"] ?? darken(theme["base-100"], 0.5),
-    "--bc": theme["base-content"] ?? contrasted(theme["base-100"]),
+    "--b1": t["base-100"],
+    "--b2": t["base-200"] ?? darken(t["base-100"], 0.1),
+    "--b3": t["base-300"] ?? darken(t["base-100"], 0.5),
+    "--bc": t["base-content"] ?? contrasted(t["base-100"]),
 
-    "--su": theme["success"],
-    "--suc": theme["success-content"] ?? contrasted(theme["success"]),
+    "--su": t["success"],
+    "--suc": t["success-content"] ?? contrasted(t["success"]),
 
-    "--wa": theme["warning"],
-    "--wac": theme["warning-content"] ?? contrasted(theme["warning"]),
+    "--wa": t["warning"],
+    "--wac": t["warning-content"] ?? contrasted(t["warning"]),
 
-    "--er": theme["error"],
-    "--erc": theme["error-content"] ?? contrasted(theme["error"]),
+    "--er": t["error"],
+    "--erc": t["error-content"] ?? contrasted(t["error"]),
 
-    "--in": theme["info"],
-    "--inc": theme["info-content"] ?? contrasted(theme["info"]),
+    "--in": t["info"],
+    "--inc": t["info-content"] ?? contrasted(t["info"]),
   }).map(([key, color]) => [key, toValue(color)]);
 };
 
@@ -221,7 +210,7 @@ export const createPalette = (
  * }
  */
 function Section({ colors }: Props) {
-  const palette = createPalette({ ...THEME_DEFAULT, ...colors });
+  const palette = createPalette({ ...theme, ...colors });
 
   return (
     <Head>
