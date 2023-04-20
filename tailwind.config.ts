@@ -1,52 +1,43 @@
-const pallet = {
-  "primary": "var(--color-primary)",
-  "primary-focus": "var(--color-primary-focus)",
-  "primary-content": "var(--color-primary-content)",
-
-  "secondary": "var(--color-secondary)",
-  "secondary-focus": "var(--color-secondary-focus)",
-  "secondary-content": "var(--color-secondary-content)",
-
-  "accent": "var(--color-accent)",
-  "accent-focus": "var(--color-accent-focus)",
-  "accent-content": "var(--color-accent-content)",
-
-  "neutral": "var(--color-neutral)",
-  "neutral-focus": "var(--color-neutral-focus)",
-  "neutral-content": "var(--color-neutral-content)",
-
-  "base-100": "var(--color-base-100)",
-  "base-200": "var(--color-base-200)",
-  "base-300": "var(--color-base-300)",
-  "base-content": "var(--color-base-content)",
-
-  "success": "var(--color-success)",
-  "success-content": "var(--color-success-content)",
-
-  "warning": "var(--color-warning)",
-  "warning-content": "var(--color-warning-content)",
-
-  "error": "var(--color-error)",
-  "error-content": "var(--color-error-content)",
-
-  "info": "var(--color-info)",
-  "info-content": "var(--color-info-content)",
-
-  "transparent": "transparent",
+// Daisi UI theme
+export const theme = {
+  "primary": "hsl(180 100% 10%)",
+  "secondary": "hsl(0 39% 39%)",
+  "accent": "hsl(150 100% 50%)",
+  "neutral": "hsl(0 0% 20%)",
+  "base-100": "hsl(0 0% 100%)",
+  "success": "hsl(150 62% 95%)",
+  "warning": "hsl(43 100% 95%)",
+  "error": "hsl(9 100% 95%)",
+  "info": "hsl(220 100% 97%)",
 };
 
-module.exports = {
+// derived colors: Only used for tailwind intellisense
+const palette = {
+  ...theme,
+  "primary-focus": "hsl(180 100% 8%)",
+  "primary-content": "hsl(180 12% 82%)",
+  "secondary-focus": "hsl(0 39% 31%)",
+  "secondary-content": "hsl(0 28% 88%)",
+  "accent-focus": "hsl(150 100% 40%)",
+  "accent-content": "hsl(149 112% 10%)",
+  "neutral-focus": "hsl(0 0% 16%)",
+  "neutral-content": "hsl(0 0% 84%)",
+  "base-200": "hsl(0 0% 90%)",
+  "base-300": "hsl(0 0% 50%)",
+  "base-content": "hsl(0 0% 20%)",
+  "success-content": "hsl(140 3% 19%)",
+  "warning-content": "hsl(48 5% 19%)",
+  "error-content": "hsl(12 5% 19%)",
+  "info-content": "hsl(220 3% 19%)",
+};
+
+export default {
   content: ["./**/*.tsx"],
   theme: {
     extend: {
-      colors: pallet,
-      textColor: pallet,
-      borderColor: pallet,
-      outline: Object.fromEntries(
-        Object.entries(pallet).map((
-          [key, value],
-        ) => [key, [`1px solid ${value}`, "1px"]]),
-      ),
+      colors: palette,
+      textColor: palette,
+      borderColor: palette,
       fontSize: {
         "heading-1": ["56px", "67.2px"],
         "heading-2": ["24px", "28.8px"],
@@ -114,5 +105,4 @@ module.exports = {
       "2xl": "1536px",
     },
   },
-  plugins: [],
 };
