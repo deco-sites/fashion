@@ -15,11 +15,13 @@ export default function ViewSendEvent<E extends AnalyticsEvent>(
     <script
       dangerouslySetInnerHTML={{
         __html: `
+    (function (){
     const sendEvent = () => {
       if (!window.dataLayer) { requestIdleCallback(sendEvent, { timeout: 250 }); return; }
       window.sendAnalyticsEvent(${JSON.stringify(event)})
     }
     requestIdleCallback(sendEvent);
+    })()
 `,
       }}
     />
