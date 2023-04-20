@@ -5,7 +5,9 @@ import Button, {
 
 function useSendAnalyticsEvent<E extends AnalyticsEvent>(event: E) {
   return {
-    onclick: `window.DECO_STD.sendAnalyticsEvent(${JSON.stringify(event)});`,
+    onclick: `window.DECO_SITES_STD.sendAnalyticsEvent(${
+      JSON.stringify(event)
+    });`,
   };
 }
 

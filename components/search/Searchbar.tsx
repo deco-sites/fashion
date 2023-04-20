@@ -24,7 +24,7 @@ import SearchTermList from "./SearchTermList.tsx";
 
 declare global {
   interface Window {
-    DECO_STD: {
+    DECO_SITES_STD: {
       sendAnalyticsEvent: (args: AnalyticsEvent) => void;
     };
   }
@@ -140,7 +140,7 @@ function Searchbar({
               const value = e.currentTarget.value;
 
               if (value) {
-                window.DECO_STD.sendAnalyticsEvent({
+                window.DECO_SITES_STD.sendAnalyticsEvent({
                   name: "search",
                   params: { search_term: value },
                 });

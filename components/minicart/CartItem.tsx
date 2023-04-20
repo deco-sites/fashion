@@ -9,7 +9,7 @@ import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
 declare global {
   interface Window {
-    DECO_STD: {
+    DECO_SITES_STD: {
       sendAnalyticsEvent: (args: AnalyticsEvent) => void;
     };
   }
@@ -68,7 +68,7 @@ function CartItem({ index }: Props) {
 
               if (!cart.value) return;
 
-              window.DECO_STD.sendAnalyticsEvent({
+              window.DECO_SITES_STD.sendAnalyticsEvent({
                 name: quantityDiff < 0 ? "remove_from_cart" : "add_to_cart",
                 params: {
                   items: mapItemsToAnalyticsItems({
@@ -88,7 +88,7 @@ function CartItem({ index }: Props) {
         onClick={() => {
           updateItems({ orderItems: [{ index, quantity: 0 }] });
           if (!cart.value) return;
-          window.DECO_STD.sendAnalyticsEvent({
+          window.DECO_SITES_STD.sendAnalyticsEvent({
             name: "remove_from_cart",
             params: {
               items: mapItemsToAnalyticsItems({

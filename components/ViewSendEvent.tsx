@@ -15,7 +15,7 @@ export default function ViewSendEvent<E extends AnalyticsEvent>(
     <script
       dangerouslySetInnerHTML={{
         __html: `
-     window.addEventListener("load", () => window.DECO_STD.sendAnalyticsEvent(${
+     window.addEventListener("load", () => window.DECO_SITES_STD.sendAnalyticsEvent(${
           JSON.stringify(event)
         }))
 `,

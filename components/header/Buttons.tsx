@@ -6,7 +6,7 @@ import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
 declare global {
   interface Window {
-    DECO_STD: {
+    DECO_SITES_STD: {
       sendAnalyticsEvent: (args: AnalyticsEvent) => void;
     };
   }
@@ -64,7 +64,7 @@ function CartButton() {
       disabled={loading.value}
       onClick={() => {
         displayCart.value = true;
-        window.DECO_STD.sendAnalyticsEvent({
+        window.DECO_SITES_STD.sendAnalyticsEvent({
           name: "view_cart",
           params: {
             currency: cart.value ? currencyCode! : "",
