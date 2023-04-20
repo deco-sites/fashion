@@ -6,7 +6,9 @@ import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
 declare global {
   interface Window {
-    sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+    DECO_STD: {
+      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+    };
   }
 }
 
@@ -43,7 +45,7 @@ export const useAddToCart = (
         orderItems: [{ id: skuId, seller: sellerId, quantity: 1 }],
       });
 
-      window.sendAnalyticsEvent({
+      window.DECO_STD.sendAnalyticsEvent({
         name: "add_to_cart",
         params: {
           items: [{

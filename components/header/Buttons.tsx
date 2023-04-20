@@ -4,6 +4,14 @@ import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
+declare global {
+  interface Window {
+    DECO_STD: {
+      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+    };
+  }
+}
+
 function SearchButton() {
   const { displaySearchbar } = useUI();
 
@@ -36,12 +44,6 @@ function MenuButton() {
   );
 }
 
-declare global {
-  interface Window {
-    sendAnalyticsEvent: (args: AnalyticsEvent) => void;
-  }
-}
-
 function CartButton() {
   const { displayCart } = useUI();
   const { loading, cart, mapItemsToAnalyticsItems } = useCart();
@@ -62,7 +64,7 @@ function CartButton() {
       disabled={loading.value}
       onClick={() => {
         displayCart.value = true;
-        window.sendAnalyticsEvent({
+        window.DECO_STD.sendAnalyticsEvent({
           name: "view_cart",
           params: {
             currency: cart.value ? currencyCode! : "",

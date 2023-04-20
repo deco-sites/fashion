@@ -10,7 +10,9 @@ import Coupon from "./Coupon.tsx";
 
 declare global {
   interface Window {
-    sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+    DECO_STD: {
+      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+    };
   }
 }
 
@@ -102,7 +104,7 @@ function Cart() {
               class="w-full"
               disabled={loading.value || cart.value.items.length === 0}
               onClick={() => {
-                window.sendAnalyticsEvent({
+                window.DECO_STD.sendAnalyticsEvent({
                   name: "begin_checkout",
                   params: {
                     currency: cart.value ? currencyCode! : "",
