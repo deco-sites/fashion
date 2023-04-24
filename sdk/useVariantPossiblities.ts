@@ -1,6 +1,8 @@
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
-export const useVariantPossibilities = ({ isVariantOf }: Product) => {
+export const useVariantPossibilities = (
+  { url: productUrl, isVariantOf }: Product,
+) => {
   const allProperties = (isVariantOf?.hasVariant ?? [])
     .flatMap(({ additionalProperty = [], url }) =>
       additionalProperty.map((property) => ({ property, url }))
@@ -20,7 +22,10 @@ export const useVariantPossibilities = ({ isVariantOf }: Product) => {
     }
 
     if (url) {
-      acc[name][value].push(url);
+      // prefer current url first to easy selector implementation
+      url === productUrl
+        ? acc[name][value].unshift(url)
+        : acc[name][value].push(url);
     }
 
     return acc;

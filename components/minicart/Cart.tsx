@@ -1,7 +1,6 @@
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
@@ -38,9 +37,9 @@ function Cart() {
   if (isCartEmpty) {
     return (
       <div class="flex flex-col justify-center items-center h-full gap-6">
-        <Text variant="heading-2">Sua sacola está vazia</Text>
+        <span class="font-medium text-2xl">Sua sacola está vazia</span>
         <Button
-          variant="outline"
+          class="btn-outline"
           onClick={() => {
             displayCart.value = false;
           }}
@@ -71,10 +70,10 @@ function Cart() {
         <div class="border-t border-base-200 py-4 flex flex-col gap-4">
           {discounts?.value && (
             <div class="flex justify-between items-center px-4">
-              <Text variant="caption">Descontos</Text>
-              <Text variant="caption">
+              <span class="text-sm">Descontos</span>
+              <span class="text-sm">
                 {formatPrice(discounts.value / 100, currencyCode!, locale)}
-              </Text>
+              </span>
             </div>
           )}
           <Coupon />
@@ -83,14 +82,14 @@ function Cart() {
         {total?.value && (
           <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
             <div class="flex justify-between items-center w-full">
-              <Text variant="body">Total</Text>
-              <Text variant="heading-3">
+              <span>Total</span>
+              <span class="font-medium text-xl">
                 {formatPrice(total.value / 100, currencyCode!, locale)}
-              </Text>
+              </span>
             </div>
-            <Text tone="base-300" variant="caption">
+            <span class="text-sm text-base-300">
               Taxas e fretes serão calculados no checkout
-            </Text>
+            </span>
           </div>
         )}
         <div class="p-4">

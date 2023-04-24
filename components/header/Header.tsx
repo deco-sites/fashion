@@ -58,17 +58,19 @@ function Header(
 ) {
   const searchbar = { ..._searchbar, products, suggestions };
   return (
-    <header style={{ height: headerHeight }}>
-      <div class="bg-base-100 fixed w-full z-50">
-        <Alert alerts={alerts} />
-        <Navbar items={navItems} searchbar={searchbar} />
-      </div>
+    <>
+      <header style={{ height: headerHeight }}>
+        <div class="bg-base-100 fixed w-full z-50">
+          <Alert alerts={alerts} />
+          <Navbar items={navItems} searchbar={searchbar} />
+        </div>
 
-      <Modals
-        menu={{ items: navItems }}
-        searchbar={searchbar}
-      />
-    </header>
+        <Modals
+          menu={{ items: navItems }}
+          searchbar={searchbar}
+        />
+      </header>
+    </>
   );
 }
 

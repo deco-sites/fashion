@@ -1,8 +1,6 @@
 import Icon, {
   AvailableIcons,
 } from "deco-sites/fashion/components/ui/Icon.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
 
 import Newsletter from "./Newsletter.tsx";
 import type { ComponentChildren } from "preact";
@@ -26,7 +24,7 @@ const isIcon = (item: Item): item is IconItem =>
 
 function SectionItem({ item }: { item: Item }) {
   return (
-    <Text variant="caption" tone="primary-content">
+    <span class="text-primary-content">
       {isIcon(item)
         ? (
           <div class="border-base-100 border border-solid py-1.5 px-2.5">
@@ -43,7 +41,7 @@ function SectionItem({ item }: { item: Item }) {
             {item.label}
           </a>
         )}
-    </Text>
+    </span>
   );
 }
 
@@ -64,7 +62,7 @@ function Footer({ sections = [] }: Props) {
   return (
     <footer class="w-full bg-primary flex flex-col divide-y divide-primary-content">
       <div>
-        <Container class="w-full flex flex-col divide-y divide-primary-content">
+        <div class="container w-full flex flex-col divide-y divide-primary-content">
           <FooterContainer>
             <Newsletter />
           </FooterContainer>
@@ -75,9 +73,9 @@ function Footer({ sections = [] }: Props) {
               {sections.map((section) => (
                 <li>
                   <div>
-                    <Text variant="heading-3" tone="primary-content">
+                    <span class="font-medium text-xl text-primary-content">
                       {section.label}
-                    </Text>
+                    </span>
 
                     <ul
                       class={`flex ${
@@ -99,7 +97,7 @@ function Footer({ sections = [] }: Props) {
             <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
               {sections.map((section) => (
                 <li>
-                  <Text variant="body" tone="primary-content">
+                  <span class="text-primary-content">
                     <details>
                       <summary>
                         {section.label}
@@ -117,22 +115,18 @@ function Footer({ sections = [] }: Props) {
                         ))}
                       </ul>
                     </details>
-                  </Text>
+                  </span>
                 </li>
               ))}
             </ul>
           </FooterContainer>
-        </Container>
+        </div>
       </div>
 
       <div>
-        <Container class="w-full">
+        <div class="container w-full">
           <FooterContainer class="flex justify-between w-full">
-            <Text
-              class="flex items-center gap-1"
-              variant="body"
-              tone="primary-content"
-            >
+            <span class="flex items-center gap-1 text-primary-content">
               Powered by{" "}
               <a
                 href="https://www.deco.cx"
@@ -140,7 +134,7 @@ function Footer({ sections = [] }: Props) {
               >
                 <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
               </a>
-            </Text>
+            </span>
 
             <ul class="flex items-center justify-center gap-2">
               <li>
@@ -177,7 +171,7 @@ function Footer({ sections = [] }: Props) {
               </li>
             </ul>
           </FooterContainer>
-        </Container>
+        </div>
       </div>
     </footer>
   );

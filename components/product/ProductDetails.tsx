@@ -1,8 +1,6 @@
 import { useId } from "preact/hooks";
 import AddToCartButton from "deco-sites/fashion/islands/AddToCartButton.tsx";
 import ShippingSimulation from "deco-sites/fashion/islands/ShippingSimulation.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
@@ -16,7 +14,7 @@ import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-import ViewSendEvent from "deco-sites/fashion/components/ViewSendEvent.tsx";
+import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
@@ -45,7 +43,7 @@ function NotFound() {
   return (
     <div class="w-full flex justify-center items-center py-28">
       <div class="flex flex-col items-center justify-center gap-6">
-        <Text variant="heading-2">Página não encontrada</Text>
+        <span class="font-medium text-2xl">Página não encontrada</span>
         <a href="/">
           <Button>Voltar à página inicial</Button>
         </a>
@@ -78,31 +76,27 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
-          <Text tone="base-300" variant="caption">
+          <span class="text-sm text-base-300">
             Cod. {gtin}
-          </Text>
+          </span>
         </div>
         <h1>
-          <Text variant="heading-3">{name}</Text>
+          <span class="font-medium text-xl">{name}</span>
         </h1>
       </div>
       {/* Prices */}
       <div class="mt-4">
         <div class="flex flex-row gap-2 items-center">
-          <Text
-            class="line-through"
-            tone="base-300"
-            variant="list-price"
-          >
+          <span class="line-through text-base-300 text-xs">
             {formatPrice(listPrice, offers!.priceCurrency!)}
-          </Text>
-          <Text tone="secondary" variant="heading-3">
+          </span>
+          <span class="font-medium text-xl text-secondary">
             {formatPrice(price, offers!.priceCurrency!)}
-          </Text>
+          </span>
         </div>
-        <Text tone="base-300" variant="caption">
+        <span class="text-sm text-base-300">
           {installments}
-        </Text>
+        </span>
       </div>
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
@@ -122,9 +116,8 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         )}
         <WishlistButton
           variant="full"
-          productId={isVariantOf?.productGroupID}
-          sku={productID}
-          title={name}
+          productGroupID={isVariantOf?.productGroupID}
+          productID={productID}
         />
       </div>
       {/* Shipping Simulation */}
@@ -139,16 +132,16 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       </div>
       {/* Description card */}
       <div class="mt-4 sm:mt-6">
-        <Text variant="caption">
+        <span class="text-sm">
           {description && (
             <details>
               <summary class="cursor-pointer">Descrição</summary>
               <div class="ml-2 mt-2">{description}</div>
             </details>
           )}
-        </Text>
+        </span>
       </div>
-      <ViewSendEvent
+      <SendEventOnLoad
         event={{
           name: "view_item",
           params: {
@@ -209,16 +202,21 @@ function Details({
               ))}
             </Slider>
 
-            <div class="absolute left-2 top-1/2  bg-base-100 rounded-full border-base-200 border">
-              <Button variant="icon" data-slide="prev" aria-label="Previous">
-                <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-              </Button>
-            </div>
-            <div class="absolute right-2 top-1/2 bg-base-100 rounded-full border-base-200 border">
-              <Button variant="icon" data-slide="next" aria-label="Next">
-                <Icon size={20} id="ChevronRight" strokeWidth={3} />
-              </Button>
-            </div>
+            <Button
+              class="absolute left-2 top-1/2 btn-circle btn-outline"
+              data-slide="prev"
+              aria-label="Previous"
+            >
+              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+            </Button>
+
+            <Button
+              class="absolute right-2 top-1/2 btn-circle btn-outline"
+              data-slide="next"
+              aria-label="Next"
+            >
+              <Icon size={20} id="ChevronRight" strokeWidth={3} />
+            </Button>
 
             <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <ProductImageZoom
@@ -300,9 +298,9 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
     : maybeVar;
 
   return (
-    <Container class="py-0 sm:py-10">
+    <div class="container py-0 sm:py-10">
       {page ? <Details page={page} variant={variant} /> : <NotFound />}
-    </Container>
+    </div>
   );
 }
 

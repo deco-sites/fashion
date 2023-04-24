@@ -1,44 +1,12 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import WishlistIcon from "deco-sites/fashion/islands/WishlistButton.tsx";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
-import type { Product } from "deco-sites/std/commerce/types.ts";
-import ButtonSendEvent from "deco-sites/fashion/components/ButtonSendEvent.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-
-/**
- * A simple, inplace sku selector to be displayed once the user hovers the product card
- * It takes the user to the pdp once the user clicks on a given sku. This is interesting to
- * remove JS from the frontend
- */
-function Sizes(product: Product) {
-  const possibilities = useVariantPossibilities(product);
-  const options = Object.entries(
-    possibilities["TAMANHO"] ?? possibilities["Tamanho"] ?? {},
-  );
-
-  return (
-    <ul class="flex justify-center items-center gap-2">
-      {options.map(([value, urls]) => {
-        const url = urls.find((url) => url === product.url) || urls[0];
-
-        return (
-          <a href={url}>
-            <Avatar
-              variant="abbreviation"
-              content={value}
-              disabled={url === product.url}
-            />
-          </a>
-        );
-      })}
-    </ul>
-  );
-}
+import { sendEventOnClick } from "deco-sites/fashion/sdk/analytics.ts";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
   product: Product;
@@ -58,24 +26,39 @@ function ProductCard({ product, preload, itemListName }: Props) {
     offers,
     isVariantOf,
   } = product;
+  const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
-  const { listPrice, price, seller } = useOffer(offers);
+  const { listPrice, price } = useOffer(offers);
+  const possibilities = useVariantPossibilities(product);
+  const options = Object.entries(
+    possibilities["TAMANHO"] ?? possibilities["Tamanho"] ?? {},
+  );
+  const clickEvent = {
+    name: "select_item" as const,
+    params: {
+      item_list_name: itemListName,
+      items: [
+        mapProductToAnalyticsItem({
+          product,
+          price,
+          listPrice,
+        }),
+      ],
+    },
+  };
 
   return (
     <div
+      class="card card-compact card-bordered border-transparent hover:border-base-200 group"
       data-deco="view-product"
       id={`product-card-${productID}`}
-      class="w-full group"
+      {...sendEventOnClick(clickEvent)}
     >
-      <a href={url} aria-label="product link">
-        <div class="relative w-full">
-          <div class="absolute top-0 right-0">
-            <WishlistIcon
-              productId={isVariantOf?.productGroupID}
-              sku={productID}
-              title={name}
-            />
-          </div>
+      <figure class="relative">
+        <div class="absolute top-0 right-0">
+          <WishlistIcon productGroupID={productGroupID} productID={productID} />
+        </div>
+        <a href={url} aria-label="view product">
           <Image
             src={front.url!}
             alt={front.alternateName}
@@ -94,56 +77,31 @@ function ProductCard({ product, preload, itemListName }: Props) {
             class="rounded w-full hidden group-hover:block"
             sizes="(max-width: 640px) 50vw, 20vw"
           />
-          {seller && (
-            <div
-              class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                backdropFilter: "blur(2px)",
-              }}
-            >
-              <Sizes {...product} />
-              {/* FIXME: Understand why fresh breaks rendering this component */}
-              <ButtonSendEvent
-                as="a"
-                href={product.url}
-                event={{
-                  name: "select_item",
-                  params: {
-                    item_list_name: itemListName,
-                    items: [
-                      mapProductToAnalyticsItem({
-                        product,
-                        price,
-                        listPrice,
-                      }),
-                    ],
-                  },
-                }}
-              >
-                Visualizar Produto
-              </ButtonSendEvent>
-            </div>
-          )}
+        </a>
+        <figcaption class="glass card-body card-actions absolute bottom-0 left-0 w-full invisible group-hover:visible">
+          <ul class="flex justify-center items-center gap-2 w-full">
+            {options.map(([value, [link]]) => (
+              <a href={link}>
+                <Avatar
+                  variant={link === url ? "active" : "default"}
+                  content={value}
+                />
+              </a>
+            ))}
+          </ul>
+        </figcaption>
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title whitespace-nowrap overflow-hidden">{name}</h2>
+        <div class="flex items-end gap-2">
+          <span class="line-through text-base-300 text-xs">
+            {formatPrice(listPrice, offers!.priceCurrency!)}
+          </span>
+          <span class="text-secondary">
+            {formatPrice(price, offers!.priceCurrency!)}
+          </span>
         </div>
-
-        <div class="flex flex-col gap-1 py-2">
-          <Text
-            class="overflow-hidden text-ellipsis whitespace-nowrap"
-            variant="caption"
-          >
-            {name}
-          </Text>
-          <div class="flex items-center gap-2">
-            <Text class="line-through" variant="list-price" tone="base-300">
-              {formatPrice(listPrice, offers!.priceCurrency!)}
-            </Text>
-            <Text variant="caption" tone="secondary">
-              {formatPrice(price, offers!.priceCurrency!)}
-            </Text>
-          </div>
-        </div>
-      </a>
+      </div>
     </div>
   );
 }

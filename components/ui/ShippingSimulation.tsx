@@ -1,8 +1,6 @@
 import { useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Input from "deco-sites/fashion/components/ui/Input.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import type {
@@ -57,24 +55,24 @@ function ShippingContent(
     <ul class="flex flex-col gap-4 p-4 bg-base-200 rounded-[4px]">
       {methods.map((method) => (
         <li class="flex justify-between items-center border-base-200 not-first-child:border-t">
-          <Text variant="body" class="text-button text-center">
+          <span class="text-button text-center">
             Entrega {method.name}
-          </Text>
-          <Text variant="body" class="text-button">
+          </span>
+          <span class="text-button">
             até {handleShippingTime(method.shippingEstimate)}
-          </Text>
-          <Text variant="body" class="text-base font-semibold text-right">
+          </span>
+          <span class="text-base font-semibold text-right">
             {method.price === 0 ? "Grátis" : (
               formatPrice(method.price / 100, currencyCode!, locale)
             )}
-          </Text>
+          </span>
         </li>
       ))}
-      <Text class="text-base-300">
+      <span class="text-base-300">
         Os prazos de entrega começam a contar a partir da confirmação do
         pagamento e podem variar de acordo com a quantidade de produtos na
         sacola.
-      </Text>
+      </span>
     </ul>
   );
 }
@@ -109,38 +107,38 @@ function ShippingSimulation({ items }: Props) {
   return (
     <div class="flex flex-col gap-2">
       <div class="flex flex-col">
-        <Text>Calcular frete</Text>
-        <Text variant="body">
+        <span>Calcular frete</span>
+        <span>
           Informe seu CEP para consultar os prazos de entrega
-        </Text>
+        </span>
       </div>
       <div>
         <form
-          class="flex gap-2"
+          class="form-control input-group"
           onSubmit={(e) => {
             e.preventDefault();
             handleSimulation();
           }}
         >
-          <Input
-            as="input"
-            type="text"
-            variant="input"
-            class="w-[120px] p-2 rounded-[4px] border border-solid border-base-200"
-            placeholder="Seu cep aqui"
-            onChange={(e: { currentTarget: { value: string } }) => {
-              postalCode.value = e.currentTarget.value;
-            }}
-            value={postalCode.value}
-            maxlength={8}
-          >
-          </Input>
-          <Button
-            type="submit"
-            loading={loading.value}
-          >
-            Calcular
-          </Button>
+          <div class="input-group">
+            <input
+              as="input"
+              type="text"
+              class="input input-bordered"
+              placeholder="Seu cep aqui"
+              value={postalCode.value}
+              maxLength={8}
+              onChange={(e: { currentTarget: { value: string } }) => {
+                postalCode.value = e.currentTarget.value;
+              }}
+            />
+            <Button
+              type="submit"
+              loading={loading.value}
+            >
+              Calcular
+            </Button>
+          </div>
         </form>
       </div>
       <div>

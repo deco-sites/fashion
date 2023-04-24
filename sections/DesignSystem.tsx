@@ -6,7 +6,8 @@
  */
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { Head } from "$fresh/runtime.ts";
-import { theme } from "deco-sites/fashion/tailwind.config.ts";
+import { theme as defaultTheme } from "deco-sites/fashion/tailwind.config.ts";
+import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 
 export interface Colors {
   /**
@@ -139,11 +140,87 @@ export interface Colors {
   "info-content"?: string;
 }
 
-export interface Props {
-  colors?: Colors;
+export interface Miscellaneous {
+  /**
+   * @default 1rem
+   * @title Rounded box
+   * @description border radius rounded-box utility class, used in card and other large boxes
+   */
+  "--rounded-box": string;
+  /**
+   * @default 0.5rem
+   * @title Rounded button
+   * @description border radius rounded-btn utility class, used in buttons and similar element
+   */
+  "--rounded-btn": string;
+  /**
+   * @default 1.9rem
+   * @title Rounded badge
+   * @description border radius rounded-badge utility class, used in badges and similar
+   */
+  "--rounded-badge": string;
+  /**
+   * @default 0.25s
+   * @title Animation button
+   * @description duration of animation when you click on button
+   */
+  "--animation-btn": string;
+  /**
+   * @default 0.2s
+   * @title Animation input
+   * @description duration of animation for inputs like checkbox, toggle, radio, etc
+   */
+  "--animation-input": string;
+  /**
+   * @default uppercase
+   * @title Button text case
+   * @description set default text transform for buttons
+   */
+  "--btn-text-case": string;
+  /**
+   * @default 0.95
+   * @title Button focus scale
+   * @description scale transform of button when you focus on it
+   */
+  "--btn-focus-scale": string;
+  /**
+   * @default 1px
+   * @title Border button
+   * @description border width of buttons
+   */
+  "--border-btn": string;
+  /**
+   * @default 1px
+   * @title Tab border
+   * @description border width of tabs
+   */
+  "--tab-border": string;
+  /**
+   * @default 0.5rem
+   * @title Tab radius
+   * @description border radius of tabs
+   */
+  "--tab-radius": string;
 }
 
-type Palette = [string, string][];
+export interface Font {
+  /**
+   * @default 'Albert Sans'
+   */
+  fontFamily: string;
+  /**
+   * @default @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');
+   */
+  styleInnerHtml: string;
+}
+
+export interface Props {
+  colors?: Colors;
+  miscellaneous?: Miscellaneous;
+  fonts?: Font;
+}
+
+type Theme = Colors & Miscellaneous;
 
 const darken = (color: string, percentage = 0.2) =>
   Color.string(color).darken(percentage);
@@ -156,15 +233,13 @@ const contrasted = (color: string, percentage = 0.8) => {
     : c.mix(Color.rgb(0, 0, 0), percentage).saturate(.1);
 };
 
-export const createPalette = (
-  t: Colors = theme,
-): Palette => {
+const toVariables = (t: Theme): [string, string][] => {
   const toValue = (color: string | Color) => {
     const hsl = typeof color === "string" ? Color.string(color) : color;
     return `${hsl.hue()} ${hsl.saturation()}% ${hsl.lightness()}%`;
   };
 
-  return Object.entries({
+  const colorVariables = Object.entries({
     "--p": t["primary"],
     "--pf": t["primary-focus"] ?? darken(t["primary"]),
     "--pc": t["primary-content"] ?? contrasted(t["primary"]),
@@ -197,7 +272,22 @@ export const createPalette = (
 
     "--in": t["info"],
     "--inc": t["info-content"] ?? contrasted(t["info"]),
-  }).map(([key, color]) => [key, toValue(color)]);
+  }).map(([key, color]) => [key, toValue(color)] as [string, string]);
+
+  const miscellaneousVariables = Object.entries({
+    "--rounded-box": t["--rounded-box"],
+    "--rounded-btn": t["--rounded-btn"],
+    "--rounded-badge": t["--rounded-badge"],
+    "--animation-btn": t["--animation-btn"],
+    "--animation-input": t["--animation-input"],
+    "--btn-text-case": t["--btn-text-case"],
+    "--btn-focus-scale": t["--btn-focus-scale"],
+    "--border-btn": t["--border-btn"],
+    "--tab-border": t["--tab-border"],
+    "--tab-radius": t["--tab-radius"],
+  });
+
+  return [...colorVariables, ...miscellaneousVariables];
 };
 
 /**
@@ -209,19 +299,28 @@ export const createPalette = (
  *   --color-secondary: "#161616"
  * }
  */
-function Section({ colors }: Props) {
-  const palette = createPalette({ ...theme, ...colors });
+function Section({
+  colors,
+  miscellaneous,
+  fonts = { fontFamily: "", styleInnerHtml: "" },
+}: Props) {
+  const theme = { ...defaultTheme, ...colors, ...miscellaneous };
+  const variables = [...toVariables(theme), ["--font-family", fonts.fontFamily]]
+    .map(([cssVar, value]) => `${cssVar}: ${value}`)
+    .join(";");
 
   return (
     <Head>
+      <meta name="theme-color" content={theme["primary"]} />
+      <meta name="msapplication-TileColor" content={theme["primary"]} />
       <style
-        id="__DECO_DESIGN_SYSTEM"
+        id="__DESIGN_SYSTEM_FONT"
+        dangerouslySetInnerHTML={{ __html: fonts.styleInnerHtml }}
+      />
+      <style
+        id="__DESIGN_SYSTEM_VARS"
         dangerouslySetInnerHTML={{
-          __html: `:root {${
-            palette
-              .map(([cssVar, value]) => `${cssVar}: ${value}`)
-              .join(";")
-          }}`,
+          __html: `:root {${variables}}`,
         }}
       />
     </Head>
@@ -422,24 +521,11 @@ export function Preview(props: Props) {
           <div class="navbar bg-neutral text-neutral-content rounded-box">
             <div class="flex-none">
               <button class="btn btn-square btn-ghost">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  class="inline-block h-5 w-5 stroke-current"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  >
-                  </path>
-                </svg>
+                <Icon id="Bars3" strokeWidth={0.1} size={24} />
               </button>
             </div>{" "}
             <div class="flex-1">
-              <button class="btn btn-ghost text-xl normal-case">daisyUI</button>
+              <button class="btn btn-ghost text-xl normal-case">deco.cx</button>
             </div>
           </div>{" "}
           <div class="flex gap-3">

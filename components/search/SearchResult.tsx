@@ -1,10 +1,7 @@
 import Filters from "deco-sites/fashion/components/search/Filters.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import SearchControls from "deco-sites/fashion/islands/SearchControls.tsx";
-import ViewSendEvent from "deco-sites/fashion/components/ViewSendEvent.tsx";
+import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
@@ -26,7 +23,7 @@ export interface Props {
 function NotFound() {
   return (
     <div class="w-full flex justify-center items-center py-10">
-      <Text>Not Found!</Text>
+      <span>Not Found!</span>
     </div>
   );
 }
@@ -39,7 +36,7 @@ function Result({
 
   return (
     <>
-      <Container class="px-4 sm:py-10">
+      <div class="container px-4 sm:py-10">
         <SearchControls
           sortOptions={sortOptions}
           filters={filters}
@@ -58,31 +55,36 @@ function Result({
           </div>
         </div>
 
-        <div class="flex flex-row items-center justify-center gap-2 my-4">
-          <a rel="prev" href={pageInfo.previousPage ?? "#"}>
-            <Button
-              disabled={!pageInfo.previousPage}
-              variant="icon"
-              aria-label="previous page"
+        <div class="flex justify-center my-4">
+          <div class="btn-group">
+            <a
+              aria-label="previous page link"
+              rel="prev"
+              href={pageInfo.previousPage ?? "#"}
+              class="btn btn-ghost"
             >
               <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
-            </Button>
-          </a>
-          <Text variant="caption">
-            {pageInfo.currentPage + 1}
-          </Text>
-          <a rel="next" href={pageInfo.nextPage ?? "#"}>
-            <Button
-              disabled={!pageInfo.nextPage}
-              variant="icon"
-              aria-label="next page"
+            </a>
+            <span class="btn btn-ghost">
+              Page {pageInfo.currentPage + 1}
+            </span>
+            <a
+              aria-label="next page link"
+              rel="next"
+              href={pageInfo.nextPage ?? "#"}
+              class="btn btn-ghost"
             >
-              <Icon id="ChevronRight" width={20} height={20} strokeWidth={2} />
-            </Button>
-          </a>
+              <Icon
+                id="ChevronRight"
+                width={20}
+                height={20}
+                strokeWidth={2}
+              />
+            </a>
+          </div>
         </div>
-      </Container>
-      <ViewSendEvent
+      </div>
+      <SendEventOnLoad
         event={{
           name: "view_item_list",
           params: {

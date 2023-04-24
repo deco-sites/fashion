@@ -17,7 +17,7 @@ function SearchButton() {
 
   return (
     <Button
-      variant="icon"
+      class="btn-square btn-ghost"
       aria-label="search icon button"
       onClick={() => {
         displaySearchbar.value = !displaySearchbar.peek();
@@ -33,7 +33,7 @@ function MenuButton() {
 
   return (
     <Button
-      variant="icon"
+      class="btn-square btn-ghost"
       aria-label="open menu"
       onClick={() => {
         displayMenu.value = true;
@@ -48,41 +48,43 @@ function CartButton() {
   const { displayCart } = useUI();
   const { loading, cart, mapItemsToAnalyticsItems } = useCart();
   const totalItems = cart.value?.items.length || null;
-  const dataDeco = displayCart.value ? {} : { "data-deco": "open-cart" };
   const currencyCode = cart.value?.storePreferencesData.currencyCode;
   const total = cart.value?.totalizers.find((item) => item.id === "Items");
   const discounts = cart.value?.totalizers.find((item) =>
     item.id === "Discounts"
   );
 
+  const onClick = () => {
+    displayCart.value = true;
+    window.DECO_SITES_STD.sendAnalyticsEvent({
+      name: "view_cart",
+      params: {
+        currency: cart.value ? currencyCode! : "",
+        value: total?.value
+          ? (total?.value - (discounts?.value ?? 0)) / 100
+          : 0,
+
+        items: cart.value ? mapItemsToAnalyticsItems(cart.value) : [],
+      },
+    });
+  };
+
   return (
     <Button
-      {...dataDeco}
-      variant="icon"
-      class="relative"
+      class="btn-square btn-ghost relative"
       aria-label="open cart"
+      data-deco={displayCart.value && "open-cart"}
       disabled={loading.value}
-      onClick={() => {
-        displayCart.value = true;
-        window.DECO_SITES_STD.sendAnalyticsEvent({
-          name: "view_cart",
-          params: {
-            currency: cart.value ? currencyCode! : "",
-            value: total?.value
-              ? (total?.value - (discounts?.value ?? 0)) / 100
-              : 0,
-
-            items: cart.value ? mapItemsToAnalyticsItems(cart.value) : [],
-          },
-        });
-      }}
+      onClick={onClick}
     >
-      <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />
-      {totalItems && (
-        <span class="absolute text-[9px] right-0 top-0 rounded-full bg-secondary text-secondary-content w-4 h-4 flex items-center justify-center">
-          {totalItems}
-        </span>
-      )}
+      <div class="indicator">
+        {totalItems && (
+          <span class="indicator-item badge badge-secondary badge-sm">
+            {totalItems > 9 ? "9+" : totalItems}
+          </span>
+        )}
+        <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />
+      </div>
     </Button>
   );
 }

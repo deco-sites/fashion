@@ -1,7 +1,6 @@
 import { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 
 export interface Link {
   label: string;
@@ -41,8 +40,8 @@ function LinkTree({
             ? <Image src={avatar} width={150} height={150} />
             : <Icon id="Logo" size={150} />}
         </div>
-        <Text tone="base-100" variant="heading-3">{title}</Text>
-        <Text tone="base-100" variant="body">{description}</Text>
+        <span class="font-medium text-xl text-base-100">{title}</span>
+        <span class="text-base-100">{description}</span>
       </header>
       <main class="w-full max-w-[80%] sm:max-w-[50%]">
         <ul class="flex flex-col justify-center items-center gap-4">

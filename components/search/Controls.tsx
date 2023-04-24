@@ -1,4 +1,3 @@
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Filters from "deco-sites/fashion/components/search/Filters.tsx";
@@ -27,8 +26,7 @@ function SearchControls(
 
       <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
         <Button
-          class={displayFilter ? "" : "sm:hidden"}
-          variant="ghost"
+          class={displayFilter ? "btn-ghost" : "btn-ghost sm:hidden"}
           onClick={() => {
             open.value = true;
           }}

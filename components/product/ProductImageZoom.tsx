@@ -19,8 +19,7 @@ function ProductImageZoom({ images, width, height }: Props) {
   return (
     <>
       <Button
-        class="hidden sm:inline-flex cursor-zoom-in"
-        variant="icon"
+        class="hidden sm:inline-flex cursor-zoom-in btn-ghost"
         onClick={() => open.value = true}
       >
         <Icon
@@ -53,16 +52,21 @@ function ProductImageZoom({ images, width, height }: Props) {
               />
             ))}
           </Slider>
-          <div class="absolute left-8 top-[50vh] bg-base-300 rounded-full border-base-200 border">
-            <Button variant="icon" data-slide="prev" aria-label="Previous">
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-            </Button>
-          </div>
-          <div class="absolute right-8 top-[50vh] bg-base-300 rounded-full border-base-200 border">
-            <Button variant="icon" data-slide="next" aria-label="Next">
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
-            </Button>
-          </div>
+
+          <Button
+            class="btn-circle btn-outline absolute left-8 top-[50vh]"
+            data-slide="prev"
+            aria-label="Previous"
+          >
+            <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+          </Button>
+          <Button
+            class="btn-circle btn-outline absolute right-8 top-[50vh]"
+            data-slide="next"
+            aria-label="Next"
+          >
+            <Icon size={20} id="ChevronRight" strokeWidth={3} />
+          </Button>
         </div>
         <SliderJS rootId="product-zoom" />
       </Modal>
