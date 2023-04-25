@@ -5,6 +5,7 @@
  * https://github.com/saadeghi/daisyui/blob/37bca23444bc9e4d304362c14b7088f9a08f1c74/src/docs/src/routes/theme-generator.svelte
  */
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
+import { useId } from "preact/hooks";
 import { Head } from "$fresh/runtime.ts";
 import { theme as defaultTheme } from "deco-sites/fashion/tailwind.config.ts";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
@@ -210,7 +211,7 @@ export interface Font {
   fontFamily: string;
   /**
    * @default @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');
-   * @format css
+   * \@format css
    */
   styleInnerHtml: string;
 }
@@ -305,6 +306,7 @@ function Section({
   miscellaneous,
   fonts = { fontFamily: "", styleInnerHtml: "" },
 }: Props) {
+  const id = useId();
   const theme = { ...defaultTheme, ...colors, ...miscellaneous };
   const variables = [...toVariables(theme), ["--font-family", fonts.fontFamily]]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
@@ -315,11 +317,11 @@ function Section({
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       <style
-        id="__DESIGN_SYSTEM_FONT"
+        id={`__DESIGN_SYSTEM_FONT-${id}`}
         dangerouslySetInnerHTML={{ __html: fonts.styleInnerHtml }}
       />
       <style
-        id="__DESIGN_SYSTEM_VARS"
+        id={`__DESIGN_SYSTEM_VARS-${id}`}
         dangerouslySetInnerHTML={{
           __html: `:root {${variables}}`,
         }}
