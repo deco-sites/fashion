@@ -1,4 +1,3 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import { headerHeight } from "./constants.ts";
 
@@ -15,9 +14,9 @@ function NavItem({ item }: { item: INavItem }) {
   return (
     <li class="group flex items-center">
       <a href={href} class="px-4 py-3">
-        <Text class="group-hover:underline" variant="menu">
+        <span class="group-hover:underline">
           {label}
-        </Text>
+        </span>
       </a>
 
       {children && children.length > 0 &&
@@ -40,14 +39,14 @@ function NavItem({ item }: { item: INavItem }) {
               {children.map((node) => (
                 <li class="p-6">
                   <a class="hover:underline" href={node.href}>
-                    <Text variant="menu">{node.label}</Text>
+                    <span>{node.label}</span>
                   </a>
 
                   <ul class="flex flex-col gap-1 mt-4">
                     {node.children?.map((leaf) => (
                       <li>
                         <a class="hover:underline" href={leaf.href}>
-                          <Text variant="caption">{leaf.label}</Text>
+                          <span class="text-xs">{leaf.label}</span>
                         </a>
                       </li>
                     ))}

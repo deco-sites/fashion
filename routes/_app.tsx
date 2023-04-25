@@ -4,7 +4,7 @@ import GlobalTags from "deco-sites/fashion/components/GlobalTags.tsx";
 function App(props: AppProps) {
   return (
     <>
-      {/* Include fonts, icons and more */}
+      {/* Include Icons and manifest */}
       <GlobalTags />
 
       {/* Rest of Preact tree */}

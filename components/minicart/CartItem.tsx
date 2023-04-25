@@ -1,6 +1,5 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import QuantitySelector from "deco-sites/fashion/components/ui/QuantitySelector.tsx";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
@@ -45,18 +44,16 @@ function CartItem({ index }: Props) {
         class="object-cover object-center"
       />
       <div class="flex-grow">
-        <Text variant="body">
-          {name}
-        </Text>
+        <span>{name}</span>
         <div class="flex items-center gap-2">
-          <Text class="line-through" tone="base-300" variant="list-price">
+          <span class="line-through text-base-300 text-sm">
             {formatPrice(listPrice / 100, currencyCode!, locale)}
-          </Text>
-          <Text tone="secondary" variant="caption">
+          </span>
+          <span class="text-sm text-secondary">
             {isGift
               ? "Grátis"
               : formatPrice(sellingPrice / 100, currencyCode!, locale)}
-          </Text>
+          </span>
         </div>
         <div class="mt-6 max-w-min">
           <QuantitySelector
@@ -100,7 +97,7 @@ function CartItem({ index }: Props) {
         }}
         disabled={loading.value || isGift}
         loading={loading.value}
-        variant="icon"
+        class="btn btn-ghost"
       >
         <Icon id="Trash" width={20} height={20} />
       </Button>

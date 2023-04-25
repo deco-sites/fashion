@@ -1,4 +1,3 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { useEffect, useRef } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
@@ -88,9 +87,9 @@ const Modal = ({
         >
           <header class="flex px-4 py-6 justify-between items-center border-b border-base-200">
             <h1>
-              <Text variant="heading-2">{title}</Text>
+              <span class="font-medium text-2xl">{title}</span>
             </h1>
-            <Button variant="icon" onClick={onClose}>
+            <Button class="btn btn-ghost" onClick={onClose}>
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
             </Button>
           </header>

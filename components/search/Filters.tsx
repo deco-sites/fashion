@@ -1,4 +1,3 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
 import type {
   Filter,
@@ -21,26 +20,12 @@ function FilterValues({ key, values }: FilterToggle) {
   return (
     <ul class={`flex flex-wrap gap-2 ${flexDirection}`}>
       {values.map(({ label, value, url, selected, quantity }) => {
-        if (key === "cor") {
+        if (key === "cor" || key === "tamanho") {
           return (
             <a href={url}>
               <Avatar
-                // deno-lint-ignore no-explicit-any
-                content={value as any}
-                disabled={selected}
-                variant="color"
-              />
-            </a>
-          );
-        }
-
-        if (key === "tamanho") {
-          return (
-            <a href={url}>
-              <Avatar
-                content={label}
-                disabled={selected}
-                variant="abbreviation"
+                content={value}
+                variant={selected ? "active" : "default"}
               />
             </a>
           );
@@ -48,11 +33,9 @@ function FilterValues({ key, values }: FilterToggle) {
 
         return (
           <a href={url} class="flex items-center gap-2">
-            <input type="checkbox" checked={selected} class="hidden" />
-            <Text variant="caption">{label}</Text>
-            <Text tone="base-300" variant="caption">
-              ({quantity})
-            </Text>
+            <div aria-checked={selected} class="checkbox" />
+            <span class="text-sm">{label}</span>
+            <span class="text-sm text-base-300">({quantity})</span>
           </a>
         );
       })}
@@ -67,7 +50,7 @@ function Filters({ filters }: Props) {
         .filter(isToggle)
         .map((filter) => (
           <li class="flex flex-col gap-4">
-            <Text variant="body">{filter.label}</Text>
+            <span>{filter.label}</span>
             <FilterValues {...filter} />
           </li>
         ))}

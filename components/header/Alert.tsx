@@ -1,4 +1,3 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
 import { useId } from "preact/hooks";
@@ -19,13 +18,9 @@ function Alert({ alerts = [], interval = 5 }: Props) {
     <div id={id}>
       <Slider class="bg-secondary gap-6 scrollbar-none">
         {alerts.map((alert) => (
-          <Text
-            class="flex justify-center items-center w-screen h-[38px]"
-            variant="caption"
-            tone="secondary-content"
-          >
+          <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
             {alert}
-          </Text>
+          </span>
         ))}
       </Slider>
 

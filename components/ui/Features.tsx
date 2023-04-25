@@ -1,8 +1,6 @@
 import Icon, {
   AvailableIcons,
 } from "deco-sites/fashion/components/ui/Icon.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
 
 export interface Feature {
   /**
@@ -27,7 +25,7 @@ function FeatureHighlights(
   { features }: Props,
 ) {
   return (
-    <Container class="min-h-[280px] p-6 sm:px-0 sm:py-10">
+    <div class="container min-h-[280px] p-6 sm:px-0 sm:py-10">
       <div class="border-base-200 border border-solid">
         <div class="flex flex-col justify-evenly divide-y divide-base-200 mx-6 sm:flex-row sm:divide-y-0 sm:divide-x sm:mx-0 sm:my-10">
           {features.map(({ icon: id = "Truck", title, description }) => (
@@ -39,16 +37,14 @@ function FeatureHighlights(
                 strokeWidth={2}
               />
               <div class="flex flex-col gap-2">
-                <Text variant="heading-3">{title}</Text>
-                <Text variant="caption">
-                  {description}
-                </Text>
+                <span class="font-medium text-xl">{title}</span>
+                <span class="text-sm">{description}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
 

@@ -1,5 +1,3 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
@@ -48,18 +46,18 @@ function BannerUI({ banner }: { banner: Banner }) {
         <img class="w-full" src={image.desktop} alt={image.alt ?? title} />
       </Picture>
 
-      <Container class="flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
+      <div class="container flex flex-col items-center justify-center sm:items-start col-start-1 col-span-1 row-start-1 row-span-1 w-full">
         <h1>
-          <Text variant="heading-1" tone="base-100">
+          <span class="text-5xl font-medium text-base-100">
             {title}
-          </Text>
+          </span>
         </h1>
         <h2>
-          <Text variant="heading-3" tone="base-100">
+          <span class="text-xl font-medium text-base-100">
             {subtitle}
-          </Text>
+          </span>
         </h2>
-      </Container>
+      </div>
     </div>
   );
 }

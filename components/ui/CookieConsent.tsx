@@ -1,6 +1,4 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
 import { useId } from "preact/hooks";
 
 const script = (id: string) => `
@@ -36,23 +34,23 @@ function CookieConsent() {
         id={id}
         class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
       >
-        <Container class="px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-base-100">
-          <Text class="flex-grow" variant="caption">
+        <div class="container px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-base-100">
+          <span class="flex-grow text-sm">
             Utilizamos cookies em nosso site para melhorar seu desempenho,
             segurança e personalizar conteúdo e anúncios.
-          </Text>
+          </span>
 
           <a href="https://www.deco.cx">
-            <Text class="underline" variant="caption">
+            <span class="underline text-sm">
               Nossa política de privacidade
-            </Text>
+            </span>
           </a>
 
           <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-            <Button data-button-cc-accept variant="primary">Aceitar</Button>
-            <Button data-button-cc-close variant="outline">Fechar</Button>
+            <Button data-button-cc-accept>Aceitar</Button>
+            <Button data-button-cc-close class="btn-outline">Fechar</Button>
           </div>
-        </Container>
+        </div>
       </div>
       <script type="module" dangerouslySetInnerHTML={{ __html: script(id) }} />
     </>

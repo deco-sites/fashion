@@ -2,7 +2,6 @@ import { useRef } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 
 function Coupon() {
   const { cart, loading, addCouponsToCart } = useCart();
@@ -27,12 +26,11 @@ function Coupon() {
 
   return (
     <div class="flex justify-between items-center px-4">
-      <Text variant="caption">Cupom de desconto</Text>
+      <span class="text-sm">Cupom de desconto</span>
       {!displayInput.value && (
         <Button
-          class="underline"
+          class="btn-ghost underline"
           onClick={toggleInput}
-          variant="ghost"
         >
           {coupon || "Adicionar"}
         </Button>

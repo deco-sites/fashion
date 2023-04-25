@@ -30,37 +30,36 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="flex border border-solid border-base-200">
-      <Button
-        class="h-9 w-9"
-        variant="icon"
-        onClick={decrement}
-        disabled={disabled}
-        loading={loading}
-      >
-        -
-      </Button>
-      <style dangerouslySetInnerHTML={{ __html: innerStyle }} />
-      <input
-        class="text-center text-base-content text-body font-body bg-transparent outline-none disabled:opacity-50"
-        type="number"
-        inputMode="numeric"
-        pattern="[0-9]*"
-        max={QUANTITY_MAX_VALUE}
-        min={1}
-        value={quantity}
-        disabled={disabled}
-        onBlur={(e) => onChange?.(e.currentTarget.valueAsNumber)}
-      />
-      <Button
-        class="h-9 w-9"
-        variant="icon"
-        onClick={increment}
-        disabled={disabled}
-        loading={loading}
-      >
-        +
-      </Button>
+    <div class="form-control">
+      <div class="input-group">
+        <Button
+          class="btn-square btn-outline"
+          onClick={decrement}
+          disabled={disabled}
+          loading={loading}
+        >
+          -
+        </Button>
+        <input
+          class="input border-base-content border-x-0 text-center"
+          type="number"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          max={QUANTITY_MAX_VALUE}
+          min={1}
+          value={quantity}
+          disabled={disabled}
+          onBlur={(e) => onChange?.(e.currentTarget.valueAsNumber)}
+        />
+        <Button
+          class="btn-square btn-outline"
+          onClick={increment}
+          disabled={disabled}
+          loading={loading}
+        >
+          +
+        </Button>
+      </div>
     </div>
   );
 }

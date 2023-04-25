@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+
+  /* Allow changing font family via CMS */
+  html {
+    font-family: var(--font-family);
+  }
+
+  /** Remove default styles from input[type=number] */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
 @layer components {
 
   /** Prevent scroll when modal is open */
@@ -12,6 +32,8 @@
 }
 
 @layer utilities {
+
+  /** Remove scrollbar from overflow-auto */
   .scrollbar-none {
     scrollbar-width: none;
     -ms-overflow-style: none;

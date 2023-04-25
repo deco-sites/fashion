@@ -1,16 +1,14 @@
 import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import { useId } from "preact/hooks";
-import type { LoaderReturnType } from "$live/types.ts";
-import type { Product } from "deco-sites/std/commerce/types.ts";
-import ViewSendEvent from "deco-sites/fashion/components/ViewSendEvent.tsx";
+import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
+import type { LoaderReturnType } from "$live/types.ts";
+import type { Product } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   title: string;
@@ -29,12 +27,12 @@ function ProductShelf({
   }
 
   return (
-    <Container
+    <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 sm:px-5"
+      class="container grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 sm:px-5"
     >
       <h2 class="text-center row-start-1 col-span-full">
-        <Text variant="heading-2">{title}</Text>
+        <span class="font-medium text-2xl">{title}</span>
       </h2>
 
       <Slider
@@ -50,24 +48,26 @@ function ProductShelf({
 
       <>
         <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-          <div class="absolute right-1/2 bg-base-100 rounded-full border-base-content border">
-            <Button variant="icon" data-slide="prev" aria-label="Previous item">
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-            </Button>
-          </div>
+          <Button
+            class="btn-circle btn-outline absolute right-1/2 bg-base-100"
+            data-slide="prev"
+            aria-label="Previous item"
+          >
+            <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+          </Button>
         </div>
         <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-          <div class="absolute left-1/2 bg-base-100 rounded-full border-base-content border">
-            <Button variant="icon" data-slide="next" aria-label="Next item">
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
-            </Button>
-          </div>
+          <Button
+            class="btn-circle btn-outline absolute left-1/2 bg-base-100"
+            data-slide="next"
+            aria-label="Next item"
+          >
+            <Icon size={20} id="ChevronRight" strokeWidth={3} />
+          </Button>
         </div>
       </>
-
       <SliderControllerJS rootId={id} />
-
-      <ViewSendEvent
+      <SendEventOnLoad
         event={{
           name: "view_item_list",
           params: {
@@ -81,7 +81,7 @@ function ProductShelf({
           },
         }}
       />
-    </Container>
+    </div>
   );
 }
 

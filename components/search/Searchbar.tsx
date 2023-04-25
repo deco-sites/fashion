@@ -11,7 +11,6 @@
 
 import { useEffect, useRef } from "preact/compat";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
 import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
@@ -35,7 +34,7 @@ function CloseButton() {
 
   return (
     <Button
-      variant="icon"
+      class="btn-ghost btn-circle"
       onClick={() => (displaySearchbar.value = false)}
     >
       <Icon id="XMark" width={20} height={20} strokeWidth={2} />
@@ -117,7 +116,7 @@ function Searchbar({
           class="flex-grow flex gap-3 px-3 py-2 border border-base-200"
         >
           <Button
-            variant="icon"
+            class="btn-ghost"
             aria-label="Search"
             htmlFor="searchbar"
             tabIndex={-1}
@@ -166,7 +165,7 @@ function Searchbar({
               setSearch("");
             }}
           >
-            <Text variant="caption">limpar</Text>
+            <span class="text-sm">limpar</span>
           </button>
         </form>
         {variant === "desktop" && <CloseButton />}
@@ -184,23 +183,22 @@ function Searchbar({
         )}
         {hasSuggestions && emptySuggestions && (
           <div class="py-16 md:py-6! flex flex-col gap-4 w-full">
-            <Text
-              variant="heading-3"
-              class="text-center"
+            <span
+              class="font-medium text-xl text-center"
               role="heading"
               aria-level={3}
             >
               Nenhum resultado encontrado
-            </Text>
-            <Text variant="body" tone="base-300" class="text-center">
+            </span>
+            <span class="text-center text-base-300">
               Vamos tentar de outro jeito? Verifique a ortografia ou use um
               termo diferente
-            </Text>
+            </span>
           </div>
         )}
         {_products && !emptySuggestions && (
           <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
-            <Text class="px-4" variant="heading-3">Produtos sugeridos</Text>
+            <span class="font-medium text-xl px-4">Produtos sugeridos</span>
             <Slider>
               {_products.map((
                 product,
