@@ -3,7 +3,7 @@ import postcss, { PluginCreator } from "npm:postcss@8.4.22";
 import autoprefixer from "npm:autoprefixer@10.4.14";
 import tailwindcss from "npm:tailwindcss@3.3.1";
 import cssnano from "npm:cssnano@6.0.0";
-import daisyui from "npm:daisyui@2.51.5";
+import daisyui from "npm:daisyui@2.51.6";
 import config from "deco-sites/fashion/tailwind.config.ts";
 
 interface Options {
