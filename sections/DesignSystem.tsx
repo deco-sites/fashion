@@ -304,7 +304,11 @@ const toVariables = (t: Theme): [string, string][] => {
 function Section({
   colors,
   miscellaneous,
-  fonts = { fontFamily: "", styleInnerHtml: "" },
+  fonts = {
+    fontFamily: "Albert Sans",
+    styleInnerHtml:
+      "@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');",
+  },
 }: Props) {
   const id = useId();
   const theme = { ...defaultTheme, ...colors, ...miscellaneous };
