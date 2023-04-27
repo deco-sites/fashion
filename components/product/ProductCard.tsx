@@ -58,7 +58,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
         <div class="absolute top-0 right-0">
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
         </div>
-        <a href={url} aria-label="view product">
+        <a href={url} aria-label="view product" class="contents">
           <Image
             src={front.url!}
             alt={front.alternateName}
