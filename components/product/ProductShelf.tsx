@@ -1,5 +1,4 @@
 import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
@@ -35,16 +34,13 @@ function ProductShelf({
         <span class="font-medium text-2xl">{title}</span>
       </h2>
 
-      <Slider
-        class="gap-6 col-span-full row-start-2 row-end-5"
-        snap="snap-center sm:snap-start block first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
-      >
+      <ul class="carousel carousel-center sm:carousel-end gap-6 col-span-full row-start-2 row-end-5">
         {products?.map((product) => (
-          <div class="min-w-[270px] max-w-[270px] sm:min-w-[292px] sm:max-w-[292px]">
+          <li class="carousel-item w-[270px] sm:w-[292px] first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0">
             <ProductCard product={product} itemListName={title} />
-          </div>
+          </li>
         ))}
-      </Slider>
+      </ul>
 
       <>
         <div class="hidden relative sm:block z-10 col-start-1 row-start-3">

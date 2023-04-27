@@ -7,21 +7,16 @@ type SliderProps = JSX.IntrinsicElements["ul"] & {
 
 export function Slider({
   children,
-  snap = "snap-center",
-  class: _class = "gap-6 scrollbar-none",
+  class: _class = "scrollbar-none carousel-center",
   ...props
 }: SliderProps) {
   return (
     <ul
-      data-slider
-      class={`grid grid-flow-col items-center overflow-x-auto overscroll-x-contain snap-x snap-mandatory ${_class}`}
+      class={`carousel ${_class}`}
       {...props}
     >
       {Children.map(children, (child, index) => (
-        <li
-          data-slider-item={index}
-          class={snap}
-        >
+        <li class="carousel-item">
           {child}
         </li>
       ))}

@@ -1,5 +1,4 @@
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
 import { useId } from "preact/hooks";
 
 export interface Props {
@@ -16,13 +15,15 @@ function Alert({ alerts = [], interval = 5 }: Props) {
 
   return (
     <div id={id}>
-      <Slider class="bg-secondary gap-6 scrollbar-none">
+      <ul class="carousel carousel-center bg-secondary gap-6 scrollbar-none">
         {alerts.map((alert) => (
-          <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
-            {alert}
-          </span>
+          <li class="carousel-item">
+            <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
+              {alert}
+            </span>
+          </li>
         ))}
-      </Slider>
+      </ul>
 
       <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
     </div>

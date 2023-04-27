@@ -1,9 +1,6 @@
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import {
-  Slider,
-  SliderDots,
-} from "deco-sites/fashion/components/ui/Slider.tsx";
+import { SliderDots } from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
@@ -50,43 +47,45 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
-      <a href={action?.href ?? "#"} aria-label={action?.label}>
-        <Picture class="w-full" preload={lcp}>
-          <Source
-            media="(max-width: 767px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={mobile}
-            width={360}
-            height={600}
-          />
-          <Source
-            media="(min-width: 768px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={desktop}
-            width={1440}
-            height={600}
-          />
-          <img
-            class="object-cover w-full sm:h-full"
-            loading={lcp ? "eager" : "lazy"}
-            src={desktop}
-            alt={alt}
-          />
-        </Picture>
-        {action && (
-          <div class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 p-4 rounded glass">
-            <span class="text-6xl font-medium text-base-100">
-              {action.title}
-            </span>
-            <span class="font-medium text-xl text-base-100">
-              {action.subTitle}
-            </span>
-            <Button class="glass">{action.label}</Button>
-          </div>
-        )}
-      </a>
-    </div>
+    <a
+      href={action?.href ?? "#"}
+      aria-label={action?.label}
+      class="relative h-[600px] overflow-y-hidden"
+    >
+      <Picture class="w-full" preload={lcp}>
+        <Source
+          media="(max-width: 767px)"
+          fetchPriority={lcp ? "high" : "auto"}
+          src={mobile}
+          width={360}
+          height={600}
+        />
+        <Source
+          media="(min-width: 768px)"
+          fetchPriority={lcp ? "high" : "auto"}
+          src={desktop}
+          width={1440}
+          height={600}
+        />
+        <img
+          class="object-cover w-full sm:h-full"
+          loading={lcp ? "eager" : "lazy"}
+          src={desktop}
+          alt={alt}
+        />
+      </Picture>
+      {action && (
+        <div class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 p-4 rounded glass">
+          <span class="text-6xl font-medium text-base-100">
+            {action.title}
+          </span>
+          <span class="font-medium text-xl text-base-100">
+            {action.subTitle}
+          </span>
+          <Button class="glass">{action.label}</Button>
+        </div>
+      )}
+    </a>
   );
 }
 
@@ -162,11 +161,13 @@ function BannerCarousel({ images, preload, interval }: Props) {
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
     >
-      <Slider class="col-span-full row-span-full scrollbar-none gap-6">
+      <ul class="carousel carousel-center w-screen col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
-          <BannerItem image={image} lcp={index === 0 && preload} />
+          <li class="carousel-item w-full">
+            <BannerItem image={image} lcp={index === 0 && preload} />
+          </li>
         ))}
-      </Slider>
+      </ul>
 
       <Controls />
 
