@@ -34,7 +34,7 @@ function LinkTree({
       class="flex flex-col justify-start items-center gap-10 bg-base-content p-10 h-screen overflow-y-hidden"
       style={bgImage ? { background: `url(${bgImage})` } : undefined}
     >
-      <header class="flex flex-col justify-center items-center gap-4">
+      <header class="flex flex-col justify-center items-center gap-6">
         <div class="rounded-full w-min bg-base-100 p-4">
           {avatar
             ? <Image src={avatar} width={150} height={150} />
