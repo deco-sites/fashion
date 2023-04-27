@@ -2395,27 +2395,26 @@
       ],
       "title": "deco-cx/live/handlers/router.ts@RouterConfig"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
-      "$ref": "#/root/flags",
-      "title": "Flag"
-    },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
-      },
-      "title": "Flag[]"
-    },
     "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig": {
       "type": "object",
       "properties": {
-        "flags": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag[]",
-          "title": "Flags"
+        "audiences": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/JGxpdmUvZmxhZ3MvYXVkaWVuY2UudHM="
+              },
+              {
+                "$ref": "#/definitions/JGxpdmUvZmxhZ3MvZXZlcnlvbmUudHM="
+              }
+            ]
+          },
+          "title": "Audiences"
         }
       },
       "required": [
-        "flags"
+        "audiences"
       ],
       "title": "deco-cx/live/handlers/routesSelection.ts@SelectionConfig"
     },
