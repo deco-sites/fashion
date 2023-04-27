@@ -4,7 +4,7 @@ function GlobalTags() {
   return (
     <Head>
       {/* Tailwind v3 CSS file */}
-      <link href={asset("/main.css")} rel="stylesheet" />
+      <link href={asset("/tailwind.css")} rel="stylesheet" />
 
       {/* Icons */}
       <link
