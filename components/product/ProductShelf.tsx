@@ -1,9 +1,10 @@
 import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
-import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
+import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import { useId } from "preact/hooks";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
+import { useId } from "preact/hooks";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import type { LoaderReturnType } from "$live/types.ts";
@@ -34,13 +35,16 @@ function ProductShelf({
         <span class="font-medium text-2xl">{title}</span>
       </h2>
 
-      <ul class="carousel carousel-center sm:carousel-end gap-6 col-span-full row-start-2 row-end-5">
-        {products?.map((product) => (
-          <li class="carousel-item w-[270px] sm:w-[292px] first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0">
+      <Slider class="carousel carousel-center sm:carousel-end gap-6 col-span-full row-start-2 row-end-5">
+        {products?.map((product, index) => (
+          <Slider.Item
+            index={index}
+            class="carousel-item w-[270px] sm:w-[292px] first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
+          >
             <ProductCard product={product} itemListName={title} />
-          </li>
+          </Slider.Item>
         ))}
-      </ul>
+      </Slider>
 
       <>
         <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
@@ -62,7 +66,7 @@ function ProductShelf({
           </Button>
         </div>
       </>
-      <SliderControllerJS rootId={id} />
+      <SliderJS rootId={id} />
       <SendEventOnLoad
         event={{
           name: "view_item_list",

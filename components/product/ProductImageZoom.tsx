@@ -3,8 +3,8 @@ import Image from "deco-sites/std/components/Image.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Modal from "deco-sites/fashion/components/ui/Modal.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import type { ImageObject } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
@@ -12,6 +12,8 @@ interface Props {
   width: number;
   height: number;
 }
+
+const id = "product-zoom";
 
 function ProductImageZoom({ images, width, height }: Props) {
   const open = useSignal(false);
@@ -37,19 +39,18 @@ function ProductImageZoom({ images, width, height }: Props) {
           open.value = false;
         }}
       >
-        <div class="relative" id="product-zoom">
-          <Slider class="max-w-[100vw] overflow-y-auto">
-            {images.map((image) => (
-              <Image
-                style={{
-                  aspectRatio: `${width} / ${height}`,
-                  minWidth: `100vw`,
-                }}
-                src={image.url!}
-                alt={image.alternateName}
-                width={width}
-                height={height}
-              />
+        <div class="relative" id={id}>
+          <Slider class="carousel w-screen overflow-y-auto">
+            {images.map((image, index) => (
+              <Slider.Item index={index} class="carousel-item w-full">
+                <Image
+                  style={{ aspectRatio: `${width} / ${height}` }}
+                  src={image.url!}
+                  alt={image.alternateName}
+                  width={width}
+                  height={height}
+                />
+              </Slider.Item>
             ))}
           </Slider>
 
@@ -68,7 +69,7 @@ function ProductImageZoom({ images, width, height }: Props) {
             <Icon size={20} id="ChevronRight" strokeWidth={3} />
           </Button>
         </div>
-        <SliderJS rootId="product-zoom" />
+        <SliderJS rootId={id} />
       </Modal>
     </>
   );

@@ -1,4 +1,5 @@
 import Image from "deco-sites/std/components/Image.tsx";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Highlight {
@@ -20,9 +21,12 @@ function Highlights({ highlights = [], title }: Props) {
         <span class="font-medium text-2xl">{title}</span>
       </h2>
 
-      <ul class="carousel carousel-center sm:carousel-end gap-6">
-        {highlights.map(({ href, src, alt, label }) => (
-          <li class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]">
+      <Slider class="carousel carousel-center sm:carousel-end gap-6">
+        {highlights.map(({ href, src, alt, label }, index) => (
+          <Slider.Item
+            index={index}
+            class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"
+          >
             <a href={href} class="card card-compact bg-base-100">
               <figure>
                 <Image
@@ -37,9 +41,9 @@ function Highlights({ highlights = [], title }: Props) {
                 <h2 class="card-title text-base font-medium">{label}</h2>
               </div>
             </a>
-          </li>
+          </Slider.Item>
         ))}
-      </ul>
+      </Slider>
     </div>
   );
 }

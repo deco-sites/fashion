@@ -7,6 +7,8 @@ interface Props {
 }
 
 const ATTRIBUTES = {
+  "data-slider": "data-slider",
+  "data-slider-item": "data-slider-item",
   'data-slide="prev"': 'data-slide="prev"',
   'data-slide="next"': 'data-slide="next"',
   "data-dot": "data-dot",
@@ -45,8 +47,8 @@ const isHTMLElement = (x: Element): x is HTMLElement =>
 
 const setup = ({ rootId, behavior, interval }: Props) => {
   const root = document.getElementById(rootId);
-  const slider = root?.querySelector(`.carousel`);
-  const items = root?.querySelectorAll(`.carousel-item`);
+  const slider = root?.querySelector(`[${ATTRIBUTES["data-slider"]}]`);
+  const items = root?.querySelectorAll(`[${ATTRIBUTES["data-slider-item"]}]`);
   const prev = root?.querySelector(`[${ATTRIBUTES['data-slide="prev"']}]`);
   const next = root?.querySelector(`[${ATTRIBUTES['data-slide="next"']}]`);
   const dots = root?.querySelectorAll(`[${ATTRIBUTES["data-dot"]}]`);
@@ -138,10 +140,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
     { threshold: THRESHOLD, root: slider },
   );
 
-  items.forEach((item, index) => {
-    item.setAttribute("data-slider-item", `${index}`);
-    observer.observe(item);
-  });
+  items.forEach((item) => observer.observe(item));
 
   for (let it = 0; it < (dots?.length ?? 0); it++) {
     dots?.item(it).addEventListener("click", () => goToItem(it));

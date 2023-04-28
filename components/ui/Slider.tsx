@@ -1,47 +1,32 @@
-import { Children } from "preact/compat";
-import type { JSX } from "preact";
+import type { ComponentChildren, JSX } from "preact";
 
-type SliderProps = JSX.IntrinsicElements["ul"] & {
-  snap?: string;
-};
+function Dot({ index, children }: {
+  index: number;
+  children: ComponentChildren;
+}) {
+  return (
+    <button
+      data-dot={index}
+      aria-label={`go to slider item ${index}`}
+      class="focus:outline-none group"
+    >
+      {children}
+    </button>
+  );
+}
 
-export function Slider({
-  children,
-  class: _class = "scrollbar-none carousel-center",
+function Slider(props: JSX.IntrinsicElements["ul"]) {
+  return <ul data-slider {...props} />;
+}
+
+function Item({
+  index,
   ...props
-}: SliderProps) {
-  return (
-    <ul
-      class={`carousel ${_class}`}
-      {...props}
-    >
-      {Children.map(children, (child, index) => (
-        <li class="carousel-item">
-          {child}
-        </li>
-      ))}
-    </ul>
-  );
+}: JSX.IntrinsicElements["li"] & { index: number }) {
+  return <li data-slider-item={index} {...props} />;
 }
 
-type SliderDotsProps = JSX.IntrinsicElements["ol"];
+Slider.Dot = Dot;
+Slider.Item = Item;
 
-export function SliderDots({ children, class: _class }: SliderDotsProps) {
-  return (
-    <ol
-      class={`flex items-center justify-center overflow-auto overscroll-contain snap-x snap-mandatory ${_class}`}
-    >
-      {Children.map(children, (child, index) => (
-        <li class="snap-center">
-          <button
-            data-dot={index}
-            aria-label={`go to slider item ${index}`}
-            class="focus:outline-none group"
-          >
-            {child}
-          </button>
-        </li>
-      ))}
-    </ol>
-  );
-}
+export default Slider;

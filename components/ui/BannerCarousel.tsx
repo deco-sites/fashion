@@ -1,7 +1,7 @@
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import { SliderDots } from "deco-sites/fashion/components/ui/Slider.tsx";
-import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
+import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
@@ -50,9 +50,9 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     <a
       href={action?.href ?? "#"}
       aria-label={action?.label}
-      class="relative h-[600px] overflow-y-hidden"
+      class="relative h-[600px] overflow-y-hidden w-full"
     >
-      <Picture class="w-full" preload={lcp}>
+      <Picture preload={lcp}>
         <Source
           media="(max-width: 767px)"
           fetchPriority={lcp ? "high" : "auto"}
@@ -68,7 +68,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
           height={600}
         />
         <img
-          class="object-cover w-full sm:h-full"
+          class="object-cover w-full"
           loading={lcp ? "eager" : "lazy"}
           src={desktop}
           alt={alt}
@@ -104,16 +104,20 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
         }}
       >
       </style>
-      <SliderDots class="col-span-full gap-4 z-10 row-start-4">
-        {images?.map((_) => (
-          <div class="py-5">
-            <div
-              class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
-              style={{ animationDuration: `${interval}s` }}
-            />
-          </div>
+      <ul class="carousel justify-center col-span-full gap-4 z-10 row-start-4">
+        {images?.map((_, index) => (
+          <li class="carousel-item">
+            <Slider.Dot index={index}>
+              <div class="py-5">
+                <div
+                  class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
+                  style={{ animationDuration: `${interval}s` }}
+                />
+              </div>
+            </Slider.Dot>
+          </li>
         ))}
-      </SliderDots>
+      </ul>
     </>
   );
 }
@@ -161,19 +165,19 @@ function BannerCarousel({ images, preload, interval }: Props) {
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
     >
-      <ul class="carousel carousel-center w-screen col-span-full row-span-full scrollbar-none gap-6">
+      <Slider class="carousel carousel-center w-screen col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
-          <li class="carousel-item w-full">
+          <Slider.Item index={index} class="carousel-item w-full">
             <BannerItem image={image} lcp={index === 0 && preload} />
-          </li>
+          </Slider.Item>
         ))}
-      </ul>
+      </Slider>
 
       <Controls />
 
       <ProgressiveDots images={images} interval={interval} />
 
-      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
+      <SliderJS rootId={id} interval={interval && interval * 1e3} />
     </div>
   );
 }

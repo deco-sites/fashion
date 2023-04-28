@@ -5,7 +5,7 @@ import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import { SliderDots } from "deco-sites/fashion/components/ui/Slider.tsx";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
@@ -180,9 +180,12 @@ function Details({
         >
           {/* Image Slider */}
           <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
-            <ul class="carousel gap-6">
+            <Slider class="carousel gap-6">
               {images.map((img, index) => (
-                <li class="carousel-item min-w-[100vw] sm:min-w-[40vw]">
+                <Slider.Item
+                  index={index}
+                  class="carousel-item min-w-[100vw] sm:min-w-[40vw]"
+                >
                   <Image
                     class="w-full"
                     sizes="(max-width: 640px) 100vw, 40vw"
@@ -195,9 +198,9 @@ function Details({
                     preload={index === 0}
                     loading={index === 0 ? "eager" : "lazy"}
                   />
-                </li>
+                </Slider.Item>
               ))}
-            </ul>
+            </Slider>
 
             <Button
               class="absolute left-2 top-1/2 btn-circle btn-outline"
@@ -225,18 +228,22 @@ function Details({
           </div>
 
           {/* Dots */}
-          <SliderDots class="gap-2 sm:justify-start overflow-auto px-4 sm:px-0 sm:flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
-            {images.map((img, _) => (
-              <Image
-                style={{ aspectRatio: ASPECT_RATIO }}
-                class="group-disabled:border-base-300 border rounded min-w-[63px] sm:min-w-[100px]"
-                width={63}
-                height={87.5}
-                src={img.url!}
-                alt={img.alternateName}
-              />
+          <ul class="flex gap-2 sm:justify-start overflow-auto px-4 sm:px-0 sm:flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
+            {images.map((img, index) => (
+              <li class="min-w-[63px] sm:min-w-[100px]">
+                <Slider.Dot index={index}>
+                  <Image
+                    style={{ aspectRatio: ASPECT_RATIO }}
+                    class="group-disabled:border-base-300 border rounded "
+                    width={63}
+                    height={87.5}
+                    src={img.url!}
+                    alt={img.alternateName}
+                  />
+                </Slider.Dot>
+              </li>
             ))}
-          </SliderDots>
+          </ul>
 
           {/* Product Info */}
           <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1">
