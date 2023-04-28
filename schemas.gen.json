@@ -966,6 +966,158 @@
               "default": "deco-sites/std/functions/vtexProductDetailsPage.ts"
             }
           }
+        },
+        {
+          "title": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts"
+              ],
+              "default": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC90eXBlcy50cw==@partialSegment": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "campaigns": {
+              "anyOf": [
+                {},
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Campaigns"
+            },
+            "channel": {
+              "type": "string",
+              "description": "1,2,3 etc",
+              "title": "Channel"
+            },
+            "priceTables": {
+              "anyOf": [
+                {},
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Price Tables"
+            },
+            "regionId": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Region Id"
+            },
+            "utm_campaign": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Utm_campaign"
+            },
+            "utm_source": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Utm_source"
+            },
+            "utmi_campaign": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Utmi_campaign"
+            },
+            "currencyCode": {
+              "type": "string",
+              "description": "BRL, USD stc",
+              "title": "Currency Code"
+            },
+            "currencySymbol": {
+              "type": "string",
+              "description": "R$, $ etc",
+              "title": "Currency Symbol"
+            },
+            "countryCode": {
+              "type": "string",
+              "description": "BRA, USA etc",
+              "title": "Country Code"
+            },
+            "cultureInfo": {
+              "type": "string",
+              "description": "pt-BR, en-US etc",
+              "title": "Culture Info"
+            },
+            "channelPrivacy": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "public"
+                },
+                {
+                  "type": "string",
+                  "const": "private"
+                }
+              ],
+              "type": "string",
+              "title": "Channel Privacy"
+            }
+          },
+          "required": [],
+          "title": "deco-sites/std/commerce/vtex/types.ts@partialSegment"
+        },
+        {
+          "title": "deco-sites/std/functions/segment.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/segment.ts"
+              ],
+              "default": "deco-sites/std/functions/segment.ts"
+            }
+          }
         }
       ]
     },
@@ -1089,6 +1241,27 @@
                 "deco-sites/std/functions/vtexProductList.ts"
               ],
               "default": "deco-sites/std/functions/vtexProductList.ts"
+            }
+          }
+        },
+        {
+          "title": "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts"
+              ],
+              "default": "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts"
             }
           }
         }
@@ -1498,6 +1671,53 @@
       ],
       "title": "deco-sites/std/functions/shopifyProductListingPage.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Slug": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "string",
+          "title": "deco-sites/std/functions/slugFromParams.ts@Slug"
+        },
+        {
+          "title": "deco-sites/std/functions/slugFromParams.ts",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/slugFromParams.ts"
+              ],
+              "default": "deco-sites/std/functions/slugFromParams.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "param": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": "slug",
+          "title": "Param"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/std/functions/slugFromParams.ts@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props": {
       "type": "object",
       "properties": {
@@ -1589,33 +1809,99 @@
       ],
       "title": "deco-sites/std/functions/vndaProductListingPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=@ClientConfigVTEX": {
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ClientVTEX": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "title": "deco-sites/std/commerce/vtex/client.ts@ClientVTEX"
+        },
+        {
+          "title": "deco-sites/std/functions/vtexClient.ts",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/vtexClient.ts"
+              ],
+              "default": "deco-sites/std/functions/vtexClient.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "title": "Account"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
           "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+            }
+          ],
           "properties": {
             "account": {
               "type": "string",
+              "description": "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
               "title": "Account"
             },
             "defaultLocale": {
               "type": "string",
+              "description": "Locale used for VTEX Intelligent Search client.",
               "title": "Default Locale"
             },
             "defaultPriceCurrency": {
               "type": "string",
+              "description": "Default price currency.",
+              "default": "USD",
               "title": "Default Price Currency"
+            },
+            "defaultSalesChannel": {
+              "type": "string",
+              "description": "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
+              "title": "Default Sales Channel"
+            },
+            "defaultRegionId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Default Region Id"
+            },
+            "defaultHideUnnavailableItems": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Default Hide Unnavailable Items"
             }
           },
           "required": [
             "account",
             "defaultLocale",
-            "defaultPriceCurrency"
+            "defaultPriceCurrency",
+            "defaultSalesChannel"
           ],
-          "title": "deco-sites/std/functions/vtexConfig.ts@ClientConfigVTEX"
+          "title": "deco-sites/std/commerce/vtex/client.ts@ConfigVTEX"
         },
         {
           "title": "deco-sites/std/functions/vtexConfig.ts",
@@ -2136,12 +2422,6 @@
       ],
       "title": "deco-sites/std/functions/vtexWishlist.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
-      "type": "object",
-      "properties": {},
-      "required": [],
-      "title": "Account"
-    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvb2NjL2NsaWVudC50cw==@ConfigOCC": {
       "type": "object",
       "allOf": [
@@ -2225,58 +2505,6 @@
       ],
       "title": "deco-sites/std/commerce/vnda/types.ts@ConfigVNDA"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
-        }
-      ],
-      "properties": {
-        "account": {
-          "type": "string",
-          "description": "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
-          "title": "Account"
-        },
-        "defaultLocale": {
-          "type": "string",
-          "description": "Locale used for VTEX Intelligent Search client.",
-          "title": "Default Locale"
-        },
-        "defaultPriceCurrency": {
-          "type": "string",
-          "description": "Default price currency.",
-          "default": "USD",
-          "title": "Default Price Currency"
-        },
-        "defaultSalesChannel": {
-          "type": "string",
-          "description": "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
-          "title": "Default Sales Channel"
-        },
-        "defaultRegionId": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Default Region Id"
-        },
-        "defaultHideUnnavailableItems": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Default Hide Unnavailable Items"
-        }
-      },
-      "required": [
-        "account",
-        "defaultLocale",
-        "defaultPriceCurrency",
-        "defaultSalesChannel"
-      ],
-      "title": "deco-sites/std/commerce/vtex/client.ts@ConfigVTEX"
-    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews": {
       "type": "object",
       "properties": {
@@ -2294,6 +2522,100 @@
         "appId"
       ],
       "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Slug",
+          "title": "Slug"
+        },
+        "vtexClient": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ClientVTEX",
+          "title": "Vtex Client"
+        },
+        "segment": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC90eXBlcy50cw==@partialSegment",
+          "title": "Segment"
+        }
+      },
+      "required": [
+        "slug",
+        "vtexClient",
+        "segment"
+      ],
+      "title": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "crossSelling": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": ""
+            },
+            {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "whosawalsosaw"
+                },
+                {
+                  "type": "string",
+                  "const": "whosawalsobought"
+                },
+                {
+                  "type": "string",
+                  "const": "whoboughtalsobought"
+                },
+                {
+                  "type": "string",
+                  "const": "showtogether"
+                },
+                {
+                  "type": "string",
+                  "const": "accessories"
+                },
+                {
+                  "type": "string",
+                  "const": "similars"
+                },
+                {
+                  "type": "string",
+                  "const": "suggestions"
+                }
+              ],
+              "type": "string"
+            }
+          ],
+          "type": "string",
+          "title": "Cross Selling",
+          "description": "VTEX Cross Selling API. This loader only works on routes of type /:slug/p"
+        },
+        "count": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Count"
+        },
+        "slug": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Slug",
+          "description": "the product slug",
+          "title": "Slug"
+        },
+        "vtexClient": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ClientVTEX",
+          "description": "the VTEX Client that needs to be used.",
+          "title": "Vtex Client"
+        }
+      },
+      "required": [
+        "slug",
+        "vtexClient"
+      ],
+      "title": "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
@@ -4425,6 +4747,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NlZ21lbnQudHM=": {
+      "title": "deco-sites/std/functions/segment.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/segment.ts"
+          ],
+          "default": "deco-sites/std/functions/segment.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
       "title": "deco-sites/std/functions/shopifyProductDetailsPage.ts",
       "type": "object",
@@ -4483,6 +4821,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz": {
+      "title": "deco-sites/std/functions/slugFromParams.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/slugFromParams.ts"
+          ],
+          "default": "deco-sites/std/functions/slugFromParams.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
       "title": "deco-sites/std/functions/vndaProductDetailsPage.ts",
       "type": "object",
@@ -4538,6 +4897,27 @@
             "deco-sites/std/functions/vndaProductListingPage.ts"
           ],
           "default": "deco-sites/std/functions/vndaProductListingPage.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDbGllbnQudHM=": {
+      "title": "deco-sites/std/functions/vtexClient.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/vtexClient.ts"
+          ],
+          "default": "deco-sites/std/functions/vtexClient.ts"
         }
       }
     },
@@ -4859,6 +5239,48 @@
             "deco-sites/std/accounts/yourViews.ts"
           ],
           "default": "deco-sites/std/accounts/yourViews.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz": {
+      "title": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts"
+          ],
+          "default": "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz": {
+      "title": "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts"
+          ],
+          "default": "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts"
         }
       }
     },
@@ -5907,6 +6329,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw=="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NlZ21lbnQudHM="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0RGV0YWlsc1BhZ2UudHM="
         },
         {
@@ -5916,6 +6341,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdGluZ1BhZ2UudHM="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz"
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0RGV0YWlsc1BhZ2UudHM="
         },
         {
@@ -5923,6 +6351,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDbGllbnQudHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM="
@@ -5979,6 +6410,20 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWNjb3VudHMveW91clZpZXdzLnRz"
+        }
+      ]
+    },
+    "loaders": {
+      "title": "loaders",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz"
         }
       ]
     },
@@ -6224,6 +6669,9 @@
           },
           {
             "$ref": "#/root/accounts"
+          },
+          {
+            "$ref": "#/root/loaders"
           },
           {
             "$ref": "#/root/islands"
