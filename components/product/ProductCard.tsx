@@ -49,7 +49,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
 
   return (
     <div
-      class="card card-compact card-bordered border-transparent hover:border-base-200 group"
+      class="card card-compact card-bordered border-transparent hover:border-base-200 group w-full"
       data-deco="view-product"
       id={`product-card-${productID}`}
       {...sendEventOnClick(clickEvent)}
