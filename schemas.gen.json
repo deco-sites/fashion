@@ -11782,3 +11782,11 @@
     }
   }
 }
+          "type": "string"
+        }
+      }
+    },
+          "title": "deco-sites/std/functions/shopifyProductDetailsPage.ts",
+      "title": "deco-cx/live/handlers/devPage.ts@DevConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+      "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
