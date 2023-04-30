@@ -20,7 +20,8 @@ export default function Simple({ sleepTime }: Props): Workflow {
         value: 20,
       },
     });
+    const { newValue } = yield _ctx.waitForSignal("my-signal");
     console.log("the charged value", chargedValue2);
-    console.log("TOTAL", chargedValue1.value + chargedValue2.value);
+    return chargedValue1.value + chargedValue2.value + newValue;
   };
 }
