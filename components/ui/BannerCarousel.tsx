@@ -89,7 +89,7 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   );
 }
 
-function ProgressiveDots({ images, interval = 0 }: Props) {
+function Dots({ images, interval = 0 }: Props) {
   return (
     <>
       <style
@@ -122,36 +122,28 @@ function ProgressiveDots({ images, interval = 0 }: Props) {
   );
 }
 
-function Controls() {
+function Buttons() {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Button
-          class="btn-circle glass"
-          data-slide="prev"
-          aria-label="Previous item"
-        >
+        <Slider.PrevButton class="btn btn-circle glass">
           <Icon
             class="text-base-100"
             size={20}
             id="ChevronLeft"
             strokeWidth={3}
           />
-        </Button>
+        </Slider.PrevButton>
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Button
-          class="btn-circle glass"
-          data-slide="next"
-          aria-label="Next item"
-        >
+        <Slider.NextButton class="btn btn-circle glass">
           <Icon
             class="text-base-100"
             size={20}
             id="ChevronRight"
             strokeWidth={3}
           />
-        </Button>
+        </Slider.NextButton>
       </div>
     </>
   );
@@ -173,11 +165,11 @@ function BannerCarousel({ images, preload, interval }: Props) {
         ))}
       </Slider>
 
-      <Controls />
+      <Buttons />
 
-      <ProgressiveDots images={images} interval={interval} />
+      <Dots images={images} interval={interval} />
 
-      <SliderJS rootId={id} interval={interval && interval * 1e3} />
+      <SliderJS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>
   );
 }

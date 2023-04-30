@@ -202,21 +202,13 @@ function Details({
               ))}
             </Slider>
 
-            <Button
-              class="absolute left-2 top-1/2 btn-circle btn-outline"
-              data-slide="prev"
-              aria-label="Previous"
-            >
+            <Slider.PrevButton class="absolute left-2 top-1/2 btn btn-circle btn-outline">
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-            </Button>
+            </Slider.PrevButton>
 
-            <Button
-              class="absolute right-2 top-1/2 btn-circle btn-outline"
-              data-slide="next"
-              aria-label="Next"
-            >
+            <Slider.NextButton class="absolute right-2 top-1/2 btn btn-circle btn-outline">
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
-            </Button>
+            </Slider.NextButton>
 
             <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <ProductImageZoom

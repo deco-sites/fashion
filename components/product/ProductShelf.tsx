@@ -1,6 +1,5 @@
 import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
 import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
@@ -48,22 +47,14 @@ function ProductShelf({
 
       <>
         <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-          <Button
-            class="btn-circle btn-outline absolute right-1/2 bg-base-100"
-            data-slide="prev"
-            aria-label="Previous item"
-          >
+          <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
             <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-          </Button>
+          </Slider.PrevButton>
         </div>
         <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-          <Button
-            class="btn-circle btn-outline absolute left-1/2 bg-base-100"
-            data-slide="next"
-            aria-label="Next item"
-          >
+          <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
             <Icon size={20} id="ChevronRight" strokeWidth={3} />
-          </Button>
+          </Slider.NextButton>
         </div>
       </>
       <SliderJS rootId={id} />
