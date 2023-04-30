@@ -2,7 +2,7 @@
   "imports": {
     "deco-sites/fashion/": "./",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.2.7/",
-    "$live/": "https://denopkg.com/deco-cx/live@1.0.28/",
+    "$live/": "https://denopkg.com/deco-cx/live@056409e121ada88b37cba7236cba2e9c36090b99/",
     "$fresh/": "https://deno.land/x/fresh@1.1.5/",
     "preact": "https://esm.sh/preact@10.13.2",
     "preact/": "https://esm.sh/preact@10.13.2/",
