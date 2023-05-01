@@ -3331,6 +3331,81 @@
       ],
       "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
     },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@Fields": {
+      "type": "object",
+      "properties": {
+        "ean": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Ean"
+        },
+        "itemIndex": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Item Index"
+        },
+        "skuName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Sku Name"
+        }
+      },
+      "required": [],
+      "title": "Fields"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@Message": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Code"
+        },
+        "text": {
+          "type": "string",
+          "title": "Text"
+        },
+        "status": {
+          "type": "string",
+          "title": "Status"
+        },
+        "fields": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@Fields",
+          "title": "Fields"
+        }
+      },
+      "required": [
+        "code",
+        "text",
+        "status",
+        "fields"
+      ],
+      "title": "Message"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@Message[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@Message"
+      },
+      "title": "Message[]"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@AdditionalInfo": {
+      "type": "object",
+      "properties": {
+        "dimension": {
+          "type": "null",
           "title": "Dimension"
         },
         "brandName": {
@@ -8685,25 +8760,7 @@
       ],
       "title": "deco-sites/std/packs/vtex/actions/cart/removeItemAttachment.ts@Props"
     },
-      "type": "object",
-      "properties": {
-        "executionId": {
-          "type": "string",
-          "title": "Execution Id"
-        },
-        "reason": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Reason"
-        }
-      },
-      "required": [
-        "executionId"
-      ],
-      "title": "deco-cx/live/actions/workflows/cancel.ts@Props"
-    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvc2ltdWxhdGlvbi50cw==@Item": {
       "type": "object",
       "properties": {
         "id": {
@@ -8794,26 +8851,7 @@
       ],
       "title": "deco-sites/std/packs/vtex/actions/cart/updateCoupons.ts@Props"
     },
-      "type": "object",
-      "properties": {
-        "signal": {
-          "type": "string",
-          "title": "Signal"
-        },
-        "executionId": {
-          "type": "string",
-          "title": "Execution Id"
-        },
-        "payload": {
-          "title": "Payload"
-        }
-      },
-      "required": [
-        "signal",
-        "executionId"
-      ],
-      "title": "deco-cx/live/actions/workflows/signal.ts@Props"
-    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvdXBkYXRlSXRlbUF0dGFjaG1lbnQudHM=@Props": {
       "type": "object",
       "properties": {
         "index": {
@@ -8822,9 +8860,16 @@
           "title": "Index"
         },
         "attachment": {
+          "type": "string",
           "description": "attachment name",
           "title": "Attachment"
         },
+        "content": {
+          "title": "Content",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
         },
         "expectedOrderFormSections": {
           "type": "array",
@@ -9603,7 +9648,26 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2NhcnQudHM=": {
+      "title": "deco-sites/std/loaders/vtex/cart.ts",
+      "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#get-/api/checkout/pub/orderForm",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/loaders/vtex/cart.ts"
+          ],
+          "default": "deco-sites/std/loaders/vtex/cart.ts"
+        }
+      }
     },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3REZXRhaWxzUGFnZS50cw==": {
+      "title": "VTEX product details page - Intelligent Search",
+      "description": "Works on routes of type /:slug/p",
       "type": "object",
       "allOf": [
         {
@@ -10903,24 +10967,9 @@
         }
       }
     },
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "$live/actions/workflows/cancel.ts"
-          ],
-          "default": "$live/actions/workflows/cancel.ts"
-        }
-      }
-    },
+    "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvYWRkSXRlbXMudHM=": {
+      "title": "deco-sites/std/actions/vtex/cart/addItems.ts",
+      "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items",
       "type": "object",
       "allOf": [
         {
@@ -10940,24 +10989,9 @@
         }
       }
     },
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "$live/actions/workflows/signal.ts"
-          ],
-          "default": "$live/actions/workflows/signal.ts"
-        }
-      }
-    },
+    "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvZ2V0SW5zdGFsbG1lbnQudHM=": {
+      "title": "deco-sites/std/actions/vtex/cart/getInstallment.ts",
+      "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#get-/api/checkout/pub/orderForm/-orderFormId-/installments",
       "type": "object",
       "allOf": [
         {
@@ -11380,8 +11414,7 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-        },
-        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2NhcnQudHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3REZXRhaWxzUGFnZS50cw=="
@@ -11632,11 +11665,7 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
-        },
-        {
-        },
-        {
-          "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3Mvc2lnbmFsLnRz"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvYWRkSXRlbXMudHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvZ2V0SW5zdGFsbG1lbnQudHM="
@@ -11753,11 +11782,37 @@
     }
   }
 }
-          "type": "string"
-        }
-      }
-    },
-          "title": "deco-sites/std/functions/shopifyProductDetailsPage.ts",
-      "title": "deco-cx/live/handlers/devPage.ts@DevConfig"
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
-      "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
+    "ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props": {
+      "title": "deco-cx/live/loaders/workflows/get.ts@Props"
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig": {
+      "title": "deco-cx/live/handlers/redirect.ts@RedirectConfig"
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record": {
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
+      "title": "deco-cx/live/handlers/workflowRunner.ts@Config"
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler@record",
+      "title": "deco-cx/live/flags/everyone.ts@EveryoneConfig"
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3J1bi50cw==@Props": {
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
+      "title": "deco-cx/live/actions/workflows/run.ts@Props"
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
+      "title": "deco-cx/live/actions/workflows/start.ts@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3J1bi50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props"
+    "ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig": {

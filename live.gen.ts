@@ -41,8 +41,7 @@
               "deco-sites/std/functions/vtexWishlist.ts",
               "deco-sites/std/accounts/occ.ts",
               "deco-sites/std/accounts/shopify.ts",
-              "deco-sites/std/accounts/vnda.ts",
-              "deco-sites/std/accounts/vtex.ts",
+import * as i1$0 from "$live/loaders/workflows/get.ts";
               "deco-sites/std/accounts/yourViews.ts",
               "deco-sites/std/loaders/vtex/cart.ts",
               "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts",
@@ -11408,8 +11407,7 @@
       ]
     },
     "loaders": {
-      "title": "loaders",
-      "anyOf": [
+    "$live/loaders/workflows/get.ts": i1$0,
         {
           "$ref": "#/definitions/Resolvable"
         },

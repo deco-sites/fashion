@@ -11,8 +11,6 @@ export default function Simple({ sleepTime }: Props): Workflow {
         value: 20,
       },
     });
-    console.log("the charged value", chargedValue1);
-    console.log("sleeping", sleepTime);
     yield _ctx.sleep(sleepTime);
     const chargedValue2 = yield _ctx.invoke({
       key: "deco-sites/fashion/actions/charge.ts",
@@ -21,7 +19,6 @@ export default function Simple({ sleepTime }: Props): Workflow {
       },
     });
     const { newValue } = yield _ctx.waitForSignal("my-signal");
-    console.log("the charged value", chargedValue2);
     return chargedValue1.value + chargedValue2.value + newValue;
   };
 }
