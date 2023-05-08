@@ -13,16 +13,13 @@
           "not": {
             "enum": [
               "deco-sites/std/functions/occProductDetailsPage.ts",
-              "deco-sites/std/functions/segment.ts",
+              "deco-sites/std/functions/requestToParam.ts",
               "deco-sites/std/functions/shopifyProductDetailsPage.ts",
               "deco-sites/std/functions/shopifyProductList.ts",
               "deco-sites/std/functions/shopifyProductListingPage.ts",
-              "deco-sites/std/functions/slugFromParams.ts",
               "deco-sites/std/functions/vndaProductDetailsPage.ts",
               "deco-sites/std/functions/vndaProductList.ts",
               "deco-sites/std/functions/vndaProductListingPage.ts",
-              "deco-sites/std/functions/vtexClient.ts",
-              "deco-sites/std/functions/vtexConfig.ts",
               "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts",
               "deco-sites/std/functions/vtexLegacyProductList.ts",
               "deco-sites/std/functions/vtexLegacyProductListingPage.ts",
@@ -38,8 +35,18 @@
               "deco-sites/std/accounts/vnda.ts",
               "deco-sites/std/accounts/vtex.ts",
               "deco-sites/std/accounts/yourViews.ts",
-              "deco-sites/std/loaders/vtexLegacyProductDetailsPage.ts",
-              "deco-sites/std/loaders/vtexLegacyRelatedProductsLoader.ts",
+              "deco-sites/std/loaders/vtex/cart.ts",
+              "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts",
+              "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts",
+              "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts",
+              "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts",
+              "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts",
+              "deco-sites/std/loaders/vtex/legacy/productList.ts",
+              "deco-sites/std/loaders/vtex/legacy/productListingPage.ts",
+              "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts",
+              "deco-sites/std/loaders/vtex/navbar.ts",
+              "deco-sites/std/loaders/vtex/user.ts",
+              "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
@@ -91,7 +98,21 @@
               "$live/matchers/MatchSite.ts",
               "$live/matchers/MatchUserAgent.ts",
               "$live/flags/audience.ts",
-              "$live/flags/everyone.ts"
+              "$live/flags/everyone.ts",
+              "deco-sites/std/actions/vtex/cart/addItems.ts",
+              "deco-sites/std/actions/vtex/cart/getInstallment.ts",
+              "deco-sites/std/actions/vtex/cart/removeItemAttachment.ts",
+              "deco-sites/std/actions/vtex/cart/removeItems.ts",
+              "deco-sites/std/actions/vtex/cart/simulation.ts",
+              "deco-sites/std/actions/vtex/cart/updateAttachment.ts",
+              "deco-sites/std/actions/vtex/cart/updateCoupons.ts",
+              "deco-sites/std/actions/vtex/cart/updateItemAttachment.ts",
+              "deco-sites/std/actions/vtex/cart/updateItemPrice.ts",
+              "deco-sites/std/actions/vtex/cart/updateItems.ts",
+              "deco-sites/std/actions/vtex/cart/updateProfile.ts",
+              "deco-sites/std/actions/vtex/cart/updateUser.ts",
+              "deco-sites/std/actions/vtex/wishlist/addItem.ts",
+              "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
             ]
           }
         }
@@ -1023,14 +1044,9 @@
           }
         },
         {
-<<<<<<< HEAD
-          "title": "VTEX Product Page Loader",
-          "description": "Works on routes of type /:slug/p",
-=======
-          "title": "VTEX Legacy product details page loader",
+          "title": "VTEX product details page - legacy (deprecated)",
           "description": "Works on routes of type /:slug/p",
           "deprecated": true,
->>>>>>> 4bde58c (set cookies)
           "type": "object",
           "required": [
             "__resolveType"
@@ -1046,7 +1062,7 @@
           }
         },
         {
-          "title": "VTEX product details loader",
+          "title": "VTEX product details page - Intelligent Search (deprecated)",
           "description": "Works on routes of type /:slug/p",
           "deprecated": true,
           "type": "object",
@@ -1064,17 +1080,8 @@
           }
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "title": "VTEX Product Page Loader",
+          "title": "VTEX product details page - Intelligent Search",
           "description": "Works on routes of type /:slug/p",
-=======
-          "title": "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts",
->>>>>>> ba46f76 (use pack vtex)
-=======
-          "title": "VTEX Product Page Loader",
-          "description": "Works on routes of type /:slug/p",
->>>>>>> 4bde58c (set cookies)
           "type": "object",
           "allOf": [
             {
@@ -1095,7 +1102,7 @@
           }
         },
         {
-          "title": "VTEX Product Page Loader",
+          "title": "VTEX product details page - Portal",
           "description": "Works on routes of type /:slug/p",
           "type": "object",
           "allOf": [
@@ -1128,16 +1135,8 @@
           "title": "deco-sites/std/functions/requestToParam.ts@RequestURLParam"
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "title": "Read the segment.",
-=======
-          "title": "deco-sites/std/functions/requestToParam.ts",
->>>>>>> ba46f76 (use pack vtex)
-=======
           "title": "Get params from request parameters",
           "description": "Set param to slug for routes of type /:slug",
->>>>>>> 4bde58c (set cookies)
           "type": "object",
           "allOf": [
             {
@@ -1175,40 +1174,11 @@
       "title": "deco-sites/std/functions/requestToParam.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product"
-          },
-          "title": "Product[]"
-        },
-        {
-          "title": "Product list loader",
-          "description": "Usefull for shelves and static galleries.",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@CollectionList|ProductIDList|QueryList"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts"
-              ],
-              "default": "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts"
-            }
-          }
-        }
-      ]
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product"
+      },
+      "title": "Product[]"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null": {
       "anyOf": [
@@ -1266,9 +1236,15 @@
           }
         },
         {
-          "title": "VTEX legacy product list loader",
+          "title": "VTEX product list - legacy (deprecated)",
           "description": "Usefull for shelves and static galleries.",
+          "deprecated": true,
           "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==@Props"
+            }
+          ],
           "required": [
             "__resolveType"
           ],
@@ -1283,8 +1259,9 @@
           }
         },
         {
-          "title": "VTEX legacy related products loader",
+          "title": "VTEX related products - legacy (deprecated)",
           "description": "Works on routes of type /:slug/p",
+          "deprecated": true,
           "type": "object",
           "allOf": [
             {
@@ -1305,7 +1282,7 @@
           }
         },
         {
-          "title": "VTEX product list loader",
+          "title": "VTEX product list - Intelligent Search (deprecated)",
           "description": "Usefull for shelves and static galleries.",
           "deprecated": true,
           "type": "object",
@@ -1328,21 +1305,34 @@
           }
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "title": "VTEX Related Products Loader",
-          "description": "Works on routes of type /:slug/p",
-=======
-          "title": "deco-sites/std/loaders/vtex/legacy/productList.ts",
->>>>>>> ba46f76 (use pack vtex)
-=======
-          "title": "Legacy product list loader",
-          "description": "Usefull for shelves and static galleries.",
->>>>>>> 4bde58c (set cookies)
+          "title": "VTEX product list - Intelligent Search",
+          "description": "Usefull for shelves and galleries.",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@CollectionProps|ProductIDProps|TermProps"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialCollectionList&partialProductIDList&partialQueryList"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts"
+              ],
+              "default": "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts"
+            }
+          }
+        },
+        {
+          "title": "VTEX product list - Portal",
+          "description": "Usefull for shelves and static galleries.",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialCollectionProps&partialProductIDProps&partialTermProps"
             }
           ],
           "required": [
@@ -1359,7 +1349,7 @@
           }
         },
         {
-          "title": "VTEX Related Products Loader",
+          "title": "VTEX related products - Portal",
           "description": "Works on routes of type /:slug/p",
           "type": "object",
           "allOf": [
@@ -1702,8 +1692,9 @@
           }
         },
         {
-          "title": "VTEX legacy product listing page loader",
+          "title": "VTEX product listing page - legacy (deprecated)",
           "description": "Returns data ready for search pages like category,brand pages",
+          "deprecated": true,
           "type": "object",
           "allOf": [
             {
@@ -1724,7 +1715,7 @@
           }
         },
         {
-          "title": "VTEX product listing page loader",
+          "title": "VTEX product listing page - Intelligent Search (deprecated)",
           "description": "Returns data ready for search pages like category,brand pages",
           "deprecated": true,
           "type": "object",
@@ -1770,7 +1761,7 @@
           }
         },
         {
-          "title": "Product listing page loader",
+          "title": "VTEX product listing page - Intelligent Search",
           "description": "Returns data ready for search pages like category,brand pages",
           "type": "object",
           "allOf": [
@@ -1792,7 +1783,7 @@
           }
         },
         {
-          "title": "Product listing page loader",
+          "title": "VTEX product listing page - Portal",
           "description": "Returns data ready for search pages like category,brand pages",
           "type": "object",
           "allOf": [
@@ -1837,66 +1828,7 @@
       ],
       "title": "deco-sites/std/functions/shopifyProductListingPage.ts@Props"
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Slug": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "type": "string",
-          "title": "deco-sites/std/functions/slugFromParams.ts@Slug"
-        },
-        {
-          "title": "Get slug from request parameters",
-          "description": "Works on routes of type /:slug/",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Props"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/std/functions/slugFromParams.ts"
-              ],
-              "default": "deco-sites/std/functions/slugFromParams.ts"
-            }
-          }
-        }
-      ]
-    },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Props": {
-      "type": "object",
-      "properties": {
-        "param": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "default": "slug",
-          "title": "Param"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/std/functions/slugFromParams.ts@Props"
-    },
-=======
->>>>>>> ba46f76 (use pack vtex)
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props": {
-=======
-    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2Z1bmN0aW9ucy92bmRhUHJvZHVjdExpc3QudHM=@Props": {
->>>>>>> 4bde58c (set cookies)
-=======
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props": {
->>>>>>> 86b2359 (use new std)
       "type": "object",
       "properties": {
         "limit": {
@@ -1987,179 +1919,21 @@
       ],
       "title": "deco-sites/std/functions/vndaProductListingPage.ts@Props"
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ClientVTEX": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "title": "deco-sites/std/commerce/vtex/client.ts@ClientVTEX"
-        },
-        {
-          "title": "Creates a VTEXClient.",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX|null"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/std/functions/vtexClient.ts"
-              ],
-              "default": "deco-sites/std/functions/vtexClient.ts"
-            }
-          }
-        }
-      ]
-    },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
-      "type": "object",
-      "properties": {},
-      "required": [],
-      "title": "Account"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
-        }
-      ],
-      "properties": {
-        "account": {
-          "type": "string",
-          "description": "VTEX Account name. For more info, read here: https://help.vtex.com/en/tutorial/o-que-e-account-name--i0mIGLcg3QyEy8OCicEoC.",
-          "title": "Account"
-        },
-        "defaultLocale": {
-          "type": "string",
-          "description": "Locale used for VTEX Intelligent Search client.",
-          "title": "Default Locale"
-        },
-        "defaultPriceCurrency": {
-          "type": "string",
-          "description": "Default price currency.",
-          "default": "USD",
-          "title": "Default Price Currency"
-        },
-        "defaultSalesChannel": {
-          "type": "string",
-          "description": "VTEX sales channel. This will be the default sales channel your site. For more info, read here: https://help.vtex.com/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV",
-          "title": "Default Sales Channel"
-        },
-        "defaultRegionId": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Default Region Id"
-        },
-        "defaultHideUnnavailableItems": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Default Hide Unnavailable Items"
-        }
-      },
-      "required": [
-        "account",
-        "defaultLocale",
-        "defaultPriceCurrency",
-        "defaultSalesChannel"
-      ],
-      "title": "ConfigVTEX"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX|null": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX"
-        },
-        {
-          "type": "null"
-        },
-        {
-          "title": "Loader to get vtex config and pass to components",
-          "description": "Usefull for client side components, like: search auto complete.",
-          "type": "object",
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/std/functions/vtexConfig.ts"
-              ],
-              "default": "deco-sites/std/functions/vtexConfig.ts"
-            }
-          }
-        }
-      ]
-    },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==@Props": {
       "type": "object",
       "properties": {
-        "query": {
-          "type": "string",
-          "description": "query to use on search",
-          "title": "Query"
-        },
         "count": {
           "type": "number",
           "description": "total number of items to display",
           "title": "Count"
         },
-        "sort": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": ""
-            },
-            {
-              "type": "string",
-              "const": "price:desc"
-            },
-            {
-              "type": "string",
-              "const": "price:asc"
-            },
-            {
-              "type": "string",
-              "const": "orders:desc"
-            },
-            {
-              "type": "string",
-              "const": "name:desc"
-            },
-            {
-              "type": "string",
-              "const": "name:asc"
-            },
-            {
-              "type": "string",
-              "const": "release:desc"
-            },
-            {
-              "type": "string",
-              "const": "discount:desc"
-            }
+        "query": {
+          "type": [
+            "string",
+            "null"
           ],
-          "type": "string",
-          "description": "search sort parameter",
-          "title": "Sort"
+          "description": "query to use on search",
+          "title": "Query"
         },
         "collection": {
           "type": "array",
@@ -2172,21 +1946,11 @@
         }
       },
       "required": [
-        "query",
         "count"
       ],
       "title": "deco-sites/std/functions/vtexLegacyProductList.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
-=======
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
->>>>>>> ba46f76 (use pack vtex)
-=======
-    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL3BhY2tzL3Z0ZXgvbG9hZGVycy9sZWdhY3kvcHJvZHVjdExpc3RpbmdQYWdlLnRz@Props": {
->>>>>>> 4bde58c (set cookies)
-=======
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
->>>>>>> 86b2359 (use new std)
       "type": "object",
       "properties": {
         "term": {
@@ -2529,9 +2293,8 @@
           "items": {
             "type": "string"
           },
-          "description": "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
-          "pattern": "\\d*",
-          "title": "Collection"
+          "title": "Collection",
+          "pattern": "\\d*"
         }
       },
       "required": [
@@ -2665,7 +2428,7 @@
           "type": "null"
         },
         {
-          "title": "deco-sites/std/functions/vtexSuggestions.ts",
+          "title": "VTEX search suggestions - Intelligent Search (deprecated)",
           "deprecated": true,
           "type": "object",
           "allOf": [
@@ -2687,7 +2450,7 @@
           }
         },
         {
-          "title": "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts",
+          "title": "VTEX search suggestions - Intelligent Search",
           "type": "object",
           "allOf": [
             {
@@ -5381,14 +5144,13 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/intelligentSearch/productDetailsPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@CollectionList": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialCollectionList": {
       "type": "object",
       "properties": {
         "collection": {
           "type": "string",
-          "description": "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
-          "pattern": "\\d*",
-          "title": "Collection"
+          "title": "Collection",
+          "pattern": "\\d*"
         },
         "sort": {
           "anyOf": [
@@ -5435,13 +5197,10 @@
           "title": "Count"
         }
       },
-      "required": [
-        "collection",
-        "count"
-      ],
-      "title": "CollectionList"
+      "required": [],
+      "title": "partialCollectionList"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@QueryList": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialQueryList": {
       "type": "object",
       "properties": {
         "query": {
@@ -5494,11 +5253,8 @@
           "title": "Count"
         }
       },
-      "required": [
-        "query",
-        "count"
-      ],
-      "title": "QueryList"
+      "required": [],
+      "title": "partialQueryList"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@ProductID": {
       "type": "string",
@@ -5512,7 +5268,7 @@
       },
       "title": "ProductID[]"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@ProductIDList": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialProductIDList": {
       "type": "object",
       "properties": {
         "ids": {
@@ -5521,24 +5277,22 @@
           "title": "Ids"
         }
       },
-      "required": [
-        "ids"
-      ],
-      "title": "ProductIDList"
+      "required": [],
+      "title": "partialProductIDList"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@CollectionList|ProductIDList|QueryList": {
-      "anyOf": [
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialCollectionList&partialProductIDList&partialQueryList": {
+      "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@CollectionList"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialCollectionList"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@QueryList"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialQueryList"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@ProductIDList"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialProductIDList"
         }
       ],
-      "title": "deco-sites/std/packs/vtex/loaders/intelligentSearch/productList.ts@CollectionList|ProductIDList|QueryList"
+      "title": "deco-sites/std/packs/vtex/loaders/intelligentSearch/productList.ts@partialCollectionList&partialProductIDList&partialQueryList"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3N1Z2dlc3Rpb25zLnRz@Props": {
       "type": "object",
@@ -5576,7 +5330,7 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/legacy/productDetailsPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@CollectionProps": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialCollectionProps": {
       "type": "object",
       "properties": {
         "collection": {
@@ -5638,13 +5392,10 @@
           "title": "Count"
         }
       },
-      "required": [
-        "collection",
-        "count"
-      ],
-      "title": "CollectionProps"
+      "required": [],
+      "title": "partialCollectionProps"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@TermProps": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialTermProps": {
       "type": "object",
       "properties": {
         "term": {
@@ -5708,12 +5459,10 @@
           "title": "Count"
         }
       },
-      "required": [
-        "count"
-      ],
-      "title": "TermProps"
+      "required": [],
+      "title": "partialTermProps"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@ProductIDProps": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialProductIDProps": {
       "type": "object",
       "properties": {
         "ids": {
@@ -5722,24 +5471,22 @@
           "title": "Ids"
         }
       },
-      "required": [
-        "ids"
-      ],
-      "title": "ProductIDProps"
+      "required": [],
+      "title": "partialProductIDProps"
     },
-    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@CollectionProps|ProductIDProps|TermProps": {
-      "anyOf": [
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialCollectionProps&partialProductIDProps&partialTermProps": {
+      "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@CollectionProps"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialCollectionProps"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@TermProps"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialTermProps"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@ProductIDProps"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialProductIDProps"
         }
       ],
-      "title": "deco-sites/std/packs/vtex/loaders/legacy/productList.ts@CollectionProps|ProductIDProps|TermProps"
+      "title": "deco-sites/std/packs/vtex/loaders/legacy/productList.ts@partialCollectionProps&partialProductIDProps&partialTermProps"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9yZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=@Props": {
       "type": "object",
@@ -6011,8 +5758,6 @@
       ],
       "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
     "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Props": {
       "type": "object",
       "properties": {
@@ -6036,12 +5781,6 @@
       "title": "deco-cx/live/handlers/proxy.ts@Props"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
-=======
-    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvbGl2ZS9ibG9ja3MvaGFuZGxlci50cw==@Handler": {
->>>>>>> 4bde58c (set cookies)
-=======
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
->>>>>>> 86b2359 (use new std)
       "$ref": "#/root/handlers",
       "title": "Handler"
     },
@@ -7991,8 +7730,6 @@
       ],
       "title": "deco-cx/live/matchers/MatchMulti.ts@Props"
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
     "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoT3JpZ2luLnRz@Props": {
       "type": "object",
       "properties": {
@@ -8015,12 +7752,6 @@
       "title": "deco-cx/live/matchers/MatchOrigin.ts@Props"
     },
     "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props": {
-=======
-    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvbGl2ZS9tYXRjaGVycy9NYXRjaFJhbmRvbS50cw==@Props": {
->>>>>>> 4bde58c (set cookies)
-=======
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props": {
->>>>>>> 86b2359 (use new std)
       "type": "object",
       "properties": {
         "traffic": {
@@ -8192,6 +7923,48 @@
         "paymentSystem"
       ],
       "title": "deco-sites/std/packs/vtex/actions/cart/getInstallment.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvcmVtb3ZlSXRlbUF0dGFjaG1lbnQudHM=@Props": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "number",
+          "description": "index of the item in the cart.items array you want to edit",
+          "title": "Index"
+        },
+        "attachment": {
+          "type": "string",
+          "description": "attachment name",
+          "title": "Attachment"
+        },
+        "content": {
+          "title": "Content",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "expectedOrderFormSections": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Expected Order Form Sections"
+        },
+        "noSplitItem": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "No Split Item"
+        }
+      },
+      "required": [
+        "index",
+        "attachment",
+        "content"
+      ],
+      "title": "deco-sites/std/packs/vtex/actions/cart/removeItemAttachment.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvc2ltdWxhdGlvbi50cw==@Item": {
       "type": "object",
@@ -8451,18 +8224,9 @@
         }
       }
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NlZ21lbnQudHM=": {
-      "title": "Read the segment.",
-=======
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3JlcXVlc3RUb1BhcmFtLnRz": {
-<<<<<<< HEAD
-      "title": "deco-sites/std/functions/requestToParam.ts",
->>>>>>> ba46f76 (use pack vtex)
-=======
       "title": "Get params from request parameters",
       "description": "Set param to slug for routes of type /:slug",
->>>>>>> 4bde58c (set cookies)
       "type": "object",
       "allOf": [
         {
@@ -8543,31 +8307,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz": {
-      "title": "Get slug from request parameters",
-      "description": "Works on routes of type /:slug/",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3NsdWdGcm9tUGFyYW1zLnRz@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/functions/slugFromParams.ts"
-          ],
-          "default": "deco-sites/std/functions/slugFromParams.ts"
-        }
-      }
-    },
-=======
->>>>>>> ba46f76 (use pack vtex)
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
       "title": "VTEX Product Page Loader",
       "description": "Works on routes of type /:slug/p",
@@ -8629,56 +8368,10 @@
         }
       }
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDbGllbnQudHM=": {
-      "title": "Creates a VTEXClient.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdnRleC9jbGllbnQudHM=@ConfigVTEX|null"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/functions/vtexClient.ts"
-          ],
-          "default": "deco-sites/std/functions/vtexClient.ts"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhDb25maWcudHM=": {
-      "title": "Loader to get vtex config and pass to components",
-      "description": "Usefull for client side components, like: search auto complete.",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/functions/vtexConfig.ts"
-          ],
-          "default": "deco-sites/std/functions/vtexConfig.ts"
-        }
-      }
-    },
-=======
->>>>>>> ba46f76 (use pack vtex)
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-<<<<<<< HEAD
-      "title": "VTEX Product Page Loader",
-      "description": "Works on routes of type /:slug/p",
-=======
-      "title": "VTEX Legacy product details page loader",
+      "title": "VTEX product details page - legacy (deprecated)",
       "description": "Works on routes of type /:slug/p",
       "deprecated": true,
->>>>>>> 4bde58c (set cookies)
       "type": "object",
       "required": [
         "__resolveType"
@@ -8694,9 +8387,15 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX legacy product list loader",
+      "title": "VTEX product list - legacy (deprecated)",
       "description": "Usefull for shelves and static galleries.",
+      "deprecated": true,
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -8711,8 +8410,9 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VTEX legacy product listing page loader",
+      "title": "VTEX product listing page - legacy (deprecated)",
       "description": "Returns data ready for search pages like category,brand pages",
+      "deprecated": true,
       "type": "object",
       "allOf": [
         {
@@ -8733,8 +8433,9 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lSZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=": {
-      "title": "VTEX legacy related products loader",
+      "title": "VTEX related products - legacy (deprecated)",
       "description": "Works on routes of type /:slug/p",
+      "deprecated": true,
       "type": "object",
       "allOf": [
         {
@@ -8777,7 +8478,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX product details loader",
+      "title": "VTEX product details page - Intelligent Search (deprecated)",
       "description": "Works on routes of type /:slug/p",
       "deprecated": true,
       "type": "object",
@@ -8795,7 +8496,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX product list loader",
+      "title": "VTEX product list - Intelligent Search (deprecated)",
       "description": "Usefull for shelves and static galleries.",
       "deprecated": true,
       "type": "object",
@@ -8818,7 +8519,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VTEX product listing page loader",
+      "title": "VTEX product listing page - Intelligent Search (deprecated)",
       "description": "Returns data ready for search pages like category,brand pages",
       "deprecated": true,
       "type": "object",
@@ -8841,7 +8542,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhTdWdnZXN0aW9ucy50cw==": {
-      "title": "deco-sites/std/functions/vtexSuggestions.ts",
+      "title": "VTEX search suggestions - Intelligent Search (deprecated)",
       "deprecated": true,
       "type": "object",
       "allOf": [
@@ -8990,18 +8691,9 @@
         }
       }
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UHJvZHVjdERldGFpbHNQYWdlLnRz": {
-      "title": "VTEX Product Page Loader",
-      "description": "Works on routes of type /:slug/p",
-=======
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2NhcnQudHM=": {
       "title": "deco-sites/std/loaders/vtex/cart.ts",
-<<<<<<< HEAD
->>>>>>> ba46f76 (use pack vtex)
-=======
       "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#get-/api/checkout/pub/orderForm",
->>>>>>> 4bde58c (set cookies)
       "type": "object",
       "required": [
         "__resolveType"
@@ -9016,19 +8708,9 @@
         }
       }
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4TGVnYWN5UmVsYXRlZFByb2R1Y3RzTG9hZGVyLnRz": {
-      "title": "VTEX Related Products Loader",
-      "description": "Works on routes of type /:slug/p",
-=======
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3REZXRhaWxzUGFnZS50cw==": {
-<<<<<<< HEAD
-      "title": "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts",
->>>>>>> ba46f76 (use pack vtex)
-=======
-      "title": "VTEX Product Page Loader",
+      "title": "VTEX product details page - Intelligent Search",
       "description": "Works on routes of type /:slug/p",
->>>>>>> 4bde58c (set cookies)
       "type": "object",
       "allOf": [
         {
@@ -9049,12 +8731,12 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz": {
-      "title": "Product list loader",
-      "description": "Usefull for shelves and static galleries.",
+      "title": "VTEX product list - Intelligent Search",
+      "description": "Usefull for shelves and galleries.",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@CollectionList|ProductIDList|QueryList"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz@partialCollectionList&partialProductIDList&partialQueryList"
         }
       ],
       "required": [
@@ -9071,7 +8753,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==": {
-      "title": "Product listing page loader",
+      "title": "VTEX product listing page - Intelligent Search",
       "description": "Returns data ready for search pages like category,brand pages",
       "type": "object",
       "allOf": [
@@ -9093,7 +8775,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3N1Z2dlc3Rpb25zLnRz": {
-      "title": "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts",
+      "title": "VTEX search suggestions - Intelligent Search",
       "type": "object",
       "allOf": [
         {
@@ -9114,7 +8796,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX Product Page Loader",
+      "title": "VTEX product details page - Portal",
       "description": "Works on routes of type /:slug/p",
       "type": "object",
       "allOf": [
@@ -9136,12 +8818,12 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==": {
-      "title": "Legacy product list loader",
+      "title": "VTEX product list - Portal",
       "description": "Usefull for shelves and static galleries.",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@CollectionProps|ProductIDProps|TermProps"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==@partialCollectionProps&partialProductIDProps&partialTermProps"
         }
       ],
       "required": [
@@ -9158,7 +8840,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "Product listing page loader",
+      "title": "VTEX product listing page - Portal",
       "description": "Returns data ready for search pages like category,brand pages",
       "type": "object",
       "allOf": [
@@ -9180,7 +8862,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9yZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=": {
-      "title": "VTEX Related Products Loader",
+      "title": "VTEX related products - Portal",
       "description": "Works on routes of type /:slug/p",
       "type": "object",
       "allOf": [
@@ -10345,6 +10027,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvcmVtb3ZlSXRlbUF0dGFjaG1lbnQudHM=": {
+      "title": "deco-sites/std/actions/vtex/cart/removeItemAttachment.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvcmVtb3ZlSXRlbUF0dGFjaG1lbnQudHM=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/actions/vtex/cart/removeItemAttachment.ts"
+          ],
+          "default": "deco-sites/std/actions/vtex/cart/removeItemAttachment.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvcmVtb3ZlSXRlbXMudHM=": {
       "title": "deco-sites/std/actions/vtex/cart/removeItems.ts",
       "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items/removeAll",
@@ -10952,6 +10655,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvZ2V0SW5zdGFsbG1lbnQudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvcmVtb3ZlSXRlbUF0dGFjaG1lbnQudHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvcmVtb3ZlSXRlbXMudHM="
