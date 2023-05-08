@@ -12,6 +12,15 @@
           "type": "string",
           "not": {
             "enum": [
+              "deco-sites/std/functions/butterCMSAds.ts",
+              "deco-sites/std/functions/butterCMSBrands.ts",
+              "deco-sites/std/functions/butterCMSCategories.ts",
+              "deco-sites/std/functions/butterCMSFeaturedPosts.ts",
+              "deco-sites/std/functions/butterCMSPage.ts",
+              "deco-sites/std/functions/butterCMSPlaces.ts",
+              "deco-sites/std/functions/butterCMSPostDetail.ts",
+              "deco-sites/std/functions/butterCMSPosts.ts",
+              "deco-sites/std/functions/butterCMSRelatedPosts.ts",
               "deco-sites/std/functions/occProductDetailsPage.ts",
               "deco-sites/std/functions/requestToParam.ts",
               "deco-sites/std/functions/shopifyProductDetailsPage.ts",
@@ -81,6 +90,7 @@
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
+              "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configOCC.global.tsx",
               "deco-sites/std/sections/configShopify.global.tsx",
               "deco-sites/std/sections/configVNDA.global.tsx",
@@ -117,6 +127,574 @@
           }
         }
       }
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "slug": {
+          "type": "string",
+          "title": "Slug"
+        }
+      },
+      "required": [
+        "name",
+        "slug"
+      ],
+      "title": "Category"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@omitYm9keSxzZW8sdGFncw==BlogPost": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "image": {
+          "type": "string",
+          "title": "Image"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt"
+        },
+        "publishedAt": {
+          "type": "string",
+          "title": "Published At"
+        },
+        "category": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category",
+          "title": "Category"
+        },
+        "slug": {
+          "type": "string",
+          "title": "Slug"
+        },
+        "author": {
+          "type": "string",
+          "title": "Author"
+        }
+      },
+      "required": [
+        "title",
+        "image",
+        "imageAlt",
+        "publishedAt",
+        "category",
+        "slug",
+        "author"
+      ],
+      "title": "omitYm9keSxzZW8sdGFncw==BlogPost"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@omitYm9keSxzZW8sdGFncw==BlogPost"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "summary": {
+              "type": "string",
+              "title": "Summary"
+            },
+            "ctaText": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Cta Text"
+            }
+          },
+          "required": [
+            "summary"
+          ]
+        }
+      ],
+      "title": "9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost"
+      },
+      "title": "9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPosts": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "posts": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]",
+              "title": "Posts"
+            }
+          },
+          "required": [
+            "title",
+            "posts"
+          ],
+          "title": "deco-sites/std/commerce/butterCMS/types.ts@BlogSectionPosts"
+        },
+        {
+          "title": "Butter CMS Featured Ads Loader",
+          "description": "Usefull for shelves and static galleries.",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSAds.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSAds.ts"
+            }
+          }
+        },
+        {
+          "title": "Butter CMS Featured Posts Loader",
+          "description": "Usefull for shelves and static galleries.",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSFeaturedPosts.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSFeaturedPosts.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "slug": {
+          "type": "string",
+          "title": "Slug"
+        }
+      },
+      "required": [
+        "name",
+        "slug"
+      ],
+      "title": "BlogPlace"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace"
+      },
+      "title": "BlogPlace[]"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogSectionPlaces": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "places": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPlace[]",
+              "title": "Places"
+            }
+          },
+          "required": [
+            "title",
+            "places"
+          ],
+          "title": "deco-sites/std/commerce/butterCMS/types.ts@BlogSectionPlaces"
+        },
+        {
+          "title": "Butter CMS Featured Brands Loader",
+          "description": "Usefull for list featured blog's brands.",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSBrands.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSBrands.ts"
+            }
+          }
+        },
+        {
+          "title": "Butter CMS Featured Places Loader",
+          "description": "Usefull for listing places",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSPlaces.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSPlaces.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category"
+          },
+          "title": "deco-sites/std/commerce/butterCMS/types.ts@Category[]"
+        },
+        {
+          "title": "Butter CMS Categories Loader",
+          "description": "Usefull for list blog's categories",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSCategories.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSCategories.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPage": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Title"
+            },
+            "breadcrumbList": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category[]",
+              "title": "Breadcrumb List"
+            }
+          },
+          "required": [],
+          "title": "deco-sites/std/commerce/butterCMS/types.ts@BlogPage"
+        },
+        {
+          "title": "Butter CMS Page Loader",
+          "description": "Works com any page to retrive page informations like title or breadcrumb",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSPage.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSPage.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@SEO": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "SEO"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPost": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "image": {
+              "type": "string",
+              "title": "Image"
+            },
+            "imageAlt": {
+              "type": "string",
+              "title": "Image Alt"
+            },
+            "publishedAt": {
+              "type": "string",
+              "title": "Published At"
+            },
+            "category": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category",
+              "title": "Category"
+            },
+            "slug": {
+              "type": "string",
+              "title": "Slug"
+            },
+            "author": {
+              "type": "string",
+              "title": "Author"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "title": "Tags"
+            },
+            "body": {
+              "type": "string",
+              "title": "Body"
+            },
+            "seo": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@SEO",
+              "title": "Seo"
+            }
+          },
+          "required": [
+            "title",
+            "image",
+            "imageAlt",
+            "publishedAt",
+            "category",
+            "slug",
+            "author",
+            "tags",
+            "body",
+            "seo"
+          ],
+          "title": "deco-sites/std/commerce/butterCMS/types.ts@BlogPost"
+        },
+        {
+          "title": "Butter CMS Post Detail Loader",
+          "description": "Works on routes of type /blog/:slug",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSPostDetail.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSPostDetail.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination": {
+      "type": "object",
+      "properties": {
+        "currentPage": {
+          "type": "number",
+          "title": "Current Page"
+        },
+        "nextPage": {
+          "type": "number",
+          "title": "Next Page"
+        },
+        "previousPage": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Previous Page"
+        },
+        "count": {
+          "type": "number",
+          "title": "Count"
+        },
+        "pageSize": {
+          "type": "number",
+          "title": "Page Size"
+        }
+      },
+      "required": [
+        "currentPage",
+        "nextPage",
+        "previousPage",
+        "count",
+        "pageSize"
+      ],
+      "title": "Pagination"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Pagination|null"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@BlogPostList": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "posts": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@9a2995a069d16968ece72775e2605f51&omitYm9keSxzZW8sdGFncw==BlogPost[]",
+              "title": "Posts"
+            },
+            "pagination": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Pagination|null",
+              "title": "Pagination"
+            }
+          },
+          "required": [
+            "posts",
+            "pagination"
+          ],
+          "title": "deco-sites/std/commerce/butterCMS/types.ts@BlogPostList"
+        },
+        {
+          "title": "Butter CMS Posts Loader",
+          "description": "Usefull for paginated galleries.",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1Bvc3RzLnRz@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSPosts.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSPosts.ts"
+            }
+          }
+        },
+        {
+          "title": "Butter CMS Related Posts Loader",
+          "description": "Usefull for paginated or not galleries. Works on routes of type /blog/:slug",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1JlbGF0ZWRQb3N0cy50cw==@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/functions/butterCMSRelatedPosts.ts"
+              ],
+              "default": "deco-sites/std/functions/butterCMSRelatedPosts.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1Bvc3RzLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "pageSize": {
+          "type": "number",
+          "description": "Used to declare the size of results",
+          "title": "Page Size"
+        }
+      },
+      "required": [
+        "pageSize"
+      ],
+      "title": "deco-sites/std/functions/butterCMSPosts.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1JlbGF0ZWRQb3N0cy50cw==@Props": {
+      "type": "object",
+      "properties": {
+        "pageSize": {
+          "type": "number",
+          "title": "Page Size"
+        },
+        "withPagination": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "With Pagination"
+        }
+      },
+      "required": [
+        "pageSize"
+      ],
+      "title": "deco-sites/std/functions/butterCMSRelatedPosts.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Thing": {
       "title": "Thing"
@@ -2048,40 +2626,31 @@
           "anyOf": [
             {
               "type": "string",
-              "const": ""
+              "const": "whosawalsosaw"
             },
             {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "whosawalsosaw"
-                },
-                {
-                  "type": "string",
-                  "const": "whosawalsobought"
-                },
-                {
-                  "type": "string",
-                  "const": "whoboughtalsobought"
-                },
-                {
-                  "type": "string",
-                  "const": "showtogether"
-                },
-                {
-                  "type": "string",
-                  "const": "accessories"
-                },
-                {
-                  "type": "string",
-                  "const": "similars"
-                },
-                {
-                  "type": "string",
-                  "const": "suggestions"
-                }
-              ],
-              "type": "string"
+              "type": "string",
+              "const": "whosawalsobought"
+            },
+            {
+              "type": "string",
+              "const": "whoboughtalsobought"
+            },
+            {
+              "type": "string",
+              "const": "showtogether"
+            },
+            {
+              "type": "string",
+              "const": "accessories"
+            },
+            {
+              "type": "string",
+              "const": "similars"
+            },
+            {
+              "type": "string",
+              "const": "suggestions"
             }
           ],
           "type": "string",
@@ -2303,6 +2872,31 @@
       ],
       "title": "deco-sites/std/functions/vtexProductList.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SelectedFacet": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "title": "Key"
+        },
+        "value": {
+          "type": "string",
+          "title": "Value"
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "title": "SelectedFacet"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SelectedFacet[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SelectedFacet"
+      },
+      "title": "SelectedFacet[]"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==@Props": {
       "type": "object",
       "properties": {
@@ -2374,6 +2968,11 @@
           ],
           "type": "string",
           "title": "Fuzzy"
+        },
+        "selectedFacets": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SelectedFacet[]",
+          "title": "Selected Facets",
+          "description": "Override selected facets from url"
         }
       },
       "required": [
@@ -7519,6 +8118,65 @@
       "required": [],
       "title": "deco-sites/std/components/Analytics.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "authToken": {
+          "type": "string",
+          "title": "Auth Token"
+        }
+      },
+      "required": [
+        "label",
+        "authToken"
+      ],
+      "title": "Locale"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale"
+      },
+      "title": "Locale[]"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@ConfigButterCMS": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+        }
+      ],
+      "properties": {
+        "locales": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale[]",
+          "title": "Locales"
+        },
+        "defaultLocale": {
+          "type": "string",
+          "description": "Default value: en-us",
+          "default": "en-us",
+          "title": "Default Locale"
+        },
+        "apiVersion": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Default value: v2",
+          "default": "v2",
+          "title": "Api Version"
+        }
+      },
+      "required": [
+        "locales",
+        "defaultLocale"
+      ],
+      "title": "deco-sites/std/commerce/butterCMS/client.ts@ConfigButterCMS"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPQmFzZS50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -8206,6 +8864,169 @@
         "id"
       ],
       "title": "deco-sites/std/packs/vtex/actions/wishlist/removeItem.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0Fkcy50cw==": {
+      "title": "Butter CMS Featured Ads Loader",
+      "description": "Usefull for shelves and static galleries.",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSAds.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSAds.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0JyYW5kcy50cw==": {
+      "title": "Butter CMS Featured Brands Loader",
+      "description": "Usefull for list featured blog's brands.",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSBrands.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSBrands.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0NhdGVnb3JpZXMudHM=": {
+      "title": "Butter CMS Categories Loader",
+      "description": "Usefull for list blog's categories",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSCategories.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSCategories.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0ZlYXR1cmVkUG9zdHMudHM=": {
+      "title": "Butter CMS Featured Posts Loader",
+      "description": "Usefull for shelves and static galleries.",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSFeaturedPosts.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSFeaturedPosts.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1BhZ2UudHM=": {
+      "title": "Butter CMS Page Loader",
+      "description": "Works com any page to retrive page informations like title or breadcrumb",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSPage.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSPage.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1BsYWNlcy50cw==": {
+      "title": "Butter CMS Featured Places Loader",
+      "description": "Usefull for listing places",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSPlaces.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSPlaces.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1Bvc3REZXRhaWwudHM=": {
+      "title": "Butter CMS Post Detail Loader",
+      "description": "Works on routes of type /blog/:slug",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSPostDetail.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSPostDetail.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1Bvc3RzLnRz": {
+      "title": "Butter CMS Posts Loader",
+      "description": "Usefull for paginated galleries.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1Bvc3RzLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSPosts.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSPosts.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1JlbGF0ZWRQb3N0cy50cw==": {
+      "title": "Butter CMS Related Posts Loader",
+      "description": "Usefull for paginated or not galleries. Works on routes of type /blog/:slug",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1JlbGF0ZWRQb3N0cy50cw==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/functions/butterCMSRelatedPosts.ts"
+          ],
+          "default": "deco-sites/std/functions/butterCMSRelatedPosts.ts"
+        }
+      }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw==": {
       "title": "Oracle Commerce Cloud Product Page Loader",
@@ -9610,6 +10431,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnQnV0dGVyQ01TLmdsb2JhbC50c3g=": {
+      "title": "deco-sites/std/sections/configButterCMS.global.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@ConfigButterCMS"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/configButterCMS.global.tsx"
+          ],
+          "default": "deco-sites/std/sections/configButterCMS.global.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnT0NDLmdsb2JhbC50c3g=": {
       "title": "deco-sites/std/sections/configOCC.global.tsx",
       "type": "object",
@@ -10318,6 +11160,33 @@
           "$ref": "#/definitions/Resolvable"
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0Fkcy50cw=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0JyYW5kcy50cw=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0NhdGVnb3JpZXMudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0ZlYXR1cmVkUG9zdHMudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1BhZ2UudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1BsYWNlcy50cw=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1Bvc3REZXRhaWwudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1Bvc3RzLnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU1JlbGF0ZWRQb3N0cy50cw=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL29jY1Byb2R1Y3REZXRhaWxzUGFnZS50cw=="
         },
         {
@@ -10571,6 +11440,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnQnV0dGVyQ01TLmdsb2JhbC50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnT0NDLmdsb2JhbC50c3g="

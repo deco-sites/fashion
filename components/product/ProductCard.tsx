@@ -17,6 +17,11 @@ interface Props {
   itemListName?: string;
 }
 
+const relative = (url: string) => {
+  const link = new URL(url);
+  return `${link.pathname}${link.search}`;
+};
+
 function ProductCard({ product, preload, itemListName }: Props) {
   const {
     url,
@@ -58,7 +63,11 @@ function ProductCard({ product, preload, itemListName }: Props) {
         <div class="absolute top-0 right-0">
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
         </div>
-        <a href={url} aria-label="view product" class="contents">
+        <a
+          href={url && relative(url)}
+          aria-label="view product"
+          class="contents"
+        >
           <Image
             src={front.url!}
             alt={front.alternateName}
