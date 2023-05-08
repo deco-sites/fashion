@@ -17,17 +17,11 @@ interface Props {
   itemListName?: string;
 }
 
-const productUrl = (urlStr: string | undefined): string | undefined => {
-  if (!urlStr) {
-    return urlStr;
-  }
-  try {
-    const url = new URL(urlStr);
-    return `${url.pathname}${url.search}`;
-  } catch (err) {
-    return undefined;
-  }
+const relative = (url: string) => {
+  const link = new URL(url);
+  return `${link.pathname}${link.search}`;
 };
+
 function ProductCard({ product, preload, itemListName }: Props) {
   const {
     url,
@@ -69,7 +63,11 @@ function ProductCard({ product, preload, itemListName }: Props) {
         <div class="absolute top-0 right-0">
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
         </div>
-        <a href={productUrl(url)} aria-label="view product" class="contents">
+        <a
+          href={url && relative(url)}
+          aria-label="view product"
+          class="contents"
+        >
           <Image
             src={front.url!}
             alt={front.alternateName}
