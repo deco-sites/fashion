@@ -15,15 +15,15 @@ export interface Props {
 export interface Messages {
   /**
    * @title Default message
-   * @description Default message displayed when I don't have free shipping
+   * @description The *template* that will be used for mounting the free shipping message when its not reached
    */
-  defaultMessage: string;
+  defaultMessage: string; // "Faltam {currency} {value} para o frete grátis"
 
   /**
    * @title Free shipping message
-   * @description Message displayed when I have free shipping
+   * @description The message used when free shipping is reached
    */
-  freeShippingMessage: string;
+  freeShippingMessage: string; // "Parabéns! Você tem frete grátis"
 }
 
 function FreeShippingBar(
@@ -36,7 +36,7 @@ function FreeShippingBar(
   if (!total || !value || !messages) return null;
 
   const { defaultMessage, freeShippingMessage } = messages;
-  
+
   const locale = cart.value?.clientPreferencesData.locale;
   const currencyCode = cart.value?.storePreferencesData.currencyCode;
   const progress = ((total?.value / 100) / value) * 100;
