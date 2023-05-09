@@ -2612,6 +2612,21 @@
           ],
           "type": "string",
           "title": "Sort"
+        },
+        "filters": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "dynamic"
+            },
+            {
+              "type": "string",
+              "const": "static"
+            }
+          ],
+          "type": "string",
+          "title": "Filters",
+          "description": "Set to static to not change the facets when the user filters the search. Dynamic will only show the filters containing products after each filter action"
         }
       },
       "required": [

@@ -1,4 +1,4 @@
-/* Partytown 0.7.1 - MIT builder.io */
+/* Partytown 0.8.0 - MIT builder.io */
 (self => {
     const WinIdKey = Symbol();
     const InstanceIdKey = Symbol();
@@ -54,6 +54,7 @@
     };
     const EMPTY_ARRAY = [];
     const randomId = () => Math.round(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
+    const SCRIPT_TYPE = "text/partytown";
     const defineProperty = (obj, memberName, descriptor) => Object.defineProperty(obj, memberName, {
         ...descriptor,
         configurable: true
@@ -77,10 +78,11 @@
         }
         return refId;
     };
-    const getOrCreateNodeInstance = (winId, instanceId, nodeName, namespace, instance) => {
+    const getOrCreateNodeInstance = (winId, instanceId, nodeName, namespace, instance, prevInstanceId) => {
         instance = webWorkerInstances.get(instanceId);
         if (!instance && nodeName && environments[winId]) {
-            instance = environments[winId].$createNode$(nodeName, instanceId, namespace);
+            const prevInstance = webWorkerInstances.get(prevInstanceId || "");
+            instance = environments[winId].$createNode$(nodeName, instanceId, namespace, prevInstance);
             webWorkerInstances.set(instanceId, instance);
         }
         return instance;
@@ -208,7 +210,7 @@
             }
         }
     };
-    const getOrCreateSerializedInstance = ([winId, instanceId, nodeName]) => instanceId === winId && environments[winId] ? environments[winId].$window$ : getOrCreateNodeInstance(winId, instanceId, nodeName);
+    const getOrCreateSerializedInstance = ([winId, instanceId, nodeName, prevInstanceId]) => instanceId === winId && environments[winId] ? environments[winId].$window$ : getOrCreateNodeInstance(winId, instanceId, nodeName, void 0, void 0, prevInstanceId);
     const deserializeRefFromMain = (applyPath, {$winId$: $winId$, $instanceId$: $instanceId$, $nodeName$: $nodeName$, $refId$: $refId$}) => {
         webWorkerRefsByRefId[$refId$] || webWorkerRefIdsByRef.set(webWorkerRefsByRefId[$refId$] = function(...args) {
             const instance = getOrCreateNodeInstance($winId$, $instanceId$, $nodeName$);
@@ -299,7 +301,6 @@
     const getTargetProp = (target, applyPath) => {
         let n = "";
         if (target) {
-            target[InstanceIdKey];
             const cstrName = getConstructorName(target);
             if ("Window" === cstrName) {
                 n = "";
@@ -539,7 +540,9 @@
         name: applyPath.join("."),
         continue: HookContinue,
         nodeName: instance[InstanceDataKey],
-        constructor: getConstructorName(instance)
+        constructor: getConstructorName(instance),
+        instance: instance,
+        window: environments[instance[WinIdKey]].$window$
     });
     const addStorageApi = (win, storageName, storages, isSameOrigin, env) => {
         let getItems = items => {
@@ -577,7 +580,18 @@
                 return getItems().length;
             }
         };
-        win[storageName] = storage;
+        win[storageName] = new Proxy(storage, {
+            get: (target, key) => Reflect.has(target, key) ? Reflect.get(target, key) : target.getItem(key),
+            set(target, key, value) {
+                target.setItem(key, value);
+                return true;
+            },
+            has: (target, key) => !!Reflect.has(target, key) || "string" == typeof key && null !== target.getItem(key),
+            deleteProperty(target, key) {
+                target.removeItem(key);
+                return true;
+            }
+        });
     };
     const STORAGE_KEY = 0;
     const STORAGE_VALUE = 1;
@@ -692,7 +706,7 @@
     };
     const run = (env, scriptContent, scriptUrl) => {
         env.$runWindowLoadEvent$ = 1;
-        scriptContent = `with(this){${scriptContent.replace(/\bthis\b/g, "(thi$(this)?window:this)").replace(/\/\/# so/g, "//Xso")}\n;function thi$(t){return t===this}};${(webWorkerCtx.$config$.globalFns || []).filter((globalFnName => /[a-zA-Z_$][0-9a-zA-Z_$]*/.test(globalFnName))).map((g => `(typeof ${g}=='function'&&(this.${g}=${g}))`)).join(";")};` + (scriptUrl ? "\n//# sourceURL=" + scriptUrl : "");
+        scriptContent = `with(this){${scriptContent.replace(/\bthis\b/g, ((match, offset, originalStr) => offset > 0 && "$" !== originalStr[offset - 1] ? "(thi$(this)?window:this)" : match)).replace(/\/\/# so/g, "//Xso")}\n;function thi$(t){return t===this}};${(webWorkerCtx.$config$.globalFns || []).filter((globalFnName => /[a-zA-Z_$][0-9a-zA-Z_$]*/.test(globalFnName))).map((g => `(typeof ${g}=='function'&&(this.${g}=${g}))`)).join(";")};` + (scriptUrl ? "\n//# sourceURL=" + scriptUrl : "");
         env.$isSameOrigin$ || (scriptContent = scriptContent.replace(/.postMessage\(/g, `.postMessage('${env.$winId$}',`));
         new Function(scriptContent).call(env.$window$);
         env.$runWindowLoadEvent$ = 0;
@@ -722,7 +736,7 @@
         return resolvedUrl;
     };
     const resolveUrl = (env, url, type) => resolveToUrl(env, url, type) + "";
-    const getPartytownScript = () => `<script src="${partytownLibUrl("partytown.js?v=0.7.1")}"><\/script>`;
+    const getPartytownScript = () => `<script src="${partytownLibUrl("partytown.js?v=0.8.0")}"><\/script>`;
     const createImageConstructor = env => class HTMLImageElement {
         constructor() {
             this.s = "";
@@ -734,9 +748,9 @@
             return this.s;
         }
         set src(src) {
-            webWorkerCtx.$config$.logImageRequests && logWorker(`Image() request: ${resolveUrl(env, src, null)}`, env.$winId$);
+            webWorkerCtx.$config$.logImageRequests && logWorker(`Image() request: ${resolveUrl(env, src, "image")}`, env.$winId$);
             this.s = src;
-            fetch(resolveUrl(env, src, null), {
+            fetch(resolveUrl(env, src, "image"), {
                 mode: "no-cors",
                 credentials: "include",
                 keepalive: true
@@ -853,7 +867,8 @@
     };
     const innerHTMLDescriptor = {
         get() {
-            return getInstanceStateValue(this, 3) || "";
+            const type = getter(this, [ "type" ]);
+            return isScriptJsType(type) ? getInstanceStateValue(this, 3) || "" : getter(this, [ "innerHTML" ]);
         },
         set(scriptContent) {
             setInstanceStateValue(this, 3, scriptContent);
@@ -1201,7 +1216,23 @@
                             xhr.send();
                             xhrStatus = xhr.status;
                             if (xhrStatus > 199 && xhrStatus < 300) {
-                                setter(this, [ "srcdoc" ], `<base href="${src}">` + xhr.responseText.replace(/<script>/g, '<script type="text/partytown">').replace(/<script /g, '<script type="text/partytown" ').replace(/text\/javascript/g, "text/partytown") + getPartytownScript());
+                                setter(this, [ "srcdoc" ], `<base href="${src}">` + function(text) {
+                                    return text.replace(SCRIPT_TAG_REGEXP, ((_, attrs) => {
+                                        const parts = [];
+                                        let hasType = false;
+                                        let match;
+                                        while (match = ATTR_REGEXP.exec(attrs)) {
+                                            let [keyValue] = match;
+                                            if (keyValue.startsWith("type=")) {
+                                                hasType = true;
+                                                keyValue = keyValue.replace(/(application|text)\/javascript/, SCRIPT_TYPE);
+                                            }
+                                            parts.push(keyValue);
+                                        }
+                                        hasType || parts.push('type="text/partytown"');
+                                        return `<script ${parts.join(" ")}>`;
+                                    }));
+                                }(xhr.responseText) + getPartytownScript());
                                 sendToMain(true);
                                 webWorkerCtx.$postMessage$([ 7, env.$winId$ ]);
                             } else {
@@ -1216,6 +1247,9 @@
         };
         definePrototypePropertyDescriptor(WorkerHTMLIFrameElement, HTMLIFrameDescriptorMap);
     };
+    const ATTR_REGEXP_STR = "((?:\\w|-)+(?:=(?:(?:\\w|-)+|'[^']*'|\"[^\"]*\")?)?)";
+    const SCRIPT_TAG_REGEXP = new RegExp(`<script\\s*((${ATTR_REGEXP_STR}\\s*)*)>`, "mg");
+    const ATTR_REGEXP = new RegExp(ATTR_REGEXP_STR, "mg");
     const getIframeEnv = iframe => {
         const $winId$ = iframe[InstanceIdKey];
         environments[$winId$] || createEnvironment({
@@ -1245,10 +1279,44 @@
         };
         definePrototypePropertyDescriptor(WorkerSVGGraphicsElement, SVGGraphicsElementDescriptorMap);
     };
+    const createNamedNodeMapCstr = (win, WorkerBase) => {
+        win.NamedNodeMap = defineConstructorName(class NamedNodeMap extends WorkerBase {
+            constructor(winId, instanceId, applyPath) {
+                super(winId, instanceId, applyPath);
+                return new Proxy(this, {
+                    get(target, propName) {
+                        const handler = NAMED_NODE_MAP_HANDLERS[propName];
+                        return handler ? handler.bind(target, [ propName ]) : getter(target, [ propName ]);
+                    },
+                    set(target, propName, propValue) {
+                        const handler = NAMED_NODE_MAP_HANDLERS[propName];
+                        if (handler) {
+                            throw new Error("Can't set read-only property: " + String(propName));
+                        }
+                        setter(target, [ propName ], propValue);
+                        return true;
+                    }
+                });
+            }
+        }, "NamedNodeMap");
+    };
+    function method(applyPath, ...args) {
+        return callMethod(this, applyPath, args, 1);
+    }
+    const NAMED_NODE_MAP_HANDLERS = {
+        getNamedItem: method,
+        getNamedItemNS: method,
+        item: method,
+        removeNamedItem: method,
+        removeNamedItemNS: method,
+        setNamedItem: method,
+        setNamedItemNS: method
+    };
     const createWindow = ($winId$, $parentWinId$, url, $visibilityState$, isIframeWindow, isDocumentImplementation) => {
         let cstrInstanceId;
         let cstrNodeName;
         let cstrNamespace;
+        let cstrPrevInstance;
         const WorkerBase = class {
             constructor(winId, instanceId, applyPath, instanceData, namespace) {
                 this[WinIdKey] = winId || $winId$;
@@ -1256,7 +1324,7 @@
                 this[ApplyPathKey] = applyPath || [];
                 this[InstanceDataKey] = instanceData || cstrNodeName;
                 this[NamespaceKey] = namespace || cstrNamespace;
-                this[InstanceStateKey] = {};
+                this[InstanceStateKey] = cstrPrevInstance && cstrPrevInstance[InstanceStateKey] || {};
                 cstrInstanceId = cstrNodeName = cstrNamespace = void 0;
             }
         };
@@ -1297,7 +1365,7 @@
                         (() => {
                             if (!webWorkerCtx.$initWindowMedia$) {
                                 self.$bridgeToMedia$ = [ getter, setter, callMethod, constructGlobal, definePrototypePropertyDescriptor, randomId, WinIdKey, InstanceIdKey, ApplyPathKey ];
-                                webWorkerCtx.$importScripts$(partytownLibUrl("partytown-media.js?v=0.7.1"));
+                                webWorkerCtx.$importScripts$(partytownLibUrl("partytown-media.js?v=0.8.0"));
                                 webWorkerCtx.$initWindowMedia$ = self.$bridgeFromMedia$;
                                 delete self.$bridgeFromMedia$;
                             }
@@ -1307,12 +1375,13 @@
                     }
                 };
                 let nodeCstrs = {};
-                let $createNode$ = (nodeName, instanceId, namespace) => {
+                let $createNode$ = (nodeName, instanceId, namespace, prevInstance) => {
                     htmlMedia.includes(nodeName) && initWindowMedia();
                     const NodeCstr = nodeCstrs[nodeName] ? nodeCstrs[nodeName] : nodeName.includes("-") ? nodeCstrs.UNKNOWN : nodeCstrs.I;
                     cstrInstanceId = instanceId;
                     cstrNodeName = nodeName;
                     cstrNamespace = namespace;
+                    cstrPrevInstance = prevInstance;
                     return new NodeCstr;
                 };
                 win.Window = WorkerWindow;
@@ -1321,6 +1390,7 @@
                 (win => {
                     win.NodeList = defineConstructorName(NodeList, "NodeList");
                 })(win);
+                createNamedNodeMapCstr(win, WorkerBase);
                 createCSSStyleDeclarationCstr(win, WorkerBase, "CSSStyleDeclaration");
                 ((win, WorkerBase, cstrName) => {
                     win[cstrName] = defineConstructorName(class extends WorkerBase {
@@ -1562,7 +1632,12 @@
                     for (key in navigator) {
                         nav[key] = navigator[key];
                     }
-                    return nav;
+                    return new Proxy(nav, {
+                        set(_, propName, propValue) {
+                            navigator[propName] = propValue;
+                            return true;
+                        }
+                    });
                 })(env);
             }
             get origin() {
