@@ -4,19 +4,41 @@ import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 
 export interface Props {
+  /**
+   * @title Free shipping bar calculation value
+   * @description Amount used for free shipping rule calculation
+   */
   value?: number;
+  messages?: Messages;
 }
 
-function FreeShippingBar({ value }: Props) {
-  const { cart } = useCart();
+export interface Messages {
+  /**
+   * @title Default message
+   * @description Default message displayed when I don't have free shipping
+   */
+  defaultMessage: string;
 
-  const locale = cart.value?.clientPreferencesData.locale;
-  const currencyCode = cart.value?.storePreferencesData.currencyCode;
+  /**
+   * @title Free shipping message
+   * @description Message displayed when I have free shipping
+   */
+  freeShippingMessage: string;
+}
+
+function FreeShippingBar(
+  { value, messages }: Props,
+) {
+  const { cart } = useCart();
 
   const total = cart.value?.totalizers.find((item) => item.id === "Items");
 
-  if (!total || !value) return null;
+  if (!total || !value || !messages) return null;
 
+  const { defaultMessage, freeShippingMessage } = messages;
+  
+  const locale = cart.value?.clientPreferencesData.locale;
+  const currencyCode = cart.value?.storePreferencesData.currencyCode;
   const progress = ((total?.value / 100) / value) * 100;
 
   return (
@@ -31,10 +53,17 @@ function FreeShippingBar({ value }: Props) {
             strokeWidth={0}
           />
           {progress < 100
-            ? `Faltam R$ ${
-              formatPrice(value - total?.value / 100, currencyCode!, locale)
-            } para o frete grátis`
-            : "Parabéns! Você tem frete grátis"}
+            ? defaultMessage.replace(
+              "{value}",
+              String(
+                formatPrice(
+                  (value - total?.value) / 100,
+                  currencyCode!,
+                  locale,
+                ),
+              ),
+            )
+            : freeShippingMessage}
         </div>
         <div
           className="bg-[#D4DBD7] h-2.5 rounded-full"
