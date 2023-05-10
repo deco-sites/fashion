@@ -2190,6 +2190,28 @@
                 }
               ],
               "title": "Previous Page"
+            },
+            "records": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Records"
+            },
+            "recordPerPage": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Record Per Page"
             }
           },
           "required": [
