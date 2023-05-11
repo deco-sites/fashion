@@ -2,22 +2,17 @@
   "tasks": {
     "start": "deno run -A --watch=sections/,functions/ dev.ts",
     "component": "deno eval 'import \"$live/scripts/component.ts\"'",
+    "release": "deno eval 'import \"$live/scripts/release.ts\"'",
     "check": "deno fmt && deno lint && deno check dev.ts main.ts"
   },
   "githooks": {
     "pre-commit": "check"
   },
   "lint": {
-    "exclude": [
-      "static/",
-      "README.md"
-    ]
+    "exclude": ["static/", "README.md"]
   },
   "fmt": {
-    "exclude": [
-      "static/",
-      "README.md"
-    ]
+    "exclude": ["static/", "README.md"]
   },
   "importMap": "./import_map.json",
   "compilerOptions": {
