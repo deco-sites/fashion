@@ -74,7 +74,7 @@ function CartButton() {
       class="btn-square btn-ghost relative"
       aria-label="open cart"
       data-deco={displayCart.value && "open-cart"}
-      disabled={loading.value}
+      loading={loading.value}
       onClick={onClick}
     >
       <div class="indicator">

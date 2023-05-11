@@ -29,7 +29,7 @@ export const useAddToCart = (
 ) => {
   const isAddingToCart = useSignal(false);
   const { displayCart } = useUI();
-  const { addItems, loading } = useCart();
+  const { addItems } = useCart();
 
   const onClick = useCallback(async (e: MouseEvent) => {
     e.preventDefault();
@@ -65,5 +65,5 @@ export const useAddToCart = (
     }
   }, [skuId, sellerId]);
 
-  return { onClick, disabled: loading.value, loading: isAddingToCart.value };
+  return { onClick, loading: isAddingToCart.value };
 };

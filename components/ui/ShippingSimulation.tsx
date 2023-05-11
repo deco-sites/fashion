@@ -1,4 +1,4 @@
-import { useSignal } from "@preact/signals";
+import { Signal, useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
@@ -13,7 +13,7 @@ export interface Props {
   items: Array<SKU>;
 }
 
-const handleShippingTime = (estimate: string) => {
+const formatShippingEstimate = (estimate: string) => {
   const [, time, type] = estimate.split(/(\d+)/);
 
   if (type === "bd") return `${time} dias úteis`;
@@ -21,34 +21,29 @@ const handleShippingTime = (estimate: string) => {
   if (type === "h") return `${time} horas`;
 };
 
-function ShippingContentError() {
-  return (
-    <div class="p-2">
-      <span>CEP inválido</span>
-    </div>
-  );
-}
+function ShippingContent({ simulation }: {
+  simulation: Signal<SimulationOrderForm | null>;
+}) {
+  const { cart } = useCart();
 
-function ShippingContent(
-  { simulation, locale, currencyCode }: {
-    simulation: SimulationOrderForm;
-    locale: string;
-    currencyCode: string;
-  },
-) {
-  if (!simulation.logisticsInfo?.length) {
-    return <ShippingContentError />;
+  const methods = simulation.value?.logisticsInfo?.reduce(
+    (initial, { slas }) => [...initial, ...slas],
+    [] as Sla[],
+  ) ?? [];
+
+  const locale = cart.value?.clientPreferencesData.locale || "pt-BR";
+  const currencyCode = cart.value?.storePreferencesData.currencyCode || "BRL";
+
+  if (simulation.value == null) {
+    return null;
   }
 
-  const methods = simulation.logisticsInfo.reduce<Sla[]>(
-    (initial, logistic) => {
-      return [...initial, ...logistic.slas];
-    },
-    [],
-  );
-
-  if (!methods.length) {
-    return <ShippingContentError />;
+  if (methods.length === 0) {
+    return (
+      <div class="p-2">
+        <span>CEP inválido</span>
+      </div>
+    );
   }
 
   return (
@@ -59,11 +54,11 @@ function ShippingContent(
             Entrega {method.name}
           </span>
           <span class="text-button">
-            até {handleShippingTime(method.shippingEstimate)}
+            até {formatShippingEstimate(method.shippingEstimate)}
           </span>
           <span class="text-base font-semibold text-right">
             {method.price === 0 ? "Grátis" : (
-              formatPrice(method.price / 100, currencyCode!, locale)
+              formatPrice(method.price / 100, currencyCode, locale)
             )}
           </span>
         </li>
@@ -81,26 +76,22 @@ function ShippingSimulation({ items }: Props) {
   const postalCode = useSignal("");
   const loading = useSignal(false);
   const simulateResult = useSignal<SimulationOrderForm | null>(null);
-
   const { simulate, cart } = useCart();
 
-  const locale = cart.value?.clientPreferencesData.locale || "pt-BR";
-  const currencyCode = cart.value?.storePreferencesData.currencyCode || "BRL";
+  const handleSimulation = useCallback(async () => {
+    if (postalCode.value.length !== 8) {
+      return;
+    }
 
-  const handleSimulation = useCallback(() => {
-    const simulationData = {
-      items: items,
-      postalCode: postalCode.value,
-      country: cart.value?.storePreferencesData.countryCode || "BRA",
-    };
-
-    if (postalCode.value.length == 8) {
+    try {
       loading.value = true;
-      simulate(simulationData)
-        .then((result) => {
-          simulateResult.value = result;
-          loading.value = false;
-        });
+      simulateResult.value = await simulate({
+        items: items,
+        postalCode: postalCode.value,
+        country: cart.value?.storePreferencesData.countryCode || "BRA",
+      });
+    } finally {
+      loading.value = false;
     }
   }, []);
 
@@ -132,25 +123,16 @@ function ShippingSimulation({ items }: Props) {
                 postalCode.value = e.currentTarget.value;
               }}
             />
-            <Button
-              type="submit"
-              loading={loading.value}
-            >
+            <Button type="submit" loading={loading.value}>
               Calcular
             </Button>
           </div>
         </form>
       </div>
       <div>
-        {simulateResult.value && (
-          <div>
-            <ShippingContent
-              simulation={simulateResult.value}
-              locale={locale}
-              currencyCode={currencyCode}
-            />
-          </div>
-        )}
+        <div>
+          <ShippingContent simulation={simulateResult} />
+        </div>
       </div>
     </div>
   );
