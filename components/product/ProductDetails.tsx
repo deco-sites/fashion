@@ -9,10 +9,10 @@ import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
-import type { LoaderReturnType } from "$live/types.ts";
-import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import type { LoaderReturnType } from "$live/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "deco-sites/fashion/islands/ProductImageZoom.tsx";
@@ -138,6 +138,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           )}
         </span>
       </div>
+      {/* Analytics Event */}
       <SendEventOnLoad
         event={{
           name: "view_item",
@@ -157,12 +158,75 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
   );
 }
 
+/**
+ * Here be dragons
+ *
+ * bravtexfashionstore (VTEX default fashion account) has the same images for different skus. However,
+ * VTEX api does not return the same link for the same image. This causes the image to blink when
+ * the user changes the selected SKU. To prevent this blink from happening, I created this function
+ * bellow to use the same link for all skus. Example:
+ *
+ * {
+    skus: [
+      {
+        id: 1
+        image: [
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/123/a.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/124/b.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/125/c.jpg"
+        ]
+      },
+      {
+        id: 2
+        image: [
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/321/a.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/322/b.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/323/c.jpg"
+        ]
+      }
+    ]
+  }
+
+  for both skus 1 and 2, we have the same images a.jpg, b.jpg and c.jpg, but
+  they have different urls. This function returns, for both skus:
+
+  [
+    "https://bravtexfashionstore.vtexassets.com/arquivos/ids/321/a.jpg",
+    "https://bravtexfashionstore.vtexassets.com/arquivos/ids/322/b.jpg",
+    "https://bravtexfashionstore.vtexassets.com/arquivos/ids/323/c.jpg"
+  ]
+
+  This is a very catalog dependent function. Feel free to change this as you wish
+ */
+const useStableImages = (product: ProductDetailsPage["product"]) => {
+  const imageNameFromURL = (url = "") => {
+    const segments = new URL(url).pathname.split("/");
+    return segments[segments.length - 1];
+  };
+
+  const images = product.image ?? [];
+  const allImages = product.isVariantOf?.hasVariant.flatMap((p) => p.image)
+    .reduce((acc, img) => {
+      if (img?.url) {
+        acc[imageNameFromURL(img.url)] = img.url;
+      }
+      return acc;
+    }, {} as Record<string, string>) ?? {};
+
+  return images.map((img) => {
+    const name = imageNameFromURL(img.url);
+
+    return { ...img, url: allImages[name] ?? img.url };
+  });
+};
+
 function Details({
   page,
   variant,
 }: { page: ProductDetailsPage; variant: Variant }) {
+  const { product } = page;
   const id = `product-image-gallery:${useId()}`;
-  const { product: { image: images = [] } } = page;
+  const images = useStableImages(product);
 
   /**
    * Product slider variant
@@ -202,11 +266,17 @@ function Details({
               ))}
             </Slider>
 
-            <Slider.PrevButton class="absolute left-2 top-1/2 btn btn-circle btn-outline">
+            <Slider.PrevButton
+              class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
+              disabled
+            >
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
 
-            <Slider.NextButton class="absolute right-2 top-1/2 btn btn-circle btn-outline">
+            <Slider.NextButton
+              class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
+              disabled={images.length < 2}
+            >
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
             </Slider.NextButton>
 
