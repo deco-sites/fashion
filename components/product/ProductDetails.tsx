@@ -5,17 +5,14 @@ import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import {
-  Slider,
-  SliderDots,
-} from "deco-sites/fashion/components/ui/Slider.tsx";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
-import type { LoaderReturnType } from "$live/types.ts";
-import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import type { LoaderReturnType } from "$live/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "deco-sites/fashion/islands/ProductImageZoom.tsx";
@@ -141,6 +138,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           )}
         </span>
       </div>
+      {/* Analytics Event */}
       <SendEventOnLoad
         event={{
           name: "view_item",
@@ -160,12 +158,75 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
   );
 }
 
+/**
+ * Here be dragons
+ *
+ * bravtexfashionstore (VTEX default fashion account) has the same images for different skus. However,
+ * VTEX api does not return the same link for the same image. This causes the image to blink when
+ * the user changes the selected SKU. To prevent this blink from happening, I created this function
+ * bellow to use the same link for all skus. Example:
+ *
+ * {
+    skus: [
+      {
+        id: 1
+        image: [
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/123/a.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/124/b.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/125/c.jpg"
+        ]
+      },
+      {
+        id: 2
+        image: [
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/321/a.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/322/b.jpg",
+          "https://bravtexfashionstore.vtexassets.com/arquivos/ids/323/c.jpg"
+        ]
+      }
+    ]
+  }
+
+  for both skus 1 and 2, we have the same images a.jpg, b.jpg and c.jpg, but
+  they have different urls. This function returns, for both skus:
+
+  [
+    "https://bravtexfashionstore.vtexassets.com/arquivos/ids/321/a.jpg",
+    "https://bravtexfashionstore.vtexassets.com/arquivos/ids/322/b.jpg",
+    "https://bravtexfashionstore.vtexassets.com/arquivos/ids/323/c.jpg"
+  ]
+
+  This is a very catalog dependent function. Feel free to change this as you wish
+ */
+const useStableImages = (product: ProductDetailsPage["product"]) => {
+  const imageNameFromURL = (url = "") => {
+    const segments = new URL(url).pathname.split("/");
+    return segments[segments.length - 1];
+  };
+
+  const images = product.image ?? [];
+  const allImages = product.isVariantOf?.hasVariant.flatMap((p) => p.image)
+    .reduce((acc, img) => {
+      if (img?.url) {
+        acc[imageNameFromURL(img.url)] = img.url;
+      }
+      return acc;
+    }, {} as Record<string, string>) ?? {};
+
+  return images.map((img) => {
+    const name = imageNameFromURL(img.url);
+
+    return { ...img, url: allImages[name] ?? img.url };
+  });
+};
+
 function Details({
   page,
   variant,
 }: { page: ProductDetailsPage; variant: Variant }) {
+  const { product } = page;
   const id = `product-image-gallery:${useId()}`;
-  const { product: { image: images = [] } } = page;
+  const images = useStableImages(product);
 
   /**
    * Product slider variant
@@ -179,44 +240,45 @@ function Details({
       <>
         <div
           id={id}
-          class={`grid grid-cols-1 gap-4 sm:grid-cols-[max-content_40vw_40vw] sm:grid-rows-1 sm:justify-center sm:max-h-[calc(${
-            (HEIGHT / WIDTH).toFixed(2)
-          }*40vw)]`}
+          class="grid grid-cols-1 gap-4 sm:grid-cols-[max-content_40vw_40vw] sm:grid-rows-1 sm:justify-center"
         >
           {/* Image Slider */}
           <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
-            <Slider class="gap-6">
+            <Slider class="carousel gap-6">
               {images.map((img, index) => (
-                <Image
-                  class="snap-center min-w-[100vw] sm:min-w-[40vw]"
-                  sizes="(max-width: 640px) 100vw, 40vw"
-                  style={{ aspectRatio: ASPECT_RATIO }}
-                  src={img.url!}
-                  alt={img.alternateName}
-                  width={WIDTH}
-                  height={HEIGHT}
-                  // Preload LCP image for better web vitals
-                  preload={index === 0}
-                  loading={index === 0 ? "eager" : "lazy"}
-                />
+                <Slider.Item
+                  index={index}
+                  class="carousel-item min-w-[100vw] sm:min-w-[40vw]"
+                >
+                  <Image
+                    class="w-full"
+                    sizes="(max-width: 640px) 100vw, 40vw"
+                    style={{ aspectRatio: ASPECT_RATIO }}
+                    src={img.url!}
+                    alt={img.alternateName}
+                    width={WIDTH}
+                    height={HEIGHT}
+                    // Preload LCP image for better web vitals
+                    preload={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                </Slider.Item>
               ))}
             </Slider>
 
-            <Button
-              class="absolute left-2 top-1/2 btn-circle btn-outline"
-              data-slide="prev"
-              aria-label="Previous"
+            <Slider.PrevButton
+              class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
+              disabled
             >
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-            </Button>
+            </Slider.PrevButton>
 
-            <Button
-              class="absolute right-2 top-1/2 btn-circle btn-outline"
-              data-slide="next"
-              aria-label="Next"
+            <Slider.NextButton
+              class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
+              disabled={images.length < 2}
             >
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
-            </Button>
+            </Slider.NextButton>
 
             <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <ProductImageZoom
@@ -228,18 +290,22 @@ function Details({
           </div>
 
           {/* Dots */}
-          <SliderDots class="gap-2 sm:justify-start overflow-auto px-4 sm:px-0 flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
-            {images.map((img, _) => (
-              <Image
-                style={{ aspectRatio: ASPECT_RATIO }}
-                class="group-disabled:border-base-300 border rounded min-w-[63px] sm:min-w-[100px]"
-                width={63}
-                height={87.5}
-                src={img.url!}
-                alt={img.alternateName}
-              />
+          <ul class="flex gap-2 sm:justify-start overflow-auto px-4 sm:px-0 sm:flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
+            {images.map((img, index) => (
+              <li class="min-w-[63px] sm:min-w-[100px]">
+                <Slider.Dot index={index}>
+                  <Image
+                    style={{ aspectRatio: ASPECT_RATIO }}
+                    class="group-disabled:border-base-300 border rounded "
+                    width={63}
+                    height={87.5}
+                    src={img.url!}
+                    alt={img.alternateName}
+                  />
+                </Slider.Dot>
+              </li>
             ))}
-          </SliderDots>
+          </ul>
 
           {/* Product Info */}
           <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1">
@@ -260,22 +326,23 @@ function Details({
   return (
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-[50vw_25vw] sm:grid-rows-1 sm:justify-center">
       {/* Image slider */}
-      <Slider class="gap-6">
+      <ul class="carousel carousel-center gap-6">
         {[images[0], images[1] ?? images[0]].map((img, index) => (
-          <Image
-            class="snap-center min-w-[100vw] sm:min-w-[24vw]"
-            sizes="(max-width: 640px) 100vw, 24vw"
-            style={{ aspectRatio: ASPECT_RATIO }}
-            src={img.url!}
-            alt={img.alternateName}
-            width={WIDTH}
-            height={HEIGHT}
-            // Preload LCP image for better web vitals
-            preload={index === 0}
-            loading={index === 0 ? "eager" : "lazy"}
-          />
+          <li class="carousel-item min-w-[100vw] sm:min-w-[24vw]">
+            <Image
+              sizes="(max-width: 640px) 100vw, 24vw"
+              style={{ aspectRatio: ASPECT_RATIO }}
+              src={img.url!}
+              alt={img.alternateName}
+              width={WIDTH}
+              height={HEIGHT}
+              // Preload LCP image for better web vitals
+              preload={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          </li>
         ))}
-      </Slider>
+      </ul>
 
       {/* Product Info */}
       <div class="px-4 sm:pr-0 sm:pl-6">

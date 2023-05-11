@@ -13,11 +13,11 @@ import { useEffect, useRef } from "preact/compat";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
-import { useAutocomplete } from "deco-sites/std/commerce/vtex/hooks/useAutocomplete.ts";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
+import { useAutocomplete } from "deco-sites/std/packs/vtex/hooks/useAutocomplete.ts";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
-import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 
 import SearchTermList from "./SearchTermList.tsx";
 
@@ -199,22 +199,14 @@ function Searchbar({
         {_products && !emptySuggestions && (
           <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
             <span class="font-medium text-xl px-4">Produtos sugeridos</span>
-            <Slider>
-              {_products.map((
-                product,
-                index,
-              ) => (
-                <div
-                  class={`${
-                    index === 0
-                      ? "ml-4"
-                      : index === _products.length - 1
-                      ? "mr-4"
-                      : ""
-                  } min-w-[200px] max-w-[200px]`}
+            <Slider class="carousel">
+              {_products.map((product, index) => (
+                <Slider.Item
+                  index={index}
+                  class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
                 >
                   <ProductCard product={product} />
-                </div>
+                </Slider.Item>
               ))}
             </Slider>
           </div>

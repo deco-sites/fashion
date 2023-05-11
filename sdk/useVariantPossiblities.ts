@@ -8,6 +8,7 @@ export const useVariantPossibilities = (
       additionalProperty.map((property) => ({ property, url }))
     )
     .filter((x) => x.url)
+    .filter((x) => x.property.valueReference === "SPECIFICATION") // Remove this line to allow other than specifications
     .sort((a, b) => a.url! < b.url! ? -1 : a.url === b.url ? 0 : 1);
 
   const possibilities = allProperties.reduce((acc, { property, url }) => {

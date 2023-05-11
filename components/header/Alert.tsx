@@ -1,5 +1,5 @@
-import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
+import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
+import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
 
 export interface Props {
@@ -16,15 +16,17 @@ function Alert({ alerts = [], interval = 5 }: Props) {
 
   return (
     <div id={id}>
-      <Slider class="bg-secondary gap-6 scrollbar-none">
-        {alerts.map((alert) => (
-          <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
-            {alert}
-          </span>
+      <Slider class="carousel carousel-center bg-secondary gap-6 scrollbar-none">
+        {alerts.map((alert, index) => (
+          <Slider.Item index={index} class="carousel-item">
+            <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
+              {alert}
+            </span>
+          </Slider.Item>
         ))}
       </Slider>
 
-      <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
+      <SliderJS rootId={id} interval={interval && interval * 1e3} />
     </div>
   );
 }

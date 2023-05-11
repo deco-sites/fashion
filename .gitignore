@@ -71,3 +71,6 @@ server/
 
 # Deno.lock
 deno.lock
+
+# db files
+.config.json

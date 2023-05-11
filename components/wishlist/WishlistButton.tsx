@@ -1,8 +1,8 @@
 import { useComputed, useSignal } from "@preact/signals";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import { useWishlist } from "deco-sites/std/commerce/vtex/hooks/useWishlist.ts";
-import { useUser } from "deco-sites/std/commerce/vtex/hooks/useUser.ts";
+import { useWishlist } from "deco-sites/std/packs/vtex/hooks/useWishlist.ts";
+import { useUser } from "deco-sites/std/packs/vtex/hooks/useUser.ts";
 
 interface Props {
   productID: string;
@@ -15,7 +15,7 @@ function WishlistButton({
   productGroupID,
   productID,
 }: Props) {
-  const user = useUser();
+  const { user } = useUser();
   const item = { sku: productID, productId: productGroupID };
   const { loading, addItem, removeItem, getItem } = useWishlist();
   const listItem = useComputed(() => getItem(item));
@@ -26,7 +26,9 @@ function WishlistButton({
 
   return (
     <Button
-      class={variant === "icon" ? "btn-circle btn-ghost" : "btn-outline"}
+      class={variant === "icon"
+        ? "btn-circle btn-ghost gap-2"
+        : "btn-outline gap-2"}
       loading={fetching.value}
       aria-label="Add to wishlist"
       onClick={async (e) => {
@@ -46,7 +48,7 @@ function WishlistButton({
         try {
           fetching.value = true;
           inWishlist
-            ? await removeItem(listItem.value!.id)
+            ? await removeItem({ id: listItem.value!.id }!)
             : await addItem(item);
         } finally {
           fetching.value = false;

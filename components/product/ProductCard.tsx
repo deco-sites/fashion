@@ -17,6 +17,14 @@ interface Props {
   itemListName?: string;
 }
 
+const relative = (url: string) => {
+  const link = new URL(url);
+  return `${link.pathname}${link.search}`;
+};
+
+const WIDTH = 200;
+const HEIGHT = 279;
+
 function ProductCard({ product, preload, itemListName }: Props) {
   const {
     url,
@@ -30,9 +38,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
   const [front, back] = images ?? [];
   const { listPrice, price } = useOffer(offers);
   const possibilities = useVariantPossibilities(product);
-  const options = Object.entries(
-    possibilities["TAMANHO"] ?? possibilities["Tamanho"] ?? {},
-  );
+  const variants = Object.entries(Object.values(possibilities)[0] ?? {});
   const clickEvent = {
     name: "select_item" as const,
     params: {
@@ -49,38 +55,48 @@ function ProductCard({ product, preload, itemListName }: Props) {
 
   return (
     <div
-      class="card card-compact card-bordered border-transparent hover:border-base-200 group"
+      class="card card-compact card-bordered border-transparent hover:border-base-200 group w-full"
       data-deco="view-product"
       id={`product-card-${productID}`}
       {...sendEventOnClick(clickEvent)}
     >
-      <figure class="relative">
-        <div class="absolute top-0 right-0">
+      <figure class="relative " style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}>
+        {/* Wishlist button */}
+        <div class="absolute top-0 right-0 z-10">
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
         </div>
-        <a href={url} aria-label="view product" class="contents">
+        {/* Product Images */}
+        <a
+          href={url && relative(url)}
+          aria-label="view product"
+          class="contents"
+        >
           <Image
             src={front.url!}
             alt={front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full group-hover:hidden"
+            width={WIDTH}
+            height={HEIGHT}
+            class="absolute transition-opacity rounded w-full opacity-100 group-hover:opacity-0"
+            sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
-            sizes="(max-width: 640px) 50vw, 20vw"
+            decoding="async"
           />
           <Image
             src={back?.url ?? front.url!}
             alt={back?.alternateName ?? front.alternateName}
-            width={200}
-            height={279}
-            class="rounded w-full hidden group-hover:block"
+            width={WIDTH}
+            height={HEIGHT}
+            class="absolute transition-opacity rounded w-full opacity-0 group-hover:opacity-100"
             sizes="(max-width: 640px) 50vw, 20vw"
+            loading="lazy"
+            decoding="async"
           />
         </a>
-        <figcaption class="glass card-body card-actions absolute bottom-0 left-0 w-full invisible group-hover:visible">
+        <figcaption class="glass card-body card-actions absolute bottom-0 left-0 w-full transition-opacity opacity-0 group-hover:opacity-100">
+          {/* SKU Selector */}
           <ul class="flex justify-center items-center gap-2 w-full">
-            {options.map(([value, [link]]) => (
+            {variants.map(([value, [link]]) => (
               <a href={link}>
                 <Avatar
                   variant={link === url ? "active" : "default"}
@@ -91,6 +107,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
           </ul>
         </figcaption>
       </figure>
+      {/* Prices & Name */}
       <div class="card-body">
         <h2 class="card-title whitespace-nowrap overflow-hidden">{name}</h2>
         <div class="flex items-end gap-2">

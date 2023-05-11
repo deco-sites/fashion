@@ -2,8 +2,9 @@ import { useEffect } from "preact/hooks";
 
 interface Props {
   rootId: string;
-  behavior?: "smooth" | "auto";
+  scroll?: "smooth" | "auto";
   interval?: number;
+  infinite?: boolean;
 }
 
 const ATTRIBUTES = {
@@ -45,7 +46,7 @@ const isHTMLElement = (x: Element): x is HTMLElement =>
   // deno-lint-ignore no-explicit-any
   typeof (x as any).offsetLeft === "number";
 
-const setup = ({ rootId, behavior, interval }: Props) => {
+const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   const root = document.getElementById(rootId);
   const slider = root?.querySelector(`[${ATTRIBUTES["data-slider"]}]`);
   const items = root?.querySelectorAll(`[${ATTRIBUTES["data-slider-item"]}]`);
@@ -96,7 +97,7 @@ const setup = ({ rootId, behavior, interval }: Props) => {
 
     slider.scrollTo({
       top: 0,
-      behavior,
+      behavior: scroll,
       left: item.offsetLeft - root.offsetLeft,
     });
   };
@@ -126,16 +127,32 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   };
 
   const observer = new IntersectionObserver(
-    (items) =>
-      items.forEach((item) => {
-        const index =
-          Number(item.target.getAttribute(ATTRIBUTES["data-slider-item"])) || 0;
+    (elements) =>
+      elements.forEach((item) => {
+        const index = Number(item.target.getAttribute("data-slider-item")) || 0;
         const dot = dots?.item(index);
 
         if (item.isIntersecting) {
           dot?.setAttribute("disabled", "");
         } else {
           dot?.removeAttribute("disabled");
+        }
+
+        if (!infinite) {
+          if (index === 0) {
+            if (item.isIntersecting) {
+              prev?.setAttribute("disabled", "");
+            } else {
+              prev?.removeAttribute("disabled");
+            }
+          }
+          if (index === items.length - 1) {
+            if (item.isIntersecting) {
+              next?.setAttribute("disabled", "");
+            } else {
+              next?.removeAttribute("disabled");
+            }
+          }
         }
       }),
     { threshold: THRESHOLD, root: slider },
@@ -167,11 +184,17 @@ const setup = ({ rootId, behavior, interval }: Props) => {
   };
 };
 
-function Slider({ rootId, behavior = "smooth", interval }: Props) {
-  useEffect(() => setup({ rootId, behavior, interval }), [
+function Slider({
+  rootId,
+  scroll = "smooth",
+  interval,
+  infinite = false,
+}: Props) {
+  useEffect(() => setup({ rootId, scroll, interval, infinite }), [
     rootId,
-    behavior,
+    scroll,
     interval,
+    infinite,
   ]);
 
   return <div data-slider-controller-js />;

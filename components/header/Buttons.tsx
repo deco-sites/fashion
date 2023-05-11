@@ -1,7 +1,7 @@
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
-import { useCart } from "deco-sites/std/commerce/vtex/hooks/useCart.ts";
+import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
 declare global {
@@ -74,7 +74,7 @@ function CartButton() {
       class="btn-square btn-ghost relative"
       aria-label="open cart"
       data-deco={displayCart.value && "open-cart"}
-      disabled={loading.value}
+      loading={loading.value}
       onClick={onClick}
     >
       <div class="indicator">
