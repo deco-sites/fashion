@@ -62,7 +62,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
     >
       <figure class="relative " style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}>
         {/* Wishlist button */}
-        <div class="absolute top-0 right-0 z-10">
+        <div class="absolute top-0 right-0 z-20">
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
         </div>
         {/* Product Images */}
@@ -87,13 +87,13 @@ function ProductCard({ product, preload, itemListName }: Props) {
             alt={back?.alternateName ?? front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="absolute transition-opacity rounded w-full opacity-0 group-hover:opacity-100 ease-in"
+            class="absolute transition-opacity rounded w-full opacity-0 group-hover:opacity-100 ease-in z-10"
             sizes="(max-width: 640px) 50vw, 20vw"
             loading="lazy"
             decoding="async"
           />
         </a>
-        <figcaption class="glass card-body card-actions absolute bottom-0 left-0 w-full transition-opacity opacity-0 group-hover:opacity-100">
+        <figcaption class="glass card-body card-actions absolute bottom-0 left-0 w-full transition-opacity opacity-0 group-hover:opacity-100 z-20">
           {/* SKU Selector */}
           <ul class="flex justify-center items-center gap-2 w-full">
             {variants.map(([value, [link]]) => (
