@@ -27,7 +27,6 @@ function GlobalTags() {
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
-
       <script
         type="text/javascript"
         dangerouslySetInnerHTML={{
