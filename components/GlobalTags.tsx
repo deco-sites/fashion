@@ -27,6 +27,25 @@ function GlobalTags() {
 
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
+
+      <script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{
+          __html: `
+        window.addEventListener('load', function() {
+          const STORAGE_SCROLL_KEY = 'deco-pages-scroll';
+          const top = sessionStorage.getItem(STORAGE_SCROLL_KEY)
+          if (top !== null) {
+            console.log('scrolling to ' + top);
+            document.documentElement.scrollTop = parseInt(top, 10);
+          }
+          window.addEventListener('beforeunload', () => {
+            sessionStorage.setItem(STORAGE_SCROLL_KEY, document.documentElement.scrollTop || document.body.scrollTop);
+          })
+      })
+        `,
+        }}
+      />
     </Head>
   );
 }
