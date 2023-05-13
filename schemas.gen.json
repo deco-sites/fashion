@@ -2719,7 +2719,9 @@
           "title": "Count"
         }
       },
-      "required": [],
+      "required": [
+        "crossSelling"
+      ],
       "title": "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@NavItem": {
@@ -6385,40 +6387,31 @@
           "anyOf": [
             {
               "type": "string",
-              "const": ""
+              "const": "whosawalsosaw"
             },
             {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "whosawalsosaw"
-                },
-                {
-                  "type": "string",
-                  "const": "whosawalsobought"
-                },
-                {
-                  "type": "string",
-                  "const": "whoboughtalsobought"
-                },
-                {
-                  "type": "string",
-                  "const": "showtogether"
-                },
-                {
-                  "type": "string",
-                  "const": "accessories"
-                },
-                {
-                  "type": "string",
-                  "const": "similars"
-                },
-                {
-                  "type": "string",
-                  "const": "suggestions"
-                }
-              ],
-              "type": "string"
+              "type": "string",
+              "const": "whosawalsobought"
+            },
+            {
+              "type": "string",
+              "const": "whoboughtalsobought"
+            },
+            {
+              "type": "string",
+              "const": "showtogether"
+            },
+            {
+              "type": "string",
+              "const": "accessories"
+            },
+            {
+              "type": "string",
+              "const": "similars"
+            },
+            {
+              "type": "string",
+              "const": "suggestions"
             }
           ],
           "type": "string",
@@ -6436,10 +6429,18 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3JlcXVlc3RUb1BhcmFtLnRz@RequestURLParam",
           "description": "the product slug",
           "title": "Slug"
+        },
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ProductGroup ID",
+          "title": "Id"
         }
       },
       "required": [
-        "slug"
+        "crossSelling"
       ],
       "title": "deco-sites/std/packs/vtex/loaders/legacy/relatedProductsLoader.ts@Props"
     },
@@ -8945,7 +8946,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|d3465eb5bc0e37e7a380be793cca8efe": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|a644f04e64ddc307d5353346f01dc4c2": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -8963,13 +8964,13 @@
           ]
         }
       ],
-      "title": "WorkflowRef|d3465eb5bc0e37e7a380be793cca8efe"
+      "title": "WorkflowRef|a644f04e64ddc307d5353346f01dc4c2"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|d3465eb5bc0e37e7a380be793cca8efe",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|a644f04e64ddc307d5353346f01dc4c2",
           "title": "Workflow"
         },
         "id": {
