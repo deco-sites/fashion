@@ -6,6 +6,7 @@ import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import CartItem from "./CartItem.tsx";
 import Coupon from "./Coupon.tsx";
+import FreeShippingBar from "./FreeShippingBar.tsx";
 
 declare global {
   interface Window {
@@ -23,8 +24,8 @@ function Cart() {
   const { cart, loading, mapItemsToAnalyticsItems } = useCart();
   const isCartEmpty = cart.value?.items.length === 0;
   const total = cart.value?.totalizers.find((item) => item.id === "Items");
-  const discounts = cart.value?.totalizers.find((item) =>
-    item.id === "Discounts"
+  const discounts = cart.value?.totalizers.find(
+    (item) => item.id === "Discounts",
   );
   const locale = cart.value?.clientPreferencesData.locale;
   const currencyCode = cart.value?.storePreferencesData.currencyCode;
@@ -53,6 +54,7 @@ function Cart() {
   return (
     <>
       {/* Cart Items */}
+      <FreeShippingBar />
       <ul
         role="list"
         class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6"
