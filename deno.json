@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=sections/,functions/ dev.ts",
+    "start": "deno run -A --watch=sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
     "component": "deno eval 'import \"$live/scripts/component.ts\"'",
     "release": "deno eval 'import \"$live/scripts/release.ts\"'",
     "check": "deno fmt && deno lint && deno check dev.ts main.ts"
