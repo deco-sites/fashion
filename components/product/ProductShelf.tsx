@@ -8,6 +8,7 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import Counter from "../../islands/Counter.tsx";
 
 export interface Props {
   title: string;
@@ -31,6 +32,7 @@ function ProductShelf({
       class="container grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-10 px-0 sm:px-5"
     >
       <h2 class="text-center row-start-1 col-span-full">
+        <Counter />
         <span class="font-medium text-2xl">{title}</span>
       </h2>
 
