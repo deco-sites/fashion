@@ -65,10 +65,12 @@ function Header(
           <Navbar items={navItems} searchbar={searchbar} />
         </div>
 
-        {/* <Modals
+        {
+          /* <Modals
           menu={{ items: navItems }}
           searchbar={searchbar}
-        /> */}
+        /> */
+        }
       </header>
     </>
   );
