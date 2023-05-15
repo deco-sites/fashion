@@ -8946,7 +8946,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|e0fb6c54a7d05856a665c93dafcac699": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@3bd4ac01808fd09fb324438071b6bcf5|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -8964,13 +8964,13 @@
           ]
         }
       ],
-      "title": "WorkflowRef|e0fb6c54a7d05856a665c93dafcac699"
+      "title": "3bd4ac01808fd09fb324438071b6bcf5|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|e0fb6c54a7d05856a665c93dafcac699",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@3bd4ac01808fd09fb324438071b6bcf5|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
