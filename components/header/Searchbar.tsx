@@ -5,7 +5,7 @@ import Loading from "deco-sites/fashion/components/ui/Loading.tsx";
 import { headerHeight } from "deco-sites/fashion/components/header/constants.ts";
 import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
 
-const Searchbar = lazy(() =>
+const LazySearchbar = lazy(() =>
   import("deco-sites/fashion/components/search/Searchbar.tsx")
 );
 
@@ -13,7 +13,7 @@ interface Props {
   searchbar: SearchbarProps;
 }
 
-export default function HeaderSearchMenu({ searchbar }: Props) {
+function Searchbar({ searchbar }: Props) {
   const { displaySearchbar } = useUI();
   const open = displaySearchbar.value &&
     window?.matchMedia?.("(min-width: 768px)")?.matches;
@@ -27,9 +27,11 @@ export default function HeaderSearchMenu({ searchbar }: Props) {
     >
       {open && (
         <Suspense fallback={<Loading />}>
-          <Searchbar {...searchbar} variant="desktop" />
+          <LazySearchbar {...searchbar} variant="desktop" />
         </Suspense>
       )}
     </div>
   );
 }
+
+export default Searchbar;

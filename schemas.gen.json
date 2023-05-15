@@ -61,7 +61,7 @@
               "./islands/AddToCartButton.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
-              "./islands/HeaderSearchMenu.tsx",
+              "./islands/HeaderSearchbar.tsx",
               "./islands/ProductImageZoom.tsx",
               "./islands/SearchControls.tsx",
               "./islands/ShippingSimulation.tsx",
@@ -8946,7 +8946,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@3bd4ac01808fd09fb324438071b6bcf5|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@07b8f64f8629b087a7d83d608c239d7a|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -8964,13 +8964,13 @@
           ]
         }
       ],
-      "title": "3bd4ac01808fd09fb324438071b6bcf5|WorkflowRef"
+      "title": "07b8f64f8629b087a7d83d608c239d7a|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@3bd4ac01808fd09fb324438071b6bcf5|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@07b8f64f8629b087a7d83d608c239d7a|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
@@ -10343,8 +10343,8 @@
         }
       }
     },
-    "Li9pc2xhbmRzL0hlYWRlclNlYXJjaE1lbnUudHN4": {
-      "title": "./islands/HeaderSearchMenu.tsx",
+    "Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g=": {
+      "title": "./islands/HeaderSearchbar.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -10353,9 +10353,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/HeaderSearchMenu.tsx"
+            "./islands/HeaderSearchbar.tsx"
           ],
-          "default": "./islands/HeaderSearchMenu.tsx"
+          "default": "./islands/HeaderSearchbar.tsx"
         }
       }
     },
@@ -12000,7 +12000,7 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
         },
         {
-          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlclNlYXJjaE1lbnUudHN4"
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4"

@@ -5,7 +5,7 @@ import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import { sendEventOnClick } from "deco-sites/fashion/sdk/analytics.ts";
+import { sendEventOnClick } from "deco-sites/fashion/sdk/analytics.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
