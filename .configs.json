@@ -1,0 +1,26 @@
+{
+  "audience-everyone": {
+    "overrides": {},
+    "routes": [
+      {
+        "pathTemplate": "/*",
+        "handler": {
+          "url": "https://www.google.com",
+          "__resolveType": "$live/handlers/proxy.ts"
+        }
+      }
+    ],
+    "__resolveType": "$live/flags/everyone.ts"
+  },
+  "./routes/[...catchall].tsx": {
+    "handler": {
+      "audiences": [
+        {
+          "__resolveType": "audience-everyone"
+        }
+      ],
+      "__resolveType": "$live/handlers/routesSelection.ts"
+    },
+    "__resolveType": "resolve"
+  }
+}
