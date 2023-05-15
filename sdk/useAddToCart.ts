@@ -3,6 +3,7 @@ import { useCallback } from "preact/hooks";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
 
 declare global {
   interface Window {
@@ -45,7 +46,7 @@ export const useAddToCart = (
         orderItems: [{ id: skuId, seller: sellerId, quantity: 1 }],
       });
 
-      window.DECO_SITES_STD.sendAnalyticsEvent({
+      sendEvent({
         name: "add_to_cart",
         params: {
           items: [{

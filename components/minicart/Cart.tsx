@@ -2,7 +2,7 @@ import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
-
+import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import CartItem from "./CartItem.tsx";
 import Coupon from "./Coupon.tsx";
@@ -103,7 +103,7 @@ function Cart() {
               class="w-full"
               disabled={loading.value || cart.value.items.length === 0}
               onClick={() => {
-                window.DECO_SITES_STD.sendAnalyticsEvent({
+                sendEvent({
                   name: "begin_checkout",
                   params: {
                     currency: cart.value ? currencyCode! : "",

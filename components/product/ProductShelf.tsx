@@ -2,7 +2,7 @@ import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
 import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
-import SendEventOnLoad from "deco-sites/fashion/components/SendEventOnLoad.tsx";
+import { SendEventOnLoad } from "deco-sites/fashion/sdk/analytics.tsx";
 import { useId } from "preact/hooks";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";

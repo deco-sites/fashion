@@ -1,5 +1,5 @@
-import HeaderSearchMenu from "deco-sites/fashion/islands/HeaderSearchMenu.tsx";
-import HeaderButton from "deco-sites/fashion/islands/HeaderButton.tsx";
+import Searchbar from "deco-sites/fashion/islands/HeaderSearchbar.tsx";
+import Buttons from "deco-sites/fashion/islands/HeaderButton.tsx";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
@@ -17,7 +17,7 @@ function Navbar({ items, searchbar }: {
         style={{ height: navbarHeight }}
         class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
-        <HeaderButton variant="menu" />
+        <Buttons variant="menu" />
 
         <a
           href="/"
@@ -29,8 +29,8 @@ function Navbar({ items, searchbar }: {
         </a>
 
         <div class="flex gap-1">
-          <HeaderButton variant="search" />
-          <HeaderButton variant="cart" />
+          <Buttons variant="search" />
+          <Buttons variant="cart" />
         </div>
       </div>
 
@@ -45,8 +45,8 @@ function Navbar({ items, searchbar }: {
           {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <HeaderButton variant="search" />
-          <HeaderSearchMenu searchbar={searchbar} />
+          <Buttons variant="search" />
+          <Searchbar searchbar={searchbar} />
           <a
             class="btn btn-square btn-ghost"
             href="/login"
@@ -61,13 +61,12 @@ function Navbar({ items, searchbar }: {
           >
             <Icon
               id="Heart"
-              width={20}
-              height={20}
+              size={20}
               strokeWidth={2}
               fill="none"
             />
           </a>
-          <HeaderButton variant="cart" />
+          <Buttons variant="cart" />
         </div>
       </div>
     </>

@@ -1,5 +1,6 @@
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
@@ -56,7 +57,7 @@ function CartButton() {
 
   const onClick = () => {
     displayCart.value = true;
-    window.DECO_SITES_STD.sendAnalyticsEvent({
+    sendEvent({
       name: "view_cart",
       params: {
         currency: cart.value ? currencyCode! : "",
@@ -89,7 +90,7 @@ function CartButton() {
   );
 }
 
-function HeaderButton({ variant }: { variant: "cart" | "search" | "menu" }) {
+function Buttons({ variant }: { variant: "cart" | "search" | "menu" }) {
   if (variant === "cart") {
     return <CartButton />;
   }
@@ -105,4 +106,4 @@ function HeaderButton({ variant }: { variant: "cart" | "search" | "menu" }) {
   return null;
 }
 
-export default HeaderButton;
+export default Buttons;

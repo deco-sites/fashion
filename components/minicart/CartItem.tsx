@@ -5,6 +5,7 @@ import QuantitySelector from "deco-sites/fashion/components/ui/QuantitySelector.
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
 
 declare global {
   interface Window {
@@ -65,7 +66,7 @@ function CartItem({ index }: Props) {
 
               if (!cart.value) return;
 
-              window.DECO_SITES_STD.sendAnalyticsEvent({
+              sendEvent({
                 name: quantityDiff < 0 ? "remove_from_cart" : "add_to_cart",
                 params: {
                   items: mapItemsToAnalyticsItems({
@@ -85,7 +86,7 @@ function CartItem({ index }: Props) {
         onClick={() => {
           updateItems({ orderItems: [{ index, quantity: 0 }] });
           if (!cart.value) return;
-          window.DECO_SITES_STD.sendAnalyticsEvent({
+          sendEvent({
             name: "remove_from_cart",
             params: {
               items: mapItemsToAnalyticsItems({

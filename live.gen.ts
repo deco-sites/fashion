@@ -8,8 +8,8 @@ import * as $$$$0 from "./routes/api/[...catchall].tsx";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/WishlistButton.tsx";
 import * as $$$$$1 from "./islands/ShippingSimulation.tsx";
-import * as $$$$$2 from "./islands/HeaderButton.tsx";
-import * as $$$$$3 from "./islands/HeaderSearchMenu.tsx";
+import * as $$$$$2 from "./islands/HeaderSearchbar.tsx";
+import * as $$$$$3 from "./islands/HeaderButton.tsx";
 import * as $$$$$4 from "./islands/AddToCartButton.tsx";
 import * as $$$$$5 from "./islands/HeaderModals.tsx";
 import * as $$$$$6 from "./islands/SliderJS.tsx";
@@ -152,9 +152,9 @@ const manifest = {
   },
   "islands": {
     "./islands/AddToCartButton.tsx": $$$$$4,
-    "./islands/HeaderButton.tsx": $$$$$2,
+    "./islands/HeaderButton.tsx": $$$$$3,
     "./islands/HeaderModals.tsx": $$$$$5,
-    "./islands/HeaderSearchMenu.tsx": $$$$$3,
+    "./islands/HeaderSearchbar.tsx": $$$$$2,
     "./islands/ProductImageZoom.tsx": $$$$$7,
     "./islands/SearchControls.tsx": $$$$$8,
     "./islands/ShippingSimulation.tsx": $$$$$1,
