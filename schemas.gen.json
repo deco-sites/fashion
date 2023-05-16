@@ -63,6 +63,7 @@
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
               "./islands/Newsletter.tsx",
+              "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
               "./islands/SearchControls.tsx",
               "./islands/ShippingSimulation.tsx",
@@ -131,6 +132,7 @@
               "deco-sites/std/actions/vtex/cart/updateProfile.ts",
               "deco-sites/std/actions/vtex/cart/updateUser.ts",
               "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+              "deco-sites/std/actions/vtex/notifyme.ts",
               "deco-sites/std/actions/vtex/wishlist/addItem.ts",
               "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
             ]
@@ -9366,6 +9368,31 @@
       ],
       "title": "deco-sites/std/packs/vtex/actions/newletter/subscribe.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL25vdGlmeW1lLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "skuId": {
+          "type": "string",
+          "title": "Sku Id"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Name"
+        }
+      },
+      "required": [
+        "email",
+        "skuId"
+      ],
+      "title": "deco-sites/std/packs/vtex/actions/notifyme.ts@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL3dpc2hsaXN0L2FkZEl0ZW0udHM=@Props": {
       "type": "object",
       "properties": {
@@ -10415,6 +10442,22 @@
             "./islands/Newsletter.tsx"
           ],
           "default": "./islands/Newsletter.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL091dE9mU3RvY2sudHN4": {
+      "title": "./islands/OutOfStock.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/OutOfStock.tsx"
+          ],
+          "default": "./islands/OutOfStock.tsx"
         }
       }
     },
@@ -11826,6 +11869,28 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L25vdGlmeW1lLnRz": {
+      "title": "deco-sites/std/actions/vtex/notifyme.ts",
+      "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL25vdGlmeW1lLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/actions/vtex/notifyme.ts"
+          ],
+          "default": "deco-sites/std/actions/vtex/notifyme.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L3dpc2hsaXN0L2FkZEl0ZW0udHM=": {
       "title": "deco-sites/std/actions/vtex/wishlist/addItem.ts",
       "type": "object",
@@ -12087,6 +12152,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4"
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL091dE9mU3RvY2sudHN4"
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4"
         },
         {
@@ -12337,6 +12405,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L25ld3NsZXR0ZXIvc3Vic2NyaWJlLnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L25vdGlmeW1lLnRz"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L3dpc2hsaXN0L2FkZEl0ZW0udHM="

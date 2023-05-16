@@ -9,13 +9,16 @@ const subscribe = Runtime.create(
 function Newsletter() {
   const loading = useSignal(false);
 
-  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = (e) => {
+  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
     try {
       loading.value = true;
-      // deno-lint-ignore no-explicit-any
-      subscribe({ email: (e.currentTarget.elements as any).email.value });
+
+      const email =
+        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+
+      await subscribe({ email });
     } finally {
       loading.value = false;
     }
