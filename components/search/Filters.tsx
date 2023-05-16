@@ -1,7 +1,10 @@
 import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
+import { parseRange } from "deco-sites/std/utils/filters.ts";
+import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import type {
   Filter,
   FilterToggle,
+  FilterToggleValue,
   ProductListingPage,
 } from "deco-sites/std/commerce/types.ts";
 
@@ -12,6 +15,18 @@ interface Props {
 const isToggle = (filter: Filter): filter is FilterToggle =>
   filter["@type"] === "FilterToggle";
 
+function ValueItem(
+  { url, selected, label, quantity }: FilterToggleValue,
+) {
+  return (
+    <a href={url} class="flex items-center gap-2">
+      <div aria-checked={selected} class="checkbox" />
+      <span class="text-sm">{label}</span>
+      {quantity > 0 && <span class="text-sm text-base-300">({quantity})</span>}
+    </a>
+  );
+}
+
 function FilterValues({ key, values }: FilterToggle) {
   const flexDirection = key === "tamanho" || key === "cor"
     ? "flex-row"
@@ -19,7 +34,9 @@ function FilterValues({ key, values }: FilterToggle) {
 
   return (
     <ul class={`flex flex-wrap gap-2 ${flexDirection}`}>
-      {values.map(({ label, value, url, selected, quantity }) => {
+      {values.map((item) => {
+        const { url, selected, value, quantity } = item;
+
         if (key === "cor" || key === "tamanho") {
           return (
             <a href={url}>
@@ -31,13 +48,18 @@ function FilterValues({ key, values }: FilterToggle) {
           );
         }
 
-        return (
-          <a href={url} class="flex items-center gap-2">
-            <div aria-checked={selected} class="checkbox" />
-            <span class="text-sm">{label}</span>
-            <span class="text-sm text-base-300">({quantity})</span>
-          </a>
-        );
+        if (key === "price") {
+          const range = parseRange(item.value);
+
+          return range && (
+            <ValueItem
+              {...item}
+              label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
+            />
+          );
+        }
+
+        return <ValueItem {...item} />;
       })}
     </ul>
   );
