@@ -1,4 +1,26 @@
+import { useSignal } from "@preact/signals";
+import { Runtime } from "deco-sites/fashion/runtime.ts";
+import type { JSX } from "preact";
+
+const subscribe = Runtime.create(
+  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+);
+
 function Newsletter() {
+  const loading = useSignal(false);
+
+  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+
+    try {
+      loading.value = true;
+      // deno-lint-ignore no-explicit-any
+      subscribe({ email: (e.currentTarget.elements as any).email.value });
+    } finally {
+      loading.value = false;
+    }
+  };
+
   return (
     <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-20">
       <div class="flex flex-col gap-2 max-w-[400px]">
@@ -10,17 +32,20 @@ function Newsletter() {
           compra. Para mais informações clique aqui.
         </span>
       </div>
-      <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px]">
-        <input
-          class="py-2 px-3 flex-grow bg-primary rounded text-primary-content border border-solid border-base-100"
-          placeholder="Seu e-mail"
-        />
-        <button
-          class="py-2 px-3 bg-base-100 text-base-content rounded"
-          type="button" // prevent form's default behavior
-        >
-          Cadastrar
-        </button>
+      <form
+        class="font-body text-body w-full sm:w-[408px] form-control"
+        onSubmit={handleSubmit}
+      >
+        <div class="input-group">
+          <input
+            name="email"
+            class="flex-grow input input-primary"
+            placeholder="Seu e-mail"
+          />
+          <button class="btn disabled:loading" disabled={loading}>
+            Cadastrar
+          </button>
+        </div>
       </form>
     </div>
   );
