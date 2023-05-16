@@ -58,10 +58,12 @@ export const useOffer = (aggregateOffer?: AggregateOffer) => {
   const installment = offer?.priceSpecification.reduce(bestInstallment, null);
   const seller = offer?.seller;
   const price = offer?.price;
+  const availability = offer?.availability;
 
   return {
     price,
     listPrice: listPrice?.price,
+    availability,
     seller,
     installments: installment && price
       ? installmentToString(installment, price)

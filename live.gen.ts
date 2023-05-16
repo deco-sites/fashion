@@ -15,7 +15,8 @@ import * as $$$$$5 from "./islands/AddToCartButton.tsx";
 import * as $$$$$6 from "./islands/HeaderModals.tsx";
 import * as $$$$$7 from "./islands/SliderJS.tsx";
 import * as $$$$$8 from "./islands/ProductImageZoom.tsx";
-import * as $$$$$9 from "./islands/SearchControls.tsx";
+import * as $$$$$9 from "./islands/OutOfStock.tsx";
+import * as $$$$$10 from "./islands/SearchControls.tsx";
 import * as $$$$$$$$0 from "./sections/WishlistGallery.tsx";
 import * as $$$$$$$$1 from "./sections/LinkTree.tsx";
 import * as $$$$$$$$2 from "./sections/Features.tsx";
@@ -134,8 +135,9 @@ import * as i2$$$$$13 from "deco-sites/std/actions/vtex/cart/updateItems.ts";
 import * as i2$$$$$14 from "deco-sites/std/actions/vtex/cart/updateProfile.ts";
 import * as i2$$$$$15 from "deco-sites/std/actions/vtex/cart/updateUser.ts";
 import * as i2$$$$$16 from "deco-sites/std/actions/vtex/newsletter/subscribe.ts";
-import * as i2$$$$$17 from "deco-sites/std/actions/vtex/wishlist/addItem.ts";
-import * as i2$$$$$18 from "deco-sites/std/actions/vtex/wishlist/removeItem.ts";
+import * as i2$$$$$17 from "deco-sites/std/actions/vtex/notifyme.ts";
+import * as i2$$$$$18 from "deco-sites/std/actions/vtex/wishlist/addItem.ts";
+import * as i2$$$$$19 from "deco-sites/std/actions/vtex/wishlist/removeItem.ts";
 
 const manifest = {
   "routes": {
@@ -158,8 +160,9 @@ const manifest = {
     "./islands/HeaderModals.tsx": $$$$$6,
     "./islands/HeaderSearchbar.tsx": $$$$$3,
     "./islands/Newsletter.tsx": $$$$$0,
+    "./islands/OutOfStock.tsx": $$$$$9,
     "./islands/ProductImageZoom.tsx": $$$$$8,
-    "./islands/SearchControls.tsx": $$$$$9,
+    "./islands/SearchControls.tsx": $$$$$10,
     "./islands/ShippingSimulation.tsx": $$$$$2,
     "./islands/SliderJS.tsx": $$$$$7,
     "./islands/WishlistButton.tsx": $$$$$1,
@@ -256,8 +259,9 @@ const manifest = {
     "deco-sites/std/actions/vtex/cart/updateProfile.ts": i2$$$$$14,
     "deco-sites/std/actions/vtex/cart/updateUser.ts": i2$$$$$15,
     "deco-sites/std/actions/vtex/newsletter/subscribe.ts": i2$$$$$16,
-    "deco-sites/std/actions/vtex/wishlist/addItem.ts": i2$$$$$17,
-    "deco-sites/std/actions/vtex/wishlist/removeItem.ts": i2$$$$$18,
+    "deco-sites/std/actions/vtex/notifyme.ts": i2$$$$$17,
+    "deco-sites/std/actions/vtex/wishlist/addItem.ts": i2$$$$$18,
+    "deco-sites/std/actions/vtex/wishlist/removeItem.ts": i2$$$$$19,
   },
   "functions": {
     "deco-sites/std/functions/butterCMSAds.ts": i2$0,

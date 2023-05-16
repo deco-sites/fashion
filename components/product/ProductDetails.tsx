@@ -7,6 +7,7 @@ import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
 import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
+import OutOfStock from "deco-sites/fashion/islands/OutOfStock.tsx";
 import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
 import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
 import { SendEventOnLoad } from "deco-sites/fashion/sdk/analytics.tsx";
@@ -62,7 +63,9 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
     gtin,
     isVariantOf,
   } = product;
-  const { price, listPrice, seller, installments } = useOffer(offers);
+  const { price, listPrice, seller, installments, availability } = useOffer(
+    offers,
+  );
 
   return (
     <>
@@ -101,21 +104,27 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
       </div>
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {seller && (
-          <AddToCartButton
-            skuId={productID}
-            sellerId={seller}
-            price={price ?? 0}
-            discount={price && listPrice ? listPrice - price : 0}
-            name={product.name ?? ""}
-            productGroupId={product.isVariantOf?.productGroupID ?? ""}
-          />
-        )}
-        <WishlistButton
-          variant="full"
-          productGroupID={isVariantOf?.productGroupID}
-          productID={productID}
-        />
+        {availability === "https://schema.org/InStock"
+          ? (
+            <>
+              {seller && (
+                <AddToCartButton
+                  skuId={productID}
+                  sellerId={seller}
+                  price={price ?? 0}
+                  discount={price && listPrice ? listPrice - price : 0}
+                  name={product.name ?? ""}
+                  productGroupId={product.isVariantOf?.productGroupID ?? ""}
+                />
+              )}
+              <WishlistButton
+                variant="full"
+                productGroupID={isVariantOf?.productGroupID}
+                productID={productID}
+              />
+            </>
+          )
+          : <OutOfStock productID={productID} />}
       </div>
       {/* Shipping Simulation */}
       <div class="mt-8">
