@@ -1,6 +1,6 @@
 export const formatPrice = (
   price: number | undefined,
-  currency = 'BRL',
+  currency = "BRL",
   locale = "pt-BR",
 ) => {
   const formatter = new Intl.NumberFormat(locale, {
