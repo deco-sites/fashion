@@ -10,7 +10,7 @@ import daisyui from "npm:daisyui@2.51.6";
 await tailwindCSS({
   ...tailwindConfig,
   plugins: [daisyui],
-  daisyui: { themes: [], logs: false },
+  daisyui: { themes: [], logs: false, prefix: "dui-" },
 });
 
 // Generate manifest and boot server

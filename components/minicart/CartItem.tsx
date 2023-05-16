@@ -98,7 +98,7 @@ function CartItem({ index }: Props) {
         }}
         disabled={loading.value || isGift}
         loading={loading.value}
-        class="btn btn-ghost"
+        class="dui-btn dui-btn-ghost"
       >
         <Icon id="Trash" width={20} height={20} />
       </Button>

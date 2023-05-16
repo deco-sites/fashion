@@ -48,7 +48,7 @@ function CookieConsent() {
 
           <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
             <Button data-button-cc-accept>Aceitar</Button>
-            <Button data-button-cc-close class="btn-outline">Fechar</Button>
+            <Button data-button-cc-close class="dui-btn-outline">Fechar</Button>
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ function ProductImageZoom({ images, width, height }: Props) {
   return (
     <>
       <Button
-        class="hidden sm:inline-flex cursor-zoom-in btn-ghost"
+        class="hidden sm:inline-flex cursor-zoom-in dui-btn-ghost"
         onClick={() => open.value = true}
       >
         <Icon
@@ -40,9 +40,9 @@ function ProductImageZoom({ images, width, height }: Props) {
         }}
       >
         <div class="relative" id={id}>
-          <Slider class="carousel w-screen overflow-y-auto">
+          <Slider class="dui-carousel w-screen overflow-y-auto">
             {images.map((image, index) => (
-              <Slider.Item index={index} class="carousel-item w-full">
+              <Slider.Item index={index} class="dui-carousel-item w-full">
                 <Image
                   style={{ aspectRatio: `${width} / ${height}` }}
                   src={image.url!}
@@ -54,10 +54,10 @@ function ProductImageZoom({ images, width, height }: Props) {
             ))}
           </Slider>
 
-          <Slider.PrevButton class="btn btn-circle btn-outline absolute left-8 top-[50vh]">
+          <Slider.PrevButton class="dui-btn dui-btn-circle dui-btn-outline absolute left-8 top-[50vh]">
             <Icon size={20} id="ChevronLeft" strokeWidth={3} />
           </Slider.PrevButton>
-          <Slider.NextButton class="btn btn-circle btn-outline absolute right-8 top-[50vh]">
+          <Slider.NextButton class="dui-btn dui-btn-circle dui-btn-outline absolute right-8 top-[50vh]">
             <Icon size={20} id="ChevronRight" strokeWidth={3} />
           </Slider.NextButton>
         </div>

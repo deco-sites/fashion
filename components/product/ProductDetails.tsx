@@ -244,11 +244,11 @@ function Details({
         >
           {/* Image Slider */}
           <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
-            <Slider class="carousel gap-6">
+            <Slider class="dui-carousel gap-6">
               {images.map((img, index) => (
                 <Slider.Item
                   index={index}
-                  class="carousel-item min-w-[100vw] sm:min-w-[40vw]"
+                  class="dui-carousel-item min-w-[100vw] sm:min-w-[40vw]"
                 >
                   <Image
                     class="w-full"
@@ -267,14 +267,14 @@ function Details({
             </Slider>
 
             <Slider.PrevButton
-              class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
+              class="no-animation absolute left-2 top-1/2 dui-btn dui-btn-circle dui-btn-outline"
               disabled
             >
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
 
             <Slider.NextButton
-              class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
+              class="no-animation absolute right-2 top-1/2 dui-btn dui-btn-circle dui-btn-outline"
               disabled={images.length < 2}
             >
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
@@ -326,9 +326,9 @@ function Details({
   return (
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-[50vw_25vw] sm:grid-rows-1 sm:justify-center">
       {/* Image slider */}
-      <ul class="carousel carousel-center gap-6">
+      <ul class="dui-carousel dui-carousel-center gap-6">
         {[images[0], images[1] ?? images[0]].map((img, index) => (
-          <li class="carousel-item min-w-[100vw] sm:min-w-[24vw]">
+          <li class="dui-carousel-item min-w-[100vw] sm:min-w-[24vw]">
             <Image
               sizes="(max-width: 640px) 100vw, 24vw"
               style={{ aspectRatio: ASPECT_RATIO }}

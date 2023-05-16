@@ -18,7 +18,7 @@ function SearchButton() {
 
   return (
     <Button
-      class="btn-square btn-ghost"
+      class="dui-btn-square dui-btn-ghost"
       aria-label="search icon button"
       onClick={() => {
         displaySearchbar.value = !displaySearchbar.peek();
@@ -34,7 +34,7 @@ function MenuButton() {
 
   return (
     <Button
-      class="btn-square btn-ghost"
+      class="dui-btn-square dui-btn-ghost"
       aria-label="open menu"
       onClick={() => {
         displayMenu.value = true;
@@ -72,15 +72,15 @@ function CartButton() {
 
   return (
     <Button
-      class="btn-square btn-ghost relative"
+      class="dui-btn-square dui-btn-ghost relative"
       aria-label="open cart"
       data-deco={displayCart.value && "open-cart"}
       loading={loading.value}
       onClick={onClick}
     >
-      <div class="indicator">
+      <div class="dui-indicator">
         {totalItems && (
-          <span class="indicator-item badge badge-secondary badge-sm">
+          <span class="dui-indicator-item dui-badge dui-badge-secondary dui-badge-sm">
             {totalItems > 9 ? "9+" : totalItems}
           </span>
         )}

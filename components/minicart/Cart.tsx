@@ -39,7 +39,7 @@ function Cart() {
       <div class="flex flex-col justify-center items-center h-full gap-6">
         <span class="font-medium text-2xl">Sua sacola está vazia</span>
         <Button
-          class="btn-outline"
+          class="dui-btn-outline"
           onClick={() => {
             displayCart.value = false;
           }}

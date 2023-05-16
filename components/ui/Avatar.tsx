@@ -35,7 +35,7 @@ const variants = {
 
 function Avatar({ content, variant = "default" }: Props) {
   return (
-    <div class="avatar placeholder">
+    <div class="dui-avatar dui-placeholder">
       <div
         class={`rounded-full w-8  ${colors[content] ?? colors[variant]} ${
           variants[variant]

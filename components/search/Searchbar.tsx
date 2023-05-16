@@ -33,7 +33,7 @@ function CloseButton() {
 
   return (
     <Button
-      class="btn-ghost btn-circle"
+      class="dui-btn-ghost dui-btn-circle"
       onClick={() => (displaySearchbar.value = false)}
     >
       <Icon id="XMark" width={20} height={20} strokeWidth={2} />
@@ -101,7 +101,7 @@ function Searchbar({
           class="flex-grow flex gap-3 px-3 py-2 border border-base-200"
         >
           <Button
-            class="btn-ghost"
+            class="dui-btn-ghost"
             aria-label="Search"
             htmlFor="searchbar"
             tabIndex={-1}
@@ -214,11 +214,11 @@ function Searchbar({
                   </span>
                   {loading.value && <Spinner />}
                 </div>
-                <Slider class="carousel">
+                <Slider class="dui-carousel">
                   {suggestions.value!.products?.map((product, index) => (
                     <Slider.Item
                       index={index}
-                      class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
+                      class="dui-carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
                     >
                       <ProductCard product={product} />
                     </Slider.Item>

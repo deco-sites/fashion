@@ -9,20 +9,6 @@ interface Props {
 
 const QUANTITY_MAX_VALUE = 100;
 
-// Remove default browser behavior: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
-// TODO: Figure out how to add it via tailwind config.
-const innerStyle = `
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-`;
-
 function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
   const decrement = () => onChange?.(Math.max(0, quantity - 1));
 
@@ -30,10 +16,10 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="form-control">
-      <div class="input-group">
+    <div class="dui-form-control">
+      <div class="dui-input-group">
         <Button
-          class="btn-square btn-outline"
+          class="dui-btn-square dui-btn-outline"
           onClick={decrement}
           disabled={disabled}
           loading={loading}
@@ -41,7 +27,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
           -
         </Button>
         <input
-          class="input border-base-content border-x-0 text-center"
+          class="dui-input border-base-content border-x-0 text-center"
           type="number"
           inputMode="numeric"
           pattern="[0-9]*"
@@ -52,7 +38,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
           onBlur={(e) => onChange?.(e.currentTarget.valueAsNumber)}
         />
         <Button
-          class="btn-square btn-outline"
+          class="dui-btn-square dui-btn-outline"
           onClick={increment}
           disabled={disabled}
           loading={loading}

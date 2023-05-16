@@ -7,10 +7,10 @@ export interface Props {
 
 function MenuItem({ item }: { item: INavItem }) {
   return (
-    <div class="collapse collapse-plus">
+    <div class="dui-collapse dui-collapse-plus">
       <input type="checkbox" />
-      <div class="collapse-title">{item.label}</div>
-      <div class="collapse-content">
+      <div class="dui-collapse-title">{item.label}</div>
+      <div class="dui-collapse-content">
         <ul>
           <li>
             <a class="underline text-sm" href={item.href}>Ver todos</a>

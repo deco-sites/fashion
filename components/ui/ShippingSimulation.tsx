@@ -105,17 +105,17 @@ function ShippingSimulation({ items }: Props) {
       </div>
       <div>
         <form
-          class="form-control input-group"
+          class="dui-form-control dui-input-group"
           onSubmit={(e) => {
             e.preventDefault();
             handleSimulation();
           }}
         >
-          <div class="input-group">
+          <div class="dui-input-group">
             <input
               as="input"
               type="text"
-              class="input input-bordered"
+              class="dui-input dui-input-bordered"
               placeholder="Seu cep aqui"
               value={postalCode.value}
               maxLength={8}

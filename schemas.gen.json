@@ -7281,7 +7281,7 @@
             "null"
           ],
           "title": "Interval",
-          "description": "time (in seconds) to start the carousel autoplay"
+          "description": "time (in seconds) to start the dui-carousel autoplay"
         }
       },
       "required": [],
@@ -7502,11 +7502,11 @@
           "title": "--rounded-box",
           "description": "border radius rounded-box utility class, used in card and other large boxes"
         },
-        "--rounded-btn": {
+        "--rounded-dui-btn": {
           "type": "string",
           "default": "0.5rem",
-          "title": "--rounded-btn",
-          "description": "border radius rounded-btn utility class, used in buttons and similar element"
+          "title": "--rounded-dui-btn",
+          "description": "border radius rounded-dui-btn utility class, used in buttons and similar element"
         },
         "--rounded-badge": {
           "type": "string",
@@ -7514,10 +7514,10 @@
           "title": "--rounded-badge",
           "description": "border radius rounded-badge utility class, used in badges and similar"
         },
-        "--animation-btn": {
+        "--animation-dui-btn": {
           "type": "string",
           "default": "0.25s",
-          "title": "--animation-btn",
+          "title": "--animation-dui-btn",
           "description": "duration of animation when you click on button"
         },
         "--animation-input": {
@@ -7526,22 +7526,22 @@
           "title": "--animation-input",
           "description": "duration of animation for inputs like checkbox, toggle, radio, etc"
         },
-        "--btn-text-case": {
+        "--dui-btn-text-case": {
           "type": "string",
           "default": "uppercase",
-          "title": "--btn-text-case",
+          "title": "--dui-btn-text-case",
           "description": "set default text transform for buttons"
         },
-        "--btn-focus-scale": {
+        "--dui-btn-focus-scale": {
           "type": "string",
           "default": "0.95",
-          "title": "--btn-focus-scale",
+          "title": "--dui-btn-focus-scale",
           "description": "scale transform of button when you focus on it"
         },
-        "--border-btn": {
+        "--border-dui-btn": {
           "type": "string",
           "default": "1px",
-          "title": "--border-btn",
+          "title": "--border-dui-btn",
           "description": "border width of buttons"
         },
         "--tab-border": {
@@ -7559,13 +7559,13 @@
       },
       "required": [
         "--rounded-box",
-        "--rounded-btn",
+        "--rounded-dui-btn",
         "--rounded-badge",
-        "--animation-btn",
+        "--animation-dui-btn",
         "--animation-input",
-        "--btn-text-case",
-        "--btn-focus-scale",
-        "--border-btn",
+        "--dui-btn-text-case",
+        "--dui-btn-focus-scale",
+        "--border-dui-btn",
         "--tab-border",
         "--tab-radius"
       ],

@@ -89,7 +89,7 @@ const Modal = ({
             <h1>
               <span class="font-medium text-2xl">{title}</span>
             </h1>
-            <Button class="btn btn-ghost" onClick={onClose}>
+            <Button class="dui-btn dui-btn-ghost" onClick={onClose}>
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
             </Button>
           </header>

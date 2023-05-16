@@ -21,13 +21,13 @@ function Highlights({ highlights = [], title }: Props) {
         <span class="font-medium text-2xl">{title}</span>
       </h2>
 
-      <Slider class="carousel carousel-center sm:carousel-end gap-6">
+      <Slider class="dui-carousel dui-carousel-center sm:dui-carousel-end gap-6">
         {highlights.map(({ href, src, alt, label }, index) => (
           <Slider.Item
             index={index}
-            class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"
+            class="dui-carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"
           >
-            <a href={href} class="card card-compact bg-base-100">
+            <a href={href} class="dui-card dui-card-compact bg-base-100">
               <figure>
                 <Image
                   class="rounded-[40px]"
@@ -37,8 +37,8 @@ function Highlights({ highlights = [], title }: Props) {
                   height={265}
                 />
               </figure>
-              <div class="card-body items-center">
-                <h2 class="card-title text-base font-medium">{label}</h2>
+              <div class="dui-card-body items-center">
+                <h2 class="dui-card-title text-base font-medium">{label}</h2>
               </div>
             </a>
           </Slider.Item>

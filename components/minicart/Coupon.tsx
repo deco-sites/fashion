@@ -29,7 +29,7 @@ function Coupon() {
       <span class="text-sm">Cupom de desconto</span>
       {!displayInput.value && (
         <Button
-          class="btn-ghost underline"
+          class="dui-btn-ghost underline"
           onClick={toggleInput}
         >
           {coupon || "Adicionar"}

@@ -89,7 +89,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
     if (!isHTMLElement(item)) {
       console.warn(
-        `Element at index ${index} is not an html element. Skipping carousel`,
+        `Element at index ${index} is not an html element. Skipping dui-carousel`,
       );
 
       return;

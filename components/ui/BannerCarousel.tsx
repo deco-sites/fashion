@@ -33,7 +33,7 @@ export interface Props {
   preload?: boolean;
   /**
    * @title Autoplay interval
-   * @description time (in seconds) to start the carousel autoplay
+   * @description time (in seconds) to start the dui-carousel autoplay
    */
   interval?: number;
 }
@@ -75,14 +75,14 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         />
       </Picture>
       {action && (
-        <div class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 p-4 rounded glass">
+        <div class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 p-4 rounded dui-glass">
           <span class="text-6xl font-medium text-base-100">
             {action.title}
           </span>
           <span class="font-medium text-xl text-base-100">
             {action.subTitle}
           </span>
-          <Button class="glass">{action.label}</Button>
+          <Button class="dui-glass">{action.label}</Button>
         </div>
       )}
     </a>
@@ -103,9 +103,9 @@ function Dots({ images, interval = 0 }: Props) {
           `,
         }}
       />
-      <ul class="carousel justify-center col-span-full gap-4 z-10 row-start-4">
+      <ul class="dui-dui-carousel justify-center col-span-full gap-4 z-10 row-start-4">
         {images?.map((_, index) => (
-          <li class="carousel-item">
+          <li class="dui-dui-carousel-item">
             <Slider.Dot index={index}>
               <div class="py-5">
                 <div
@@ -125,9 +125,9 @@ function Buttons() {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class="btn btn-circle glass">
+        <Slider.PrevButton class="dui-btn dui-btn-circle dui-glass">
           <Icon
-            class="text-base-100"
+            class="dui-text-base-100"
             size={20}
             id="ChevronLeft"
             strokeWidth={3}
@@ -135,9 +135,9 @@ function Buttons() {
         </Slider.PrevButton>
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton class="btn btn-circle glass">
+        <Slider.NextButton class="dui-btn dui-btn-circle dui-glass">
           <Icon
-            class="text-base-100"
+            class="dui-text-base-100"
             size={20}
             id="ChevronRight"
             strokeWidth={3}
@@ -156,9 +156,9 @@ function BannerCarousel({ images, preload, interval }: Props) {
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
     >
-      <Slider class="carousel carousel-center w-screen col-span-full row-span-full scrollbar-none gap-6">
+      <Slider class="dui-carousel dui-carousel-center w-screen col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
-          <Slider.Item index={index} class="carousel-item w-full">
+          <Slider.Item index={index} class="dui-carousel-item w-full">
             <BannerItem image={image} lcp={index === 0 && preload} />
           </Slider.Item>
         ))}

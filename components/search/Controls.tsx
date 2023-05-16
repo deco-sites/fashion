@@ -26,7 +26,7 @@ function SearchControls(
 
       <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
         <Button
-          class={displayFilter ? "btn-ghost" : "btn-ghost sm:hidden"}
+          class={displayFilter ? "dui-btn-ghost" : "dui-btn-ghost sm:hidden"}
           onClick={() => {
             open.value = true;
           }}
