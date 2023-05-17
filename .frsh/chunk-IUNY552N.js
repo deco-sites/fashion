@@ -1,0 +1,1 @@
+var o=r=>r.slice(0,5).reduce((i,t,e)=>(i[`item_category${e===0?"":e+1}`]=t,i),{}),c=({product:r,breadcrumbList:i,price:t,listPrice:e})=>{let{name:m,productID:a}=r;return{item_id:r.isVariantOf?.productGroupID??"",quantity:1,price:t,discount:t&&e?e-t:0,item_name:m,item_variant:a,...o(i?.itemListElement.map(({name:n})=>n??"").filter(Boolean)??[])}};export{o as a,c as b};
