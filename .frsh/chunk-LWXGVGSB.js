@@ -1,0 +1,1 @@
+import{e as t}from"./chunk-IAMGS6YL.js";import{g as r}from"./chunk-GGCEL3NW.js";var i=r([]);function S(n){let e;try{e=t(i)}catch(o){throw new Error("<Head> component is not supported in the browser, or during suspense renders.",{cause:o})}return e.push(n.children),null}var l=r(void 0);export{S as a};

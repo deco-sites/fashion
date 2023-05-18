@@ -1,0 +1,1 @@
+import{f as e}from"./chunk-IAMGS6YL.js";function n({size:r=20}){return e("div",{style:{verticalAlign:"-0.125em",border:"0.125em solid",borderRightColor:"transparent",width:r,height:r},class:"animate-spin inline-block border-2 rounded-full",role:"status",children:e("span",{class:"hidden",children:"Carregando..."})})}var i=n;export{i as a};
