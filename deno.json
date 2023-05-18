@@ -9,10 +9,18 @@
     "pre-commit": "check"
   },
   "lint": {
-    "exclude": ["static/", "README.md"]
+    "exclude": [
+      ".frsh",
+      "static/",
+      "README.md"
+    ]
   },
   "fmt": {
-    "exclude": ["static/", "README.md"]
+    "exclude": [
+      ".frsh",
+      "static/",
+      "README.md"
+    ]
   },
   "importMap": "./import_map.json",
   "compilerOptions": {
