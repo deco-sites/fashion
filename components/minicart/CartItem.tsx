@@ -65,10 +65,12 @@ function CartItem({ index }: Props) {
               const quantityDiff = quantity - item.quantity;
 
               if (!cart.value) return;
-
+              const currencyCode =
+                cart.value?.storePreferencesData.currencyCode;
               sendEvent({
                 name: quantityDiff < 0 ? "remove_from_cart" : "add_to_cart",
                 params: {
+                  currency: currencyCode,
                   items: mapItemsToAnalyticsItems({
                     items: [{
                       ...item,
@@ -89,6 +91,7 @@ function CartItem({ index }: Props) {
           sendEvent({
             name: "remove_from_cart",
             params: {
+              currency: cart.value?.storePreferencesData.currencyCode,
               items: mapItemsToAnalyticsItems({
                 items: [item],
                 marketingData: cart.value.marketingData,

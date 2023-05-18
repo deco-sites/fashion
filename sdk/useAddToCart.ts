@@ -30,7 +30,7 @@ export const useAddToCart = (
 ) => {
   const isAddingToCart = useSignal(false);
   const { displayCart } = useUI();
-  const { addItems } = useCart();
+  const { addItems, cart } = useCart();
 
   const onClick = useCallback(async (e: MouseEvent) => {
     e.preventDefault();
@@ -49,6 +49,7 @@ export const useAddToCart = (
       sendEvent({
         name: "add_to_cart",
         params: {
+          currency: cart.value?.storePreferencesData.currencyCode,
           items: [{
             item_id: productGroupId,
             quantity: 1,
