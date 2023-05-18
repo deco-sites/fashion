@@ -47,27 +47,11 @@ function MenuButton() {
 
 function CartButton() {
   const { displayCart } = useUI();
-  const { loading, cart, mapItemsToAnalyticsItems } = useCart();
+  const { loading, cart } = useCart();
   const totalItems = cart.value?.items.length || null;
-  const currencyCode = cart.value?.storePreferencesData.currencyCode;
-  const total = cart.value?.totalizers.find((item) => item.id === "Items");
-  const discounts = cart.value?.totalizers.find((item) =>
-    item.id === "Discounts"
-  );
 
   const onClick = () => {
     displayCart.value = true;
-    sendEvent({
-      name: "view_cart",
-      params: {
-        currency: cart.value ? currencyCode! : "",
-        value: total?.value
-          ? (total?.value - (discounts?.value ?? 0)) / 100
-          : 0,
-
-        items: cart.value ? mapItemsToAnalyticsItems(cart.value) : [],
-      },
-    });
   };
 
   return (
