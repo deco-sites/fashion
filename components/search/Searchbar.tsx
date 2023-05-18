@@ -121,14 +121,6 @@ function Searchbar({
             defaultValue={query}
             onInput={(e) => {
               const value = e.currentTarget.value;
-
-              if (value) {
-                sendEvent({
-                  name: "search",
-                  params: { search_term: value },
-                });
-              }
-
               setSearch(value);
             }}
             placeholder={placeholder}
@@ -144,6 +136,13 @@ function Searchbar({
             onClick={(e) => {
               e.stopPropagation();
               if (searchInputRef.current === null) return;
+
+              if (searchInputRef.current.value) {
+                sendEvent({
+                  name: "search",
+                  params: { search_term: searchInputRef.current.value },
+                });
+              }
 
               searchInputRef.current.value = "";
               setSearch("");
