@@ -2431,7 +2431,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         }
       },
@@ -2522,7 +2522,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         }
       },
@@ -2575,7 +2575,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         },
         "ft": {
@@ -2645,7 +2645,7 @@
             }
           ],
           "type": "string",
-          "title": "Sort"
+          "title": "Sorting"
         },
         "filters": {
           "anyOf": [
@@ -2659,7 +2659,7 @@
             }
           ],
           "type": "string",
-          "title": "Filters",
+          "title": "Filter behavior",
           "description": "Set to static to not change the facets when the user filters the search. Dynamic will only show the filters containing products after each filter action"
         },
         "pageOffset": {
@@ -2667,9 +2667,8 @@
             "number",
             "null"
           ],
-          "title": "Page Offset",
-          "description": "Set the starting page offset. Default to 1.",
-          "default": "1"
+          "title": "Starting page query parameter offset.",
+          "description": "Set the starting page offset. Default to 1."
         }
       },
       "required": [
@@ -2712,7 +2711,7 @@
             }
           ],
           "type": "string",
-          "title": "Cross Selling",
+          "title": "Related Products",
           "description": "VTEX Cross Selling API. This loader only works on routes of type /:slug/p"
         },
         "count": {
@@ -2922,7 +2921,7 @@
           "items": {
             "type": "string"
           },
-          "title": "Collection",
+          "title": "Collection ID",
           "pattern": "\\d*"
         }
       },
@@ -2970,7 +2969,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         },
         "sort": {
@@ -3009,7 +3008,7 @@
             }
           ],
           "type": "string",
-          "title": "Sort"
+          "title": "Sorting"
         },
         "fuzzy": {
           "anyOf": [
@@ -3047,9 +3046,8 @@
             "number",
             "null"
           ],
-          "title": "Page Offset",
-          "description": "Set the starting page offset. Default to 1.",
-          "default": "1"
+          "title": "Starting page query parameter offset.",
+          "description": "Set the starting page offset. Default to 1."
         }
       },
       "required": [
@@ -3176,7 +3174,7 @@
       "properties": {
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "Number of products per page to display",
           "default": "12"
         }
@@ -6035,7 +6033,7 @@
       "properties": {
         "collection": {
           "type": "string",
-          "title": "Collection",
+          "title": "Collection ID (e.g.: 139)",
           "pattern": "\\d*"
         },
         "sort": {
@@ -6419,7 +6417,7 @@
             }
           ],
           "type": "string",
-          "title": "Cross Selling",
+          "title": "Related Products",
           "description": "VTEX Cross Selling API. This loader only works on routes of type /:slug/p"
         },
         "count": {
@@ -6574,7 +6572,7 @@
       "properties": {
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "Number of products per page to display",
           "default": "12"
         }
@@ -7284,7 +7282,7 @@
             "number",
             "null"
           ],
-          "title": "Interval",
+          "title": "Autoplay interval",
           "description": "time (in seconds) to start the carousel autoplay"
         }
       },
@@ -7503,61 +7501,61 @@
         "--rounded-box": {
           "type": "string",
           "default": "1rem",
-          "title": "--rounded-box",
+          "title": "Rounded box",
           "description": "border radius rounded-box utility class, used in card and other large boxes"
         },
         "--rounded-btn": {
           "type": "string",
           "default": "0.5rem",
-          "title": "--rounded-btn",
+          "title": "Rounded button",
           "description": "border radius rounded-btn utility class, used in buttons and similar element"
         },
         "--rounded-badge": {
           "type": "string",
           "default": "1.9rem",
-          "title": "--rounded-badge",
+          "title": "Rounded badge",
           "description": "border radius rounded-badge utility class, used in badges and similar"
         },
         "--animation-btn": {
           "type": "string",
           "default": "0.25s",
-          "title": "--animation-btn",
+          "title": "Animation button",
           "description": "duration of animation when you click on button"
         },
         "--animation-input": {
           "type": "string",
           "default": "0.2s",
-          "title": "--animation-input",
+          "title": "Animation input",
           "description": "duration of animation for inputs like checkbox, toggle, radio, etc"
         },
         "--btn-text-case": {
           "type": "string",
           "default": "uppercase",
-          "title": "--btn-text-case",
+          "title": "Button text case",
           "description": "set default text transform for buttons"
         },
         "--btn-focus-scale": {
           "type": "string",
           "default": "0.95",
-          "title": "--btn-focus-scale",
+          "title": "Button focus scale",
           "description": "scale transform of button when you focus on it"
         },
         "--border-btn": {
           "type": "string",
           "default": "1px",
-          "title": "--border-btn",
+          "title": "Border button",
           "description": "border width of buttons"
         },
         "--tab-border": {
           "type": "string",
           "default": "1px",
-          "title": "--tab-border",
+          "title": "Tab border",
           "description": "border width of tabs"
         },
         "--tab-radius": {
           "type": "string",
           "default": "0.5rem",
-          "title": "--tab-radius",
+          "title": "Tab radius",
           "description": "border radius of tabs"
         }
       },
@@ -8029,7 +8027,7 @@
             "string",
             "null"
           ],
-          "title": "Action",
+          "title": "Page path",
           "description": "When user clicks on the search button, navigate it to",
           "default": "/s"
         },
@@ -8038,7 +8036,7 @@
             "string",
             "null"
           ],
-          "title": "Name",
+          "title": "Term name",
           "description": "Querystring param used when navigating the user",
           "default": "q"
         },
@@ -8150,21 +8148,21 @@
         },
         "searchbar": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
-          "title": "Searchbar"
+          "title": "Search Bar"
         },
         "navItems": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
-          "title": "Nav Items",
+          "title": "Navigation items",
           "description": "Navigation items used both on mobile and desktop menus"
         },
         "products": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
-          "title": "Products",
+          "title": "Product suggestions",
           "description": "Product suggestions displayed on search"
         },
         "suggestions": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
-          "title": "Suggestions"
+          "title": "Enable Top Search terms"
         }
       },
       "required": [
@@ -8344,7 +8342,7 @@
             }
           ],
           "type": "string",
-          "title": "Variant",
+          "title": "Product view",
           "description": "Ask for the developer to remove this option since this is here to help development only and should not be used in production"
         }
       },
@@ -8467,7 +8465,7 @@
       "properties": {
         "label": {
           "type": "string",
-          "title": "Label"
+          "title": "Locale"
         },
         "authToken": {
           "type": "string",
@@ -8543,7 +8541,7 @@
             "string",
             "null"
           ],
-          "title": "Canonical",
+          "title": "Canonical URL",
           "default": "https://example.com"
         },
         "imageUrl": {
@@ -8573,7 +8571,7 @@
         },
         "titleTemplate": {
           "type": "string",
-          "title": "Title Template",
+          "title": "Title template",
           "description": "add a %s whenever you want it to be replaced with the product name",
           "default": "%s | Fashion Store"
         },
@@ -8582,7 +8580,7 @@
             "string",
             "null"
           ],
-          "title": "Description",
+          "title": "Meta tag description",
           "description": "If not set, the product description will be used instead"
         },
         "themeColor": {
@@ -8950,7 +8948,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@7511711fe88791a704c3f7928b95597a|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|ce8a781f5f6005ca66fa5203d86e259e": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -8968,13 +8966,13 @@
           ]
         }
       ],
-      "title": "7511711fe88791a704c3f7928b95597a|WorkflowRef"
+      "title": "WorkflowRef|ce8a781f5f6005ca66fa5203d86e259e"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@7511711fe88791a704c3f7928b95597a|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|ce8a781f5f6005ca66fa5203d86e259e",
           "title": "Workflow"
         },
         "id": {
