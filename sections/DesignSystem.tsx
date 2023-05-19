@@ -10,12 +10,7 @@ import { Head } from "$fresh/runtime.ts";
 import { theme as defaultTheme } from "deco-sites/fashion/tailwind.config.ts";
 import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
 
-export interface Colors {
-  /**
-   * @format color
-   * @default #003232
-   */
-  "primary": string;
+export interface OptionalColors {
   /**
    * @format color
    * @description Will be a darker tone of primary if not specified
@@ -29,11 +24,6 @@ export interface Colors {
 
   /**
    * @format color
-   * @default #8C3D3D
-   */
-  "secondary": string;
-  /**
-   * @format color
    * @description Will be a darker tone of secondary if not specified
    */
   "secondary-focus"?: string;
@@ -43,11 +33,6 @@ export interface Colors {
    */
   "secondary-content"?: string;
 
-  /**
-   * @format color
-   * @default #00FF7F
-   */
-  "accent": string;
   /**
    * @format color
    * @description Will be a darker tone of accent if not specified
@@ -61,11 +46,6 @@ export interface Colors {
 
   /**
    * @format color
-   * @default #333333
-   */
-  "neutral": string;
-  /**
-   * @format color
    * @description Will be a darker tone of neutral if not specified
    */
   "neutral-focus"?: string;
@@ -75,11 +55,6 @@ export interface Colors {
    */
   "neutral-content"?: string;
 
-  /**
-   * @format color
-   * @default #FFFFFF
-   */
-  "base-100": string;
   /**
    * @format color
    * @description Will be a darker tone of base-100 if not specified
@@ -98,20 +73,10 @@ export interface Colors {
 
   /**
    * @format color
-   * @default #EAFAF2
-   */
-  "success": string;
-  /**
-   * @format color
    * @description Will be a readable success of neutral if not specified
    */
   "success-content"?: string;
 
-  /**
-   * @format color
-   * @default #FFF8E6
-   */
-  "warning": string;
   /**
    * @format color
    * @description Will be a readable tone of warning if not specified
@@ -120,25 +85,71 @@ export interface Colors {
 
   /**
    * @format color
-   * @default #FFE9E5
-   */
-  "error": string;
-  /**
-   * @format color
    * @description Will be a readable tone of error if not specified
    */
   "error-content"?: string;
 
   /**
    * @format color
-   * @default #F0F5FF
-   */
-  "info": string;
-  /**
-   * @format color
    * @description Will be a readable tone of info if not specified
    */
   "info-content"?: string;
+}
+
+export interface Colors {
+  /**
+   * @format color
+   * @default #003232
+   */
+  "primary": string;
+
+  /**
+   * @format color
+   * @default #8C3D3D
+   */
+  "secondary": string;
+
+  /**
+   * @format color
+   * @default #00FF7F
+   */
+  "accent": string;
+
+  /**
+   * @format color
+   * @default #333333
+   */
+  "neutral": string;
+
+  /**
+   * @format color
+   * @default #FFFFFF
+   */
+  "base-100": string;
+
+  /**
+   * @format color
+   * @default #EAFAF2
+   */
+  "success": string;
+
+  /**
+   * @format color
+   * @default #FFF8E6
+   */
+  "warning": string;
+
+  /**
+   * @format color
+   * @default #FFE9E5
+   */
+  "error": string;
+
+  /**
+   * @format color
+   * @default #F0F5FF
+   */
+  "info": string;
 }
 
 export interface Miscellaneous {
@@ -217,12 +228,12 @@ export interface Font {
 }
 
 export interface Props {
-  colors?: Colors;
+  colors?: Colors & { optional?: OptionalColors };
   miscellaneous?: Miscellaneous;
   fonts?: Font;
 }
 
-type Theme = Colors & Miscellaneous;
+type Theme = Colors & OptionalColors & Miscellaneous;
 
 const darken = (color: string, percentage = 0.2) =>
   Color.string(color).darken(percentage);
@@ -311,7 +322,12 @@ function Section({
   },
 }: Props) {
   const id = useId();
-  const theme = { ...defaultTheme, ...colors, ...miscellaneous };
+  const theme = {
+    ...defaultTheme,
+    ...colors,
+    ...colors?.optional,
+    ...miscellaneous,
+  };
   const variables = [...toVariables(theme), ["--font-family", fonts.fontFamily]]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
     .join(";");
