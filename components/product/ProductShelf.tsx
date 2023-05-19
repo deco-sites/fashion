@@ -13,11 +13,21 @@ export interface Props {
   title: string;
   products: LoaderReturnType<Product[] | null>;
   itemsPerPage?: number;
+  /**
+   * @description item list id for the google analytics event.
+   */
+  itemListId?: string;
+  /**
+   * @description item list name for the google analytics event.
+   */
+  itemListName?: string;
 }
 
 function ProductShelf({
   title,
   products,
+  itemListId,
+  itemListName,
 }: Props) {
   const id = useId();
 
@@ -40,7 +50,11 @@ function ProductShelf({
             index={index}
             class="carousel-item w-[270px] sm:w-[292px] first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
           >
-            <ProductCard product={product} itemListName={title} />
+            <ProductCard
+              product={product}
+              itemListName={title}
+              itemListId={itemListId}
+            />
           </Slider.Item>
         ))}
       </Slider>
@@ -62,7 +76,8 @@ function ProductShelf({
         event={{
           name: "view_item_list",
           params: {
-            item_list_name: title,
+            item_list_name: itemListName,
+            item_list_id: itemListId,
             items: products.map((product) =>
               mapProductToAnalyticsItem({
                 product,

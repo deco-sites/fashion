@@ -13,7 +13,13 @@ interface Props {
   /** Preload card image */
   preload?: boolean;
 
-  /** @description used for analytics event */
+  /**
+   * @description item list id for the google analytics event.
+   */
+  itemListId?: string;
+  /**
+   * @description item list name for the google analytics event.
+   */
   itemListName?: string;
 }
 
@@ -25,7 +31,7 @@ const relative = (url: string) => {
 const WIDTH = 200;
 const HEIGHT = 279;
 
-function ProductCard({ product, preload, itemListName }: Props) {
+function ProductCard({ product, preload, itemListName, itemListId }: Props) {
   const {
     url,
     productID,
@@ -43,6 +49,7 @@ function ProductCard({ product, preload, itemListName }: Props) {
     name: "select_item" as const,
     params: {
       item_list_name: itemListName,
+      item_list_id: itemListId,
       items: [
         mapProductToAnalyticsItem({
           product,

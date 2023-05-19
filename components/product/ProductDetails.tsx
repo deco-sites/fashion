@@ -152,6 +152,8 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         event={{
           name: "view_item",
           params: {
+            currency: product.offers?.priceCurrency,
+            value: price ? Number(price.toFixed(2)) : 0.00,
             items: [
               mapProductToAnalyticsItem({
                 product,
