@@ -7,7 +7,7 @@ function GlobalTags() {
       <meta name="view-transition" content="same-origin" />
 
       {/* Tailwind v3 CSS file */}
-      <link href={asset("/tailwind.css")} rel="stylesheet" />
+      <link href={asset("/styles.css")} rel="stylesheet" />
 
       {/* Icons */}
       <link
