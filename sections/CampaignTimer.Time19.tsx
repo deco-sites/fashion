@@ -5,7 +5,7 @@ import Countdown from "$store/islands/Countdown.tsx";
 export interface Props {
   /**
    * @title Tempo para expirar
-	 * @format date 
+   * @format date
    */
   targetDate: string;
   /**
@@ -31,7 +31,8 @@ export interface Props {
 }
 
 function CampaignTimer(props: Props) {
-  const { targetDate, text, labelButton, actionButton, variant = "default" } = props;
+  const { targetDate, text, labelButton, actionButton, variant = "default" } =
+    props;
 
   const defaultStyles = {
     text: "sm:order-2",
@@ -60,9 +61,9 @@ function CampaignTimer(props: Props) {
             }}
           />
         </div>
-				<div class={campaignStyles.countdown}>
-					<Countdown targetDate={targetDate} />
-				</div>
+        <div class={campaignStyles.countdown}>
+          <Countdown targetDate={targetDate} />
+        </div>
         <Button
           class={`btn w-[74px] h-[40px] rounded-none font-default text-primary-content capitalize font-normal text-xs ${campaignStyles.button} ml-2 sm:ml-0`}
           as="a"
