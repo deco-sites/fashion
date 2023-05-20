@@ -41,14 +41,15 @@ function ProductCard({
 
   return (
     <div
-      className="h-[504px] w-[316px] flex flex-col p-2 gap-4 cursor-pointer"
+      className="h-full w-full flex flex-col p-2 gap-4 cursor-pointer"
       onClick={() => setQuickViewIsOpen(true)}
     >
-      <div className="w-full h-[276px]">
+      <div className="w-full h-full">
         <Image
+          className="w-full min-h-[128px] sm:min-w-[276px]"
           src={image || ""}
           alt={"image.alt"}
-          width={276}
+          width={800}
           loading="lazy"
           aspect-ratio="1:1"
         />
@@ -82,8 +83,10 @@ function ProductCard({
             )}
         </div>
       </div>
-      {/* We actually don't have the rating yet, so we'll just hardcode it for now.
-      And we can't use tailwind colors, cause they don't work with svg. */}
+      {
+        /* We actually don't have the rating yet, so we'll just hardcode it for now.
+      And we can't use tailwind colors, cause they don't work with svg. */
+      }
       <div className="flex gap-1 ">
         <StarIcon fill="#FFC240" />
         <StarIcon fill="#FFC240" />

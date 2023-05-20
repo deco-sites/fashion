@@ -32,7 +32,7 @@ function ProductShelf({
           <Slider.Item
             key={product.productID}
             index={index}
-            class="carousel-item w-[316px] sm:w-[292px] first:ml-0 last:mr-0"
+            class="carousel-item w-[144px] sm:w-[292px] first:ml-0 last:mr-0"
           >
             <ProductCard product={product} />
           </Slider.Item>
