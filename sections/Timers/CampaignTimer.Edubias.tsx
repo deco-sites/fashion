@@ -1,11 +1,13 @@
 export interface Props {
-  title: string,
-  hours?: number,
-  minutes?: number,
-  seconds: number,
+  title: string;
+  hours?: number;
+  minutes?: number;
+  seconds: number;
 }
 
-export default function CampaignTimer({ title, hours = 0, minutes = 0, seconds = 0 }: Props) {
+export default function CampaignTimer(
+  { title, hours = 0, minutes = 0, seconds = 0 }: Props,
+) {
   return (
     <div className="h-28 p-4 bg-red-400 flex flex-col justify-center items-center text-white">
       <h2 className="text-sm mb-4">{title}</h2>
@@ -29,5 +31,5 @@ export default function CampaignTimer({ title, hours = 0, minutes = 0, seconds =
         <button>Button</button>
       </div>
     </div>
-  )
+  );
 }
