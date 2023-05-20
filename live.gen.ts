@@ -31,9 +31,8 @@ import * as $$$$$$$$10 from "./sections/ProductShelf.tsx";
 import * as $$$$$$$$11 from "./sections/Highlights.tsx";
 import * as $$$$$$$$12 from "./sections/Footer.tsx";
 import * as $$$$$$$$13 from "./sections/CookieConsent.tsx";
-import * as $$$$$$$$14 from "./sections/QuickViews/QuickView.Luminosity.tsx";
-import * as $$$$$$$$15 from "./sections/BannerGrid.tsx";
-import * as $$$$$$$$16 from "./sections/Header.tsx";
+import * as $$$$$$$$14 from "./sections/BannerGrid.tsx";
+import * as $$$$$$$$15 from "./sections/Header.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -173,7 +172,7 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$0,
     "$live/sections/Slot.tsx": i2$$$$1,
     "$live/sections/UseSlot.tsx": i2$$$$2,
-    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$14,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$7,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$13,
@@ -182,13 +181,11 @@ const manifest = {
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$3,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$5,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$12,
-    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$16,
+    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$15,
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$6,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$10,
-    "deco-sites/fashion/sections/QuickViews/QuickView.Luminosity.tsx":
-      $$$$$$$$14,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$9,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$0,
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$4,

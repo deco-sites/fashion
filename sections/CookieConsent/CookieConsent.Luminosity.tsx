@@ -34,7 +34,7 @@ export default function CookieConsent({ description }: CookieConsentProps) {
 
         <div></div>
         <a className="flex justify-start items-center gap-1 cursor-pointer">
-          <p className="text-sm text-[#6D8B61] underline">
+          <p className="text-sm text-primary underline">
             Ler política de cookies
           </p>
           <svg
@@ -53,8 +53,8 @@ export default function CookieConsent({ description }: CookieConsentProps) {
           </svg>
         </a>
 
-        <button className="group w-full h-10 p-2 flex justify-center items-center bg-[#273746] hover:bg-white hover:border hover:border-[#546F4A]">
-          <p className="text-white group-hover:text-[#546F4A]">
+        <button className="group w-full h-10 p-2 flex justify-center items-center bg-secondary hover:bg-white hover:border hover:border-primary">
+          <p className="text-white group-hover:text-primary">
             Aceitar
           </p>
         </button>
