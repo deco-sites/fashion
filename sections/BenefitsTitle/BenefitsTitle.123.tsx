@@ -3,52 +3,58 @@ export interface props {
   description: string;
   itemTitle: string;
   itemDescription: string;
+  imageSrc: string;
 }
 
 function BenefitsTitle(
-  { title, description, itemTitle, itemDescription }: props,
+  { title="Benefits title", description="Description of benefits", itemTitle="Benefit title", itemDescription="Benefit description", imageSrc="/vector.png"}: props,
 ) {
   return (
     <>
-      <div class="row container flex flex-col items-center text-center px-5">
-        <div class="text-center">
-          <h1 class="text-4xl">Benefits title</h1>
-          <span class="text-lg">description benefits</span>
+      <div class="container flex flex-col text-center">
+        <div class="text-center m-10">
+          <h1 class="text-4xl">{title}</h1>
+          <span class="text-lg">{description}</span>
         </div>
 
-        <div class="grid grid-cols-4 gap-4 divide-x-2">
-          <div class="flex items-center justify-start gap-2">
+        <div class="flex flex-col gap-4 divide-y-2 text-start justify-center w-10/12 sm:flex-row sm:divide-x-2 sm:divide-y-0 sm:w-full ">
+          <div class="flex items-start justify-start gap-2 px-5 py-2 sm:py-0">
             <div>
+              <img src={imageSrc}></img>
             </div>
             <div>
-              <h3>Title item</h3>
-              <p>description of the item</p>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-start gap-2">
-            <div>
-              <img></img>
-            </div>
-            <div>
-              <h3>Title item</h3>
-              <p>description of the item</p>
+              <h3>{itemTitle}</h3>
+              <p>{itemDescription}</p>
             </div>
           </div>
 
-          <div class="flex items-center justify-start gap-2">
-            <div></div>
+          <div class="flex items-start justify-start gap-2 text-start px-5 py-2 sm:py-0">
             <div>
-              <h3>Title item</h3>
-              <p>description of the item</p>
+              <img src={imageSrc}></img>
+            </div>
+            <div>
+              <h3>{itemTitle}</h3>
+              <p>{itemDescription}</p>
             </div>
           </div>
 
-          <div class="flex items-center justify-start gap-2">
-            <div></div>
+          <div class="flex items-start justify-start gap-2 text-start px-5 py-2 sm:py-0">
             <div>
-              <h3>Title item</h3>
-              <p>description of the item</p>
+              <img src={imageSrc}></img>
+            </div>
+            <div>
+              <h3>{itemTitle}</h3>
+              <p>{itemDescription}</p>
+            </div>
+          </div>
+
+          <div class="flex items-start justify-start gap-2 text-start px-5 py-2 sm:py-0">
+            <div>
+              <img src={imageSrc}></img>
+            </div>
+            <div>
+              <h3>{itemTitle}</h3>
+              <p>{itemDescription}</p>
             </div>
           </div>
         </div>

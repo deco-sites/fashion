@@ -91,6 +91,7 @@
               "deco-sites/fashion/sections/Footer.tsx",
               "deco-sites/fashion/sections/Header.tsx",
               "deco-sites/fashion/sections/Highlights.tsx",
+              "deco-sites/fashion/sections/ImageGallery/imageGallery.123.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
@@ -7221,13 +7222,18 @@
         "itemDescription": {
           "type": "string",
           "title": "Item Description"
+        },
+        "imageSrc": {
+          "type": "string",
+          "title": "Image Src"
         }
       },
       "required": [
         "title",
         "description",
         "itemTitle",
-        "itemDescription"
+        "itemDescription",
+        "imageSrc"
       ],
       "title": "deco-sites/fashion/sections/BenefitsTitle/BenefitsTitle.123.tsx@props"
     },
@@ -8309,6 +8315,24 @@
         "title"
       ],
       "title": "deco-sites/fashion/components/ui/Highlights.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9pbWFnZUdhbGxlcnkuMTIzLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "descripty": {
+          "type": "string",
+          "title": "Descripty"
+        }
+      },
+      "required": [
+        "title",
+        "descripty"
+      ],
+      "title": "deco-sites/fashion/sections/ImageGallery/imageGallery.123.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
       "type": "object",
@@ -11097,6 +11121,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9pbWFnZUdhbGxlcnkuMTIzLnRzeA==": {
+      "title": "deco-sites/fashion/sections/ImageGallery/imageGallery.123.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9pbWFnZUdhbGxlcnkuMTIzLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/ImageGallery/imageGallery.123.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/ImageGallery/imageGallery.123.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtUcmVlLnRzeA==": {
       "title": "deco-sites/fashion/sections/LinkTree.tsx",
       "type": "object",
@@ -12379,6 +12424,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hpZ2hsaWdodHMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9pbWFnZUdhbGxlcnkuMTIzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtUcmVlLnRzeA=="
