@@ -331,6 +331,7 @@ function Section({
   const variables = [...toVariables(theme), ["--font-family", fonts.fontFamily]]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
     .join(";");
+
   return (
     <Head>
       <meta name="theme-color" content={theme["primary"]} />
