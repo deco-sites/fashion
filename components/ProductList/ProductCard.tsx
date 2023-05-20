@@ -1,5 +1,7 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import { useState } from "preact/hooks";
+import QuickView from "$store/components/quickView/QuickView.tsx";
 
 export interface Props {
   product: Product;
@@ -30,11 +32,15 @@ function StarIcon({ fill = "none", stroke }: {
 function ProductCard({
   product,
 }: Props) {
-  console.log("🚀 ~ file: ProductCard.tsx:23 ~ product:", product);
+  const [quickViewIsOpen, setQuickViewIsOpen] = useState(false);
+
   const image = product.image ? product.image[0].url : "";
 
   return (
-    <div className="h-[504px] w-[316px] flex flex-col p-2 gap-4">
+    <div
+      className="h-[504px] w-[316px] flex flex-col p-2 gap-4 cursor-pointer"
+      onClick={() => setQuickViewIsOpen(true)}
+    >
       <div className="w-full h-[276px]">
         <Image
           src={image || ""}
@@ -68,6 +74,11 @@ function ProductCard({
         <StarIcon fill="none" stroke="#FFC240" />
         <p className="text-base-400">(10)</p>
       </div>
+      <QuickView
+        onClose={() => setQuickViewIsOpen(false)}
+        open={quickViewIsOpen}
+        product={product}
+      />
     </div>
   );
 }
