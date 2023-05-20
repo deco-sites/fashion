@@ -46,8 +46,8 @@ function ProductCard({
           src={image || ""}
           alt={"image.alt"}
           width={276}
-          height={276}
           loading="lazy"
+          aspect-ratio="1:1"
         />
       </div>
       <div>
