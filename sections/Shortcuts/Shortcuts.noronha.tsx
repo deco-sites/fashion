@@ -4,6 +4,7 @@ export interface Props {
   /** @title Shortcuts */
   items: Item[];
 }
+
 export interface Item {
   /** @title Imagem */
   img: Image;
@@ -14,7 +15,7 @@ export interface Item {
   /** @title Texto Alternativo */
   alt: string;
 
-  /** @title TÃ­tulo da Imagem */
+  /** @title Título da Imagem */
   title: string;
 
   /** @title Largura da Imagem */
@@ -23,6 +24,7 @@ export interface Item {
   /** @title Altura da Imagem */
   height: number;
 }
+
 const itemsProps: Item[] = [
   {
     img:
@@ -70,11 +72,12 @@ const itemsProps: Item[] = [
     height: 24,
   },
 ];
+
 const Shortcuts = ({ items = itemsProps }: Props) => {
   return (
     <ul class="fixed z-20 top-1/2 -translate-y-1/2 right-0">
       {items.map((item) => (
-        <li class="bg-white border-2 border-solid border-[#AAAAAA] border-t-transparent flex justify-center items-center first:border-t-[#AAAAAA]">
+        <li class="bg-white border-2 border-solid border-gray-400 border-t-transparent flex justify-center items-center first:border-t-gray-400">
           <a
             href={item.link}
             target="_blank"

@@ -93,7 +93,7 @@
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
-              "deco-sites/fashion/sections/Shortcuts.noronha.tsx",
+              "deco-sites/fashion/sections/Shortcuts/Shortcuts.noronha.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -8457,7 +8457,7 @@
       ],
       "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hvcnRjdXRzLm5vcm9uaGEudHN4@Item": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g=@Item": {
       "type": "object",
       "properties": {
         "img": {
@@ -8474,7 +8474,7 @@
         },
         "title": {
           "type": "string",
-          "title": "TÃ­tulo da Imagem"
+          "title": "Título da Imagem"
         },
         "width": {
           "type": "number",
@@ -8495,25 +8495,25 @@
       ],
       "title": "Item"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hvcnRjdXRzLm5vcm9uaGEudHN4@Item[]": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g=@Item[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hvcnRjdXRzLm5vcm9uaGEudHN4@Item"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g=@Item"
       },
       "title": "Item[]"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hvcnRjdXRzLm5vcm9uaGEudHN4@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g=@Props": {
       "type": "object",
       "properties": {
         "items": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hvcnRjdXRzLm5vcm9uaGEudHN4@Item[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g=@Item[]",
           "title": "Shortcuts"
         }
       },
       "required": [
         "items"
       ],
-      "title": "deco-sites/fashion/components/ui/Shortcuts.noronha.tsx@Props"
+      "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.noronha.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props": {
       "type": "object",
@@ -11131,12 +11131,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy5ub3JvbmhhLnRzeA==": {
-      "title": "deco-sites/fashion/sections/Shortcuts.noronha.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g=": {
+      "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.noronha.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hvcnRjdXRzLm5vcm9uaGEudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g=@Props"
         }
       ],
       "required": [
@@ -11146,9 +11146,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/fashion/sections/Shortcuts.noronha.tsx"
+            "deco-sites/fashion/sections/Shortcuts/Shortcuts.noronha.tsx"
           ],
-          "default": "deco-sites/fashion/sections/Shortcuts.noronha.tsx"
+          "default": "deco-sites/fashion/sections/Shortcuts/Shortcuts.noronha.tsx"
         }
       }
     },
@@ -12358,7 +12358,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy5ub3JvbmhhLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMubm9yb25oYS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
