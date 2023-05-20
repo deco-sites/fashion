@@ -18,13 +18,18 @@ export type Props = {
   product: Product;
   open: boolean;
   onClose: () => void;
+  seeMoreButton?: {
+    href: string;
+    target: string;
+    label: string;
+  };
 };
 
 function transformColorValue(color: string) {
   return color.split(" ").join("-").toLowerCase();
 }
 function QuickView(
-  { imagePlaceholder = "left", onClose, open, product }: Props,
+  { imagePlaceholder = "left", onClose, open, product, seeMoreButton }: Props,
 ) {
   const id = `product-image-gallery:${useId()}`;
 
@@ -141,8 +146,12 @@ function QuickView(
               >
                 <span class="text-base-500">Comprar</span>
               </Button>
-              <a href="#" class="text-base mt-3 block text-center">
-                Product details
+              <a
+                href={seeMoreButton?.href}
+                target={seeMoreButton?.target}
+                class="text-base mt-3 block text-center"
+              >
+                {seeMoreButton?.label}
               </a>
             </div>
           </div>
