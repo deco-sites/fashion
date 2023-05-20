@@ -1,16 +1,16 @@
 export interface Props {
   messages: string[];
-  slideTimeInSeconds: number;
+  durationInSeconds: number;
 }
 
 export default function DiscountBanner(
-  { messages = [], slideTimeInSeconds = 10 }: Props,
+  { messages = [], durationInSeconds = 10 }: Props,
 ) {
   return (
     <div class="bg-primary w-full">
       <div
         class="flex gap-10 w-max text-sm animate-[slideleft_10s_linear_infinite]"
-        style={`animation-duration: ${slideTimeInSeconds}s;`}
+        style={`animation-duration: ${durationInSeconds}s;`}
       >
         {messages.map((message, index) => (
           <div class="pt-2 pb-2 lg:pt-4 lg:pb-4 flex gap-10 items-center text-primary-content group">

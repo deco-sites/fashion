@@ -7647,14 +7647,14 @@
           },
           "title": "Messages"
         },
-        "slideTimeInSeconds": {
+        "durationInSeconds": {
           "type": "number",
-          "title": "Slide Time In Seconds"
+          "title": "Duration In Seconds"
         }
       },
       "required": [
         "messages",
-        "slideTimeInSeconds"
+        "durationInSeconds"
       ],
       "title": "deco-sites/fashion/sections/DiscountBanner/DiscountBanner.capyvarias.tsx@Props"
     },
