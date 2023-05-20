@@ -26,21 +26,21 @@ function HeaderSliderController({ variant }: {
           </div>
           <div className="flex gap-2 items-center">
             <div
-              className={`w-6 h-6 p-2 border border-base-300 rounded-full cursor-pointer`}
+              className={`w-6 h-6 p-2 border border-base-500 rounded-full cursor-pointer`}
             >
-              <div className={"w-full h-full bg-base-300 rounded-full"}>
+              <div className={"w-full h-full bg-base-500 rounded-full"}>
               </div>
             </div>
             <div
               className={`w-6 h-6 p-2 border border-transparent rounded-full cursor-pointer`}
             >
-              <div className={"w-full h-full bg-base-300 rounded-full"}>
+              <div className={"w-full h-full bg-base-500 rounded-full"}>
               </div>
             </div>
             <div
               className={`w-6 h-6 p-2 border border-transparent rounded-full cursor-pointer`}
             >
-              <div className={"w-full h-full bg-base-300 rounded-full"}>
+              <div className={"w-full h-full bg-base-500 rounded-full"}>
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@ function HeaderSliderController({ variant }: {
       );
     default:
       return (
-        <button className="py-1.5 rounded-none bg-transparent px-4 color-base-300 hover:underline transition duration-200">
+        <button className="py-1.5 rounded-none bg-transparent px-4 color-base-500 hover:underline transition duration-200">
           See all products
         </button>
       );
@@ -79,7 +79,7 @@ function Header({
         }`}
       >
         <div
-          className={`text-neutral flex flex-col gap-4 ${
+          className={`text-base-500 flex flex-col gap-4 ${
             isFirstVariant ? "items-center" : ""
           }`}
         >
@@ -103,7 +103,7 @@ function Header({
           >
             <a
               href={href}
-              className={`text-base border-b-[1.5px] ${
+              className={`text-base text-base-500 border-b-[1.5px] ${
                 selectedCategory === index
                   ? "border-black border-base"
                   : "border-transparent"

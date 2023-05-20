@@ -21,14 +21,14 @@ function ProductList({
   seeAllButton,
 }: Props) {
   return (
-    <div className="p-6 w-full max-w-[1100px] mx-auto">
+    <div className="p-6 w-full mx-auto">
       <Header {...header} />
       <ProductShelf products={products} />
       {seeAllButton
         ? (
           <div className="flex justify-center mt-6">
             <a href={seeAllButton.href} target={seeAllButton.target}>
-              <button className="py-1.5 rounded-none bg-transparent px-20 color-base-300 hover:underline transition duration-200 border border-base-300">
+              <button className="py-1.5 rounded-none bg-transparent px-20 color-secondary-focus hover:underline transition duration-200 border border-secondary-focus">
                 {seeAllButton.label ?? "See all products"}
               </button>
             </a>
