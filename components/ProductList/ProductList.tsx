@@ -29,7 +29,7 @@ function ProductList({
           <div className="flex justify-center mt-6">
             <a href={seeAllButton.href} target={seeAllButton.target}>
               <button className="py-1.5 rounded-none bg-transparent px-20 color-base-300 hover:underline transition duration-200 border border-base-300">
-                {seeAllButton.label ?? "See all products"} 
+                {seeAllButton.label ?? "See all products"}
               </button>
             </a>
           </div>
