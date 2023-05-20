@@ -6,25 +6,38 @@ export interface Props {
   /**
    * @title Container alignment
    * @description Alignment of the container and texts inside
+   * @default middle
    */
   position: "left" | "middle" | "right";
 
+  /**
+   * @default Tagline
+   */
   tag: string;
+  /**
+   * @default Short heading here
+   */
   title: string;
+  /**
+   * @default Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+   */
   description: string;
 
   /**
    * @title Desktop background image
+   * @default https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png
    */
   desktop?: LiveImage;
 
   /**
    * @title Mobile background image
+   * @default https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png
    */
   mobile?: LiveImage;
 
   /**
    * @title Theme
+   * @default dark
    */
   theme: "light" | "dark";
 
@@ -139,7 +152,10 @@ function SingleBanner(
           )}
 
           {secondaryButton && (
-            <button href={secondaryButton.href} className={secondaryButtonClass}>
+            <button
+              href={secondaryButton.href}
+              className={secondaryButtonClass}
+            >
               {secondaryButton.label}
             </button>
           )}

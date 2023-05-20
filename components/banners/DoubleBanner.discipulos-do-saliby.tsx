@@ -13,6 +13,7 @@ export interface Props {
   second: SingleBannerProps;
   /**
    * @title Banners layout
+   * @default 50% 50%
    */
   layout: "50% 50%" | "66% 33%" | "33% 66%";
 }
