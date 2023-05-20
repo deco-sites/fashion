@@ -80,7 +80,7 @@ const CookieConsent = (props: CookieConsentProps) => {
 
   return (
     <div
-      class={"bg-white fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[480px] p-4 shadow-lg md:p-6"}
+      class={"bg-white fixed z-10 bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-[480px] p-4 border border-[#f8f8f8] shadow-lg md:p-6"}
     >
       <div class={"flex flex-col gap-4"}>
         <div className="h-10 flex justify-between items-center">
