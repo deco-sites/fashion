@@ -1,27 +1,37 @@
-import TopPartSection from './TopPart.tsx'
+import TopPartComponent from "./TopPart.tsx";
+import BottomPartComponent from "./BottomPart.tsx";
 
 export interface TopPart {
-    title: string;
-    text: string;
-  }
+  title: string;
+  text: string;
+}
 
 export interface Questions {
-    question: string
-    answer: string
+  question: string;
+  answer: string;
 }
-  export interface Props {
-    topPart: TopPart
-    questions: Questions[]
-  }
 
-  function Faq({topPart, questions = []}: Props) {
-    return (
-        <div class="flex flex-row justify-center items-start px-64 gap-12 py-28">
-            <div class="">
-                <TopPartSection topPart={topPart} />
-           </div>
+export interface BottomPart {
+    title: string;
+    text: string;
+    contactUrl: string;
+}
+
+export interface Props {
+  topPart: TopPart;
+  questions: Questions[];
+  bottomPart: BottomPart
+}
+
+function Faq({ topPart, bottomPart, questions = [] }: Props) {
+  return (
+    <div class="flex flex-col justify-center items-start px-64 gap-12 py-28">
+        <TopPartComponent topPart={topPart} />
+        <div class="mx-auto">
+            <BottomPartComponent bottomPart={bottomPart}/>
         </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export default Faq
+export default Faq;

@@ -7680,6 +7680,29 @@
       },
       "title": "Questions[]"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZmFxL0ZhcS50c3g=@BottomPart": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "text": {
+          "type": "string",
+          "title": "Text"
+        },
+        "contactUrl": {
+          "type": "string",
+          "title": "Contact Url"
+        }
+      },
+      "required": [
+        "title",
+        "text",
+        "contactUrl"
+      ],
+      "title": "BottomPart"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZmFxL0ZhcS50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -7690,11 +7713,16 @@
         "questions": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZmFxL0ZhcS50c3g=@Questions[]",
           "title": "Questions"
+        },
+        "bottomPart": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZmFxL0ZhcS50c3g=@BottomPart",
+          "title": "Bottom Part"
         }
       },
       "required": [
         "topPart",
-        "questions"
+        "questions",
+        "bottomPart"
       ],
       "title": "deco-sites/fashion/components/faq/Faq.tsx@Props"
     },
