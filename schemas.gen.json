@@ -83,7 +83,7 @@
               "$live/sections/UseSlot.tsx",
               "deco-sites/fashion/sections/BannerGrid.tsx",
               "deco-sites/fashion/sections/BannerPLP.tsx",
-              "deco-sites/fashion/sections/CampignTime.tsx",
+              "deco-sites/fashion/sections/CampeignTime.tsx",
               "deco-sites/fashion/sections/Carousel.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
               "deco-sites/fashion/sections/DesignSystem.tsx",
@@ -7226,7 +7226,7 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerPLP.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvTWlxdWVpYXMtY2FtcGllbmdUaW1lL0NhbXBpZW5nVGltZS50c3g=@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvTWlxdWVpYXMtY2FtcGllbmdUaW1lL0NhbXBlaWduVGltZS50c3g=@Props": {
       "type": "object",
       "properties": {
         "hours": {
@@ -7241,33 +7241,33 @@
           "type": "number",
           "title": "Second"
         },
-        "textInput": {
+        "campaignDescription": {
           "type": "string",
-          "title": "Text Input"
+          "title": "Campaign Description"
         },
-        "nameLink": {
+        "clickableLinkDescription": {
           "type": "string",
-          "title": "Name Link"
+          "title": "Clickable Link Description"
         },
-        "link": {
+        "campaignLink": {
           "type": "string",
-          "title": "Link"
+          "title": "Campaign Link"
         },
-        "button": {
+        "buttonDecription": {
           "type": "string",
-          "title": "Button"
+          "title": "Button Decription"
         }
       },
       "required": [
         "hours",
         "minutes",
         "second",
-        "textInput",
-        "nameLink",
-        "link",
-        "button"
+        "campaignDescription",
+        "clickableLinkDescription",
+        "campaignLink",
+        "buttonDecription"
       ],
-      "title": "deco-sites/fashion/components/Miqueias-campiengTime/CampiengTime.tsx@Props"
+      "title": "deco-sites/fashion/components/Miqueias-campiengTime/CampeignTime.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
@@ -10935,12 +10935,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBpZ25UaW1lLnRzeA==": {
-      "title": "deco-sites/fashion/sections/CampignTime.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBlaWduVGltZS50c3g=": {
+      "title": "deco-sites/fashion/sections/CampeignTime.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvTWlxdWVpYXMtY2FtcGllbmdUaW1lL0NhbXBpZW5nVGltZS50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvTWlxdWVpYXMtY2FtcGllbmdUaW1lL0NhbXBlaWduVGltZS50c3g=@Props"
         }
       ],
       "required": [
@@ -10950,9 +10950,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/fashion/sections/CampignTime.tsx"
+            "deco-sites/fashion/sections/CampeignTime.tsx"
           ],
-          "default": "deco-sites/fashion/sections/CampignTime.tsx"
+          "default": "deco-sites/fashion/sections/CampeignTime.tsx"
         }
       }
     },
@@ -12358,7 +12358,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lclBMUC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBpZ25UaW1lLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBlaWduVGltZS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
