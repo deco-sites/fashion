@@ -90,6 +90,7 @@
               "deco-sites/fashion/sections/Header.tsx",
               "deco-sites/fashion/sections/Highlights.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
+              "deco-sites/fashion/sections/Minicart/Minicart.Luminosity.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
@@ -7502,7 +7503,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@69169a97c55521abcff1ff638be9879c&Colors": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors"
@@ -7518,7 +7519,7 @@
           "required": []
         }
       ],
-      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
+      "title": "69169a97c55521abcff1ff638be9879c&Colors"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
@@ -7621,7 +7622,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@69169a97c55521abcff1ff638be9879c&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -8343,6 +8344,49 @@
       },
       "required": [],
       "title": "deco-sites/fashion/components/ui/LinkTree.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pbmljYXJ0L01pbmljYXJ0Lkx1bWlub3NpdHkudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "productName": {
+          "type": "string",
+          "title": "Product Name"
+        },
+        "productSize": {
+          "type": "string",
+          "title": "Product Size"
+        },
+        "productFirstColor": {
+          "type": "string",
+          "title": "Product First Color"
+        },
+        "productSecondColor": {
+          "type": "string",
+          "title": "Product Second Color"
+        },
+        "productQuantity": {
+          "type": "number",
+          "title": "Product Quantity"
+        },
+        "productPreviousPrice": {
+          "type": "string",
+          "title": "Product Previous Price"
+        },
+        "productDiscountedPrice": {
+          "type": "string",
+          "title": "Product Discounted Price"
+        }
+      },
+      "required": [
+        "productName",
+        "productSize",
+        "productFirstColor",
+        "productSecondColor",
+        "productQuantity",
+        "productPreviousPrice",
+        "productDiscountedPrice"
+      ],
+      "title": "deco-sites/fashion/sections/Minicart/Minicart.Luminosity.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0RGV0YWlscy50c3g=@Props": {
       "type": "object",
@@ -11009,6 +11053,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pbmljYXJ0L01pbmljYXJ0Lkx1bWlub3NpdHkudHN4": {
+      "title": "deco-sites/fashion/sections/Minicart/Minicart.Luminosity.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pbmljYXJ0L01pbmljYXJ0Lkx1bWlub3NpdHkudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Minicart/Minicart.Luminosity.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Minicart/Minicart.Luminosity.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA==": {
       "title": "deco-sites/fashion/sections/ProductDetails.tsx",
       "type": "object",
@@ -12267,6 +12332,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtUcmVlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pbmljYXJ0L01pbmljYXJ0Lkx1bWlub3NpdHkudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA=="
