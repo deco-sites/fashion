@@ -1,6 +1,6 @@
 export interface MyInterface {
-  textCampaign?: string;
-  textButton?: string;
+  textCampaign: string;
+  textButton: string;
   textLink: string;
   hours: number;
   minutes: number;
@@ -48,7 +48,7 @@ function CampaignTime(
               </p>
             </div>
           </div>
-          <button class="flex flex-row justify-center items-center w-20 h-10 bg-[#273746]">
+          <button class="flex flex-row justify-center items-center w-20 h-10 bg-[#273746] hover:bg-[#385168] transition-[0.5]">
             <span class="font-albert-sans not-italic font-normal text-base leading-6 flex items-center text-center text-white">
               {textButton ? "Button" : textButton}
             </span>
