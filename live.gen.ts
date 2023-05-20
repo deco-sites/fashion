@@ -30,11 +30,12 @@ import * as $$$$$$$$9 from "./sections/Header.tsx";
 import * as $$$$$$$$10 from "./sections/WhatsApp.tsx";
 import * as $$$$$$$$11 from "./sections/Footer.tsx";
 import * as $$$$$$$$12 from "./sections/ProductShelf.tsx";
-import * as $$$$$$$$13 from "./sections/Testimonials/typeTestimonial.ts";
-import * as $$$$$$$$14 from "./sections/Testimonials/Testimonials-model-1.diasdev.tsx";
-import * as $$$$$$$$15 from "./sections/Testimonials/cardTestimonial.tsx";
-import * as $$$$$$$$16 from "./sections/Carousel.tsx";
-import * as $$$$$$$$17 from "./sections/CookieConsent.tsx";
+import * as $$$$$$$$13 from "./sections/Testimonials/Testimonial-model-2.diasdev.tsx";
+import * as $$$$$$$$14 from "./sections/Testimonials/typeTestimonial.ts";
+import * as $$$$$$$$15 from "./sections/Testimonials/Testimonials-model-1.diasdev.tsx";
+import * as $$$$$$$$16 from "./sections/Testimonials/cardTestimonial.tsx";
+import * as $$$$$$$$17 from "./sections/Carousel.tsx";
+import * as $$$$$$$$18 from "./sections/CookieConsent.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -176,8 +177,8 @@ const manifest = {
     "$live/sections/UseSlot.tsx": i2$$$$2,
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$7,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$3,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$16,
-    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$17,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$17,
+    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$18,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$6,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$5,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$11,
@@ -187,10 +188,12 @@ const manifest = {
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$0,
-    "deco-sites/fashion/sections/Testimonials/cardTestimonial.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/Testimonials/cardTestimonial.tsx": $$$$$$$$16,
+    "deco-sites/fashion/sections/Testimonials/Testimonial-model-2.diasdev.tsx":
+      $$$$$$$$13,
     "deco-sites/fashion/sections/Testimonials/Testimonials-model-1.diasdev.tsx":
-      $$$$$$$$14,
-    "deco-sites/fashion/sections/Testimonials/typeTestimonial.ts": $$$$$$$$13,
+      $$$$$$$$15,
+    "deco-sites/fashion/sections/Testimonials/typeTestimonial.ts": $$$$$$$$14,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$10,
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$4,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
