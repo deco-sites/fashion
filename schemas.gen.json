@@ -8253,11 +8253,48 @@
       "properties": {
         "title": {
           "type": "string",
+          "description": "Title",
           "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description",
+          "title": "Description"
+        },
+        "imageOne": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Image one",
+          "title": "Image One"
+        },
+        "imageTwo": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Image two",
+          "title": "Image Two"
+        },
+        "imageThree": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Image Three",
+          "title": "Image Three"
+        },
+        "imageFour": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Image Four",
+          "title": "Image Four"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Image's alt text",
+          "title": "Alt"
         }
       },
       "required": [
-        "title"
+        "title",
+        "description",
+        "imageOne",
+        "imageTwo",
+        "imageThree",
+        "imageFour",
+        "alt"
       ],
       "title": "deco-sites/fashion/components/ui/ImageGallery.tsx@Props"
     },
