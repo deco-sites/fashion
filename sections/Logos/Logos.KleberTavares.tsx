@@ -25,7 +25,7 @@ export default function Logos({
         {imgUrl?.map((element) => (
           <div className="carousel-item">
             <Image
-              className="object-contain mx-4"
+              className="mx-4"
               src={element.url}
               alt={element.textAlt}
               width={150}
