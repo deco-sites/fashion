@@ -134,13 +134,13 @@ function ProductReview(props: Review) {
                 <input
                   type="radio"
                   name={`rating-${props.id}-${num}`}
-                  class="h-[16px] mask mask-star-2 bg-orange-400"
+                  class="h-4 mask mask-star-2 bg-orange-400"
                   checked={props.rating - 1 === num}
                 />
               ))}
             </div>
-            <span class="text-[#787878]">{"\u2022"}</span>
-            <p class="text-[#787878]">{timeAgo}</p>
+            <span class="text-base-100">{"\u2022"}</span>
+            <p class="text-base-100">{timeAgo}</p>
           </div>
           <h5 class="text-lg lg:text-xl mt-4">{props.title}</h5>
           <p class="text-sm lg:text-lg mt-2">{props.content}</p>
