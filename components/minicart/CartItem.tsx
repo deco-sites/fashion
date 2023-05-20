@@ -44,13 +44,15 @@ function CartItem({ index }: Props) {
         height={150}
         class="object-cover object-center"
       />
-      <div class="flex-grow">
+      <div class="flex flex-grow flex-col gap-2">
         <span>{name}</span>
+        <span class="text-xs" style={{ color: "#787878" }}>Tamanho: PP</span>
+        <span class="text-xs" style={{ color: "#787878" }}>Cor: Azul</span>
         <div class="flex items-center gap-2">
           <span class="line-through text-base-300 text-sm">
             {formatPrice(listPrice / 100, currencyCode!, locale)}
           </span>
-          <span class="text-sm text-secondary">
+          <span class="text-sm text-secondary" style={{ color: "#E37A69" }}>
             {isGift
               ? "Grátis"
               : formatPrice(sellingPrice / 100, currencyCode!, locale)}
