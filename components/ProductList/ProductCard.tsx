@@ -78,6 +78,11 @@ function ProductCard({
         onClose={() => setQuickViewIsOpen(false)}
         open={quickViewIsOpen}
         product={product}
+        seeMoreButton={{
+          href: product.url ?? "",
+          label: "Ver mais",
+          target: "_blank",
+        }}
       />
     </div>
   );
