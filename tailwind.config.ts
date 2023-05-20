@@ -35,6 +35,8 @@ export default {
         "slide-right": "slide-right-frame 0.4s ease normal",
         "slide-bottom": "slide-bottom-frame 0.4s ease normal",
         "progress": "progress-frame ease normal",
+        "marquee": "marquee 30s linear infinite",
+        "marquee2": "marquee2 30s linear infinite",
       },
       keyframes: {
         "slide-left-frame": {
@@ -56,6 +58,14 @@ export default {
           to: {
             "--dot-progress": "100%",
           },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
         },
       },
     },

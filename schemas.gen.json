@@ -90,6 +90,7 @@
               "deco-sites/fashion/sections/Header.tsx",
               "deco-sites/fashion/sections/Highlights.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
+              "deco-sites/fashion/sections/Logos.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
@@ -8344,6 +8345,73 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/LinkTree.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvbG9nb3MvTG9nb3MudHN4@Logo": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Logo image",
+          "title": "Image"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Image's alt text",
+          "title": "Alt"
+        },
+        "action": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "href"
+          ],
+          "title": "Action"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Logo"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvbG9nb3MvTG9nb3MudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "scroll": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Scroll"
+        },
+        "logos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvbG9nb3MvTG9nb3MudHN4@Logo"
+          },
+          "title": "Logos"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "deco-sites/fashion/components/logos/Logos.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0RGV0YWlscy50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -11009,6 +11077,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xvZ29zLnRzeA==": {
+      "title": "deco-sites/fashion/sections/Logos.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvbG9nb3MvTG9nb3MudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Logos.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Logos.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA==": {
       "title": "deco-sites/fashion/sections/ProductDetails.tsx",
       "type": "object",
@@ -12267,6 +12356,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtUcmVlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xvZ29zLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA=="
