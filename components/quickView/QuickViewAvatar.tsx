@@ -6,7 +6,7 @@
 const colors: Record<string, string> = {
   "azul-clara": "bg-[#87CEFA] ring-[#87CEFA]",
   "azul-marinho": "bg-[#000080] ring-[#000080]",
-  "branca": "bg-[#FFFFFF] ring-[#FFFFFF]",
+  "branca": "bg-[#FFFFFF] ring-[#000000]",
   "cinza": "bg-[#808080] ring-[#808080]",
   "cinza-escura": "bg-[#A9A9A9] ring-[#A9A9A9]",
   "laranja": "bg-[#FFA500] ring-[#FFA500]",
@@ -36,6 +36,10 @@ const variants = {
 };
 
 function Avatar({ content, variant = "default" }: Props) {
+  console.log(
+    "🚀 ~ file: QuickViewAvatar.tsx:39 ~ functionAvatar({content,variant ~ content:",
+    content,
+  );
   return (
     <div class="avatar placeholder">
       <div

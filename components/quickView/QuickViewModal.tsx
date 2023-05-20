@@ -102,13 +102,13 @@ const Modal = ({
           <header
             class={`${headerPositionStyles[headerPosition]} ${
               headerStyles[headerBorder]
-            }`}
+            } z-50`}
           >
             <h1>
               <span class="font-medium text-2xl">{title}</span>
             </h1>
             <Button
-              class="btn btn-ghost"
+              class="btn btn-ghost "
               onClick={onClose}
             >
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
