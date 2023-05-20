@@ -14,7 +14,7 @@ export interface Props {
 }
 
 function NewsLetter(
-    { title = { text: "Sign up for our newsletter" }, content = { input = { type: "text", placeholder: "Enter your email" }, button = { href: "#", text: "Subscribe" }, description = { text: "By subscribing you agree to with our ", link: "Privacy Policy." } } }: Props,
+    { title = { text: "Sign up for our newsletter" }, content = { input : { type: "text", placeholder: "Enter your email" }, button : { href: "#", text: "Subscribe" }, description : { text: "By subscribing you agree to with our ", link: "Privacy Policy." } } }: Props,
 ) {
   return (
     <div class="hero min-h-screen bg-base-200">
