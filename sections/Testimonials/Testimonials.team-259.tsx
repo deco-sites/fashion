@@ -7,9 +7,6 @@ export interface Props {
    * @default Lorem ipsum dolor sit amet, consectetur adipiscing elit
    */
   description: string;
-  /**
-   * @default []
-   */
   testimonials: Array<{
     text: string;
     image: {
