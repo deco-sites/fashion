@@ -1,10 +1,12 @@
 export interface NewsletterProps {
   title: string;
   inputPlaceholder?: string;
+  textButton?: string;
+  privacyPolicyUrl?: string;
 }
 
 export default function Newsletter(
-  { title, inputPlaceholder }: NewsletterProps,
+  { title, inputPlaceholder, textButton, privacyPolicyUrl }: NewsletterProps,
 ) {
   return (
     <div className="w-full h-screen bg-zinc-100 p-4 flex justify-center items-center">
@@ -23,14 +25,16 @@ export default function Newsletter(
             />
             <button className="group w-fit h-10 p-2 flex justify-center items-center bg-white hover:bg-transparent hover:border hover:border-white">
               <p className="text-zinc-900 group-hover:text-white">
-                Assinar
+                {textButton ?? "Assinar"}
               </p>
             </button>
           </div>
 
           <p className="text-white text-sm">
             Para prosseguir com a assinatura você está aceitando com nossas{" "}
-            <a className="underline">Política de Privacidade</a>.
+            <a href={privacyPolicyUrl ?? "#"} className="underline">
+              Política de Privacidade
+            </a>.
           </p>
         </div>
       </div>
