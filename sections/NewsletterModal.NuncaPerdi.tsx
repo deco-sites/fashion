@@ -22,10 +22,12 @@ function ModalNewsLetter(
   return (
     <>
       <label for="my-modal-5" class="btn">Abrir Modal</label>
-      <input type="checkbox" id="my-modal-5" class="modal-toggle" checked/>
+      <input type="checkbox" id="my-modal-5" class="modal-toggle" checked />
       <label for="my-modal-5" class="modal cursor-pointer">
         <div class="card card-side bg-base-100 shadow-xl flex flex-wrap">
-          <figure class="flex-end h-full"><img src="/NKP Modal.jpg" alt="" /></figure>
+          <figure class="flex-end h-full">
+            <img src="/NKP Modal.jpg" alt="" />
+          </figure>
           <div class="card-body items-center">
             <h2 class="card-title">{strings.bemvindo}</h2>
             <p>{strings.texto}</p>
