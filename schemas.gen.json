@@ -8248,7 +8248,7 @@
       ],
       "title": "deco-sites/fashion/components/ui/Highlights.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSW1hZ2VHYWxsZXJ5LnRzeA==@Banner": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudGltZS02My50c3g=@Banner": {
       "type": "object",
       "properties": {
         "desktop": {
@@ -8282,14 +8282,14 @@
       ],
       "title": "Banner"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSW1hZ2VHYWxsZXJ5LnRzeA==@Banner[]": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudGltZS02My50c3g=@Banner[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSW1hZ2VHYWxsZXJ5LnRzeA==@Banner"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudGltZS02My50c3g=@Banner"
       },
       "title": "Banner[]"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSW1hZ2VHYWxsZXJ5LnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudGltZS02My50c3g=@Props": {
       "type": "object",
       "properties": {
         "title": {
@@ -8309,7 +8309,7 @@
           "title": "Sub Title"
         },
         "images": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSW1hZ2VHYWxsZXJ5LnRzeA==@Banner[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudGltZS02My50c3g=@Banner[]",
           "title": "Images"
         },
         "variant": {
@@ -8330,7 +8330,7 @@
         }
       },
       "required": [],
-      "title": "deco-sites/fashion/components/ui/ImageGallery.tsx@Props"
+      "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.time-63.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
       "type": "object",
@@ -11082,7 +11082,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSW1hZ2VHYWxsZXJ5LnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudGltZS02My50c3g=@Props"
         }
       ],
       "required": [
