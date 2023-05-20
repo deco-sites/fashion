@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "editor.suggest.showStatusBar": true,
   "editor.quickSuggestions": {
