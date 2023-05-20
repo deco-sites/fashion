@@ -1,5 +1,4 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import type { ItemsPerPage } from "$store/components/ui/Slider.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 

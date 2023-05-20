@@ -43,7 +43,6 @@ function ProductImageZoom({ images, width, height }: Props) {
           <Slider class="carousel w-screen overflow-y-auto">
             {images.map((image, index) => (
               <Slider.Item
-                itemsPerPage={{ default: 1 }}
                 index={index}
                 class="carousel-item w-full"
               >
