@@ -57,10 +57,6 @@ export default {
             "--dot-progress": "100%",
           },
         },
-        "slideleft": {
-          "0%": { transform: "translate(100vw,0)" },
-          "100%": { transform: "translate(-100%,0)" },
-        },
       },
     },
   },
