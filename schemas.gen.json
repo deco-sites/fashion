@@ -7659,27 +7659,33 @@
           ],
           "type": "string",
           "title": "Container alignment",
-          "description": "Alignment of the container and texts inside"
+          "description": "Alignment of the container and texts inside",
+          "default": "middle"
         },
         "tag": {
           "type": "string",
+          "default": "Tagline",
           "title": "Tag"
         },
         "title": {
           "type": "string",
+          "default": "Short heading here",
           "title": "Title"
         },
         "description": {
           "type": "string",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
           "title": "Description"
         },
         "desktop": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Desktop background image"
+          "title": "Desktop background image",
+          "default": "https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png"
         },
         "mobile": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Mobile background image"
+          "title": "Mobile background image",
+          "default": "https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png"
         },
         "theme": {
           "anyOf": [
@@ -7693,7 +7699,8 @@
             }
           ],
           "type": "string",
-          "title": "Theme"
+          "title": "Theme",
+          "default": "dark"
         },
         "primaryButton": {
           "type": "object",
@@ -9124,7 +9131,11 @@
         },
         "name": {
           "type": "string",
-          "title": "Name"
+          "title": "The audience name (will be used on cookies).",
+          "description": "Add a meaningful short word for the audience name.",
+          "maxLength": 22,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9_]+$"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
@@ -9240,7 +9251,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -9258,13 +9269,13 @@
           ]
         }
       ],
-      "title": "95abd76f92dd138f258080286726977e|WorkflowRef"
+      "title": "6fafe0f553db3c0685828404a37be338|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
