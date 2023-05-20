@@ -1,40 +1,19 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
-interface Shortcut {
+export interface Shortcut {
   icon: AvailableIcons;
   tooltip: string;
   link?: string;
 }
 
-interface Props {
+export interface Props {
   shortcuts: Array<Shortcut>;
 }
 
 export default function Shortcuts({ shortcuts }: Props) {
   if (!shortcuts) {
-    shortcuts = [
-      {
-        icon: "WhatsApp",
-        tooltip: "WhatsApp",
-      },
-      {
-        icon: "Messages",
-        tooltip: "Mensagens",
-      },
-      {
-        icon: "Ruler",
-        tooltip: "Régua",
-      },
-      {
-        icon: "TruckDelivery",
-        tooltip: "Entrega",
-      },
-      {
-        icon: "ArrowsRightLeft",
-        tooltip: "Ajustes",
-      },
-    ];
+    shortcuts = [];
   }
   return (
     <div class="absolute bg-white top-1/2 right-0">

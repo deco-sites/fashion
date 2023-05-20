@@ -31,8 +31,9 @@ import * as $$$$$$$$10 from "./sections/Highlights.tsx";
 import * as $$$$$$$$11 from "./sections/Features.tsx";
 import * as $$$$$$$$12 from "./sections/WishlistGallery.tsx";
 import * as $$$$$$$$13 from "./sections/Footer.tsx";
-import * as $$$$$$$$14 from "./sections/Shortcuts/Shortcuts.Well.tsx";
-import * as $$$$$$$$15 from "./sections/CookieConsent.tsx";
+import * as $$$$$$$$14 from "./sections/Testimonials/Testimonials.Well.tsx";
+import * as $$$$$$$$15 from "./sections/Shortcuts/Shortcuts.Well.tsx";
+import * as $$$$$$$$16 from "./sections/CookieConsent.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -175,7 +176,7 @@ const manifest = {
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$2,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$0,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$6,
-    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$16,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$13,
@@ -185,7 +186,9 @@ const manifest = {
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$7,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$5,
-    "deco-sites/fashion/sections/Shortcuts/Shortcuts.Well.tsx": $$$$$$$$14,
+    "deco-sites/fashion/sections/Shortcuts/Shortcuts.Well.tsx": $$$$$$$$15,
+    "deco-sites/fashion/sections/Testimonials/Testimonials.Well.tsx":
+      $$$$$$$$14,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$4,
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$12,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
