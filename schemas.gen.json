@@ -7640,6 +7640,13 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZBUS9GQVEuS0FUSUFVLnRzeA==@Props": {
       "type": "object",
       "properties": {
+        "subtitletop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitletop"
+        },
         "questions": {
           "type": "array",
           "items": {
@@ -7660,10 +7667,22 @@
             ]
           },
           "title": "Questions"
+        },
+        "subtitlebot": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitlebot"
+        },
+        "botao": {
+          "type": "string",
+          "title": "Botao"
         }
       },
       "required": [
-        "questions"
+        "questions",
+        "botao"
       ],
       "title": "deco-sites/fashion/sections/FAQ/FAQ.KATIAU.tsx@Props"
     },
