@@ -43,7 +43,7 @@ export default function CookieConsent(
               strokeWidth={2}
             />
           </a>
-          <button class="btn rounded-none text-white normal-case mt-2 sm:mt-0 p">
+          <button class="btn rounded-none text-white normal-case mt-2 sm:mt-0 p bg-[#273746] hover:bg-[#273746]">
             {buttonText}
           </button>
         </div>
