@@ -11,8 +11,10 @@ type Time = {
 };
 
 function timeLeft(eventDate: Date): Time {
-  const currentDate = new Date()
-  const timeLeftInMilliseconds = Math.abs(currentDate.getTime() - eventDate.getTime()) 
+  const currentDate = new Date();
+  const timeLeftInMilliseconds = Math.abs(
+    currentDate.getTime() - eventDate.getTime(),
+  );
   const hours = Math.floor(timeLeftInMilliseconds / 36e5).toString();
   const minutes = Math.floor(timeLeftInMilliseconds / 6e4).toString();
   const seconds = Math.floor(timeLeftInMilliseconds / 1e3).toString();
