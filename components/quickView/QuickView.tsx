@@ -1,14 +1,14 @@
 import { useId } from "preact/hooks";
-import Modal from "$store/components/ui/Modal.tsx";
+import Modal from "./QuickViewModal.tsx";
 import Loading from "$store/components/ui/Loading.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import InputNumber from "$store/components/ui/InputNumber.tsx";
-import Button from "$store/components/ui/Button.tsx";
+import InputNumber from "./QuickViewInputNumber.tsx";
+import Button from "./QuickViewButton.tsx";
 import SliderJS from "$store/components/ui/SliderJS.tsx";
 import { Suspense } from "preact/compat";
 import { useSignal } from "@preact/signals";
-import ProductSelector from "$store/components/product/ProductVariantSelector.tsx";
+import QuickViewSelector from "./QuickViewSelector.tsx";
 import { priceFormatter } from "$store/sdk/formatPrice.ts";
 import Avatar from "$store/components/ui/Avatar.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
@@ -114,7 +114,7 @@ function QuickView(
                 </span>
               </div>
               {/* Como podemos selecionar o sku com o product selector sem linkar para um produto na PDP? apenas selecionando o skuId? */}
-              <ProductSelector
+              <QuickViewSelector
                 product={product}
                 variant="ghost"
                 shouldLink={false}
