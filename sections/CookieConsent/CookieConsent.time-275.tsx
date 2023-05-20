@@ -1,4 +1,3 @@
-import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Props {
@@ -8,34 +7,35 @@ export interface Props {
   buttonText: string;
 }
 
-function CookieConsent({ title, middleText, footerText, buttonText }: Props) {
-  // const id = `cookie-consent-${useId()}`;
-
+export default function CookieConsent(
+  { title, middleText, footerText, buttonText }: Props,
+) {
   return (
-    <>
-      {
-        /* <div
-        id={id}
-        class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
-      > */
-      }
-
-      <div class="container px-3 py-3 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-base-100 ">
-        <div class="p-4 bg-gray-200 flex flex-col w-full font-serif">
-          <span class="flex-grow text-xl ">
-            {title}
-          </span>
-          <span class="flex-grow text-sm">
+    <div class="w-full h-full flex justify-center content-end">
+      <div class="w-4/5 flex justify-between flex-col shadow-md p-6 absolute bottom-4">
+        <div>
+          <div class="flex justify-between items-center">
+            <h2 class="text-xl">{title}</h2>
+            <button>
+              <Icon
+                class=" group-hover:text-black"
+                id="XMark"
+                width={20}
+                height={20}
+                strokeWidth={2}
+              />
+            </button>
+          </div>
+          <p class="my-2 text-base">
             {middleText}
-          </span>
-
+          </p>
+        </div>
+        <div class="flex justify-between flex-col sm:flex-row">
           <a
-            href="https://www.deco.cx"
-            class="flex items-center text-green-800"
+            href="#"
+            class="text-sm text-[#6d8b61] flex items-center underline"
           >
-            <span class="underline text-sm">
-              {footerText}
-            </span>
+            {footerText}
             <Icon
               id="ChevronRight"
               size={14}
@@ -43,24 +43,11 @@ function CookieConsent({ title, middleText, footerText, buttonText }: Props) {
               strokeWidth={2}
             />
           </a>
-        </div>
-
-        <div class="flex flex-col sm:flex-col w-full sm:w-auto justify-end">
-          <Button
-            data-button-cc-close
-            class="btn-outline hover:bg-transparent p-2"
-          >
-            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-          </Button>
-          <Button class="bg-slate-700" data-button-cc-accept>
+          <button class="btn rounded-none text-white normal-case mt-2 sm:mt-0 p">
             {buttonText}
-          </Button>
+          </button>
         </div>
       </div>
-      {/* </div> */}
-      {/* <script type="module" dangerouslySetInnerHTML={{ __html: script(id) }} /> */}
-    </>
+    </div>
   );
 }
-
-export default CookieConsent;
