@@ -33,7 +33,7 @@ export default function CookieConsent(
         <div class="flex justify-between flex-col sm:flex-row">
           <a
             href="#"
-            class="text-sm text-[#6d8b61] flex items-center underline"
+            class="text-sm text-secondary flex items-center underline"
           >
             {footerText}
             <Icon
@@ -43,7 +43,7 @@ export default function CookieConsent(
               strokeWidth={2}
             />
           </a>
-          <button class="btn rounded-none text-white normal-case mt-2 sm:mt-0 p bg-[#273746] hover:bg-[#273746]">
+          <button class="btn rounded-none text-white normal-case mt-2 sm:mt-0 p bg-primary hover:bg-primary">
             {buttonText}
           </button>
         </div>
