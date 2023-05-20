@@ -1,6 +1,14 @@
-## Qual a section que voce esta fazendo?
+## What is this contribution about?
 
-<!-- Adicione links do figma das variacoes que voce fez. Tambem adicione links do admin para o preview da section que voce fez -->
+<!-- Write a small text about what and why you are doing what you are doing -->
+
+## How to test it?
+
+<!-- Add the steps for the reviewer to test your feature/bug fix -->
+
+## Extra info
+
+<!-- Add some more extra info about your PR, like screenshots, nice gifs etc -->
 
 ## Checklist
 
