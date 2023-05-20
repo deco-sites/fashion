@@ -29,6 +29,15 @@ export default {
     container: {
       center: true,
     },
+    fontFamily: {
+      "albert": ["Albert Sans", "sans-serif"],
+    },
+    colors: {
+      "darkgreen": "#6D8B61",
+      "figmaAccent": "#E37A69",
+      "textwhite": "#FFFFFF",   
+      "btnblue": "#273746",   
+    },
     extend: {
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
