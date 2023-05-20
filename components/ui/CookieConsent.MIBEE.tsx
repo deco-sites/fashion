@@ -47,7 +47,10 @@ function CookieConsent() {
             </Button>
           </div>
           <span class="flex-grow text-sm">
-            Usamos cookies de terceiros para personalizar o conteúdo, fornecer recursos de mídia social e analisar nosso tráfego. Também compartilhamos informações sobre o uso de nosso site com nossos parceiros de mídia social, publicidade e análise.
+            Usamos cookies de terceiros para personalizar o conteúdo, fornecer
+            recursos de mídia social e analisar nosso tráfego. Também
+            compartilhamos informações sobre o uso de nosso site com nossos
+            parceiros de mídia social, publicidade e análise.
           </span>
 
           <a href="https://www.deco.cx" class="flex">
@@ -58,7 +61,7 @@ function CookieConsent() {
               <Icon id="ChevronRight" width={18} height={18} strokeWidth={2} />
             </span>
           </a>
-            <Button data-button-cc-accept class="w-full">Aceitar</Button>
+          <Button data-button-cc-accept class="w-full">Aceitar</Button>
         </div>
       </div>
       <script type="module" dangerouslySetInnerHTML={{ __html: script(id) }} />
