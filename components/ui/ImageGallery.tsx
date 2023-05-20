@@ -71,8 +71,8 @@ function ImageGallery(
       <div
         class={`mt-11 md:mt-20 ${
           variant === "normal"
-            ? "grid grid-cols-2 gap-4 md:flex"
-            : "grid grid-cols-2 grid-rows-3 gap-4 md:grid-rows-[repeat(3,minmax(0,320px))]"
+            ? "grid grid-cols-2 gap-4 md:flex md:gap-8"
+            : "grid grid-cols-2 grid-rows-3 gap-4 md:grid-rows-[repeat(3,minmax(0,320px))] md:gap-x-10 md:gap-y-8"
         }`}
       >
         {images.map(({ link, mobile, desktop, alt }, index) => (
