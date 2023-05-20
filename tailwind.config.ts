@@ -58,8 +58,8 @@ export default {
           },
         },
         "slideleft": {
-          "0%": {transform: "translate(100vw,0)"},
-          "100%": {transform: "translate(-100%,0)"},
+          "0%": { transform: "translate(100vw,0)" },
+          "100%": { transform: "translate(-100%,0)" },
         },
       },
     },
