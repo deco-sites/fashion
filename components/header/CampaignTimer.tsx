@@ -30,14 +30,24 @@ function CampaignTimer(
           <>
             <span className="px-3 max-w-lg">{campaign_data.text}</span>
             <CountDownTimer endDate={campaign_data.endTime} />
-            {campaign_data.coupon && (<CouponCopy  btnText={campaign_data.btnText} coupon={campaign_data.coupon}/>)}
+            {campaign_data.coupon && (
+              <CouponCopy
+                btnText={campaign_data.btnText}
+                coupon={campaign_data.coupon}
+              />
+            )}
           </>
         )
         : (
           <>
             <CountDownTimer endDate={campaign_data.endTime} />
             <span className="px-3 max-w-lg">{campaign_data.text}</span>
-            {campaign_data.coupon && (<CouponCopy  btnText={campaign_data.btnText} coupon={campaign_data.coupon}/>)}
+            {campaign_data.coupon && (
+              <CouponCopy
+                btnText={campaign_data.btnText}
+                coupon={campaign_data.coupon}
+              />
+            )}
           </>
         )}
     </div>
