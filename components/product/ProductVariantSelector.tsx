@@ -4,9 +4,13 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
   product: Product;
+  variant?: "ghost" | "default";
+  shouldLink?: boolean;
 }
 
-function VariantSelector({ product, product: { url } }: Props) {
+function VariantSelector(
+  { product, product: { url }, variant = "default", shouldLink = true }: Props,
+) {
   const possibilities = useVariantPossibilities(product);
 
   return (
@@ -17,12 +21,21 @@ function VariantSelector({ product, product: { url } }: Props) {
           <ul class="flex flex-row gap-3">
             {Object.entries(possibilities[name]).map(([value, [link]]) => (
               <li>
-                <a href={link}>
-                  <Avatar
-                    content={value}
-                    variant={link === url ? "active" : "default"}
-                  />
-                </a>
+                {shouldLink
+                  ? (
+                    <a href={link}>
+                      <Avatar
+                        content={value}
+                        variant={link === url ? "active" : variant}
+                      />
+                    </a>
+                  )
+                  : (
+                    <Avatar
+                      content={value}
+                      variant={link === url ? "active" : variant}
+                    />
+                  )}
               </li>
             ))}
           </ul>

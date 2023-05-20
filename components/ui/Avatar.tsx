@@ -19,10 +19,11 @@ const colors: Record<string, string> = {
   "active": "bg-neutral-focus text-neutral-content ring-neutral-focus ",
   "disabled": "bg-neutral-content text-neutral",
   "default": "bg-neutral text-neutral-content",
+  "ghost": "bg-transparent text-base border border-base-content",
 };
 
 interface Props {
-  variant?: "active" | "disabled" | "default";
+  variant?: "active" | "disabled" | "default" | "ghost";
   content: string;
 }
 
@@ -31,6 +32,7 @@ const variants = {
   disabled:
     `relative after:absolute after:left-0 after:top-1/2 after:h-[1px] after:bg-red-800 after:w-full after:block after:-rotate-45 after:content-[""]`,
   default: "",
+  ghost: "",
 };
 
 function Avatar({ content, variant = "default" }: Props) {
