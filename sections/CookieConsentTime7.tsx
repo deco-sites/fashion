@@ -44,9 +44,13 @@ export interface Props {
   };
 }
 
-export default function CookieConsentTime7(
-  { title, description, link, button }: Props,
-) {
+export default function CookieConsentTime7(props: Props) {
+  const {
+    title,
+    description,
+    link,
+    button,
+  } = props;
   const id = `cookie-consent-${useId()}`;
   return (
     <>
@@ -58,7 +62,7 @@ export default function CookieConsentTime7(
       >
         <div className="bg-base-100 shadow-lg p-4 sm:p-6 space-y-4 text-default  sm:w-[360px]">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl mt-0">{title}</h1>
+            <h1 className="text-xl mt-0">{title ? title : "Cookie policy"}</h1>
             <button
               className="flex btn btn-square min-h-[40px] h-10 w-10 rounded-none bg-base-100 border-none fill-base-500 hover:bg-base-100 hover:opacity-75"
               data-button-cc-close
@@ -81,10 +85,10 @@ export default function CookieConsentTime7(
           <p>{description}</p>
           <a
             className="link text-sm text-secondary focus:text-secondary-focus hover:text-secondary-focus flex items-center gap-1"
-            href={link.href}
-            target={link.target}
+            href={link.href ? link.href : "https://deco.cx"}
+            target={link.target ? link.target : "_blank"}
           >
-            {link.title}
+            {link.title ? link.title : "Read our cookie policy"}
             <svg
               width="20"
               height="20"
@@ -104,7 +108,7 @@ export default function CookieConsentTime7(
             className="btn btn-block bg-primary text-primary-content h-9 min-h-[36px] py-1 mt-5  w-full rounded-none normal-case focus:bg-primary-focus hover:bg-primary-focus"
             data-button-cc-accept
           >
-            {button}
+            {button ? button : "Allow"}
           </button>
         </div>
       </div>
