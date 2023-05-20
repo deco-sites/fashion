@@ -2,8 +2,6 @@
 import { useEffect, useState } from "preact/hooks";
 
 const Countdown = ({ date }: { date: string }) => {
-    console.log(date)
-
     const now = new Date().getTime()
     const futureDate = new Date(date).getTime()
 
