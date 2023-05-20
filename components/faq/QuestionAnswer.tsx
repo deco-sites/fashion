@@ -13,30 +13,30 @@ function QuestionAnswer({ questionAnswer }: { questionAnswer: Question }) {
       {/* Mobile Version */}
       <div className="md:hidden relative">
         <div class="border-t border-gray-400 py-2">
-            <details>
+          <details>
             <summary class="flex justify-between py-2 text-lg">
-                {question}
-                <Icon id="ChevronDown" width={20} height={20} strokeWidth={2} />
+              {question}
+              <Icon id="ChevronDown" width={20} height={20} strokeWidth={2} />
             </summary>
             <p>
-                {answer}
+              {answer}
             </p>
-            </details>
+          </details>
         </div>
       </div>
 
       {/* Desktop Version */}
       <div className="hidden md:block relative">
         <div class="border-t border-gray-400 py-2">
-            <details>
+          <details>
             <summary class="flex justify-between py-2 text-lg">
-                {question}
-                <Icon id="ChevronDown" width={20} height={20} strokeWidth={2} />
+              {question}
+              <Icon id="ChevronDown" width={20} height={20} strokeWidth={2} />
             </summary>
             <p>
-                {answer}
+              {answer}
             </p>
-            </details>
+          </details>
         </div>
       </div>
     </>

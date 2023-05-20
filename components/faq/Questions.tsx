@@ -7,27 +7,27 @@ function QuestionsComponent({ questions }: {
 }) {
   return (
     <>
-        {/* Mobile Version */}
-        <div className="md:hidden relative">
-            <div class="justify-left py-4">
-                <ul>
-                {questions.map((questionAnswer) => (
-                    <QuestionAnswer questionAnswer={questionAnswer} />
-                ))}
-                </ul>
-            </div>
+      {/* Mobile Version */}
+      <div className="md:hidden relative">
+        <div class="justify-left py-4">
+          <ul>
+            {questions.map((questionAnswer) => (
+              <QuestionAnswer questionAnswer={questionAnswer} />
+            ))}
+          </ul>
         </div>
+      </div>
 
-        {/* Desktop Version */}
-        <div className="hidden md:block relative">
-            <div class="justify-left py-4">
-                <ul>
-                {questions.map((questionAnswer) => (
-                    <QuestionAnswer questionAnswer={questionAnswer} />
-                ))}
-                </ul>
-            </div>
+      {/* Desktop Version */}
+      <div className="hidden md:block relative">
+        <div class="justify-left py-4">
+          <ul>
+            {questions.map((questionAnswer) => (
+              <QuestionAnswer questionAnswer={questionAnswer} />
+            ))}
+          </ul>
         </div>
+      </div>
     </>
   );
 }
