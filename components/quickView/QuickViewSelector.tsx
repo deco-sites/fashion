@@ -28,12 +28,12 @@ function VariantSelector(
         )
         : (
           Object.keys(possibilities).map((name) => (
-            <li class="flex flex-col gap-2">
+            <li class="flex flex-col gap-2" key={name}>
               <span class="text-sm">{name}</span>
               <ul class="flex flex-row gap-3">
                 {Object.entries(possibilities[name]).map(([value, [link]]) => {
                   return (
-                    <li>
+                    <li key={value}>
                       {shouldLink
                         ? (
                           <a href={link}>

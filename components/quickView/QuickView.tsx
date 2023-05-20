@@ -61,11 +61,25 @@ function QuickView(
           } md:max-h-[632px] md:max-w-[600px] md:min-h-[632px] md:min-w-[600px]`}
         >
           <div class="relative" id={id}>
+            <div className="absolute top-7 right-7 left-auto">
+              {/* Não temos o ícone do figma disponível */}
+              <Icon
+                class="text-base-400"
+                width={20}
+                height={20}
+                id="Heart"
+                strokeWidth={1}
+              />
+            </div>
+            <div className="absolute top-4 left-4 right-auto bg-accent py-1 px-2">
+              <p className="text-sm">40% OFF</p>
+            </div>
             <Slider class="carousel carousel-center w-full h-full col-span-full row-span-full scrollbar-none gap-6">
               {product.image?.map((image, index) => (
                 <Slider.Item
                   index={index}
                   class="carousel-item w-full h-full"
+                  key={image.alternateName}
                 >
                   <img
                     class="w-full h-full object-cover"
@@ -74,10 +88,10 @@ function QuickView(
                     height={HEIGHT}
                     width={WIDTH}
                   />
-                  <Slider.PrevButton class="absolute left-8 top-1/2">
+                  <Slider.PrevButton class="absolute left-8 top-1/2 disabled:opacity-30">
                     <Icon size={20} id="ChevronLeft" strokeWidth={2} />
                   </Slider.PrevButton>
-                  <Slider.NextButton class="absolute right-8 top-1/2">
+                  <Slider.NextButton class="absolute right-8 top-1/2 disabled:opacity-30">
                     <Icon size={20} id="ChevronRight" strokeWidth={2} />
                   </Slider.NextButton>
                 </Slider.Item>
@@ -130,6 +144,7 @@ function QuickView(
                   <span class="text-sm mb-1">Cor</span>
                   {productColorVariants.map((property) => (
                     <QuickViewAvatar
+                      key={property.value}
                       content={transformColorValue(property?.value || "")}
                       variant={colorSelected.value === property.value
                         ? "active"

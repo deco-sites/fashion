@@ -39,8 +39,8 @@ const headerStyles = {
 };
 
 const headerPositionStyles = {
-  "absolute-right": "absolute top-6 right-2",
-  "absolute-left": "absolute top-6 left-2",
+  "absolute-right": "absolute top-6 right-6",
+  "absolute-left": "absolute top-6 left-6",
   "fixed": "flex px-4 py-6 justify-between items-center",
 };
 
@@ -108,7 +108,7 @@ const Modal = ({
               <span class="font-medium text-2xl">{title}</span>
             </h1>
             <Button
-              class="btn btn-ghost "
+              class="border border-base-300 bg-transparent rounded-full p-3 text-base-500 hover:text-white outline-none ring-0 focus:outline-none"
               onClick={onClose}
             >
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
