@@ -24,8 +24,11 @@ function Testimonials({ title, description, testimonials }: TestimonialsProps) {
   );
 }
 
-function CardTestimonial({ dataTestemunial }: { dataTestemunial: Testimonial }) {
-  const { logoVector, testimonial, person, nameSurname, positionSurname } = dataTestemunial;
+function CardTestimonial(
+  { dataTestemunial }: { dataTestemunial: Testimonial },
+) {
+  const { logoVector, testimonial, person, nameSurname, positionSurname } =
+    dataTestemunial;
   return (
     <div>
       {logoVector && (
@@ -54,5 +57,6 @@ function CardTestimonial({ dataTestemunial }: { dataTestemunial: Testimonial }) 
     </div>
   );
 }
+
 
 export default Testimonials;
