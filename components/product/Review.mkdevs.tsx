@@ -1,5 +1,6 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import { StateUpdater, useMemo, useState } from "preact/hooks";
+import { getTimeAgo } from "$store/sdk/time.ts";
 
 export interface Review {
   id: string;
@@ -68,11 +69,7 @@ function ReviewsPaginator({ page, setPage, pageCount }: PaginatorProps) {
         <button
           disabled={num <= 0 || num > pageCount}
           onClick={() => setPage(num - 1)}
-          class={`rounded-full p-2 w-10 h-10 flex items-center justify-center disabled:opacity-0
-                        ${
-            num === page + 1 ? "bg-black text-white" : "hover:bg-gray-200"
-          }
-                `}
+          class={`rounded-full p-2 w-10 h-10 flex items-center justify-center disabled:opacity-0 ${num === page + 1 ? "bg-black text-white" : "hover:bg-gray-200"}`}
         >
           {num}
         </button>
@@ -89,31 +86,8 @@ function ReviewsPaginator({ page, setPage, pageCount }: PaginatorProps) {
   );
 }
 
-function getTimeAgo(date: Date): string {
-  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
-  const intervals = [
-    { label: "year", seconds: 31536000 },
-    { label: "month", seconds: 2592000 },
-    { label: "week", seconds: 604800 },
-    { label: "day", seconds: 86400 },
-    { label: "hour", seconds: 3600 },
-    { label: "minute", seconds: 60 },
-  ];
-
-  for (let i = 0; i < intervals.length; i++) {
-    const interval = intervals[i];
-    const count = Math.floor(seconds / interval.seconds);
-    if (count >= 1) {
-      return `${count} ${interval.label}${count > 1 ? "s" : ""} ago`;
-    }
-  }
-
-  return "just now";
-}
-
 function ProductReview(props: Review) {
-  const reviewDate = new Date(props.date);
-  const diffDate = getTimeAgo(reviewDate);
+  const timeAgo = getTimeAgo(new Date(props.date));
 
   return (
     <div class="w-full">
@@ -132,7 +106,7 @@ function ProductReview(props: Review) {
         </div>
         <div class="lg:mr-auto lg:w-2/3 lg:flex lg:flex-col w-full">
           <div class="flex gap-3 items-center justify-center mt-2 lg:mr-auto">
-            <div class="rating">
+            <div class="rating pointer-events-none">
               {range(0, 4).map((num) => (
                 <input
                   type="radio"
@@ -143,7 +117,7 @@ function ProductReview(props: Review) {
               ))}
             </div>
             <span class="text-[#787878]">{"\u2022"}</span>
-            <p class="text-[#787878]">{diffDate}</p>
+            <p class="text-[#787878]">{timeAgo}</p>
           </div>
           <h5 class="text-lg lg:text-xl mt-4">{props.title}</h5>
           <p class="text-sm lg:text-lg mt-2">{props.content}</p>
@@ -192,6 +166,7 @@ function ProductReviews({ title, reviews, pageSize }: Props) {
             {range(0, 9).map((num) => {
               return (
                 <input
+                  onClick={e => e.preventDefault()}
                   type="radio"
                   name={`rating-10`}
                   class={`mask mask-star-2 bg-orange-400 
@@ -254,7 +229,7 @@ function ProductReviews({ title, reviews, pageSize }: Props) {
 }
 
 function Divider() {
-  return <div class="my-4 bg-gray-400 h-[1px] w-full px-2" />;
+  return <div class="my-4 bg-gray-400 h-[1px] w-full px-2 md:my-6 lg:my-10" />;
 }
 
 // Icons
