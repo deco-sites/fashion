@@ -7202,6 +7202,39 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerPLP.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLktpbG8udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "benefits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "srcImg": {
+                "type": "string",
+                "title": "Src Img"
+              },
+              "benefitsTitle": {
+                "type": "string",
+                "title": "Benefits Title"
+              },
+              "benefitsDesc": {
+                "type": "string",
+                "title": "Benefits Desc"
+              }
+            },
+            "required": [
+              "srcImg",
+              "benefitsTitle",
+              "benefitsDesc"
+            ]
+          },
+          "title": "Benefits"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/sections/Benefits/Benefits.Kilo.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
       "properties": {
@@ -10850,6 +10883,11 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLktpbG8udHN4": {
       "title": "deco-sites/fashion/sections/Benefits/Benefits.Kilo.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLktpbG8udHN4@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],

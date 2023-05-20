@@ -1,4 +1,12 @@
-export default function Benefits() {
+export interface Props {
+  benefits?: Array<{
+    srcImg: string;
+    benefitsTitle: string;
+    benefitsDesc: string;
+  }>;
+}
+
+export default function Benefits({ benefits }: Props) {
   return (
     <div className="flex flex-col items-center justify-center p-4">
       <div className="text-3xl w-fit text-[#292929]">
@@ -8,89 +16,42 @@ export default function Benefits() {
         Description of benefits
       </div>
       <div className="flex flex-col gap-2 w-[100%] md:flex-row">
-        <div className="flex flex-row items-center gap-4 my-2 mx-auto w-[80%] md:border-r md:border-solid md:border-base-300">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 19 18"
-              fill="none"
-            >
-              <path
-                d="M5.15107 17.9991C8.56925 17.9991 10.5134 16.4315 12.7742 11.6269C14.0071 8.9799 15.0614 6.38449 16.2691 3.81546L17.7084 4.27841C18.0934 4.40674 18.2997 4.17527 18.1198 3.81546L16.3723 0.243765C16.244 -0.0128982 15.9609 -0.0392842 15.781 0.0386743L11.4381 1.683C11.0783 1.81133 11.1035 2.14595 11.4633 2.2479L12.7478 2.65928C11.6948 5.0496 10.3839 8.64648 9.32964 10.9073C8.14707 13.4259 7.55699 15.1986 5.55286 15.1986C3.54872 15.1986 3.2141 13.631 4.06205 11.3954C5.03833 8.8 6.68265 8.02881 8.55845 8.56852C9.07298 7.84891 9.45797 6.76948 9.61149 5.7932C9.07178 5.63849 8.42892 5.58811 7.89041 5.58811C4.85843 5.58811 1.85163 7.15568 0.618687 10.4443C-0.974064 14.6841 0.498751 17.9991 5.14987 17.9991H5.15107Z"
-                fill="#53b4da"
-              />
-            </svg>
-          </div>
-          <div className="content">
-            <p className="text-[#292929]">Benefit title</p>
-            <span className="text-neutral-500">Benefit description</span>
-          </div>
-        </div>
-        <hr className="md:hidden" />
-        <div className="flex flex-row items-center gap-4 my-2 mx-auto w-[80%] md:border-r md:border-solid md:border-base-300">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 19 18"
-              fill="none"
-            >
-              <path
-                d="M5.15107 17.9991C8.56925 17.9991 10.5134 16.4315 12.7742 11.6269C14.0071 8.9799 15.0614 6.38449 16.2691 3.81546L17.7084 4.27841C18.0934 4.40674 18.2997 4.17527 18.1198 3.81546L16.3723 0.243765C16.244 -0.0128982 15.9609 -0.0392842 15.781 0.0386743L11.4381 1.683C11.0783 1.81133 11.1035 2.14595 11.4633 2.2479L12.7478 2.65928C11.6948 5.0496 10.3839 8.64648 9.32964 10.9073C8.14707 13.4259 7.55699 15.1986 5.55286 15.1986C3.54872 15.1986 3.2141 13.631 4.06205 11.3954C5.03833 8.8 6.68265 8.02881 8.55845 8.56852C9.07298 7.84891 9.45797 6.76948 9.61149 5.7932C9.07178 5.63849 8.42892 5.58811 7.89041 5.58811C4.85843 5.58811 1.85163 7.15568 0.618687 10.4443C-0.974064 14.6841 0.498751 17.9991 5.14987 17.9991H5.15107Z"
-                fill="#53b4da"
-              />
-            </svg>
-          </div>
-          <div className="content">
-            <p className="text-[#292929]">Benefit title</p>
-            <span className="text-neutral-500">Benefit description</span>
-          </div>
-        </div>
-        <hr className="md:hidden" />
-        <div className="flex flex-row items-center gap-4 my-2 mx-auto w-[80%] md:border-r md:border-solid md:border-base-300">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 19 18"
-              fill="none"
-            >
-              <path
-                d="M5.15107 17.9991C8.56925 17.9991 10.5134 16.4315 12.7742 11.6269C14.0071 8.9799 15.0614 6.38449 16.2691 3.81546L17.7084 4.27841C18.0934 4.40674 18.2997 4.17527 18.1198 3.81546L16.3723 0.243765C16.244 -0.0128982 15.9609 -0.0392842 15.781 0.0386743L11.4381 1.683C11.0783 1.81133 11.1035 2.14595 11.4633 2.2479L12.7478 2.65928C11.6948 5.0496 10.3839 8.64648 9.32964 10.9073C8.14707 13.4259 7.55699 15.1986 5.55286 15.1986C3.54872 15.1986 3.2141 13.631 4.06205 11.3954C5.03833 8.8 6.68265 8.02881 8.55845 8.56852C9.07298 7.84891 9.45797 6.76948 9.61149 5.7932C9.07178 5.63849 8.42892 5.58811 7.89041 5.58811C4.85843 5.58811 1.85163 7.15568 0.618687 10.4443C-0.974064 14.6841 0.498751 17.9991 5.14987 17.9991H5.15107Z"
-                fill="#53b4da"
-              />
-            </svg>
-          </div>
-          <div className="content">
-            <p className="text-[#292929]">Benefit title</p>
-            <span className="text-neutral-500">Benefit description</span>
-          </div>
-        </div>
-        <hr className="md:hidden" />
-        <div className="flex flex-row items-center gap-4 my-2 mx-auto w-[80%]">
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 19 18"
-              fill="none"
-            >
-              <path
-                d="M5.15107 17.9991C8.56925 17.9991 10.5134 16.4315 12.7742 11.6269C14.0071 8.9799 15.0614 6.38449 16.2691 3.81546L17.7084 4.27841C18.0934 4.40674 18.2997 4.17527 18.1198 3.81546L16.3723 0.243765C16.244 -0.0128982 15.9609 -0.0392842 15.781 0.0386743L11.4381 1.683C11.0783 1.81133 11.1035 2.14595 11.4633 2.2479L12.7478 2.65928C11.6948 5.0496 10.3839 8.64648 9.32964 10.9073C8.14707 13.4259 7.55699 15.1986 5.55286 15.1986C3.54872 15.1986 3.2141 13.631 4.06205 11.3954C5.03833 8.8 6.68265 8.02881 8.55845 8.56852C9.07298 7.84891 9.45797 6.76948 9.61149 5.7932C9.07178 5.63849 8.42892 5.58811 7.89041 5.58811C4.85843 5.58811 1.85163 7.15568 0.618687 10.4443C-0.974064 14.6841 0.498751 17.9991 5.14987 17.9991H5.15107Z"
-                fill="#53b4da"
-              />
-            </svg>
-          </div>
-          <div className="content">
-            <p className="text-[#292929]">Benefit title</p>
-            <span className="text-neutral-500">Benefit description</span>
-          </div>
-        </div>
+        {benefits === undefined
+          ? <div>adiciona algo no library</div>
+          : (benefits.map((benefit, idx) => {
+            if (idx !== benefits.length - 1) {
+              return (
+                <>
+                  <div className="flex flex-row items-center gap-4 mx-auto w-[80%]">
+                    <div>
+                      <img src={benefit.srcImg} alt="benefit img" />
+                    </div>
+                    <div className="content">
+                      <p className="text-[#292929]">{benefit.benefitsTitle}</p>
+                      <span className="text-neutral-500">
+                        {benefit.benefitsDesc}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="divider md:divider-horizontal"></div>
+                </>
+              );
+            } else {return (
+                <div className="flex flex-row items-center gap-4 mx-auto w-[80%]">
+                  <div>
+                    <img src={benefit.srcImg} alt="benefit img" />
+                  </div>
+                  <div className="content">
+                    <p className="text-[#292929]">{benefit.benefitsTitle}</p>
+                    <span className="text-neutral-500">
+                      {benefit.benefitsDesc}
+                    </span>
+                  </div>
+                </div>
+              );}
+          }))}
+
+        {/*  */}
       </div>
     </div>
   );
