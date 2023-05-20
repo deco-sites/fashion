@@ -1,1 +1,1 @@
-export { default } from "$store/components/ui/Shortcuts.tsx";
+export { default } from "./Shortcuts.tsx";
