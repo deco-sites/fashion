@@ -2,6 +2,7 @@ import Image from "deco-sites/std/components/Image.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import { useState } from "preact/hooks";
 import QuickView from "$store/components/quickView/QuickView.tsx";
+import { priceFormatter } from "$store/sdk/formatPrice.ts";
 
 export interface Props {
   product: Product;
@@ -36,36 +37,56 @@ function ProductCard({
 
   const image = product.image ? product.image[0].url : "";
 
+  const priceCurrency = product.offers?.priceCurrency || "pt-br";
+
   return (
     <div
-      className="h-[504px] w-[316px] flex flex-col p-2 gap-4 cursor-pointer"
+      className="h-full w-full flex flex-col p-2 gap-4 cursor-pointer"
       onClick={() => setQuickViewIsOpen(true)}
     >
-      <div className="w-full h-[276px]">
+      <div className="w-full h-full">
         <Image
+          className="w-full min-h-[128px] sm:min-w-[276px]"
           src={image || ""}
           alt={"image.alt"}
-          width={276}
+          width={800}
           loading="lazy"
           aspect-ratio="1:1"
         />
       </div>
       <div>
         <p className="text-sm text-info-content text-info-content">
-          Label
+          {product.brand}
         </p>
-        <h4 className="text-lg text-base-500">
-          Product Name
+        <h4 className="text-lg text-base-500 truncate">
+          {product.name}
         </h4>
-        <p className="text-sm text-base-400">Description of the product</p>
+        <p className="text-sm text-base-400 truncate">{product.description}</p>
       </div>
       <div>
-        <p className="text-xs text-base-400">$ 999,00--</p>
+        {product.offers?.highPrice
+          ? (
+            <p className="text-xs text-base-400 line-through">
+              $ {product.offers?.highPrice}
+            </p>
+          )
+          : null}
         <div className="text-sm text-light">
-          <span className="text-xl text-accent mr-2">$ 999,00</span>ou 8x de
-          R$57,30
+          <span className="text-xl text-accent mr-2">
+            {priceFormatter(priceCurrency)
+              .format(
+                product?.offers?.lowPrice || 0,
+              )}
+          </span>ou 8x de {priceFormatter(priceCurrency)
+            .format(
+              (product?.offers?.lowPrice ?? 0) / 8,
+            )}
         </div>
       </div>
+      {
+        /* We actually don't have the rating yet, so we'll just hardcode it for now.
+      And we can't use tailwind colors, cause they don't work with svg. */
+      }
       <div className="flex gap-1 ">
         <StarIcon fill="#FFC240" />
         <StarIcon fill="#FFC240" />

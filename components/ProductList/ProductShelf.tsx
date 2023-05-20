@@ -32,13 +32,12 @@ function ProductShelf({
           <Slider.Item
             key={product.productID}
             index={index}
-            class="carousel-item w-[316px] sm:w-[292px] first:ml-0 last:mr-0"
+            class="carousel-item w-[144px] sm:w-[292px] first:ml-0 last:mr-0"
           >
             <ProductCard product={product} />
           </Slider.Item>
         ))}
       </Slider>
-
       <>
         <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
           <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
