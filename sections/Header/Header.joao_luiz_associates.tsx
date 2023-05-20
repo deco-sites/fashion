@@ -15,13 +15,17 @@
 // import { PriceFilter } from "$store/sections/Header/components/PriceFilter/index.tsx";
 
 export interface Props {
-  questions: {
-    question: string;
-    answer: string;
-  }[];
+  hamburguerData: {
+   name: string
+  }[]
+  cartData: {
+    name: string
+    quantity: string
+    price: string
+  }[]
 }
 
-export default function Header({ questions }: Props) {
+export default function Header({ hamburguerData,cartData }: Props) {
   const navBarCenter = [
     {
       name: "Category",
@@ -54,20 +58,7 @@ export default function Header({ questions }: Props) {
           />
         </svg>
       ),
-      data: [
-        {
-          id: 0,
-          name: "Homepage",
-        },
-        {
-          id: 1,
-          name: "Portfolio",
-        },
-        {
-          id: 2,
-          name: "About",
-        },
-      ],
+      data: hamburguerData,
     },
     {
       name: "Logo",
