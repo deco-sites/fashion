@@ -3,9 +3,18 @@ import SingleBanner from "$store/components/banners/SingleBanner.tsx";
 import { cva } from "class-variance-authority";
 
 export interface Props {
+  /**
+   * @title First banner configuration
+   */
   first: SingleBannerProps;
+  /**
+   * @title Second banner configuration
+   */
   second: SingleBannerProps;
-  layout: "1/1" | "2/1" | "1/2";
+  /**
+   * @title Banners layout
+   */
+  layout: "50% 50%" | "66% 33%" | "33% 66%";
 }
 
 const containerCVA = cva(["flex flex-col md:flex-row gap-2"]);
@@ -13,9 +22,9 @@ const containerCVA = cva(["flex flex-col md:flex-row gap-2"]);
 const firstContainerCVA = cva(["flex"], {
   variants: {
     layout: {
-      "1/1": "md:w-1/2",
-      "2/1": "md:w-2/3",
-      "1/2": "md:w-1/3",
+      "50% 50%": "md:w-1/2",
+      "66% 33%": "md:w-2/3",
+      "33% 66%": "md:w-1/3",
     },
   },
 });
@@ -23,9 +32,9 @@ const firstContainerCVA = cva(["flex"], {
 const secondContainerCVA = cva(["flex"], {
   variants: {
     layout: {
-      "1/1": "md:w-1/2",
-      "2/1": "md:w-1/3",
-      "1/2": "md:w-2/3",
+      "50% 50%": "md:w-1/2",
+      "66% 33%": "md:w-1/3",
+      "33% 66%": "md:w-2/3",
     },
   },
 });

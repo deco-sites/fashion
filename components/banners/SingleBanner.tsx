@@ -3,14 +3,29 @@ import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Props {
+  /**
+   * @title Container alignment
+   * @description Alignment of the container and texts inside
+   */
   position: "left" | "middle" | "right";
+
   tag: string;
   title: string;
   description: string;
 
+  /**
+   * @title Desktop background image
+   */
   desktop?: LiveImage;
+
+  /**
+   * @title Mobile background image
+   */
   mobile?: LiveImage;
 
+  /**
+   * @title Theme
+   */
   theme: "light" | "dark";
 
   primaryButton?: {
@@ -118,13 +133,13 @@ function SingleBanner(
 
         <div className="flex flex-col md:flex-row gap-2">
           {primaryButton && (
-            <button className={primaryButtonClass}>
+            <button href={primaryButton.href} className={primaryButtonClass}>
               {primaryButton.label}
             </button>
           )}
 
           {secondaryButton && (
-            <button className={secondaryButtonClass}>
+            <button href={secondaryButton.href} className={secondaryButtonClass}>
               {secondaryButton.label}
             </button>
           )}

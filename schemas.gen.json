@@ -7657,7 +7657,8 @@
             }
           ],
           "type": "string",
-          "title": "Position"
+          "title": "Container alignment",
+          "description": "Alignment of the container and texts inside"
         },
         "tag": {
           "type": "string",
@@ -7673,11 +7674,11 @@
         },
         "desktop": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Desktop"
+          "title": "Desktop background image"
         },
         "mobile": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Mobile"
+          "title": "Mobile background image"
         },
         "theme": {
           "anyOf": [
@@ -7744,29 +7745,29 @@
       "properties": {
         "first": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvYmFubmVycy9TaW5nbGVCYW5uZXIudHN4@Props",
-          "title": "First"
+          "title": "First banner configuration"
         },
         "second": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvYmFubmVycy9TaW5nbGVCYW5uZXIudHN4@Props",
-          "title": "Second"
+          "title": "Second banner configuration"
         },
         "layout": {
           "anyOf": [
             {
               "type": "string",
-              "const": "1/1"
+              "const": "50% 50%"
             },
             {
               "type": "string",
-              "const": "2/1"
+              "const": "66% 33%"
             },
             {
               "type": "string",
-              "const": "1/2"
+              "const": "33% 66%"
             }
           ],
           "type": "string",
-          "title": "Layout"
+          "title": "Banners layout"
         }
       },
       "required": [
