@@ -1,7 +1,7 @@
 import {
   default as ShortcutButton,
   Props as ShortcutButtonProps,
-} from "$store/components/shortcuts/ShortcutButton.tsx";
+} from "$store/components/ui/shortcuts/ShortcutButton.tsx";
 
 export interface Props {
   buttons: ShortcutButtonProps[];
