@@ -30,9 +30,6 @@ export default {
       center: true,
     },
     extend: {
-      fontFamily: {
-        minhaFonte: ["Albert Sans", "sans-serif"],
-      },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
         "slide-right": "slide-right-frame 0.4s ease normal",
