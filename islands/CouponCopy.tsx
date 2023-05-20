@@ -8,10 +8,8 @@ interface Props {
 export default function CouponCopy({ btnText, coupon }: Props) {
   const [copied, setCopied] = useState(false);
 
-  async function copyCoupon() {
-    if (navigator.clipboard) {
-     await navigator.clipboard.writeText(coupon);
-    }
+  function copyCoupon() {
+    navigator.clipboard.writeText(coupon);
     setCopied(true);
   }
 
