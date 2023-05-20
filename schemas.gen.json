@@ -88,6 +88,7 @@
               "deco-sites/fashion/sections/DoubleBanner.discipulos-do-saliby.tsx",
               "deco-sites/fashion/sections/Features.tsx",
               "deco-sites/fashion/sections/Footer.tsx",
+              "deco-sites/fashion/sections/FullBanner.discipulos-do-saliby.tsx",
               "deco-sites/fashion/sections/Header.tsx",
               "deco-sites/fashion/sections/Highlights.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
@@ -8176,6 +8177,48 @@
       "required": [],
       "title": "deco-sites/fashion/components/footer/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvYmFubmVycy9TaW5nbGVCYW5uZXIudHN4@Props[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvYmFubmVycy9TaW5nbGVCYW5uZXIudHN4@Props"
+      },
+      "title": "Props[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvYmFubmVycy9GdWxsQmFubmVyLmRpc2NpcHVsb3MtZG8tc2FsaWJ5LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvYmFubmVycy9TaW5nbGVCYW5uZXIudHN4@Props[]",
+          "title": "Banners"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Interval"
+        },
+        "style": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "dots"
+            },
+            {
+              "type": "string",
+              "const": "lines"
+            }
+          ],
+          "type": "string",
+          "title": "Style"
+        }
+      },
+      "required": [
+        "banners",
+        "style"
+      ],
+      "title": "deco-sites/fashion/components/banners/FullBanner.discipulos-do-saliby.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps": {
       "type": "object",
       "properties": {
@@ -11175,6 +11218,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Z1bGxCYW5uZXIuZGlzY2lwdWxvcy1kby1zYWxpYnkudHN4": {
+      "title": "deco-sites/fashion/sections/FullBanner.discipulos-do-saliby.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvYmFubmVycy9GdWxsQmFubmVyLmRpc2NpcHVsb3MtZG8tc2FsaWJ5LnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/FullBanner.discipulos-do-saliby.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/FullBanner.discipulos-do-saliby.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci50c3g=": {
       "title": "deco-sites/fashion/sections/Header.tsx",
       "type": "object",
@@ -12511,6 +12575,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Z1bGxCYW5uZXIuZGlzY2lwdWxvcy1kby1zYWxpYnkudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci50c3g="

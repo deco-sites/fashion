@@ -139,7 +139,10 @@ function SingleBanner(
           )}
 
           {secondaryButton && (
-            <button href={secondaryButton.href} className={secondaryButtonClass}>
+            <button
+              href={secondaryButton.href}
+              className={secondaryButtonClass}
+            >
               {secondaryButton.label}
             </button>
           )}
