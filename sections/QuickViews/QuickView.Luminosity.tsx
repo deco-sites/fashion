@@ -1,7 +1,7 @@
-import { useState } from "preact/hooks";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface QuickViewModalProps {
-  productsImages: Array<{ url: string; alt: string }>;
+  productsImages: Array<LiveImage>;
   category: string;
   name: string;
   description: string;
@@ -23,18 +23,6 @@ export default function QuickViewModal(
     sizes,
   }: QuickViewModalProps,
 ) {
-  const [itemQuantity, setItemQuantity] = useState<number>(0);
-
-  function increaseQty() {
-    setItemQuantity(itemQuantity + 1);
-  }
-
-  function decreaseQty() {
-    setItemQuantity((itemQuantity) =>
-      itemQuantity === 0 ? 0 : itemQuantity - 1
-    );
-  }
-
   function calcDiscount(): number {
     return ((originalPrice - promotionalPrice) / originalPrice) * 100;
   }
@@ -52,8 +40,7 @@ export default function QuickViewModal(
                 key={`slide-${index}`}
               >
                 <img
-                  src={img.url}
-                  alt={img.alt}
+                  src={img}
                   className="w-auto h-auto inline-block my-0 mx-auto align-middle"
                 />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -119,7 +106,7 @@ export default function QuickViewModal(
           </a>
 
           {/* Like product icon */}
-          <a className="absolute top-2 left-2 w-10 h-10 flex justify-center items-center rounded-full bg-transparent cursor-pointer focus:ring-2 focus:ring-blue-700 focus:outline-none lg:left-[87%]">
+          <a className="absolute top-2 left-2 w-10 h-10 flex justify-center items-center rounded-full bg-transparent cursor-pointer focus:ring-2 focus:ring-blue-700 focus:outline-none lg:left-[87%] transition-colors hover:bg-white">
             <svg
               width="24"
               height="24"
@@ -137,7 +124,7 @@ export default function QuickViewModal(
           </a>
 
           {/* Badge discount */}
-          <div className="absolute bottom-2 left-2 w-fit px-2 py-1 bg-[#E37A69] lg:bottom-[90%]">
+          <div className="absolute bottom-2 left-2 w-fit px-2 py-1 bg-secondary lg:bottom-[90%]">
             <p className="text-white">{Math.round(calcDiscount())}% OFF</p>
           </div>
         </div>
@@ -164,7 +151,7 @@ export default function QuickViewModal(
           <div className="w-full">
             {/* Product infos */}
             <div>
-              <p className="text-[#306ED9] text-xs">{category}</p>
+              <p className="text-primary text-xs">{category}</p>
               <h1 className="text-xl text-zinc-900">{name}</h1>
               <p className="text-zinc-500 text-xs">
                 {description}
@@ -174,26 +161,13 @@ export default function QuickViewModal(
             {/* Product price */}
             <div className="mt-2">
               <p className="text-xs line-through decoration-zinc-500 text-zinc-500">
-                R$ {originalPrice.toLocaleString("pt-br", {
-                  style: "decimal",
-                  maximumFractionDigits: 2,
-                })}
+                R$ {originalPrice.toFixed(2)}
               </p>
-              <h1 className="text-[#E37A69] text-lg">
-                R$ {promotionalPrice.toLocaleString("pt-br", {
-                  style: "decimal",
-                  maximumFractionDigits: 2,
-                })} {""}
+              <h1 className="text-secondary text-lg">
+                R$ {promotionalPrice.toFixed(2)} {""}
                 <span className="text-base text-zinc-600">
                   ou {maximumInstallments}x de R${" "}
-                  {(promotionalPrice / maximumInstallments)
-                    .toLocaleString(
-                      "pt-br",
-                      {
-                        style: "decimal",
-                        maximumFractionDigits: 2,
-                      },
-                    )}
+                  {(promotionalPrice / maximumInstallments).toFixed(2)}
                 </span>
               </h1>
             </div>
@@ -230,7 +204,7 @@ export default function QuickViewModal(
           <div className="w-full flex flex-col gap-2 mt-4">
             {/* Counter */}
             <div className="w-full h-10 p-2 flex justify-between items-center border border-zinc-400">
-              <button onClick={decreaseQty} className="cursor-pointer w-4 h-4">
+              <button className="cursor-pointer w-4 h-4">
                 <svg
                   width="16"
                   height="16"
@@ -247,9 +221,9 @@ export default function QuickViewModal(
                 </svg>
               </button>
 
-              <p>{itemQuantity}</p>
+              <p>10</p>
 
-              <button onClick={increaseQty} className="cursor-pointer w-4 h-4">
+              <button className="cursor-pointer w-4 h-4">
                 <svg
                   width="16"
                   height="16"
@@ -268,8 +242,8 @@ export default function QuickViewModal(
             </div>
 
             {/* Add to cart button */}
-            <button className="group w-full h-10 p-2 flex justify-center items-center bg-[#273746] hover:bg-white hover:border hover:border-[#546F4A]">
-              <p className="text-white group-hover:text-[#546F4A]">
+            <button className="group w-full h-10 p-2 flex justify-center items-center bg-primary hover:bg-white hover:border hover:border-secondary">
+              <p className="text-white group-hover:text-secondary">
                 Adicionar ao carrinho
               </p>
             </button>
