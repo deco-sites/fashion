@@ -5,51 +5,61 @@ export interface Props {
   /**
    * @title Cookie Title
    * @description Text displayed on first row
+   * @default Cookie policy
    */
   cookieTitle: string;
   /**
    * @title Icon
    * @description Close modal icon
+   * @default XMark
    */
   closeIcon: AvailableIcons;
   /**
    * @title Cookie content text
    * @description Modal text content
+   * @default We use third-party cookies order to personalize your experience.
    */
   cookieTextContent: string;
   /**
    * @title Policy text
    * @description
+   * @default Read our cookie policy
    */
   policyText: string;
   /**
    * @title Police Url
    * @description
+   * @default /
    */
   policyUrl: string;
   /**
    * @title Police target
    * @description Where to open the linked document.
+   * @default _blank
    */
   policyTarget?: "_blank" | "_self" | "_parent" | "_top";
   /**
    * @title Icon
    * @description Policy Icon
+   * @default ChevronRight
    */
   policyIcon: AvailableIcons;
   /**
    * @title Allow button text
    * @description Button text
+   * @default Allow
    */
   allowButtonText: string;
   /**
    * @title Modal width
    * @description .
+   * @default medium
    */
   modalWidth: "small" | "medium" | "large";
   /**
    * @title Modal width
    * @description .
+   * @default center
    */
   modalPosition: "left" | "center" | "right";
 }

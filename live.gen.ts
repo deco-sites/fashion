@@ -21,7 +21,7 @@ import * as $$$$$$$$0 from "./sections/BannerGrid.tsx";
 import * as $$$$$$$$1 from "./sections/BannerPLP.tsx";
 import * as $$$$$$$$2 from "./sections/Carousel.tsx";
 import * as $$$$$$$$3 from "./sections/CookieConsent.tsx";
-import * as $$$$$$$$4 from "./sections/CookieConsentV2.tsx";
+import * as $$$$$$$$4 from "./sections/CookieConsentDiscipulos-do-saliby.tsx";
 import * as $$$$$$$$5 from "./sections/DesignSystem.tsx";
 import * as $$$$$$$$6 from "./sections/Features.tsx";
 import * as $$$$$$$$7 from "./sections/Footer.tsx";
@@ -176,7 +176,8 @@ const manifest = {
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$2,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$3,
-    "deco-sites/fashion/sections/CookieConsentV2.tsx": $$$$$$$$4,
+    "deco-sites/fashion/sections/CookieConsentDiscipulos-do-saliby.tsx":
+      $$$$$$$$4,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$5,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$6,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$7,
