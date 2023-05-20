@@ -36,7 +36,9 @@ function Testimonial({
           fill="#292929"
         />
       </svg>
-      <p className="my-9 text-base-content text-center text-xl">{`"${content}"`}</p>
+      <p className="my-9 text-base-content text-center text-xl">
+        {`"${content}"`}
+      </p>
       <div>
         <Image className="rounded-full" width={60} height={60} src={image} />
       </div>
