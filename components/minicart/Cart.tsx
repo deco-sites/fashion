@@ -6,6 +6,9 @@ import { sendEvent } from "$store/sdk/analytics.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 import CartItem from "./CartItem.tsx";
 import Coupon from "./Coupon.tsx";
+import SellerCode from "./SellerCode.tsx";
+import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
+import type { Image } from "deco-sites/std/components/types.ts";
 
 declare global {
   interface Window {
@@ -15,10 +18,18 @@ declare global {
   }
 }
 
+export interface Props {
+  freeShippingObjectiveQuantity: number;
+  shippingIcon?: {
+    src?: Image;
+    alt?: string;
+  };
+}
+
 const CHECKOUT_URL =
   "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
 
-function Cart() {
+function Cart({ freeShippingObjectiveQuantity, shippingIcon }: Props) {
   const { displayCart } = useUI();
   const { cart, loading, mapItemsToAnalyticsItems } = useCart();
   const isCartEmpty = cart.value?.items.length === 0;
@@ -28,6 +39,7 @@ function Cart() {
   );
   const locale = cart.value?.clientPreferencesData.locale;
   const currencyCode = cart.value?.storePreferencesData.currencyCode;
+  console.log(cart);
 
   if (cart.value === null) {
     return null;
@@ -52,6 +64,10 @@ function Cart() {
 
   return (
     <>
+      <FreeShippingProgressBar
+        freeShippingObjectiveQuantity={freeShippingObjectiveQuantity}
+        shippingIcon={shippingIcon}
+      />
       {/* Cart Items */}
       <ul
         role="list"
@@ -67,7 +83,7 @@ function Cart() {
       {/* Cart Footer */}
       <footer>
         {/* Subtotal */}
-        <div class="border-t border-base-200 py-4 flex flex-col gap-4">
+        <div class="border-t border-base-200 py-2 flex flex-col">
           {discounts?.value && (
             <div class="flex justify-between items-center px-4">
               <span class="text-sm">Descontos</span>
@@ -76,7 +92,14 @@ function Cart() {
               </span>
             </div>
           )}
+          <div class="w-full flex justify-between px-4 text-sm">
+            <span>Subtotal</span>
+            <span class="px-4">
+              {total ? formatPrice(total.value / 100, currencyCode!, locale) : ""}
+            </span>
+          </div>
           <Coupon />
+          <SellerCode />
         </div>
         {/* Total */}
         {total?.value && (
@@ -101,6 +124,7 @@ function Cart() {
             <Button
               data-deco="buy-button"
               class="w-full"
+              style={{ background: "#273746" }}
               disabled={loading.value || cart.value.items.length === 0}
               onClick={() => {
                 sendEvent({
@@ -119,7 +143,7 @@ function Cart() {
                 });
               }}
             >
-              Finalizar Compra
+              Fechar pedido
             </Button>
           </a>
         </div>
