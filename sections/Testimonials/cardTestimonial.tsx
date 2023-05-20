@@ -3,6 +3,7 @@ import { Testimonial } from "./typeTestimonial.ts";
 function CardTestimonial(testimonial: Testimonial) {
   const srcDefault =
     "https://raw.githubusercontent.com/EversonDias/fashion/everson-dias/Testimonials/sections/Testimonials/logo-deco-testimonial.svg";
+  const photoUndefined = "https://raw.githubusercontent.com/EversonDias/fashion/everson-dias/Testimonials/sections/Testimonials/photo-undefined.svg";
   return (
     <div className="mt-10 mb-10 w-80 flex flex-col m-auto text-center md:w-11/12">
       <img
@@ -15,7 +16,7 @@ function CardTestimonial(testimonial: Testimonial) {
       </p>
       <img
         className="w-14 m-auto rounded-full mb-6"
-        src={testimonial.photo}
+        src={testimonial.photo || photoUndefined}
         alt={testimonial.name}
       />
       <p className="text-[18px] font-normal text-neutral-800">
