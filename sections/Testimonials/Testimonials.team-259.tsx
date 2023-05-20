@@ -1,4 +1,4 @@
-import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 
