@@ -1,0 +1,1 @@
+export { default } from "$store/islands/FAQ.time46.tsx";
