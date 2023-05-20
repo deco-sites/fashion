@@ -36,17 +36,15 @@ function CookieConsent() {
         id={id}
         class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
       >
-      <div class="container px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-opacity-75 bg-base-100">
+        <div class="container px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-opacity-75 bg-base-100">
           <div class="flex flex-row items-center sm:flex-row gap-2 sm:w-auto">
             <span class="flex text-xl">
               Cookie policy
             </span>
           </div>
 
-
           <span class="flex-grow text-base">
-            We use third-party cookies order to
-            personalize your experience.
+            We use third-party cookies order to personalize your experience.
           </span>
 
           <a href="https://www.deco.cx">
