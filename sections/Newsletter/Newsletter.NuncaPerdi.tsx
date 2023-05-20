@@ -3,18 +3,18 @@ export type TitleItem = {
 };
 
 export type ContentItem = {
-  input: { type: string; placeholder: string };
-  button: { href: string; text: string };
-  description: { text: string; link: string };
-};
+    input: { type: string, placeholder: string }
+    button: { href: string, text: string }
+    description: { text: string, link: string };
+}
 
 export interface Props {
   title: TitleItem;
   content: ContentItem;
 }
 
-function ModalNewsLetter(
-  { title, content }: Props,
+function NewsLetter(
+    { title = { text: "Sign up for our newsletter" }, content = { input = { type: "text", placeholder: "Enter your email" }, button = { href: "#", text: "Subscribe" }, description = { text: "By subscribing you agree to with our ", link: "Privacy Policy." } } }: Props,
 ) {
   return (
     <div class="hero min-h-screen bg-base-200">
@@ -45,4 +45,4 @@ function ModalNewsLetter(
   );
 }
 
-export default ModalNewsLetter;
+export default NewsLetter;
