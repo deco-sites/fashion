@@ -1,7 +1,7 @@
 import type { BottomPart } from "./Faq.tsx";
 
 function BottomPartComponent({ bottomPart }: {
-bottomPart: BottomPart;
+  bottomPart: BottomPart;
 }) {
   const { title, text, contactUrl } = bottomPart;
   return (
@@ -13,7 +13,14 @@ bottomPart: BottomPart;
         {text}
       </p>
       <div class="flex justify-center">
-      <a href={contactUrl} target="_blank" rel="noopener noreferrer" class="btn">Contato</a>
+        <a
+          href={contactUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+        >
+          Contato
+        </a>
       </div>
     </div>
   );
