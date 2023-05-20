@@ -3,7 +3,6 @@ import Icon from "$store/components/ui/Icon.tsx";
 export interface Props {
   description: string;
   linkSignIn: string;
-  linkLoginFacebook: string;
 }
 
 function Auth({ description, linkSignIn, linkLoginFacebook }: Props) {
