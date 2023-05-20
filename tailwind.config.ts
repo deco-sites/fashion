@@ -29,7 +29,35 @@ export default {
     container: {
       center: true,
     },
+    fontSize: {
+      xxs: ['8px', '12px'],
+      xs: ['12px', '16px'],
+      sm: ['14px', '20px'],
+      base: ['16px', '24px'],
+      lg: ['20px', '28px'],
+      xl: ['24px', '32px'],
+      "sm-standard": ['20px', '28px'],
+    },
+    colors: {
+      "accent-standard": "#e37a69",
+      "primary": "hsl(180 100% 10%)",
+      "secondary": "hsl(0 39% 39%)",
+      "accent": "hsl(150 100% 50%)",
+      "neutral": "hsl(0 0% 20%)",
+      "base-100": "hsl(0 0% 100%)",
+      "success": "hsl(150 62% 95%)",
+      "warning": "hsl(43 100% 95%)",
+      "error": "hsl(9 100% 95%)",
+      "info": "hsl(220 100% 97%)",
+      "white": "#FFFFFF",
+      "button-timer": "#273746",
+    },
     extend: {
+      spacing: {
+        "5": "0.313rem",
+        "76": "4.75rem",
+        "1440": "90rem",
+      },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
         "slide-right": "slide-right-frame 0.4s ease normal",
