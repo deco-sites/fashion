@@ -95,7 +95,9 @@ function Cart({ freeShippingObjectiveQuantity, shippingIcon }: Props) {
           <div class="w-full flex justify-between px-4 text-sm">
             <span>Subtotal</span>
             <span class="px-4">
-              {total ? formatPrice(total.value / 100, currencyCode!, locale) : ""}
+              {total
+                ? formatPrice(total.value / 100, currencyCode!, locale)
+                : ""}
             </span>
           </div>
           <Coupon />
