@@ -82,6 +82,7 @@
               "$live/sections/UseSlot.tsx",
               "deco-sites/fashion/sections/BannerGrid.tsx",
               "deco-sites/fashion/sections/BannerPLP.tsx",
+              "deco-sites/fashion/sections/Benefits/Benefits.NuncaPerdi.tsx",
               "deco-sites/fashion/sections/Carousel.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
               "deco-sites/fashion/sections/DesignSystem.tsx",
@@ -7202,6 +7203,79 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerPLP.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4@BenefitItem": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "title": "Src"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "title": "Icon"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        }
+      },
+      "required": [
+        "icon",
+        "title",
+        "description"
+      ],
+      "title": "BenefitItem"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4@HeaderItem": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "HeaderItem"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "benefit": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4@BenefitItem",
+          "title": "Benefit"
+        },
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4@HeaderItem",
+          "title": "Header"
+        }
+      },
+      "required": [
+        "benefit",
+        "header"
+      ],
+      "title": "deco-sites/fashion/sections/Benefits/Benefits.NuncaPerdi.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
       "properties": {
@@ -8348,6 +8422,24 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXJNb2RhbC5OdW5jYVBlcmRpLnRzeA==@StringsModal": {
       "type": "object",
       "properties": {
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "title": "Src"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "title": "Image"
+        },
         "bemvindo": {
           "type": "string",
           "title": "Bemvindo"
@@ -8358,12 +8450,13 @@
         }
       },
       "required": [
+        "image",
         "bemvindo",
         "texto"
       ],
       "title": "StringsModal"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXJNb2RhbC5OdW5jYVBlcmRpLnRzeA==@StringsLabel": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXJNb2RhbC5OdW5jYVBlcmRpLnRzeA==@StringsInput": {
       "type": "object",
       "properties": {
         "primeiroNome": {
@@ -8374,22 +8467,32 @@
           "type": "string",
           "title": "Placeholder Nome"
         },
+        "email": {
+          "type": "string",
+          "title": "Email"
+        },
         "placeholderEmail": {
           "type": "string",
           "title": "Placeholder Email"
         },
-        "email": {
+        "checkBoxTxt": {
           "type": "string",
-          "title": "Email"
+          "title": "Check Box Txt"
+        },
+        "btnEnviar": {
+          "type": "string",
+          "title": "Btn Enviar"
         }
       },
       "required": [
         "primeiroNome",
         "placeholderNome",
+        "email",
         "placeholderEmail",
-        "email"
+        "checkBoxTxt",
+        "btnEnviar"
       ],
-      "title": "StringsLabel"
+      "title": "StringsInput"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXJNb2RhbC5OdW5jYVBlcmRpLnRzeA==@Props": {
       "type": "object",
@@ -8398,19 +8501,14 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXJNb2RhbC5OdW5jYVBlcmRpLnRzeA==@StringsModal",
           "title": "Strings"
         },
-        "inputLabels": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXJNb2RhbC5OdW5jYVBlcmRpLnRzeA==@StringsLabel",
-          "title": "Input Labels"
-        },
-        "checkBoxTxt": {
-          "type": "string",
-          "title": "Check Box Txt"
+        "inputStrings": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXJNb2RhbC5OdW5jYVBlcmRpLnRzeA==@StringsInput",
+          "title": "Input Strings"
         }
       },
       "required": [
         "strings",
-        "inputLabels",
-        "checkBoxTxt"
+        "inputStrings"
       ],
       "title": "deco-sites/fashion/sections/NewsletterModal.NuncaPerdi.tsx@Props"
     },
@@ -10916,6 +11014,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4": {
+      "title": "deco-sites/fashion/sections/Benefits/Benefits.NuncaPerdi.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Benefits/Benefits.NuncaPerdi.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Benefits/Benefits.NuncaPerdi.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA==": {
       "title": "deco-sites/fashion/sections/Carousel.tsx",
       "type": "object",
@@ -12334,6 +12453,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lclBMUC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLk51bmNhUGVyZGkudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
