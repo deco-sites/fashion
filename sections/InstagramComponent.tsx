@@ -68,7 +68,9 @@ export default function InstagramComponent(
       <h2 class="text-center row-start-1 col-span-full mb-3">
         <span class="font-medium text-2xl">{title}</span>
       </h2>
-      <section class={`w-full max-w-[1200px] mx-auto flex flex-wrap gap-4 items-center justify-center`}>
+      <section
+        class={`w-full max-w-[1200px] mx-auto flex flex-wrap gap-4 items-center justify-center`}
+      >
         {data.map((item) => (
           <a
             key={item.id}
