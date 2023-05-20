@@ -1,5 +1,3 @@
-import Button from "$store/components/ui/Button.tsx";
-
 export interface Props {
   title: string;
   paragraph: string;

@@ -58,6 +58,17 @@ export default {
           },
         },
       },
+      colors: {
+        "grey-edit": "#161616",
+        "green-edit": "#6D8B61",
+        "blue-edit": "#273746",
+        "black-edit": "#292929",
+        "grey-light-edit": "#DCDCDC",
+      },
+      boxShadow: {
+        "3xl":
+          "0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      },
     },
   },
 };
