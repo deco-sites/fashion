@@ -54,16 +54,7 @@ function Testimonials({ description = "", testimonials = [] }: Props) {
       <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto bg-base-100">
           {testimonials?.map((testimonial) => (
-            <Testimonial
-              key={testimonial.content}
-              logoImageHref={testimonial.logoImageHref}
-              profileImageHref={testimonial.profileImageHref}
-              name={testimonial.name}
-              surname={testimonial.surname}
-              position={testimonial.position}
-              company={testimonial.company}
-              content={testimonial.content}
-            />
+            <Testimonial key={testimonial.content} {...testimonial} />
           ))}
         </div>
       </div>
