@@ -21,6 +21,7 @@ function ProductShelf({
   title,
   infinite,
   products,
+  itemsPerPage = { sm: 2, md: 3, lg: 4, default: 1 },
 }: Props) {
   const id = useId();
 
@@ -43,7 +44,7 @@ function ProductShelf({
       >
         {products?.map((product, index) => (
           <Slider.Item
-            itemsPerPage={{ sm: 2, md: 3, lg: 4, default: 1 }}
+            itemsPerPage={itemsPerPage}
             index={index}
             class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 [&>*]:mx-3"
           >
