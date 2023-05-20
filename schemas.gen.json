@@ -7670,6 +7670,13 @@
           },
           "title": "Questions"
         },
+        "titleTop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title Top"
+        },
         "subtitlebot": {
           "type": [
             "string",
