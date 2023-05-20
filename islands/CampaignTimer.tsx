@@ -1,1 +1,1 @@
-export { default } from '$store/components/MeAjudaGPT/CampaignTimer.tsx'
+export { default } from "$store/components/MeAjudaGPT/CampaignTimer.tsx";
