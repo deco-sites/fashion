@@ -1,4 +1,5 @@
 import Image from "deco-sites/std/components/Image.tsx";
+import type { ItemsPerPage } from "$store/components/ui/Slider.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
@@ -25,7 +26,6 @@ function Highlights({ highlights = [], title }: Props) {
         {highlights.map(({ href, src, alt, label }, index) => (
           <Slider.Item
             index={index}
-            itemsPerPage={{ md: 4, lg: 6, default: 2 }}
             class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"
           >
             <a href={href} class="card card-compact bg-base-100">

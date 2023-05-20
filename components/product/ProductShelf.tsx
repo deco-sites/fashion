@@ -2,6 +2,7 @@ import ProductCard from "$store/components/product/ProductCard.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
+import type { ItemsPerPage } from "$store/components/ui/Slider.tsx";
 import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { useId } from "preact/hooks";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
@@ -12,11 +13,13 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
 export interface Props {
   title: string;
   products: LoaderReturnType<Product[] | null>;
-  itemsPerPage?: number;
+  itemsPerPage: ItemsPerPage;
+  infinite?: boolean;
 }
 
 function ProductShelf({
   title,
+  infinite,
   products,
 }: Props) {
   const id = useId();
@@ -35,14 +38,14 @@ function ProductShelf({
       </h2>
 
       <Slider
-        infinite
+        infinite={infinite}
         class="carousel carousel-center sm:carousel-end col-span-full row-start-2 row-end-5"
       >
         {products?.map((product, index) => (
           <Slider.Item
             itemsPerPage={{ sm: 2, md: 3, lg: 4, default: 1 }}
             index={index}
-            class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
+            class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 [&>*]:mx-3"
           >
             <ProductCard product={product} itemListName={title} />
           </Slider.Item>
@@ -61,7 +64,7 @@ function ProductShelf({
           </Slider.NextButton>
         </div>
       </>
-      <SliderJS rootId={id} infinite />
+      <SliderJS rootId={id} infinite={infinite} />
       <SendEventOnLoad
         event={{
           name: "view_item_list",

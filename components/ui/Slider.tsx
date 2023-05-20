@@ -84,15 +84,44 @@ const LG_ITEMS_PER_PAGE = [
   "lg:w-1/6",
 ] as const;
 
+export interface ItemsPerPage {
+  /**
+   * @title Small screens
+   * @description Will apply for screens bigger than 640px
+   */
+  sm?: number;
+  /**
+   * @title Medium screens
+   * @description Will apply for screens bigger than 768px
+   */
+  md?: number;
+  /**
+   * @title Large screens
+   * @description Will apply for screens bigger than 1024px
+   */
+  lg?: number;
+  /**
+   * @description Will apply for screens smaller than 640px
+   */
+  default: number;
+}
+
 function Item({
   index,
-  itemsPerPage: { sm = 0, md = 0, lg = 0, default: defaultValue = 1 },
+  itemsPerPage = {
+    sm: 0,
+    md: 0,
+    lg: 0,
+    default: 1,
+  },
   class: _class,
   ...props
 }: JSX.IntrinsicElements["li"] & {
   index: number;
-  itemsPerPage: { sm?: number; md?: number; lg?: number; default: number };
+  itemsPerPage?: ItemsPerPage;
 }) {
+  const { sm = 0, md = 0, lg = 0, default: defaultValue } = itemsPerPage;
+
   const defaultW = ITEMS_PER_PAGE[defaultValue];
   const smW = SM_ITEMS_PER_PAGE[sm];
   const mdW = MD_ITEMS_PER_PAGE[md];

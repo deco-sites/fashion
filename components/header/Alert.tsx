@@ -1,3 +1,4 @@
+import type { ItemsPerPage } from "$store/components/ui/Slider.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
@@ -16,12 +17,13 @@ function Alert({ alerts = [], interval = 5 }: Props) {
 
   return (
     <div id={id}>
-      <Slider class="carousel carousel-center bg-secondary gap-6 scrollbar-none">
+      <Slider
+        class="carousel carousel-center bg-secondary scrollbar-none"
+      >
         {alerts.map((alert, index) => (
           <Slider.Item
             index={index}
-            itemsPerPage={{ default: 1 }}
-            class="carousel-item"
+            class="carousel-item [&>*]:px-3"
           >
             <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
               {alert}
@@ -30,7 +32,10 @@ function Alert({ alerts = [], interval = 5 }: Props) {
         ))}
       </Slider>
 
-      <SliderJS rootId={id} interval={interval && interval * 1e3} />
+      <SliderJS
+        rootId={id}
+        interval={interval && interval * 1e3}
+      />
     </div>
   );
 }

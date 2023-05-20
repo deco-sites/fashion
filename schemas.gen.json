@@ -8376,6 +8376,44 @@
       ],
       "title": "deco-sites/fashion/components/product/ProductDetails.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVyLnRzeA==@ItemsPerPage": {
+      "type": "object",
+      "properties": {
+        "sm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Small screens",
+          "description": "Will apply for screens bigger than 640px"
+        },
+        "md": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Medium screens",
+          "description": "Will apply for screens bigger than 768px"
+        },
+        "lg": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Large screens",
+          "description": "Will apply for screens bigger than 1024px"
+        },
+        "default": {
+          "type": "number",
+          "description": "Will apply for screens smaller than 640px",
+          "title": "Default"
+        }
+      },
+      "required": [
+        "default"
+      ],
+      "title": "ItemsPerPage"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props": {
       "type": "object",
       "properties": {
@@ -8388,16 +8426,21 @@
           "title": "Products"
         },
         "itemsPerPage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2xpZGVyLnRzeA==@ItemsPerPage",
+          "title": "Items Per Page"
+        },
+        "infinite": {
           "type": [
-            "number",
+            "boolean",
             "null"
           ],
-          "title": "Items Per Page"
+          "title": "Infinite"
         }
       },
       "required": [
         "title",
-        "products"
+        "products",
+        "itemsPerPage"
       ],
       "title": "deco-sites/fashion/components/product/ProductShelf.tsx@Props"
     },
