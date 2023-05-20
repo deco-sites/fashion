@@ -142,7 +142,7 @@ function ProductReview(props: Review) {
                 />
               ))}
             </div>
-            <span class="text-[#787878]">•</span>
+            <span class="text-[#787878]">{'\u2022'}</span>
             <p class="text-[#787878]">{diffDate}</p>
           </div>
           <h5 class="text-lg lg:text-xl mt-4">{props.title}</h5>
@@ -202,7 +202,7 @@ function ProductReviews({ title, reviews, pageSize }: Props) {
             })}
           </div>
           <span class="text-lg">
-            {avgRating.toFixed(1)} stars • {reviews.length} reviews
+            {avgRating.toFixed(1)} stars {`\u2022`} {reviews.length} reviews
           </span>
         </div>
         <div class="dropdown dropdown-end h-full text-green-900 border border-green-900 text-lg">
