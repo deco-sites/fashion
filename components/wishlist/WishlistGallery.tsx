@@ -1,6 +1,6 @@
 import SearchResult, {
   Props as SearchResultProps,
-} from "deco-sites/fashion/components/search/SearchResult.tsx";
+} from "$store/components/search/SearchResult.tsx";
 
 export type Props = SearchResultProps;
 

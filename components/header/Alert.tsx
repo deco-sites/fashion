@@ -1,5 +1,5 @@
-import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
-import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
+import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
 
 export interface Props {

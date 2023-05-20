@@ -1,4 +1,4 @@
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import Button from "$store/components/ui/Button.tsx";
 import { useId } from "preact/hooks";
 
 const script = (id: string) => `

@@ -1,7 +1,7 @@
 import { Signal, useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
+import Button from "$store/components/ui/Button.tsx";
+import { formatPrice } from "$store/sdk/format.ts";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import type {
   SimulationOrderForm,

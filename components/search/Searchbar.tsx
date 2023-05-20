@@ -10,15 +10,15 @@
  */
 
 import { useEffect, useRef } from "preact/compat";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Spinner from "deco-sites/fashion/components/ui/Spinner.tsx";
-import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
-import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import Spinner from "$store/components/ui/Spinner.tsx";
+import ProductCard from "$store/components/product/ProductCard.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
 import { useAutocomplete } from "deco-sites/std/packs/vtex/hooks/useAutocomplete.ts";
-import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
+import { useUI } from "$store/sdk/useUI.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
-import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
+import { sendEvent } from "$store/sdk/analytics.tsx";
 
 declare global {
   interface Window {

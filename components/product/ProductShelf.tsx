@@ -1,11 +1,11 @@
-import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
-import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
-import { SendEventOnLoad } from "deco-sites/fashion/sdk/analytics.tsx";
+import ProductCard from "$store/components/product/ProductCard.tsx";
+import SliderJS from "$store/islands/SliderJS.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
+import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { useId } from "preact/hooks";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
+import { useOffer } from "$store/sdk/useOffer.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 

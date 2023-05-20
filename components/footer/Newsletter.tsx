@@ -1,5 +1,5 @@
 import { useSignal } from "@preact/signals";
-import { Runtime } from "deco-sites/fashion/runtime.ts";
+import { Runtime } from "$store/runtime.ts";
 import type { JSX } from "preact";
 
 const subscribe = Runtime.create(

@@ -1,10 +1,10 @@
-import Searchbar from "deco-sites/fashion/islands/HeaderSearchbar.tsx";
-import Buttons from "deco-sites/fashion/islands/HeaderButton.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import Searchbar from "$store/islands/HeaderSearchbar.tsx";
+import Buttons from "$store/islands/HeaderButton.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
 import type { INavItem } from "./NavItem.tsx";
-import type { Props as SearchbarProps } from "deco-sites/fashion/components/search/Searchbar.tsx";
+import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 
 function Navbar({ items, searchbar }: {
   items: INavItem[];

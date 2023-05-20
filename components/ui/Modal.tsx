@@ -1,4 +1,4 @@
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import Button from "$store/components/ui/Button.tsx";
 import { useEffect, useRef } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
