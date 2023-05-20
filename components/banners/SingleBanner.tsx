@@ -8,8 +8,8 @@ export interface Props {
   title: string;
   description: string;
 
-  desktop: LiveImage;
-  mobile: LiveImage;
+  desktop?: LiveImage;
+  mobile?: LiveImage;
 
   theme: "light" | "dark";
 
@@ -51,7 +51,7 @@ const containerCVA = cva([
   },
 });
 
-const primaryButtonCVA = cva(["btn"], {
+const primaryButtonCVA = cva(["px-3 py-2"], {
   variants: {
     theme: {
       light: "bg-primary text-white hover:bg-primary-focus hover:text-white",
@@ -60,7 +60,7 @@ const primaryButtonCVA = cva(["btn"], {
   },
 });
 
-const secondaryButtonCVA = cva(["btn"], {
+const secondaryButtonCVA = cva(["px-3 py-2"], {
   variants: {
     theme: {
       light:
@@ -92,22 +92,23 @@ function SingleBanner(
   return (
     <div className={bannerClass}>
       <Picture className="absolute inset-0 object-cover z-0">
-        <Source
-          media="(max-width: 767px)"
-          src={mobile}
-          width={360}
-          height={600}
-        />
-        <Source
-          media="(min-width: 768px)"
-          src={desktop}
-          width={1440}
-          height={600}
-        />
-        <img
-          class="object-cover w-full h-full"
-          src={desktop}
-        />
+        {mobile && (
+          <Source
+            media="(max-width: 767px)"
+            src={mobile}
+            width={360}
+            height={600}
+          />
+        )}
+        {desktop && (
+          <Source
+            media="(min-width: 768px)"
+            src={desktop}
+            width={1440}
+            height={600}
+          />
+        )}
+        <img class="object-cover w-full h-full" />
       </Picture>
 
       <div className={containerClass}>

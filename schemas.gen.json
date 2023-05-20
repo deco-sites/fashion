@@ -7735,8 +7735,6 @@
         "tag",
         "title",
         "description",
-        "desktop",
-        "mobile",
         "theme"
       ],
       "title": "Props"
