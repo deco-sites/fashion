@@ -62,7 +62,7 @@ function Header({
   title = "",
   description = "",
   categories = [],
-  variant = 3,
+  variant = 1,
 }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
 

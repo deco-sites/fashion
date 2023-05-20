@@ -6653,10 +6653,15 @@
         "header": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvUHJvZHVjdExpc3QvSGVhZGVyLnRzeA==@Props",
           "title": "Header"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Products"
         }
       },
       "required": [
-        "header"
+        "header",
+        "products"
       ],
       "title": "deco-sites/fashion/components/ProductList/ProductList.tsx@Props"
     },
