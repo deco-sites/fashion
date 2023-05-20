@@ -31,7 +31,7 @@ export default {
     },
     extend: {
       colors: {
-        'base-content': '#292929',
+        "base-content": "#292929",
       },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
