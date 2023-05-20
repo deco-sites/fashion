@@ -1,13 +1,3 @@
-/**
- * Estou usando tokens do DaisyUI e Tailwind CSS
- * Fiz alterações somente no arquivo destinado a section do meu grupo
- * O componente esta editável no admin da Deco
- * Adicionei link de preview da section do admin da deco no PR
- * Minha section funciona com propriedades padrão
- */
-
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-
 export interface Props {
   title: string;
   description: string;
@@ -52,7 +42,7 @@ export default function BenefitsTime7(
         </p>
         <div className="grid grid-cols-2 px-12 gap-4 sm:gap-8 sm:grid-cols-4 sm:p-0">
           {benefits.map(({ title, description }) => (
-            <div className="flex flex-col items-center p-6 justify-center bg-custom-3 bg-[#53B4DA] text-accent-content ">
+            <div className="flex flex-col items-center p-6 justify-center bg-custom-3 text-accent-content ">
               <div className="mb-4">
                 <svg
                   width="31"
