@@ -30,16 +30,23 @@ function ModalNewsLetter(
           <label class="label">
             <span class="label-text">{inputLabels.primeiroNome}</span>
           </label>
-          <input type="text" placeholder={inputLabels.placeholderNome} class="input input-bordered w-full max-w-xs" />
+          <input
+            type="text"
+            placeholder={inputLabels.placeholderNome}
+            class="input input-bordered w-full max-w-xs"
+          />
 
           <label class="label">
             <span class="label-text">{inputLabels.email}</span>
           </label>
-          <input type="text" placeholder={inputLabels.placeholderEmail} class="input input-bordered w-full max-w-xs" />
+          <input
+            type="text"
+            placeholder={inputLabels.placeholderEmail}
+            class="input input-bordered w-full max-w-xs"
+          />
         </div>
 
         <div class="card-actions justify-end">
-
         </div>
       </div>
     </div>
