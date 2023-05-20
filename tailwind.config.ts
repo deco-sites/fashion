@@ -31,7 +31,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        minhaFonte: ['Albert Sans', 'sans-serif'],
+        minhaFonte: ["Albert Sans", "sans-serif"],
       },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
