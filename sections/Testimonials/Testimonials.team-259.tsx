@@ -25,7 +25,9 @@ export interface Props {
   }>;
 }
 
-export default function Testimonials({ description, testimonials= [] }: Props) {
+export default function Testimonials(
+  { description, testimonials = [] }: Props,
+) {
   return (
     <div class="flex flex-col gap-16 px-4 py-10 sm:gap-20 sm:px-10">
       <div class="sm:gab-6 flex flex-col gap-4">
