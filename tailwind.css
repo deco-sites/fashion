@@ -43,3 +43,29 @@
     display: none;
   }
 }
+.p-text{padding: 0 11%}
+.my-16{
+  margin-bottom: 4rem;
+  margin-top: 4rem
+}
+.my-btn{
+  background: #273746;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  max-width: 83px;
+  margin: 0 auto;
+  padding: 12px 8px;
+  text-align: center;
+  transition: ease all .5s;
+}
+.my-btn:hover{
+  background: #385168;
+  transition: ease all .5s;
+}
+.collapse-arrow .collapse-title:after{right: .3rem;}
+@media screen and (max-width: 463px){
+  .p-text{padding: 0 19%}
+}
