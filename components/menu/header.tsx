@@ -1,5 +1,5 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Menu from "deco-sites/masrap/components/menu/Menu.tsx";
+import Menu from "./Header.tsx";
 
 export interface Props {
   link0: LiveImage;
@@ -47,7 +47,7 @@ export default function Header(
           </li>
         </ul>
       </div>
-      <Menu />
+      <Menu></Menu>
     </>
   );
 }
