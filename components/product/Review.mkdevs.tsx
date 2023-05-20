@@ -142,7 +142,7 @@ function ProductReview(props: Review) {
                 />
               ))}
             </div>
-            <span class="text-[#787878]">{'\u2022'}</span>
+            <span class="text-[#787878]">{"\u2022"}</span>
             <p class="text-[#787878]">{diffDate}</p>
           </div>
           <h5 class="text-lg lg:text-xl mt-4">{props.title}</h5>
