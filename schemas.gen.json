@@ -59,7 +59,6 @@
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
-              "./islands/FAQ.time46.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
@@ -6584,36 +6583,6 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvRkFRLnRpbWU0Ni50c3g=@FAQProps": {
-      "type": "object",
-      "properties": {
-        "questions": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "question": {
-                "type": "string",
-                "title": "Question"
-              },
-              "answer": {
-                "type": "string",
-                "title": "Answer"
-              }
-            },
-            "required": [
-              "question",
-              "answer"
-            ]
-          },
-          "title": "Questions"
-        }
-      },
-      "required": [
-        "questions"
-      ],
-      "title": "deco-sites/fashion/islands/FAQ.time46.tsx@FAQProps"
-    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -7671,6 +7640,14 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRkFRLnRzeA==@FAQProps": {
       "type": "object",
       "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
         "questions": {
           "type": "array",
           "items": {
@@ -7691,10 +7668,50 @@
             ]
           },
           "title": "Questions"
+        },
+        "contact": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "description": {
+              "type": "string",
+              "title": "Description"
+            },
+            "button": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "Text"
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link"
+                }
+              },
+              "required": [
+                "text",
+                "link"
+              ],
+              "title": "Button"
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "button"
+          ],
+          "title": "Contact"
         }
       },
       "required": [
-        "questions"
+        "title",
+        "description",
+        "questions",
+        "contact"
       ],
       "title": "deco-sites/fashion/components/ui/FAQ.tsx@FAQProps"
     },
@@ -10466,27 +10483,6 @@
         }
       }
     },
-    "Li9pc2xhbmRzL0ZBUS50aW1lNDYudHN4": {
-      "title": "./islands/FAQ.time46.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvRkFRLnRpbWU0Ni50c3g=@FAQProps"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/FAQ.time46.tsx"
-          ],
-          "default": "./islands/FAQ.time46.tsx"
-        }
-      }
-    },
     "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
       "title": "./islands/HeaderButton.tsx",
       "type": "object",
@@ -12254,9 +12250,6 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
-        },
-        {
-          "$ref": "#/definitions/Li9pc2xhbmRzL0ZBUS50aW1lNDYudHN4"
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="

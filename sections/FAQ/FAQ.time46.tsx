@@ -1,1 +1,1 @@
-export { default } from "$store/islands/FAQ.time46.tsx";
+export { default } from "$store/components/ui/FAQ.tsx";
