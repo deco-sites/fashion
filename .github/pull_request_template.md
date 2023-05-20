@@ -11,9 +11,10 @@
 <!-- Add some more extra info about your PR, like screenshots, nice gifs etc -->
 
 ## Checklist
+
 - [ ] Estou usando tokens do DaisyUI e Tailwind CSS
 - [ ] Fiz alterações **somente** no arquivo destinado a section do meu grupo
 - [ ] O componente esta editável no admin da Deco
 - [ ] Adicionei link de preview da section do admin da deco no PR
-- [ ]  Minha section funciona com propriedades padrão
+- [ ] Minha section funciona com propriedades padrão
 - [ ] Adicionei links das variacoes do figma que fiz no PR
