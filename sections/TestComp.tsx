@@ -1,9 +1,9 @@
 export type teste = {
   a: string;
   b?: string;
-}
+};
 
-export default function TestComp({a, b}: teste) {
+export default function TestComp({ a, b }: teste) {
   return (
     <>
       <div>TestComp</div>
@@ -12,5 +12,5 @@ export default function TestComp({a, b}: teste) {
         <h3>{b}</h3>
       </div>
     </>
-  )
+  );
 }

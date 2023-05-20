@@ -35,9 +35,9 @@ function CookieConsent() {
         class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 z-50"
       >
         <div class="m-4 px-4 py-4 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-base-100">
-          <div className='flex justify-between w-full'>
-            <span className='text-xl'>Cookie Policy</span>
-            <img src='/static/svg/close.svg' alt="Close button" />
+          <div className="flex justify-between w-full">
+            <span className="text-xl">Cookie Policy</span>
+            <img src="/static/svg/close.svg" alt="Close button" />
           </div>
           <span class="flex-grow text-sm">
             We use third-party cookies order to personalize your experience.
