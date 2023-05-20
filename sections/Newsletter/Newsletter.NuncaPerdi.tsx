@@ -19,7 +19,7 @@ function NewsLetter(
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="flex flex-col">
-        <div class="hero-content text-center text-6xl">title.text</div>
+        <div class="hero-content text-center text-6xl">{title.text}</div>
 
         <div class="hero-content flex-col text-center">
           <div>
