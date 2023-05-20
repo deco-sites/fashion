@@ -7,6 +7,9 @@ export interface Props {
    * @default Lorem ipsum dolor sit amet, consectetur adipiscing elit
    */
   description: string;
+  /**
+   * @default []
+   */
   testimonials: Array<{
     text: string;
     image: {
@@ -22,7 +25,7 @@ export interface Props {
   }>;
 }
 
-export default function Testimonials({ description, testimonials }: Props) {
+export default function Testimonials({ description, testimonials= [] }: Props) {
   return (
     <div class="flex flex-col gap-16 px-4 py-10 sm:gap-20 sm:px-10">
       <div class="sm:gab-6 flex flex-col gap-4">
@@ -40,7 +43,7 @@ export default function Testimonials({ description, testimonials }: Props) {
             <div class="flex flex-col gap-9 sm:pr-10">
               <div class="flex justify-center">
                 <Icon
-                  id={'Logo'}
+                  id={"Logo"}
                   width={80}
                   height={20}
                   strokeWidth={0.01}
