@@ -83,6 +83,7 @@
               "deco-sites/fashion/sections/BannerGrid.tsx",
               "deco-sites/fashion/sections/BannerPLP.tsx",
               "deco-sites/fashion/sections/Carousel.tsx",
+              "deco-sites/fashion/sections/Cookie/CookieConsent.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
               "deco-sites/fashion/sections/DesignSystem.tsx",
               "deco-sites/fashion/sections/Features.tsx",
@@ -7502,7 +7503,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@0038fd989d385b9f68c3eeab97da3f02&Colors": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors"
@@ -7518,7 +7519,7 @@
           "required": []
         }
       ],
-      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
+      "title": "0038fd989d385b9f68c3eeab97da3f02&Colors"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
@@ -7621,7 +7622,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@0038fd989d385b9f68c3eeab97da3f02&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -10867,6 +10868,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZS9Db29raWVDb25zZW50LnRzeA==": {
+      "title": "deco-sites/fashion/sections/Cookie/CookieConsent.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Cookie/CookieConsent.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Cookie/CookieConsent.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZUNvbnNlbnQudHN4": {
       "title": "deco-sites/fashion/sections/CookieConsent.tsx",
       "type": "object",
@@ -12246,6 +12263,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZS9Db29raWVDb25zZW50LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZUNvbnNlbnQudHN4"
