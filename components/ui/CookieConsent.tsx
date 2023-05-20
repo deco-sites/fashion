@@ -52,7 +52,7 @@ function CookieConsent() {
           </div>
         </div>
       </div>
-      <script type="module" dangerouslySetInnerHTML={{ __html: script(id) }} />
+      {/* <script type="module" dangerouslySetInnerHTML={{ __html: script(id) }} /> */}
     </>
   );
 }
