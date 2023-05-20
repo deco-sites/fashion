@@ -1,1 +1,1 @@
-export { default } from "$store/components/header/Header.tsx";
+export { default } from "./Header/Header.coders.tsx";
