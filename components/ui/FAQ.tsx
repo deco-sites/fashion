@@ -37,7 +37,7 @@ export default function FAQ(
                     return (
                     <details key={index} className="py-2 w-full border-t border-gray-300">
                         <summary className="list-outside py-3 w-full pr-4 ml-4">
-                            <h2 className="flex justify-end">{ question }</h2>
+                            <h2 className="flex justify-end text-lg">{ question }</h2>
                         </summary>
                         <h5 className="py-2 text-center">{ answer }</h5>
                     </details>
