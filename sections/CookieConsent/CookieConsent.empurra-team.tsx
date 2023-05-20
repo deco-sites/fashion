@@ -19,7 +19,7 @@ function CookieConsent({ policy, useCookies, readCookie, buttonText }: Props) {
           </p>
           <a
             href="https://www.deco.cx"
-            class="flex items-center text-[#6D8B61] text-sm underline"
+            class="flex items-center text-secondary text-sm underline"
           >
             <span>{readCookie}</span>
             <Icon
