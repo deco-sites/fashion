@@ -25,16 +25,16 @@ function ProductShelf({
   return (
     <div
       id={id}
-      class="container grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr]"
+      class="grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr]"
     >
       <Slider class="carousel carousel-center sm:carousel-end gap-4 col-span-full row-start-2 row-end-5">
         {products?.map((product, index) => (
           <Slider.Item
             key={product.productID}
             index={index}
-            class="carousel-item w-[270px] sm:w-[292px] first:ml-0 last:mr-0"
+            class="carousel-item w-[316px] sm:w-[292px] first:ml-0 last:mr-0"
           >
-            <ProductCard />
+            <ProductCard product={product} />
           </Slider.Item>
         ))}
       </Slider>
@@ -56,7 +56,7 @@ function ProductShelf({
         event={{
           name: "view_item_list",
           params: {
-            item_list_name: 'product_list',
+            item_list_name: "product_list",
             items: products.map((product) =>
               mapProductToAnalyticsItem({
                 product,

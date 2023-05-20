@@ -6657,11 +6657,37 @@
         "products": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
           "title": "Products"
+        },
+        "seeAllButton": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "title": "Href"
+            },
+            "target": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Target"
+            },
+            "label": {
+              "type": "string",
+              "title": "Label"
+            }
+          },
+          "required": [
+            "href",
+            "label"
+          ],
+          "title": "See All Button"
         }
       },
       "required": [
         "header",
-        "products"
+        "products",
+        "seeAllButton"
       ],
       "title": "deco-sites/fashion/components/ProductList/ProductList.tsx@Props"
     },
