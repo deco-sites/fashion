@@ -4,13 +4,13 @@ import {
 } from "$store/components/ui/shortcuts/ShortcutButton.tsx";
 
 export interface Props {
-  buttons: ShortcutButtonProps[];
+  buttons?: ShortcutButtonProps[];
 }
 
 function Shortcuts({ buttons }: Props) {
   return (
     <ul className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col border border-base-300">
-      {buttons.map((button) => {
+      {buttons?.map((button) => {
         return (
           <li className="leading-none group">
             <ShortcutButton {...button} />

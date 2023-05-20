@@ -4,11 +4,13 @@ export interface Props {
   /**
    * @title Tooltip label
    * @description Text displayed on tooltip
+   * @default Label
    */
   label: string;
   /**
    * @title Icon
    * @description Icon displayed inside the button
+   * @default Bars3
    */
   icon: AvailableIcons;
   /**
