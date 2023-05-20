@@ -1,4 +1,5 @@
 import CountDownTimer from "../../islands/CountDownTimer.tsx";
+import CouponCopy from "../../islands/CouponCopy.tsx";
 
 export interface CampaignTimerProps {
   campaign_data: {
@@ -29,18 +30,14 @@ function CampaignTimer(
           <>
             <span className="px-3 max-w-lg">{campaign_data.text}</span>
             <CountDownTimer endDate={campaign_data.endTime} />
-            <button className="btn px-3 rounded-none">
-              {campaign_data.btnText}
-            </button>
+            {campaign_data.coupon && (<CouponCopy  btnText={campaign_data.btnText} coupon={campaign_data.coupon}/>)}
           </>
         )
         : (
           <>
             <CountDownTimer endDate={campaign_data.endTime} />
             <span className="px-3 max-w-lg">{campaign_data.text}</span>
-            <button className="btn px-3 rounded-none">
-              {campaign_data.btnText}
-            </button>
+            {campaign_data.coupon && (<CouponCopy  btnText={campaign_data.btnText} coupon={campaign_data.coupon}/>)}
           </>
         )}
     </div>

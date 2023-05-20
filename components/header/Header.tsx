@@ -74,7 +74,7 @@ function Header(
   };
 
   const searchbar = { ..._searchbar, products, suggestions };
-  
+
   return (
     <>
       <header style={{ height: headerHeight }}>

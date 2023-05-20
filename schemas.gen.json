@@ -60,6 +60,7 @@
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
               "./islands/CountDownTimer.tsx",
+              "./islands/CouponCopy.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
@@ -10499,6 +10500,22 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0NvdXBvbkNvcHkudHN4": {
+      "title": "./islands/CouponCopy.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/CouponCopy.tsx"
+          ],
+          "default": "./islands/CouponCopy.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
       "title": "./islands/HeaderButton.tsx",
       "type": "object",
@@ -12248,6 +12265,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0NvdW50RG93blRpbWVyLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0NvdXBvbkNvcHkudHN4"
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
