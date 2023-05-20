@@ -21,6 +21,12 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
+export type ImagesLayout =
+  | "down-preview"
+  | "side-by-side"
+  | "vertical-galery"
+  | "horizontal-galery";
+
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
   /**
@@ -28,6 +34,11 @@ export interface Props {
    * @description Ask for the developer to remove this option since this is here to help development only and should not be used in production
    */
   variant?: Variant;
+  /**
+   * @title Images Layout
+   * @description Ask for the developer to select the layout of the images view
+   */
+  imagesLayout: ImagesLayout;
 }
 
 const WIDTH = 360;
@@ -50,7 +61,9 @@ function NotFound() {
   );
 }
 
-function ProductInfo({ page }: { page: ProductDetailsPage }) {
+function ProductInfo(
+  { page }: { page: ProductDetailsPage },
+) {
   const {
     breadcrumbList,
     product,
@@ -69,7 +82,6 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
 
   return (
     <>
-      {/* Breadcrumb */}
       <Breadcrumb
         itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
       />
@@ -83,6 +95,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         <h1>
           <span class="font-medium text-xl">{name}</span>
         </h1>
+        {description && <span class="text-zinc-500">{description}</span>}
       </div>
       {/* Prices */}
       <div class="mt-4">
@@ -136,17 +149,89 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           }]}
         />
       </div>
-      {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Descrição</summary>
-              <div class="ml-2 mt-2">{description}</div>
-            </details>
-          )}
-        </span>
+
+      {/* email */}
+      <div class="border-2 border-zinc-300 p-4 flex flex-col items-start gap-4">
+        <h2 class="text-lg">
+          Me notifique quando o produto estiver disponível
+        </h2>
+
+        <div>
+          <label class="flex flex-col">
+            E-mail
+          </label>
+          <div class="flex items-center justify-center gap-2">
+            <input
+              class="p-2 border-2 border-zinc-300"
+              type="text"
+              placeholder="seu.email@exemplo.com"
+            />
+
+            <button class="p-2 bg-[#273746] text-zinc-100">
+              Notifique-me
+            </button>
+          </div>
+        </div>
       </div>
+      {/* Description card */}
+      {
+        <>
+          <div
+            tabIndex={0}
+            className="collapse collapse-arrow border-t border-zinc-300 bg-base-100"
+          >
+            <div className="collapse-title text-xl font-medium text-zinc-700">
+              Detalhes
+            </div>
+            <div className="collapse-content">
+              <p className="text-zinc-500 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+                commodo diam libero vitae erat. Aenean faucibus nibh et justo
+                cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+                tristique posuere.
+              </p>
+            </div>
+          </div>
+          <div
+            tabIndex={1}
+            className="collapse collapse-arrow border-t border-zinc-300 bg-base-100"
+          >
+            <div className="collapse-title text-xl font-medium text-zinc-700">
+              Returns
+            </div>
+            <div className="collapse-content">
+              <p className="text-zinc-500 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+                commodo diam libero vitae erat. Aenean faucibus nibh et justo
+                cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+                tristique posuere.
+              </p>
+            </div>
+          </div>
+          <div
+            tabIndex={2}
+            className="collapse collapse-arrow border-t border-zinc-300 bg-base-100"
+          >
+            <div className="collapse-title text-xl font-medium text-zinc-700">
+              Entrega
+            </div>
+            <div className="collapse-content">
+              <p className="text-zinc-500 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse varius enim in eros elementum tristique. Duis
+                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+                commodo diam libero vitae erat. Aenean faucibus nibh et justo
+                cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+                tristique posuere.
+              </p>
+            </div>
+          </div>
+        </>
+      }
       {/* Analytics Event */}
       <SendEventOnLoad
         event={{
@@ -232,9 +317,43 @@ const useStableImages = (product: ProductDetailsPage["product"]) => {
 function Details({
   page,
   variant,
-}: { page: ProductDetailsPage; variant: Variant }) {
+  imagesLayout,
+  details,
+}: {
+  page: ProductDetailsPage;
+  variant: Variant;
+  imagesLayout: ImagesLayout;
+  details?: string;
+}) {
   const { product } = page;
   const id = `product-image-gallery:${useId()}`;
+  product.image = product.image = [{
+    "@type": "ImageObject",
+    alternateName: "Vestido Branco",
+    url:
+      "https://bravtexfashionstore.vtexassets.com/arquivos/ids/155631/vestido-branco.jpg?v=1770218403",
+  }, {
+    "@type": "ImageObject",
+    alternateName: "Vestido Rosa",
+    url:
+      "https://bravtexfashionstore.vtexassets.com/arquivos/ids/155631/vestido-branco.jpg?v=1770218403",
+  }, {
+    "@type": "ImageObject",
+    alternateName: "Vestido Azul",
+    url:
+      "https://bravtexfashionstore.vtexassets.com/arquivos/ids/155631/vestido-branco.jpg?v=1770218403",
+  }, {
+    "@type": "ImageObject",
+    alternateName: "Vestido Roxo",
+    url:
+      "https://bravtexfashionstore.vtexassets.com/arquivos/ids/155631/vestido-branco.jpg?v=1770218403",
+  }, {
+    "@type": "ImageObject",
+    alternateName: "Vestido NHa",
+    url:
+      "https://bravtexfashionstore.vtexassets.com/arquivos/ids/155631/vestido-branco.jpg?v=1770218403",
+  }];
+
   const images = useStableImages(product);
 
   /**
@@ -245,76 +364,138 @@ function Details({
    * we rearrange each cell with col-start- directives
    */
   if (variant === "slider") {
+    console.log("miseraaaa", imagesLayout);
     return (
       <>
         <div
           id={id}
-          class="grid grid-cols-1 gap-4 sm:grid-cols-[max-content_40vw_40vw] sm:grid-rows-1 sm:justify-center"
+          class="flex gap-4 sm:justify-center"
         >
-          {/* Image Slider */}
-          <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
-            <Slider class="carousel gap-6">
-              {images.map((img, index) => (
-                <Slider.Item
-                  index={index}
-                  class="carousel-item min-w-[100vw] sm:min-w-[40vw]"
+          {imagesLayout !== "vertical-galery" && (
+            <div
+              class={`${imagesLayout === "down-preview" ? "flex-col" : ""} ${
+                imagesLayout === "side-by-side" && "flex-row-reverse w-[60%]"
+              } flex w-[40%]`}
+            >
+              {/* Image Slider */}
+              <div
+                class={`${
+                  imagesLayout === "side-by-side" && "w-[80%]"
+                } relative`}
+              >
+                <Slider class="carousel gap-6">
+                  {images.map((img, index) => (
+                    <Slider.Item
+                      index={index}
+                      class="carousel-item min-w-[100vw] sm:min-w-[40vw]"
+                    >
+                      <Image
+                        class="w-full"
+                        sizes="(max-width: 640px) 100vw, 40vw"
+                        style={{ aspectRatio: ASPECT_RATIO }}
+                        src={img.url!}
+                        alt={img.alternateName}
+                        width={WIDTH}
+                        height={HEIGHT}
+                        // Preload LCP image for better web vitals
+                        preload={index === 0}
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                    </Slider.Item>
+                  ))}
+                </Slider>
+
+                <Slider.PrevButton
+                  class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
+                  disabled
                 >
-                  <Image
-                    class="w-full"
-                    sizes="(max-width: 640px) 100vw, 40vw"
-                    style={{ aspectRatio: ASPECT_RATIO }}
-                    src={img.url!}
-                    alt={img.alternateName}
-                    width={WIDTH}
-                    height={HEIGHT}
-                    // Preload LCP image for better web vitals
-                    preload={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
+                  <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+                </Slider.PrevButton>
+
+                <Slider.NextButton
+                  class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
+                  disabled={images.length < 2}
+                >
+                  <Icon size={20} id="ChevronRight" strokeWidth={3} />
+                </Slider.NextButton>
+
+                <div class="absolute top-2 right-2 bg-base-100 rounded-full">
+                  <ProductImageZoom
+                    images={images}
+                    width={1280}
+                    height={1280 * HEIGHT / WIDTH}
                   />
-                </Slider.Item>
-              ))}
-            </Slider>
+                </div>
+              </div>
 
-            <Slider.PrevButton
-              class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
-              disabled
-            >
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-            </Slider.PrevButton>
+              {/* Dots */}
 
-            <Slider.NextButton
-              class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
-              disabled={images.length < 2}
-            >
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
-            </Slider.NextButton>
-
-            <div class="absolute top-2 right-2 bg-base-100 rounded-full">
-              <ProductImageZoom
-                images={images}
-                width={1280}
-                height={1280 * HEIGHT / WIDTH}
-              />
+              <div id="preview-container">
+                <ul
+                  class={`${
+                    imagesLayout === "side-by-side" && "flex-col"
+                  } flex gap-2 justify-center sm:justify-start mt-4 sm:mt-0`}
+                >
+                  {images.map((img, index) =>
+                    index < 4 && (
+                      <li>
+                        <Slider.Dot index={index}>
+                          <Image
+                            style={{ aspectRatio: ASPECT_RATIO }}
+                            class="group-disabled:border-base-300 border rounded w-full"
+                            src={img.url!}
+                            width={imagesLayout === "side-by-side" ? 63 : 200}
+                            height={imagesLayout === "side-by-side"
+                              ? 87.5
+                              : 200}
+                            alt={img.alternateName}
+                          />
+                        </Slider.Dot>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
             </div>
-          </div>
+          )}
 
-          {/* Dots */}
-          <ul class="flex gap-2 sm:justify-start overflow-auto px-4 sm:px-0 sm:flex-col sm:col-start-1 sm:col-span-1 sm:row-start-1">
-            {images.map((img, index) => (
-              <li class="min-w-[63px] sm:min-w-[100px]">
-                <Slider.Dot index={index}>
-                  <Image
-                    style={{ aspectRatio: ASPECT_RATIO }}
-                    class="group-disabled:border-base-300 border rounded "
-                    width={63}
-                    height={87.5}
-                    src={img.url!}
-                    alt={img.alternateName}
-                  />
-                </Slider.Dot>
-              </li>
-            ))}
-          </ul>
+          {imagesLayout === "vertical-galery" &&
+            (
+              <div class="grid grid-cols-2 gap-4 w-[30%]">
+                {images.map((img, index) => {
+                  if (index !== 2) {
+                    return (
+                      <Image
+                        class="w-full col-span-1"
+                        sizes="(max-width: 640px) 100vw, 40vw"
+                        style={{ aspectRatio: ASPECT_RATIO }}
+                        src={img.url!}
+                        alt={img.alternateName}
+                        width={WIDTH}
+                        height={HEIGHT}
+                        // Preload LCP image for better web vitals
+                        preload={index === 0}
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                    );
+                  }
+
+                  return (
+                    <Image
+                      class="w-full col-span-2 row-span-2"
+                      sizes="(max-width: 640px) 100vw, 40vw"
+                      style={{ aspectRatio: ASPECT_RATIO }}
+                      src={img.url!}
+                      alt={img.alternateName}
+                      width={WIDTH}
+                      height={HEIGHT}
+                      // Preload LCP image for better web vitals
+                      loading={"lazy"}
+                    />
+                  );
+                })}
+              </div>
+            )}
 
           {/* Product Info */}
           <div class="px-4 sm:pr-0 sm:pl-6 sm:col-start-3 sm:col-span-1 sm:row-start-1">
@@ -361,7 +542,9 @@ function Details({
   );
 }
 
-function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
+function ProductDetails(
+  { page, variant: maybeVar = "auto", imagesLayout }: Props,
+) {
   /**
    * Showcase the different product views we have on this template. In case there are less
    * than two images, render a front-back, otherwhise render a slider
@@ -375,7 +558,15 @@ function ProductDetails({ page, variant: maybeVar = "auto" }: Props) {
 
   return (
     <div class="container py-0 sm:py-10">
-      {page ? <Details page={page} variant={variant} /> : <NotFound />}
+      {page
+        ? (
+          <Details
+            page={page}
+            variant={variant}
+            imagesLayout={imagesLayout}
+          />
+        )
+        : <NotFound />}
     </div>
   );
 }
