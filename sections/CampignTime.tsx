@@ -1,1 +1,0 @@
-export { default } from "$store/components/Miqueias-campiengTime/CampiengTime.tsx";

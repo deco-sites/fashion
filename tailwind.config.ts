@@ -31,7 +31,7 @@ export default {
     },
     extend: {
       colors: {
-        "bg-red-300": "#e37a69"
+        "bg-red-300": "#e37a69",
       },
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
