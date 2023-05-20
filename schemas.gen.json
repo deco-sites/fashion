@@ -93,6 +93,7 @@
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
+              "deco-sites/fashion/sections/Shortcuts.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -7502,7 +7503,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@3165a9dfe03427ce66cbfbca086af80e&Colors": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors"
@@ -7518,7 +7519,7 @@
           "required": []
         }
       ],
-      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
+      "title": "3165a9dfe03427ce66cbfbca086af80e&Colors"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
@@ -7621,7 +7622,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@3165a9dfe03427ce66cbfbca086af80e&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -8455,6 +8456,211 @@
         "columns"
       ],
       "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2hvcnRjdXRzL1Nob3J0Y3V0QnV0dG9uLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Tooltip label",
+          "description": "Text displayed on tooltip"
+        },
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "ChevronLeft"
+            },
+            {
+              "type": "string",
+              "const": "ChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "ChevronUp"
+            },
+            {
+              "type": "string",
+              "const": "ChevronDown"
+            },
+            {
+              "type": "string",
+              "const": "QuestionMarkCircle"
+            },
+            {
+              "type": "string",
+              "const": "User"
+            },
+            {
+              "type": "string",
+              "const": "ShoppingCart"
+            },
+            {
+              "type": "string",
+              "const": "Bars3"
+            },
+            {
+              "type": "string",
+              "const": "Heart"
+            },
+            {
+              "type": "string",
+              "const": "MagnifyingGlass"
+            },
+            {
+              "type": "string",
+              "const": "XMark"
+            },
+            {
+              "type": "string",
+              "const": "Plus"
+            },
+            {
+              "type": "string",
+              "const": "Minus"
+            },
+            {
+              "type": "string",
+              "const": "MapPin"
+            },
+            {
+              "type": "string",
+              "const": "Phone"
+            },
+            {
+              "type": "string",
+              "const": "Elo"
+            },
+            {
+              "type": "string",
+              "const": "Mastercard"
+            },
+            {
+              "type": "string",
+              "const": "Visa"
+            },
+            {
+              "type": "string",
+              "const": "Pix"
+            },
+            {
+              "type": "string",
+              "const": "Logo"
+            },
+            {
+              "type": "string",
+              "const": "Facebook"
+            },
+            {
+              "type": "string",
+              "const": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Tiktok"
+            },
+            {
+              "type": "string",
+              "const": "Truck"
+            },
+            {
+              "type": "string",
+              "const": "Discount"
+            },
+            {
+              "type": "string",
+              "const": "Return"
+            },
+            {
+              "type": "string",
+              "const": "CreditCard"
+            },
+            {
+              "type": "string",
+              "const": "Deco"
+            },
+            {
+              "type": "string",
+              "const": "Discord"
+            },
+            {
+              "type": "string",
+              "const": "Trash"
+            },
+            {
+              "type": "string",
+              "const": "FilterList"
+            },
+            {
+              "type": "string",
+              "const": "WhatsApp"
+            },
+            {
+              "type": "string",
+              "const": "ArrowsPointingOut"
+            }
+          ],
+          "type": "string",
+          "title": "Icon",
+          "description": "Icon displayed inside the button"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Href",
+          "description": "URL or ID to redirect to"
+        },
+        "target": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "_blank"
+            },
+            {
+              "type": "string",
+              "const": "_self"
+            },
+            {
+              "type": "string",
+              "const": "_parent"
+            },
+            {
+              "type": "string",
+              "const": "_top"
+            }
+          ],
+          "type": "string",
+          "title": "Target",
+          "description": "Where to open the linked document."
+        }
+      },
+      "required": [
+        "label",
+        "icon"
+      ],
+      "title": "Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2hvcnRjdXRzL1Nob3J0Y3V0QnV0dG9uLnRzeA==@Props[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2hvcnRjdXRzL1Nob3J0Y3V0QnV0dG9uLnRzeA==@Props"
+      },
+      "title": "Props[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2hvcnRjdXRzL1Nob3J0Y3V0cy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "buttons": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2hvcnRjdXRzL1Nob3J0Y3V0QnV0dG9uLnRzeA==@Props[]",
+          "title": "Buttons"
+        }
+      },
+      "required": [
+        "buttons"
+      ],
+      "title": "deco-sites/fashion/components/shortcuts/Shortcuts.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props": {
       "type": "object",
@@ -11072,6 +11278,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy50c3g=": {
+      "title": "deco-sites/fashion/sections/Shortcuts.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2hvcnRjdXRzL1Nob3J0Y3V0cy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Shortcuts.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Shortcuts.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA==": {
       "title": "deco-sites/fashion/sections/WhatsApp.tsx",
       "type": "object",
@@ -12276,6 +12503,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
