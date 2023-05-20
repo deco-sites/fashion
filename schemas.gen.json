@@ -94,6 +94,7 @@
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
+              "deco-sites/fashion/sections/Testimonials/Testimonials.KATIAU.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -7640,12 +7641,13 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZBUS9GQVEuS0FUSUFVLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "subtitletop": {
+        "subtitleTop": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Subtitletop"
+          "description": "Subtítulo do Topo",
+          "title": "Subtitle Top"
         },
         "questions": {
           "type": "array",
@@ -7673,10 +7675,12 @@
             "string",
             "null"
           ],
+          "description": "Subtítulo do Rodapé",
           "title": "Subtitlebot"
         },
         "botao": {
           "type": "string",
+          "description": "Texto CTA",
           "title": "Botao"
         }
       },
@@ -8506,6 +8510,102 @@
       ],
       "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMuS0FUSUFVLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "testimonial": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "logo": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "title": "Src"
+                  },
+                  "alt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "title": "Alt"
+                  }
+                },
+                "required": [
+                  "src"
+                ],
+                "title": "Logo"
+              },
+              "textTestimonial": {
+                "type": "string",
+                "title": "Text Testimonial"
+              },
+              "pictureTestimonial": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string",
+                    "title": "Src"
+                  },
+                  "alt": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "title": "Alt"
+                  }
+                },
+                "required": [
+                  "src"
+                ],
+                "title": "Picture Testimonial"
+              },
+              "nameTestimonial": {
+                "type": "string",
+                "title": "Name Testimonial"
+              },
+              "subtextTestimonial": {
+                "type": "string",
+                "title": "Subtext Testimonial"
+              }
+            },
+            "required": [
+              "logo",
+              "textTestimonial",
+              "pictureTestimonial",
+              "nameTestimonial",
+              "subtextTestimonial"
+            ]
+          },
+          "title": "Testimonial"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Interval"
+        }
+      },
+      "required": [
+        "title",
+        "testimonial"
+      ],
+      "title": "deco-sites/fashion/sections/Testimonials/Testimonials.KATIAU.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props": {
       "type": "object",
       "properties": {
@@ -8907,7 +9007,11 @@
         },
         "name": {
           "type": "string",
-          "title": "Name"
+          "title": "The audience name (will be used on cookies).",
+          "description": "Add a meaningful short word for the audience name.",
+          "maxLength": 22,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9_]+$"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
@@ -9023,7 +9127,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -9041,13 +9145,13 @@
           ]
         }
       ],
-      "title": "95abd76f92dd138f258080286726977e|WorkflowRef"
+      "title": "6fafe0f553db3c0685828404a37be338|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@95abd76f92dd138f258080286726977e|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
@@ -11143,6 +11247,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMuS0FUSUFVLnRzeA==": {
+      "title": "deco-sites/fashion/sections/Testimonials/Testimonials.KATIAU.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMuS0FUSUFVLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Testimonials/Testimonials.KATIAU.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Testimonials/Testimonials.KATIAU.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA==": {
       "title": "deco-sites/fashion/sections/WhatsApp.tsx",
       "type": "object",
@@ -12350,6 +12475,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMuS0FUSUFVLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
