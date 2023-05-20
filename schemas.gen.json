@@ -66,6 +66,7 @@
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
               "./islands/ProductList.tsx",
+              "./islands/QuickViewModal.tsx",
               "./islands/SearchControls.tsx",
               "./islands/ShippingSimulation.tsx",
               "./islands/SliderJS.tsx",
@@ -94,6 +95,7 @@
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductList/ProductList.198.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
+              "deco-sites/fashion/sections/QuickView.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
@@ -6691,6 +6693,65 @@
       ],
       "title": "deco-sites/fashion/components/ProductList/ProductList.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcXVpY2tWaWV3L1F1aWNrVmlldy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "imagePlaceholder": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "left"
+            },
+            {
+              "type": "string",
+              "const": "right"
+            }
+          ],
+          "type": "string",
+          "title": "Image Placeholder"
+        },
+        "product": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product",
+          "title": "Product"
+        },
+        "open": {
+          "type": "boolean",
+          "title": "Open"
+        },
+        "onClose": {
+          "title": "On Close"
+        },
+        "seeMoreButton": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "title": "Href"
+            },
+            "target": {
+              "type": "string",
+              "title": "Target"
+            },
+            "label": {
+              "type": "string",
+              "title": "Label"
+            }
+          },
+          "required": [
+            "href",
+            "target",
+            "label"
+          ],
+          "title": "See More Button"
+        }
+      },
+      "required": [
+        "product",
+        "open",
+        "onClose"
+      ],
+      "title": "deco-sites/fashion/components/quickView/QuickView.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -10630,6 +10691,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL1F1aWNrVmlld01vZGFsLnRzeA==": {
+      "title": "./islands/QuickViewModal.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcXVpY2tWaWV3L1F1aWNrVmlldy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/QuickViewModal.tsx"
+          ],
+          "default": "./islands/QuickViewModal.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA==": {
       "title": "./islands/SearchControls.tsx",
       "type": "object",
@@ -11199,6 +11281,27 @@
             "deco-sites/fashion/sections/ProductShelf.tsx"
           ],
           "default": "deco-sites/fashion/sections/ProductShelf.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1F1aWNrVmlldy50c3g=": {
+      "title": "deco-sites/fashion/sections/QuickView.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcXVpY2tWaWV3L1F1aWNrVmlldy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/QuickView.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/QuickView.tsx"
         }
       }
     },
@@ -12324,6 +12427,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RMaXN0LnRzeA=="
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1F1aWNrVmlld01vZGFsLnRzeA=="
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="
         },
         {
@@ -12430,6 +12536,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZi50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1F1aWNrVmlldy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="

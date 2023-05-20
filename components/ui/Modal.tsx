@@ -15,6 +15,8 @@ if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
   title?: string;
+  headerBorder?: "borderless" | "bordered";
+  headerPosition?: "absolute-right" | "absolute-left" | "fixed";
   mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
@@ -32,6 +34,17 @@ const sectionStyles = {
   center: "justify-center items-center",
 };
 
+const headerStyles = {
+  "borderless": "border-b-0",
+  "bordered": "border-b border-base-200",
+};
+
+const headerPositionStyles = {
+  "absolute-right": "absolute top-6 right-2",
+  "absolute-left": "absolute top-6 left-2",
+  "fixed": "flex px-4 py-6 justify-between items-center",
+};
+
 const containerStyles = {
   "sidebar-right": "h-full w-full sm:max-w-lg",
   "sidebar-left": "h-full w-full sm:max-w-lg",
@@ -44,6 +57,8 @@ const Modal = ({
   mode = "sidebar-right",
   onClose,
   children,
+  headerBorder = "bordered",
+  headerPosition = "fixed",
   loading,
   ...props
 }: Props) => {
@@ -78,18 +93,25 @@ const Modal = ({
       onClose={onClose}
     >
       <section
-        class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
+        class={`w-full h-full flex bg-transparent  ${sectionStyles[mode]}`}
       >
         <div
-          class={`bg-base-100 flex flex-col max-h-full ${
+          class={`bg-base-100 flex flex-col max-h-full relative ${
             containerStyles[mode]
           }`}
         >
-          <header class="flex px-4 py-6 justify-between items-center border-b border-base-200">
+          <header
+            class={`${headerPositionStyles[headerPosition]} ${
+              headerStyles[headerBorder]
+            }`}
+          >
             <h1>
               <span class="font-medium text-2xl">{title}</span>
             </h1>
-            <Button class="btn btn-ghost" onClick={onClose}>
+            <Button
+              class="btn btn-ghost"
+              onClick={onClose}
+            >
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
             </Button>
           </header>
