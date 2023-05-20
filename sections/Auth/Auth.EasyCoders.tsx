@@ -55,12 +55,12 @@ export default function Auth(
           </button>
         )}
 
-      <header class="flex flex-col w-full items-center text-center justify-center text-[#292929] gap-2 pt-4 lg:pt-0 pb-4">
-        <h1 class="text-3xl leading-9 font-bold w-full items-center">
-          {title}
-        </h1>
-        <span class="text-sm leading-5">{description}</span>
-      </header>
+        <header class="flex flex-col w-full items-center text-center justify-center text-[#292929] gap-2 pt-4 lg:pt-0 pb-4">
+          <h1 class="text-3xl leading-9 font-bold w-full items-center">
+            {title}
+          </h1>
+          <span class="text-sm leading-5">{description}</span>
+        </header>
 
         <main>
           <div class="flex flex-col gap-4 items-start text-[#292929]">
