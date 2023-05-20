@@ -10,6 +10,7 @@ interface Props {
 const ATTRIBUTES = {
   "data-slider": "data-slider",
   "data-slider-item": "data-slider-item",
+  "data-slider-clone-item": "data-slider-clone-item",
   'data-slide="prev"': 'data-slide="prev"',
   'data-slide="next"': 'data-slide="next"',
   "data-dot": "data-dot",
@@ -18,7 +19,7 @@ const ATTRIBUTES = {
 // Percentage of the item that has to be inside the container
 // for it it be considered as inside the container
 const THRESHOLD = 0.6;
-
+let timeout: number | undefined;
 const intersectionX = (element: DOMRect, container: DOMRect): number => {
   const delta = container.width / 1_000;
 
@@ -48,11 +49,19 @@ const isHTMLElement = (x: Element): x is HTMLElement =>
 
 const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   const root = document.getElementById(rootId);
-  const slider = root?.querySelector(`[${ATTRIBUTES["data-slider"]}]`);
-  const items = root?.querySelectorAll(`[${ATTRIBUTES["data-slider-item"]}]`);
+  const slider = root?.querySelector<HTMLUListElement>(
+    `[${ATTRIBUTES["data-slider"]}]`,
+  );
   const prev = root?.querySelector(`[${ATTRIBUTES['data-slide="prev"']}]`);
   const next = root?.querySelector(`[${ATTRIBUTES['data-slide="next"']}]`);
   const dots = root?.querySelectorAll(`[${ATTRIBUTES["data-dot"]}]`);
+
+  const getCloneItems = () =>
+    root?.querySelectorAll(`[${ATTRIBUTES["data-slider-clone-item"]}]`)!;
+
+  const getItems = () =>
+    root?.querySelectorAll(`[${ATTRIBUTES["data-slider-item"]}]`);
+  let items = getItems();
 
   if (!root || !slider || !items || items.length === 0) {
     console.warn(
@@ -63,18 +72,24 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     return;
   }
 
+  const getItemRatio = (element: Element): number => {
+    const rect = element.getBoundingClientRect();
+    const sliderRect = slider.getBoundingClientRect();
+
+    return intersectionX(
+      rect,
+      sliderRect,
+    ) / rect.width;
+  };
+
   const getElementsInsideContainer = () => {
     const indices: number[] = [];
-    const sliderRect = slider.getBoundingClientRect();
+    items = getItems()!;
 
     for (let index = 0; index < items.length; index++) {
       const item = items.item(index);
-      const rect = item.getBoundingClientRect();
 
-      const ratio = intersectionX(
-        rect,
-        sliderRect,
-      ) / rect.width;
+      const ratio = getItemRatio(item);
 
       if (ratio > THRESHOLD) {
         indices.push(index);
@@ -85,7 +100,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   };
 
   const goToItem = (index: number) => {
-    const item = items.item(index);
+    const item = items!.item(index);
 
     if (!isHTMLElement(item)) {
       console.warn(
@@ -102,26 +117,80 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     });
   };
 
-  const onClickPrev = () => {
-    const indices = getElementsInsideContainer();
-    // Wow! items per page is how many elements are being displayed inside the container!!
-    const itemsPerPage = indices.length;
-
-    const isShowingFirst = indices[0] === 0;
-    const pageIndex = Math.floor(indices[indices.length - 1] / itemsPerPage);
-
-    goToItem(
-      isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage,
+  const handleInfiniteItems = (
+    item: Element,
+    reference: Element,
+    type: "before" | "after",
+  ) => {
+    const cloneAttr = item.attributes.getNamedItem(
+      "data-slider-clone-item",
+    );
+    if (cloneAttr) {
+      item.attributes.removeNamedItem("data-slider-clone-item");
+      reference[type](item);
+      return;
+    }
+    item.attributes.setNamedItem(
+      document.createAttribute("data-slider-clone-item"),
     );
   };
 
-  const onClickNext = () => {
+  const onClickPrev = (clear?: boolean) => {
+    if (clear) clearInterval(timeout);
+    const firstItem = root.querySelector(
+      '[data-slider-item="0"]:not([data-slider-clone-item])',
+    );
+
+    if (infinite && getItemRatio(firstItem!) > 0) {
+      items!.forEach((item) => handleInfiniteItems(item, firstItem!, "before"));
+    }
+
     const indices = getElementsInsideContainer();
     // Wow! items per page is how many elements are being displayed inside the container!!
     const itemsPerPage = indices.length;
 
-    const isShowingLast = indices[indices.length - 1] === items.length - 1;
+    const pageIndex = Math.floor(indices[indices.length - 1] / itemsPerPage);
+    const isShowingFirst = indices[0] === 0;
+
+    if (infinite) {
+      return goToItem(
+        (pageIndex - 1) * itemsPerPage,
+      );
+    }
+
+    goToItem(
+      isShowingFirst ? items!.length - 1 : (pageIndex - 1) * itemsPerPage,
+    );
+  };
+
+  const onClickNext = (clear?: boolean) => {
+    if (clear) clearInterval(timeout);
+    const notCloneItems = root.querySelectorAll(
+      "[data-slider-item]:not([data-slider-clone-item])",
+    );
+    const lastItem = notCloneItems[notCloneItems.length - 1];
+
+    if (infinite && getItemRatio(lastItem!) > 0) {
+      items!.forEach((item) => {
+        const realLast = root.querySelector(
+          "[data-slider-item]:last-child",
+        );
+        handleInfiniteItems(item, realLast!, "after");
+      });
+    }
+
+    const indices = getElementsInsideContainer();
+    // Wow! items per page is how many elements are being displayed inside the container!!
+    const itemsPerPage = indices.length;
+
+    const isShowingLast = indices[indices.length - 1] === items!.length - 1;
     const pageIndex = Math.floor(indices[0] / itemsPerPage);
+
+    if (infinite) {
+      return goToItem(
+        (pageIndex + 1) * itemsPerPage,
+      );
+    }
 
     goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
   };
@@ -146,7 +215,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
               prev?.removeAttribute("disabled");
             }
           }
-          if (index === items.length - 1) {
+          if (index === items!.length - 1) {
             if (item.isIntersecting) {
               next?.setAttribute("disabled", "");
             } else {
@@ -164,10 +233,28 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     dots?.item(it).addEventListener("click", () => goToItem(it));
   }
 
-  prev?.addEventListener("click", onClickPrev);
-  next?.addEventListener("click", onClickNext);
+  let touchstartX = 0;
+  function handleTouchStart(event: TouchEvent) {
+    touchstartX = event.touches[0]?.pageX;
+  }
 
-  const timeout = interval && setInterval(onClickNext, interval);
+  function handleTouchEnd(event: TouchEvent) {
+    const touchendX = event.changedTouches[0]?.pageX;
+    if (touchendX < touchstartX) {
+      return onClickNext(true);
+    }
+    if (touchendX > touchstartX) {
+      return onClickPrev(true);
+    }
+  }
+
+  slider.addEventListener("touchstart", handleTouchStart, false);
+  slider.addEventListener("touchend", handleTouchEnd, false);
+
+  prev?.addEventListener("click", () => onClickPrev(true));
+  next?.addEventListener("click", () => onClickNext(true));
+
+  timeout = interval && setInterval(onClickNext, interval);
 
   // Unregister callbacks
   return () => {
@@ -175,8 +262,11 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
       dots?.item(it).removeEventListener("click", () => goToItem(it));
     }
 
-    prev?.removeEventListener("click", onClickPrev);
-    next?.removeEventListener("click", onClickNext);
+    prev?.removeEventListener("click", () => onClickPrev(true));
+    next?.removeEventListener("click", () => onClickNext(true));
+
+    slider.removeEventListener("touchstart", handleTouchStart);
+    slider.removeEventListener("touchend", handleTouchEnd);
 
     observer.disconnect();
 

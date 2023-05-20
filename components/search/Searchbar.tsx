@@ -217,6 +217,7 @@ function Searchbar({
                 <Slider class="carousel">
                   {suggestions.value!.products?.map((product, index) => (
                     <Slider.Item
+                      itemsPerPage={{ default: 1 }}
                       index={index}
                       class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
                     >

@@ -34,11 +34,15 @@ function ProductShelf({
         <span class="font-medium text-2xl">{title}</span>
       </h2>
 
-      <Slider class="carousel carousel-center sm:carousel-end gap-6 col-span-full row-start-2 row-end-5">
+      <Slider
+        infinite
+        class="carousel carousel-center sm:carousel-end col-span-full row-start-2 row-end-5"
+      >
         {products?.map((product, index) => (
           <Slider.Item
+            itemsPerPage={{ sm: 2, md: 3, lg: 4, default: 1 }}
             index={index}
-            class="carousel-item w-[270px] sm:w-[292px] first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
+            class="carousel-item first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
           >
             <ProductCard product={product} itemListName={title} />
           </Slider.Item>
@@ -57,7 +61,7 @@ function ProductShelf({
           </Slider.NextButton>
         </div>
       </>
-      <SliderJS rootId={id} />
+      <SliderJS rootId={id} infinite />
       <SendEventOnLoad
         event={{
           name: "view_item_list",

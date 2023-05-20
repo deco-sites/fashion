@@ -256,6 +256,7 @@ function Details({
             <Slider class="carousel gap-6">
               {images.map((img, index) => (
                 <Slider.Item
+                  itemsPerPage={{ default: 1 }}
                   index={index}
                   class="carousel-item min-w-[100vw] sm:min-w-[40vw]"
                 >

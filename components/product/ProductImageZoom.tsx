@@ -42,7 +42,11 @@ function ProductImageZoom({ images, width, height }: Props) {
         <div class="relative" id={id}>
           <Slider class="carousel w-screen overflow-y-auto">
             {images.map((image, index) => (
-              <Slider.Item index={index} class="carousel-item w-full">
+              <Slider.Item
+                itemsPerPage={{ default: 1 }}
+                index={index}
+                class="carousel-item w-full"
+              >
                 <Image
                   style={{ aspectRatio: `${width} / ${height}` }}
                   src={image.url!}
