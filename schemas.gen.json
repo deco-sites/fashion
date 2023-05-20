@@ -8196,7 +8196,8 @@
             "number",
             "null"
           ],
-          "title": "Interval"
+          "title": "Autoplay Interval",
+          "description": "Leave it blank if you don't want autoplay"
         },
         "style": {
           "anyOf": [
@@ -8210,12 +8211,27 @@
             }
           ],
           "type": "string",
-          "title": "Style"
+          "title": "Dots style"
+        },
+        "arrowPosition": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "middle"
+            },
+            {
+              "type": "string",
+              "const": "bottomRight"
+            }
+          ],
+          "type": "string",
+          "title": "Arrow Positioning"
         }
       },
       "required": [
         "banners",
-        "style"
+        "style",
+        "arrowPosition"
       ],
       "title": "deco-sites/fashion/components/banners/FullBanner.discipulos-do-saliby.tsx@Props"
     },

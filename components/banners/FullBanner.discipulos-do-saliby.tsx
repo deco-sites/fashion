@@ -8,8 +8,19 @@ import { useId } from "preact/hooks";
 
 export interface Props {
   banners: SingleBannerProps[];
+  /**
+   * @title Autoplay Interval
+   * @description Leave it blank if you don't want autoplay
+   */
   interval?: number;
+  /**
+   * @title Dots style
+   */
   style: "dots" | "lines";
+  /**
+   * @title Arrow Positioning
+   */
+  arrowPosition: "middle" | "bottomRight";
 }
 
 function BannerItem(banner: SingleBannerProps) {
@@ -19,14 +30,16 @@ function BannerItem(banner: SingleBannerProps) {
 const dotsCVA = cva([], {
   variants: {
     style: {
-      dots: "rounded-full w-2 h-2 bg-base-content group-disabled:bg-base-300",
+      dots: "rounded-full w-2 h-2  group-disabled:bg-base-content bg-base-300",
       lines:
         "w-16 sm:w-20 h-0.5 rounded  group-disabled:animate-progress bg-gradient-to-r from-base-content from-[length:var(--dot-progress)] to-base-300 to-[length:var(--dot-progress)]",
     },
   },
 });
 
-function Dots({ banners, interval, style }: Props) {
+function Dots(
+  { banners, interval, style }: Pick<Props, "banners" | "interval" | "style">,
+) {
   const dotsClass = dotsCVA({ style });
 
   return (
@@ -60,9 +73,20 @@ function Dots({ banners, interval, style }: Props) {
   );
 }
 
-function Buttons() {
+const buttonsCVA = cva(["absolute flex px-3 md:px-10 pb-4"], {
+  variants: {
+    position: {
+      middle: "top-1/2 -translate-y-1/2 w-full justify-between",
+      bottomRight: "bottom-4 right-0 gap-2 md:gap-6",
+    },
+  },
+});
+
+function Buttons({ arrowPosition }: Pick<Props, "arrowPosition">) {
+  const containerClass = buttonsCVA({ position: arrowPosition ?? "middle" });
+
   return (
-    <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-3 md:px-10 pb-4">
+    <div className={containerClass}>
       <div class="flex items-center justify-center z-10">
         <Slider.PrevButton class="rounded-full w-6 h-6 md:w-10 md:h-10 bg-white border border-base-300 grid place-items-center">
           <Icon
@@ -87,7 +111,7 @@ function Buttons() {
   );
 }
 
-function FullBanner({ banners, interval, style }: Props) {
+function FullBanner({ banners, interval, style, arrowPosition }: Props) {
   const id = useId();
 
   return (
@@ -103,7 +127,7 @@ function FullBanner({ banners, interval, style }: Props) {
         ))}
       </Slider>
 
-      <Buttons />
+      <Buttons arrowPosition={arrowPosition} />
 
       <Dots banners={banners} interval={interval} style={style} />
 
