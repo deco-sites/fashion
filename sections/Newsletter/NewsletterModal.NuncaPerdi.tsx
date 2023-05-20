@@ -19,7 +19,7 @@ export interface Props {
 }
 
 function ModalNewsLetter(
-  { strings, inputStrings }: Props,
+  { strings = { image : { src: "/NKP Modal.jpg", alt : " " }, bemvindo : "Bem-Vindo!", texto : "Garanta 10% de desconto se inscrevendo agora." }, inputStrings = {primeiroNome : "Primeiro nome:", placeholderNome : "Digite nome...", email : "E-mail:", placeholderEmail : "Digite o e-mail..", checkBoxTxt : "Eu concordo com termos de uso" , btnEnviar : "Enviar" } }: Props,
 ) {
   return (
     <>

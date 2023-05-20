@@ -28,8 +28,8 @@ import * as $$$$$$$$7 from "./sections/Footer.tsx";
 import * as $$$$$$$$8 from "./sections/Header.tsx";
 import * as $$$$$$$$9 from "./sections/Highlights.tsx";
 import * as $$$$$$$$10 from "./sections/LinkTree.tsx";
-import * as $$$$$$$$11 from "./sections/Newsletter/NewsletterModal.NuncaPerdi.tsx";
-import * as $$$$$$$$12 from "./sections/NewsletterModal.NuncaPerdi.tsx";
+import * as $$$$$$$$11 from "./sections/Newsletter/Newsletter.NuncaPerdi.tsx";
+import * as $$$$$$$$12 from "./sections/Newsletter/NewsletterModal.NuncaPerdi.tsx";
 import * as $$$$$$$$13 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$14 from "./sections/ProductShelf.tsx";
 import * as $$$$$$$$15 from "./sections/SearchResult.tsx";
@@ -185,9 +185,10 @@ const manifest = {
     "deco-sites/fashion/sections/Header.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$9,
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$10,
-    "deco-sites/fashion/sections/Newsletter/NewsletterModal.NuncaPerdi.tsx":
+    "deco-sites/fashion/sections/Newsletter/Newsletter.NuncaPerdi.tsx":
       $$$$$$$$11,
-    "deco-sites/fashion/sections/NewsletterModal.NuncaPerdi.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/Newsletter/NewsletterModal.NuncaPerdi.tsx":
+      $$$$$$$$12,
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$13,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$14,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$15,
