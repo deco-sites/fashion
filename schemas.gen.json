@@ -83,7 +83,7 @@
               "deco-sites/fashion/sections/BannerGrid.tsx",
               "deco-sites/fashion/sections/BannerPLP.tsx",
               "deco-sites/fashion/sections/Carousel.tsx",
-              "deco-sites/fashion/sections/Cookie/CookieConsent.tsx",
+              "deco-sites/fashion/sections/Cookie/CookieConsent.time-66.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
               "deco-sites/fashion/sections/DesignSystem.tsx",
               "deco-sites/fashion/sections/Features.tsx",
@@ -10868,8 +10868,8 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZS9Db29raWVDb25zZW50LnRzeA==": {
-      "title": "deco-sites/fashion/sections/Cookie/CookieConsent.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZS9Db29raWVDb25zZW50LnRpbWUtNjYudHN4": {
+      "title": "deco-sites/fashion/sections/Cookie/CookieConsent.time-66.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -10878,9 +10878,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/fashion/sections/Cookie/CookieConsent.tsx"
+            "deco-sites/fashion/sections/Cookie/CookieConsent.time-66.tsx"
           ],
-          "default": "deco-sites/fashion/sections/Cookie/CookieConsent.tsx"
+          "default": "deco-sites/fashion/sections/Cookie/CookieConsent.time-66.tsx"
         }
       }
     },
@@ -12265,7 +12265,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZS9Db29raWVDb25zZW50LnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZS9Db29raWVDb25zZW50LnRpbWUtNjYudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZUNvbnNlbnQudHN4"

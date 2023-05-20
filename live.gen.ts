@@ -20,7 +20,7 @@ import * as $$$$$10 from "./islands/WishlistButton.tsx";
 import * as $$$$$$$$0 from "./sections/BannerGrid.tsx";
 import * as $$$$$$$$1 from "./sections/BannerPLP.tsx";
 import * as $$$$$$$$2 from "./sections/Carousel.tsx";
-import * as $$$$$$$$3 from "./sections/Cookie/CookieConsent.tsx";
+import * as $$$$$$$$3 from "./sections/Cookie/CookieConsent.time-66.tsx";
 import * as $$$$$$$$4 from "./sections/CookieConsent.tsx";
 import * as $$$$$$$$5 from "./sections/DesignSystem.tsx";
 import * as $$$$$$$$6 from "./sections/Features.tsx";
@@ -175,7 +175,7 @@ const manifest = {
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$0,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$2,
-    "deco-sites/fashion/sections/Cookie/CookieConsent.tsx": $$$$$$$$3,
+    "deco-sites/fashion/sections/Cookie/CookieConsent.time-66.tsx": $$$$$$$$3,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$4,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$5,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$6,
