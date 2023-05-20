@@ -1,13 +1,7 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 export interface Props {
-  /**
-   * @default Benefits title
-   */
   title: string;
-  /**
-   * @default Description of benefits
-   */
   description: string;
   benefits: Array<{
     title: string;
@@ -16,7 +10,18 @@ export interface Props {
   }>;
 }
 
-export default function Benefits({ title, description, benefits = [] }: Props) {
+export default function Benefits(
+  props: Props,
+) {
+  const {
+    title = "Benefits title",
+    description = "Benefits description",
+    benefits = [{
+      title: "Benefício",
+      icon: "Heart",
+      description: "Descrição do benefício",
+    }],
+  } = props;
   return (
     <div class="flex flex-col pt-6 sm:pt-10 pb-6 sm:pb-10 pl-6 sm:pl-16 pr-6 sm:pr-16 gap-8 sm:gap-10">
       <div class="flex flex-col gap-2">
