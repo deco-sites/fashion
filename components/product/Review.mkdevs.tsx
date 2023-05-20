@@ -69,7 +69,9 @@ function ReviewsPaginator({ page, setPage, pageCount }: PaginatorProps) {
         <button
           disabled={num <= 0 || num > pageCount}
           onClick={() => setPage(num - 1)}
-          class={`rounded-full p-2 w-10 h-10 flex items-center justify-center disabled:opacity-0 ${num === page + 1 ? "bg-black text-white" : "hover:bg-gray-200"}`}
+          class={`rounded-full p-2 w-10 h-10 flex items-center justify-center disabled:opacity-0 ${
+            num === page + 1 ? "bg-black text-white" : "hover:bg-gray-200"
+          }`}
         >
           {num}
         </button>
@@ -166,7 +168,7 @@ function ProductReviews({ title, reviews, pageSize }: Props) {
             {range(0, 9).map((num) => {
               return (
                 <input
-                  onClick={e => e.preventDefault()}
+                  onClick={(e) => e.preventDefault()}
                   type="radio"
                   name={`rating-10`}
                   class={`mask mask-star-2 bg-orange-400 
