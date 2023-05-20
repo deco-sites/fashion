@@ -18,7 +18,7 @@ function CampaignTimer(
 ) {
   return (
     <div
-      className={"w-full h-auto bg-red-500 flex justify-center items-center gap-2 flex-wrap px-3 py-1 text-center"}
+      className={`w-full h-auto bg-red-500 flex justify-center items-center gap-2 flex-wrap px-3 py-1 text-center`}
       style={{
         background: campaign_data.bg_color,
         color: campaign_data.text_color,
@@ -27,7 +27,7 @@ function CampaignTimer(
       {(campaign_data.text_side === "left" || window.innerWidth < 550)
         ? (
           <>
-            <span className="px-3">{campaign_data.text}</span>
+            <span className="px-3 max-w-lg">{campaign_data.text}</span>
             <CountDownTimer endDate={campaign_data.endTime} />
             <button className="btn px-3 rounded-none">
               {campaign_data.btnText}
@@ -37,7 +37,7 @@ function CampaignTimer(
         : (
           <>
             <CountDownTimer endDate={campaign_data.endTime} />
-            <span className="px-3">{campaign_data.text}</span>
+            <span className="px-3 max-w-lg">{campaign_data.text}</span>
             <button className="btn px-3 rounded-none">
               {campaign_data.btnText}
             </button>

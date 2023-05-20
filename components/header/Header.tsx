@@ -59,8 +59,22 @@ function Header(
     suggestions,
   }: Props,
 ) {
+  const testData: CampaignTimerProps = {
+    campaign_data: {
+      text:
+        "Ganhe 15% de desconto em sua primeira compra em vestidos femininos",
+      link: "/feminino/vestidos",
+      endTime: "23/05/2023 00:00:00",
+      coupon: "BEMVINDA15",
+      bg_color: "#E37A69",
+      btnText: "Copiar Cupom",
+      text_side: "left",
+      text_color: "#ffffff",
+    },
+  };
 
   const searchbar = { ..._searchbar, products, suggestions };
+  
   return (
     <>
       <header style={{ height: headerHeight }}>
@@ -68,7 +82,7 @@ function Header(
           <Alert alerts={alerts} />
           {campaignTimerProps && (
             <CampaignTimer
-              campaign_data={campaignTimerProps.campaign_data}
+              campaign_data={testData.campaign_data}
             />
           )}
 
