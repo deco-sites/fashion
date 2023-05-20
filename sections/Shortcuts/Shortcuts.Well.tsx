@@ -12,8 +12,29 @@ export interface Props {
 }
 
 export default function Shortcuts({ shortcuts }: Props) {
-  if (!shortcuts) {
-    shortcuts = [];
+  if (!shortcuts || shortcuts.length === 0) {
+    shortcuts = [
+      {
+        icon: "WhatsApp",
+        tooltip: "WhatsApp",
+      },
+      {
+        icon: "Messages",
+        tooltip: "Mensagens",
+      },
+      {
+        icon: "Ruler",
+        tooltip: "Régua",
+      },
+      {
+        icon: "TruckDelivery",
+        tooltip: "Entrega",
+      },
+      {
+        icon: "ArrowsRightLeft",
+        tooltip: "Ajustes",
+      },
+    ];
   }
   return (
     <div class="absolute bg-white top-1/2 right-0">
