@@ -16,8 +16,6 @@ export interface CampaignTimerProps {
 function CampaignTimer(
   { campaign_data }: CampaignTimerProps,
 ) {
-  
-
   return (
     <div
       className={"w-full h-auto bg-red-500 flex justify-center items-center gap-2 flex-wrap px-3 py-1 text-center"}
