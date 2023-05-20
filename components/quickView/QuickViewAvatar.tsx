@@ -16,7 +16,7 @@ const colors: Record<string, string> = {
   "vermelha": "bg-[#FF0000] ring-[#FF0000]",
 
   // Color variants - only applied when no color as content is passed
-  "active": "bg-neutral-focus text-neutral-content ring-neutral-focus ",
+  "active": "bg-neutral-focus text-white ring-neutral-focus",
   "disabled": "bg-neutral-content text-neutral",
   "default": "bg-neutral text-neutral-content",
   "ghost": "bg-transparent text-base border border-base-content",
@@ -36,10 +36,6 @@ const variants = {
 };
 
 function Avatar({ content, variant = "default" }: Props) {
-  console.log(
-    "🚀 ~ file: QuickViewAvatar.tsx:39 ~ functionAvatar({content,variant ~ content:",
-    content,
-  );
   return (
     <div class="avatar placeholder">
       <div
@@ -47,7 +43,7 @@ function Avatar({ content, variant = "default" }: Props) {
           variants[variant]
         }`}
       >
-        <span class="text-caption font-caption uppercase">
+        <span class="text-base-500 text-sm font-caption uppercase">
           {colors[content] ? "" : content.substring(0, 2)}
         </span>
       </div>
