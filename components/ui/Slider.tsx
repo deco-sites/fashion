@@ -18,9 +18,11 @@ function Dot({ index, children }: {
 }
 
 function Slider(
-  { infinite, children, class: _class, ...props }: JSX.IntrinsicElements["ul"] & {
-    infinite?: boolean;
-  },
+  { infinite, children, class: _class, ...props }:
+    & JSX.IntrinsicElements["ul"]
+    & {
+      infinite?: boolean;
+    },
 ) {
   return (
     <ul data-slider {...props} class={`overflow-hidden ${_class}`}>
