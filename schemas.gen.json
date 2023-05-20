@@ -95,6 +95,7 @@
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
+              "deco-sites/fashion/sections/Shortcuts.Time19.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -7827,6 +7828,22 @@
             {
               "type": "string",
               "const": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Message"
+            },
+            {
+              "type": "string",
+              "const": "Ruler"
+            },
+            {
+              "type": "string",
+              "const": "TruckDelivery"
+            },
+            {
+              "type": "string",
+              "const": "ArrowsRightLeft"
             }
           ],
           "type": "string",
@@ -8025,6 +8042,22 @@
             {
               "type": "string",
               "const": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Message"
+            },
+            {
+              "type": "string",
+              "const": "Ruler"
+            },
+            {
+              "type": "string",
+              "const": "TruckDelivery"
+            },
+            {
+              "type": "string",
+              "const": "ArrowsRightLeft"
             }
           ],
           "type": "string",
@@ -8510,6 +8543,197 @@
         "columns"
       ],
       "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy5UaW1lMTkudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "shortcuts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Label"
+              },
+              "icon": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "const": "ChevronLeft"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronRight"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronUp"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ChevronDown"
+                  },
+                  {
+                    "type": "string",
+                    "const": "QuestionMarkCircle"
+                  },
+                  {
+                    "type": "string",
+                    "const": "User"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ShoppingCart"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Bars3"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Heart"
+                  },
+                  {
+                    "type": "string",
+                    "const": "MagnifyingGlass"
+                  },
+                  {
+                    "type": "string",
+                    "const": "XMark"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Plus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Minus"
+                  },
+                  {
+                    "type": "string",
+                    "const": "MapPin"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Phone"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Elo"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Mastercard"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Visa"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Pix"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Logo"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Facebook"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Instagram"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Tiktok"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Truck"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Discount"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Return"
+                  },
+                  {
+                    "type": "string",
+                    "const": "CreditCard"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Deco"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Discord"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Trash"
+                  },
+                  {
+                    "type": "string",
+                    "const": "FilterList"
+                  },
+                  {
+                    "type": "string",
+                    "const": "WhatsApp"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ArrowsPointingOut"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Message"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Ruler"
+                  },
+                  {
+                    "type": "string",
+                    "const": "TruckDelivery"
+                  },
+                  {
+                    "type": "string",
+                    "const": "ArrowsRightLeft"
+                  }
+                ],
+                "type": "string",
+                "title": "Icon"
+              },
+              "tooltipLabel": {
+                "type": "string",
+                "title": "Tooltip Label"
+              },
+              "link": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "title": "Link"
+              }
+            },
+            "required": [
+              "label",
+              "icon",
+              "tooltipLabel"
+            ]
+          },
+          "title": "Shortcuts",
+          "description": "Cadastre cada shortcurt"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/sections/Shortcuts.Time19.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props": {
       "type": "object",
@@ -11164,6 +11388,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy5UaW1lMTkudHN4": {
+      "title": "deco-sites/fashion/sections/Shortcuts.Time19.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy5UaW1lMTkudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Shortcuts.Time19.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Shortcuts.Time19.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA==": {
       "title": "deco-sites/fashion/sections/WhatsApp.tsx",
       "type": "object",
@@ -12374,6 +12619,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy5UaW1lMTkudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
