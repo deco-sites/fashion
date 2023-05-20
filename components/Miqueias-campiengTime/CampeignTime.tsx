@@ -30,7 +30,7 @@ export default function CampignTime(
             <TextCampeignTime textInput={campaignDescription} nameLink={clickableLinkDescription} link={campaignLink}/>
           </div>
           <button class="px-4 py-2 bg-black text-white rounded transition hover:bg-slate-700">
-            {buttonDecription}
+            {buttonDecription ? "Button" : {buttonDecription} }
           </button>
           </div>
       </div>
