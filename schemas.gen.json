@@ -7675,6 +7675,7 @@
             "string",
             "null"
           ],
+          "description": "Titulo do Rodapé",
           "title": "Title Top"
         },
         "subtitlebot": {
