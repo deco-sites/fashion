@@ -169,7 +169,7 @@ export default function Review({ reviews }: Props) {
                     <span className="text-xs md:text-lg">{review.content}</span>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col md:flex-row gap-2">
                   <span className="items-center flex flex-col gap-2">
                     <img src={asset("/like.png")} alt="Like" className="pr-1" />
                     10
