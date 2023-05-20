@@ -11,20 +11,38 @@ export interface Props {
   images: ImageGallery[];
 }
 
-
 export default function ImageGallery(props: Props) {
-  const propsDefault = 
-    {
-      title: "image 1",
-      description: "image 1",
-      images: [
-        {image:"https://images.pexels.com/photos/2765871/pexels-photo-2765871.jpeg?auto=compress&cs=tinysrgb&w=1600", alt:'alt1'},
-        {image:"https://images.pexels.com/photos/3046480/pexels-photo-3046480.jpeg?auto=compress&cs=tinysrgb&w=1600", alt:'alt1'},
-        {image:"https://images.pexels.com/photos/2499769/pexels-photo-2499769.jpeg?auto=compress&cs=tinysrgb&w=1600", alt:'alt1'},
-        {image:"https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=1600", alt:'alt1'},
-      ],
-    };
-  const { images = propsDefault.images , title = propsDefault.title, description = propsDefault.description } = props;
+  const propsDefault = {
+    title: "image 1",
+    description: "image 1",
+    images: [
+      {
+        image:
+          "https://images.pexels.com/photos/2765871/pexels-photo-2765871.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        alt: "alt1",
+      },
+      {
+        image:
+          "https://images.pexels.com/photos/3046480/pexels-photo-3046480.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        alt: "alt1",
+      },
+      {
+        image:
+          "https://images.pexels.com/photos/2499769/pexels-photo-2499769.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        alt: "alt1",
+      },
+      {
+        image:
+          "https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        alt: "alt1",
+      },
+    ],
+  };
+  const {
+    images = propsDefault.images,
+    title = propsDefault.title,
+    description = propsDefault.description,
+  } = props;
   return (
     <div className="container lg:px-32 lg:pt-12 mx-auto px-5">
       <div className="p-8">
