@@ -1,4 +1,6 @@
-import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
+import Icon, {
+  AvailableIcons,
+} from "$store/components/ui/Icon.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
 import type { ComponentChildren } from "preact";
 
