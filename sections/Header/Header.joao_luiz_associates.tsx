@@ -14,24 +14,29 @@ import { ProductSizes } from "$store/sections/Header/components/ProductSizes/ind
 import { ColorFilter } from "$store/sections/Header/components/ColorFilter/index.tsx";
 import { PriceFilter } from "$store/sections/Header/components/PriceFilter/index.tsx";
 
-const Header: React.FC = () => {
+export interface Props {
+  questions: {
+    question: string;
+    answer: string;
+  }[];
+}
+
+export default function Header({ questions }: Props) {
   return (
-    <>
+    <div className="inline-flex flex-col navbar">
       {/* Header */}
-      <div>
-        <div>
+      <div className="w-screen flex-row justify-around">
+        <div className="inline-flex flex-row gap-4">
           {/* Hamburguer */}
           <Hamburguer />
           {/* Logo */}
           <Logo />
         </div>
 
-        <div>
-          {/* Nav Menu */}
-          <Nav />
-        </div>
+        {/* Nav Menu */}
+        <Nav />
 
-        <div>
+        <div className="inline-flex flex-row">
           {/* Search */}
           <Search />
           {/* Favorites */}
@@ -50,30 +55,18 @@ const Header: React.FC = () => {
       </div>
 
       {/* Filters */}
-      <div>
-        <div>
-          {/* Product Spotlight */}
-          <ProductSpotlight />
-        </div>
-        <div>
-          {/* Porduct Categories */}
-          <ProductCategories />
-        </div>
-        <div>
-          {/* Product sizes */}
-          <ProductSizes />
-        </div>
-        <div>
-          {/* Color filter */}
-          <ColorFilter />
-        </div>
-        <div>
-          {/* Price Filter */}
-          <PriceFilter />
-        </div>
+      <div className="inline-flex flex-row">
+        {/* Product Spotlight */}
+        <ProductSpotlight />
+        {/* Porduct Categories */}
+        <ProductCategories />
+        {/* Product sizes */}
+        <ProductSizes />
+        {/* Color filter */}
+        <ColorFilter />
+        {/* Price Filter */}
+        <PriceFilter />
       </div>
-    </>
+    </div>
   );
-};
-
-export default Header;
+}
