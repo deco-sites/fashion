@@ -65,6 +65,7 @@
               "./islands/Newsletter.tsx",
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
+              "./islands/ProductList.tsx",
               "./islands/SearchControls.tsx",
               "./islands/ShippingSimulation.tsx",
               "./islands/SliderJS.tsx",
@@ -91,6 +92,7 @@
               "deco-sites/fashion/sections/Highlights.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
+              "deco-sites/fashion/sections/ProductList/ProductList.198.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
@@ -6582,6 +6584,82 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvUHJvZHVjdExpc3QvSGVhZGVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
+              "href": {
+                "type": "string",
+                "title": "Href"
+              }
+            },
+            "required": [
+              "name",
+              "href"
+            ]
+          },
+          "title": "Categories"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "type": "number",
+              "const": 1
+            },
+            {
+              "type": "number",
+              "const": 2
+            },
+            {
+              "type": "number",
+              "const": 3
+            },
+            {
+              "type": "number",
+              "const": 4
+            }
+          ],
+          "type": "number",
+          "title": "Variant"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "categories",
+        "variant"
+      ],
+      "title": "Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvUHJvZHVjdExpc3QvUHJvZHVjdExpc3QudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvUHJvZHVjdExpc3QvSGVhZGVyLnRzeA==@Props",
+          "title": "Header"
+        }
+      },
+      "required": [
+        "header"
+      ],
+      "title": "deco-sites/fashion/components/ProductList/ProductList.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -7502,7 +7580,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&a646c354f29edcb436070e5cb7ba7a12": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors"
@@ -7518,7 +7596,7 @@
           "required": []
         }
       ],
-      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
+      "title": "Colors&a646c354f29edcb436070e5cb7ba7a12"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
@@ -7621,7 +7699,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&a646c354f29edcb436070e5cb7ba7a12",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -10500,6 +10578,27 @@
         }
       }
     },
+    "Li9pc2xhbmRzL1Byb2R1Y3RMaXN0LnRzeA==": {
+      "title": "./islands/ProductList.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvUHJvZHVjdExpc3QvUHJvZHVjdExpc3QudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ProductList.tsx"
+          ],
+          "default": "./islands/ProductList.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA==": {
       "title": "./islands/SearchControls.tsx",
       "type": "object",
@@ -11027,6 +11126,27 @@
             "deco-sites/fashion/sections/ProductDetails.tsx"
           ],
           "default": "deco-sites/fashion/sections/ProductDetails.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RMaXN0L1Byb2R1Y3RMaXN0LjE5OC50c3g=": {
+      "title": "deco-sites/fashion/sections/ProductList/ProductList.198.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvUHJvZHVjdExpc3QvUHJvZHVjdExpc3QudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/ProductList/ProductList.198.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/ProductList/ProductList.198.tsx"
         }
       }
     },
@@ -12170,6 +12290,9 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4"
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RMaXN0LnRzeA=="
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="
         },
         {
@@ -12270,6 +12393,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RMaXN0L1Byb2R1Y3RMaXN0LjE5OC50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZi50c3g="
