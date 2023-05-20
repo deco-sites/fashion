@@ -7230,6 +7230,24 @@
             ]
           },
           "title": "Benefits"
+        },
+        "benefitsWrapper": {
+          "type": "object",
+          "properties": {
+            "benefitTitle": {
+              "type": "string",
+              "title": "Benefit Title"
+            },
+            "benefitDescription": {
+              "type": "string",
+              "title": "Benefit Description"
+            }
+          },
+          "required": [
+            "benefitTitle",
+            "benefitDescription"
+          ],
+          "title": "Benefits Wrapper"
         }
       },
       "required": [],

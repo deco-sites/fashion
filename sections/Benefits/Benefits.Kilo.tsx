@@ -4,17 +4,27 @@ export interface Props {
     benefitsTitle: string;
     benefitsDesc: string;
   }>;
+  benefitsWrapper?: {
+    benefitTitle: string;
+    benefitDescription: string;
+  };
 }
 
-export default function Benefits({ benefits }: Props) {
+export default function Benefits({ benefits, benefitsWrapper }: Props) {
   return (
     <div className="flex flex-col items-center justify-center p-4">
-      <div className="text-3xl w-fit text-[#292929]">
-        Benefits Title
-      </div>
-      <div className="text-lg w-fit my-4 text-neutral-500">
-        Description of benefits
-      </div>
+      {benefitsWrapper
+        ? (
+          <>
+            <div className="text-3xl w-fit text-[#292929]">
+              {benefitsWrapper.benefitTitle}
+            </div>
+            <div className="text-lg w-fit my-4 text-neutral-500">
+              {benefitsWrapper.benefitDescription}
+            </div>
+          </>
+        )
+        : <div>adiciona no library</div>}
       <div className="flex flex-col gap-2 w-[100%] md:flex-row">
         {benefits === undefined
           ? <div>adiciona algo no library</div>
