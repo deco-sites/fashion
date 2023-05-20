@@ -1,6 +1,4 @@
 import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-
 import { useId } from "preact/hooks";
 
 const script = (id: string) => `
@@ -19,7 +17,7 @@ const callback = () => {
     });
     elem.querySelector('[data-button-cc-close]').addEventListener('click', function () {
       elem.classList.add(HIDDEN);
-    });name
+    });
     elem.classList.remove(HIDDEN);
   }
 };
@@ -36,30 +34,21 @@ function CookieConsent() {
         id={id}
         class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
       >
-      <div class="container px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-opacity-75 bg-base-100">
-          <div class="flex flex-row items-center sm:flex-row gap-2 sm:w-auto">
-            <span class="flex text-xl">
-              Cookie policy
-            </span>
-          </div>
-
-
-          <span class="flex-grow text-base">
-            We use third-party cookies order to
-            personalize your experience.
+        <div class="container px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-base-100">
+          <span class="flex-grow text-sm">
+            Utilizamos cookies em nosso site para melhorar seu desempenho,
+            segurança e personalizar conteúdo e anúncios.
           </span>
 
           <a href="https://www.deco.cx">
             <span class="underline text-sm">
-              Read our cookie policy
+              Nossa política de privacidade
             </span>
           </a>
 
-          <div class="flex flex-col  sm:flex-row gap-2 w-full md:w-auto">
-            <Button class="" data-button-cc-accept>Allow</Button>
-            <Button data-button-cc-close class="btn-outline">
-              <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-            </Button>
+          <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+            <Button data-button-cc-accept>Aceitar</Button>
+            <Button data-button-cc-close class="btn-outline">Fechar</Button>
           </div>
         </div>
       </div>
