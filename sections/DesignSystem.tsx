@@ -7,8 +7,8 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "preact/hooks";
 import { Head } from "$fresh/runtime.ts";
-import { theme as defaultTheme } from "deco-sites/fashion/tailwind.config.ts";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import { theme as defaultTheme } from "$store/tailwind.config.ts";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface OptionalColors {
   /**

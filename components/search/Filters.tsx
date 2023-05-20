@@ -1,6 +1,6 @@
-import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
+import Avatar from "$store/components/ui/Avatar.tsx";
 import { parseRange } from "deco-sites/std/utils/filters.ts";
-import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
+import { formatPrice } from "$store/sdk/format.ts";
 import type {
   Filter,
   FilterToggle,

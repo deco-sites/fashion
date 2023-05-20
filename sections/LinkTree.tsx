@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/ui/LinkTree.tsx";
+export { default } from "$store/components/ui/LinkTree.tsx";

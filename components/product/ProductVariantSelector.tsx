@@ -1,5 +1,5 @@
-import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
-import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
+import Avatar from "$store/components/ui/Avatar.tsx";
+import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {

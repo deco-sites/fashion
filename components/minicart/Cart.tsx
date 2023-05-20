@@ -1,9 +1,9 @@
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
-import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import { formatPrice } from "$store/sdk/format.ts";
+import Button from "$store/components/ui/Button.tsx";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
-import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
-import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
+import { sendEvent } from "$store/sdk/analytics.tsx";
+import { useUI } from "$store/sdk/useUI.ts";
 import CartItem from "./CartItem.tsx";
 import Coupon from "./Coupon.tsx";
 

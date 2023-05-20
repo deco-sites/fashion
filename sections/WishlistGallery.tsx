@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/wishlist/WishlistGallery.tsx";
+export { default } from "$store/components/wishlist/WishlistGallery.tsx";

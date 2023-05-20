@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/header/Buttons.tsx";
+export { default } from "$store/components/header/Buttons.tsx";

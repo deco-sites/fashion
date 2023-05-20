@@ -1,10 +1,10 @@
 import { useSignal } from "@preact/signals";
 import Image from "deco-sites/std/components/Image.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Modal from "deco-sites/fashion/components/ui/Modal.tsx";
-import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
-import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Modal from "$store/components/ui/Modal.tsx";
+import SliderJS from "$store/islands/SliderJS.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
 import type { ImageObject } from "deco-sites/std/commerce/types.ts";
 
 interface Props {

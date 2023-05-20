@@ -1,9 +1,9 @@
-import Filters from "deco-sites/fashion/components/search/Filters.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import SearchControls from "deco-sites/fashion/islands/SearchControls.tsx";
-import { SendEventOnLoad } from "deco-sites/fashion/sdk/analytics.tsx";
+import Filters from "$store/components/search/Filters.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import SearchControls from "$store/islands/SearchControls.tsx";
+import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
+import { useOffer } from "$store/sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";

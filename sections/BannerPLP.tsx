@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/ui/BannerPLP.tsx";
+export { default } from "$store/components/ui/BannerPLP.tsx";

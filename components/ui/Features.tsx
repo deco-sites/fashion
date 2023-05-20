@@ -1,6 +1,6 @@
 import Icon, {
   AvailableIcons,
-} from "deco-sites/fashion/components/ui/Icon.tsx";
+} from "$store/components/ui/Icon.tsx";
 
 export interface Feature {
   /**

@@ -1,7 +1,7 @@
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
-import SliderJS from "deco-sites/fashion/islands/SliderJS.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
+import SliderJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";

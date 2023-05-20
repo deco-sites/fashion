@@ -1,4 +1,4 @@
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 import type { INavItem } from "./NavItem.tsx";
 
 export interface Props {

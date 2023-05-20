@@ -1,11 +1,11 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import QuantitySelector from "deco-sites/fashion/components/ui/QuantitySelector.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
-import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
+import { formatPrice } from "$store/sdk/format.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
-import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
+import { sendEvent } from "$store/sdk/analytics.tsx";
 
 declare global {
   interface Window {

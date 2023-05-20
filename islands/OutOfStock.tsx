@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/product/OutOfStock.tsx";
+export { default } from "$store/components/product/OutOfStock.tsx";

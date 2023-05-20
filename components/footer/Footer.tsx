@@ -1,7 +1,7 @@
 import Icon, {
   AvailableIcons,
-} from "deco-sites/fashion/components/ui/Icon.tsx";
-import Newsletter from "deco-sites/fashion/islands/Newsletter.tsx";
+} from "$store/components/ui/Icon.tsx";
+import Newsletter from "$store/islands/Newsletter.tsx";
 import type { ComponentChildren } from "preact";
 
 export type IconItem = { icon: AvailableIcons };

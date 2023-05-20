@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/footer/Newsletter.tsx";
+export { default } from "$store/components/footer/Newsletter.tsx";

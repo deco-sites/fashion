@@ -1,22 +1,22 @@
 import { useId } from "preact/hooks";
-import AddToCartButton from "deco-sites/fashion/islands/AddToCartButton.tsx";
-import ShippingSimulation from "deco-sites/fashion/islands/ShippingSimulation.tsx";
-import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import AddToCartButton from "$store/islands/AddToCartButton.tsx";
+import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
+import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
+import Button from "$store/components/ui/Button.tsx";
+import Icon from "$store/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import Slider from "deco-sites/fashion/components/ui/Slider.tsx";
-import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
-import OutOfStock from "deco-sites/fashion/islands/OutOfStock.tsx";
-import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
-import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
-import { SendEventOnLoad } from "deco-sites/fashion/sdk/analytics.tsx";
+import Slider from "$store/components/ui/Slider.tsx";
+import SliderJS from "$store/components/ui/SliderJS.tsx";
+import OutOfStock from "$store/islands/OutOfStock.tsx";
+import { useOffer } from "$store/sdk/useOffer.ts";
+import { formatPrice } from "$store/sdk/format.ts";
+import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
-import ProductImageZoom from "deco-sites/fashion/islands/ProductImageZoom.tsx";
+import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";

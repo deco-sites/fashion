@@ -1,7 +1,7 @@
 import { useRef } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
+import Button from "$store/components/ui/Button.tsx";
 
 function Coupon() {
   const { cart, loading, addCouponsToCart } = useCart();

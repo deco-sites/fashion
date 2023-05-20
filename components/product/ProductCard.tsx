@@ -1,11 +1,11 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
-import WishlistIcon from "deco-sites/fashion/islands/WishlistButton.tsx";
-import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
-import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
-import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
+import Avatar from "$store/components/ui/Avatar.tsx";
+import WishlistIcon from "$store/islands/WishlistButton.tsx";
+import { useOffer } from "$store/sdk/useOffer.ts";
+import { formatPrice } from "$store/sdk/format.ts";
+import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import { sendEventOnClick } from "deco-sites/fashion/sdk/analytics.tsx";
+import { sendEventOnClick } from "$store/sdk/analytics.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
