@@ -7208,10 +7208,36 @@
         "title": {
           "type": "string",
           "title": "Title"
+        },
+        "subtitle": {
+          "type": "string",
+          "title": "Subtitle"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Src"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            }
+          },
+          "required": [],
+          "title": "Image"
         }
       },
       "required": [
-        "title"
+        "title",
+        "subtitle"
       ],
       "title": "deco-sites/fashion/components/benefits/Benefits.tsx@Props"
     },

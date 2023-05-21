@@ -29,9 +29,6 @@ export default {
     container: {
       center: true,
     },
-    colors: {
-      "neutral-subtitle": "#787878"
-    },
     extend: {
       animation: {
         "slide-left": "slide-left-frame 0.4s ease normal",
