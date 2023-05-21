@@ -1,5 +1,6 @@
 import type { SectionProps } from "$live/mod.ts";
 import Image from "deco-sites/std/components/Image.tsx";
+import { asset } from "$fresh/runtime.ts";
 
 // Props type that will be configured in deco.cx's Admin
 
@@ -17,6 +18,7 @@ type Field =
 export interface Props {
   /**
    * @title Título do componente
+   * @default
    */
   title: string;
   /**
@@ -37,7 +39,7 @@ export interface Props {
 }
 
 type FieldReturn = {
-  [key in Field]: string;
+  [key in Field]?: string;
 };
 
 export async function loader(
@@ -61,12 +63,20 @@ export async function loader(
 }
 
 export default function InstagramComponent(
-  { title, data }: SectionProps<typeof loader>,
+  {
+    title = "Confira nosso instagram",
+    data = [{
+      id: "placeholderInsta",
+      permalink: "#",
+      media_type: "IMAGE",
+      media_url: "",
+    }],
+  }: SectionProps<typeof loader>,
 ) {
   return (
     <div class="w-full">
       <h2 class="text-center row-start-1 col-span-full mb-3">
-        <span class="font-medium text-2xl">{title}</span>
+        <span class="font-medium text-2xl text-accent">{title}</span>
       </h2>
       <section
         class={`w-full max-w-[1200px] mx-auto flex flex-wrap gap-4 items-center justify-center`}
@@ -82,7 +92,7 @@ export default function InstagramComponent(
               ? (
                 <Image
                   class="max-w-full max-h-full object-cover w-full group-hover:scale-110  transition duration-400 group-hover:brightness-90"
-                  src={item.media_url}
+                  src={item.media_url ?? ""}
                   alt="Imagem do instagram"
                   width={350}
                   height={350}
