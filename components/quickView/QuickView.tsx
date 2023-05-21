@@ -61,14 +61,14 @@ function QuickView(
           } md:max-h-[632px] md:max-w-[600px] md:min-h-[632px] md:min-w-[600px]`}
         >
           <div class="relative" id={id}>
-            <div className="absolute top-7 right-7 left-auto">
+            <div className="absolute top-7 right-7 left-auto text-base-400">
               {/* Não temos o ícone do figma disponível */}
               <Icon
-                class="text-base-400"
                 width={20}
                 height={20}
                 id="Heart"
-                strokeWidth={1}
+                fill="none"
+                strokeWidth={2}
               />
             </div>
             <div className="absolute top-4 left-4 right-auto bg-accent py-1 px-2">
