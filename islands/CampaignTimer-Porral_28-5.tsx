@@ -7,20 +7,11 @@ interface ReadableDate {
   seconds: number;
 }
 
-function diffToDate(
-  targetDate: Date,
-): ReadableDate {
-  const now: number = new Date().getTime();
-  const diff: number = targetDate.getTime() - now;
-
-  if (diff <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  }
+function diffToDate(targetDate: Date): ReadableDate {
+  const diff: number = Math.max(targetDate.getTime() - Date.now(), 0);
 
   const days: number = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours: number = Math.floor(
-    (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-  );
+  const hours: number = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes: number = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const seconds: number = Math.floor((diff % (1000 * 60)) / 1000);
 
@@ -28,6 +19,8 @@ function diffToDate(
 }
 
 export interface TimerProps {
+  /** @title Event end date */
+  /** @description It must be in 'MMM DD YYYY HH:mm' formata */
   endDate: string;
 }
 
