@@ -22,6 +22,11 @@ export interface Props {
     isOutlined?: boolean;
     title: string;
   }>;
+  footerParagraph: {
+    title: string;
+    linkName: string;
+    linkHref: string;
+  };
 }
 
 export default function Auth(
@@ -31,16 +36,17 @@ export default function Auth(
     removeCloseButton,
     inputs,
     buttons,
+    footerParagraph,
   }: Props,
 ) {
   return (
     <div class="flex items-center justify-center h-screen mx-auto">
       <div class="relative max-w-[360px] lg:max-w-[600px] px-4 py-[72px] lg:px-16 lg:py-16 bg-white shadow-md drop-shadow-md">
         {!removeCloseButton && (
-          <button className="btn btn-circle btn-outline absolute top-4 right-4 mt-4">
+          <button class="btn btn-circle btn-outline absolute top-4 right-4 mt-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -78,7 +84,7 @@ export default function Auth(
 
                 {input.type === "password" && (
                   <p class="flex self-end leading-5 text-sm text-[#787878] cursor-pointer pt-2 opacity-90 hover:opacity-100">
-                    Forgot your password?
+                    Esqueceu sua senha?
                   </p>
                 )}
               </div>
@@ -89,7 +95,7 @@ export default function Auth(
         <footer class="flex flex-col items-center justify-center pt-4 gap-3 w-full">
           {buttons?.map((button) => (
             <button
-              className={`${
+              class={`${
                 button.isOutlined ? "btn btn-outline" : "btn btn-wide"
               } ${button.color} w-full flex text-white items-center justify-center`}
             >
@@ -97,10 +103,17 @@ export default function Auth(
             </button>
           ))}
 
-          <span class="flex items-center pt-2 gap-1 text-[#787878]">
-            Don't have an account?
-            <p class="cursor-pointer hover:underline">Sign up</p>
-          </span>
+          {footerParagraph && (
+            <span class="flex items-center pt-2 gap-1 text-[#787878]">
+              {footerParagraph.title}
+              <a
+                href={`${footerParagraph.linkHref}`}
+                class="cursor-pointer hover:underline"
+              >
+                {footerParagraph.linkName}
+              </a>
+            </span>
+          )}
         </footer>
       </div>
     </div>

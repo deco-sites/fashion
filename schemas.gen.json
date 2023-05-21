@@ -7056,11 +7056,35 @@
             ]
           },
           "title": "Buttons"
+        },
+        "footerParagraph": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "linkName": {
+              "type": "string",
+              "title": "Link Name"
+            },
+            "linkHref": {
+              "type": "string",
+              "title": "Link Href"
+            }
+          },
+          "required": [
+            "title",
+            "linkName",
+            "linkHref"
+          ],
+          "title": "Footer Paragraph"
         }
       },
       "required": [
         "title",
-        "description"
+        "description",
+        "footerParagraph"
       ],
       "title": "deco-sites/fashion/sections/Auth/Auth.EasyCoders.tsx@Props"
     },
@@ -8492,7 +8516,21 @@
           "title": "Description"
         },
         "image": {
-          "type": "string",
+          "type": "object",
+          "properties": {
+            "url": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Url"
+            },
+            "textAlt": {
+              "type": "string",
+              "title": "Text Alt"
+            }
+          },
+          "required": [
+            "url",
+            "textAlt"
+          ],
           "title": "Image"
         },
         "inputs": {

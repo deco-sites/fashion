@@ -1,7 +1,12 @@
+import type { Image as ImageType } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 export interface Props {
   title: string;
   description: string;
-  image: string;
+  image: {
+    url: ImageType;
+    textAlt: string;
+  };
   inputs?: Array<{
     type: "text" | "email" | "password";
     label: string;
@@ -24,10 +29,13 @@ export default function NewsletterModal(
         <div class="grid lg:grid-cols-2 w-full bg-base-100 shadow-xl">
           <section>
             <figure class="w-full h-full">
-              <img
-                src={image}
+              <Image
+                src={image.url}
+                alt={image.textAlt}
+                width={600}
+                height={600}
                 class="w-full h-full object-cover"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </figure>
