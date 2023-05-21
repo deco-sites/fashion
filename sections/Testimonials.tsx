@@ -1,44 +1,50 @@
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+
 export interface Props {
+  title: string;
+  subtitle: string
   user: Array<{
     userName: string;
     position: string;
     comment: string;
+    userImage: LiveImage[];
+    positionImage: LiveImage[];
   }>;
 }
 
-export default function Testimonails({ user }: Props) {
+export default function Testimonails({ user, title, subtitle }: Props) {
   return (
     <div class="container sm:p-10 text-center py-10 px-4">
-      <h2 class="text-6xl pb-6">Testimonials</h2>
+      <h2 class="text-6xl pb-6">{title}</h2>
       <p class="pb-10 text-2xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        {subtitle}
       </p>
-      <div class="grid grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 pt-10 gap-x-10">
-        {user.map(({ userName, position, comment }) => (
-          <article class="flex flex-col items-center">
+      <article class="grid grid-rows-2 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 pt-10 gap-x-10">
+        {user && user.map(({ userName, position, comment, userImage:[src, alt], positionImage:[srcPosition, altPosition] }) => (
+          <section class="flex flex-col items-center">
             <img
-              src="/deco.png"
-              width={92}
+              alt={altPosition}
               height={32}
+              loading="lazy"
+              src={srcPosition}
+              width={92}
             />
-            <p class="text-2xl py-9">
+            <h4 class="text-2xl py-9">
               {comment}
-            </p>
-            <img
-              class="rounded-[40px]"
-              src="/user-image-not-found.png"
-              height={60}
-              width={60}
-            />
-            <h3 class="text-lg pt-3">
-              {userName}
-            </h3>
-            <h4 class="text-lg">
-              {position}
             </h4>
-          </article>
+            <img
+              src={src}
+              alt={alt}
+            />
+            <p class="text-lg pt-3">
+              {userName}
+            </p>
+            <p class="text-lg">
+              {position}
+            </p>
+          </section>
         ))}
-      </div>
+      </article>
     </div>
   );
 }
