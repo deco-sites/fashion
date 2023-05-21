@@ -1,17 +1,17 @@
 import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Props {
-  description: string;
-  linkSignIn: string;
+  description?: string;
+  linkSignIn?: string;
 }
 
-function Auth({ description, linkSignIn, linkLoginFacebook }: Props) {
+function Auth({ description, linkSignIn }: Props) {
   return (
     <div class="h-screen w-full font-sans bg-[#e6e6e6] flex flex-col items-center justify-center">
-      <div class="bg-white flex flex-col items-center justify-center p-16 w-[600px] h-[668px] shadow-md m-x-[420px]">
+      <div class="bg-white flex flex-col items-center justify-center p-16 w-[600px] h-[668px] shadow-md m-x-[420px] max-sm:h-full max-sm:w-full">
         <form class="flex items-center justify-center w-full flex-col gap-6">
           <h1 class="text-[#292929] text-[48px]">Log in</h1>
-          <h3 class="text-[#292929] text-[18px]">{description}</h3>
+          <h3 class="text-[#292929] text-[18px]r">{description || "Lorem ipsum dolor sit amet consectetur adipisicing elit."}</h3>
 
           <div class="flex flex-col gap-y-2 w-full">
             <label htmlFor="">E-mail</label>
@@ -42,8 +42,8 @@ function Auth({ description, linkSignIn, linkLoginFacebook }: Props) {
           </button>
 
           <p>
-            Already have an account?{" "}
-            <a href={linkSignIn} class="cursor-pointer underline">Sign In</a>
+            Already have an account?
+            <a href={linkSignIn || "https://www.deco.cx"} class="cursor-pointer underline">Sign In</a>
           </p>
         </form>
       </div>
