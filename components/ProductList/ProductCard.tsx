@@ -35,6 +35,8 @@ function ProductCard({
 }: Props) {
   const [quickViewIsOpen, setQuickViewIsOpen] = useState(false);
 
+  if (!product) return null;
+
   const image = product.image ? product.image[0].url : "";
 
   const priceCurrency = product.offers?.priceCurrency || "pt-br";

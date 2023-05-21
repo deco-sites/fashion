@@ -17,7 +17,7 @@ export interface Props {
 
 function ProductList({
   header,
-  products,
+  products = [],
   seeAllButton,
 }: Props) {
   return (

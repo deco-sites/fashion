@@ -62,7 +62,7 @@ function Header({
   title = "",
   description = "",
   categories = [],
-  variant = 1,
+  variant = 3,
 }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
 
@@ -98,7 +98,7 @@ function Header({
         ? <div className="border-b border-base-300 w-full my-6"></div>
         : null}
       <ul
-        className={`w-full flex gap-4 overflow-x-scroll ${
+        className={`w-full flex gap-4 overflow-x-auto ${
           isFirstVariant ? "mt-4 justify-center" : "justify-start"
         }`}
       >
@@ -117,7 +117,7 @@ function Header({
                   : "border-transparent"
               }`}
             >
-              Category
+              {name}
             </a>
           </li>
         ))}
