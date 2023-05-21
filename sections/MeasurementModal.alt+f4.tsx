@@ -29,10 +29,10 @@ const Modal = ({
   ],
 }: Props) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center max-md:bg-[#e5e5e5]">
+    <div className="fixed inset-0 flex items-center justify-center max-md:bg-slate-300">
       <div className="bg-white shadow-lg">
         <div className="relative max-md:h-[90vh]">
-          <button className="absolute top-2 right-2 border border-gray-300 rounded-full p-2 decoration-[#292929]">
+          <button className="absolute top-2 right-2 border border-gray-300 rounded-full p-2 decoration-black">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -48,7 +48,7 @@ const Modal = ({
           </button>
 
           <div className="flex items-center relative">
-            <div className="max-w-xs w-72 h-96 flex items-center justify-center bg-[#F0F0F0] max-md:hidden">
+            <div className="max-w-xs w-72 h-96 flex items-center justify-center bg-slate-50 max-md:hidden">
               <Image
                 src={imageUrl}
                 sizes="(max-width: 80px) 100vw, 50vw"
