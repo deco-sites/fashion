@@ -2,9 +2,27 @@ export interface Props {
   title?: string;
   description?: string;
   href?: string;
+  labelName?: string;
+  labelEmail?: string;
+  labelPassword?: string;
+  btnSignUp?: string;
+  btnSignUpGoogle?: string;
+  btnSignIn?: string;
+  haveAccountSpan?: string;
 }
 
-export default function Auth({ title, description, href }: Props) {
+export default function Auth({
+  title,
+  description,
+  href,
+  labelName,
+  labelEmail,
+  labelPassword,
+  btnSignUp,
+  btnSignUpGoogle,
+  btnSignIn,
+  haveAccountSpan,
+}: Props) {
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center bg-white md:bg-[#0000001a]">
       <div className="absolute right-0 top-0 md:m-[2.5rem] m-4 hover:opacity-60 cursor-pointer">
@@ -49,12 +67,14 @@ export default function Auth({ title, description, href }: Props) {
         </p>
 
         <div className="flex w-full flex-col gap-1">
-          <span className="text-normal text-[1rem]">Name</span>
+          <span className="text-normal text-[1rem]">{labelName ?? "Name"}</span>
           <input className="w-full border-2 bg-white py-2 pl-3" />
         </div>
 
         <div className="flex w-full flex-col gap-1">
-          <span className="text-normal text-[1rem]">E-mail</span>
+          <span className="text-normal text-[1rem]">
+            {labelEmail ?? "E-mail"}
+          </span>
           <input
             className="w-full border-2 bg-white py-2 pl-3"
             type={"email"}
@@ -62,7 +82,9 @@ export default function Auth({ title, description, href }: Props) {
         </div>
 
         <div className="wflex w-full flex-col gap-1">
-          <span className="text-normal text-[1rem]">Password</span>
+          <span className="text-normal text-[1rem]">
+            {labelPassword ?? "Password"}
+          </span>
           <input
             className="w-full border-2 bg-white py-2 pl-3"
             type={"password"}
@@ -71,7 +93,7 @@ export default function Auth({ title, description, href }: Props) {
 
         <div className="w-full flex flex-col gap-4">
           <button className="btn btn-block bg-[#273746] normal-case rounded-none text-white font-normal transition ease-in-out delay-75 hover:bg-[#17222b] hover:opacity-40">
-            Sign Up
+            {btnSignUp ?? "Sign Up"}
           </button>
           <button className="btn btn-block border-[#273746] bg-white text-[#546F4A] bg-primary-content rounded-none normal-case font-normal items-center gap-2 transition ease-in-out delay-75 hover:bg-white hover:opacity-40">
             <strong
@@ -79,17 +101,17 @@ export default function Auth({ title, description, href }: Props) {
             >
               G
             </strong>{" "}
-            Sign Up with Google
+            {btnSignUpGoogle ?? "Sign Up with Google"}
           </button>
         </div>
 
         <span className="text-center text-sm text-[#787878]">
-          Already have an account?{" "}
+          {haveAccountSpan ?? "Already have an account?"}{"  "}
           <a
             className="underline cursor-pointer"
             href={href}
           >
-            Log in
+            {btnSignIn ?? "Log in"}
           </a>
         </span>
       </div>
