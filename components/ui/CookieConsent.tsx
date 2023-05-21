@@ -27,34 +27,47 @@ const callback = () => {
 window.addEventListener('scroll', callback, { once: true });
 `;
 
-function CookieConsent() {
+export interface Props {
+  cookiesTitle: string;
+  cookiesText: string;
+  cookiesLink: string;
+  cookiesBtn: string;
+}
+
+function CookieConsent({
+  cookiesTitle = "Cookie policy",
+  cookiesText =
+    "We use third-party cookies order to personalize your experience.",
+  cookiesLink = "Read our cookie policy",
+  cookiesBtn = "Allow",
+}: Props) {
   const id = `cookie-consent-${useId()}`;
 
   return (
     <>
       <div
         id={id}
-        class="transform-gpu translate-y-[200%] transition fixed bottom-0 sm:bottom-4 w-screen z-50"
+        class="transform-gpu -translate-y-2/1 transition duration-300 fixed bottom-0 sm:bottom-4 w-screen z-50"
       >
         <div class="container px-4 py-4 rounded border border-base-200 flex flex-col sm:flex-row gap-4 items-start sm:items-center shadow bg-opacity-75 bg-base-100">
           <div class="flex flex-row items-center sm:flex-row gap-2 sm:w-auto">
             <span class="flex text-xl">
-              Cookie policy
+              {cookiesTitle}
             </span>
           </div>
 
           <span class="flex-grow text-base">
-            We use third-party cookies order to personalize your experience.
+            {cookiesText}
           </span>
 
           <a href="https://www.deco.cx">
             <span class="underline text-sm">
-              Read our cookie policy
+              {cookiesLink}
             </span>
           </a>
 
           <div class="flex flex-col  sm:flex-row gap-2 w-full md:w-auto">
-            <Button class="" data-button-cc-accept>Allow</Button>
+            <Button class="" data-button-cc-accept>{cookiesBtn}</Button>
             <Button data-button-cc-close class="btn-outline">
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
             </Button>
