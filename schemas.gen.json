@@ -88,7 +88,8 @@
               "deco-sites/fashion/sections/Features.tsx",
               "deco-sites/fashion/sections/Footer.tsx",
               "deco-sites/fashion/sections/Header.tsx",
-              "deco-sites/fashion/sections/Header/Header.coders.tsx",
+              "deco-sites/fashion/sections/HeaderAlternative.tsx",
+              "deco-sites/fashion/sections/HeaderAlternative/Header.coders.tsx",
               "deco-sites/fashion/sections/Highlights.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
@@ -8036,7 +8037,167 @@
       "required": [],
       "title": "deco-sites/fashion/components/footer/Footer.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIuY29kZXJzLnRzeA==@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps": {
+      "type": "object",
+      "properties": {
+        "placeholder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Placeholder",
+          "description": "Search bar default placeholder message",
+          "default": "What are you looking for?"
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page path",
+          "description": "When user clicks on the search button, navigate it to",
+          "default": "/s"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Term name",
+          "description": "Querystring param used when navigating the user",
+          "default": "q"
+        },
+        "query": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Query"
+        }
+      },
+      "required": [],
+      "title": "EditableProps"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Label"
+              },
+              "href": {
+                "type": "string",
+                "title": "Href"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "title": "Label"
+                    },
+                    "href": {
+                      "type": "string",
+                      "title": "Href"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ]
+                },
+                "title": "Children"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ]
+          },
+          "title": "Children"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            }
+          },
+          "required": [],
+          "title": "Image"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "NavItem"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem"
+      },
+      "title": "NavItem[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "alerts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Alerts"
+        },
+        "searchbar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
+          "title": "Search Bar"
+        },
+        "navItems": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
+          "title": "Navigation items",
+          "description": "Navigation items used both on mobile and desktop menus"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Product suggestions",
+          "description": "Product suggestions displayed on search"
+        },
+        "suggestions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
+          "title": "Enable Top Search terms"
+        }
+      },
+      "required": [
+        "alerts"
+      ],
+      "title": "deco-sites/fashion/components/header/Header.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlckFsdGVybmF0aXZlL0hlYWRlci5jb2RlcnMudHN4@Props": {
       "type": "object",
       "properties": {
         "menuHamburger": {
@@ -8241,7 +8402,7 @@
       "required": [
         "logo"
       ],
-      "title": "deco-sites/fashion/sections/Header/Header.coders.tsx@Props"
+      "title": "deco-sites/fashion/sections/HeaderAlternative/Header.coders.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight": {
       "type": "object",
@@ -11003,7 +11164,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIuY29kZXJzLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props"
         }
       ],
       "required": [
@@ -11019,12 +11180,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIuY29kZXJzLnRzeA==": {
-      "title": "deco-sites/fashion/sections/Header/Header.coders.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlckFsdGVybmF0aXZlLnRzeA==": {
+      "title": "deco-sites/fashion/sections/HeaderAlternative.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIuY29kZXJzLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlckFsdGVybmF0aXZlL0hlYWRlci5jb2RlcnMudHN4@Props"
         }
       ],
       "required": [
@@ -11034,9 +11195,30 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/fashion/sections/Header/Header.coders.tsx"
+            "deco-sites/fashion/sections/HeaderAlternative.tsx"
           ],
-          "default": "deco-sites/fashion/sections/Header/Header.coders.tsx"
+          "default": "deco-sites/fashion/sections/HeaderAlternative.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlckFsdGVybmF0aXZlL0hlYWRlci5jb2RlcnMudHN4": {
+      "title": "deco-sites/fashion/sections/HeaderAlternative/Header.coders.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlckFsdGVybmF0aXZlL0hlYWRlci5jb2RlcnMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/HeaderAlternative/Header.coders.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/HeaderAlternative/Header.coders.tsx"
         }
       }
     },
@@ -12336,7 +12518,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci9IZWFkZXIuY29kZXJzLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlckFsdGVybmF0aXZlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlckFsdGVybmF0aXZlL0hlYWRlci5jb2RlcnMudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hpZ2hsaWdodHMudHN4"
