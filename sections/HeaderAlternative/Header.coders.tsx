@@ -46,7 +46,7 @@ const HeaderAlternative = (props: Props) => {
   } = props;
 
   return (
-    <header className="navbar px-8 py-7 max-h-[120px] min-h-[72px] w-full  border border-solid border-b-[#aaaaaa] bg-white lg:px-16  ">
+    <header className="navbar px-8 py-7 max-h-[120px] min-h-[72px] w-full  border border-solid border-b-primary bg-white lg:px-16  ">
       <div className=" w-1/4 justify-center md:navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -119,7 +119,7 @@ const HeaderAlternative = (props: Props) => {
               return (
                 <li>
                   {menuOthers.length - 1 == index
-                    ? <a className={"text-[#E37A69]"} href={url}>{title}</a>
+                    ? <a className={"text-red-500"} href={url}>{title}</a>
                     : <a href={url}>{title}</a>}
                 </li>
               );
