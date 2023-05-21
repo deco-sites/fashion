@@ -1,7 +1,7 @@
 import Header, {
   type Props as HeaderProps,
-} from "$store/components/ProductList/Header.tsx";
-import ProductShelf from "$store/components/ProductList/ProductShelf.tsx";
+} from "$store/components/productList/Header.tsx";
+import ProductShelf from "$store/components/productList/ProductShelf.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
