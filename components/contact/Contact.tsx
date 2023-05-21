@@ -1,6 +1,6 @@
 export interface Props {
-  informacao: string;
-  link: string;
+  informacao?: string;
+  link?: string;
 }
 
 export default function Contact({ informacao, link }: Props) {
@@ -9,7 +9,7 @@ export default function Contact({ informacao, link }: Props) {
       <div class="font-sans bg-[#ffffff] w-[600px] h-[668px] px-16 flex flex-col items-center shadow-lg ">
         <div class="w-[472px] h-[100px] mt-16">
           <h1 class="text-5xl font-sans mb-3">Contact Us</h1>
-          <p class="text-lg font-sans mb-5">{informacao}</p>
+          <p class="text-lg font-sans mb-5">{informacao || "teste"}</p>
         </div>
 
         <form class="w-full">
@@ -66,7 +66,7 @@ export default function Contact({ informacao, link }: Props) {
           <div class="mb-2 flex">
             <input type="checkbox" />
             <p class="ml-2">
-              I accept the <a class="underline" href={link}>terms</a>
+              I accept the <a class="underline" href={link || "teste"}>terms</a>
             </p>
           </div>
           <button
