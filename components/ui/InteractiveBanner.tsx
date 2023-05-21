@@ -97,11 +97,9 @@ export default function InteractiveBanner({
             <h2 class="text-lg leading-5 font-semibold uppercase">
               {title}
             </h2>
-
-            <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
           </div>
         )}
-      <Picture class="flex relative">
+      <Picture class="flex relative w">
         <Source
           media="(max-width: 767px)"
           src={srcMobile}
@@ -127,8 +125,8 @@ export default function InteractiveBanner({
 
           return (
             <>
-              <span
-                class="absolute"
+              <div
+                class="absolute cursor-pointer group/item w-5 h-5 bg-white rounded-full hover:w-auto hover:h-auto lg:hidden"
                 style={{
                   bottom: `${pin?.positionMobile?.y}%`,
                   left: `${pin?.positionMobile?.x}%`,
@@ -136,13 +134,13 @@ export default function InteractiveBanner({
               >
                 <a
                   href={product.url}
-                  class="text-base-100 text-caption rounded-3xl text-center w-full flex justify-center items-center min-h-[36px] hover:bg-base-100 hover:text-base-content border border-base-100"
+                  class="group/edit invisible group-hover/item:visible flex whitespace-nowrap text-base-100 text-caption rounded-3xl text-center w-full justify-center items-center min-h-[36px] hover:bg-base-100 hover:text-base-content border border-base-100 p-2"
                 >
-                  {product?.name}
+                  <span>{product?.name}</span>
                 </a>
-              </span>
-              <span
-                class="absolute"
+              </div>
+              <div
+                class="absolute cursor-pointer group/item w-5 h-5 bg-white rounded-full hover:w-auto hover:h-auto hidden lg:flex"
                 style={{
                   bottom: `${pin?.positionDesktop?.y}%`,
                   left: `${pin?.positionDesktop?.x}%`,
@@ -150,11 +148,11 @@ export default function InteractiveBanner({
               >
                 <a
                   href={product.url}
-                  class="text-base-100 text-caption rounded-3xl text-center w-full flex justify-center items-center min-h-[36px] hover:bg-base-100 hover:text-base-content border border-base-100"
+                  class="group/edit invisible group-hover/item:visible flex whitespace-nowrap text-base-100 text-caption rounded-3xl text-center w-full justify-center items-center min-h-[36px] hover:bg-base-100 hover:text-base-content border border-base-100 p-2 "
                 >
                   {product?.name}
                 </a>
-              </span>
+              </div>
             </>
           );
         })}
