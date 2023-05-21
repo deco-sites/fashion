@@ -24,7 +24,7 @@ export default function Auth({
   haveAccountSpan,
 }: Props) {
   return (
-    <div className="relative flex min-h-screen w-full items-center justify-center bg-white md:bg-[#0000001a]">
+    <div className="relative flex min-h-screen w-full items-center justify-center bg-white md:bg-black md:bg-opacity-10">
       <div className="absolute right-0 top-0 md:m-[2.5rem] m-4 hover:opacity-60 cursor-pointer">
         <svg
           width="40"
@@ -92,12 +92,12 @@ export default function Auth({
         </div>
 
         <div className="w-full flex flex-col gap-4">
-          <button className="btn btn-block bg-[#273746] normal-case rounded-none text-white font-normal transition ease-in-out delay-75 hover:bg-[#17222b] hover:opacity-40">
+          <button className="btn btn-block bg-gray-700 normal-case rounded-none text-white font-normal transition ease-in-out delay-75 hover:bg-gray-800 hover:opacity-40">
             {btnSignUp ?? "Sign Up"}
           </button>
-          <button className="btn btn-block border-[#273746] bg-white text-[#546F4A] bg-primary-content rounded-none normal-case font-normal items-center gap-2 transition ease-in-out delay-75 hover:bg-white hover:opacity-40">
+          <button className="btn btn-block border-gray-700 bg-white text-green-700 bg-primary-content rounded-none normal-case font-normal items-center gap-2 transition ease-in-out delay-75 hover:bg-white hover:opacity-40">
             <strong
-              className={"text-[#273746] text-2xl normal-case font-normal"}
+              className={"text-gray-700 text-2xl normal-case font-normal"}
             >
               G
             </strong>{" "}
@@ -105,7 +105,7 @@ export default function Auth({
           </button>
         </div>
 
-        <span className="text-center text-sm text-[#787878]">
+        <span className="text-center text-sm text-gray-500">
           {haveAccountSpan ?? "Already have an account?"}{"  "}
           <a
             className="underline cursor-pointer"
