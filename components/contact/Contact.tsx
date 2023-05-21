@@ -6,15 +6,15 @@ export interface Props {
 export default function Contact({ informacao, link }: Props) {
   return (
     <main class="flex justify-center w-screen h-screen items-center bg-[#DCDCDC] ">
-      <div class="font-sans bg-[#ffffff] w-[600px] h-[668px] px-16 flex flex-col items-center shadow-lg ">
-        <div class="w-[472px] h-[100px] mt-16">
+      <div class="font-sans bg-[#ffffff] w-[600px] h-[668px] px-16 flex flex-col items-center shadow-lg max-sm:h-full max-sm:w-full">
+        <div class="w-[472px] h-[100px] mt-16 max-sm:flex max-sm:items-center max-sm:justify-center max-sm:flex-col">
           <h1 class="text-5xl font-sans mb-3">Contact Us</h1>
           <p class="text-lg font-sans mb-5">{informacao || "teste"}</p>
         </div>
 
         <form class="w-full">
           <div class=" flex justify-evenly mb-6">
-            <div class="w-full  flex flex-col justify-start">
+            <div class="w-full  flex flex-col justify-start max-sm:pr-6">
               <label class="w-full mb-2" for="name">Nome</label>
               <input
                 class="w-[200px] h-[30px] focus:border-transparent border-gray-300 border-[1px]"
@@ -35,7 +35,7 @@ export default function Contact({ informacao, link }: Props) {
           </div>
 
           <div class=" flex justify-evenly mb-6">
-            <div class="w-full  flex flex-col justify-start">
+            <div class="w-full  flex flex-col justify-start max-sm:pr-6">
               <label class="w-full mb-2" for="email">Email</label>
               <input
                 class="w-[200px] h-[30px] focus:border-transparent border-gray-300 border-[1px]"
@@ -63,7 +63,7 @@ export default function Contact({ informacao, link }: Props) {
               type="text"
             />
           </div>
-          <div class="mb-2 flex">
+          <div class="mb-2 flex max-sm:pb-28">
             <input type="checkbox" />
             <p class="ml-2">
               I accept the <a class="underline" href={link || "teste"}>terms</a>
