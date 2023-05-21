@@ -131,13 +131,13 @@ function QuickView(
                   )}
               </span>
             </div>
-            {/* Como podemos selecionar o sku com o product selector sem linkar para um produto na PDP? apenas selecionando o skuId? */}
+            {/* TODO: Como podemos selecionar o sku com o product selector sem linkar para um produto na PDP? apenas selecionando o skuId? */}
             <QuickViewSelector
               product={product}
               variant="ghost"
               shouldLink={false}
             />
-            {/* Isso está assim pq a API não me pareceu muito amigavél para o seletor de cor e não ia dar tempo de alterar o componente product Selector para otimizar isso, mas decidi montar pelo menos o UI*/}
+            {/* TODO: Isso está assim pq a API não me pareceu muito amigavél para o seletor de cor e não ia dar tempo de alterar o componente product Selector para otimizar isso, mas decidi montar pelo menos o UI*/}
             {productColorVariants
               ? (
                 <div class="mt-7 flex flex-col">
