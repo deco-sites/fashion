@@ -1,7 +1,7 @@
 import { useState } from "preact/hooks";
 import Icon from "$store/components/ui/Icon.tsx";
 
-type AvailableVariants =
+export type AvailableVariants =
   | "default"
   | "dots-top"
   | "dots-with-arrows"
