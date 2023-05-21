@@ -1,17 +1,17 @@
 import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Props {
-  description: string;
-  linkLogin: string;
+  description?: string;
+  linkLogin?: string;
 }
 
 function Auth({ description, linkLogin }: Props) {
   return (
     <div class="h-screen w-full bg-[#e6e6e6] flex flex-col items-center justify-center">
-      <div class="bg-white flex flex-col items-center justify-center p-16 w-[600px] h-[668px] shadow-md m-x-[420px]">
+      <div class="bg-white flex flex-col items-center justify-center p-16 w-[600px] h-[668px] shadow-md m-x-[420px] max-sm:h-full max-sm:w-full">
         <form class="flex items-center justify-center w-full flex-col gap-6">
           <h1 class="text-[#292929] text-[48px]">Sign up</h1>
-          <h3 class="text-[#292929] text-[18px]">{description}</h3>
+          <h3 class="text-[#292929] text-[18px]">{description || "Lorem ipsum dolor, sit amet consectetur adipisicing elit."}</h3>
           <div class="flex flex-col gap-y-2 w-full">
             <label htmlFor="">Name</label>
             <input
@@ -51,8 +51,8 @@ function Auth({ description, linkLogin }: Props) {
           </button>
 
           <p>
-            Already have an account?{" "}
-            <a href={linkLogin} class="cursor-pointer underline">Log In</a>
+            Already have an account?
+            <a href={linkLogin || "https://www.deco.cx"} class="cursor-pointer underline">Log In</a>
           </p>
         </form>
       </div>
