@@ -5,13 +5,13 @@ export interface Props {
   /**
    * @format date-time
    */
-  date: string;
-  text: string;
-  labelButton: string;
-  link: string;
+  date?: string;
+  text?: string;
+  labelButton?: string;
+  link?: string;
 }
 
-function CampaignTimer({ text, labelButton, date, link }: Props) {
+function CampaignTimer({ text = 'Texto de chamada', labelButton = 'Botão', date = 'Sun May 21 2023 10:27:31 GMT-0300', link = '#' }: Props) {
   const now = new Date().getTime();
   const futureDate = new Date(date).getTime();
 
