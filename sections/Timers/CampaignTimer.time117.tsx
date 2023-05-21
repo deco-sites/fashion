@@ -26,7 +26,7 @@ function CampaignTimer({ text, labelButton, date, link }: Props) {
   const seconds = Math.floor((timeleft % msPerMinute) / msPerSecond);
 
   return (
-    <div class="bg-orange-500 py-4">
+    <div class="bg-primary py-4">
       <div class="flex flex-wrap justify-center items-center lg:gap-16">
         <div class="mb-4 w-full text-white lg:w-max lg:my-0">
           <p class="text-center text-sm lg:text-xl">{text}</p>
