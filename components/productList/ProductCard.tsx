@@ -3,6 +3,7 @@ import type { Product } from "deco-sites/std/commerce/types.ts";
 import { useState } from "preact/hooks";
 import QuickView from "$store/components/quickView/QuickView.tsx";
 import { priceFormatter } from "$store/sdk/formatPrice.ts";
+import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Props {
   product: Product;
@@ -85,16 +86,58 @@ function ProductCard({
             )}
         </div>
       </div>
-      {
-        /* We actually don't have the rating yet, so we'll just hardcode it for now.
-      And we can't use tailwind colors, cause they don't work with svg. */
-      }
+      {/* We actually don't have the rating coming from API yet, so we'll just hardcode it for now. */}
       <div className="flex gap-1 ">
-        <StarIcon fill="#FFC240" />
-        <StarIcon fill="#FFC240" />
-        <StarIcon fill="#FFC240" />
-        <StarIcon fill="#FFC240" />
-        <StarIcon fill="none" stroke="#FFC240" />
+        <div className="text-custom-1">
+          <Icon
+            fill="currentColor"
+            stroke="currentColor"
+            id="Star"
+            height={24}
+            width={24}
+            strokeWidth={0.01}
+          />
+        </div>
+        <div className="text-custom-1">
+          <Icon
+            fill="currentColor"
+            stroke="currentColor"
+            id="Star"
+            height={24}
+            width={24}
+            strokeWidth={0.01}
+          />
+        </div>
+        <div className="text-custom-1">
+          <Icon
+            fill="currentColor"
+            stroke="currentColor"
+            id="Star"
+            height={24}
+            width={24}
+            strokeWidth={0.01}
+          />
+        </div>
+        <div className="text-custom-1">
+          <Icon
+            fill="currentColor"
+            stroke="currentColor"
+            id="Star"
+            height={24}
+            width={24}
+            strokeWidth={0.01}
+          />
+        </div>
+        <div className="text-custom-1">
+          <Icon
+            fill="none"
+            stroke="currentColor"
+            id="Star"
+            height={24}
+            width={24}
+            strokeWidth={0.01}
+          />
+        </div>
         <p className="text-base-400">(10)</p>
       </div>
       <QuickView
