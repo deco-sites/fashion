@@ -4,55 +4,96 @@ export type Review = {
   title: string;
   content: string;
   rating: number;
+  user: {
+    name: string;
+  };
+  totalLikes: number;
+  totalDeslikes: number;
+  releaseDate: string;
 };
 
 export interface Props {
   reviews?: Review[];
+  sectionName?: string;
+  totalReviews?: number;
+  totalStars?: number;
 }
 
-export default function Review({ reviews }: Props) {
+export default function Review(
+  { reviews, sectionName, totalReviews, totalStars }: Props,
+) {
   const mockReviews: Review[] = [
     {
       title: "Review title",
       content:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
       rating: 4,
+      user: {
+        name: "Name Surname",
+      },
+      totalLikes: 10,
+      totalDeslikes: 10,
+      releaseDate: "2 weeks ago",
     },
     {
       title: "Review title",
       content:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
       rating: 4,
+      user: {
+        name: "Name Surname",
+      },
+      totalLikes: 10,
+      totalDeslikes: 10,
+      releaseDate: "2 weeks ago",
     },
     {
       title: "Review title",
       content:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
       rating: 4,
+      user: {
+        name: "Name Surname",
+      },
+      totalLikes: 10,
+      totalDeslikes: 10,
+      releaseDate: "2 weeks ago",
     },
     {
       title: "Review title",
       content:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
       rating: 4,
+      user: {
+        name: "Name Surname",
+      },
+      totalLikes: 10,
+      totalDeslikes: 10,
+      releaseDate: "2 weeks ago",
     },
     {
       title: "Review title",
       content:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
       rating: 4,
+      user: {
+        name: "Name Surname",
+      },
+      totalLikes: 10,
+      totalDeslikes: 10,
+      releaseDate: "2 weeks ago",
     },
     {
       title: "Review title",
       content:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
       rating: 4,
-    },
-    {
-      title: "Review title",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-      rating: 4,
+      user: {
+        name: "Name Surname",
+      },
+      totalLikes: 10,
+      totalDeslikes: 10,
+      releaseDate: "2 weeks ago",
     },
   ];
 
@@ -62,7 +103,7 @@ export default function Review({ reviews }: Props) {
     <>
       <div className="h-full w-full p-10 pb-0">
         <h1 className="text-center text-4xl text-[#292929] mb-10">
-          Product Reviews
+          {sectionName ?? "Product reviews"}
         </h1>
 
         <div className="flex justify-between">
@@ -94,7 +135,9 @@ export default function Review({ reviews }: Props) {
                 className="mask mask-star-2 bg-gray-400"
               />
             </div>
-            <span className="text-center">&nbsp; 4 stars - 238 reviews</span>
+            <span className="text-center">
+              &nbsp; {totalStars ?? "4"} stars - {totalReviews ?? "238"} reviews
+            </span>
           </div>
 
           <button className="h-8 max-w-28 flex justify-center items-center p-0 md:p-3 gap-2 text-[#546F4A] text-center border border-[#546F4A] hover:opacity-70">
@@ -126,7 +169,7 @@ export default function Review({ reviews }: Props) {
                 <div className="h-[6.8rem] w-[12rem] flex flex-col justify-center p-3 gap-2">
                   <img src={asset("/placeholder.png")} alt="PlaceHolder" />
                   <span className="text-[#292929] text-center text-lg">
-                    Name Surname
+                    {review.user.name}
                   </span>
                 </div>
 
@@ -159,7 +202,9 @@ export default function Review({ reviews }: Props) {
                         className="mask mask-star-2 bg-gray-400"
                       />
                     </div>
-                    <span className="text-[#787878]">• 2 weeks ago</span>
+                    <span className="text-[#787878]">
+                      • {review.releaseDate ?? "2 weeks ago"}
+                    </span>
                   </span>
 
                   <div className="flex gap-3 flex-col">
@@ -172,7 +217,7 @@ export default function Review({ reviews }: Props) {
                 <div className="flex flex-col md:flex-row gap-2">
                   <span className="items-center flex flex-col gap-2">
                     <img src={asset("/like.png")} alt="Like" className="pr-1" />
-                    10
+                    {String(review.totalLikes) ?? "10"}
                   </span>
                   <span className="items-center flex flex-col gap-2">
                     <img
@@ -180,7 +225,7 @@ export default function Review({ reviews }: Props) {
                       alt="deslike"
                       className="pr-1"
                     />
-                    10
+                    {String(review.totalDeslikes) ?? "10"}
                   </span>
                 </div>
               </div>
