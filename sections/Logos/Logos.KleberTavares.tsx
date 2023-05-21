@@ -4,7 +4,7 @@ import Image from "deco-sites/std/components/Image.tsx";
 export interface Props {
   title: string;
   subtitle: string;
-  imgUrl: Array<{
+  imgUrl?: Array<{
     url: ImageType;
     textAlt: string;
   }>;
@@ -12,8 +12,8 @@ export interface Props {
 
 export default function Logos({
   imgUrl,
-  title,
-  subtitle,
+  title = "Title",
+  subtitle = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
 }: Props) {
   return (
     <div className="w-full">
