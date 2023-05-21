@@ -11,7 +11,7 @@ export type Review = {
 };
 
 export interface Props {
-  reviews?: Review[];
+  reviews: Review[];
   sectionName?: string;
   totalReviews?: number;
   totalStars?: number;
@@ -23,83 +23,6 @@ export default function Review({
   totalReviews,
   totalStars,
 }: Props) {
-  const mockReviews: Review[] = [
-    {
-      title: "Review title",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-      rating: 4,
-      user: {
-        name: "Name Surname",
-      },
-      totalLikes: 10,
-      totalDeslikes: 10,
-      releaseDate: "2 weeks ago",
-    },
-    {
-      title: "Review title",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-      rating: 4,
-      user: {
-        name: "Name Surname",
-      },
-      totalLikes: 10,
-      totalDeslikes: 10,
-      releaseDate: "2 weeks ago",
-    },
-    {
-      title: "Review title",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-      rating: 4,
-      user: {
-        name: "Name Surname",
-      },
-      totalLikes: 10,
-      totalDeslikes: 10,
-      releaseDate: "2 weeks ago",
-    },
-    {
-      title: "Review title",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-      rating: 4,
-      user: {
-        name: "Name Surname",
-      },
-      totalLikes: 10,
-      totalDeslikes: 10,
-      releaseDate: "2 weeks ago",
-    },
-    {
-      title: "Review title",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-      rating: 4,
-      user: {
-        name: "Name Surname",
-      },
-      totalLikes: 10,
-      totalDeslikes: 10,
-      releaseDate: "2 weeks ago",
-    },
-    {
-      title: "Review title",
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
-      rating: 4,
-      user: {
-        name: "Name Surname",
-      },
-      totalLikes: 10,
-      totalDeslikes: 10,
-      releaseDate: "2 weeks ago",
-    },
-  ];
-
-  const reviewsList = [...mockReviews];
-
   return (
     <>
       <div className="h-full w-full p-10 pb-0">
@@ -160,7 +83,7 @@ export default function Review({
           </button>
         </div>
 
-        {reviewsList.map((review) => (
+        {reviews.map((review) => (
           <>
             <hr className="pb-10" />
 
