@@ -201,27 +201,37 @@ export default function Review({
                       <input
                         type="radio"
                         name={`rating-${review.rating}`}
-                        className="mask mask-star-2 bg-orange-400"
+                        className={`mask mask-star-2 ${
+                          review.rating >= 1 ? "bg-orange-400" : "bg-gray-400"
+                        }`}
                       />
                       <input
                         type="radio"
                         name={`rating-${review.rating}`}
-                        className="mask mask-star-2 bg-orange-400"
+                        className={`mask mask-star-2 ${
+                          review.rating >= 2 ? "bg-orange-400" : "bg-gray-400"
+                        }`}
                       />
                       <input
                         type="radio"
                         name={`rating-${review.rating}`}
-                        className="mask mask-star-2 bg-orange-400"
+                        className={`mask mask-star-2 ${
+                          review.rating >= 3 ? "bg-orange-400" : "bg-gray-400"
+                        }`}
                       />
                       <input
                         type="radio"
                         name={`rating-${review.rating}`}
-                        className="mask mask-star-2 bg-orange-400"
+                        className={`mask mask-star-2 ${
+                          review.rating >= 4 ? "bg-orange-400" : "bg-gray-400"
+                        }`}
                       />
                       <input
                         type="radio"
                         name={`rating-${review.rating}`}
-                        className="mask mask-star-2 bg-gray-400"
+                        className={`mask mask-star-2 ${
+                          review.rating >= 5 ? "bg-orange-400" : "bg-gray-400"
+                        }`}
                       />
                     </div>
                     <span className="text-[#787878]">
