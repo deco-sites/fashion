@@ -5,8 +5,8 @@ export interface Props {
   title: string;
   subtitle: string;
   imgUrl?: Array<{
-    url: ImageType;
-    textAlt: string;
+    url?: ImageType;
+    textAlt?: string;
   }>;
 }
 
