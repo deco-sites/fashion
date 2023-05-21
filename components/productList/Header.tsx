@@ -1,23 +1,29 @@
 import { useState } from "preact/hooks";
 import Icon from "$store/components/ui/Icon.tsx";
 
-export type Props = {
+type AvailableVariants =
+  | "default"
+  | "dots-top"
+  | "dots-with-arrows"
+  | "dots-arrows-bottom";
+
+export interface Props {
   title: string;
   description: string;
   categories: {
     name: string;
     href: string;
   }[];
-  variant: 1 | 2 | 3 | 4;
-};
+  variant: AvailableVariants;
+}
 
 function HeaderSliderController({ variant }: {
-  variant: 1 | 2 | 3 | 4;
+  variant: AvailableVariants;
 }) {
   switch (variant) {
-    case 1:
+    case "default":
       return null;
-    case 2:
+    case "dots-top":
       return (
         <div className="h-fit flex gap-4">
           <div className="w-10 h-10 flex justify-center items-center cursor-pointer">
@@ -61,44 +67,46 @@ function Header({
   title = "",
   description = "",
   categories = [],
-  variant = 3,
+  variant = "dots-with-arrows",
 }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
 
-  const isFirstVariant = variant === 1;
+  const isDefaultVariant = variant === "default";
 
   return (
     <div
       data-cid="product-list-header"
-      className={`${isFirstVariant ? "mb-10" : "mb-6"}`}
+      className={`${isDefaultVariant ? "mb-10" : "mb-6"}`}
     >
       <div
         className={`w-full flex ${
-          isFirstVariant ? "justify-center" : "justify-between items-end"
+          isDefaultVariant ? "justify-center" : "justify-between items-end"
         }`}
       >
         <div
           className={`text-base-500 flex flex-col gap-4 ${
-            isFirstVariant ? "items-center" : ""
+            isDefaultVariant ? "items-center" : ""
           }`}
         >
           <h3
             className={`${
-              isFirstVariant ? "text-4xl" : "text-2xl"
+              isDefaultVariant ? "text-4xl" : "text-2xl"
             } sm:text-4xl`}
           >
             {title}
           </h3>
           <p className="text-sm sm:text-lg">{description}</p>
         </div>
-        {!isFirstVariant ? <HeaderSliderController variant={variant} /> : null}
+        {!isDefaultVariant
+          ? <HeaderSliderController variant={variant} />
+          : null}
       </div>
-      {!isFirstVariant
+      {!isDefaultVariant
         ? <div className="border-b border-base-300 w-full my-6"></div>
         : null}
       <ul
         className={`w-full flex gap-4 overflow-x-auto ${
-          isFirstVariant ? "mt-4 justify-center" : "justify-start"
+          isDefaultVariant ? "mt-4 justify-center" : "justify-start"
         }`}
       >
         {categories.map(({ name, href }, index) => (
