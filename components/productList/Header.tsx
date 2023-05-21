@@ -1,7 +1,11 @@
 import { useState } from "preact/hooks";
 import Icon from "$store/components/ui/Icon.tsx";
 
-type AvailableVariants = 'default' | 'dots-top' | 'dots-with-arrows' | 'dots-arrows-bottom';
+type AvailableVariants =
+  | "default"
+  | "dots-top"
+  | "dots-with-arrows"
+  | "dots-arrows-bottom";
 
 export interface Props {
   title: string;
@@ -11,15 +15,15 @@ export interface Props {
     href: string;
   }[];
   variant: AvailableVariants;
-};
+}
 
 function HeaderSliderController({ variant }: {
   variant: AvailableVariants;
 }) {
   switch (variant) {
-    case 'default':
+    case "default":
       return null;
-    case 'dots-top':
+    case "dots-top":
       return (
         <div className="h-fit flex gap-4">
           <div className="w-10 h-10 flex justify-center items-center cursor-pointer">
@@ -63,11 +67,11 @@ function Header({
   title = "",
   description = "",
   categories = [],
-  variant = 'dots-with-arrows',
+  variant = "dots-with-arrows",
 }: Props) {
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
 
-  const isDefaultVariant = variant === 'default';
+  const isDefaultVariant = variant === "default";
 
   return (
     <div
@@ -93,7 +97,9 @@ function Header({
           </h3>
           <p className="text-sm sm:text-lg">{description}</p>
         </div>
-        {!isDefaultVariant ? <HeaderSliderController variant={variant} /> : null}
+        {!isDefaultVariant
+          ? <HeaderSliderController variant={variant} />
+          : null}
       </div>
       {!isDefaultVariant
         ? <div className="border-b border-base-300 w-full my-6"></div>
