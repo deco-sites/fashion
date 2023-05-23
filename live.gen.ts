@@ -122,6 +122,7 @@ import * as i2$$$$9 from "deco-sites/std/sections/configYourViews.global.tsx";
 import * as i2$$$$10 from "deco-sites/std/sections/SEO.tsx";
 import * as i2$$$$11 from "deco-sites/std/sections/SEOPDP.tsx";
 import * as i2$$$$12 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as i2$$$$13 from "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx";
 import * as i2$$$$$4 from "deco-sites/std/actions/vtex/cart/addItems.ts";
 import * as i2$$$$$5 from "deco-sites/std/actions/vtex/cart/getInstallment.ts";
 import * as i2$$$$$6 from "deco-sites/std/actions/vtex/cart/removeItemAttachment.ts";
@@ -196,6 +197,7 @@ const manifest = {
     "deco-sites/std/sections/SEO.tsx": i2$$$$10,
     "deco-sites/std/sections/SEOPDP.tsx": i2$$$$11,
     "deco-sites/std/sections/SEOPLP.tsx": i2$$$$12,
+    "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx": i2$$$$13,
   },
   "loaders": {
     "$live/loaders/workflows/events.ts": i2$$$0,
