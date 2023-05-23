@@ -57,10 +57,10 @@ export default function CookieConsentTime7(props: Props) {
       <div
         id={id}
         className="flex flex-col items-start justify-start p-4 bottom-0 left-0  fixed sm:p-8
-        z-50
+        z-50 w-full translate-y-[200%] transition sm:w-[424px] 
         "
       >
-        <div className="bg-base-100 shadow-lg p-4 sm:p-6 space-y-4 text-default  sm:w-[360px]">
+        <div className="bg-base-100 shadow-lg p-4 sm:p-6 space-y-4 text-default w-full">
           <div className="flex items-center justify-between">
             <h1 className="text-xl mt-0">{title ? title : "Cookie policy"}</h1>
             <button
