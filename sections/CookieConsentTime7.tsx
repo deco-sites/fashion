@@ -1,12 +1,3 @@
-/**
- * Estou usando tokens do DaisyUI e Tailwind CSS
- * Fiz alterações somente no arquivo destinado a section do meu grupo
- * O componente esta editável no admin da Deco
- * Adicionei link de preview da section do admin da deco no PR
- * Minha section funciona com propriedades padrão
- * link preview : https://deco.cx/admin/sites/fashion/blocks/previews?ref=%23%2Fdefinitions%2FZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZUNvbnNlbnRUaW1lNy50c3g%3D&type=sections
- */
-
 import { useId } from "preact/hooks";
 
 const script = (id: string) => `
