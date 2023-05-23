@@ -38,7 +38,7 @@ export default function BenefitsTime7(
       <div className="py-6 sm:py-10 sm:px-14 bg-base-100 max-w-screen-xl mx-auto">
         <h2 className="text-4xl text-base-500 text-center mb-2">{title}</h2>
         <p className="text-2xl text-base-400 text-center mb-10">
-          {description} {benefits.length}
+          {description}
         </p>
         <div className="grid grid-cols-2 px-12 gap-4 sm:gap-8 sm:grid-cols-4 sm:p-0">
           {benefits.map(({ title, description }) => (
