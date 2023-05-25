@@ -41,7 +41,7 @@ function Coupon() {
             id="coupon"
             name="coupon"
             ref={ref}
-            class="w-[140px] border rounded p-2 text-caption font-caption"
+            class="w-[140px] border rounded p-2 font-caption"
             type="text"
             value={coupon ?? ""}
             placeholder={"Coupom"}

@@ -49,7 +49,7 @@ function LinkTree({
             <li class="w-full">
               <a
                 href={link.href}
-                class="text-base-100 text-caption rounded-3xl text-center w-full flex justify-center items-center min-h-[36px] hover:bg-base-100 hover:text-base-content border border-base-100"
+                class="text-base-100 rounded-3xl text-center w-full flex justify-center items-center min-h-[36px] hover:bg-base-100 hover:text-base-content border border-base-100"
               >
                 {link.label}
               </a>
