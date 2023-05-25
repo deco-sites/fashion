@@ -3,15 +3,9 @@ import dev from "$live/dev.ts";
 import liveManifest from "$live/live.gen.ts";
 import liveStdManifest from "deco-sites/std/live.gen.ts";
 import tailwind from "deco-sites/std/tailwindv3.ts";
-import tailwindConfig from "deco-sites/fashion/tailwind.config.ts";
-import daisyui from "npm:daisyui@2.51.6";
 
 // Start tailwind background process generation
-tailwind({
-  ...tailwindConfig,
-  plugins: [daisyui],
-  daisyui: { themes: [], logs: false },
-});
+tailwind();
 
 // Generate manifest and boot server
 await dev(import.meta.url, "./main.ts", {

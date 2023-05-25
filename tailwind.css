@@ -42,4 +42,60 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  @keyframes slide-left-frame {
+    0% {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-right-frame {
+    0% {
+      transform: translateX(-100%)
+    }
+
+    to {
+      transform: translateX(0)
+    }
+  }
+
+  @keyframes slide-bottom-frame {
+    0% {
+      transform: translateY(100%)
+    }
+
+    to {
+      transform: translateY(0)
+    }
+  }
+
+  .animate-slide-left {
+    animation: slide-left-frame 0.4s ease normal;
+  }
+
+  .animate-slide-right {
+    animation: slide-right-frame 0.4s ease normal;
+  }
+
+  .animate-slide-bottom {
+    animation: slide-bottom-frame 0.4s ease normal;
+  }
+}
+
+.group:disabled .group-disabled\:animate-progress {
+  animation: progress-frame ease normal
+}
+
+@keyframes progress-frame {
+  0% {
+    --dot-progress: 0%
+  }
+
+  to {
+    --dot-progress: 100%
+  }
 }
