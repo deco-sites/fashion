@@ -41,7 +41,7 @@ function Avatar({ content, variant = "default" }: Props) {
           variants[variant]
         }`}
       >
-        <span class="text-caption font-caption uppercase">
+        <span class="uppercase">
           {colors[content] ? "" : content.substring(0, 2)}
         </span>
       </div>

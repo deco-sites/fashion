@@ -15,9 +15,6 @@ declare global {
   }
 }
 
-const CHECKOUT_URL =
-  "https://bravtexfashionstore.vtexcommercestable.com.br/checkout";
-
 function Cart() {
   const { displayCart } = useUI();
   const { cart, loading, mapItemsToAnalyticsItems } = useCart();
@@ -93,11 +90,7 @@ function Cart() {
           </div>
         )}
         <div class="p-4">
-          <a
-            class="inline-block w-full"
-            target="_blank"
-            href={`${CHECKOUT_URL}?orderFormId=${cart.value!.orderFormId}`}
-          >
+          <a class="inline-block w-full" href="/checkout">
             <Button
               data-deco="buy-button"
               class="w-full"

@@ -36,7 +36,7 @@ function Newsletter() {
         </span>
       </div>
       <form
-        class="font-body text-body w-full sm:w-[408px] form-control"
+        class="w-full sm:w-[408px] form-control"
         onSubmit={handleSubmit}
       >
         <div class="input-group">
