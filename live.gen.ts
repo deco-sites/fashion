@@ -42,6 +42,7 @@ import * as $live_release from "$live/routes/live/release.ts";
 import * as $live_meta from "$live/routes/live/_meta.ts";
 import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
+import * as i1$0 from "$live/loaders/state.ts";
 import * as i2$$$0 from "$live/loaders/workflows/events.ts";
 import * as i2$$$1 from "$live/loaders/workflows/get.ts";
 import * as i2$$$$$$0 from "$live/handlers/devPage.ts";
@@ -203,6 +204,7 @@ const manifest = {
     "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx": i2$$$$13,
   },
   "loaders": {
+    "$live/loaders/state.ts": i1$0,
     "$live/loaders/workflows/events.ts": i2$$$0,
     "$live/loaders/workflows/get.ts": i2$$$1,
     "deco-sites/std/loaders/vtex/cart.ts": i2$$$2,
