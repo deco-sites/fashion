@@ -14,8 +14,6 @@ const useSort = () =>
 const applySort = (e: JSX.TargetedEvent<HTMLSelectElement, Event>) => {
   const urlSearchParams = new URLSearchParams(window.location.search);
 
-  console.log(e.currentTarget.value);
-
   urlSearchParams.set(SORT_QUERY_PARAM, e.currentTarget.value);
   window.location.search = urlSearchParams.toString();
 };
