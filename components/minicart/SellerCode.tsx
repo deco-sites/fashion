@@ -3,11 +3,11 @@ import { useSignal } from "@preact/signals";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import Button from "$store/components/ui/Button.tsx";
 
-function Coupon() {
+function SellerCode() {
   const { cart, loading, addCouponsToCart } = useCart();
   const ref = useRef<HTMLInputElement>(null);
   const displayInput = useSignal(false);
-  const coupon = cart.value?.marketingData?.coupon;
+  const sellerCode = cart.value?.marketingData?.coupon;
 
   const toggleInput = () => {
     displayInput.value = !displayInput.value;
@@ -26,13 +26,13 @@ function Coupon() {
 
   return (
     <div class="flex justify-between items-center px-4">
-      <span class="text-sm">Cupom de desconto</span>
+      <span class="text-sm">Código do vendedor</span>
       {!displayInput.value && (
         <Button
           class="btn-ghost underline font-normal"
           onClick={toggleInput}
         >
-          {coupon || "Adicionar"}
+          {sellerCode || "Adicionar"}
         </Button>
       )}
       {displayInput.value && (
@@ -41,10 +41,10 @@ function Coupon() {
             id="coupon"
             name="coupon"
             ref={ref}
-            class="w-[140px] border rounded p-2 font-caption"
+            class="w-[140px] border rounded p-2 text-caption font-caption"
             type="text"
-            value={coupon ?? ""}
-            placeholder={"Cupom"}
+            value={sellerCode ?? ""}
+            placeholder={"Código do vendedor"}
           />
           <Button
             type="submit"
@@ -60,4 +60,4 @@ function Coupon() {
   );
 }
 
-export default Coupon;
+export default SellerCode;
