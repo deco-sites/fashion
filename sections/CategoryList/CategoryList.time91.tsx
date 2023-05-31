@@ -4,63 +4,114 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
+import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface Category {
-  src: LiveImage;
-  alt: string;
-  href: string;
+  tag?: string;
   label: string;
+  description?: string;
+  href?: string;
+  image?: LiveImage;
+  buttonText?: string;
 }
 
 export interface Props {
-  categoryList: Category[];
+  header?: {
+    title?: string;
+    description?: string;
+  }
+  list?: Category[];
+  layout?: {
+    headerAlignment?: "center" | "left";
+    categoryCard?: {
+      textPosition?: "top" | "bottom";
+      textAlignment?: "center" | "left"
+    }
+  }
 }
 
-function CategoryList({ categoryList = [] }: Props) {
+function CategoryList(props: Props) {
   const id = useId();
-  return (
-    <section class="flex justify-evenly flex-col items-center w-full py-10 px-16 text-trueGray-800">
-      <div class="flex justify-center flex-col items-center">
-        <h1 class="text-4xl mb-4">Category list</h1>
-        <span class="text-lg">Description</span>
+  const {
+    header = {
+      title: "",
+      description: "",
+    },
+    list = [
+      {
+        tag: "10% off",
+        label: "Feminino",
+        description: "Moda feminina direto de Milão",
+        href: "/feminino",
+        image: "https://ik.imagekit.io/decocx/tr:w-680,h-680/https:/ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fdcb3c8f-d629-485e-bf70-8060bd8a9f65",
+        buttonText: "Ver produtos"
+      }
+    ],
+    layout = {
+      headerAlignment: "center",
+      categoryCard: {
+        textPosition: "top",
+        textAlignment: "center"
+      }
+    }
+  } = props;
+
+  function cardText(tag?: string, label?: string, description?: string, alignment?: "center" | "left") {
+    return (
+      <div class={`flex flex-col text-${alignment === "center" ? "center" : "left"}`}>
+        { tag && <div class="text-sm text-primary">{tag}</div> }
+        { label && <h3 class="text-lg text-base-content">{label}</h3> }
+        { description && <div class="text-sm text-neutral">{description}</div> }
       </div>
+    )
+  }
+  
+  return (
+    <div class="w-full container px-4 py-8 flex flex-col gap-6 lg:gap-10 text-base-content lg:px-0 lg:py-10">
+      <Header title={header?.title} description={header?.description || ""} alignment={layout?.headerAlignment || "center"} />
       <div
-        class="container grid grid-cols-[40px_1fr_40px] grid-rows-[40px_1fr_40px_1fr] py-3 sm:py-6 px-0 sm:px-5"
+        class="relative w-full py-6 px-0 lg:py-3 lg:px-0"
         id={id}
       >
-        <Slider class="carousel carousel-start sm:carousel-start gap-4 sm:gap-8 col-span-full row-start-2 row-end-5">
-          {categoryList.map(({ href, src, alt, label }, index) => (
+        <Slider class="carousel carousel-start carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
+          {list.map(({ tag, label, description, href, image, buttonText }, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item w-40 h-full sm:w-80 sm:h-96 first:ml-3 sm:first:ml-6 last:mr-6 sm:last:mr-3"
+              class="flex flex-col gap-4 carousel-item"
             >
               <a
                 href={href}
-                class="card card-compact w-40 h-auto sm:w-80 sm:h-96"
+                class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
               >
-                <figure>
-                  <Image
-                    class="rounded-3xl"
-                    src={src}
-                    alt={alt}
-                    height={340}
-                    width={340}
-                  />
-                </figure>
-                <div class="card-body items-center">
-                  <h2 class="card-title text-base font-medium">{label}</h2>
-                </div>
+                {layout?.categoryCard?.textPosition === "top" && cardText(tag, label, description, layout?.categoryCard?.textAlignment)}
+                {
+                  image && 
+                    <figure>
+                      <Image
+                        class="card"
+                        src={image}
+                        alt={description}
+                        height={340}
+                        width={280}
+                      />
+                    </figure>
+                }
+                {layout?.categoryCard?.textPosition === "bottom" && cardText(tag, label, description, layout?.categoryCard?.textAlignment)}
               </a>
+              {
+                buttonText && 
+                  <a href={href} class="btn">{buttonText}</a>
+              }
             </Slider.Item>
           ))}
         </Slider>
         <>
-          <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
+          <div class="hidden lg:block z-10 absolute left-[1rem] top-[40%]">
             <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
               <Icon size={20} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
           </div>
-          <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
+          <div class="hidden lg:block z-10 absolute right-[1rem] top-[40%]">
             <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
               <Icon size={20} id="ChevronRight" strokeWidth={3} />
             </Slider.NextButton>
@@ -68,11 +119,7 @@ function CategoryList({ categoryList = [] }: Props) {
         </>
         <SliderJS rootId={id} />
       </div>
-      <button class="btn btn-outline rounded-none w-80 h-9 flex normal-case text-base text-green-900
-">
-        View all
-      </button>
-    </section>
+    </div>
   );
 }
 
