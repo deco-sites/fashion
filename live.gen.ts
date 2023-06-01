@@ -219,13 +219,8 @@ const manifest = {
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$10,
     "deco-sites/fashion/sections/QuickView/QuickView.198.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$8,
-<<<<<<< HEAD
     "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx": $$$$$$$$16,
-    "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx":
-      $$$$$$$$2,
-=======
     "deco-sites/fashion/sections/Testimonials/Testimonials.tsx": $$$$$$$$2,
->>>>>>> Improve testimonial style
     "deco-sites/fashion/sections/Timers/CampaignTimer.tsx": $$$$$$$$6,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$25,
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$0,

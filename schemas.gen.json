@@ -106,12 +106,8 @@
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/QuickView/QuickView.198.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
-<<<<<<< HEAD
               "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx",
-              "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx",
-=======
               "deco-sites/fashion/sections/Testimonials/Testimonials.tsx",
->>>>>>> Improve testimonial style
               "deco-sites/fashion/sections/Timers/CampaignTimer.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
@@ -9848,7 +9844,6 @@
       ],
       "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
     },
-<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4@Shortcut": {
       "type": "object",
       "properties": {
@@ -10048,10 +10043,7 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMudGVhbS0yNTkudHN4@Props": {
-=======
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMudHN4@Props": {
->>>>>>> Improve testimonial style
       "type": "object",
       "properties": {
         "title": {
@@ -13270,7 +13262,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4": {
       "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx",
       "type": "object",
@@ -13292,12 +13283,8 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMudGVhbS0yNTkudHN4": {
-      "title": "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx",
-=======
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMudHN4": {
       "title": "deco-sites/fashion/sections/Testimonials/Testimonials.tsx",
->>>>>>> Improve testimonial style
       "type": "object",
       "allOf": [
         {
@@ -14611,14 +14598,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
         },
         {
-<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMudGVhbS0yNTkudHN4"
-=======
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMudHN4"
->>>>>>> Improve testimonial style
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLnRzeA=="
