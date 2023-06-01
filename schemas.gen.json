@@ -86,9 +86,7 @@
               "deco-sites/fashion/sections/Auth/Auth.EasyCoders.tsx",
               "deco-sites/fashion/sections/BannerGrid.tsx",
               "deco-sites/fashion/sections/BannerPLP.tsx",
-              "deco-sites/fashion/sections/Benefits/ColorReverse.tsx",
-              "deco-sites/fashion/sections/Benefits/Simple.tsx",
-              "deco-sites/fashion/sections/Benefits/WithBorder.tsx",
+              "deco-sites/fashion/sections/Benefits/Benefits.tsx",
               "deco-sites/fashion/sections/Carousel.tsx",
               "deco-sites/fashion/sections/CategoryList/CategoryList.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
@@ -7753,7 +7751,7 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerPLP.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0NvbG9yUmV2ZXJzZS50c3g=@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "title": {
@@ -7933,380 +7931,35 @@
             ]
           },
           "title": "Benefits"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Benefits/ColorReverse.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1NpbXBsZS50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
         },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "benefits": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {
-                "type": "string",
-                "title": "Label"
-              },
-              "icon": {
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "const": "ArrowsPointingOut"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Bars3"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronLeft"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronRight"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronUp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronDown"
-                  },
-                  {
-                    "type": "string",
-                    "const": "CreditCard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Deco"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discord"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discount"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Elo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Facebook"
-                  },
-                  {
-                    "type": "string",
-                    "const": "FilterList"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Heart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Instagram"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Logo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Minus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MapPin"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MagnifyingGlass"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Mastercard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Phone"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Pix"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Plus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "QuestionMarkCircle"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Return"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ShoppingCart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Star"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Tiktok"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Trash"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Truck"
-                  },
-                  {
-                    "type": "string",
-                    "const": "User"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Visa"
-                  },
-                  {
-                    "type": "string",
-                    "const": "WhatsApp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "XMark"
-                  }
-                ],
-                "type": "string",
-                "title": "Icon"
-              },
-              "description": {
-                "type": "string",
-                "title": "Description"
-              }
-            },
-            "required": [
-              "label",
-              "icon",
-              "description"
-            ]
+        "layout": {
+          "type": "object",
+          "properties": {
+            "variation": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Simple"
+                },
+                {
+                  "type": "string",
+                  "const": "With border"
+                },
+                {
+                  "type": "string",
+                  "const": "Color reverse"
+                }
+              ],
+              "type": "string",
+              "title": "Variation"
+            }
           },
-          "title": "Benefits"
+          "required": [],
+          "title": "Layout"
         }
       },
       "required": [],
-      "title": "deco-sites/fashion/sections/Benefits/Simple.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1dpdGhCb3JkZXIudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "benefits": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {
-                "type": "string",
-                "title": "Label"
-              },
-              "icon": {
-                "anyOf": [
-                  {
-                    "type": "string",
-                    "const": "ArrowsPointingOut"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Bars3"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronLeft"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronRight"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronUp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ChevronDown"
-                  },
-                  {
-                    "type": "string",
-                    "const": "CreditCard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Deco"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discord"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Discount"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Elo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Facebook"
-                  },
-                  {
-                    "type": "string",
-                    "const": "FilterList"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Heart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Instagram"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Logo"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Minus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MapPin"
-                  },
-                  {
-                    "type": "string",
-                    "const": "MagnifyingGlass"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Mastercard"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Phone"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Pix"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Plus"
-                  },
-                  {
-                    "type": "string",
-                    "const": "QuestionMarkCircle"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Return"
-                  },
-                  {
-                    "type": "string",
-                    "const": "ShoppingCart"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Star"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Tiktok"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Trash"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Truck"
-                  },
-                  {
-                    "type": "string",
-                    "const": "User"
-                  },
-                  {
-                    "type": "string",
-                    "const": "Visa"
-                  },
-                  {
-                    "type": "string",
-                    "const": "WhatsApp"
-                  },
-                  {
-                    "type": "string",
-                    "const": "XMark"
-                  }
-                ],
-                "type": "string",
-                "title": "Icon"
-              },
-              "description": {
-                "type": "string",
-                "title": "Description"
-              }
-            },
-            "required": [
-              "label",
-              "icon",
-              "description"
-            ]
-          },
-          "title": "Benefits"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Benefits/WithBorder.tsx@Props"
+      "title": "deco-sites/fashion/sections/Benefits/Benefits.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
@@ -12900,12 +12553,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0NvbG9yUmV2ZXJzZS50c3g=": {
-      "title": "deco-sites/fashion/sections/Benefits/ColorReverse.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLnRzeA==": {
+      "title": "deco-sites/fashion/sections/Benefits/Benefits.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0NvbG9yUmV2ZXJzZS50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLnRzeA==@Props"
         }
       ],
       "required": [
@@ -12915,51 +12568,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/fashion/sections/Benefits/ColorReverse.tsx"
+            "deco-sites/fashion/sections/Benefits/Benefits.tsx"
           ],
-          "default": "deco-sites/fashion/sections/Benefits/ColorReverse.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1NpbXBsZS50c3g=": {
-      "title": "deco-sites/fashion/sections/Benefits/Simple.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1NpbXBsZS50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/Benefits/Simple.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Benefits/Simple.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1dpdGhCb3JkZXIudHN4": {
-      "title": "deco-sites/fashion/sections/Benefits/WithBorder.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1dpdGhCb3JkZXIudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/Benefits/WithBorder.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Benefits/WithBorder.tsx"
+          "default": "deco-sites/fashion/sections/Benefits/Benefits.tsx"
         }
       }
     },
@@ -14612,13 +14223,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lclBMUC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0NvbG9yUmV2ZXJzZS50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1NpbXBsZS50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL1dpdGhCb3JkZXIudHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
