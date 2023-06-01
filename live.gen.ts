@@ -83,7 +83,7 @@ import * as $$$$$$$$21 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$22 from "./sections/MeasurementModal.alt+f4.tsx";
 import * as $$$$$$$$23 from "./sections/Highlights.tsx";
 import * as $$$$$$$$24 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$25 from "./sections/CategoryList/CategoryList.time91.tsx";
+import * as $$$$$$$$25 from "./sections/CategoryList/CategoryList.tsx";
 import * as $$$$$$$$26 from "./sections/Carousel.tsx";
 >>>>>>> wip
 import * as $live_middleware from "$live/routes/_middleware.ts";
@@ -271,8 +271,7 @@ const manifest = {
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$4,
     "deco-sites/fashion/sections/Benefits/Benefits.team-259.tsx": $$$$$$$$17,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$26,
-    "deco-sites/fashion/sections/CategoryList/CategoryList.time91.tsx":
-      $$$$$$$$25,
+    "deco-sites/fashion/sections/CategoryList/CategoryList.tsx": $$$$$$$$25,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$13,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$14,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$3,
