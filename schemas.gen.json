@@ -7952,6 +7952,20 @@
               ],
               "type": "string",
               "title": "Variation"
+            },
+            "headerAlignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "center"
+                },
+                {
+                  "type": "string",
+                  "const": "left"
+                }
+              ],
+              "type": "string",
+              "title": "Header Alignment"
             }
           },
           "required": [],
