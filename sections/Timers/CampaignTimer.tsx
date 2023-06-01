@@ -3,6 +3,12 @@ import { HTML } from "deco-sites/std/components/types.ts";
 
 export interface Props {
   /**
+   * @title Text
+   * @default Time left for a campaign to end wth a link
+   */
+  text?: HTML;
+
+  /**
    * @title Expires at date
    * @format datetime
    */
@@ -18,24 +24,22 @@ export interface Props {
     seconds?: string;
   };
 
-  /**
-   * @title Text
-   * @default Time left for a campaign to end wth a link
-   */
-  text?: HTML;
-
   link?: {
     /**
      * @title Link Text
      * @default button
      */
-    label: string;
+    text: string;
     /**
      * @title Link href
      * @default #
      */
     href: string;
   };
+
+  layout?: {
+    textPosition?: "Before counter" | "After counter";
+  }
 }
 
 const snippet = (expiresAt: string, rootId: string) => {
@@ -90,60 +94,61 @@ function CampaignTimer({
   expiresAt = `${new Date()}`,
   labels,
   text = "Time left for a campaign to end wth a link",
-  link = { label: "Click me", href: "/hello" },
+  link = { text: "Click me", href: "/hello" },
+  layout =  { textPosition: "Before counter" },
 }: Props) {
   const id = useId();
 
   return (
     <>
       <div class="bg-accent text-accent-content">
-        <div class="py-4 grid grid-cols-1 sm:grid-cols-3 place-items-center gap-4">
-          <div class="sm:justify-self-end">
-            <span dangerouslySetInnerHTML={{ __html: text }} />
+        <div class="container mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-16 py-4 px-6 gap-4 ">
+          {
+            layout?.textPosition !== "After counter" && 
+              <div class="text-sm text-center lg:text-xl lg:text-left lg:max-w-lg" dangerouslySetInnerHTML={{ __html: text }}></div>
+          }
+          <div id={`${id}::expired`} class="hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg">
+            {labels?.expired || "Expired!"}
           </div>
-          <div class="h-20">
-            <div id={`${id}::expired`} class="hidden h-full">
-              <span class="flex items-center text-2xl h-full">
-                {labels?.expired || "Expired!"}
-              </span>
-            </div>
-
+          <div class="flex gap-8 lg:gap-16 items-center justify-center lg:justify-normal">
             <div id={`${id}::counter`}>
-              <div class="grid grid-flow-col gap-5 text-center auto-cols-max items-center">
-                <div class="flex flex-col">
-                  <span class="countdown font-normal text-5xl">
+              <div class="grid grid-flow-col gap-3 text-center auto-cols-max items-center">
+                <div class="flex flex-col text-xs lg:text-sm">
+                  <span class="countdown font-normal text-xl lg:text-2xl">
                     <span id={`${id}::hours`} />
                   </span>
-                  {labels?.hours || "Hours"}
+                  {labels?.hours || ""}
                 </div>
                 <div>
                   :
                 </div>
-                <div class="flex flex-col">
-                  <span class="countdown font-normal text-5xl">
+                <div class="flex flex-col text-xs lg:text-sm">
+                  <span class="countdown font-normal text-xl lg:text-2xl">
                     <span id={`${id}::minutes`} />
                   </span>
-                  {labels?.minutes || "Minutes"}
+                  {labels?.minutes || ""}
                 </div>
                 <div>
                   :
                 </div>
-                <div class="flex flex-col">
-                  <span class="countdown font-normal text-5xl">
+                <div class="flex flex-col text-xs lg:text-sm">
+                  <span class="countdown font-normal text-xl lg:text-2xl">
                     <span id={`${id}::seconds`} />
                   </span>
-                  {labels?.seconds || "Seconds"}
+                  {labels?.seconds || ""}
                 </div>
               </div>
             </div>
+            <div class={`hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg ${layout?.textPosition === "After counter" ? "lg:block" : "lg:hidden"}`} dangerouslySetInnerHTML={{ __html: text }}></div>
+            <a
+              class="btn"
+              aria-label={link.text}
+              href={link.href}
+            >
+              {link.text}
+            </a>
           </div>
-          <a
-            class="btn no-animation sm:justify-self-start"
-            aria-label={link.label}
-            href={link.href}
-          >
-            {link.label}
-          </a>
+            <div class={`lg:hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg ${layout?.textPosition === "After counter" ? "block" : "hidden"}`} dangerouslySetInnerHTML={{ __html: text }}></div>
         </div>
       </div>
       <script

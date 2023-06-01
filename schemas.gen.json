@@ -60,7 +60,6 @@
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
               "./islands/Cart.tsx",
-              "./islands/Countdown.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
@@ -88,7 +87,6 @@
               "deco-sites/fashion/sections/BannerGrid.tsx",
               "deco-sites/fashion/sections/BannerPLP.tsx",
               "deco-sites/fashion/sections/Benefits/Benefits.team-259.tsx",
-              "deco-sites/fashion/sections/CampaignTimer.Time19.tsx",
               "deco-sites/fashion/sections/Carousel.tsx",
               "deco-sites/fashion/sections/CategoryList/CategoryList.time91.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
@@ -109,6 +107,7 @@
               "deco-sites/fashion/sections/QuickView/QuickView.198.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
               "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx",
+              "deco-sites/fashion/sections/Timers/CampaignTimer.tsx",
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -7935,59 +7934,6 @@
       ],
       "title": "deco-sites/fashion/sections/Benefits/Benefits.team-259.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
-      "type": "string",
-      "format": "html",
-      "title": "HTML"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBhaWduVGltZXIuVGltZTE5LnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "targetDate": {
-          "type": "string",
-          "title": "Tempo para expirar",
-          "format": "date"
-        },
-        "text": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
-          "title": "Texto",
-          "default": "Time left for a campaign to end wth a link"
-        },
-        "labelButton": {
-          "type": "string",
-          "title": "Texto do botão",
-          "default": "button"
-        },
-        "actionButton": {
-          "type": "string",
-          "title": "Ação do botão",
-          "default": "#"
-        },
-        "variant": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "default"
-            },
-            {
-              "type": "string",
-              "const": "second"
-            }
-          ],
-          "type": "string",
-          "title": "Versão do bloco",
-          "default": "default"
-        }
-      },
-      "required": [
-        "targetDate",
-        "text",
-        "labelButton",
-        "actionButton",
-        "variant"
-      ],
-      "title": "deco-sites/fashion/sections/CampaignTimer.Time19.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
       "type": "object",
       "properties": {
@@ -8337,7 +8283,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@93b8c70f3e6e426e09703e95eaa189a4&Colors": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors"
@@ -8353,7 +8299,7 @@
           "required": []
         }
       ],
-      "title": "93b8c70f3e6e426e09703e95eaa189a4&Colors"
+      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
@@ -8456,7 +8402,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@93b8c70f3e6e426e09703e95eaa189a4&Colors",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -9806,6 +9752,105 @@
         "testimonials"
       ],
       "title": "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Text",
+          "default": "Time left for a campaign to end wth a link"
+        },
+        "expiresAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Expires at date",
+          "format": "datetime"
+        },
+        "labels": {
+          "type": "object",
+          "properties": {
+            "expired": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Expired"
+            },
+            "hours": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Hours"
+            },
+            "minutes": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Minutes"
+            },
+            "seconds": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Seconds"
+            }
+          },
+          "required": [],
+          "title": "Labels"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Text"
+            },
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "title": "Link"
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "textPosition": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Before counter"
+                },
+                {
+                  "type": "string",
+                  "const": "After counter"
+                }
+              ],
+              "type": "string",
+              "title": "Text Position"
+            }
+          },
+          "required": [],
+          "title": "Layout"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/sections/Timers/CampaignTimer.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props": {
       "type": "object",
@@ -11884,22 +11929,6 @@
         }
       }
     },
-    "Li9pc2xhbmRzL0NvdW50ZG93bi50c3g=": {
-      "title": "./islands/Countdown.tsx",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/Countdown.tsx"
-          ],
-          "default": "./islands/Countdown.tsx"
-        }
-      }
-    },
     "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
       "title": "./islands/HeaderButton.tsx",
       "type": "object",
@@ -12426,27 +12455,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBhaWduVGltZXIuVGltZTE5LnRzeA==": {
-      "title": "deco-sites/fashion/sections/CampaignTimer.Time19.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBhaWduVGltZXIuVGltZTE5LnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/CampaignTimer.Time19.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/CampaignTimer.Time19.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA==": {
       "title": "deco-sites/fashion/sections/Carousel.tsx",
       "type": "object",
@@ -12859,6 +12867,27 @@
             "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx"
           ],
           "default": "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLnRzeA==": {
+      "title": "deco-sites/fashion/sections/Timers/CampaignTimer.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Timers/CampaignTimer.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Timers/CampaignTimer.tsx"
         }
       }
     },
@@ -13973,9 +14002,6 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL0NhcnQudHN4"
         },
         {
-          "$ref": "#/definitions/Li9pc2xhbmRzL0NvdW50ZG93bi50c3g="
-        },
-        {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
         },
         {
@@ -14081,9 +14107,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0JlbmVmaXRzL0JlbmVmaXRzLnRlYW0tMjU5LnRzeA=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhbXBhaWduVGltZXIuVGltZTE5LnRzeA=="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
         },
         {
@@ -14142,6 +14165,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Rlc3RpbW9uaWFscy9UZXN0aW1vbmlhbHMudGVhbS0yNTkudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
