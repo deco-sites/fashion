@@ -75,7 +75,7 @@ import * as $$$$$$$$13 from "./sections/CookieConsent.tsx";
 import * as $$$$$$$$14 from "./sections/DesignSystem.tsx";
 import * as $$$$$$$$15 from "./sections/ImageGallery.tsx";
 import * as $$$$$$$$16 from "./sections/Header.tsx";
-import * as $$$$$$$$17 from "./sections/Benefits/Benefits.team-259.tsx";
+import * as $$$$$$$$17 from "./sections/Benefits/Benefits.tsx";
 import * as $$$$$$$$18 from "./sections/ProductList/ProductList.198.tsx";
 import * as $$$$$$$$19 from "./sections/ImageGallery/ImageGallery.ColloPandaDev.tsx";
 import * as $$$$$$$$20 from "./sections/Newsletter/NewsletterModal.EasyCoders.tsx";
@@ -269,7 +269,7 @@ const manifest = {
 >>>>>>> feat: timer (#350)
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$7,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$4,
-    "deco-sites/fashion/sections/Benefits/Benefits.team-259.tsx": $$$$$$$$17,
+    "deco-sites/fashion/sections/Benefits/Benefits.tsx": $$$$$$$$17,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$26,
     "deco-sites/fashion/sections/CategoryList/CategoryList.tsx": $$$$$$$$25,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$13,

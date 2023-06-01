@@ -39,7 +39,7 @@ export interface Props {
 
   layout?: {
     textPosition?: "Before counter" | "After counter";
-  }
+  };
 }
 
 const snippet = (expiresAt: string, rootId: string) => {
@@ -95,7 +95,7 @@ function CampaignTimer({
   labels,
   text = "Time left for a campaign to end wth a link",
   link = { text: "Click me", href: "/hello" },
-  layout =  { textPosition: "Before counter" },
+  layout = { textPosition: "Before counter" },
 }: Props) {
   const id = useId();
 
@@ -103,11 +103,18 @@ function CampaignTimer({
     <>
       <div class="bg-accent text-accent-content">
         <div class="container mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-16 py-4 px-6 gap-4 ">
-          {
-            layout?.textPosition !== "After counter" && 
-              <div class="text-sm text-center lg:text-xl lg:text-left lg:max-w-lg" dangerouslySetInnerHTML={{ __html: text }}></div>
-          }
-          <div id={`${id}::expired`} class="hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg">
+          {layout?.textPosition !== "After counter" &&
+            (
+              <div
+                class="text-sm text-center lg:text-xl lg:text-left lg:max-w-lg"
+                dangerouslySetInnerHTML={{ __html: text }}
+              >
+              </div>
+            )}
+          <div
+            id={`${id}::expired`}
+            class="hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg"
+          >
             {labels?.expired || "Expired!"}
           </div>
           <div class="flex gap-8 lg:gap-16 items-center justify-center lg:justify-normal">
@@ -139,7 +146,15 @@ function CampaignTimer({
                 </div>
               </div>
             </div>
-            <div class={`hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg ${layout?.textPosition === "After counter" ? "lg:block" : "lg:hidden"}`} dangerouslySetInnerHTML={{ __html: text }}></div>
+            <div
+              class={`hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg ${
+                layout?.textPosition === "After counter"
+                  ? "lg:block"
+                  : "lg:hidden"
+              }`}
+              dangerouslySetInnerHTML={{ __html: text }}
+            >
+            </div>
             <a
               class="btn"
               aria-label={link.text}
@@ -148,7 +163,13 @@ function CampaignTimer({
               {link.text}
             </a>
           </div>
-            <div class={`lg:hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg ${layout?.textPosition === "After counter" ? "block" : "hidden"}`} dangerouslySetInnerHTML={{ __html: text }}></div>
+          <div
+            class={`lg:hidden text-sm text-center lg:text-xl lg:text-left lg:max-w-lg ${
+              layout?.textPosition === "After counter" ? "block" : "hidden"
+            }`}
+            dangerouslySetInnerHTML={{ __html: text }}
+          >
+          </div>
         </div>
       </div>
       <script

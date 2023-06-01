@@ -19,15 +19,15 @@ export interface Props {
   header?: {
     title?: string;
     description?: string;
-  }
+  };
   list?: Category[];
   layout?: {
     headerAlignment?: "center" | "left";
     categoryCard?: {
       textPosition?: "top" | "bottom";
-      textAlignment?: "center" | "left"
-    }
-  }
+      textAlignment?: "center" | "left";
+    };
+  };
 }
 
 function CategoryList(props: Props) {
@@ -43,38 +43,55 @@ function CategoryList(props: Props) {
         label: "Feminino",
         description: "Moda feminina direto de Milão",
         href: "/feminino",
-        image: "https://ik.imagekit.io/decocx/tr:w-680,h-680/https:/ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fdcb3c8f-d629-485e-bf70-8060bd8a9f65",
-        buttonText: "Ver produtos"
-      }
+        image:
+          "https://ik.imagekit.io/decocx/tr:w-680,h-680/https:/ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fdcb3c8f-d629-485e-bf70-8060bd8a9f65",
+        buttonText: "Ver produtos",
+      },
     ],
     layout = {
       headerAlignment: "center",
       categoryCard: {
         textPosition: "top",
-        textAlignment: "center"
-      }
-    }
+        textAlignment: "center",
+      },
+    },
   } = props;
 
-  function cardText(tag?: string, label?: string, description?: string, alignment?: "center" | "left") {
+  function cardText(
+    tag?: string,
+    label?: string,
+    description?: string,
+    alignment?: "center" | "left",
+  ) {
     return (
-      <div class={`flex flex-col text-${alignment === "center" ? "center" : "left"}`}>
-        { tag && <div class="text-sm text-primary">{tag}</div> }
-        { label && <h3 class="text-lg text-base-content">{label}</h3> }
-        { description && <div class="text-sm text-neutral">{description}</div> }
-      </div>
-    )
-  }
-  
-  return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-6 lg:gap-10 text-base-content lg:px-0 lg:py-10">
-      <Header title={header?.title} description={header?.description || ""} alignment={layout?.headerAlignment || "center"} />
       <div
-        class="relative w-full py-6 px-0 lg:py-3 lg:px-0"
+        class={`flex flex-col text-${
+          alignment === "center" ? "center" : "left"
+        }`}
+      >
+        {tag && <div class="text-sm text-primary">{tag}</div>}
+        {label && <h3 class="text-lg text-base-content">{label}</h3>}
+        {description && <div class="text-sm text-neutral">{description}</div>}
+      </div>
+    );
+  }
+
+  return (
+    <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 text-base-content lg:px-0 lg:py-10">
+      <Header
+        title={header?.title}
+        description={header?.description || ""}
+        alignment={layout?.headerAlignment || "center"}
+      />
+      <div
+        class="relative w-full"
         id={id}
       >
         <Slider class="carousel carousel-start carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
-          {list.map(({ tag, label, description, href, image, buttonText }, index) => (
+          {list.map((
+            { tag, label, description, href, image, buttonText },
+            index,
+          ) => (
             <Slider.Item
               index={index}
               class="flex flex-col gap-4 carousel-item"
@@ -83,9 +100,15 @@ function CategoryList(props: Props) {
                 href={href}
                 class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
               >
-                {layout?.categoryCard?.textPosition === "top" && cardText(tag, label, description, layout?.categoryCard?.textAlignment)}
-                {
-                  image && 
+                {layout?.categoryCard?.textPosition === "top" &&
+                  cardText(
+                    tag,
+                    label,
+                    description,
+                    layout?.categoryCard?.textAlignment,
+                  )}
+                {image &&
+                  (
                     <figure>
                       <Image
                         class="card"
@@ -95,13 +118,17 @@ function CategoryList(props: Props) {
                         width={280}
                       />
                     </figure>
-                }
-                {layout?.categoryCard?.textPosition === "bottom" && cardText(tag, label, description, layout?.categoryCard?.textAlignment)}
+                  )}
+                {layout?.categoryCard?.textPosition === "bottom" &&
+                  cardText(
+                    tag,
+                    label,
+                    description,
+                    layout?.categoryCard?.textAlignment,
+                  )}
               </a>
-              {
-                buttonText && 
-                  <a href={href} class="btn">{buttonText}</a>
-              }
+              {buttonText &&
+                <a href={href} class="btn">{buttonText}</a>}
             </Slider.Item>
           ))}
         </Slider>
