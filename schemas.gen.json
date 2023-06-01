@@ -114,7 +114,7 @@
               "deco-sites/fashion/sections/Headers/Header.tsx",
               "deco-sites/fashion/sections/Highlights.tsx",
               "deco-sites/fashion/sections/ImageGallery.tsx",
-              "deco-sites/fashion/sections/ImageGallery/ImageGallery.ColloPandaDev.tsx",
+              "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx",
               "deco-sites/fashion/sections/InstagramComponent.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
 <<<<<<< HEAD
@@ -9361,7 +9361,7 @@
       ],
       "title": "deco-sites/fashion/components/ui/ImageGallery.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@Banner": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner": {
       "type": "object",
       "properties": {
         "srcMobile": {
@@ -9390,15 +9390,15 @@
       ],
       "title": "Banner"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@DivColumn": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn": {
       "type": "object",
       "properties": {
         "bannerTop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@Banner",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner",
           "title": "Banner Top"
         },
         "bannerBottom": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@Banner",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner",
           "title": "Banner Bottom"
         }
       },
@@ -9408,14 +9408,14 @@
       ],
       "title": "DivColumn"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@DivColumn[]": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@DivColumn"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn"
       },
       "title": "DivColumn[]"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Props": {
       "type": "object",
       "properties": {
         "title": {
@@ -9425,48 +9425,17 @@
           ],
           "title": "Title"
         },
-        "descricao": {
+        "description": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Descricao"
+          "title": "Description"
         },
-        "SelectLayout": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Assimétrico"
-                },
-                {
-                  "type": "string",
-                  "const": "Simétrico"
-                }
-              ],
-              "type": "string",
-              "title": "Mobile"
-            },
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Grid"
-                },
-                {
-                  "type": "string",
-                  "const": "Inline"
-                }
-              ],
-              "type": "string",
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": " Select Layout",
-          "description": "Escolha o layout que preferir"
+        "divColumn": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn[]",
+          "maxItems": 2,
+          "title": "Div Column"
         },
         "borderRadius": {
           "type": "object",
@@ -9552,18 +9521,61 @@
           "title": "Border Radius",
           "description": "Aplique borda a sua imagem"
         },
-        "divColumn": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@DivColumn[]",
-          "maxItems": 2,
-          "title": "Div Column"
+        "layout": {
+          "type": "object",
+          "properties": {
+            "headerAlignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "center"
+                },
+                {
+                  "type": "string",
+                  "const": "left"
+                }
+              ],
+              "type": "string",
+              "title": "Header Alignment"
+            },
+            "mobile": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Asymmetric"
+                },
+                {
+                  "type": "string",
+                  "const": "Symmetrical"
+                }
+              ],
+              "type": "string",
+              "title": "Mobile"
+            },
+            "desktop": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Asymmetric"
+                },
+                {
+                  "type": "string",
+                  "const": "Symmetrical"
+                }
+              ],
+              "type": "string",
+              "title": "Desktop"
+            }
+          },
+          "required": [],
+          "title": "Layout"
         }
       },
       "required": [
-        "SelectLayout",
-        "borderRadius",
-        "divColumn"
+        "divColumn",
+        "borderRadius"
       ],
-      "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.ColloPandaDev.tsx@Props"
+      "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0luc3RhZ3JhbUNvbXBvbmVudC50c3g=@Props": {
       "type": "object",
@@ -13066,12 +13078,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=": {
-      "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.ColloPandaDev.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4": {
+      "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Props"
         }
       ],
       "required": [
@@ -13081,9 +13093,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/fashion/sections/ImageGallery/ImageGallery.ColloPandaDev.tsx"
+            "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx"
           ],
-          "default": "deco-sites/fashion/sections/ImageGallery/ImageGallery.ColloPandaDev.tsx"
+          "default": "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx"
         }
       }
     },
@@ -14720,7 +14732,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkuQ29sbG9QYW5kYURldi50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0luc3RhZ3JhbUNvbXBvbmVudC50c3g="
