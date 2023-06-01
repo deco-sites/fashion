@@ -100,7 +100,12 @@
               "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx",
               "deco-sites/fashion/sections/InstagramComponent.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
+<<<<<<< HEAD
               "deco-sites/fashion/sections/Measurement/Measurement.tsx",
+=======
+              "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx",
+              "deco-sites/fashion/sections/Newsletter/Newsletter.tsx",
+>>>>>>> Add newsletter
               "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductList/ProductList.198.tsx",
@@ -9768,6 +9773,128 @@
       ],
       "title": "deco-sites/fashion/sections/Measurement/Measurement.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form": {
+      "type": "object",
+      "properties": {
+        "placeholder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Placeholder"
+        },
+        "buttonText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Text"
+        },
+        "helpText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "textarea",
+          "title": "Help Text"
+        }
+      },
+      "required": [],
+      "title": "Form"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "textarea",
+          "title": "Description"
+        },
+        "form": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form",
+          "title": "Form"
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "headerFontSize": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Large"
+                },
+                {
+                  "type": "string",
+                  "const": "Normal"
+                }
+              ],
+              "type": "string",
+              "title": "Header Font Size"
+            },
+            "content": {
+              "type": "object",
+              "properties": {
+                "border": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Border"
+                },
+                "alignment": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Center"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Left"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Side to side"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Alignment"
+                },
+                "bgColor": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Normal"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Reverse"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Bg Color"
+                }
+              },
+              "required": [],
+              "title": "Content"
+            }
+          },
+          "required": [],
+          "title": "Layout"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/sections/Newsletter/Newsletter.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4@Props": {
       "type": "object",
       "properties": {
@@ -13270,6 +13397,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=": {
+      "title": "deco-sites/fashion/sections/Newsletter/Newsletter.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Newsletter/Newsletter.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Newsletter/Newsletter.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4": {
       "title": "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx",
       "type": "object",
@@ -14715,6 +14863,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50L01lYXN1cmVtZW50LnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4"
