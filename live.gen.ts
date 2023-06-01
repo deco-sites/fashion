@@ -39,7 +39,7 @@ import * as $$$$$$$$15 from "./sections/ImageGallery.tsx";
 import * as $$$$$$$$16 from "./sections/Header.tsx";
 import * as $$$$$$$$17 from "./sections/Benefits/Benefits.tsx";
 import * as $$$$$$$$18 from "./sections/ProductList/ProductList.198.tsx";
-import * as $$$$$$$$19 from "./sections/ImageGallery/ImageGallery.ColloPandaDev.tsx";
+import * as $$$$$$$$19 from "./sections/ImageGallery/ImageGallery.tsx";
 import * as $$$$$$$$20 from "./sections/Newsletter/NewsletterModal.EasyCoders.tsx";
 import * as $$$$$$$$21 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$22 from "./sections/MeasurementModal.alt+f4.tsx";
@@ -207,8 +207,7 @@ const manifest = {
     "deco-sites/fashion/sections/Header.tsx": $$$$$$$$16,
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$23,
     "deco-sites/fashion/sections/ImageGallery.tsx": $$$$$$$$15,
-    "deco-sites/fashion/sections/ImageGallery/ImageGallery.ColloPandaDev.tsx":
-      $$$$$$$$19,
+    "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx": $$$$$$$$19,
     "deco-sites/fashion/sections/InstagramComponent.tsx": $$$$$$$$9,
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx": $$$$$$$$22,
