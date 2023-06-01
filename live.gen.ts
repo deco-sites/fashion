@@ -13,15 +13,15 @@ import * as $$$$$3 from "./islands/WishlistButton.tsx";
 import * as $$$$$4 from "./islands/ShippingSimulation.tsx";
 import * as $$$$$5 from "./islands/HeaderSearchbar.tsx";
 import * as $$$$$6 from "./islands/HeaderButton.tsx";
-import * as $$$$$7 from "./islands/Countdown.tsx";
-import * as $$$$$8 from "./islands/AddToCartButton.tsx";
-import * as $$$$$9 from "./islands/QuickViewModal.tsx";
-import * as $$$$$10 from "./islands/HeaderModals.tsx";
-import * as $$$$$11 from "./islands/SliderJS.tsx";
-import * as $$$$$12 from "./islands/ProductImageZoom.tsx";
-import * as $$$$$13 from "./islands/OutOfStock.tsx";
-import * as $$$$$14 from "./islands/SearchControls.tsx";
+import * as $$$$$7 from "./islands/AddToCartButton.tsx";
+import * as $$$$$8 from "./islands/QuickViewModal.tsx";
+import * as $$$$$9 from "./islands/HeaderModals.tsx";
+import * as $$$$$10 from "./islands/SliderJS.tsx";
+import * as $$$$$11 from "./islands/ProductImageZoom.tsx";
+import * as $$$$$12 from "./islands/OutOfStock.tsx";
+import * as $$$$$13 from "./islands/SearchControls.tsx";
 import * as $$$$$$$$0 from "./sections/WishlistGallery.tsx";
+<<<<<<< HEAD
 <<<<<<< HEAD
 import * as $$$$$$$$1 from "./sections/DesignSystem/DesignSystem.tsx";
 import * as $$$$$$$$2 from "./sections/LinkTree.tsx";
@@ -57,6 +57,14 @@ import * as $$$$$$$$3 from "./sections/Testimonials/Testimonials.team-259.tsx";
 import * as $$$$$$$$4 from "./sections/Features.tsx";
 import * as $$$$$$$$5 from "./sections/BannerPLP.tsx";
 import * as $$$$$$$$6 from "./sections/Auth/Auth.EasyCoders.tsx";
+=======
+import * as $$$$$$$$1 from "./sections/LinkTree.tsx";
+import * as $$$$$$$$2 from "./sections/Testimonials/Testimonials.team-259.tsx";
+import * as $$$$$$$$3 from "./sections/Features.tsx";
+import * as $$$$$$$$4 from "./sections/BannerPLP.tsx";
+import * as $$$$$$$$5 from "./sections/Auth/Auth.EasyCoders.tsx";
+import * as $$$$$$$$6 from "./sections/Timers/CampaignTimer.tsx";
+>>>>>>> feat: timer (#350)
 import * as $$$$$$$$7 from "./sections/BannerGrid.tsx";
 import * as $$$$$$$$8 from "./sections/SearchResult.tsx";
 import * as $$$$$$$$9 from "./sections/InstagramComponent.tsx";
@@ -206,26 +214,26 @@ const manifest = {
     "./routes/styles.css.ts": $$$$0,
   },
   "islands": {
-    "./islands/AddToCartButton.tsx": $$$$$8,
+    "./islands/AddToCartButton.tsx": $$$$$7,
     "./islands/Cart.tsx": $$$$$1,
-    "./islands/Countdown.tsx": $$$$$7,
     "./islands/HeaderButton.tsx": $$$$$6,
-    "./islands/HeaderModals.tsx": $$$$$10,
+    "./islands/HeaderModals.tsx": $$$$$9,
     "./islands/HeaderSearchbar.tsx": $$$$$5,
     "./islands/Newsletter.tsx": $$$$$0,
-    "./islands/OutOfStock.tsx": $$$$$13,
-    "./islands/ProductImageZoom.tsx": $$$$$12,
+    "./islands/OutOfStock.tsx": $$$$$12,
+    "./islands/ProductImageZoom.tsx": $$$$$11,
     "./islands/ProductList.tsx": $$$$$2,
-    "./islands/QuickViewModal.tsx": $$$$$9,
-    "./islands/SearchControls.tsx": $$$$$14,
+    "./islands/QuickViewModal.tsx": $$$$$8,
+    "./islands/SearchControls.tsx": $$$$$13,
     "./islands/ShippingSimulation.tsx": $$$$$4,
-    "./islands/SliderJS.tsx": $$$$$11,
+    "./islands/SliderJS.tsx": $$$$$10,
     "./islands/WishlistButton.tsx": $$$$$3,
   },
   "sections": {
     "$live/sections/PageInclude.tsx": i2$$$$0,
     "$live/sections/Slot.tsx": i2$$$$1,
     "$live/sections/UseSlot.tsx": i2$$$$2,
+<<<<<<< HEAD
 <<<<<<< HEAD
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$6,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$4,
@@ -256,16 +264,18 @@ const manifest = {
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$26,
 =======
     "deco-sites/fashion/sections/Auth/Auth.EasyCoders.tsx": $$$$$$$$6,
+=======
+    "deco-sites/fashion/sections/Auth/Auth.EasyCoders.tsx": $$$$$$$$5,
+>>>>>>> feat: timer (#350)
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$7,
-    "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$5,
+    "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$4,
     "deco-sites/fashion/sections/Benefits/Benefits.team-259.tsx": $$$$$$$$17,
-    "deco-sites/fashion/sections/CampaignTimer.Time19.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$26,
     "deco-sites/fashion/sections/CategoryList/CategoryList.time91.tsx":
       $$$$$$$$25,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$13,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$14,
-    "deco-sites/fashion/sections/Features.tsx": $$$$$$$$4,
+    "deco-sites/fashion/sections/Features.tsx": $$$$$$$$3,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/Header.tsx": $$$$$$$$16,
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$23,
@@ -273,7 +283,7 @@ const manifest = {
     "deco-sites/fashion/sections/ImageGallery/ImageGallery.ColloPandaDev.tsx":
       $$$$$$$$19,
     "deco-sites/fashion/sections/InstagramComponent.tsx": $$$$$$$$9,
-    "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$2,
+    "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx": $$$$$$$$22,
     "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx":
       $$$$$$$$20,
@@ -283,7 +293,8 @@ const manifest = {
     "deco-sites/fashion/sections/QuickView/QuickView.198.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx":
-      $$$$$$$$3,
+      $$$$$$$$2,
+    "deco-sites/fashion/sections/Timers/CampaignTimer.tsx": $$$$$$$$6,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$24,
 >>>>>>> wip
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$0,
