@@ -1,5 +1,5 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Header from "$store/components/ui//SectionHeader.tsx";
+import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface Props {
   title?: string;

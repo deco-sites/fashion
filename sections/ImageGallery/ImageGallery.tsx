@@ -1,5 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface Banner {
   srcMobile: LiveImage;
@@ -29,16 +30,9 @@ export type BorderRadius =
 
 export interface Props {
   title?: string;
-  descricao?: string;
-  /**
-   * @description Escolha o layout que preferir
-   */
-  SelectLayout: {
-    /** @default  */
-    mobile?: "Assimétrico" | "Simétrico";
-    /** @default  */
-    desktop?: "Grid" | "Inline";
-  };
+  description?: string;
+  /** @maxItems 2*/
+  divColumn: DivColumn[];
   /**
    * @description Aplique borda a sua imagem
    */
@@ -48,9 +42,11 @@ export interface Props {
     /** @default none */
     desktop?: BorderRadius;
   };
-
-  /** @maxItems 2*/
-  divColumn: DivColumn[];
+  layout?: {
+    headerAlignment?: "center" | "left";
+    mobile?: "Asymmetric" | "Symmetrical";
+    desktop?: "Asymmetric" | "Symmetrical";
+  };
 }
 
 const RADIUS_MOBILE = {
@@ -74,67 +70,73 @@ const RADIUS_DESKTOP = {
   "3xl": "sm:rounded-3xl",
   "full": "sm:rounded-full",
 };
-const LAYOUT_MOBILE = {
-  "Assimétrico": "w-full h-full",
-  "Simétrico": "w-full aspect-square max-w-[216px]",
+const LAYOUT_MOBILE_IMAGE1 = {
+  "Asymmetric": "w-full",
+  "Symmetrical": "w-full aspect-square max-w-[216px]",
 };
-const LAYOUT_DESKTOP = {
-  "Grid": "sm:w-full sm:h-full sm:max-h-full sm:max-w-full",
-  "Inline": "sm:w-[25vw] sm:h-[100%] sm:max-h-full sm:max-w-full",
+const LAYOUT_MOBILE_IMAGE2 = {
+  "Asymmetric": "w-full h-[110px]",
+  "Symmetrical": "w-full aspect-square max-w-[216px]",
+};
+const LAYOUT_DESKTOP_IMAGE1 = {
+  "Asymmetric": "lg:w-full",
+  "Symmetrical": "lg:w-1/2 lg:h-[100%] lg:max-h-full lg:max-w-full",
+};
+const LAYOUT_DESKTOP_IMAGE2 = {
+  "Asymmetric": "lg:w-full lg:h-[420px]",
+  "Symmetrical": "lg:w-1/2 lg:h-[100%] lg:max-h-full lg:max-w-full",
 };
 const LAYOUT_MOBILEv2 = {
-  "Assimétrico": "",
-  "Simétrico": "w-full",
+  "Asymmetric": "",
+  "Symmetrical": "w-full",
 };
 const LAYOUT_DESKTOPv2 = {
-  "Grid": "sm:max-h-none sm:max-w-none",
-  "Inline": "sm:flex-row",
+  "Asymmetric": "sm:max-h-none sm:max-w-none",
+  "Symmetrical": "sm:flex-row",
 };
 export default function BannnerGrid({
   title,
-  descricao,
-  SelectLayout,
+  description,
   borderRadius,
   divColumn = [],
+  layout,
 }: Props) {
   return (
-    <section class="container w-full px-4 mx-auto md:px-10">
-      <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6 flex-col">
-        <h2 class="text-[36px] font-normal lg:text-[60px]">
-          {title}
-        </h2>
-        <p class="text-center font-normal text-2xl">{descricao}</p>
-      </div>
-      <div class="flex w-full gap-4">
-        {divColumn.map(({ bannerTop, bannerBottom }) => (
+    <section class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
+      <Header
+        title={title}
+        description={description}
+        alignment={layout?.headerAlignment || "center"}
+      />
+      <div class={`flex w-full gap-4 ${layout?.mobile === "Asymmetric" && `h-[280px] ${layout?.desktop === "Asymmetric" ? "lg:h-[1000px]" : "lg:h-auto"}`}`}>
+        {divColumn.map(({ bannerTop, bannerBottom }, i) => (
           <div
-            class={`flex flex-col gap-4 ${
-              LAYOUT_MOBILEv2[SelectLayout.mobile ?? "Assimétrico"]
-            } ${LAYOUT_DESKTOPv2[SelectLayout.desktop ?? "Grid"]}`}
+            class={`flex flex-col gap-4
+            ${LAYOUT_MOBILEv2[layout?.mobile ?? "Asymmetric"]}
+            ${LAYOUT_DESKTOPv2[layout?.desktop ?? "Symmetrical"]}`}
           >
             <a
               href={bannerTop.href}
-              class={`overflow-hidden ${
-                RADIUS_MOBILE[borderRadius.mobile ?? "none"]
-              } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
+
+              class={`overflow-hidden
+                ${RADIUS_MOBILE[borderRadius.mobile ?? "none"]}
+                ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]}
+                ${i % 2 === 0 ? LAYOUT_MOBILE_IMAGE1[layout?.mobile ?? "Symmetrical"] : LAYOUT_MOBILE_IMAGE2[layout?.mobile ?? "Symmetrical"]}
+                ${i % 2 === 0 ? LAYOUT_DESKTOP_IMAGE1[layout?.desktop ?? "Symmetrical"] : LAYOUT_DESKTOP_IMAGE2[layout?.desktop ?? "Symmetrical"]}
+              `}
             >
               <Picture>
                 <Source
                   media="(max-width: 767px)"
                   src={bannerTop.srcMobile}
-                  width={100}
                 />
                 <Source
                   media="(min-width: 768px)"
                   src={bannerTop.srcDesktop
                     ? bannerTop.srcDesktop
                     : bannerTop.srcMobile}
-                  width={250}
                 />
                 <img
-                  class={` ${
-                    LAYOUT_MOBILE[SelectLayout.mobile ?? "Assimétrico"]
-                  } ${LAYOUT_DESKTOP[SelectLayout.desktop ?? "Grid"]}`}
                   src={bannerTop.srcMobile}
                   alt={bannerTop.alt}
                   decoding="async"
@@ -144,29 +146,25 @@ export default function BannnerGrid({
             </a>
             <a
               href={bannerBottom.href}
-              class={`overflow-hidden ${
-                RADIUS_MOBILE[borderRadius.mobile ?? "none"]
-              } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
+              class={`overflow-hidden
+                ${RADIUS_MOBILE[borderRadius.mobile ?? "none"]}
+                ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]}
+                ${i % 2 === 1 ? LAYOUT_MOBILE_IMAGE1[layout?.mobile ?? "Symmetrical"] : LAYOUT_MOBILE_IMAGE2[layout?.mobile ?? "Symmetrical"]}
+                ${i % 2 === 1 ? LAYOUT_DESKTOP_IMAGE1[layout?.desktop ?? "Symmetrical"] : LAYOUT_DESKTOP_IMAGE2[layout?.desktop ?? "Symmetrical"]}
+              `}
             >
               <Picture>
                 <Source
                   media="(max-width: 767px)"
                   src={bannerBottom.srcMobile}
-                  width={100}
-                  className={"w-full h-auto"}
                 />
                 <Source
                   media="(min-width: 768px)"
                   src={bannerBottom.srcDesktop
                     ? bannerBottom.srcDesktop
                     : bannerBottom.srcMobile}
-                  width={250}
-                  className={"w-full h-auto"}
                 />
                 <img
-                  class={` ${
-                    LAYOUT_MOBILE[SelectLayout.mobile ?? "Assimétrico"]
-                  } ${LAYOUT_DESKTOP[SelectLayout.desktop ?? "Grid"]}`}
                   sizes="(max-width: 640px) 100vw, 30vw"
                   src={bannerBottom.srcMobile}
                   alt={bannerBottom.alt}
