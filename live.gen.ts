@@ -59,7 +59,7 @@ import * as $$$$$$$$5 from "./sections/BannerPLP.tsx";
 import * as $$$$$$$$6 from "./sections/Auth/Auth.EasyCoders.tsx";
 =======
 import * as $$$$$$$$1 from "./sections/LinkTree.tsx";
-import * as $$$$$$$$2 from "./sections/Testimonials/Testimonials.team-259.tsx";
+import * as $$$$$$$$2 from "./sections/Testimonials/Testimonials.tsx";
 import * as $$$$$$$$3 from "./sections/Features.tsx";
 import * as $$$$$$$$4 from "./sections/BannerPLP.tsx";
 import * as $$$$$$$$5 from "./sections/Auth/Auth.EasyCoders.tsx";
@@ -306,8 +306,7 @@ const manifest = {
     "deco-sites/fashion/sections/QuickView/QuickView.198.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx": $$$$$$$$16,
-    "deco-sites/fashion/sections/Testimonials/Testimonials.team-259.tsx":
-      $$$$$$$$2,
+    "deco-sites/fashion/sections/Testimonials/Testimonials.tsx": $$$$$$$$2,
     "deco-sites/fashion/sections/Timers/CampaignTimer.tsx": $$$$$$$$6,
 <<<<<<< HEAD
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$24,
