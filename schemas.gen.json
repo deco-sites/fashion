@@ -118,6 +118,7 @@
               "deco-sites/fashion/sections/InstagramComponent.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx",
               "deco-sites/fashion/sections/Miscellaneous/LinkTree.tsx",
               "deco-sites/fashion/sections/Miscellaneous/WhatsApp.tsx",
@@ -127,6 +128,9 @@
               "deco-sites/fashion/sections/Product/WishlistGallery.tsx",
 =======
               "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx",
+=======
+              "deco-sites/fashion/sections/Measurement/Measurement.tsx",
+>>>>>>> Add measurements (#360)
               "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx",
 >>>>>>> wip
               "deco-sites/fashion/sections/ProductDetails.tsx",
@@ -9733,6 +9737,7 @@
       "title": "deco-sites/fashion/components/ui/LinkTree.tsx@Props"
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props": {
       "type": "object",
       "properties": {
@@ -9748,8 +9753,15 @@
       "title": "deco-sites/fashion/components/ui/WhatsApp.tsx@Props"
 =======
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50TW9kYWwuYWx0K2Y0LnRzeA==@Props": {
+=======
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50L01lYXN1cmVtZW50LnRzeA==@Props": {
+>>>>>>> Add measurements (#360)
       "type": "object",
       "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
         "title": {
           "type": [
             "string",
@@ -9757,55 +9769,33 @@
           ],
           "title": "Title"
         },
-        "subtitle": {
+        "description": {
           "type": [
             "string",
             "null"
           ],
-          "title": "Subtitle"
+          "title": "Description"
         },
-        "imageUrl": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image Url"
-        },
-        "coluna": {
+        "rows": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "titleColuna": {
-                "type": "string",
-                "title": "Title Coluna"
-              },
-              "linhaColuna": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "textLinha": {
-                      "type": "string",
-                      "title": "Text Linha"
-                    }
-                  },
-                  "required": [
-                    "textLinha"
-                  ]
-                },
-                "title": "Linha Coluna"
-              }
-            },
-            "required": [
-              "titleColuna",
-              "linhaColuna"
-            ]
+            "type": "string"
           },
-          "title": "Coluna"
+          "description": "Separate column's values by comma",
+          "title": "Rows"
+        },
+        "buttonText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Text"
         }
       },
       "required": [
-        "imageUrl"
+        "rows"
       ],
-      "title": "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx@Props"
+      "title": "deco-sites/fashion/sections/Measurement/Measurement.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4@Props": {
       "type": "object",
@@ -13417,6 +13407,7 @@
       }
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ29va2llQ29uc2VudC50c3g=": {
       "title": "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx",
       "type": "object",
@@ -13531,6 +13522,14 @@
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50TW9kYWwuYWx0K2Y0LnRzeA==@Props"
 >>>>>>> wip
+=======
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50L01lYXN1cmVtZW50LnRzeA==": {
+      "title": "deco-sites/fashion/sections/Measurement/Measurement.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50L01lYXN1cmVtZW50LnRzeA==@Props"
+>>>>>>> Add measurements (#360)
         }
       ],
       "required": [
@@ -13540,6 +13539,7 @@
         "__resolveType": {
           "type": "string",
           "enum": [
+<<<<<<< HEAD
 <<<<<<< HEAD
             "deco-sites/fashion/sections/Product/Shelf.tsx"
           ],
@@ -13555,8 +13555,11 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props"
 =======
             "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx"
+=======
+            "deco-sites/fashion/sections/Measurement/Measurement.tsx"
+>>>>>>> Add measurements (#360)
           ],
-          "default": "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx"
+          "default": "deco-sites/fashion/sections/Measurement/Measurement.tsx"
         }
       }
     },
@@ -15038,6 +15041,7 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ29va2llQ29uc2VudC50c3g="
         },
         {
@@ -15059,6 +15063,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3QvV2lzaGxpc3RHYWxsZXJ5LnRzeA=="
 =======
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50TW9kYWwuYWx0K2Y0LnRzeA=="
+=======
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50L01lYXN1cmVtZW50LnRzeA=="
+>>>>>>> Add measurements (#360)
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4"
