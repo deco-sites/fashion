@@ -100,12 +100,8 @@
               "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx",
               "deco-sites/fashion/sections/InstagramComponent.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
-<<<<<<< HEAD
               "deco-sites/fashion/sections/Measurement/Measurement.tsx",
-=======
-              "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx",
               "deco-sites/fashion/sections/Newsletter/Newsletter.tsx",
->>>>>>> Add newsletter
               "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductList/ProductList.198.tsx",
