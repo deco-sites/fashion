@@ -8622,6 +8622,7 @@
     },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@696524a6ff9e8fdff928f109587791e1&Colors": {
 =======
 =======
@@ -8638,6 +8639,9 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
 >>>>>>> feat: timer (#350)
 >>>>>>> feat: timer (#350)
+=======
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4": {
+>>>>>>> Resolve rebase
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors"
@@ -8653,6 +8657,7 @@
           "required": []
         }
       ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       "title": "696524a6ff9e8fdff928f109587791e1&Colors"
@@ -8671,6 +8676,9 @@
       "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
 >>>>>>> feat: timer (#350)
 >>>>>>> feat: timer (#350)
+=======
+      "title": "Colors&b966eeb0bbdb3699ee11b12ce6a39cc4"
+>>>>>>> Resolve rebase
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous": {
       "type": "object",
@@ -8775,6 +8783,7 @@
         "colors": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@696524a6ff9e8fdff928f109587791e1&Colors",
 =======
 =======
@@ -8791,6 +8800,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
 >>>>>>> feat: timer (#350)
 >>>>>>> feat: timer (#350)
+=======
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors&b966eeb0bbdb3699ee11b12ce6a39cc4",
+>>>>>>> Resolve rebase
           "title": "Colors"
         },
         "miscellaneous": {
@@ -11075,6 +11087,14 @@
           ],
           "description": "custom url for serving google tag manager. Set either this url or the tracking id",
           "title": "Src"
+        },
+        "dangerouslyRunOnMainThread": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "run GTM directly on the main thread, without Partytown. This is useful for debugging purposes. Default: false",
+          "title": "Dangerously Run On Main Thread"
         }
       },
       "required": [],
