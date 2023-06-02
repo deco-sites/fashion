@@ -100,8 +100,6 @@
     --dot-progress: 100%
   }
 }
-<<<<<<< HEAD
-=======
 
 .\[open\]\:rotate-caret[open] > summary svg {
   transform: rotate(180deg);
@@ -110,4 +108,3 @@
 .\[open\]\:rotate-caret summary::-webkit-details-marker {
   display: none;
 }
->>>>>>> Add faq
