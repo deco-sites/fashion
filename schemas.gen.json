@@ -2,6 +2,7 @@
   "definitions": {
     "Resolvable": {
       "title": "Select from saved",
+      "type": "object",
       "required": [
         "__resolveType"
       ],
@@ -3453,6 +3454,45 @@
         }
       ]
     },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
+      "$ref": "#/root/loaders",
+      "title": "Loader"
+    },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
+      "$ref": "#/root/flags",
+      "title": "Flag"
+    },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
+      "$ref": "#/root/sections",
+      "title": "Section"
+    },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
+      "$ref": "#/root/pages",
+      "title": "Page"
+    },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page"
+        }
+      ],
+      "title": "4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section"
+    },
     "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp": {
       "type": "object",
       "properties": {
@@ -3461,7 +3501,7 @@
           "title": "Key"
         },
         "value": {
-          "$ref": "#/definitions/Resolvable",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section",
           "title": "Value"
         }
       },
@@ -6984,10 +7024,6 @@
       ],
       "title": "deco-sites/fashion/components/ui/ShippingSimulation.tsx@Props"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
-      "$ref": "#/root/pages",
-      "title": "Page"
-    },
     "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
       "type": "object",
       "properties": {
@@ -7168,10 +7204,6 @@
         "workflow"
       ],
       "title": "deco-cx/live/handlers/workflowRunner.ts@Config"
-    },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
-      "$ref": "#/root/sections",
-      "title": "Section"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]": {
       "type": "array",
@@ -8317,25 +8349,25 @@
         "primary": {
           "type": "string",
           "format": "color",
-          "default": "#003232",
+          "default": "273746",
           "title": "Primary"
         },
         "secondary": {
           "type": "string",
           "format": "color",
-          "default": "#8C3D3D",
+          "default": "#6D8B61",
           "title": "Secondary"
         },
         "accent": {
           "type": "string",
           "format": "color",
-          "default": "#00FF7F",
+          "default": "#E37A69",
           "title": "Accent"
         },
         "neutral": {
           "type": "string",
           "format": "color",
-          "default": "#333333",
+          "default": "#787878",
           "title": "Neutral"
         },
         "base-100": {
@@ -10188,37 +10220,51 @@
         "cardLayout": {
           "type": "object",
           "properties": {
-            "textAlignment": {
-              "anyOf": [
-                {
+            "basics": {
+              "type": "object",
+              "properties": {
+                "contentAlignment": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Left"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Center"
+                    }
+                  ],
                   "type": "string",
-                  "const": "Left"
+                  "title": "Content Alignment"
                 },
-                {
+                "oldPriceSize": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Small"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Normal"
+                    }
+                  ],
                   "type": "string",
-                  "const": "Center"
+                  "title": "Old Price Size"
+                },
+                "ctaText": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Cta Text"
                 }
-              ],
-              "type": "string",
-              "title": "Text Alignment"
+              },
+              "required": [],
+              "title": "Basics"
             },
             "elementsPositions": {
               "type": "object",
               "properties": {
-                "installments": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Beside price"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Below price"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Installments"
-                },
                 "skuSelector": {
                   "anyOf": [
                     {
@@ -10331,19 +10377,19 @@
                   ],
                   "title": "Show Sku Selector"
                 },
-                "showCta": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Show Cta"
-                },
                 "showCardShadow": {
                   "type": [
                     "boolean",
                     "null"
                   ],
                   "title": "Show Card Shadow"
+                },
+                "showCta": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Show Cta"
                 }
               },
               "required": [],
@@ -11440,7 +11486,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@3270ec6f41f60530f3e43201a34c4d1c|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|e21f706de2b7751b0320706773d37f09": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -11458,13 +11504,13 @@
           ]
         }
       ],
-      "title": "3270ec6f41f60530f3e43201a34c4d1c|WorkflowRef"
+      "title": "WorkflowRef|e21f706de2b7751b0320706773d37f09"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@3270ec6f41f60530f3e43201a34c4d1c|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|e21f706de2b7751b0320706773d37f09",
           "title": "Workflow"
         },
         "id": {

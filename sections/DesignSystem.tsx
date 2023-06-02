@@ -98,25 +98,25 @@ export interface OptionalColors {
 export interface Colors {
   /**
    * @format color
-   * @default #003232
+   * @default 273746
    */
   "primary": string;
 
   /**
    * @format color
-   * @default #8C3D3D
+   * @default #6D8B61
    */
   "secondary": string;
 
   /**
    * @format color
-   * @default #00FF7F
+   * @default #E37A69
    */
   "accent": string;
 
   /**
    * @format color
-   * @default #333333
+   * @default #787878
    */
   "neutral": string;
 
@@ -305,7 +305,7 @@ const toVariables = (t: Theme): [string, string][] => {
 const defaultTheme = {
   "primary": "hsl(180 100% 10%)",
   "secondary": "hsl(0 39% 39%)",
-  "accent": "hsl(150 100% 50%)",
+  "accent": "hsla(8, 69%, 65%, 1)",
   "neutral": "hsl(0 0% 20%)",
   "base-100": "hsl(0 0% 100%)",
   "success": "hsl(150 62% 95%)",

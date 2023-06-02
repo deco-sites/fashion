@@ -20,9 +20,12 @@ export interface Props {
         headerfontSize?: "Normal" | "Large"
     }
     cardLayout?: {
-        textAlignment?: "Left" | "Center";
+        basics?: {
+            contentAlignment?: "Left" | "Center";
+            oldPriceSize?: "Small" | "Normal";
+            ctaText?: string;
+        }
         elementsPositions?: {
-          installments?: "Beside price" | "Below price";
           skuSelector?: "Top" | "Bottom";
           favoriteIcon?: "Top right" | "Top left";
         }
@@ -38,8 +41,8 @@ export interface Props {
           image?: "Change image" | "Zoom image";
           showFavoriteIcon?: boolean;
           showSkuSelector?: boolean;
-          showCta?: boolean;
           showCardShadow?: boolean;
+          showCta?: boolean;
         }
       }
     }
