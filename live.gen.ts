@@ -156,10 +156,17 @@ import * as $$$$$$$$23 from "./sections/Newsletter/Newsletter.tsx";
 import * as $$$$$$$$24 from "./sections/Newsletter/NewsletterModal.EasyCoders.tsx";
 import * as $$$$$$$$25 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$26 from "./sections/Highlights.tsx";
+<<<<<<< HEAD
 import * as $$$$$$$$27 from "./sections/WhatsApp.tsx";
 import * as $$$$$$$$28 from "./sections/CategoryList/CategoryList.tsx";
 import * as $$$$$$$$29 from "./sections/Carousel.tsx";
 >>>>>>> Add newsletter (#358)
+=======
+import * as $$$$$$$$27 from "./sections/ProductShelf/ProductShelf.tsx";
+import * as $$$$$$$$28 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$29 from "./sections/CategoryList/CategoryList.tsx";
+import * as $$$$$$$$30 from "./sections/Carousel.tsx";
+>>>>>>> Feat/comp shelf (#363)
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -358,8 +365,8 @@ const manifest = {
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$15,
 =======
     "deco-sites/fashion/sections/Benefits/Benefits.tsx": $$$$$$$$20,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$29,
-    "deco-sites/fashion/sections/CategoryList/CategoryList.tsx": $$$$$$$$28,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$30,
+    "deco-sites/fashion/sections/CategoryList/CategoryList.tsx": $$$$$$$$29,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$15,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$16,
     "deco-sites/fashion/sections/Faq/Faq.tsx": $$$$$$$$7,
@@ -379,6 +386,7 @@ const manifest = {
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$25,
     "deco-sites/fashion/sections/ProductList/ProductList.198.tsx": $$$$$$$$21,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/ProductShelf/ProductShelf.tsx": $$$$$$$$27,
     "deco-sites/fashion/sections/QuickView/QuickView.198.tsx": $$$$$$$$13,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$10,
     "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx": $$$$$$$$18,
@@ -398,11 +406,15 @@ const manifest = {
 =======
     "deco-sites/fashion/sections/Timers/CampaignTimer.tsx": $$$$$$$$8,
 <<<<<<< HEAD
+<<<<<<< HEAD
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$26,
 >>>>>>> Add faq (#357)
 =======
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$27,
 >>>>>>> Add newsletter (#358)
+=======
+    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$28,
+>>>>>>> Feat/comp shelf (#363)
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$4,
