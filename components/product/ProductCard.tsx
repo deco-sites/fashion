@@ -15,6 +15,29 @@ interface Props {
 
   /** @description used for analytics event */
   itemListName?: string;
+  layout?: {
+    textAlignment?: "Left" | "Center";
+    elementsPositions?: {
+      installments?: "Beside price" | "Below price";
+      skuSelector?: "Top" | "Bottom";
+      favoriteIcon?: "Top right" | "Top left";
+    }
+    hide: {
+      productName?: boolean;
+      productDescription?: boolean;
+      allPrices?: boolean;
+      installments?: boolean;
+      skuSelector?: boolean;
+      cta?: boolean;
+    }
+    onMouseOver?: {
+      image?: "Change image" | "Zoom image";
+      showFavoriteIcon?: boolean;
+      showSkuSelector?: boolean;
+      showCta?: boolean;
+      showCardShadow?: boolean;
+    }
+  }
 }
 
 const relative = (url: string) => {
@@ -25,7 +48,7 @@ const relative = (url: string) => {
 const WIDTH = 200;
 const HEIGHT = 279;
 
-function ProductCard({ product, preload, itemListName }: Props) {
+function ProductCard({ product, preload, itemListName, layout }: Props) {
   const {
     url,
     productID,
@@ -53,9 +76,11 @@ function ProductCard({ product, preload, itemListName }: Props) {
     },
   };
 
+  const l = layout
+
   return (
     <div
-      class="card card-compact card-bordered border-transparent hover:border-base-200 group w-full"
+      class={`card card-compact card-bordered border-transparent group w-full ${l?.onMouseOver?.showCardShadow ? "lg:hover:border-base-200" : ""}`}
       data-deco="view-product"
       id={`product-card-${productID}`}
       {...sendEventOnClick(clickEvent)}
@@ -76,22 +101,28 @@ function ProductCard({ product, preload, itemListName }: Props) {
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class="absolute transition-opacity rounded w-full opacity-100 group-hover:opacity-0"
+            class={`
+              absolute rounded w-full
+              ${(!l?.onMouseOver?.image || l?.onMouseOver?.image == "Change image") ? "transition-opacity opacity-100 group-hover:opacity-0" : ""}
+              ${l?.onMouseOver?.image == "Zoom image" ? "transition-scale scale-100 group-hover:scale-125" : ""}
+            `}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
           />
-          <Image
-            src={back?.url ?? front.url!}
-            alt={back?.alternateName ?? front.alternateName}
-            width={WIDTH}
-            height={HEIGHT}
-            class="absolute transition-opacity rounded w-full opacity-0 group-hover:opacity-100"
-            sizes="(max-width: 640px) 50vw, 20vw"
-            loading="lazy"
-            decoding="async"
-          />
+          {(!l?.onMouseOver?.image || l?.onMouseOver?.image == "Change image") && (
+            <Image
+              src={back?.url ?? front.url!}
+              alt={back?.alternateName ?? front.alternateName}
+              width={WIDTH}
+              height={HEIGHT}
+              class="absolute transition-opacity rounded w-full opacity-0 group-hover:opacity-100"
+              sizes="(max-width: 640px) 50vw, 20vw"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
         </a>
         <figcaption class="glass card-body card-actions absolute bottom-0 left-0 w-full transition-opacity opacity-0 group-hover:opacity-100">
           {/* SKU Selector */}
