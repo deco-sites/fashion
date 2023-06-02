@@ -44,11 +44,10 @@ import * as $$$$$$$$20 from "./sections/ProductList/ProductList.198.tsx";
 import * as $$$$$$$$21 from "./sections/ImageGallery/ImageGallery.tsx";
 import * as $$$$$$$$22 from "./sections/Newsletter/NewsletterModal.EasyCoders.tsx";
 import * as $$$$$$$$23 from "./sections/ProductDetails.tsx";
-import * as $$$$$$$$24 from "./sections/MeasurementModal.alt+f4.tsx";
-import * as $$$$$$$$25 from "./sections/Highlights.tsx";
-import * as $$$$$$$$26 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$27 from "./sections/CategoryList/CategoryList.tsx";
-import * as $$$$$$$$28 from "./sections/Carousel.tsx";
+import * as $$$$$$$$24 from "./sections/Highlights.tsx";
+import * as $$$$$$$$25 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$26 from "./sections/CategoryList/CategoryList.tsx";
+import * as $$$$$$$$27 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -200,20 +199,19 @@ const manifest = {
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$5,
     "deco-sites/fashion/sections/Benefits/Benefits.tsx": $$$$$$$$19,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$28,
-    "deco-sites/fashion/sections/CategoryList/CategoryList.tsx": $$$$$$$$27,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$27,
+    "deco-sites/fashion/sections/CategoryList/CategoryList.tsx": $$$$$$$$26,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$14,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$15,
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$4,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$13,
     "deco-sites/fashion/sections/Header.tsx": $$$$$$$$18,
-    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$25,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$24,
     "deco-sites/fashion/sections/ImageGallery.tsx": $$$$$$$$16,
     "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx": $$$$$$$$21,
     "deco-sites/fashion/sections/InstagramComponent.tsx": $$$$$$$$10,
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$1,
     "deco-sites/fashion/sections/Measurement/Measurement.tsx": $$$$$$$$3,
-    "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx": $$$$$$$$24,
     "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx":
       $$$$$$$$22,
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$23,
@@ -224,7 +222,7 @@ const manifest = {
     "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx": $$$$$$$$17,
     "deco-sites/fashion/sections/Testimonials/Testimonials.tsx": $$$$$$$$2,
     "deco-sites/fashion/sections/Timers/CampaignTimer.tsx": $$$$$$$$7,
-    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$26,
+    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$25,
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$4,

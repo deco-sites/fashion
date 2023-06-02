@@ -100,7 +100,6 @@
               "deco-sites/fashion/sections/InstagramComponent.tsx",
               "deco-sites/fashion/sections/LinkTree.tsx",
               "deco-sites/fashion/sections/Measurement/Measurement.tsx",
-              "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx",
               "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx",
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductList/ProductList.198.tsx",
@@ -9638,66 +9637,6 @@
       ],
       "title": "deco-sites/fashion/sections/Measurement/Measurement.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50TW9kYWwuYWx0K2Y0LnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "subtitle": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Subtitle"
-        },
-        "imageUrl": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image Url"
-        },
-        "coluna": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "titleColuna": {
-                "type": "string",
-                "title": "Title Coluna"
-              },
-              "linhaColuna": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "textLinha": {
-                      "type": "string",
-                      "title": "Text Linha"
-                    }
-                  },
-                  "required": [
-                    "textLinha"
-                  ]
-                },
-                "title": "Linha Coluna"
-              }
-            },
-            "required": [
-              "titleColuna",
-              "linhaColuna"
-            ]
-          },
-          "title": "Coluna"
-        }
-      },
-      "required": [
-        "imageUrl"
-      ],
-      "title": "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4@Props": {
       "type": "object",
       "properties": {
@@ -13179,27 +13118,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50TW9kYWwuYWx0K2Y0LnRzeA==": {
-      "title": "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50TW9kYWwuYWx0K2Y0LnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/MeasurementModal.alt+f4.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4": {
       "title": "deco-sites/fashion/sections/Newsletter/NewsletterModal.EasyCoders.tsx",
       "type": "object",
@@ -14642,9 +14560,6 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50L01lYXN1cmVtZW50LnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01lYXN1cmVtZW50TW9kYWwuYWx0K2Y0LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlck1vZGFsLkVhc3lDb2RlcnMudHN4"
