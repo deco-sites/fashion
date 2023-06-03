@@ -10264,6 +10264,13 @@
           ],
           "title": "Description"
         },
+        "buttonText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Text"
+        },
         "rows": {
           "type": "array",
           "items": {
@@ -10271,13 +10278,6 @@
           },
           "description": "Separate column's values by comma",
           "title": "Rows"
-        },
-        "buttonText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Button Text"
         }
       },
       "required": [
