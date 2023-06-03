@@ -52,6 +52,7 @@ import * as $$$$$$$$28 from "./sections/CookieConsent.tsx";
 import * as $$$$$$$$29 from "./sections/DesignSystem.tsx";
 import * as $$$$$$$$30 from "./sections/Headers/Header.tsx";
 import * as $$$$$$$$31 from "./sections/ImageGallery.tsx";
+<<<<<<< HEAD
 import * as $$$$$$$$32 from "./sections/Header.tsx";
 import * as $$$$$$$$33 from "./sections/ImageGallery/ImageGallery.tsx";
 import * as $$$$$$$$34 from "./sections/Newsletter/Newsletter.tsx";
@@ -59,6 +60,16 @@ import * as $$$$$$$$35 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$36 from "./sections/Highlights.tsx";
 import * as $$$$$$$$37 from "./sections/WhatsApp.tsx";
 import * as $$$$$$$$38 from "./sections/Carousel.tsx";
+=======
+import * as $$$$$$$$32 from "./sections/Shortcuts/Shortcuts.tsx";
+import * as $$$$$$$$33 from "./sections/Header.tsx";
+import * as $$$$$$$$34 from "./sections/ImageGallery/ImageGallery.tsx";
+import * as $$$$$$$$35 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$$$36 from "./sections/ProductDetails.tsx";
+import * as $$$$$$$$37 from "./sections/Highlights.tsx";
+import * as $$$$$$$$38 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$39 from "./sections/Carousel.tsx";
+>>>>>>> Fix icons
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -212,7 +223,11 @@ const manifest = {
     "deco-sites/fashion/sections/Banners/Carousel.tsx": $$$$$$$$26,
     "deco-sites/fashion/sections/Banners/Grid.tsx": $$$$$$$$24,
     "deco-sites/fashion/sections/Banners/PLP.tsx": $$$$$$$$25,
+<<<<<<< HEAD
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$38,
+=======
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$39,
+>>>>>>> Fix icons
     "deco-sites/fashion/sections/Content/Benefits.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/Content/CategoryList.tsx": $$$$$$$$8,
     "deco-sites/fashion/sections/Content/Faq.tsx": $$$$$$$$11,
@@ -224,27 +239,47 @@ const manifest = {
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$3,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$27,
     "deco-sites/fashion/sections/Footers/Footer.tsx": $$$$$$$$5,
+<<<<<<< HEAD
     "deco-sites/fashion/sections/Header.tsx": $$$$$$$$32,
     "deco-sites/fashion/sections/Headers/Header.tsx": $$$$$$$$30,
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$36,
     "deco-sites/fashion/sections/ImageGallery.tsx": $$$$$$$$31,
     "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx": $$$$$$$$33,
+=======
+    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$33,
+    "deco-sites/fashion/sections/Headers/Header.tsx": $$$$$$$$30,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$37,
+    "deco-sites/fashion/sections/ImageGallery.tsx": $$$$$$$$31,
+    "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx": $$$$$$$$34,
+>>>>>>> Fix icons
     "deco-sites/fashion/sections/InstagramComponent.tsx": $$$$$$$$13,
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$2,
     "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$$$19,
     "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx": $$$$$$$$20,
     "deco-sites/fashion/sections/Miscellaneous/Shortcuts.tsx": $$$$$$$$22,
     "deco-sites/fashion/sections/Miscellaneous/WhatsApp.tsx": $$$$$$$$21,
+<<<<<<< HEAD
     "deco-sites/fashion/sections/Newsletter/Newsletter.tsx": $$$$$$$$34,
+=======
+    "deco-sites/fashion/sections/Newsletter/Newsletter.tsx": $$$$$$$$35,
+>>>>>>> Fix icons
     "deco-sites/fashion/sections/Product/Details.tsx": $$$$$$$$15,
     "deco-sites/fashion/sections/Product/Measurement.tsx": $$$$$$$$17,
     "deco-sites/fashion/sections/Product/SearchResult.tsx": $$$$$$$$16,
     "deco-sites/fashion/sections/Product/Shelf.tsx": $$$$$$$$18,
     "deco-sites/fashion/sections/Product/WishlistGallery.tsx": $$$$$$$$14,
+<<<<<<< HEAD
     "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$35,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$23,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$7,
     "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$37,
+=======
+    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$36,
+    "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$23,
+    "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$7,
+    "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx": $$$$$$$$32,
+    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$38,
+>>>>>>> Fix icons
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$4,

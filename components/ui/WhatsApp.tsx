@@ -19,7 +19,7 @@ function WhatsApp({ phone }: Props) {
         class="bg-[#45D268] text-white p-2 rounded-full shadow-lg"
         aria-label="Chat on WhatsApp"
       >
-        <Icon id="WhatsApp" size={32} />
+        <Icon id="WhatsApp" size={32} stroke="0.01" />
       </button>
     </a>
   );

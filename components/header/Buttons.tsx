@@ -18,7 +18,7 @@ function SearchButton() {
 
   return (
     <Button
-      class="btn-square btn-ghost"
+      class="btn btn-circle btn-sm btn-ghost"
       aria-label="search icon button"
       onClick={() => {
         displaySearchbar.value = !displaySearchbar.peek();
@@ -34,7 +34,7 @@ function MenuButton() {
 
   return (
     <Button
-      class="btn-square btn-ghost"
+      class="btn btn-circle btn-sm btn-ghost"
       aria-label="open menu"
       onClick={() => {
         displayMenu.value = true;
@@ -72,7 +72,7 @@ function CartButton() {
 
   return (
     <Button
-      class="btn-square btn-ghost relative"
+      class="btn btn-circle btn-sm btn-ghost relative"
       aria-label="open cart"
       data-deco={displayCart.value && "open-cart"}
       loading={loading.value}
@@ -84,7 +84,7 @@ function CartButton() {
             {totalItems > 9 ? "9+" : totalItems}
           </span>
         )}
-        <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />
+        {!loading.value && <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />}
       </div>
     </Button>
   );
