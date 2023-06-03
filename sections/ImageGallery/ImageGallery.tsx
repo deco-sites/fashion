@@ -107,8 +107,6 @@ const DEFAULT_PROPS: Props = {
       "href": "https://en.wikipedia.org/wiki/Capybara",
     },
   ],
-  "title": "Hello Gallery",
-  "description": "Image gallery for a beautiful website",
   "layout": {
     "borderRadius": {
       "mobile": "3xl",

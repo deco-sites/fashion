@@ -69,9 +69,9 @@ import * as $live_release from "$live/routes/live/release.ts";
 import * as $live_meta from "$live/routes/live/_meta.ts";
 import * as $live_previews from "$live/routes/live/previews/[...block].tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
-import * as i1$0 from "$live/loaders/state.ts";
-import * as i2$$$0 from "$live/loaders/workflows/events.ts";
-import * as i2$$$1 from "$live/loaders/workflows/get.ts";
+import * as i2$$$0 from "$live/loaders/state.ts";
+import * as i2$$$1 from "$live/loaders/workflows/events.ts";
+import * as i2$$$2 from "$live/loaders/workflows/get.ts";
 import * as i2$$$$$$0 from "$live/handlers/devPage.ts";
 import * as i2$$$$$$1 from "$live/handlers/fresh.ts";
 import * as i2$$$$$$2 from "$live/handlers/proxy.ts";
@@ -130,18 +130,19 @@ import * as i2$$1 from "deco-sites/std/accounts/shopify.ts";
 import * as i2$$2 from "deco-sites/std/accounts/vnda.ts";
 import * as i2$$3 from "deco-sites/std/accounts/vtex.ts";
 import * as i2$$4 from "deco-sites/std/accounts/yourViews.ts";
-import * as i2$$$2 from "deco-sites/std/loaders/vtex/cart.ts";
-import * as i2$$$3 from "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts";
-import * as i2$$$4 from "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts";
-import * as i2$$$5 from "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts";
-import * as i2$$$6 from "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts";
-import * as i2$$$7 from "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts";
-import * as i2$$$8 from "deco-sites/std/loaders/vtex/legacy/productList.ts";
-import * as i2$$$9 from "deco-sites/std/loaders/vtex/legacy/productListingPage.ts";
-import * as i2$$$10 from "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts";
-import * as i2$$$11 from "deco-sites/std/loaders/vtex/navbar.ts";
-import * as i2$$$12 from "deco-sites/std/loaders/vtex/user.ts";
-import * as i2$$$13 from "deco-sites/std/loaders/vtex/wishlist.ts";
+import * as i2$$$3 from "deco-sites/std/loaders/vtex/cart.ts";
+import * as i2$$$4 from "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts";
+import * as i2$$$5 from "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts";
+import * as i2$$$6 from "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts";
+import * as i2$$$7 from "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts";
+import * as i2$$$8 from "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts";
+import * as i2$$$9 from "deco-sites/std/loaders/vtex/legacy/productList.ts";
+import * as i2$$$10 from "deco-sites/std/loaders/vtex/legacy/productListingPage.ts";
+import * as i2$$$11 from "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts";
+import * as i2$$$12 from "deco-sites/std/loaders/vtex/navbar.ts";
+import * as i2$$$13 from "deco-sites/std/loaders/vtex/proxy.ts";
+import * as i2$$$14 from "deco-sites/std/loaders/vtex/user.ts";
+import * as i2$$$15 from "deco-sites/std/loaders/vtex/wishlist.ts";
 import * as i2$$$$3 from "deco-sites/std/sections/Analytics.tsx";
 import * as i2$$$$4 from "deco-sites/std/sections/configButterCMS.global.tsx";
 import * as i2$$$$5 from "deco-sites/std/sections/configOCC.global.tsx";
@@ -258,23 +259,24 @@ const manifest = {
     "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx": i2$$$$13,
   },
   "loaders": {
-    "$live/loaders/state.ts": i1$0,
-    "$live/loaders/workflows/events.ts": i2$$$0,
-    "$live/loaders/workflows/get.ts": i2$$$1,
-    "deco-sites/std/loaders/vtex/cart.ts": i2$$$2,
+    "$live/loaders/state.ts": i2$$$0,
+    "$live/loaders/workflows/events.ts": i2$$$1,
+    "$live/loaders/workflows/get.ts": i2$$$2,
+    "deco-sites/std/loaders/vtex/cart.ts": i2$$$3,
     "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts":
-      i2$$$3,
-    "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts": i2$$$4,
+      i2$$$4,
+    "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts": i2$$$5,
     "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts":
-      i2$$$5,
-    "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts": i2$$$6,
-    "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts": i2$$$7,
-    "deco-sites/std/loaders/vtex/legacy/productList.ts": i2$$$8,
-    "deco-sites/std/loaders/vtex/legacy/productListingPage.ts": i2$$$9,
-    "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts": i2$$$10,
-    "deco-sites/std/loaders/vtex/navbar.ts": i2$$$11,
-    "deco-sites/std/loaders/vtex/user.ts": i2$$$12,
-    "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$13,
+      i2$$$6,
+    "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts": i2$$$7,
+    "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts": i2$$$8,
+    "deco-sites/std/loaders/vtex/legacy/productList.ts": i2$$$9,
+    "deco-sites/std/loaders/vtex/legacy/productListingPage.ts": i2$$$10,
+    "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts": i2$$$11,
+    "deco-sites/std/loaders/vtex/navbar.ts": i2$$$12,
+    "deco-sites/std/loaders/vtex/proxy.ts": i2$$$13,
+    "deco-sites/std/loaders/vtex/user.ts": i2$$$14,
+    "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$15,
   },
   "handlers": {
     "$live/handlers/devPage.ts": i2$$$$$$0,
