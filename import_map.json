@@ -12,6 +12,6 @@
     "@preact/signals-core": "https://esm.sh/@preact/signals-core@1.2.3",
     "std/": "https://deno.land/std@0.181.0/",
     "partytown/": "https://denopkg.com/deco-cx/partytown@0.3.0/",
-    "daisyui": "npm:daisyui@2.51.6"
+    "daisyui": "npm:daisyui@3.0.0"
   }
 }

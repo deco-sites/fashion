@@ -10091,29 +10091,33 @@
       "required": [],
       "title": "Shortcut"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut"
+      },
+      "title": "Shortcut[]"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "shortcuts": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut"
-          },
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]",
           "title": "Shortcuts"
         },
-        "onHover": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Show label"
-            },
-            {
-              "type": "string",
-              "const": "Show tooltip"
+        "layout": {
+          "type": "object",
+          "properties": {
+            "tooltip": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Tooltip"
             }
-          ],
-          "type": "string",
-          "title": "On Hover"
+          },
+          "required": [],
+          "title": "Layout"
         }
       },
       "required": [],
