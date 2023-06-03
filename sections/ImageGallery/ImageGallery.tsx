@@ -108,7 +108,14 @@ export default function BannnerGrid({
         description={description}
         alignment={layout?.headerAlignment || "center"}
       />
-      <div class={`flex w-full gap-4 ${layout?.mobile === "Asymmetric" && `h-[280px] ${layout?.desktop === "Asymmetric" ? "lg:h-[1000px]" : "lg:h-auto"}`}`}>
+      <div
+        class={`flex w-full gap-4 ${
+          layout?.mobile === "Asymmetric" &&
+          `h-[280px] ${
+            layout?.desktop === "Asymmetric" ? "lg:h-[1000px]" : "lg:h-auto"
+          }`
+        }`}
+      >
         {divColumn.map(({ bannerTop, bannerBottom }, i) => (
           <div
             class={`flex flex-col gap-4
@@ -117,12 +124,19 @@ export default function BannnerGrid({
           >
             <a
               href={bannerTop.href}
-
               class={`overflow-hidden
                 ${RADIUS_MOBILE[borderRadius.mobile ?? "none"]}
                 ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]}
-                ${i % 2 === 0 ? LAYOUT_MOBILE_IMAGE1[layout?.mobile ?? "Symmetrical"] : LAYOUT_MOBILE_IMAGE2[layout?.mobile ?? "Symmetrical"]}
-                ${i % 2 === 0 ? LAYOUT_DESKTOP_IMAGE1[layout?.desktop ?? "Symmetrical"] : LAYOUT_DESKTOP_IMAGE2[layout?.desktop ?? "Symmetrical"]}
+                ${
+                i % 2 === 0
+                  ? LAYOUT_MOBILE_IMAGE1[layout?.mobile ?? "Symmetrical"]
+                  : LAYOUT_MOBILE_IMAGE2[layout?.mobile ?? "Symmetrical"]
+              }
+                ${
+                i % 2 === 0
+                  ? LAYOUT_DESKTOP_IMAGE1[layout?.desktop ?? "Symmetrical"]
+                  : LAYOUT_DESKTOP_IMAGE2[layout?.desktop ?? "Symmetrical"]
+              }
               `}
             >
               <Picture>
@@ -149,8 +163,16 @@ export default function BannnerGrid({
               class={`overflow-hidden
                 ${RADIUS_MOBILE[borderRadius.mobile ?? "none"]}
                 ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]}
-                ${i % 2 === 1 ? LAYOUT_MOBILE_IMAGE1[layout?.mobile ?? "Symmetrical"] : LAYOUT_MOBILE_IMAGE2[layout?.mobile ?? "Symmetrical"]}
-                ${i % 2 === 1 ? LAYOUT_DESKTOP_IMAGE1[layout?.desktop ?? "Symmetrical"] : LAYOUT_DESKTOP_IMAGE2[layout?.desktop ?? "Symmetrical"]}
+                ${
+                i % 2 === 1
+                  ? LAYOUT_MOBILE_IMAGE1[layout?.mobile ?? "Symmetrical"]
+                  : LAYOUT_MOBILE_IMAGE2[layout?.mobile ?? "Symmetrical"]
+              }
+                ${
+                i % 2 === 1
+                  ? LAYOUT_DESKTOP_IMAGE1[layout?.desktop ?? "Symmetrical"]
+                  : LAYOUT_DESKTOP_IMAGE2[layout?.desktop ?? "Symmetrical"]
+              }
               `}
             >
               <Picture>

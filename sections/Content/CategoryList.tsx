@@ -30,6 +30,27 @@ export interface Props {
   };
 }
 
+function CardText(
+  { tag, label, description, alignment }: {
+    tag?: string;
+    label?: string;
+    description?: string;
+    alignment?: "center" | "left";
+  },
+) {
+  return (
+    <div
+      class={`flex flex-col ${
+        alignment === "center" ? "text-center" : "text-left"
+      }`}
+    >
+      {tag && <div class="text-sm text-primary">{tag}</div>}
+      {label && <h3 class="text-lg text-base-content">{label}</h3>}
+      {description && <div class="text-sm text-neutral">{description}</div>}
+    </div>
+  );
+}
+
 function CategoryList(props: Props) {
   const id = useId();
   const {
@@ -57,31 +78,12 @@ function CategoryList(props: Props) {
     },
   } = props;
 
-  function cardText(
-    tag?: string,
-    label?: string,
-    description?: string,
-    alignment?: "center" | "left",
-  ) {
-    return (
-      <div
-        class={`flex flex-col text-${
-          alignment === "center" ? "center" : "left"
-        }`}
-      >
-        {tag && <div class="text-sm text-primary">{tag}</div>}
-        {label && <h3 class="text-lg text-base-content">{label}</h3>}
-        {description && <div class="text-sm text-neutral">{description}</div>}
-      </div>
-    );
-  }
-
   return (
     <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 text-base-content lg:px-0 lg:py-10">
       <Header
-        title={header?.title}
-        description={header?.description || ""}
-        alignment={layout?.headerAlignment || "center"}
+        title={header.title}
+        description={header.description || ""}
+        alignment={layout.headerAlignment || "center"}
       />
       <div
         class="relative w-full"
@@ -100,12 +102,14 @@ function CategoryList(props: Props) {
                 href={href}
                 class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
               >
-                {layout?.categoryCard?.textPosition === "top" &&
-                  cardText(
-                    tag,
-                    label,
-                    description,
-                    layout?.categoryCard?.textAlignment,
+                {layout.categoryCard?.textPosition === "top" &&
+                  (
+                    <CardText
+                      tag={tag}
+                      label={label}
+                      description={description}
+                      alignment={layout?.categoryCard?.textAlignment}
+                    />
                   )}
                 {image &&
                   (
@@ -119,12 +123,14 @@ function CategoryList(props: Props) {
                       />
                     </figure>
                   )}
-                {layout?.categoryCard?.textPosition === "bottom" &&
-                  cardText(
-                    tag,
-                    label,
-                    description,
-                    layout?.categoryCard?.textAlignment,
+                {layout.categoryCard?.textPosition === "bottom" &&
+                  (
+                    <CardText
+                      tag={tag}
+                      label={label}
+                      description={description}
+                      alignment={layout?.categoryCard?.textAlignment}
+                    />
                   )}
               </a>
               {buttonText &&

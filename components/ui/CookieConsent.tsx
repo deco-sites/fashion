@@ -31,18 +31,18 @@ export interface Props {
   policy?: {
     text: string;
     link: string;
-  }
+  };
   buttons?: {
     allowText: string;
-/**    denyText?: string; */
-  }
+    /**    denyText?: string; */
+  };
   layout?: {
-    position?: "Expanded" | "Left" | "Center" | "Right",
-    content?: "Tiled" | "Piled up"
-  }
+    position?: "Expanded" | "Left" | "Center" | "Right";
+    content?: "Tiled" | "Piled up";
+  };
 }
 
-function CookieConsent({ title, text, policy, buttons, layout } : Props) {
+function CookieConsent({ title, text, policy, buttons, layout }: Props) {
   const id = `cookie-consent-${useId()}`;
 
   return (
@@ -56,16 +56,34 @@ function CookieConsent({ title, text, policy, buttons, layout } : Props) {
           ${layout?.position === "Right" ? "lg:justify-end" : ""}
         `}
       >
-        <div class={`
+        <div
+          class={`
           p-4 mx-4 my-2 flex flex-col gap-4 shadow bg-base-100 rounded border border-base-200 
-          ${!layout?.position || layout?.position === "Expanded" ? "lg:container lg:mx-auto" : `
-            ${layout?.content === 'Piled up' ? "lg:w-[480px]" : ""}
-            ${!layout?.content || layout?.content === 'Tiled' ? "lg:w-[520px]" : ""}
-          `}
-          ${!layout?.content || layout?.content === 'Tiled' ? "lg:flex-row lg:items-end" : ""}
+          ${
+            !layout?.position || layout?.position === "Expanded"
+              ? "lg:container lg:mx-auto"
+              : `
+            ${layout?.content === "Piled up" ? "lg:w-[480px]" : ""}
+            ${
+                !layout?.content || layout?.content === "Tiled"
+                  ? "lg:w-[520px]"
+                  : ""
+              }
+          `
+          }
+          ${
+            !layout?.content || layout?.content === "Tiled"
+              ? "lg:flex-row lg:items-end"
+              : ""
+          }
           
-        `}>
-          <div class={`flex-auto flex flex-col gap-4 ${!layout?.content || layout?.content === 'Tiled' ? "lg:gap-2" : ""}`}>
+        `}
+        >
+          <div
+            class={`flex-auto flex flex-col gap-4 ${
+              !layout?.content || layout?.content === "Tiled" ? "lg:gap-2" : ""
+            }`}
+          >
             <h3 class="text-xl">{title}</h3>
             <div class="text-base">{text}</div>
 
@@ -74,9 +92,23 @@ function CookieConsent({ title, text, policy, buttons, layout } : Props) {
             </a>
           </div>
 
-          <div class={`flex flex-col gap-2 ${!layout?.position || layout?.position === "Expanded" ? "lg:flex-row" : ""}`}>
-            <button class="btn" data-button-cc-accept>{buttons.allowText}</button>
-            <button class="btn" data-button-cc-close class="btn btn-outline hidden">{buttons.denyText}</button>
+          <div
+            class={`flex flex-col gap-2 ${
+              !layout?.position || layout?.position === "Expanded"
+                ? "lg:flex-row"
+                : ""
+            }`}
+          >
+            <button class="btn" data-button-cc-accept>
+              {buttons.allowText}
+            </button>
+            <button
+              class="btn"
+              data-button-cc-close
+              class="btn btn-outline hidden"
+            >
+              {buttons.denyText}
+            </button>
           </div>
         </div>
       </div>
@@ -87,7 +119,8 @@ function CookieConsent({ title, text, policy, buttons, layout } : Props) {
 
 CookieConsent.defaultProps = {
   title: "Cookies",
-  text: "Guardamos estatísticas de visitas para melhorar sua experiência de navegação.",
+  text:
+    "Guardamos estatísticas de visitas para melhorar sua experiência de navegação.",
   policy: {
     text: "Saiba mais sobre sobre política de privacidade",
     link: "/politica-de-privacidade",
@@ -99,7 +132,7 @@ CookieConsent.defaultProps = {
   layout: {
     position: "Expanded",
     content: "Tiled",
-  }
-}
+  },
+};
 
 export default CookieConsent;
