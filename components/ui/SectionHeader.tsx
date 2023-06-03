@@ -1,7 +1,7 @@
 interface Props {
   title?: string;
   fontSize?: "Normal" | "Large";
-  description: string;
+  description?: string;
   alignment: "center" | "left";
   colorReverse?: boolean;
 }

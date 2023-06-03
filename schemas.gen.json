@@ -9526,30 +9526,12 @@
       ],
       "title": "Banner"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn": {
-      "type": "object",
-      "properties": {
-        "bannerTop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner",
-          "title": "Banner Top"
-        },
-        "bannerBottom": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner",
-          "title": "Banner Bottom"
-        }
-      },
-      "required": [
-        "bannerTop",
-        "bannerBottom"
-      ],
-      "title": "DivColumn"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn[]": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner"
       },
-      "title": "DivColumn[]"
+      "title": "Banner[]"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Props": {
       "type": "object",
@@ -9568,98 +9550,98 @@
           ],
           "title": "Description"
         },
-        "divColumn": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn[]",
-          "maxItems": 2,
-          "title": "Div Column"
-        },
-        "borderRadius": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Mobile"
-            },
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": "Border Radius",
-          "description": "Aplique borda a sua imagem"
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner[]",
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Banners"
         },
         "layout": {
           "type": "object",
           "properties": {
+            "borderRadius": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "none"
+                    },
+                    {
+                      "type": "string",
+                      "const": "sm"
+                    },
+                    {
+                      "type": "string",
+                      "const": "md"
+                    },
+                    {
+                      "type": "string",
+                      "const": "lg"
+                    },
+                    {
+                      "type": "string",
+                      "const": "xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "2xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "3xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "full"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Mobile"
+                },
+                "desktop": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "none"
+                    },
+                    {
+                      "type": "string",
+                      "const": "sm"
+                    },
+                    {
+                      "type": "string",
+                      "const": "md"
+                    },
+                    {
+                      "type": "string",
+                      "const": "lg"
+                    },
+                    {
+                      "type": "string",
+                      "const": "xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "2xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "3xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "full"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Desktop"
+                }
+              },
+              "required": [],
+              "title": "Border Radius"
+            },
             "headerAlignment": {
               "anyOf": [
                 {
@@ -9678,11 +9660,11 @@
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "Asymmetric"
+                  "const": "asymmetric"
                 },
                 {
                   "type": "string",
-                  "const": "Symmetrical"
+                  "const": "symmetrical"
                 }
               ],
               "type": "string",
@@ -9692,11 +9674,11 @@
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "Asymmetric"
+                  "const": "asymmetric"
                 },
                 {
                   "type": "string",
-                  "const": "Symmetrical"
+                  "const": "symmetrical"
                 }
               ],
               "type": "string",
@@ -9707,10 +9689,7 @@
           "title": "Layout"
         }
       },
-      "required": [
-        "divColumn",
-        "borderRadius"
-      ],
+      "required": [],
       "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0luc3RhZ3JhbUNvbXBvbmVudC50c3g=@Props": {
