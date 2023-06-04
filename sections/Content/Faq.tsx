@@ -1,26 +1,25 @@
-import Icon from "$store/components/ui/Icon.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface Question {
   question: string;
-  /** @format textarea */
+  /** @format html */
   answer: string;
 }
 
 export interface Contact {
   title?: string;
-  /** @format textarea */
+  /** @format html */
   description?: string;
-  button?: {
+  link?: {
     text: string;
-    link: string;
+    href: string;
   };
 }
 
-export interface FAQProps {
+export interface Props {
   title?: string;
   description?: string;
-  questions?: Array<Question>;
+  questions?: Question[];
   contact?: Contact;
   layout?: {
     variation?: "Compact" | "Full" | "Side to side";
@@ -28,161 +27,7 @@ export interface FAQProps {
   };
 }
 
-export default function FAQ(
-  {
-    questions = [],
-    title,
-    description,
-    contact,
-    layout,
-  }: FAQProps,
-) {
-  function listOfQuestions(question: string, answer: string, index: number) {
-    return (
-      <details
-        key={index}
-        className="group w-full border-t border-gray-300 [open]:rotate-caret"
-      >
-        <summary class="flex items-start gap-2 py-5 list-outside cursor-pointer group-hover:text-primary">
-          <h3 className="flex-auto flex text-lg">{question}</h3>
-          <div class="flex-none mt-1">
-            <Icon id="ChevronDown" size={20} class="duration-100" />
-          </div>
-        </summary>
-        <p className="pb-5">{answer}</p>
-      </details>
-    );
-  }
-
-  function contactBlock(
-    title: string,
-    description: string,
-    buttonLink: string,
-    buttonText: string,
-  ) {
-    return (
-      <>
-        {(title || description) && (
-          <div class="flex flex-col gap-2">
-            {title && <h2 className="text-xl lg:text-3xl">{title}</h2>}
-            {description && <p className="text-lg lg:text-xl">{description}</p>}
-          </div>
-        )}
-        {buttonText && buttonLink && (
-          <a href={buttonLink} className="btn">{buttonText}</a>
-        )}
-      </>
-    );
-  }
-
-  return (
-    <>
-      {(!layout?.variation || layout?.variation === "Compact") && (
-        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-60">
-          <div class="flex flex-col gap-8 lg:gap-10">
-            <Header
-              title={title || ""}
-              description={description || ""}
-              alignment={layout?.headerAlignment || "center"}
-            />
-            <div className="flex flex-col items-center">
-              {questions.map((questionItem, index: number) => {
-                return (listOfQuestions(
-                  questionItem?.question ?? "",
-                  questionItem?.answer ?? "",
-                  index,
-                ));
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col gap-6 items-center text-center">
-            {contactBlock(
-              contact?.title || "",
-              contact?.description || "",
-              contact?.button?.link || "",
-              contact?.button?.text || "",
-            )}
-          </div>
-        </div>
-      )}
-      {layout?.variation === "Full" && (
-        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
-          <div class="flex flex-col gap-8 lg:gap-10">
-            <Header
-              title={title || ""}
-              description={description || ""}
-              alignment={layout?.headerAlignment || "center"}
-            />
-            <div className="flex flex-col items-center">
-              {questions.map((questionItem, index: number) => {
-                return (listOfQuestions(
-                  questionItem?.question ?? "",
-                  questionItem?.answer ?? "",
-                  index,
-                ));
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col gap-6 items-start">
-            {contactBlock(
-              contact?.title || "",
-              contact?.description || "",
-              contact?.button?.link || "",
-              contact?.button?.text || "",
-            )}
-          </div>
-        </div>
-      )}
-      {layout?.variation === "Side to side" && (
-        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:flex-row lg:gap-20 lg:py-10 lg:px-0">
-          <div class="lg:w-1/2 flex flex-col gap-8 lg:gap-10">
-            <Header
-              title={title || ""}
-              description={description || ""}
-              alignment={layout?.headerAlignment || "center"}
-            />
-            <div className="lg:hidden flex flex-col items-center">
-              {questions.map((questionItem, index: number) => {
-                return (listOfQuestions(
-                  questionItem?.question ?? "",
-                  questionItem?.answer ?? "",
-                  index,
-                ));
-              })}
-            </div>
-            <div className="hidden lg:flex flex-col gap-6 items-start">
-              {contactBlock(
-                contact?.title || "",
-                contact?.description || "",
-                contact?.button?.link || "",
-                contact?.button?.text || "",
-              )}
-            </div>
-          </div>
-          <div className="lg:hidden flex flex-col gap-6 items-start">
-            {contactBlock(
-              contact?.title || "",
-              contact?.description || "",
-              contact?.button?.link || "",
-              contact?.button?.text || "",
-            )}
-          </div>
-          <div className="hidden lg:flex lg:w-1/2 flex-col items-center">
-            {questions.map((questionItem, index: number) => {
-              return (listOfQuestions(
-                questionItem?.question ?? "",
-                questionItem?.answer ?? "",
-                index,
-              ));
-            })}
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-FAQ.defaultProps = {
+const DEFAULT_PROPS = {
   title: "",
   description: "",
   questions: [
@@ -206,3 +51,104 @@ FAQ.defaultProps = {
     },
   },
 };
+
+function Question({ question, answer }: Question) {
+  return (
+    <div class="collapse collapse-arrow join-item border-t border-base-200">
+      <input type="checkbox" class="peer" />
+      <div class="collapse-title text-lg font-medium">
+        {question}
+      </div>
+      <div
+        class="collapse-content"
+        dangerouslySetInnerHTML={{ __html: answer }}
+      />
+    </div>
+  );
+}
+
+function Contact({ title, description, link }: Contact) {
+  return (
+    <div class="flex flex-col gap-6 items-center">
+      <div class="flex flex-col gap-2">
+        {title && <h2 class="text-xl lg:text-3xl">{title}</h2>}
+        {description && (
+          <div
+            class="text-lg lg:text-xl"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        )}
+      </div>
+      {link &&
+        <a href={link.href} class="btn">{link.text}</a>}
+    </div>
+  );
+}
+
+export default function FAQ(props: Props) {
+  const {
+    questions = [],
+    title,
+    description,
+    contact,
+    layout,
+  } = { ...DEFAULT_PROPS, ...props };
+
+  return (
+    <>
+      {(!layout?.variation || layout?.variation === "Compact") && (
+        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-40">
+          <div class="flex flex-col gap-8 lg:gap-10">
+            <Header
+              title={title || ""}
+              description={description || ""}
+              alignment={layout?.headerAlignment || "center"}
+            />
+            <div class="join join-vertical w-full">
+              {questions.map((question) => <Question {...question} />)}
+            </div>
+          </div>
+
+          <Contact {...contact} />
+        </div>
+      )}
+
+      {layout?.variation === "Full" && (
+        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
+          <div class="flex flex-col gap-8 lg:gap-10">
+            <Header
+              title={title || ""}
+              description={description || ""}
+              alignment={layout?.headerAlignment || "center"}
+            />
+            <div class="join join-vertical w-full">
+              {questions.map((question) => <Question {...question} />)}
+            </div>
+          </div>
+
+          <Contact {...contact} />
+        </div>
+      )}
+
+      {layout?.variation === "Side to side" && (
+        <div class="w-full container px-4 py-8 grid gap-8 grid-flow-row grid-cols-1 lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-2 lg:py-10 lg:px-0">
+          <div class="order-1 lg:order-1">
+            <Header
+              title={title || ""}
+              description={description || ""}
+              alignment={layout?.headerAlignment || "center"}
+            />
+          </div>
+          <div class="order-2 lg:order-3 lg:row-span-2">
+            <div class="join join-vertical">
+              {questions.map((question) => <Question {...question} />)}
+            </div>
+          </div>
+          <div class="order-3 lg:order-2">
+            <Contact {...contact} />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

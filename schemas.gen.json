@@ -8159,7 +8159,7 @@
         },
         "answer": {
           "type": "string",
-          "format": "textarea",
+          "format": "html",
           "title": "Answer"
         }
       },
@@ -8168,6 +8168,13 @@
         "answer"
       ],
       "title": "Question"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question"
+      },
+      "title": "Question[]"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Contact": {
       "type": "object",
@@ -8184,32 +8191,32 @@
             "string",
             "null"
           ],
-          "format": "textarea",
+          "format": "html",
           "title": "Description"
         },
-        "button": {
+        "link": {
           "type": "object",
           "properties": {
             "text": {
               "type": "string",
               "title": "Text"
             },
-            "link": {
+            "href": {
               "type": "string",
-              "title": "Link"
+              "title": "Href"
             }
           },
           "required": [
             "text",
-            "link"
+            "href"
           ],
-          "title": "Button"
+          "title": "Link"
         }
       },
       "required": [],
       "title": "Contact"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@FAQProps": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "title": {
@@ -8227,10 +8234,7 @@
           "title": "Description"
         },
         "questions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question"
-          },
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question[]",
           "title": "Questions"
         },
         "contact": {
@@ -8278,7 +8282,7 @@
         }
       },
       "required": [],
-      "title": "deco-sites/fashion/sections/Content/Faq.tsx@FAQProps"
+      "title": "deco-sites/fashion/sections/Content/Faq.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
       "type": "object",
@@ -13320,7 +13324,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@FAQProps"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Props"
         }
       ],
       "required": [
