@@ -2,7 +2,7 @@ import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
-export interface ImageGallery {
+export interface Banner {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;
   /**
@@ -32,7 +32,7 @@ export interface Props {
    * @maxItems 4
    * @minItems 4
    */
-  banners?: ImageGallery[];
+  banners?: Banner[];
   layout?: {
     /**
      * @description Aplique borda a sua imagem
