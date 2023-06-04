@@ -1,81 +1,89 @@
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useId } from "preact/hooks";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Props {
-    image?: LiveImage;
-    title?: string;
-    description?: string;
-    /** @description Separate column's values by comma */
-    rows: Array<string>;
-    buttonText?: string;
+  image?: LiveImage;
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  /**
+   * @description Separate column's values by comma
+   * @example c,a,p,y,b,a,r,a
+   */
+  rows: string[];
 }
 
-export default function MeasurementModal(
-    {
-        image,
-        title,
-        description,
-        rows,
-        buttonText,
-    }: Props,
-) {
-    const id = useId();
+const DEFAULT_PROPS: Props = {
+  title: "Medidas",
+  buttonText: "Tabela de medidas",
+  rows: [],
+};
 
-    return (
-        <>
-            <label for={id} class="btn btn-link flex gap-2 w-fit">
-                <div class="flex-none">
-                    <Icon id="Ruler" size="20" />
-                </div>
-                {buttonText || "Tabela de medidas"}
-            </label>
-            <input id={id} type="checkbox" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box p-0">
-                    <label for={id} class="btn btn-xs btn-circle btn-outline absolute right-2 top-2">
-                        <Icon id="Close" size="20" />
-                    </label>
-                    <div class="grid grid-flow-col">
-                        {
-                            image && (
-                                <div class="w-60 overflow-hidden relative hidden lg:block">
-                                    <figure>
-                                        <img
-                                            class="absolute object-cover h-96"
-                                            src={image}
-                                            alt={title || "Medidas"}
-                                            decoding="async"
-                                            loading="lazy"
-                                        />
-                                    </figure>
-                                </div>
-                            )
-                        }
-                        <div class="p-5 flex flex-col gap-4">
-                            <h2 class="text-2xl lg:text-3xl">{ title || "Tabela de medidas" }</h2>
-                            { description && <p class="text-base lg:text-lg">{ description }</p> }
-                            <table class="w-full">
-                                <thead>
-                                    {rows.map((values, index) => (
-                                        <>
-                                            { index === 0 && <tr class="font-light text-center">{ values.split(',').map((value) => <th class="p-2">{value}</th>) }</tr> }
-                                        </>
-                                    ))}
-                                </thead>
-                                <tbody>
-                                    {rows.map((values, index) => (
-                                        <>
-                                            { index > 0 && <tr class="font-light text-center">{ values.split(',').map((value) => <td class="p-2">{value}</td>) }</tr> }
-                                        </>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+/** TODO: Move this product details */
+export default function MeasurementModal(props: Props) {
+  const id = `measurement-${useId()}`;
+  const {
+    image,
+    title,
+    description,
+    rows,
+    buttonText,
+  } = { ...DEFAULT_PROPS, ...props };
+  const [head, ...body] = rows ?? [];
+
+  return (
+    <>
+      <label for={id} class="btn btn-link gap-2 no-animation">
+        <Icon id="Ruler" size={20} />
+        {buttonText}
+      </label>
+      <input id={id} type="checkbox" class="modal-toggle" />
+      <div class="modal">
+        <div class="modal-box overflow-y-hidden">
+          <label
+            for={id}
+            class="btn btn-xs btn-circle btn-outline absolute right-2 top-2"
+          >
+            <Icon id="XMark" size={20} strokeWidth={1.5} />
+          </label>
+          <div class="grid grid-flow-col h-64">
+            {image && (
+              <Image
+                class="object-cover hidden sm:block w-full"
+                src={image}
+                alt={title}
+                width={240}
+                height={240}
+                decoding="async"
+                loading="lazy"
+              />
+            )}
+            <div class="p-5 flex flex-col gap-4 overflow-scroll">
+              <h2 class="text-2xl sm:text-3xl">
+                {title}
+              </h2>
+              {description && <p class="text-base sm:text-lg">{description}</p>}
+              <table class="w-full">
+                <thead>
+                  <tr class="font-light text-center flex flex-row items-center justify-center flex-nowrap gap-4">
+                    {head?.split(",").map((value) => <th>{value}</th>)}
+                  </tr>
+                </thead>
+                <tbody class="">
+                  {body?.map((values) => (
+                    <tr class="font-light text-center flex flex-row items-center justify-center flex-nowrap gap-4">
+                      {values.split(",").map((value) => <td>{value}</td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-        </>
-    )
+          </div>
+        </div>
+        <label class="modal-backdrop" for={id}>X</label>
+      </div>
+    </>
+  );
 }

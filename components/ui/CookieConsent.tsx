@@ -25,25 +25,39 @@ window.addEventListener('scroll', callback, { once: true });
 `;
 
 export interface Props {
-  title?: string;
-  /** @format textarea */
+  /** @format html */
   text?: string;
-  policy?: {
-    text: string;
-    link: string;
-  }
   buttons?: {
     allowText: string;
-/**    denyText?: string; */
-  }
+    cancelText?: string;
+  };
   layout?: {
-    position?: "Expanded" | "Left" | "Center" | "Right",
-    content?: "Tiled" | "Piled up"
-  }
+    position?: "Expanded" | "Left" | "Center" | "Right";
+    content?: "Tiled" | "Piled up";
+  };
 }
 
-function CookieConsent({ title, text, policy, buttons, layout } : Props) {
+const DEFAULT_PROPS = {
+  title: "Cookies",
+  text:
+    "Guardamos estatísticas de visitas para melhorar sua experiência de navegação.",
+  policy: {
+    text: "Saiba mais sobre sobre política de privacidade",
+    link: "/politica-de-privacidade",
+  },
+  buttons: {
+    allowText: "Aceitar",
+    cancelText: "Fechar",
+  },
+  layout: {
+    position: "Expanded",
+    content: "Tiled",
+  },
+};
+
+function CookieConsent(props: Props) {
   const id = `cookie-consent-${useId()}`;
+  const { text, buttons, layout } = { ...DEFAULT_PROPS, ...props };
 
   return (
     <>
@@ -56,50 +70,59 @@ function CookieConsent({ title, text, policy, buttons, layout } : Props) {
           ${layout?.position === "Right" ? "lg:justify-end" : ""}
         `}
       >
-        <div class={`
+        <div
+          class={`
           p-4 mx-4 my-2 flex flex-col gap-4 shadow bg-base-100 rounded border border-base-200 
-          ${!layout?.position || layout?.position === "Expanded" ? "lg:container lg:mx-auto" : `
-            ${layout?.content === 'Piled up' ? "lg:w-[480px]" : ""}
-            ${!layout?.content || layout?.content === 'Tiled' ? "lg:w-[520px]" : ""}
-          `}
-          ${!layout?.content || layout?.content === 'Tiled' ? "lg:flex-row lg:items-end" : ""}
+          ${
+            !layout?.position || layout?.position === "Expanded"
+              ? "lg:container lg:mx-auto"
+              : `
+            ${layout?.content === "Piled up" ? "lg:w-[480px]" : ""}
+            ${
+                !layout?.content || layout?.content === "Tiled"
+                  ? "lg:w-[520px]"
+                  : ""
+              }
+          `
+          }
+          ${
+            !layout?.content || layout?.content === "Tiled"
+              ? "lg:flex-row lg:items-end"
+              : ""
+          }
           
-        `}>
-          <div class={`flex-auto flex flex-col gap-4 ${!layout?.content || layout?.content === 'Tiled' ? "lg:gap-2" : ""}`}>
-            <h3 class="text-xl">{title}</h3>
-            <div class="text-base">{text}</div>
-
-            <a href={policy.link} class="text-sm link link-secondary">
-              {policy.text}
-            </a>
+        `}
+        >
+          <div
+            class={`flex-auto flex flex-col gap-4 ${
+              !layout?.content || layout?.content === "Tiled" ? "lg:gap-2" : ""
+            }`}
+          >
+            {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
           </div>
 
-          <div class={`flex flex-col gap-2 ${!layout?.position || layout?.position === "Expanded" ? "lg:flex-row" : ""}`}>
-            <button class="btn" data-button-cc-accept>{buttons.allowText}</button>
-            <button class="btn" data-button-cc-close class="btn btn-outline hidden">{buttons.denyText}</button>
+          <div
+            class={`flex flex-col gap-2 ${
+              !layout?.position || layout?.position === "Expanded"
+                ? "lg:flex-row"
+                : ""
+            }`}
+          >
+            <button class="btn" data-button-cc-accept>
+              {buttons.allowText}
+            </button>
+            <button
+              data-button-cc-close
+              class="btn btn-outline"
+            >
+              {buttons.cancelText}
+            </button>
           </div>
         </div>
       </div>
       <script type="module" dangerouslySetInnerHTML={{ __html: script(id) }} />
     </>
   );
-}
-
-CookieConsent.defaultProps = {
-  title: "Cookies",
-  text: "Guardamos estatísticas de visitas para melhorar sua experiência de navegação.",
-  policy: {
-    text: "Saiba mais sobre sobre política de privacidade",
-    link: "/politica-de-privacidade",
-  },
-  buttons: {
-    allowText: "Aceitar",
-    denyText: "",
-  },
-  layout: {
-    position: "Expanded",
-    content: "Tiled",
-  }
 }
 
 export default CookieConsent;

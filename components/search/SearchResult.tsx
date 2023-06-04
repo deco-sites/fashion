@@ -56,23 +56,23 @@ function Result({
         </div>
 
         <div class="flex justify-center my-4">
-          <div class="btn-group">
+          <div class="join">
             <a
               aria-label="previous page link"
               rel="prev"
               href={pageInfo.previousPage ?? "#"}
-              class="btn btn-ghost"
+              class="btn btn-ghost join-item"
             >
               <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
             </a>
-            <span class="btn btn-ghost">
+            <span class="btn btn-ghost join-item">
               Page {pageInfo.currentPage + 1}
             </span>
             <a
               aria-label="next page link"
               rel="next"
               href={pageInfo.nextPage ?? "#"}
-              class="btn btn-ghost"
+              class="btn btn-ghost join-item"
             >
               <Icon
                 id="ChevronRight"
