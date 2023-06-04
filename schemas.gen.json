@@ -95,10 +95,7 @@
               "deco-sites/fashion/sections/Content/CategoryList.tsx",
               "deco-sites/fashion/sections/Content/Faq.tsx",
               "deco-sites/fashion/sections/Content/LinkTree.tsx",
-<<<<<<< HEAD
-=======
               "deco-sites/fashion/sections/Content/Logos.tsx",
->>>>>>> Add logos
               "deco-sites/fashion/sections/Content/Testimonials.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
               "deco-sites/fashion/sections/DesignSystem.tsx",
@@ -126,10 +123,7 @@
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
-<<<<<<< HEAD
               "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx",
-=======
->>>>>>> Add logos
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -8167,11 +8161,7 @@
         },
         "answer": {
           "type": "string",
-<<<<<<< HEAD
           "format": "html",
-=======
-          "format": "textarea",
->>>>>>> Add logos
           "title": "Answer"
         }
       },
@@ -8181,7 +8171,6 @@
       ],
       "title": "Question"
     },
-<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question[]": {
       "type": "array",
       "items": {
@@ -8189,8 +8178,6 @@
       },
       "title": "Question[]"
     },
-=======
->>>>>>> Add logos
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Contact": {
       "type": "object",
       "properties": {
@@ -8206,17 +8193,10 @@
             "string",
             "null"
           ],
-<<<<<<< HEAD
           "format": "html",
           "title": "Description"
         },
         "link": {
-=======
-          "format": "textarea",
-          "title": "Description"
-        },
-        "button": {
->>>>>>> Add logos
           "type": "object",
           "properties": {
             "text": {
@@ -8246,23 +8226,6 @@
             "string",
             "null"
           ],
-<<<<<<< HEAD
-=======
-          "title": "Button"
-        }
-      },
-      "required": [],
-      "title": "Contact"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@FAQProps": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
->>>>>>> Add logos
           "title": "Title"
         },
         "description": {
@@ -8273,14 +8236,7 @@
           "title": "Description"
         },
         "questions": {
-<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question[]",
-=======
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question"
-          },
->>>>>>> Add logos
           "title": "Questions"
         },
         "contact": {
@@ -8328,11 +8284,7 @@
         }
       },
       "required": [],
-<<<<<<< HEAD
       "title": "deco-sites/fashion/sections/Content/Faq.tsx@Props"
-=======
-      "title": "deco-sites/fashion/sections/Content/Faq.tsx@FAQProps"
->>>>>>> Add logos
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
       "type": "object",
@@ -8398,7 +8350,6 @@
       "type": "object",
       "properties": {
         "title": {
-<<<<<<< HEAD
           "type": [
             "string",
             "null"
@@ -8406,13 +8357,10 @@
           "title": "Title"
         },
         "description": {
-=======
->>>>>>> Add logos
           "type": [
             "string",
             "null"
           ],
-<<<<<<< HEAD
           "title": "Description"
         },
         "links": {
@@ -8434,6 +8382,79 @@
       },
       "required": [],
       "title": "deco-sites/fashion/components/ui/LinkTree.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "altText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt Text"
+        }
+      },
+      "required": [
+        "image"
+      ],
+      "title": "Img"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img"
+      },
+      "title": "Img[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "images": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img[]",
+          "title": "Images"
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "headerAlignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "center"
+                },
+                {
+                  "type": "string",
+                  "const": "left"
+                }
+              ],
+              "type": "string",
+              "title": "Header Alignment"
+            }
+          },
+          "required": [],
+          "title": "Layout"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/sections/Content/Logos.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Testimonial": {
       "type": "object",
@@ -8507,65 +8528,6 @@
       "title": "Testimonial[]"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Props": {
-=======
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "links": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]",
-          "title": "Links"
-        },
-        "bgImage": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Bg Image"
-        },
-        "avatar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Avatar"
-        },
-        "social": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social[]",
-          "title": "Social"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/components/ui/LinkTree.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img": {
-      "type": "object",
-      "properties": {
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        },
-        "altText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Alt Text"
-        }
-      },
-      "required": [
-        "image"
-      ],
-      "title": "Img"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img"
-      },
-      "title": "Img[]"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Props": {
->>>>>>> Add logos
       "type": "object",
       "properties": {
         "title": {
@@ -8582,20 +8544,13 @@
           ],
           "title": "Description"
         },
-<<<<<<< HEAD
         "testimonials": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Testimonial[]",
           "title": "Testimonials"
-=======
-        "images": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Img[]",
-          "title": "Images"
->>>>>>> Add logos
         },
         "layout": {
           "type": "object",
           "properties": {
-<<<<<<< HEAD
             "variation": {
               "anyOf": [
                 {
@@ -8610,8 +8565,6 @@
               "type": "string",
               "title": "Variation"
             },
-=======
->>>>>>> Add logos
             "headerAlignment": {
               "anyOf": [
                 {
@@ -8632,26 +8585,16 @@
         }
       },
       "required": [],
-<<<<<<< HEAD
       "title": "deco-sites/fashion/sections/Content/Testimonials.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props": {
       "type": "object",
       "properties": {
         "text": {
-=======
-      "title": "deco-sites/fashion/sections/Content/Logos.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
->>>>>>> Add logos
           "type": [
             "string",
             "null"
           ],
-<<<<<<< HEAD
           "format": "html",
           "title": "Text"
         },
@@ -9070,1023 +9013,8 @@
       "title": "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature": {
-=======
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "testimonials": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "text": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "Text"
-              },
-              "image": {
-                "type": "object",
-                "properties": {
-                  "src": {
-                    "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                    "title": "Src"
-                  },
-                  "alt": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Alt"
-                  }
-                },
-                "required": [],
-                "title": "Image"
-              },
-              "user": {
-                "type": "object",
-                "properties": {
-                  "avatar": {
-                    "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                    "title": "Avatar"
-                  },
-                  "name": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Name"
-                  },
-                  "position": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Position"
-                  },
-                  "company": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Company"
-                  }
-                },
-                "required": [],
-                "title": "User"
-              }
-            },
-            "required": []
-          },
-          "title": "Testimonials"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "variation": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Grid"
-                },
-                {
-                  "type": "string",
-                  "const": "Slider"
-                }
-              ],
-              "type": "string",
-              "title": "Variation"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Content/Testimonials.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props": {
->>>>>>> Add logos
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "text": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "textarea",
-          "title": "Text"
-        },
-        "policy": {
-          "type": "object",
-          "properties": {
-            "text": {
-              "type": "string",
-              "title": "Text"
-            },
-            "link": {
-              "type": "string",
-              "title": "Link"
-            }
-          },
-          "required": [
-            "text",
-            "link"
-          ],
-          "title": "Policy"
-        },
-        "buttons": {
-          "type": "object",
-          "properties": {
-            "allowText": {
-              "type": "string",
-              "title": "Allow Text"
-            }
-          },
-          "required": [
-            "allowText"
-          ],
-          "title": "Buttons"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "position": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Expanded"
-                },
-                {
-                  "type": "string",
-                  "const": "Left"
-                },
-                {
-                  "type": "string",
-                  "const": "Center"
-                },
-                {
-                  "type": "string",
-                  "const": "Right"
-                }
-              ],
-              "type": "string",
-              "title": "Position"
-            },
-            "content": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Tiled"
-                },
-                {
-                  "type": "string",
-                  "const": "Piled up"
-                }
-              ],
-              "type": "string",
-              "title": "Content"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/components/ui/CookieConsent.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors": {
-      "type": "object",
-      "properties": {
-        "primary": {
-          "type": "string",
-          "format": "color",
-          "default": "#003232",
-          "title": "Primary"
-        },
-        "secondary": {
-          "type": "string",
-          "format": "color",
-          "default": "#8C3D3D",
-          "title": "Secondary"
-        },
-        "accent": {
-          "type": "string",
-          "format": "color",
-          "default": "#00FF7F",
-          "title": "Accent"
-        },
-        "neutral": {
-          "type": "string",
-          "format": "color",
-          "default": "#333333",
-          "title": "Neutral"
-        },
-        "base-100": {
-          "type": "string",
-          "format": "color",
-          "default": "#FFFFFF",
-          "title": "Base-100"
-        },
-        "success": {
-          "type": "string",
-          "format": "color",
-          "default": "#EAFAF2",
-          "title": "Success"
-        },
-        "warning": {
-          "type": "string",
-          "format": "color",
-          "default": "#FFF8E6",
-          "title": "Warning"
-        },
-        "error": {
-          "type": "string",
-          "format": "color",
-          "default": "#FFE9E5",
-          "title": "Error"
-        },
-        "info": {
-          "type": "string",
-          "format": "color",
-          "default": "#F0F5FF",
-          "title": "Info"
-        }
-      },
-      "required": [
-        "primary",
-        "secondary",
-        "accent",
-        "neutral",
-        "base-100",
-        "success",
-        "warning",
-        "error",
-        "info"
-      ],
-      "title": "Colors"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@OptionalColors": {
-      "type": "object",
-      "properties": {
-        "primary-focus": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a darker tone of primary if not specified",
-          "title": "Primary-focus"
-        },
-        "primary-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of primary if not specified",
-          "title": "Primary-content"
-        },
-        "secondary-focus": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a darker tone of secondary if not specified",
-          "title": "Secondary-focus"
-        },
-        "secondary-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of secondary if not specified",
-          "title": "Secondary-content"
-        },
-        "accent-focus": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a darker tone of accent if not specified",
-          "title": "Accent-focus"
-        },
-        "accent-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of accent if not specified",
-          "title": "Accent-content"
-        },
-        "neutral-focus": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a darker tone of neutral if not specified",
-          "title": "Neutral-focus"
-        },
-        "neutral-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of neutral if not specified",
-          "title": "Neutral-content"
-        },
-        "base-200": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a darker tone of base-100 if not specified",
-          "title": "Base-200"
-        },
-        "base-300": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a darker tone of base-200 if not specified",
-          "title": "Base-300"
-        },
-        "base-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of base-100 if not specified",
-          "title": "Base-content"
-        },
-        "success-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable success of neutral if not specified",
-          "title": "Success-content"
-        },
-        "warning-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of warning if not specified",
-          "title": "Warning-content"
-        },
-        "error-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of error if not specified",
-          "title": "Error-content"
-        },
-        "info-content": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "color",
-          "description": "Will be a readable tone of info if not specified",
-          "title": "Info-content"
-        }
-      },
-      "required": [],
-      "title": "OptionalColors"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@74592a4a06c5ce464ca33da3b0b49a2f&Colors": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "optional": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@OptionalColors",
-              "title": "Optional"
-            }
-          },
-          "required": []
-        }
-      ],
-      "title": "74592a4a06c5ce464ca33da3b0b49a2f&Colors"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous": {
-      "type": "object",
-      "properties": {
-        "--rounded-box": {
-          "type": "string",
-          "default": "1rem",
-          "title": "Rounded box",
-          "description": "border radius rounded-box utility class, used in card and other large boxes"
-        },
-        "--rounded-btn": {
-          "type": "string",
-          "default": "0.5rem",
-          "title": "Rounded button",
-          "description": "border radius rounded-btn utility class, used in buttons and similar element"
-        },
-        "--rounded-badge": {
-          "type": "string",
-          "default": "1.9rem",
-          "title": "Rounded badge",
-          "description": "border radius rounded-badge utility class, used in badges and similar"
-        },
-        "--animation-btn": {
-          "type": "string",
-          "default": "0.25s",
-          "title": "Animation button",
-          "description": "duration of animation when you click on button"
-        },
-        "--animation-input": {
-          "type": "string",
-          "default": "0.2s",
-          "title": "Animation input",
-          "description": "duration of animation for inputs like checkbox, toggle, radio, etc"
-        },
-        "--btn-text-case": {
-          "type": "string",
-          "default": "uppercase",
-          "title": "Button text case",
-          "description": "set default text transform for buttons"
-        },
-        "--btn-focus-scale": {
-          "type": "string",
-          "default": "0.95",
-          "title": "Button focus scale",
-          "description": "scale transform of button when you focus on it"
-        },
-        "--border-btn": {
-          "type": "string",
-          "default": "1px",
-          "title": "Border button",
-          "description": "border width of buttons"
-        },
-        "--tab-border": {
-          "type": "string",
-          "default": "1px",
-          "title": "Tab border",
-          "description": "border width of tabs"
-        },
-        "--tab-radius": {
-          "type": "string",
-          "default": "0.5rem",
-          "title": "Tab radius",
-          "description": "border radius of tabs"
-        }
-      },
-      "required": [
-        "--rounded-box",
-        "--rounded-btn",
-        "--rounded-badge",
-        "--animation-btn",
-        "--animation-input",
-        "--btn-text-case",
-        "--btn-focus-scale",
-        "--border-btn",
-        "--tab-border",
-        "--tab-radius"
-      ],
-      "title": "Miscellaneous"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Font": {
-      "type": "object",
-      "properties": {
-        "fontFamily": {
-          "type": "string",
-          "default": "'Albert Sans'",
-          "title": "Font Family"
-        },
-        "styleInnerHtml": {
-          "type": "string",
-          "title": "Style Inner Html"
-        }
-      },
-      "required": [
-        "fontFamily",
-        "styleInnerHtml"
-      ],
-      "title": "Font"
-    },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner"
-      },
-      "title": "Banner[]"
-=======
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Props": {
-      "type": "object",
-      "properties": {
-        "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@74592a4a06c5ce464ca33da3b0b49a2f&Colors",
-          "title": "Colors"
-        },
-        "miscellaneous": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous",
-          "title": "Miscellaneous"
-        },
-        "fonts": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Font",
-          "title": "Fonts"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx@Props"
->>>>>>> Add logos
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature": {
-      "type": "object",
-      "properties": {
-<<<<<<< HEAD
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner[]",
-          "maxItems": 4,
-          "minItems": 4,
-          "title": "Banners"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "borderRadius": {
-              "type": "object",
-              "properties": {
-                "mobile": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "none"
-                    },
-                    {
-                      "type": "string",
-                      "const": "sm"
-                    },
-                    {
-                      "type": "string",
-                      "const": "md"
-                    },
-                    {
-                      "type": "string",
-                      "const": "lg"
-                    },
-                    {
-                      "type": "string",
-                      "const": "xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "2xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "3xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "full"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Mobile"
-                },
-                "desktop": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "none"
-                    },
-                    {
-                      "type": "string",
-                      "const": "sm"
-                    },
-                    {
-                      "type": "string",
-                      "const": "md"
-                    },
-                    {
-                      "type": "string",
-                      "const": "lg"
-                    },
-                    {
-                      "type": "string",
-                      "const": "xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "2xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "3xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "full"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Desktop"
-                }
-              },
-              "required": [],
-              "title": "Border Radius"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            },
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "asymmetric"
-                },
-                {
-                  "type": "string",
-                  "const": "symmetrical"
-                }
-              ],
-=======
-        "icon": {
-          "anyOf": [
-            {
->>>>>>> Add logos
-              "type": "string",
-              "const": "ArrowsPointingOut"
-            },
-<<<<<<< HEAD
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "asymmetric"
-                },
-                {
-                  "type": "string",
-                  "const": "symmetrical"
-                }
-              ],
-=======
-            {
->>>>>>> Add logos
-              "type": "string",
-              "const": "Bars3"
-            },
-            {
-              "type": "string",
-              "const": "ChevronLeft"
-            },
-            {
-              "type": "string",
-              "const": "ChevronRight"
-            },
-            {
-              "type": "string",
-              "const": "ChevronUp"
-            },
-            {
-              "type": "string",
-              "const": "ChevronDown"
-            },
-            {
-              "type": "string",
-              "const": "CreditCard"
-            },
-            {
-              "type": "string",
-              "const": "Deco"
-            },
-            {
-              "type": "string",
-              "const": "Discord"
-            },
-            {
-              "type": "string",
-              "const": "Discount"
-            },
-            {
-              "type": "string",
-              "const": "Elo"
-            },
-            {
-              "type": "string",
-              "const": "Facebook"
-            },
-            {
-              "type": "string",
-              "const": "FilterList"
-            },
-            {
-              "type": "string",
-              "const": "Heart"
-            },
-            {
-              "type": "string",
-              "const": "Instagram"
-            },
-            {
-              "type": "string",
-              "const": "Logo"
-            },
-            {
-              "type": "string",
-              "const": "Minus"
-            },
-            {
-              "type": "string",
-              "const": "MapPin"
-            },
-            {
-              "type": "string",
-              "const": "MagnifyingGlass"
-            },
-            {
-              "type": "string",
-              "const": "Mastercard"
-            },
-            {
-              "type": "string",
-              "const": "Message"
-            },
-            {
-              "type": "string",
-              "const": "Phone"
-            },
-            {
-              "type": "string",
-              "const": "Pix"
-            },
-            {
-              "type": "string",
-              "const": "Plus"
-            },
-            {
-              "type": "string",
-              "const": "QuestionMarkCircle"
-            },
-            {
-              "type": "string",
-              "const": "Return"
-            },
-            {
-              "type": "string",
-              "const": "Ruler"
-            },
-            {
-              "type": "string",
-              "const": "ShoppingCart"
-            },
-            {
-              "type": "string",
-              "const": "Star"
-            },
-            {
-              "type": "string",
-              "const": "Tiktok"
-            },
-            {
-              "type": "string",
-              "const": "Trash"
-            },
-            {
-              "type": "string",
-              "const": "Truck"
-            },
-            {
-              "type": "string",
-              "const": "User"
-            },
-            {
-              "type": "string",
-              "const": "Visa"
-            },
-            {
-              "type": "string",
-              "const": "WhatsApp"
-            },
-            {
-              "type": "string",
-              "const": "XMark"
-            }
-<<<<<<< HEAD
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0luc3RhZ3JhbUNvbXBvbmVudC50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Título do componente"
-        },
-        "fields": {
-          "type": "array",
-          "items": {},
-          "title": "Campos a serem buscados na API",
-          "description": "Documentação se encontra aqui https://developers.facebook.com/docs/instagram-basic-display-api/reference/media/"
-        },
-        "numberOfPosts": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Quantos posts deseja buscar?",
-          "description": "Número de posts que vão ser retornados"
-        },
-        "token": {
-          "type": "string",
-          "title": "Token  do facebook",
-          "description": "Esse token é pego nas configurações do APP do facebook e expira a cada 90 dias"
-        }
-      },
-      "required": [
-        "title",
-        "token"
-      ],
-      "title": "deco-sites/fashion/sections/InstagramComponent.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
-      "type": "string",
-      "format": "html",
-      "title": "HTML"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ2FtcGFpZ25UaW1lci50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "text": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
-          "title": "Text",
-          "default": "Time left for a campaign to end wth a link"
-        },
-        "expiresAt": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Expires at date",
-          "format": "datetime"
-        },
-        "labels": {
-          "type": "object",
-          "properties": {
-            "expired": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Expired"
-            },
-            "hours": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Hours"
-            },
-            "minutes": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Minutes"
-            },
-            "seconds": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Seconds"
-            }
-          },
-          "required": [],
-          "title": "Labels"
-        },
-        "link": {
-          "type": "object",
-          "properties": {
-            "text": {
-              "type": "string",
-              "title": "Text"
-            },
-            "href": {
-              "type": "string",
-              "title": "Href"
-            }
-          },
-          "required": [
-            "text",
-            "href"
-          ],
-          "title": "Link"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "textPosition": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Before counter"
-                },
-                {
-                  "type": "string",
-                  "const": "After counter"
-                }
-              ],
-              "type": "string",
-              "title": "Text Position"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Label"
-        },
         "icon": {
           "anyOf": [
             {
@@ -10233,7 +9161,6 @@
               "type": "string",
               "const": "XMark"
             }
-=======
           ],
           "type": "string",
           "description": "Image src",
@@ -10542,7 +9469,6 @@
           "type": [
             "string",
             "null"
->>>>>>> Add logos
           ],
           "title": "Query"
         }
@@ -10555,52 +9481,6 @@
       "properties": {
         "label": {
           "type": "string",
-<<<<<<< HEAD
-          "title": "Icon"
-        },
-        "link": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Link"
-        }
-      },
-      "required": [],
-      "title": "Shortcut"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut"
-      },
-      "title": "Shortcut[]"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "shortcuts": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]",
-          "title": "Shortcuts"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "tooltip": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Tooltip"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Miscellaneous/Shortcuts.tsx@Props"
-=======
           "title": "Label"
         },
         "href": {
@@ -10747,7 +9627,6 @@
         "label"
       ],
       "title": "Highlight"
->>>>>>> Add logos
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]": {
       "type": "array",
@@ -10763,112 +9642,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]",
           "title": "Highlights"
         },
-<<<<<<< HEAD
-        "helpText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "html",
-          "title": "Help Text"
-        }
-      },
-      "required": [],
-      "title": "Form"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Props": {
-      "type": "object",
-      "properties": {
-=======
->>>>>>> Add logos
         "title": {
           "type": "string",
           "title": "Title"
-<<<<<<< HEAD
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "textarea",
-          "title": "Description"
-        },
-        "form": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form",
-          "title": "Form"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "headerFontSize": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Large"
-                },
-                {
-                  "type": "string",
-                  "const": "Normal"
-                }
-              ],
-              "type": "string",
-              "title": "Header Font Size"
-            },
-            "content": {
-              "type": "object",
-              "properties": {
-                "border": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Border"
-                },
-                "alignment": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Center"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Left"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Side to side"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Alignment"
-                },
-                "bgColor": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Normal"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Reverse"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Bg Color"
-                }
-              },
-              "required": [],
-              "title": "Content"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Newsletter/Newsletter.tsx@Props"
-=======
         }
       },
       "required": [
@@ -10925,7 +9701,6 @@
         "alt"
       ],
       "title": "deco-sites/fashion/components/ui/ImageGallery.tsx@Props"
->>>>>>> Add logos
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner": {
       "type": "object",
@@ -10956,76 +9731,12 @@
       ],
       "title": "Banner"
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3QvTWVhc3VyZW1lbnQudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "buttonText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Button Text"
-        },
-        "rows": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "Separate column's values by comma",
-          "title": "Rows"
-        }
-      },
-      "required": [
-        "rows"
-      ],
-      "title": "deco-sites/fashion/sections/Product/Measurement.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0R2FsbGVyeS50c3g=@Columns": {
-=======
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn": {
->>>>>>> Add logos
-      "type": "object",
-      "properties": {
-        "bannerTop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner",
-          "title": "Banner Top"
-        },
-        "bannerBottom": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner",
-          "title": "Banner Bottom"
-        }
-      },
-      "required": [
-        "bannerTop",
-        "bannerBottom"
-      ],
-      "title": "DivColumn"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn[]": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner"
       },
-      "title": "DivColumn[]"
+      "title": "Banner[]"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Props": {
       "type": "object",
@@ -11044,98 +9755,98 @@
           ],
           "title": "Description"
         },
-        "divColumn": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@DivColumn[]",
-          "maxItems": 2,
-          "title": "Div Column"
-        },
-        "borderRadius": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Mobile"
-            },
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": "Border Radius",
-          "description": "Aplique borda a sua imagem"
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlR2FsbGVyeS9JbWFnZUdhbGxlcnkudHN4@Banner[]",
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Banners"
         },
         "layout": {
           "type": "object",
           "properties": {
+            "borderRadius": {
+              "type": "object",
+              "properties": {
+                "mobile": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "none"
+                    },
+                    {
+                      "type": "string",
+                      "const": "sm"
+                    },
+                    {
+                      "type": "string",
+                      "const": "md"
+                    },
+                    {
+                      "type": "string",
+                      "const": "lg"
+                    },
+                    {
+                      "type": "string",
+                      "const": "xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "2xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "3xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "full"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Mobile"
+                },
+                "desktop": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "none"
+                    },
+                    {
+                      "type": "string",
+                      "const": "sm"
+                    },
+                    {
+                      "type": "string",
+                      "const": "md"
+                    },
+                    {
+                      "type": "string",
+                      "const": "lg"
+                    },
+                    {
+                      "type": "string",
+                      "const": "xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "2xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "3xl"
+                    },
+                    {
+                      "type": "string",
+                      "const": "full"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Desktop"
+                }
+              },
+              "required": [],
+              "title": "Border Radius"
+            },
             "headerAlignment": {
               "anyOf": [
                 {
@@ -11154,11 +9865,11 @@
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "Asymmetric"
+                  "const": "asymmetric"
                 },
                 {
                   "type": "string",
-                  "const": "Symmetrical"
+                  "const": "symmetrical"
                 }
               ],
               "type": "string",
@@ -11168,11 +9879,11 @@
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "Asymmetric"
+                  "const": "asymmetric"
                 },
                 {
                   "type": "string",
-                  "const": "Symmetrical"
+                  "const": "symmetrical"
                 }
               ],
               "type": "string",
@@ -11183,15 +9894,9 @@
           "title": "Layout"
         }
       },
-      "required": [
-        "divColumn",
-        "borderRadius"
-      ],
+      "required": [],
       "title": "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx@Props"
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGZ2Mi50c3g=@Props": {
-=======
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0luc3RhZ3JhbUNvbXBvbmVudC50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -11231,7 +9936,6 @@
       "title": "HTML"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ2FtcGFpZ25UaW1lci50c3g=@Props": {
->>>>>>> Add logos
       "type": "object",
       "properties": {
         "text": {
@@ -11244,16 +9948,10 @@
             "string",
             "null"
           ],
-<<<<<<< HEAD
-          "title": "Description"
-        },
-        "layout": {
-=======
           "title": "Expires at date",
           "format": "datetime"
         },
         "labels": {
->>>>>>> Add logos
           "type": "object",
           "properties": {
             "expired": {
@@ -11331,36 +10029,7 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx@Props"
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
-          "title": "Products"
-        },
-        "itemsPerPage": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Items Per Page"
-        }
-      },
-      "required": [
-        "title",
-        "products"
-      ],
-      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4@Shortcut": {
-=======
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut": {
->>>>>>> Add logos
       "type": "object",
       "properties": {
         "label": {
@@ -11531,29 +10200,33 @@
       "required": [],
       "title": "Shortcut"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut"
+      },
+      "title": "Shortcut[]"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "shortcuts": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut"
-          },
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]",
           "title": "Shortcuts"
         },
-        "onHover": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Show label"
-            },
-            {
-              "type": "string",
-              "const": "Show tooltip"
+        "layout": {
+          "type": "object",
+          "properties": {
+            "tooltip": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Tooltip"
             }
-          ],
-          "type": "string",
-          "title": "On Hover"
+          },
+          "required": [],
+          "title": "Layout"
         }
       },
       "required": [],
@@ -11595,7 +10268,7 @@
             "string",
             "null"
           ],
-          "format": "textarea",
+          "format": "html",
           "title": "Help Text"
         }
       },
@@ -11706,21 +10379,6 @@
           "anyOf": [
             {
               "type": "string",
-<<<<<<< HEAD
-              "const": "Show label"
-            },
-            {
-              "type": "string",
-              "const": "Show tooltip"
-            }
-          ],
-          "type": "string",
-          "title": "On Hover"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx@Props"
-=======
               "const": "front-back"
             },
             {
@@ -11763,6 +10421,13 @@
           ],
           "title": "Description"
         },
+        "buttonText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Text"
+        },
         "rows": {
           "type": "array",
           "items": {
@@ -11770,13 +10435,6 @@
           },
           "description": "Separate column's values by comma",
           "title": "Rows"
-        },
-        "buttonText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Button Text"
         }
       },
       "required": [
@@ -11859,13 +10517,6 @@
             "null"
           ],
           "title": "Description"
-        },
-        "itemsPerPage": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Items Per Page"
         },
         "layout": {
           "type": "object",
@@ -12116,7 +10767,205 @@
         "products"
       ],
       "title": "deco-sites/fashion/components/product/ProductShelf.tsx@Props"
->>>>>>> Add logos
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4@Shortcut": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "ArrowsPointingOut"
+            },
+            {
+              "type": "string",
+              "const": "Bars3"
+            },
+            {
+              "type": "string",
+              "const": "ChevronLeft"
+            },
+            {
+              "type": "string",
+              "const": "ChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "ChevronUp"
+            },
+            {
+              "type": "string",
+              "const": "ChevronDown"
+            },
+            {
+              "type": "string",
+              "const": "CreditCard"
+            },
+            {
+              "type": "string",
+              "const": "Deco"
+            },
+            {
+              "type": "string",
+              "const": "Discord"
+            },
+            {
+              "type": "string",
+              "const": "Discount"
+            },
+            {
+              "type": "string",
+              "const": "Elo"
+            },
+            {
+              "type": "string",
+              "const": "Facebook"
+            },
+            {
+              "type": "string",
+              "const": "FilterList"
+            },
+            {
+              "type": "string",
+              "const": "Heart"
+            },
+            {
+              "type": "string",
+              "const": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Logo"
+            },
+            {
+              "type": "string",
+              "const": "Minus"
+            },
+            {
+              "type": "string",
+              "const": "MapPin"
+            },
+            {
+              "type": "string",
+              "const": "MagnifyingGlass"
+            },
+            {
+              "type": "string",
+              "const": "Mastercard"
+            },
+            {
+              "type": "string",
+              "const": "Message"
+            },
+            {
+              "type": "string",
+              "const": "Phone"
+            },
+            {
+              "type": "string",
+              "const": "Pix"
+            },
+            {
+              "type": "string",
+              "const": "Plus"
+            },
+            {
+              "type": "string",
+              "const": "QuestionMarkCircle"
+            },
+            {
+              "type": "string",
+              "const": "Return"
+            },
+            {
+              "type": "string",
+              "const": "Ruler"
+            },
+            {
+              "type": "string",
+              "const": "ShoppingCart"
+            },
+            {
+              "type": "string",
+              "const": "Star"
+            },
+            {
+              "type": "string",
+              "const": "Tiktok"
+            },
+            {
+              "type": "string",
+              "const": "Trash"
+            },
+            {
+              "type": "string",
+              "const": "Truck"
+            },
+            {
+              "type": "string",
+              "const": "User"
+            },
+            {
+              "type": "string",
+              "const": "Visa"
+            },
+            {
+              "type": "string",
+              "const": "WhatsApp"
+            },
+            {
+              "type": "string",
+              "const": "XMark"
+            }
+          ],
+          "type": "string",
+          "title": "Icon"
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Link"
+        }
+      },
+      "required": [],
+      "title": "Shortcut"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "shortcuts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4@Shortcut"
+          },
+          "title": "Shortcuts"
+        },
+        "onHover": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Show label"
+            },
+            {
+              "type": "string",
+              "const": "Show tooltip"
+            }
+          ],
+          "type": "string",
+          "title": "On Hover"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
@@ -14754,7 +13603,6 @@
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA==": {
       "title": "deco-sites/fashion/sections/Carousel.tsx",
-<<<<<<< HEAD
       "type": "object",
       "allOf": [
         {
@@ -14780,12 +13628,6 @@
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props"
-=======
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Props"
->>>>>>> Add logos
         }
       ],
       "required": [
@@ -14795,7 +13637,6 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
             "deco-sites/fashion/sections/Content/Benefits.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/Benefits.tsx"
@@ -14808,20 +13649,6 @@
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA==@Props"
-=======
-            "deco-sites/fashion/sections/Carousel.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Carousel.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4": {
-      "title": "deco-sites/fashion/sections/Content/Benefits.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props"
->>>>>>> Add logos
         }
       ],
       "required": [
@@ -14831,7 +13658,6 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
             "deco-sites/fashion/sections/Content/CategoryList.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/CategoryList.tsx"
@@ -14844,20 +13670,6 @@
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Props"
-=======
-            "deco-sites/fashion/sections/Content/Benefits.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/Benefits.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA==": {
-      "title": "deco-sites/fashion/sections/Content/CategoryList.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA==@Props"
->>>>>>> Add logos
         }
       ],
       "required": [
@@ -14867,7 +13679,6 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
             "deco-sites/fashion/sections/Content/Faq.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/Faq.tsx"
@@ -14880,20 +13691,6 @@
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Props"
-=======
-            "deco-sites/fashion/sections/Content/CategoryList.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/CategoryList.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==": {
-      "title": "deco-sites/fashion/sections/Content/Faq.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@FAQProps"
->>>>>>> Add logos
         }
       ],
       "required": [
@@ -14903,50 +13700,6 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
-            "deco-sites/fashion/sections/Content/LinkTree.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/LinkTree.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==": {
-      "title": "deco-sites/fashion/sections/Content/Testimonials.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Props"
-=======
-            "deco-sites/fashion/sections/Content/Faq.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/Faq.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTGlua1RyZWUudHN4": {
-      "title": "deco-sites/fashion/sections/Content/LinkTree.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Props"
->>>>>>> Add logos
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-<<<<<<< HEAD
-            "deco-sites/fashion/sections/Content/Testimonials.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/Testimonials.tsx"
-        }
-      }
-    },
-=======
             "deco-sites/fashion/sections/Content/LinkTree.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/LinkTree.tsx"
@@ -14995,7 +13748,6 @@
         }
       }
     },
->>>>>>> Add logos
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZUNvbnNlbnQudHN4": {
       "title": "deco-sites/fashion/sections/CookieConsent.tsx",
       "type": "object",
@@ -15542,7 +14294,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4": {
       "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx",
       "type": "object",
@@ -15564,8 +14315,6 @@
         }
       }
     },
-=======
->>>>>>> Add logos
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA==": {
       "title": "deco-sites/fashion/sections/WhatsApp.tsx",
       "type": "object",
@@ -16798,13 +15547,6 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA=="
-<<<<<<< HEAD
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTGlua1RyZWUudHN4"
-        },
-        {
-=======
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTGlua1RyZWUudHN4"
@@ -16813,7 +15555,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4"
         },
         {
->>>>>>> Add logos
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA=="
         },
         {
@@ -16895,12 +15636,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
         },
         {
-<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4"
         },
         {
-=======
->>>>>>> Add logos
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
         },
         {
