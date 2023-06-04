@@ -29,12 +29,12 @@ import * as $$$$$$$$5 from "./sections/Footers/Footer.tsx";
 import * as $$$$$$$$6 from "./sections/BannerGrid.tsx";
 import * as $$$$$$$$7 from "./sections/SearchResult.tsx";
 import * as $$$$$$$$8 from "./sections/Content/CategoryList.tsx";
-import * as $$$$$$$$9 from "./sections/Content/LinkTree.tsx";
-import * as $$$$$$$$10 from "./sections/Content/Testimonials.tsx";
-import * as $$$$$$$$11 from "./sections/Content/Logos.tsx";
-import * as $$$$$$$$12 from "./sections/Content/Faq.tsx";
-import * as $$$$$$$$13 from "./sections/Content/Benefits.tsx";
-import * as $$$$$$$$14 from "./sections/InstagramComponent.tsx";
+import * as $$$$$$$$9 from "./sections/Content/Instagram.tsx";
+import * as $$$$$$$$10 from "./sections/Content/LinkTree.tsx";
+import * as $$$$$$$$11 from "./sections/Content/Testimonials.tsx";
+import * as $$$$$$$$12 from "./sections/Content/Logos.tsx";
+import * as $$$$$$$$13 from "./sections/Content/Faq.tsx";
+import * as $$$$$$$$14 from "./sections/Content/Benefits.tsx";
 import * as $$$$$$$$15 from "./sections/Product/WishlistGallery.tsx";
 import * as $$$$$$$$16 from "./sections/Product/Details.tsx";
 import * as $$$$$$$$17 from "./sections/Product/SearchResult.tsx";
@@ -217,12 +217,13 @@ const manifest = {
     "deco-sites/fashion/sections/Banners/InteractiveBanner.tsx": $$$$$$$$27,
     "deco-sites/fashion/sections/Banners/PLP.tsx": $$$$$$$$26,
     "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$41,
-    "deco-sites/fashion/sections/Content/Benefits.tsx": $$$$$$$$13,
+    "deco-sites/fashion/sections/Content/Benefits.tsx": $$$$$$$$14,
     "deco-sites/fashion/sections/Content/CategoryList.tsx": $$$$$$$$8,
-    "deco-sites/fashion/sections/Content/Faq.tsx": $$$$$$$$12,
-    "deco-sites/fashion/sections/Content/LinkTree.tsx": $$$$$$$$9,
-    "deco-sites/fashion/sections/Content/Logos.tsx": $$$$$$$$11,
-    "deco-sites/fashion/sections/Content/Testimonials.tsx": $$$$$$$$10,
+    "deco-sites/fashion/sections/Content/Faq.tsx": $$$$$$$$13,
+    "deco-sites/fashion/sections/Content/Instagram.tsx": $$$$$$$$9,
+    "deco-sites/fashion/sections/Content/LinkTree.tsx": $$$$$$$$10,
+    "deco-sites/fashion/sections/Content/Logos.tsx": $$$$$$$$12,
+    "deco-sites/fashion/sections/Content/Testimonials.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/CookieConsent.tsx": $$$$$$$$30,
     "deco-sites/fashion/sections/DesignSystem.tsx": $$$$$$$$31,
     "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx": $$$$$$$$1,
@@ -234,7 +235,6 @@ const manifest = {
     "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$39,
     "deco-sites/fashion/sections/ImageGallery.tsx": $$$$$$$$33,
     "deco-sites/fashion/sections/ImageGallery/ImageGallery.tsx": $$$$$$$$36,
-    "deco-sites/fashion/sections/InstagramComponent.tsx": $$$$$$$$14,
     "deco-sites/fashion/sections/LinkTree.tsx": $$$$$$$$2,
     "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$$$20,
     "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx": $$$$$$$$21,
