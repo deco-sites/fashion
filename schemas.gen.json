@@ -96,10 +96,7 @@
               "deco-sites/fashion/sections/Content/CategoryList.tsx",
               "deco-sites/fashion/sections/Content/Faq.tsx",
               "deco-sites/fashion/sections/Content/LinkTree.tsx",
-<<<<<<< HEAD
               "deco-sites/fashion/sections/Content/Logos.tsx",
-=======
->>>>>>> Improve interactive banner
               "deco-sites/fashion/sections/Content/Testimonials.tsx",
               "deco-sites/fashion/sections/CookieConsent.tsx",
               "deco-sites/fashion/sections/DesignSystem.tsx",
@@ -127,10 +124,7 @@
               "deco-sites/fashion/sections/ProductDetails.tsx",
               "deco-sites/fashion/sections/ProductShelf.tsx",
               "deco-sites/fashion/sections/SearchResult.tsx",
-<<<<<<< HEAD
               "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx",
-=======
->>>>>>> Improve interactive banner
               "deco-sites/fashion/sections/WhatsApp.tsx",
               "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
@@ -7787,8 +7781,6 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/BannerCarousel.tsx@Props"
     },
-<<<<<<< HEAD
-=======
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvSW50ZXJhY3RpdmVCYW5uZXIudHN4@Pin": {
       "type": "object",
       "properties": {
@@ -7896,7 +7888,6 @@
       ],
       "title": "deco-sites/fashion/sections/Banners/InteractiveBanner.tsx@Props"
     },
->>>>>>> Improve interactive banner
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props": {
       "type": "object",
       "properties": {
@@ -8278,11 +8269,7 @@
         },
         "answer": {
           "type": "string",
-<<<<<<< HEAD
           "format": "html",
-=======
-          "format": "textarea",
->>>>>>> Improve interactive banner
           "title": "Answer"
         }
       },
@@ -8292,7 +8279,6 @@
       ],
       "title": "Question"
     },
-<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question[]": {
       "type": "array",
       "items": {
@@ -8300,8 +8286,6 @@
       },
       "title": "Question[]"
     },
-=======
->>>>>>> Improve interactive banner
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Contact": {
       "type": "object",
       "properties": {
@@ -8313,7 +8297,6 @@
           "title": "Title"
         },
         "description": {
-<<<<<<< HEAD
           "type": [
             "string",
             "null"
@@ -8585,13 +8568,10 @@
       "type": "object",
       "properties": {
         "text": {
-=======
->>>>>>> Improve interactive banner
           "type": [
             "string",
             "null"
           ],
-<<<<<<< HEAD
           "title": "Text"
         },
         "image": {
@@ -8677,12 +8657,6 @@
           "title": "Testimonials"
         },
         "layout": {
-=======
-          "format": "textarea",
-          "title": "Description"
-        },
-        "button": {
->>>>>>> Improve interactive banner
           "type": "object",
           "properties": {
             "variation": {
@@ -8729,7 +8703,6 @@
             "string",
             "null"
           ],
-<<<<<<< HEAD
           "format": "html",
           "title": "Text"
         },
@@ -8746,351 +8719,6 @@
                 "null"
               ],
               "title": "Cancel Text"
-            }
-          },
-          "required": [
-            "allowText"
-=======
-          "title": "Button"
-        }
-      },
-      "required": [],
-      "title": "Contact"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@FAQProps": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
->>>>>>> Improve interactive banner
-          ],
-          "title": "Description"
-        },
-        "questions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question"
-          },
-          "title": "Questions"
-        },
-        "contact": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Contact",
-          "title": "Contact"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "variation": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Compact"
-                },
-                {
-                  "type": "string",
-                  "const": "Full"
-                },
-                {
-                  "type": "string",
-                  "const": "Side to side"
-                }
-              ],
-              "type": "string",
-              "title": "Variation"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Content/Faq.tsx@FAQProps"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "title": "Label"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        }
-      },
-      "required": [
-        "label",
-        "href"
-      ],
-      "title": "Link"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link"
-      },
-      "title": "Link[]"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Instagram"
-            },
-            {
-              "type": "string",
-              "const": "Facebook"
-            }
-          ],
-          "type": "string",
-          "title": "Label"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        }
-      },
-      "required": [
-        "label",
-        "href"
-      ],
-      "title": "Social"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social"
-      },
-      "title": "Social[]"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "links": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]",
-          "title": "Links"
-        },
-        "bgImage": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Bg Image"
-        },
-        "avatar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Avatar"
-        },
-        "social": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social[]",
-          "title": "Social"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/components/ui/LinkTree.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "testimonials": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "text": {
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "Text"
-              },
-              "image": {
-                "type": "object",
-                "properties": {
-                  "src": {
-                    "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                    "title": "Src"
-                  },
-                  "alt": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Alt"
-                  }
-                },
-                "required": [],
-                "title": "Image"
-              },
-              "user": {
-                "type": "object",
-                "properties": {
-                  "avatar": {
-                    "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-                    "title": "Avatar"
-                  },
-                  "name": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Name"
-                  },
-                  "position": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Position"
-                  },
-                  "company": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "Company"
-                  }
-                },
-                "required": [],
-                "title": "User"
-              }
-            },
-            "required": []
-          },
-          "title": "Testimonials"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "variation": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Grid"
-                },
-                {
-                  "type": "string",
-                  "const": "Slider"
-                }
-              ],
-              "type": "string",
-              "title": "Variation"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Content/Testimonials.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "text": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "textarea",
-          "title": "Text"
-        },
-        "policy": {
-          "type": "object",
-          "properties": {
-            "text": {
-              "type": "string",
-              "title": "Text"
-            },
-            "link": {
-              "type": "string",
-              "title": "Link"
-            }
-          },
-          "required": [
-            "text",
-            "link"
-          ],
-          "title": "Policy"
-        },
-        "buttons": {
-          "type": "object",
-          "properties": {
-            "allowText": {
-              "type": "string",
-              "title": "Allow Text"
             }
           },
           "required": [
@@ -10414,7 +10042,6 @@
       "type": "string",
       "format": "html",
       "title": "HTML"
-<<<<<<< HEAD
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ2FtcGFpZ25UaW1lci50c3g=@Props": {
       "type": "object",
@@ -10514,270 +10141,10 @@
       "type": "object",
       "properties": {
         "label": {
-=======
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ2FtcGFpZ25UaW1lci50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "text": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
-          "title": "Text",
-          "default": "Time left for a campaign to end wth a link"
-        },
-        "expiresAt": {
->>>>>>> Improve interactive banner
           "type": [
             "string",
             "null"
           ],
-<<<<<<< HEAD
-          "title": "Label"
-        },
-        "icon": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "ArrowsPointingOut"
-            },
-            {
-              "type": "string",
-              "const": "Bars3"
-            },
-            {
-              "type": "string",
-              "const": "ChevronLeft"
-            },
-            {
-              "type": "string",
-              "const": "ChevronRight"
-            },
-            {
-              "type": "string",
-              "const": "ChevronUp"
-            },
-            {
-              "type": "string",
-              "const": "ChevronDown"
-            },
-            {
-              "type": "string",
-              "const": "CreditCard"
-            },
-            {
-              "type": "string",
-              "const": "Deco"
-            },
-            {
-              "type": "string",
-              "const": "Discord"
-            },
-            {
-              "type": "string",
-              "const": "Discount"
-            },
-            {
-              "type": "string",
-              "const": "Elo"
-            },
-            {
-              "type": "string",
-              "const": "Facebook"
-            },
-            {
-              "type": "string",
-              "const": "FilterList"
-            },
-            {
-              "type": "string",
-              "const": "Heart"
-            },
-            {
-              "type": "string",
-              "const": "Instagram"
-            },
-            {
-              "type": "string",
-              "const": "Logo"
-            },
-            {
-              "type": "string",
-              "const": "Minus"
-            },
-            {
-              "type": "string",
-              "const": "MapPin"
-            },
-            {
-              "type": "string",
-              "const": "MagnifyingGlass"
-            },
-            {
-              "type": "string",
-              "const": "Mastercard"
-=======
-          "title": "Expires at date",
-          "format": "datetime"
-        },
-        "labels": {
-          "type": "object",
-          "properties": {
-            "expired": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Expired"
-            },
-            "hours": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Hours"
-            },
-            "minutes": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Minutes"
-            },
-            "seconds": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Seconds"
-            }
-          },
-          "required": [],
-          "title": "Labels"
-        },
-        "link": {
-          "type": "object",
-          "properties": {
-            "text": {
-              "type": "string",
-              "title": "Text"
->>>>>>> Improve interactive banner
-            },
-            "href": {
-              "type": "string",
-<<<<<<< HEAD
-              "const": "Message"
-            },
-            {
-              "type": "string",
-              "const": "Phone"
-            },
-            {
-              "type": "string",
-              "const": "Pix"
-            },
-            {
-              "type": "string",
-              "const": "Plus"
-            },
-            {
-              "type": "string",
-              "const": "QuestionMarkCircle"
-            },
-            {
-              "type": "string",
-              "const": "Return"
-            },
-            {
-              "type": "string",
-              "const": "Ruler"
-            },
-            {
-              "type": "string",
-              "const": "ShoppingCart"
-            },
-            {
-              "type": "string",
-              "const": "Star"
-            },
-            {
-              "type": "string",
-              "const": "Tiktok"
-            },
-            {
-              "type": "string",
-              "const": "Trash"
-            },
-            {
-              "type": "string",
-              "const": "Truck"
-            },
-            {
-              "type": "string",
-              "const": "User"
-            },
-            {
-              "type": "string",
-              "const": "Visa"
-            },
-            {
-              "type": "string",
-              "const": "WhatsApp"
-            },
-            {
-              "type": "string",
-              "const": "XMark"
-=======
-              "title": "Href"
->>>>>>> Improve interactive banner
-            }
-          },
-          "required": [
-            "text",
-            "href"
-          ],
-<<<<<<< HEAD
-          "type": "string",
-          "title": "Icon"
-        },
-        "link": {
-=======
-          "title": "Link"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "textPosition": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Before counter"
-                },
-                {
-                  "type": "string",
-                  "const": "After counter"
-                }
-              ],
-              "type": "string",
-              "title": "Text Position"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut": {
-      "type": "object",
-      "properties": {
-        "label": {
->>>>>>> Improve interactive banner
-          "type": [
-            "string",
-            "null"
-          ],
-<<<<<<< HEAD
-=======
           "title": "Label"
         },
         "icon": {
@@ -10935,13 +10302,11 @@
             "string",
             "null"
           ],
->>>>>>> Improve interactive banner
           "title": "Link"
         }
       },
       "required": [],
       "title": "Shortcut"
-<<<<<<< HEAD
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]": {
       "type": "array",
@@ -10949,14 +10314,11 @@
         "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut"
       },
       "title": "Shortcut[]"
-=======
->>>>>>> Improve interactive banner
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "shortcuts": {
-<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut[]",
           "title": "Shortcuts"
         },
@@ -10973,27 +10335,6 @@
           },
           "required": [],
           "title": "Layout"
-=======
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut"
-          },
-          "title": "Shortcuts"
-        },
-        "onHover": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "Show label"
-            },
-            {
-              "type": "string",
-              "const": "Show tooltip"
-            }
-          ],
-          "type": "string",
-          "title": "On Hover"
->>>>>>> Improve interactive banner
         }
       },
       "required": [],
@@ -11141,8 +10482,6 @@
         "page": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
           "title": "Page"
-<<<<<<< HEAD
-=======
         },
         "variant": {
           "anyOf": [
@@ -11190,52 +10529,6 @@
           ],
           "title": "Description"
         },
-        "rows": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "Separate column's values by comma",
-          "title": "Rows"
->>>>>>> Improve interactive banner
-        },
-        "buttonText": {
-          "type": [
-            "string",
-            "null"
-          ],
-<<<<<<< HEAD
-          "type": "string",
-          "title": "Product view",
-          "description": "Ask for the developer to remove this option since this is here to help development only and should not be used in production"
-        }
-      },
-      "required": [
-        "page"
-      ],
-      "title": "deco-sites/fashion/components/product/ProductDetails.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3QvTWVhc3VyZW1lbnQudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Image"
-        },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
         "buttonText": {
           "type": [
             "string",
@@ -11250,9 +10543,6 @@
           },
           "description": "Separate column's values by comma",
           "title": "Rows"
-=======
-          "title": "Button Text"
->>>>>>> Improve interactive banner
         }
       },
       "required": [
@@ -11562,7 +10852,6 @@
       "title": "deco-sites/fashion/components/product/ProductShelfv2.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props": {
-<<<<<<< HEAD
       "type": "object",
       "properties": {
         "title": {
@@ -11588,15 +10877,15 @@
       "title": "deco-sites/fashion/components/product/ProductShelf.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4@Shortcut": {
-=======
->>>>>>> Improve interactive banner
       "type": "object",
       "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
         },
-<<<<<<< HEAD
         "icon": {
           "anyOf": [
             {
@@ -11785,25 +11074,6 @@
       },
       "required": [],
       "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx@Props"
-=======
-        "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
-          "title": "Products"
-        },
-        "itemsPerPage": {
-          "type": [
-            "number",
-            "null"
-          ],
-          "title": "Items Per Page"
-        }
-      },
-      "required": [
-        "title",
-        "products"
-      ],
-      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@Props"
->>>>>>> Improve interactive banner
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
@@ -14439,21 +13709,12 @@
         }
       }
     },
-<<<<<<< HEAD
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA==": {
-      "title": "deco-sites/fashion/sections/Carousel.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Props"
-=======
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvUExQLnRzeA==": {
       "title": "deco-sites/fashion/sections/Banners/PLP.tsx",
       "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Props"
->>>>>>> Improve interactive banner
         }
       ],
       "required": [
@@ -14463,15 +13724,30 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
-            "deco-sites/fashion/sections/Carousel.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Carousel.tsx"
-=======
             "deco-sites/fashion/sections/Banners/PLP.tsx"
           ],
           "default": "deco-sites/fashion/sections/Banners/PLP.tsx"
->>>>>>> Improve interactive banner
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA==": {
+      "title": "deco-sites/fashion/sections/Carousel.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Carousel.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Carousel.tsx"
         }
       }
     },
@@ -14496,21 +13772,12 @@
         }
       }
     },
-<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA==": {
       "title": "deco-sites/fashion/sections/Content/CategoryList.tsx",
       "type": "object",
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA==@Props"
-=======
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4": {
-      "title": "deco-sites/fashion/sections/Content/Benefits.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props"
->>>>>>> Improve interactive banner
         }
       ],
       "required": [
@@ -14520,7 +13787,6 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
             "deco-sites/fashion/sections/Content/CategoryList.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/CategoryList.tsx"
@@ -14533,20 +13799,6 @@
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Props"
-=======
-            "deco-sites/fashion/sections/Content/Benefits.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/Benefits.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA==": {
-      "title": "deco-sites/fashion/sections/Content/CategoryList.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA==@Props"
->>>>>>> Improve interactive banner
         }
       ],
       "required": [
@@ -14556,7 +13808,6 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
             "deco-sites/fashion/sections/Content/Faq.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/Faq.tsx"
@@ -14569,20 +13820,6 @@
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Props"
-=======
-            "deco-sites/fashion/sections/Content/CategoryList.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/CategoryList.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==": {
-      "title": "deco-sites/fashion/sections/Content/Faq.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@FAQProps"
->>>>>>> Improve interactive banner
         }
       ],
       "required": [
@@ -14592,7 +13829,6 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
             "deco-sites/fashion/sections/Content/LinkTree.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/LinkTree.tsx"
@@ -14605,20 +13841,6 @@
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Props"
-=======
-            "deco-sites/fashion/sections/Content/Faq.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/Faq.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTGlua1RyZWUudHN4": {
-      "title": "deco-sites/fashion/sections/Content/LinkTree.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Props"
->>>>>>> Improve interactive banner
         }
       ],
       "required": [
@@ -14628,15 +13850,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-<<<<<<< HEAD
             "deco-sites/fashion/sections/Content/Logos.tsx"
           ],
           "default": "deco-sites/fashion/sections/Content/Logos.tsx"
-=======
-            "deco-sites/fashion/sections/Content/LinkTree.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Content/LinkTree.tsx"
->>>>>>> Improve interactive banner
         }
       }
     },
@@ -15207,7 +14423,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4": {
       "title": "deco-sites/fashion/sections/Shortcuts/Shortcuts.tsx",
       "type": "object",
@@ -15229,8 +14444,6 @@
         }
       }
     },
-=======
->>>>>>> Improve interactive banner
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA==": {
       "title": "deco-sites/fashion/sections/WhatsApp.tsx",
       "type": "object",
@@ -16453,11 +15666,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvSW50ZXJhY3RpdmVCYW5uZXIudHN4"
         },
         {
-<<<<<<< HEAD
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
-=======
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvUExQLnRzeA=="
->>>>>>> Improve interactive banner
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4"
@@ -16472,20 +15684,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTGlua1RyZWUudHN4"
         },
         {
-<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4"
-=======
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQ2F0ZWdvcnlMaXN0LnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTGlua1RyZWUudHN4"
->>>>>>> Improve interactive banner
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA=="
@@ -16569,12 +15768,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
         },
         {
-<<<<<<< HEAD
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Nob3J0Y3V0cy9TaG9ydGN1dHMudHN4"
         },
         {
-=======
->>>>>>> Improve interactive banner
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
         },
         {
