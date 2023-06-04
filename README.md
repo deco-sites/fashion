@@ -221,3 +221,4 @@ Check performance best practices on
 <a href="https://github.com/deco-sites/fashion/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=deco-sites/fashion" />
 </a>
+
