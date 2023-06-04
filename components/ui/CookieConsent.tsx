@@ -25,16 +25,11 @@ window.addEventListener('scroll', callback, { once: true });
 `;
 
 export interface Props {
-  title?: string;
-  /** @format textarea */
+  /** @format html */
   text?: string;
-  policy?: {
-    text: string;
-    link: string;
-  };
   buttons?: {
     allowText: string;
-    /**    denyText?: string; */
+    cancelText?: string;
   };
   layout?: {
     position?: "Expanded" | "Left" | "Center" | "Right";
@@ -42,8 +37,27 @@ export interface Props {
   };
 }
 
-function CookieConsent({ title, text, policy, buttons, layout }: Props) {
+const DEFAULT_PROPS = {
+  title: "Cookies",
+  text:
+    "Guardamos estatísticas de visitas para melhorar sua experiência de navegação.",
+  policy: {
+    text: "Saiba mais sobre sobre política de privacidade",
+    link: "/politica-de-privacidade",
+  },
+  buttons: {
+    allowText: "Aceitar",
+    cancelText: "Fechar",
+  },
+  layout: {
+    position: "Expanded",
+    content: "Tiled",
+  },
+};
+
+function CookieConsent(props: Props) {
   const id = `cookie-consent-${useId()}`;
+  const { text, buttons, layout } = { ...DEFAULT_PROPS, ...props };
 
   return (
     <>
@@ -84,12 +98,7 @@ function CookieConsent({ title, text, policy, buttons, layout }: Props) {
               !layout?.content || layout?.content === "Tiled" ? "lg:gap-2" : ""
             }`}
           >
-            <h3 class="text-xl">{title}</h3>
-            <div class="text-base">{text}</div>
-
-            <a href={policy.link} class="text-sm link link-secondary">
-              {policy.text}
-            </a>
+            {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
           </div>
 
           <div
@@ -103,11 +112,10 @@ function CookieConsent({ title, text, policy, buttons, layout }: Props) {
               {buttons.allowText}
             </button>
             <button
-              class="btn"
               data-button-cc-close
-              class="btn btn-outline hidden"
+              class="btn btn-outline"
             >
-              {buttons.denyText}
+              {buttons.cancelText}
             </button>
           </div>
         </div>
@@ -116,23 +124,5 @@ function CookieConsent({ title, text, policy, buttons, layout }: Props) {
     </>
   );
 }
-
-CookieConsent.defaultProps = {
-  title: "Cookies",
-  text:
-    "Guardamos estatísticas de visitas para melhorar sua experiência de navegação.",
-  policy: {
-    text: "Saiba mais sobre sobre política de privacidade",
-    link: "/politica-de-privacidade",
-  },
-  buttons: {
-    allowText: "Aceitar",
-    denyText: "",
-  },
-  layout: {
-    position: "Expanded",
-    content: "Tiled",
-  },
-};
 
 export default CookieConsent;

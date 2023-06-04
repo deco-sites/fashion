@@ -9876,6 +9876,84 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "html",
+          "title": "Text"
+        },
+        "buttons": {
+          "type": "object",
+          "properties": {
+            "allowText": {
+              "type": "string",
+              "title": "Allow Text"
+            },
+            "cancelText": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Cancel Text"
+            }
+          },
+          "required": [
+            "allowText"
+          ],
+          "title": "Buttons"
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Expanded"
+                },
+                {
+                  "type": "string",
+                  "const": "Left"
+                },
+                {
+                  "type": "string",
+                  "const": "Center"
+                },
+                {
+                  "type": "string",
+                  "const": "Right"
+                }
+              ],
+              "type": "string",
+              "title": "Position"
+            },
+            "content": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Tiled"
+                },
+                {
+                  "type": "string",
+                  "const": "Piled up"
+                }
+              ],
+              "type": "string",
+              "title": "Content"
+            }
+          },
+          "required": [],
+          "title": "Layout"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/components/ui/CookieConsent.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvU2hvcnRjdXRzLnRzeA==@Shortcut": {
       "type": "object",
       "properties": {
@@ -13674,6 +13752,11 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ29va2llQ29uc2VudC50c3g=": {
       "title": "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
