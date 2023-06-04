@@ -69,7 +69,7 @@ function Question({ question, answer }: Question) {
 
 function Contact({ title, description, link }: Contact) {
   return (
-    <div class="flex flex-col gap-6 items-center">
+    <div class="flex flex-col gap-6 items-center text-center">
       <div class="flex flex-col gap-2">
         {title && <h2 class="text-xl lg:text-3xl">{title}</h2>}
         {description && (
