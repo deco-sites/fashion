@@ -32,7 +32,7 @@ export interface Props {
    * @maxItems 4
    * @minItems 4
    */
-  banners?: Banner[];
+  banners?: ImageGallery[];
   layout?: {
     /**
      * @description Aplique borda a sua imagem
