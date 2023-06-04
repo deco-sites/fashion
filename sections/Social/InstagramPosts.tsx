@@ -10,6 +10,13 @@ export interface layout {
   postsPerLine?: number;
 }
 
+export interface Data {
+  id: string;
+  permalink: string;
+  media_type: string;
+  media_url: string;
+}
+
 export interface Props {
   title?: string;
   description?: string;
@@ -35,9 +42,7 @@ export async function loader(
   const url =
     `https://graph.instagram.com/me/media?access_token=${facebookToken}&fields=${joinFields}`;
 
-  const { data } = (await fetch(url).then((r) => r.json())) as {
-    data;
-  };
+  const { data } = (await fetch(url).then((r) => r.json())) as { data: Data[] };
 
   return {
     data: data.slice(0, layout?.numberOfPosts ?? 12),
