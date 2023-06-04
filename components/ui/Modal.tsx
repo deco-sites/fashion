@@ -1,5 +1,6 @@
 import Button from "$store/components/ui/Button.tsx";
 import { useEffect, useRef } from "preact/hooks";
+import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
@@ -86,9 +87,11 @@ const Modal = ({
           }`}
         >
           <header class="flex px-4 py-6 justify-between items-center border-b border-base-200">
-            <h1>
-              <span class="font-medium text-2xl">{title}</span>
-            </h1>
+            <div class="flex gap-5 items-center">
+              <h1>
+                <span class="font-medium text-2xl">{title}</span>
+              </h1>
+            </div>
             <Button class="btn btn-ghost" onClick={onClose}>
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
             </Button>

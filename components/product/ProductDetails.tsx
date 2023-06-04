@@ -253,11 +253,11 @@ function Details({
         >
           {/* Image Slider */}
           <div class="relative sm:col-start-2 sm:col-span-1 sm:row-start-1">
-            <Slider class="carousel gap-6">
+            <Slider class="carousel carousel-center gap-6 w-screen sm:w-[40vw]">
               {images.map((img, index) => (
                 <Slider.Item
                   index={index}
-                  class="carousel-item min-w-[100vw] sm:min-w-[40vw]"
+                  class="carousel-item w-full"
                 >
                   <Image
                     class="w-full"
