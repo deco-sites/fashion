@@ -14,7 +14,6 @@ export interface Props {
   products: LoaderReturnType<Product[] | null>;
   title?: string;
   description?: string;
-  itemsPerPage?: number;
   layout?: {
     headerAlignment?: "center" | "left";
     headerfontSize?: "Normal" | "Large";

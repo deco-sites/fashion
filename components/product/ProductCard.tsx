@@ -96,7 +96,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
     <a
       href={url && relative(url)}
       aria-label="view product"
-      class="btn btn-m btn-block"
+      class="btn btn-block"
     >
       {l?.basics?.ctaText || "Ver produto"}
     </a>
@@ -104,9 +104,9 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
 
   return (
     <div
-      class={`card card-compact border border-transparent rounded-md group w-full text-${align} ${
-        l?.onMouseOver?.showCardShadow ? "lg:hover:border-primary" : ""
-      }`}
+      class={`card card-compact group w-full ${
+        align === "center" ? "text-center" : "text-start"
+      } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}`}
       data-deco="view-product"
       id={`product-card-${productID}`}
       {...sendEventOnClick(clickEvent)}
@@ -200,9 +200,9 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           <>
             {l?.hide.skuSelector ? "" : (
               <ul
-                class={`flex items-center gap-2 w-full justify-${align} ${
-                  l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""
-                }`}
+                class={`flex items-center gap-2 w-full ${
+                  align === "center" ? "justify-center" : "justify-start"
+                } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
               >
                 {skuSelector}
               </ul>
@@ -237,7 +237,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                 l?.basics?.oldPriceSize === "Normal"
                   ? "lg:flex-row lg:gap-2"
                   : ""
-              } justify-${align}`}
+              } ${align === "center" ? "justify-center" : "justify-start"}`}
             >
               <div
                 class={`line-through text-base-300 text-xs ${
@@ -265,9 +265,9 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           <>
             {l?.hide.skuSelector ? "" : (
               <ul
-                class={`flex items-center gap-2 w-full justify-${align} ${
-                  l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""
-                }`}
+                class={`flex items-center gap-2 w-full ${
+                  align === "center" ? "justify-center" : "justify-start"
+                } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
               >
                 {skuSelector}
               </ul>
