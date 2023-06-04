@@ -9603,7 +9603,7 @@
       ],
       "title": "deco-sites/fashion/components/ui/ImageGallery.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ImageGallery": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner": {
       "type": "object",
       "properties": {
         "srcMobile": {
@@ -9630,14 +9630,14 @@
         "alt",
         "href"
       ],
-      "title": "ImageGallery"
+      "title": "Banner"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ImageGallery[]": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ImageGallery"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner"
       },
-      "title": "ImageGallery[]"
+      "title": "Banner[]"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Props": {
       "type": "object",
@@ -9657,7 +9657,7 @@
           "title": "Description"
         },
         "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ImageGallery[]",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner[]",
           "maxItems": 4,
           "minItems": 4,
           "title": "Banners"
@@ -9766,11 +9766,11 @@
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "asymmetric"
+                  "const": "Asymmetric"
                 },
                 {
                   "type": "string",
-                  "const": "symmetrical"
+                  "const": "Symmetrical"
                 }
               ],
               "type": "string",
@@ -9780,11 +9780,11 @@
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "asymmetric"
+                  "const": "Asymmetric"
                 },
                 {
                   "type": "string",
-                  "const": "symmetrical"
+                  "const": "Symmetrical"
                 }
               ],
               "type": "string",

@@ -44,8 +44,8 @@ export interface Props {
       desktop?: BorderRadius;
     };
     headerAlignment?: "center" | "left";
-    mobile?: "asymmetric" | "symmetrical";
-    desktop?: "asymmetric" | "symmetrical";
+    mobile?: "Asymmetric" | "Symmetrical";
+    desktop?: "Asymmetric" | "Symmetrical";
   };
 }
 
@@ -113,8 +113,8 @@ const DEFAULT_PROPS: Props = {
       "desktop": "2xl",
     },
     "headerAlignment": "center",
-    "mobile": "asymmetric",
-    "desktop": "asymmetric",
+    "mobile": "Asymmetric",
+    "desktop": "Asymmetric",
   },
 };
 
@@ -169,14 +169,14 @@ export default function Gallery(props: Props) {
   };
 
   const mobileItemLayout = (index: number) =>
-    layout?.mobile === "symmetrical"
+    layout?.mobile === "Symmetrical"
       ? "row-span-3"
       : index === 0 || index === 3
       ? "row-span-3"
       : "row-span-2";
 
   const desktopItemLayout = (index: number) =>
-    layout?.desktop === "symmetrical"
+    layout?.desktop === "Symmetrical"
       ? "sm:row-span-3"
       : index === 0 || index === 3
       ? "sm:row-span-3"
