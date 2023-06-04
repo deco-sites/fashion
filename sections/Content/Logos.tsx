@@ -1,6 +1,6 @@
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
-import Header from "$store/components/ui//SectionHeader.tsx";
+import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface Img {
   image: ImageType;
@@ -9,7 +9,7 @@ export interface Img {
 
 export interface Props {
   title?: string;
-  description?: string,
+  description?: string;
   images?: Img[];
   layout?: {
     headerAlignment?: "center" | "left";
@@ -22,17 +22,21 @@ export default function Logos({
   images,
   layout,
 }: Props) {
+  const image1 = {
+    image:
+      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fe7cd8ba-c954-45d6-9282-ee7d8ca8e3c7",
+  };
+  const image2 = {
+    image:
+      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/637e8601-6b86-4979-aa97-68013a2a60fd",
+  };
 
+  const defaultImages = [];
 
-  const image1 = { image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/fe7cd8ba-c954-45d6-9282-ee7d8ca8e3c7" }
-  const image2 = { image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/637e8601-6b86-4979-aa97-68013a2a60fd" }
-
-  const defaultImages = []
-  
   Array(10).fill().forEach(() => {
-    defaultImages.push(image1)
-    defaultImages.push(image2)
-  })
+    defaultImages.push(image1);
+    defaultImages.push(image2);
+  });
 
   const imgList = images && images.length > 0 ? images : defaultImages
 

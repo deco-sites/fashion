@@ -2,24 +2,23 @@ import type { SectionProps } from "$live/mod.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 
-
 export interface layout {
-	headerAlignment?: "center" | "left";
-	/** @description Default is 12 */
-	numberOfPosts?: number;
-	/** @description Up to 6. Default is 4 */
-	postsPerLine?: number;
+  headerAlignment?: "center" | "left";
+  /** @description Default is 12 */
+  numberOfPosts?: number;
+  /** @description Up to 6. Default is 4 */
+  postsPerLine?: number;
 }
 
 export interface Props {
-	title?: string;
-	description?: string;
-	/**
-	* @description Get it in Facebook app. Expires every 90 days.
-	* @format textarea
-	*/
-	facebookToken: string;
-	layout?: layout;
+  title?: string;
+  description?: string;
+  /**
+   * @description Get it in Facebook app. Expires every 90 days.
+   * @format textarea
+   */
+  facebookToken: string;
+  layout?: layout;
 }
 
 export async function loader(

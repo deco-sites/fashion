@@ -9,8 +9,8 @@ export interface Props {
   image?: {
     mobile: LiveImage;
     desktop?: LiveImage;
-    altText: string;  
-  }
+    altText: string;
+  };
   pins: Pin[];
   card?: card;
 }
@@ -19,8 +19,8 @@ export interface card {
   title?: string;
   /** @format textarea */
   text?: string;
-  buttonText?: string;  
-  buttonHref?: string;  
+  buttonText?: string;
+  buttonHref?: string;
 }
 
 export interface Pin {
@@ -77,7 +77,11 @@ export default function ShoppableBanner({
               {card?.title}
             </h2>
             {card?.text && <p class="mb-3">{card?.text}</p>}
-            {card?.buttonText && card?.buttonHref && <a href={card?.buttonHref} class="btn mt-auto">{card?.buttonText}</a>}
+            {card?.buttonText && card?.buttonHref && (
+              <a href={card?.buttonHref} class="btn mt-auto">
+                {card?.buttonText}
+              </a>
+            )}
           </div>
         )}
       <div class="lg:h-[500px] lg:w-3/5 overflow-hidden">
@@ -104,8 +108,8 @@ export default function ShoppableBanner({
           />
           {pins.map((unitPin) => {
             const { pin, product } = unitPin;
-            const m = pin.positionMobile.split(',')
-            const d = pin.positionDesktop.split(',')
+            const m = pin.positionMobile.split(",");
+            const d = pin.positionDesktop.split(",");
 
             return (
               <>

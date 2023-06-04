@@ -84,7 +84,9 @@ function CartButton() {
             {totalItems > 9 ? "9+" : totalItems}
           </span>
         )}
-        {!loading.value && <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />}
+        {!loading.value && (
+          <Icon id="ShoppingCart" width={20} height={20} strokeWidth={2} />
+        )}
       </div>
     </Button>
   );
