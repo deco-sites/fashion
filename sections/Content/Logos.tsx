@@ -34,7 +34,7 @@ export default function Logos({
     defaultImages.push(image2)
   })
 
-  const imgList = images && images.length > 0 ? images.length : defaultImages
+  const imgList = images && images.length > 0 ? images : defaultImages
 
   return (
     <div class="w-full container px-4 py-8 flex flex-col gap-12 lg:gap-16 lg:py-10 lg:px-0">
