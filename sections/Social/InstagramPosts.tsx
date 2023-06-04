@@ -48,7 +48,7 @@ export async function loader(
 		};
 	}
 	
-	export default function Instagram({
+	export default function InstagramPosts({
 		title,
 		description,
 		layout,

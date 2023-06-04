@@ -63,7 +63,7 @@ export const loader = async (
   return { ...props, pins: handleProductAndPins };
 };
 
-export default function InteractiveBanner({
+export default function ShoppableBanner({
   card,
   image,
   pins,

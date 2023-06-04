@@ -2,7 +2,7 @@ import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
-export interface Banner {
+export interface ImageGallery {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;
   /**
