@@ -12,15 +12,18 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
   class: _class = "",
   loading,
   disabled,
+  children,
   ...props
 }, ref) => (
   <button
     {...props}
-    className={`btn no-animation ${_class} ${loading ? "loading" : ""}`}
+    className={`btn no-animation ${_class} `}
     disabled={disabled || loading}
     type={type}
     ref={ref}
-  />
+  >
+    {loading ? <span class="loading loading-spinner" /> : children}
+  </button>
 ));
 
 export default Button;

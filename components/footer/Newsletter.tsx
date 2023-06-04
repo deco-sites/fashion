@@ -39,13 +39,13 @@ function Newsletter() {
         class="w-full sm:w-[408px] form-control"
         onSubmit={handleSubmit}
       >
-        <div class="input-group">
+        <div class="join">
           <input
             name="email"
-            class="flex-grow input input-primary"
+            class="flex-grow input input-primary join-item"
             placeholder="Seu e-mail"
           />
-          <button class="btn disabled:loading" disabled={loading}>
+          <button class="btn disabled:loading join-item" disabled={loading}>
             Cadastrar
           </button>
         </div>

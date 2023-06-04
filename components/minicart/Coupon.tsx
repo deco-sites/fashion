@@ -36,17 +36,18 @@ function Coupon() {
         </Button>
       )}
       {displayInput.value && (
-        <form class="flex gap-2">
+        <form class="join">
           <input
             id="coupon"
             name="coupon"
             ref={ref}
-            class="w-[140px] border rounded p-2 font-caption"
+            class="input join-item"
             type="text"
             value={coupon ?? ""}
             placeholder={"Cupom"}
           />
           <Button
+            class="join-item"
             type="submit"
             htmlFor="coupon"
             loading={loading.value}

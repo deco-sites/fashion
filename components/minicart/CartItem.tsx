@@ -4,26 +4,24 @@ import Button from "$store/components/ui/Button.tsx";
 import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { formatPrice } from "$store/sdk/format.ts";
-import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 import { sendEvent } from "$store/sdk/analytics.tsx";
-
-declare global {
-  interface Window {
-    DECO_SITES_STD: {
-      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
-    };
-  }
-}
+import { useSignal } from "@preact/signals";
+import { useCallback } from "preact/hooks";
 
 interface Props {
   index: number;
+  locale: string;
+  currency: string;
 }
 
-function CartItem({ index }: Props) {
-  const { loading, cart, updateItems, mapItemsToAnalyticsItems } = useCart();
+function CartItem({ index, locale, currency }: Props) {
+  const {
+    cart,
+    updateItems,
+    mapItemsToAnalyticsItems,
+  } = useCart();
+  const loading = useSignal(false);
   const item = cart.value!.items[index];
-  const locale = cart.value?.clientPreferencesData.locale;
-  const currencyCode = cart.value?.storePreferencesData.currencyCode;
   const {
     imageUrl,
     skuName,
@@ -34,6 +32,18 @@ function CartItem({ index }: Props) {
   } = item;
 
   const isGift = sellingPrice < 0.01;
+
+  const withLoading = useCallback(
+    <A,>(cb: (args: A) => void) => async (e: A) => {
+      try {
+        loading.value = true;
+        await cb(e);
+      } finally {
+        loading.value = false;
+      }
+    },
+    [loading],
+  );
 
   return (
     <div class="flex flex-row justify-between items-start gap-4">
@@ -46,24 +56,22 @@ function CartItem({ index }: Props) {
       />
       <div class="flex flex-grow flex-col gap-2">
         <span>{name}</span>
-        <span class="text-xs" style={{ color: "#787878" }}>Tamanho: PP</span>
-        <span class="text-xs" style={{ color: "#787878" }}>Cor: Azul</span>
         <div class="flex items-center gap-2">
           <span class="line-through text-base-300 text-sm">
-            {formatPrice(listPrice / 100, currencyCode!, locale)}
+            {formatPrice(listPrice / 100, currency, locale)}
           </span>
-          <span class="text-sm text-secondary" style={{ color: "#E37A69" }}>
+          <span class="text-sm text-secondary">
             {isGift
               ? "Grátis"
-              : formatPrice(sellingPrice / 100, currencyCode!, locale)}
+              : formatPrice(sellingPrice / 100, currency, locale)}
           </span>
         </div>
         <div class="mt-6 max-w-min">
           <QuantitySelector
             disabled={loading.value || isGift}
             quantity={quantity}
-            onChange={(quantity) => {
-              updateItems({ orderItems: [{ index, quantity }] });
+            onChange={withLoading(async (quantity) => {
+              await updateItems({ orderItems: [{ index, quantity }] });
               const quantityDiff = quantity - item.quantity;
 
               if (!cart.value) return;
@@ -80,13 +88,13 @@ function CartItem({ index }: Props) {
                   }),
                 },
               });
-            }}
+            })}
           />
         </div>
       </div>
       <Button
-        onClick={() => {
-          updateItems({ orderItems: [{ index, quantity: 0 }] });
+        onClick={withLoading(async () => {
+          await updateItems({ orderItems: [{ index, quantity: 0 }] });
           if (!cart.value) return;
           sendEvent({
             name: "remove_from_cart",
@@ -97,7 +105,7 @@ function CartItem({ index }: Props) {
               }),
             },
           });
-        }}
+        })}
         disabled={loading.value || isGift}
         loading={loading.value}
         class="btn btn-ghost"

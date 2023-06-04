@@ -30,36 +30,34 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="form-control">
-      <div class="input-group border rounded-none">
-        <Button
-          class="btn-square btn-outline border-none"
-          onClick={decrement}
-          disabled={disabled}
-          loading={loading}
-        >
-          -
-        </Button>
-        <input
-          class="input text-center"
-          type="number"
-          inputMode="numeric"
-          pattern="[0-9]*"
-          max={QUANTITY_MAX_VALUE}
-          min={1}
-          value={quantity}
-          disabled={disabled}
-          onBlur={(e) => onChange?.(e.currentTarget.valueAsNumber)}
-        />
-        <Button
-          class="btn-square btn-outline border-none"
-          onClick={increment}
-          disabled={disabled}
-          loading={loading}
-        >
-          +
-        </Button>
-      </div>
+    <div class="join border rounded-none">
+      <Button
+        class="btn-square btn-outline border-none join-item"
+        onClick={decrement}
+        disabled={disabled}
+        loading={loading}
+      >
+        -
+      </Button>
+      <input
+        class="input text-center join-item"
+        type="number"
+        inputMode="numeric"
+        pattern="[0-9]*"
+        max={QUANTITY_MAX_VALUE}
+        min={1}
+        value={quantity}
+        disabled={disabled}
+        onBlur={(e) => onChange?.(e.currentTarget.valueAsNumber)}
+      />
+      <Button
+        class="btn-square btn-outline border-none join-item"
+        onClick={increment}
+        disabled={disabled}
+        loading={loading}
+      >
+        +
+      </Button>
     </div>
   );
 }

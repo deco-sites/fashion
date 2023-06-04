@@ -68,8 +68,6 @@
               "./islands/Newsletter.tsx",
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
-              "./islands/ProductList.tsx",
-              "./islands/QuickViewModal.tsx",
               "./islands/SearchControls.tsx",
               "./islands/ShippingSimulation.tsx",
               "./islands/SliderJS.tsx",
@@ -6871,208 +6869,6 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvbWluaWNhcnQvQ2FydC50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "freeShippingObjectiveQuantity": {
-          "type": "number",
-          "title": "Free Shipping Objective Quantity"
-        },
-        "shippingIcon": {
-          "type": "object",
-          "properties": {
-            "src": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Src"
-            },
-            "alt": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Alt"
-            }
-          },
-          "required": [],
-          "title": "Shipping Icon"
-        }
-      },
-      "required": [
-        "freeShippingObjectiveQuantity"
-      ],
-      "title": "deco-sites/fashion/components/minicart/Cart.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdExpc3QvSGVhZGVyLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description"
-        },
-        "categories": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "title": "Name"
-              },
-              "href": {
-                "type": "string",
-                "title": "Href"
-              }
-            },
-            "required": [
-              "name",
-              "href"
-            ]
-          },
-          "title": "Categories"
-        },
-        "variant": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "default"
-            },
-            {
-              "type": "string",
-              "const": "dots-top"
-            },
-            {
-              "type": "string",
-              "const": "dots-with-arrows"
-            },
-            {
-              "type": "string",
-              "const": "dots-arrows-bottom"
-            }
-          ],
-          "type": "string",
-          "title": "Variant"
-        }
-      },
-      "required": [
-        "title",
-        "description",
-        "categories",
-        "variant"
-      ],
-      "title": "Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdExpc3QvUHJvZHVjdExpc3QudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "header": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdExpc3QvSGVhZGVyLnRzeA==@Props",
-          "title": "Header"
-        },
-        "products": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
-          "title": "Products"
-        },
-        "seeAllButton": {
-          "type": "object",
-          "properties": {
-            "href": {
-              "type": "string",
-              "title": "Href"
-            },
-            "target": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Target"
-            },
-            "label": {
-              "type": "string",
-              "title": "Label"
-            }
-          },
-          "required": [
-            "href",
-            "label"
-          ],
-          "title": "See All Button"
-        }
-      },
-      "required": [
-        "header",
-        "products",
-        "seeAllButton"
-      ],
-      "title": "deco-sites/fashion/components/productList/ProductList.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcXVpY2tWaWV3L1F1aWNrVmlldy50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "imagePlaceholder": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "left"
-            },
-            {
-              "type": "string",
-              "const": "right"
-            }
-          ],
-          "type": "string",
-          "title": "Image Placeholder"
-        },
-        "product": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product",
-          "title": "Product"
-        },
-        "open": {
-          "type": "boolean",
-          "title": "Open"
-        },
-        "onClose": {
-          "title": "On Close"
-        },
-        "seeMoreButton": {
-          "type": "object",
-          "properties": {
-            "href": {
-              "type": "string",
-              "title": "Href"
-            },
-            "target": {
-              "type": "string",
-              "title": "Target"
-            },
-            "label": {
-              "type": "string",
-              "title": "Label"
-            }
-          },
-          "required": [
-            "href",
-            "target",
-            "label"
-          ],
-          "title": "See More Button"
-        }
-      },
-      "required": [
-        "product",
-        "open",
-        "onClose"
-      ],
-      "title": "deco-sites/fashion/components/quickView/QuickView.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -7421,6 +7217,11 @@
         "sections"
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
       "type": "object",
@@ -9489,15 +9290,10 @@
         "suggestions": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
           "title": "Enable Top Search terms"
-        },
-        "cart": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvbWluaWNhcnQvQ2FydC50c3g=@Props",
-          "title": "Cart"
         }
       },
       "required": [
-        "alerts",
-        "cart"
+        "alerts"
       ],
       "title": "deco-sites/fashion/components/header/Header.tsx@Props"
     },
@@ -12937,11 +12733,6 @@
     "Li9pc2xhbmRzL0NhcnQudHN4": {
       "title": "./islands/Cart.tsx",
       "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvbWluaWNhcnQvQ2FydC50c3g=@Props"
-        }
-      ],
       "required": [
         "__resolveType"
       ],
@@ -13048,48 +12839,6 @@
             "./islands/ProductImageZoom.tsx"
           ],
           "default": "./islands/ProductImageZoom.tsx"
-        }
-      }
-    },
-    "Li9pc2xhbmRzL1Byb2R1Y3RMaXN0LnRzeA==": {
-      "title": "./islands/ProductList.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdExpc3QvUHJvZHVjdExpc3QudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/ProductList.tsx"
-          ],
-          "default": "./islands/ProductList.tsx"
-        }
-      }
-    },
-    "Li9pc2xhbmRzL1F1aWNrVmlld01vZGFsLnRzeA==": {
-      "title": "./islands/QuickViewModal.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcXVpY2tWaWV3L1F1aWNrVmlldy50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/QuickViewModal.tsx"
-          ],
-          "default": "./islands/QuickViewModal.tsx"
         }
       }
     },
@@ -15304,12 +15053,6 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4"
-        },
-        {
-          "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RMaXN0LnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/Li9pc2xhbmRzL1F1aWNrVmlld01vZGFsLnRzeA=="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="

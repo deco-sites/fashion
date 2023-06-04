@@ -27,6 +27,8 @@ function ProductImageZoom({ images, width, height }: Props) {
         <Icon
           id="Zoom"
           size={20}
+          stroke="currentColor"
+          strokeWidth={0.1}
         />
       </Button>
       <Modal
