@@ -47,7 +47,7 @@ export default function Benefits(
     return (
       <div
         class={`${
-          reverse ? "bg-primary text-primary-content p-4 lg:p-8" : ""
+          reverse ? "bg-primary text-primary-content p-4 lg:px-8 lg:py-4" : ""
         } flex gap-4 ${
           benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
         } ${
@@ -55,7 +55,7 @@ export default function Benefits(
             ? "border-b border-neutral-300"
             : ""
         } ${showDivider ? "pb-4 lg:pr-8 lg:border-r lg:border-b-0" : ""} ${
-          showDivider && !reverse ? "lg:pb-0" : "lg:py-4"
+          showDivider && !reverse ? "lg:pb-0" : ""
         }`}
       >
         <div class="flex-none">
