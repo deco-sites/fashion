@@ -21,14 +21,12 @@ function ProductImageZoom({ images, width, height }: Props) {
   return (
     <>
       <Button
-        class="hidden sm:inline-flex cursor-zoom-in btn-ghost"
+        class="hidden sm:inline-flex btn-ghost"
         onClick={() => open.value = true}
       >
         <Icon
-          id="ArrowsPointingOut"
+          id="Zoom"
           size={20}
-          stroke="currentColor"
-          strokeWidth={2}
         />
       </Button>
       <Modal

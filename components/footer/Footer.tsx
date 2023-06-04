@@ -146,7 +146,6 @@ function Footer({ sections = [] }: Props) {
                     width={32}
                     height={32}
                     id="Instagram"
-                    strokeWidth={1}
                   />
                 </a>
               </li>
@@ -162,7 +161,6 @@ function Footer({ sections = [] }: Props) {
                     width={32}
                     height={32}
                     id="Discord"
-                    strokeWidth={5}
                   />
                 </a>
               </li>
