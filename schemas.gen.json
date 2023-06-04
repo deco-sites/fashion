@@ -7582,16 +7582,59 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Category": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
         "tag": {
           "type": [
             "string",
             "null"
           ],
           "title": "Tag"
+=======
+        "mobile": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Mobile"
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number",
+              "title": "X"
+            },
+            "y": {
+              "type": "number",
+              "title": "Y"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ],
+          "title": "Desktop"
+        },
+        "link": {
+          "type": "string",
+          "title": "Link"
+>>>>>>> f1e2c90 (wiop)
         },
         "label": {
           "type": "string",
           "title": "Label"
+<<<<<<< HEAD
         },
         "description": {
           "type": [
@@ -7612,15 +7655,97 @@
           "title": "Image"
         },
         "buttonText": {
+=======
+        }
+      },
+      "required": [
+        "mobile",
+        "link",
+        "label"
+      ],
+      "title": "Pin"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvSW50ZXJhY3RpdmVCYW5uZXIudHN4@Pin[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvSW50ZXJhY3RpdmVCYW5uZXIudHN4@Pin"
+      },
+      "title": "Pin[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvSW50ZXJhY3RpdmVCYW5uZXIudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "altText": {
+              "type": "string",
+              "title": "Alt Text"
+            }
+          },
+          "required": [
+            "mobile",
+            "altText"
+          ],
+          "title": "Image"
+        },
+        "pins": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lcnMvSW50ZXJhY3RpdmVCYW5uZXIudHN4@Pin[]",
+          "title": "Pins"
+        },
+        "text": {
+>>>>>>> f1e2c90 (wiop)
           "type": [
             "string",
             "null"
           ],
+<<<<<<< HEAD
           "title": "Button Text"
         }
       },
       "required": [
         "label"
+=======
+          "title": "Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "link": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Text"
+            },
+            "href": {
+              "type": "string",
+              "title": "Href"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "title": "Link"
+        }
+      },
+      "required": [
+        "image",
+        "pins"
+>>>>>>> f1e2c90 (wiop)
       ],
       "title": "Category"
     },
