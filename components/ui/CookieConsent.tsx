@@ -25,8 +25,13 @@ window.addEventListener('scroll', callback, { once: true });
 `;
 
 export interface Props {
+  title?: string;
   /** @format html */
   text?: string;
+  policy?: {
+    text?: string;
+    link?: string;
+  }
   buttons?: {
     allowText: string;
     cancelText?: string;
@@ -57,7 +62,7 @@ const DEFAULT_PROPS = {
 
 function CookieConsent(props: Props) {
   const id = `cookie-consent-${useId()}`;
-  const { text, buttons, layout } = { ...DEFAULT_PROPS, ...props };
+  const { title, text, policy, buttons, layout } = { ...DEFAULT_PROPS, ...props };
 
   return (
     <>
@@ -70,53 +75,27 @@ function CookieConsent(props: Props) {
           ${layout?.position === "Right" ? "lg:justify-end" : ""}
         `}
       >
-        <div
-          class={`
+        <div class={`
           p-4 mx-4 my-2 flex flex-col gap-4 shadow bg-base-100 rounded border border-base-200 
-          ${
-            !layout?.position || layout?.position === "Expanded"
-              ? "lg:container lg:mx-auto"
-              : `
-            ${layout?.content === "Piled up" ? "lg:w-[480px]" : ""}
-            ${
-                !layout?.content || layout?.content === "Tiled"
-                  ? "lg:w-[520px]"
-                  : ""
-              }
-          `
-          }
-          ${
-            !layout?.content || layout?.content === "Tiled"
-              ? "lg:flex-row lg:items-end"
-              : ""
-          }
+          ${!layout?.position || layout?.position === "Expanded" ? "lg:container lg:mx-auto" : `
+            ${layout?.content === 'Piled up' ? "lg:w-[480px]" : ""}
+            ${!layout?.content || layout?.content === 'Tiled' ? "lg:w-[520px]" : ""}
+          `}
+          ${!layout?.content || layout?.content === 'Tiled' ? "lg:flex-row lg:items-end" : ""}
           
-        `}
-        >
-          <div
-            class={`flex-auto flex flex-col gap-4 ${
-              !layout?.content || layout?.content === "Tiled" ? "lg:gap-2" : ""
-            }`}
-          >
-            {text && <div dangerouslySetInnerHTML={{ __html: text }} />}
+        `}>
+          <div class={`flex-auto flex flex-col gap-4 ${!layout?.content || layout?.content === 'Tiled' ? "lg:gap-2" : ""}`}>
+            <h3 class="text-xl">{title}</h3>
+            {text && <div class="text-base" dangerouslySetInnerHTML={{ __html: text }} />}
+
+            <a href={policy.link} class="text-sm link link-secondary">
+              {policy.text}
+            </a>
           </div>
 
-          <div
-            class={`flex flex-col gap-2 ${
-              !layout?.position || layout?.position === "Expanded"
-                ? "lg:flex-row"
-                : ""
-            }`}
-          >
-            <button class="btn" data-button-cc-accept>
-              {buttons.allowText}
-            </button>
-            <button
-              data-button-cc-close
-              class="btn btn-outline"
-            >
-              {buttons.cancelText}
-            </button>
+          <div class={`flex flex-col gap-2 ${!layout?.position || layout?.position === "Expanded" ? "lg:flex-row" : ""}`}>
+            <button class="btn" data-button-cc-accept>{buttons.allowText}</button>
+            <button class="btn" data-button-cc-close class="btn btn-outline">{buttons.cancelText}</button>
           </div>
         </div>
       </div>

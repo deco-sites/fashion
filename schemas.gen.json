@@ -8293,6 +8293,13 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props": {
       "type": "object",
       "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
         "text": {
           "type": [
             "string",
@@ -8300,6 +8307,27 @@
           ],
           "format": "html",
           "title": "Text"
+        },
+        "policy": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Text"
+            },
+            "link": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Link"
+            }
+          },
+          "required": [],
+          "title": "Policy"
         },
         "buttons": {
           "type": "object",
