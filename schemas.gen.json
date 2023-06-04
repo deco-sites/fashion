@@ -10115,7 +10115,7 @@
             "string",
             "null"
           ],
-          "format": "textarea",
+          "format": "html",
           "title": "Help Text"
         }
       },

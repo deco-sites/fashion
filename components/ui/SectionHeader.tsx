@@ -12,8 +12,8 @@ function Header(props: Props) {
       {props.title || props.description
         ? (
           <div
-            class={`flex flex-col gap-2 text-${
-              props.alignment ? props.alignment : "center"
+            class={`flex flex-col gap-2 ${
+              props.alignment === "left" ? "text-left" : "text-center"
             }`}
           >
             {props.title &&
