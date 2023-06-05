@@ -117,7 +117,7 @@ function CategoryList(props: Props) {
                     <Image
                       class="card w-full"
                       src={image}
-                      alt={description}
+                      alt={description || label || tag}
                       width={160}
                       height={195}
                       loading="lazy"
