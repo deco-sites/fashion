@@ -8210,7 +8210,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@696524a6ff9e8fdff928f109587791e1&Colors": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@74592a4a06c5ce464ca33da3b0b49a2f&Colors": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors"
@@ -8226,7 +8226,7 @@
           "required": []
         }
       ],
-      "title": "696524a6ff9e8fdff928f109587791e1&Colors"
+      "title": "74592a4a06c5ce464ca33da3b0b49a2f&Colors"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous": {
       "type": "object",
@@ -8329,7 +8329,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@696524a6ff9e8fdff928f109587791e1&Colors",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@74592a4a06c5ce464ca33da3b0b49a2f&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -9614,33 +9614,29 @@
       "required": [],
       "title": "Shortcut"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtzL1Nob3J0Y3V0cy50c3g=@Shortcut[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtzL1Nob3J0Y3V0cy50c3g=@Shortcut"
-      },
-      "title": "Shortcut[]"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtzL1Nob3J0Y3V0cy50c3g=@Props": {
       "type": "object",
       "properties": {
         "shortcuts": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtzL1Nob3J0Y3V0cy50c3g=@Shortcut[]",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtzL1Nob3J0Y3V0cy50c3g=@Shortcut"
+          },
           "title": "Shortcuts"
         },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "tooltip": {
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "Tooltip"
+        "onHover": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Show label"
+            },
+            {
+              "type": "string",
+              "const": "Show tooltip"
             }
-          },
-          "required": [],
-          "title": "Layout"
+          ],
+          "type": "string",
+          "title": "On Hover"
         }
       },
       "required": [],
