@@ -46,12 +46,11 @@ import * as $$$$$$$$25 from "./sections/DesignSystem.tsx";
 import * as $$$$$$$$26 from "./sections/Links/LinkTree.tsx";
 import * as $$$$$$$$27 from "./sections/Links/Shortcuts.tsx";
 import * as $$$$$$$$28 from "./sections/ImageGallery.tsx";
-import * as $$$$$$$$29 from "./sections/Header.tsx";
-import * as $$$$$$$$30 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$$$31 from "./sections/ProductDetails.tsx";
-import * as $$$$$$$$32 from "./sections/Highlights.tsx";
-import * as $$$$$$$$33 from "./sections/Header/Header.tsx";
-import * as $$$$$$$$34 from "./sections/Carousel.tsx";
+import * as $$$$$$$$29 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$$$30 from "./sections/ProductDetails.tsx";
+import * as $$$$$$$$31 from "./sections/Highlights.tsx";
+import * as $$$$$$$$32 from "./sections/Header/Header.tsx";
+import * as $$$$$$$$33 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -197,7 +196,7 @@ const manifest = {
     "$live/sections/PageInclude.tsx": i2$$$$0,
     "$live/sections/Slot.tsx": i2$$$$1,
     "$live/sections/UseSlot.tsx": i2$$$$2,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$34,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$33,
     "deco-sites/fashion/sections/Category/CategoryBanner.tsx": $$$$$$$$4,
     "deco-sites/fashion/sections/Category/CategoryList.tsx": $$$$$$$$5,
     "deco-sites/fashion/sections/Content/Benefits.tsx": $$$$$$$$14,
@@ -209,9 +208,8 @@ const manifest = {
     "deco-sites/fashion/sections/Features.tsx": $$$$$$$$3,
     "deco-sites/fashion/sections/Footer.tsx": $$$$$$$$22,
     "deco-sites/fashion/sections/Footer/Footer.tsx": $$$$$$$$1,
-    "deco-sites/fashion/sections/Header.tsx": $$$$$$$$29,
-    "deco-sites/fashion/sections/Header/Header.tsx": $$$$$$$$33,
-    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$32,
+    "deco-sites/fashion/sections/Header/Header.tsx": $$$$$$$$32,
+    "deco-sites/fashion/sections/Highlights.tsx": $$$$$$$$31,
     "deco-sites/fashion/sections/ImageGallery.tsx": $$$$$$$$28,
     "deco-sites/fashion/sections/Images/BannerGrid.tsx": $$$$$$$$7,
     "deco-sites/fashion/sections/Images/Carousel.tsx": $$$$$$$$9,
@@ -221,12 +219,12 @@ const manifest = {
     "deco-sites/fashion/sections/Links/Shortcuts.tsx": $$$$$$$$27,
     "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$$$19,
     "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx": $$$$$$$$20,
-    "deco-sites/fashion/sections/Newsletter/Newsletter.tsx": $$$$$$$$30,
+    "deco-sites/fashion/sections/Newsletter/Newsletter.tsx": $$$$$$$$29,
     "deco-sites/fashion/sections/Product/ProductDetails.tsx": $$$$$$$$18,
     "deco-sites/fashion/sections/Product/ProductShelf.tsx": $$$$$$$$17,
     "deco-sites/fashion/sections/Product/SearchResult.tsx": $$$$$$$$16,
     "deco-sites/fashion/sections/Product/Wishlist.tsx": $$$$$$$$15,
-    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$31,
+    "deco-sites/fashion/sections/ProductDetails.tsx": $$$$$$$$30,
     "deco-sites/fashion/sections/ProductShelf.tsx": $$$$$$$$21,
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$10,
     "deco-sites/fashion/sections/Social/InstagramPosts.tsx": $$$$$$$$24,
