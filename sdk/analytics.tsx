@@ -10,9 +10,9 @@ declare global {
 }
 
 export const sendEvent = <E extends AnalyticsEvent>(event: E) => {
-  if (typeof window.DECO_SITES_STD.sendAnalyticsEvent !== "function") {
+  if (typeof window.DECO_SITES_STD?.sendAnalyticsEvent !== "function") {
     console.info(
-      "Cannot find Analytics section in your page. Press `.` to add Analytics",
+      "Cannot find Analytics section in your page. Press `.` to add Analytics and supress this warning",
     );
 
     return;
