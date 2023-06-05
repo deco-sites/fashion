@@ -1,1 +1,1 @@
-export { default } from "$store/components/product/ProductShelfv2.tsx";
+export { default } from "$store/components/product/ProductShelf.tsx";
