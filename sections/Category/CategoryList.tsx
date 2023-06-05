@@ -120,6 +120,7 @@ function CategoryList(props: Props) {
                       alt={description}
                       width={160}
                       height={195}
+                      loading="lazy"
                     />
                   </figure>
                 )}
