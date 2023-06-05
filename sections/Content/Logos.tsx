@@ -46,21 +46,23 @@ function Logos(props: Props) {
   );
 
   return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-12 lg:gap-16 lg:py-10 lg:px-0">
+    <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-12 lg:py-10 lg:px-0">
       <Header
         title={title}
         description={description}
         alignment={layout?.headerAlignment || "center"}
       />
-      <div class="grid gap-2 place-items-center grid-cols-3 sm:grid-cols-4 lg:grid-cols-5">
-        {list.map((image) => (
-          <Image
-            height={27}
-            width={75}
-            src={image.image}
-            alt={image.altText || ""}
-            class="m-8"
-          />
+      <div class="w-full text-center items-center">
+        {list.map((element) => (
+          <div class="w-[140px] lg:w-[210px] h-[90px] lg:h-[120px] px-4 lg:px-5 py-2 lg:py-4 inline-block align-middle">
+            <div class="flex w-full h-full items-center justify-center">
+              <Image
+                src={element.image}
+                alt={element.altText || ""}
+                class="max-w-full max-h-full"
+              />
+            </div>
+          </div>
         ))}
       </div>
     </div>
