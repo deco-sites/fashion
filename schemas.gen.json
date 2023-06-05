@@ -92,7 +92,6 @@
               "deco-sites/fashion/sections/DesignSystem.tsx",
               "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx",
               "deco-sites/fashion/sections/Features.tsx",
-              "deco-sites/fashion/sections/Footer.tsx",
               "deco-sites/fashion/sections/Footer/Footer.tsx",
               "deco-sites/fashion/sections/Header/Header.tsx",
               "deco-sites/fashion/sections/Highlights.tsx",
@@ -13399,27 +13398,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci50c3g=": {
-      "title": "deco-sites/fashion/sections/Footer.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/Footer.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Footer.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci9Gb290ZXIudHN4": {
       "title": "deco-sites/fashion/sections/Footer/Footer.tsx",
       "type": "object",
@@ -15087,9 +15065,6 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZlYXR1cmVzLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci9Gb290ZXIudHN4"
