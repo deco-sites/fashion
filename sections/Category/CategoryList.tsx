@@ -52,7 +52,7 @@ function CardText(
 }
 
 function CategoryList(props: Props) {
-  const id = useId();
+  const id = `category-list-${useId()}`;
   const {
     header = {
       title: "",
@@ -79,79 +79,67 @@ function CategoryList(props: Props) {
   } = props;
 
   return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 text-base-content lg:px-0 lg:py-10">
+    <div
+      id={id}
+      class="container px-4 py-8 flex flex-col gap-8 lg:gap-10 text-base-content lg:px-0 lg:py-10"
+    >
       <Header
         title={header.title}
         description={header.description || ""}
         alignment={layout.headerAlignment || "center"}
       />
-      <div
-        class="relative w-full"
-        id={id}
-      >
-        <Slider class="carousel carousel-start carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
-          {list.map((
-            { tag, label, description, href, image, buttonText },
-            index,
-          ) => (
-            <Slider.Item
-              index={index}
-              class="flex flex-col gap-4 carousel-item"
+
+      <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
+        {list.map((
+          { tag, label, description, href, image, buttonText },
+          index,
+        ) => (
+          <Slider.Item
+            index={index}
+            class="flex flex-col gap-4 carousel-item"
+          >
+            <a
+              href={href}
+              class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
             >
-              <a
-                href={href}
-                class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
-              >
-                {layout.categoryCard?.textPosition === "top" &&
-                  (
-                    <CardText
-                      tag={tag}
-                      label={label}
-                      description={description}
-                      alignment={layout?.categoryCard?.textAlignment}
+              {layout.categoryCard?.textPosition === "top" &&
+                (
+                  <CardText
+                    tag={tag}
+                    label={label}
+                    description={description}
+                    alignment={layout?.categoryCard?.textAlignment}
+                  />
+                )}
+              {image &&
+                (
+                  <figure>
+                    <Image
+                      class="card"
+                      src={image}
+                      alt={description}
+                      height={340}
+                      width={280}
                     />
-                  )}
-                {image &&
-                  (
-                    <figure>
-                      <Image
-                        class="card"
-                        src={image}
-                        alt={description}
-                        height={340}
-                        width={280}
-                      />
-                    </figure>
-                  )}
-                {layout.categoryCard?.textPosition === "bottom" &&
-                  (
-                    <CardText
-                      tag={tag}
-                      label={label}
-                      description={description}
-                      alignment={layout?.categoryCard?.textAlignment}
-                    />
-                  )}
-              </a>
-              {buttonText &&
-                <a href={href} class="btn">{buttonText}</a>}
-            </Slider.Item>
-          ))}
-        </Slider>
-        <>
-          <div class="hidden lg:block z-10 absolute left-[1rem] top-[40%]">
-            <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-            </Slider.PrevButton>
-          </div>
-          <div class="hidden lg:block z-10 absolute right-[1rem] top-[40%]">
-            <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
-            </Slider.NextButton>
-          </div>
-        </>
-        <SliderJS rootId={id} />
-      </div>
+                  </figure>
+                )}
+              {layout.categoryCard?.textPosition === "bottom" &&
+                (
+                  <CardText
+                    tag={tag}
+                    label={label}
+                    description={description}
+                    alignment={layout?.categoryCard?.textAlignment}
+                  />
+                )}
+            </a>
+            {buttonText &&
+              <a href={href} class="btn">{buttonText}</a>}
+          </Slider.Item>
+        ))}
+      </Slider>
+
+      <SliderJS rootId={id} />
     </div>
   );
 }
