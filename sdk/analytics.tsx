@@ -10,11 +10,14 @@ declare global {
 }
 
 export const sendEvent = <E extends AnalyticsEvent>(event: E) => {
-  try {
-    window.DECO_SITES_STD.sendAnalyticsEvent(event);
-  } catch (error) {
-    console.log("Failed while sending event with error", event, error);
+  if (typeof window.DECO_SITES_STD.sendAnalyticsEvent !== "function") {
+    console.info(
+      "Cannot find Analytics section in your page. Press `.` to add Analytics",
+    );
+
+    return;
   }
+  window.DECO_SITES_STD.sendAnalyticsEvent(event);
 };
 
 /**
