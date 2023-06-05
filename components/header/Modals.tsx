@@ -16,7 +16,7 @@ interface Props {
 
 function Modals({ menu, searchbar }: Props) {
   const { displayCart, displayMenu, displaySearchbar } = useUI();
-  
+
   const fallback = (
     <div class="flex justify-center items-center w-full h-full">
       <span class="loading loading-ring" />
