@@ -115,11 +115,12 @@ function CategoryList(props: Props) {
                 (
                   <figure>
                     <Image
-                      class="card"
+                      class="card w-full"
                       src={image}
-                      alt={description}
-                      height={340}
-                      width={280}
+                      alt={description || label || tag}
+                      width={160}
+                      height={195}
+                      loading="lazy"
                     />
                   </figure>
                 )}

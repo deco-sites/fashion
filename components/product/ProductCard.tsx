@@ -85,12 +85,14 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
       ? "left"
       : "center";
   const skuSelector = variants.map(([value, [link]]) => (
-    <a href={link}>
-      <Avatar
-        variant={link === url ? "active" : "default"}
-        content={value}
-      />
-    </a>
+    <li>
+      <a href={link}>
+        <Avatar
+          variant={link === url ? "active" : "default"}
+          content={value}
+        />
+      </a>
+    </li>
   ));
   const cta = (
     <a
