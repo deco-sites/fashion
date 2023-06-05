@@ -69,13 +69,13 @@ export default function Benefits(
           />
         </div>
         <div class="flex-auto flex flex-col gap-1 lg:gap-2">
-          <h3
+          <div
             class={`text-base lg:text-xl leading-7 ${
               reverse ? "text-base-100" : "text-base-content"
             }`}
           >
             {benefit.label}
-          </h3>
+          </div>
           <p
             class={`text-sm leading-5 ${
               reverse ? "text-base-100" : "text-neutral"

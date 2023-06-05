@@ -13,38 +13,9 @@ export interface Props {
 }
 
 export default function Shortcuts({ shortcuts, onHover }: Props) {
-  if (!shortcuts || shortcuts.length === 0) {
-    shortcuts = [
-      {
-        icon: "WhatsApp",
-        label: "Whastapp",
-        link: "/",
-      },
-      {
-        icon: "Message",
-        label: "Chat",
-        link: "/",
-      },
-      {
-        icon: "Ruler",
-        label: "Medidas",
-        link: "/",
-      },
-      {
-        icon: "Truck",
-        label: "Entrega",
-        link: "/",
-      },
-      {
-        icon: "ArrowsPointingOut",
-        label: "Devolução",
-        link: "/",
-      },
-    ];
-  }
   return (
     <div class="group fixed flex flex-col top-1/2 right-0 z-20">
-      {shortcuts.map((shortcut) => {
+      {shortcuts?.map((shortcut) => {
         return (
           <a
             href={shortcut.link}
