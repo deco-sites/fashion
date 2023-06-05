@@ -54,16 +54,15 @@ const DEFAULT_PROPS = {
 
 function Question({ question, answer }: Question) {
   return (
-    <div class="collapse collapse-arrow join-item border-t border-base-200">
-      <input type="checkbox" class="peer" />
-      <div class="collapse-title text-lg font-medium">
+    <details class="collapse collapse-arrow join-item border-t border-base-200">
+      <summary class="collapse-title text-lg font-medium">
         {question}
-      </div>
+      </summary>
       <div
         class="collapse-content"
         dangerouslySetInnerHTML={{ __html: answer }}
       />
-    </div>
+    </details>
   );
 }
 
