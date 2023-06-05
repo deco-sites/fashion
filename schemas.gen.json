@@ -10765,7 +10765,7 @@
           "title": "The audience name (will be used on cookies).",
           "description": "Add a meaningful short word for the audience name.",
           "minLength": 3,
-          "pattern": "^[A-Za-z0-9_]+$"
+          "pattern": "^[A-Za-z0-9_-]+$"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
@@ -10881,7 +10881,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6ae3917e487ba076fa0ddb4604499a96|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@18bf45846636367e3d106e81c433c564|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -10899,13 +10899,13 @@
           ]
         }
       ],
-      "title": "6ae3917e487ba076fa0ddb4604499a96|WorkflowRef"
+      "title": "18bf45846636367e3d106e81c433c564|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6ae3917e487ba076fa0ddb4604499a96|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@18bf45846636367e3d106e81c433c564|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
