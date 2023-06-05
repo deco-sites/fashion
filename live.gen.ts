@@ -54,8 +54,7 @@ import * as $$$$$$$$33 from "./sections/Newsletter/Newsletter.tsx";
 import * as $$$$$$$$34 from "./sections/ProductDetails.tsx";
 import * as $$$$$$$$35 from "./sections/Highlights.tsx";
 import * as $$$$$$$$36 from "./sections/Header/Header.tsx";
-import * as $$$$$$$$37 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$38 from "./sections/Carousel.tsx";
+import * as $$$$$$$$37 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_invoke from "$live/routes/live/invoke/index.ts";
@@ -203,7 +202,7 @@ const manifest = {
     "$live/sections/UseSlot.tsx": i2$$$$2,
     "deco-sites/fashion/sections/BannerGrid.tsx": $$$$$$$$11,
     "deco-sites/fashion/sections/BannerPLP.tsx": $$$$$$$$6,
-    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$38,
+    "deco-sites/fashion/sections/Carousel.tsx": $$$$$$$$37,
     "deco-sites/fashion/sections/Category/CategoryBanner.tsx": $$$$$$$$4,
     "deco-sites/fashion/sections/Category/CategoryList.tsx": $$$$$$$$5,
     "deco-sites/fashion/sections/Content/Benefits.tsx": $$$$$$$$16,
@@ -238,7 +237,6 @@ const manifest = {
     "deco-sites/fashion/sections/SearchResult.tsx": $$$$$$$$12,
     "deco-sites/fashion/sections/Social/InstagramPosts.tsx": $$$$$$$$26,
     "deco-sites/fashion/sections/Social/WhatsApp.tsx": $$$$$$$$25,
-    "deco-sites/fashion/sections/WhatsApp.tsx": $$$$$$$$37,
     "deco-sites/fashion/sections/WishlistGallery.tsx": $$$$$$$$0,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$3,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$4,
