@@ -2,16 +2,7 @@ import { useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
-import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
-
-declare global {
-  interface Window {
-    DECO_SITES_STD: {
-      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
-    };
-  }
-}
 
 export interface Options {
   skuId: string;

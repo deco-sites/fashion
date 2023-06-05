@@ -1,6 +1,14 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import type { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
+declare global {
+  interface Window {
+    DECO_SITES_STD: {
+      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
+    };
+  }
+}
+
 export const sendEvent = <E extends AnalyticsEvent>(event: E) => {
   try {
     window.DECO_SITES_STD.sendAnalyticsEvent(event);

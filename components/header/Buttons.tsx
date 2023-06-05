@@ -5,14 +5,6 @@ import { useUI } from "$store/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
 
-declare global {
-  interface Window {
-    DECO_SITES_STD: {
-      sendAnalyticsEvent: (args: AnalyticsEvent) => void;
-    };
-  }
-}
-
 function SearchButton() {
   const { displaySearchbar } = useUI();
 
