@@ -16,6 +16,12 @@ interface Props {
 
 function Modals({ menu, searchbar }: Props) {
   const { displayCart, displayMenu, displaySearchbar } = useUI();
+  
+  const fallback = (
+    <div class="flex justify-center items-center w-full h-full">
+      <span class="loading loading-ring" />
+    </div>
+  );
 
   return (
     <>
@@ -28,7 +34,7 @@ function Modals({ menu, searchbar }: Props) {
           displayMenu.value = false;
         }}
       >
-        <Suspense fallback={<span class="loading loading-ring" />}>
+        <Suspense fallback={fallback}>
           <Menu {...menu} />
         </Suspense>
       </Modal>
@@ -43,7 +49,7 @@ function Modals({ menu, searchbar }: Props) {
           displaySearchbar.value = false;
         }}
       >
-        <Suspense fallback={<span class="loading loading-ring" />}>
+        <Suspense fallback={fallback}>
           <Searchbar {...searchbar} />
         </Suspense>
       </Modal>
@@ -57,7 +63,7 @@ function Modals({ menu, searchbar }: Props) {
           displayCart.value = false;
         }}
       >
-        <Suspense fallback={<span class="loading loading-ring" />}>
+        <Suspense fallback={fallback}>
           <Cart />
         </Suspense>
       </Modal>
