@@ -88,9 +88,7 @@
               "deco-sites/fashion/sections/Content/Faq.tsx",
               "deco-sites/fashion/sections/Content/Logos.tsx",
               "deco-sites/fashion/sections/Content/Testimonials.tsx",
-              "deco-sites/fashion/sections/DesignSystem.tsx",
               "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx",
-              "deco-sites/fashion/sections/Features.tsx",
               "deco-sites/fashion/sections/Footer/Footer.tsx",
               "deco-sites/fashion/sections/Header/Header.tsx",
               "deco-sites/fashion/sections/Images/BannerGrid.tsx",
@@ -106,11 +104,8 @@
               "deco-sites/fashion/sections/Product/ProductShelf.tsx",
               "deco-sites/fashion/sections/Product/SearchResult.tsx",
               "deco-sites/fashion/sections/Product/Wishlist.tsx",
-              "deco-sites/fashion/sections/ProductDetails.tsx",
-              "deco-sites/fashion/sections/SearchResult.tsx",
               "deco-sites/fashion/sections/Social/InstagramPosts.tsx",
               "deco-sites/fashion/sections/Social/WhatsApp.tsx",
-              "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configOCC.global.tsx",
@@ -8349,202 +8344,6 @@
       "required": [],
       "title": "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature": {
-      "type": "object",
-      "properties": {
-        "icon": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "ArrowsPointingOut"
-            },
-            {
-              "type": "string",
-              "const": "Bars3"
-            },
-            {
-              "type": "string",
-              "const": "ChevronLeft"
-            },
-            {
-              "type": "string",
-              "const": "ChevronRight"
-            },
-            {
-              "type": "string",
-              "const": "ChevronUp"
-            },
-            {
-              "type": "string",
-              "const": "ChevronDown"
-            },
-            {
-              "type": "string",
-              "const": "CreditCard"
-            },
-            {
-              "type": "string",
-              "const": "Deco"
-            },
-            {
-              "type": "string",
-              "const": "Discord"
-            },
-            {
-              "type": "string",
-              "const": "Discount"
-            },
-            {
-              "type": "string",
-              "const": "Elo"
-            },
-            {
-              "type": "string",
-              "const": "Facebook"
-            },
-            {
-              "type": "string",
-              "const": "FilterList"
-            },
-            {
-              "type": "string",
-              "const": "Heart"
-            },
-            {
-              "type": "string",
-              "const": "Instagram"
-            },
-            {
-              "type": "string",
-              "const": "Logo"
-            },
-            {
-              "type": "string",
-              "const": "Minus"
-            },
-            {
-              "type": "string",
-              "const": "MapPin"
-            },
-            {
-              "type": "string",
-              "const": "MagnifyingGlass"
-            },
-            {
-              "type": "string",
-              "const": "Mastercard"
-            },
-            {
-              "type": "string",
-              "const": "Message"
-            },
-            {
-              "type": "string",
-              "const": "Phone"
-            },
-            {
-              "type": "string",
-              "const": "Pix"
-            },
-            {
-              "type": "string",
-              "const": "Plus"
-            },
-            {
-              "type": "string",
-              "const": "QuestionMarkCircle"
-            },
-            {
-              "type": "string",
-              "const": "Return"
-            },
-            {
-              "type": "string",
-              "const": "Ruler"
-            },
-            {
-              "type": "string",
-              "const": "ShoppingCart"
-            },
-            {
-              "type": "string",
-              "const": "Star"
-            },
-            {
-              "type": "string",
-              "const": "Tiktok"
-            },
-            {
-              "type": "string",
-              "const": "Trash"
-            },
-            {
-              "type": "string",
-              "const": "Truck"
-            },
-            {
-              "type": "string",
-              "const": "User"
-            },
-            {
-              "type": "string",
-              "const": "Visa"
-            },
-            {
-              "type": "string",
-              "const": "WhatsApp"
-            },
-            {
-              "type": "string",
-              "const": "XMark"
-            },
-            {
-              "type": "string",
-              "const": "Zoom"
-            }
-          ],
-          "type": "string",
-          "description": "Image src",
-          "title": "Icon"
-        },
-        "title": {
-          "type": "string",
-          "description": "Title",
-          "title": "Title"
-        },
-        "description": {
-          "type": "string",
-          "description": "Description and Image alt text",
-          "title": "Description"
-        }
-      },
-      "required": [
-        "icon",
-        "title",
-        "description"
-      ],
-      "title": "Feature"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature"
-      },
-      "title": "Feature[]"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "features": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]",
-          "title": "Features"
-        }
-      },
-      "required": [
-        "features"
-      ],
-      "title": "deco-sites/fashion/components/ui/Features.tsx@Props"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem": {
       "type": "object",
       "properties": {
@@ -13183,27 +12982,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=": {
-      "title": "deco-sites/fashion/sections/DesignSystem.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/DesignSystem.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/DesignSystem.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4": {
       "title": "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx",
       "type": "object",
@@ -13222,27 +13000,6 @@
             "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx"
           ],
           "default": "deco-sites/fashion/sections/DesignSystem/DesignSystem.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZlYXR1cmVzLnRzeA==": {
-      "title": "deco-sites/fashion/sections/Features.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/Features.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/Features.tsx"
         }
       }
     },
@@ -13561,48 +13318,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA==": {
-      "title": "deco-sites/fashion/sections/ProductDetails.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0RGV0YWlscy50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/ProductDetails.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/ProductDetails.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g=": {
-      "title": "deco-sites/fashion/sections/SearchResult.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/SearchResult.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/SearchResult.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NvY2lhbC9JbnN0YWdyYW1Qb3N0cy50c3g=": {
       "title": "deco-sites/fashion/sections/Social/InstagramPosts.tsx",
       "type": "object",
@@ -13642,27 +13357,6 @@
             "deco-sites/fashion/sections/Social/WhatsApp.tsx"
           ],
           "default": "deco-sites/fashion/sections/Social/WhatsApp.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1dpc2hsaXN0R2FsbGVyeS50c3g=": {
-      "title": "deco-sites/fashion/sections/WishlistGallery.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/fashion/sections/WishlistGallery.tsx"
-          ],
-          "default": "deco-sites/fashion/sections/WishlistGallery.tsx"
         }
       }
     },
@@ -14840,13 +14534,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZlYXR1cmVzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci9Gb290ZXIudHN4"
@@ -14894,19 +14582,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3QvV2lzaGxpc3QudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NvY2lhbC9JbnN0YWdyYW1Qb3N0cy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NvY2lhbC9XaGF0c0FwcC50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1dpc2hsaXN0R2FsbGVyeS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
