@@ -79,17 +79,15 @@ function CategoryList(props: Props) {
   } = props;
 
   return (
-    <div class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content  lg:py-10">
-      <div
-        id={id}
-        class="px-4 lg:px-0"
-      >
-        <Header
-          title={header.title}
-          description={header.description || ""}
-          alignment={layout.headerAlignment || "center"}
-        />
-      </div>
+    <div
+      id={id}
+      class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content  lg:py-10"
+    >
+      <Header
+        title={header.title}
+        description={header.description || ""}
+        alignment={layout.headerAlignment || "center"}
+      />
 
       <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
         {list.map((
@@ -98,7 +96,7 @@ function CategoryList(props: Props) {
         ) => (
           <Slider.Item
             index={index}
-            class="flex flex-col gap-4 carousel-item first:pl-4 last:pr-4 sm:first:pl-0 sm:last:pr-0"
+            class="flex flex-col gap-4 carousel-item first:pl-6 sm:first:pl-0 last:pr-6 sm:last:pr-0"
           >
             <a
               href={href}

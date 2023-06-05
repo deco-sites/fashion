@@ -60,7 +60,7 @@ function ProductShelf({
   }
 
   return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-12 lg:gap-16 lg:py-10 lg:px-0">
+    <div class="w-full container  py-8 flex flex-col gap-12 lg:gap-16 lg:py-10">
       <Header
         title={title || ""}
         description={description || ""}
@@ -76,7 +76,7 @@ function ProductShelf({
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
-              class="carousel-item w-[270px] sm:w-[292px] first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0"
+              class="carousel-item w-[270px] sm:w-[292px] first:pl-6 sm:first:pl-0 last:pr-6 sm:last:pr-0"
             >
               <ProductCard
                 product={product}
