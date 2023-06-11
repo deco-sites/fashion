@@ -340,11 +340,7 @@ const defaultTheme = {
 function Section({
   colors,
   miscellaneous,
-  fonts = {
-    fontFamily: "Albert Sans",
-    styleInnerHtml:
-      "@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');",
-  },
+  fonts,
 }: Props) {
   const id = useId();
   const theme = {
@@ -353,28 +349,20 @@ function Section({
     ...colors?.optional,
     ...miscellaneous,
   };
-  const variables = [...toVariables(theme), ["--font-family", fonts.fontFamily]]
+  const variables = [
+    ...toVariables(theme),
+    ["--font-family", fonts?.fontFamily ?? ""],
+  ]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
     .join(";");
 
   return (
     <Head>
-      {/* Adds pre-connect to Google Fonts. This can lead to a HUGE improvement on Page Speed Insights score */}
-      {fonts.styleInnerHtml.includes("fonts.googleapis.com") && (
-        <>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin=""
-          />
-        </>
-      )}
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       <style
         id={`__DESIGN_SYSTEM_FONT-${id}`}
-        dangerouslySetInnerHTML={{ __html: fonts.styleInnerHtml }}
+        dangerouslySetInnerHTML={{ __html: fonts?.styleInnerHtml ?? "" }}
       />
       <style
         id={`__DESIGN_SYSTEM_VARS-${id}`}
