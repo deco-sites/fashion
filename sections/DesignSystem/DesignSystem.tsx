@@ -359,6 +359,17 @@ function Section({
 
   return (
     <Head>
+      {/* Adds pre-connect to Google Fonts. This can lead to a HUGE improvement on Page Speed Insights score */}
+      {fonts.styleInnerHtml.includes("fonts.googleapis.com") && (
+        <>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin=""
+          />
+        </>
+      )}
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       <style
