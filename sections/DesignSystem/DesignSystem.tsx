@@ -361,10 +361,12 @@ function Section({
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       <style
+        type="text/css"
         id={`__DESIGN_SYSTEM_FONT-${id}`}
         dangerouslySetInnerHTML={{ __html: fonts?.styleInnerHtml ?? "" }}
       />
       <style
+        type="text/css"
         id={`__DESIGN_SYSTEM_VARS-${id}`}
         dangerouslySetInnerHTML={{
           __html: `:root {${variables}}`,

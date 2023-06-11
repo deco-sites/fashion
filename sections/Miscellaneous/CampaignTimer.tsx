@@ -57,7 +57,7 @@ const snippet = (expiresAt: string, rootId: string) => {
     const totalHours = (days * 24) + hours;
 
     return {
-      hours: totalHours,
+      hours: Math.min(totalHours, 99),
       minutes,
       seconds,
     };
