@@ -71,23 +71,27 @@ const snippet = (expiresAt: string, rootId: string) => {
     elem.style.setProperty("--value", value.toString());
   };
 
-  setInterval(() => {
-    const { hours, minutes, seconds } = getDelta();
-    const isExpired = hours + minutes + seconds < 0;
+  const start = () =>
+    setInterval(() => {
+      const { hours, minutes, seconds } = getDelta();
+      const isExpired = hours + minutes + seconds < 0;
 
-    if (isExpired) {
-      const expired = document.getElementById(`${rootId}::expired`);
-      const counter = document.getElementById(`${rootId}::counter`);
-      const link = document.getElementById(`${rootId}::link`);
+      if (isExpired) {
+        const expired = document.getElementById(`${rootId}::expired`);
+        const counter = document.getElementById(`${rootId}::counter`);
 
-      expired?.classList.remove("hidden");
-      counter?.classList.add("hidden");
-    } else {
-      setValue(`${rootId}::hours`, hours);
-      setValue(`${rootId}::minutes`, minutes);
-      setValue(`${rootId}::seconds`, seconds);
-    }
-  }, 1_000);
+        expired?.classList.remove("hidden");
+        counter?.classList.add("hidden");
+      } else {
+        setValue(`${rootId}::hours`, hours);
+        setValue(`${rootId}::minutes`, minutes);
+        setValue(`${rootId}::seconds`, seconds);
+      }
+    }, 1_000);
+
+  document.readyState === "complete"
+    ? start()
+    : addEventListener("load", start);
 };
 
 function CampaignTimer({
