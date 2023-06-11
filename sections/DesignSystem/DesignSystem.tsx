@@ -340,11 +340,7 @@ const defaultTheme = {
 function Section({
   colors,
   miscellaneous,
-  fonts = {
-    fontFamily: "Albert Sans",
-    styleInnerHtml:
-      "@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');",
-  },
+  fonts,
 }: Props) {
   const id = useId();
   const theme = {
@@ -353,7 +349,10 @@ function Section({
     ...colors?.optional,
     ...miscellaneous,
   };
-  const variables = [...toVariables(theme), ["--font-family", fonts.fontFamily]]
+  const variables = [
+    ...toVariables(theme),
+    ["--font-family", fonts?.fontFamily ?? ""],
+  ]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
     .join(";");
 
@@ -362,10 +361,12 @@ function Section({
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       <style
+        type="text/css"
         id={`__DESIGN_SYSTEM_FONT-${id}`}
-        dangerouslySetInnerHTML={{ __html: fonts.styleInnerHtml }}
+        dangerouslySetInnerHTML={{ __html: fonts?.styleInnerHtml ?? "" }}
       />
       <style
+        type="text/css"
         id={`__DESIGN_SYSTEM_VARS-${id}`}
         dangerouslySetInnerHTML={{
           __html: `:root {${variables}}`,
