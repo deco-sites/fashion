@@ -5,11 +5,11 @@ export interface SocialIcon {
     link: string;
 }
   
-export default function Social({ content } : { content: { title: string, items: SocialIcon[] } }) {
+export default function Social({ content, vertical = false } : { content: { title: string, items: SocialIcon[] }, vertical?: boolean }) {
     return (
-        <div class="flex flex-col gap-4 text-primary-content">
+        <div class="flex flex-col gap-4">
             { content?.title && <h3 class="text-lg">{ content?.title }</h3> }
-            <ul class="flex items-center gap-4">
+            <ul class={`flex gap-4 ${vertical ? 'flex-col items-start' : 'flex-wrap items-center'}`}>
                 {
                     content?.items?.length > 0 && content?.items.map((item) => {
                         return (
@@ -19,14 +19,18 @@ export default function Social({ content } : { content: { title: string, items: 
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={`${item.label} Logo`}
-                                    class="btn btn-circle btn-outline btn-sm"
+                                    class="flex gap-2 items-center"
                                 >
-                                    <Icon
-                                        class="text-primary-content"
-                                        width={20}
-                                        height={20}
-                                        id={item.label}
-                                    />
+                                    <span class="block p-1 border rounded-full">
+                                        <Icon
+                                            width={20}
+                                            height={20}
+                                            id={item.label}
+                                        />
+                                    </span>
+                                    {
+                                        vertical && <div class="text-sm">{item.label}</div>
+                                    }
                                 </a>
                             </li>
                         )
