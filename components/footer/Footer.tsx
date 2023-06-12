@@ -1,45 +1,68 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
+import FooterItems from "$store/components/footer/FooterItems.tsx";
+import Social from "$store/components/footer/Social.tsx";
+import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
+import MobileApps from "$store/components/footer/MobileApps.tsx";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { ComponentChildren } from "preact";
 
-export type IconItem = { icon: AvailableIcons };
-export type StringItem = {
+export type Item = {
   label: string;
   href: string;
 };
 
-export type Item = StringItem | IconItem;
-
 export type Section = {
   label: string;
-  children: Item[];
+  items: Item[];
 };
 
-const isIcon = (item: Item): item is IconItem =>
-  // deno-lint-ignore no-explicit-any
-  typeof (item as any)?.icon === "string";
+export interface SocialItem {
+  label: "Discord" | "Facebook" | "Instagram" | "Linkedin" | "Tiktok" | "Twitter" ;
+  link: string;
+}
 
-function SectionItem({ item }: { item: Item }) {
+export interface PaymentItem {
+  label: "Diners" | "Elo" | "Mastercard" | "Pix" | "Visa" ;
+}
+
+export interface MobileApps {
+  /** @description Link to the app */
+  apple?: string;
+  /** @description Link to the app */
+  android?: string;
+}
+
+export interface Props {
+  logo?: {
+    image: LiveImage;
+    description?: string;
+  }
+  sections?: Section[];
+  social?: {
+    title?: string;
+    items: SocialItem[];
+  }
+  payments?: {
+    title?: string;
+    items: PaymentItem[];
+  }
+  mobileApps?: MobileApps;
+  extraLinks?: Item[];
+}
+
+function PoweredBy() {
   return (
-    <span class="text-primary-content">
-      {isIcon(item)
-        ? (
-          <div class="border-base-100 border border-solid py-1.5 px-2.5">
-            <Icon
-              id={item.icon}
-              width={25}
-              height={20}
-              strokeWidth={0.01}
-            />
-          </div>
-        )
-        : (
-          <a href={item.href}>
-            {item.label}
-          </a>
-        )}
+    <span class="flex items-center gap-1 text-primary-content">
+      Powered by{" "}
+      <a
+        href="https://www.deco.cx"
+        aria-label="powered by https://www.deco.cx"
+      >
+        <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
+      </a>
     </span>
-  );
+  )
 }
 
 function FooterContainer(
@@ -48,123 +71,67 @@ function FooterContainer(
     children: ComponentChildren;
   },
 ) {
-  return <div class={`py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
+  return <div class={`flex flex-col gap-8 py-6 px-4 sm:py-12 sm:px-0 ${_class}`}>{children}</div>;
 }
 
-export interface Props {
-  sections?: Section[];
-}
-
-function Footer({ sections = [] }: Props) {
+function Logo({logo} : Props) {
   return (
-    <footer class="w-full bg-primary flex flex-col divide-y divide-primary-content">
-      <div>
-        <div class="container w-full flex flex-col divide-y divide-primary-content">
-          <FooterContainer>
-            <Newsletter />
-          </FooterContainer>
-
-          <FooterContainer>
-            {/* Desktop view */}
-            <ul class="hidden sm:flex flex-row gap-20">
-              {sections.map((section) => (
-                <li>
-                  <div>
-                    <span class="font-medium text-xl text-primary-content">
-                      {section.label}
-                    </span>
-
-                    <ul
-                      class={`flex ${
-                        isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                      } gap-2 pt-2 flex-wrap`}
-                    >
-                      {section.children.map((item) => (
-                        <li>
-                          <SectionItem item={item} />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            {/* Mobile view */}
-            <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
-              {sections.map((section) => (
-                <li>
-                  <span class="text-primary-content">
-                    <details>
-                      <summary>
-                        {section.label}
-                      </summary>
-
-                      <ul
-                        class={`flex ${
-                          isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                        } gap-2 px-2 pt-2`}
-                      >
-                        {section.children.map((item) => (
-                          <li>
-                            <SectionItem item={item} />
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </FooterContainer>
-        </div>
+    <div class="flex flex-col gap-3">
+      <div class="w-28 max-h-16">
+        <img
+          class="w-28 max-h-16"
+          src={logo?.image}
+          alt={logo?.description}
+          width={200}
+          height={200}
+        />
       </div>
+      <div class="text-base">
+        { logo?.description }
+      </div>
+    </div>
+  )
+}
 
-      <div>
-        <div class="container w-full">
-          <FooterContainer class="flex justify-between w-full">
-            <span class="flex items-center gap-1 text-primary-content">
-              Powered by{" "}
-              <a
-                href="https://www.deco.cx"
-                aria-label="powered by https://www.deco.cx"
-              >
-                <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
-              </a>
-            </span>
+function ExtraLinks({ content } : { content: Array }) {
+  return (
+    <>
+      {
+        content?.length > 0 && (
+          <div class="flex gap-10">
+            {
+              content.map(item => (
+                <a class="link link-hover text-sm" href={item.href}>{item.label}</a>
+              ))
+            }
+          </div>      
+        )
+      }
+    </>
+  )
+}
 
-            <ul class="flex items-center justify-center gap-2">
-              <li>
-                <a
-                  href="https://www.instagram.com/deco.cx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram logo"
-                >
-                  <Icon
-                    class="text-primary-content"
-                    width={32}
-                    height={32}
-                    id="Instagram"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://www.deco.cx/discord"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Discord logo"
-                >
-                  <Icon
-                    class="text-primary-content"
-                    width={32}
-                    height={32}
-                    id="Discord"
-                  />
-                </a>
-              </li>
-            </ul>
+function Footer({
+  logo,
+  sections = [],
+  social = [],
+  payments = [],
+  mobileApps = { apple: "", android: "" },
+  extraLinks = [],
+}: Props) {
+  return (
+    <footer class="w-full bg-primary flex flex-col divide-y divide-primary-content text-primary-content">
+      <div class="container mx-auto">
+        <div class="w-full flex flex-col divide-y divide-primary-content">
+          <FooterContainer>
+            <Logo logo={logo} />
+            <MobileApps content={mobileApps} />
+            <Newsletter />
+            <FooterItems sections={sections} />
+            <PaymentMethods content={payments} />
+            <Social content={social} />
+            <ExtraLinks content={extraLinks} />
+            <PoweredBy />
           </FooterContainer>
         </div>
       </div>
