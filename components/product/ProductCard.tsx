@@ -5,7 +5,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import { sendEventOnClick } from "$store/sdk/analytics.tsx";
+import { SendEventOnClick } from "$store/sdk/analytics.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {
@@ -60,24 +60,12 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
     offers,
     isVariantOf,
   } = product;
+  const id = `product-card-${productID}`;
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
   const { listPrice, price, installments } = useOffer(offers);
   const possibilities = useVariantPossibilities(product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
-  const clickEvent = {
-    name: "select_item" as const,
-    params: {
-      item_list_name: itemListName,
-      items: [
-        mapProductToAnalyticsItem({
-          product,
-          price,
-          listPrice,
-        }),
-      ],
-    },
-  };
 
   const l = layout;
   const align =
@@ -106,14 +94,32 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
 
   return (
     <div
+      id={id}
       class={`card card-compact group w-full ${
         align === "center" ? "text-center" : "text-start"
       } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}`}
       data-deco="view-product"
-      id={`product-card-${productID}`}
-      {...sendEventOnClick(clickEvent)}
     >
-      <figure class="relative " style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}>
+      <SendEventOnClick
+        id={id}
+        event={{
+          name: "select_item" as const,
+          params: {
+            item_list_name: itemListName,
+            items: [
+              mapProductToAnalyticsItem({
+                product,
+                price,
+                listPrice,
+              }),
+            ],
+          },
+        }}
+      />
+      <figure
+        class="relative "
+        style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
+      >
         {/* Wishlist button */}
         <div
           class={`absolute top-2 z-10
@@ -129,7 +135,10 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           }
         `}
         >
-          <WishlistIcon productGroupID={productGroupID} productID={productID} />
+          <WishlistIcon
+            productGroupID={productGroupID}
+            productID={productID}
+          />
         </div>
         {/* Product Images */}
         <a
