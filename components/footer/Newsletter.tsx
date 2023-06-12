@@ -20,7 +20,9 @@ export interface Props {
   form?: Form;
 }
 
-function Newsletter({ content, tiled = false } : { content: Props, tiled: boolean }) {
+function Newsletter(
+  { content, tiled = false }: { content: Props; tiled: boolean },
+) {
   const loading = useSignal(false);
 
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
@@ -39,9 +41,19 @@ function Newsletter({ content, tiled = false } : { content: Props, tiled: boolea
   };
 
   return (
-    <div class={`flex ${tiled ? "w-full justify-between" : "flex-col gap-4"}`}>
+    <div
+      class={`flex ${
+        tiled
+          ? "flex-col gap-4 lg:flex-row lg:w-full lg:justify-between"
+          : "flex-col gap-4"
+      }`}
+    >
       <div class="flex flex-col gap-4">
-        {content?.title && <h3 class={tiled ? "text-3xl" : "text-lg"}>{content?.title}</h3>}
+        {content?.title && (
+          <h3 class={tiled ? "text-2xl lg:text-3xl" : "text-lg"}>
+            {content?.title}
+          </h3>
+        )}
         {content?.description && <div>{content?.description}</div>}
       </div>
       <div class="flex flex-col gap-4">
@@ -52,10 +64,14 @@ function Newsletter({ content, tiled = false } : { content: Props, tiled: boolea
           <div class="flex gap-3">
             <input
               name="email"
-              class="input input-bordered w-80 text-base-content"
+              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
               placeholder={content?.form?.placeholder || "Digite seu email"}
             />
-            <button type="submit" class="btn disabled:loading" disabled={loading}>
+            <button
+              type="submit"
+              class="btn disabled:loading"
+              disabled={loading}
+            >
               {content?.form?.buttonText || "Inscrever"}
             </button>
           </div>

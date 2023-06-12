@@ -8555,6 +8555,21 @@
       "required": [],
       "title": "MobileApps"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@RegionOptions": {
+      "type": "object",
+      "properties": {
+        "currency": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
+          "title": "Currency"
+        },
+        "language": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
+          "title": "Language"
+        }
+      },
+      "required": [],
+      "title": "RegionOptions"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -8651,6 +8666,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@MobileApps",
           "title": "Mobile Apps"
         },
+        "regionOptions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@RegionOptions",
+          "title": "Region Options"
+        },
         "extraLinks": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Item[]",
           "title": "Extra Links"
@@ -8723,11 +8742,79 @@
               ],
               "type": "string",
               "title": "Variation"
+            },
+            "hide": {
+              "type": "object",
+              "properties": {
+                "logo": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Logo"
+                },
+                "newsletter": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Newsletter"
+                },
+                "sectionLinks": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Section Links"
+                },
+                "socialLinks": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Social Links"
+                },
+                "playmentMethods": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Playment Methods"
+                },
+                "mobileApps": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Mobile Apps"
+                },
+                "regionOptions": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Region Options"
+                },
+                "extraLinks": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Extra Links"
+                },
+                "backToTheTop": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Back To The Top"
+                }
+              },
+              "required": [],
+              "title": "Hide"
             }
           },
-          "required": [
-            "variation"
-          ],
+          "required": [],
           "title": "Layout"
         }
       },
