@@ -3408,7 +3408,7 @@
       ],
       "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9yb3V0ZXMvX21pZGRsZXdhcmUudHM=@MiddlewareConfig": {
+    "ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -3428,7 +3428,7 @@
           "required": [
             "state"
           ],
-          "title": "/Users/lucis/deco/live/routes/_middleware.ts@MiddlewareConfig",
+          "title": "deco-cx/live/routes/_middleware.ts@MiddlewareConfig",
           "description": "Global configurations for ./routes/_middleware.ts route"
         },
         {
@@ -3437,7 +3437,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3N0YXRlLnRz@Props"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@Props"
             }
           ],
           "required": [
@@ -3455,52 +3455,46 @@
         }
       ]
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbG9hZGVyLnRz@Loader": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
       "$ref": "#/root/loaders",
       "title": "Loader"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvYWNjb3VudC50cw==@Account": {
-      "type": "object",
-      "properties": {},
-      "required": [],
-      "title": "Account"
-    },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvZmxhZy50cw==@Flag": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags",
       "title": "Flag"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvc2VjdGlvbi50cw==@Section": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
       "$ref": "#/root/sections",
       "title": "Section"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvcGFnZS50cw==@Page": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
       "$ref": "#/root/pages",
       "title": "Page"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbG9hZGVyLnRz@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbG9hZGVyLnRz@Loader"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader"
         },
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvYWNjb3VudC50cw==@Account"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
         },
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvZmxhZy50cw==@Flag"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
         },
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvc2VjdGlvbi50cw==@Section"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
         },
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvcGFnZS50cw==@Page"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page"
         }
       ],
       "title": "4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3N0YXRlLnRz@StateProp": {
+    "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp": {
       "type": "object",
       "properties": {
         "key": {
@@ -3508,7 +3502,7 @@
           "title": "Key"
         },
         "value": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbG9hZGVyLnRz@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section",
           "title": "Value"
         }
       },
@@ -3518,25 +3512,25 @@
       ],
       "title": "StateProp"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3N0YXRlLnRz@StateProp[]": {
+    "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3N0YXRlLnRz@StateProp"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp"
       },
       "title": "StateProp[]"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3N0YXRlLnRz@Props": {
+    "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@Props": {
       "type": "object",
       "properties": {
         "state": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3N0YXRlLnRz@StateProp[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp[]",
           "title": "State"
         }
       },
       "required": [
         "state"
       ],
-      "title": "/Users/lucis/deco/live/loaders/state.ts@Props"
+      "title": "deco-cx/live/loaders/state.ts@Props"
     },
     "ZGVjby1jeC9kdXJhYmxlL2JhY2tlbmRzL2JhY2tlbmQudHM=@WorkflowExecution": {
       "anyOf": [
@@ -3583,7 +3577,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3dvcmtmbG93cy9ldmVudHMudHM=@Props"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props"
             }
           ],
           "required": [
@@ -3601,7 +3595,7 @@
         }
       ]
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3dvcmtmbG93cy9ldmVudHMudHM=@Props": {
+    "ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props": {
       "type": "object",
       "properties": {
         "id": {
@@ -3626,7 +3620,7 @@
       "required": [
         "id"
       ],
-      "title": "/Users/lucis/deco/live/loaders/workflows/events.ts@Props"
+      "title": "deco-cx/live/loaders/workflows/events.ts@Props"
     },
     "ZGVjby1jeC9kdXJhYmxlL2JhY2tlbmRzL2JhY2tlbmQudHM=@indexedAccessstatusWorkflowExecution": {
       "type": "object",
@@ -3650,7 +3644,7 @@
       "required": [],
       "title": "indexedAccessinputWorkflowExecution"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9jb21tb25zL3dvcmtmbG93cy90eXBlcy50cw==@WorkflowExecution": {
+    "ZGVjby1jeC9saXZlL2NvbW1vbnMvd29ya2Zsb3dzL3R5cGVzLnRz@WorkflowExecution": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -3689,7 +3683,7 @@
             "status",
             "workflow"
           ],
-          "title": "/Users/lucis/deco/live/commons/workflows/types.ts@WorkflowExecution"
+          "title": "deco-cx/live/commons/workflows/types.ts@WorkflowExecution"
         },
         {
           "title": "$live/loaders/workflows/get.ts",
@@ -3697,7 +3691,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3dvcmtmbG93cy9nZXQudHM=@Props"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
             }
           ],
           "required": [
@@ -3715,7 +3709,7 @@
         }
       ]
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3dvcmtmbG93cy9nZXQudHM=@Props": {
+    "ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props": {
       "type": "object",
       "properties": {
         "id": {
@@ -3726,7 +3720,7 @@
       "required": [
         "id"
       ],
-      "title": "/Users/lucis/deco/live/loaders/workflows/get.ts@Props"
+      "title": "deco-cx/live/loaders/workflows/get.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@Fields": {
       "type": "object",
@@ -6898,33 +6892,33 @@
       ],
       "title": "deco-sites/fashion/components/ui/ShippingSimulation.tsx@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9kZXZQYWdlLnRz@DevConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvcGFnZS50cw==@Page",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
           "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "/Users/lucis/deco/live/handlers/devPage.ts@DevConfig"
+      "title": "deco-cx/live/handlers/devPage.ts@DevConfig"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9mcmVzaC50cw==@FreshConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvcGFnZS50cw==@Page",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
           "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "/Users/lucis/deco/live/handlers/fresh.ts@FreshConfig"
+      "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9wcm94eS50cw==@Props": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Props": {
       "type": "object",
       "properties": {
         "url": {
@@ -6952,9 +6946,9 @@
       "required": [
         "url"
       ],
-      "title": "/Users/lucis/deco/live/handlers/proxy.ts@Props"
+      "title": "deco-cx/live/handlers/proxy.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9yZWRpcmVjdC50cw==@RedirectConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig": {
       "type": "object",
       "properties": {
         "to": {
@@ -6979,55 +6973,9 @@
       "required": [
         "to"
       ],
-      "title": "/Users/lucis/deco/live/handlers/redirect.ts@RedirectConfig"
+      "title": "deco-cx/live/handlers/redirect.ts@RedirectConfig"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvaGFuZGxlci50cw==@Handler": {
-      "$ref": "#/root/handlers",
-      "title": "Handler"
-    },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Route": {
-      "type": "object",
-      "properties": {
-        "pathTemplate": {
-          "type": "string",
-          "title": "Path Template"
-        },
-        "isHref": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "description": "if true so the path will be checked agaisnt the coming from request instead of using urlpattern.",
-          "title": "Is Href"
-        },
-        "handler": {
-          "type": "object",
-          "properties": {
-            "value": {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvaGFuZGxlci50cw==@Handler",
-              "title": "Value"
-            }
-          },
-          "required": [
-            "value"
-          ],
-          "title": "Handler"
-        }
-      },
-      "required": [
-        "pathTemplate",
-        "handler"
-      ],
-      "title": "Route"
-    },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Route[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Route"
-      },
-      "title": "Route[]"
-    },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9yb3V0ZXIudHM=@RouterConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig": {
       "type": "object",
       "properties": {
         "base": {
@@ -7038,19 +6986,19 @@
           "title": "Base"
         },
         "routes": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Route[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         }
       },
       "required": [
         "routes"
       ],
-      "title": "/Users/lucis/deco/live/handlers/router.ts@RouterConfig"
+      "title": "deco-cx/live/handlers/router.ts@RouterConfig"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvZmxhZy50cw==@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag": {
       "anyOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvZmxhZy50cw==@Flag"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
         },
         {
           "$ref": "#/definitions/JGxpdmUvZmxhZ3MvYXVkaWVuY2UudHM="
@@ -7061,51 +7009,51 @@
       ],
       "title": "Audiences"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvZmxhZy50cw==@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvZmxhZy50cw==@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag"
       },
       "title": "15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9yb3V0ZXNTZWxlY3Rpb24udHM=@SelectionConfig": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig": {
       "type": "object",
       "properties": {
         "audiences": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvZmxhZy50cw==@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]",
           "title": "Audiences"
         }
       },
       "required": [
         "audiences"
       ],
-      "title": "/Users/lucis/deco/live/handlers/routesSelection.ts@SelectionConfig"
+      "title": "deco-cx/live/handlers/routesSelection.ts@SelectionConfig"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvd29ya2Zsb3cudHM=@Workflow": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow": {
       "$ref": "#/root/workflows",
       "title": "Workflow"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy93b3JrZmxvd1J1bm5lci50cw==@Config": {
+    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvd29ya2Zsb3cudHM=@Workflow",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
           "title": "Workflow"
         }
       },
       "required": [
         "workflow"
       ],
-      "title": "/Users/lucis/deco/live/handlers/workflowRunner.ts@Config"
+      "title": "deco-cx/live/handlers/workflowRunner.ts@Config"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvc2VjdGlvbi50cw==@Section[]": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvc2VjdGlvbi50cw==@Section"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
       },
       "title": "Section[]"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9wYWdlcy9MaXZlUGFnZS50c3g=@Props": {
+    "ZGVjby1jeC9saXZlL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "name": {
@@ -7120,11 +7068,11 @@
           "title": "Path"
         },
         "layout": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvcGFnZS50cw==@Page",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
           "title": "Layout"
         },
         "sections": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvc2VjdGlvbi50cw==@Section[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Sections"
         }
       },
@@ -7132,22 +7080,22 @@
         "name",
         "sections"
       ],
-      "title": "/Users/lucis/deco/live/pages/LivePage.tsx@Props"
+      "title": "deco-cx/live/pages/LivePage.tsx@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9zZWN0aW9ucy9QYWdlSW5jbHVkZS50c3g=@Props": {
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvcGFnZS50cw==@Page",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
           "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "/Users/lucis/deco/live/sections/PageInclude.tsx@Props"
+      "title": "deco-cx/live/sections/PageInclude.tsx@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9zZWN0aW9ucy9TbG90LnRzeA==@Props": {
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@Props": {
       "type": "object",
       "properties": {
         "required": {
@@ -7200,9 +7148,9 @@
         }
       },
       "required": [],
-      "title": "/Users/lucis/deco/live/sections/Slot.tsx@Props"
+      "title": "deco-cx/live/sections/Slot.tsx@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9zZWN0aW9ucy9Vc2VTbG90LnRzeA==@Props": {
+    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props": {
       "type": "object",
       "properties": {
         "name": {
@@ -7244,7 +7192,7 @@
           "title": "Name"
         },
         "sections": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvc2VjdGlvbi50cw==@Section[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Sections"
         }
       },
@@ -7252,7 +7200,7 @@
         "name",
         "sections"
       ],
-      "title": "/Users/lucis/deco/live/sections/UseSlot.tsx@Props"
+      "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
       "type": "string",
@@ -8262,7 +8210,7 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors&cdfcdee42d3581a7cccd8912b37f01e8": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@696524a6ff9e8fdff928f109587791e1&Colors": {
       "allOf": [
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors"
@@ -8278,7 +8226,7 @@
           "required": []
         }
       ],
-      "title": "Colors&cdfcdee42d3581a7cccd8912b37f01e8"
+      "title": "696524a6ff9e8fdff928f109587791e1&Colors"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous": {
       "type": "object",
@@ -8381,7 +8329,7 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors&cdfcdee42d3581a7cccd8912b37f01e8",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@696524a6ff9e8fdff928f109587791e1&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
@@ -8791,20 +8739,15 @@
       ],
       "title": "deco-sites/fashion/components/header/Header.tsx@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
       "type": "object",
       "properties": {
         "srcMobile": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Src Mobile"
         },
         "srcDesktop": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
           "title": "Src Desktop"
         },
         "alt": {
@@ -9798,6 +9741,112 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "html",
+          "title": "Text"
+        },
+        "policy": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Text"
+            },
+            "link": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Link"
+            }
+          },
+          "required": [],
+          "title": "Policy"
+        },
+        "buttons": {
+          "type": "object",
+          "properties": {
+            "allowText": {
+              "type": "string",
+              "title": "Allow Text"
+            },
+            "cancelText": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Cancel Text"
+            }
+          },
+          "required": [
+            "allowText"
+          ],
+          "title": "Buttons"
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "position": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Expanded"
+                },
+                {
+                  "type": "string",
+                  "const": "Left"
+                },
+                {
+                  "type": "string",
+                  "const": "Center"
+                },
+                {
+                  "type": "string",
+                  "const": "Right"
+                }
+              ],
+              "type": "string",
+              "title": "Position"
+            },
+            "content": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Tiled"
+                },
+                {
+                  "type": "string",
+                  "const": "Piled up"
+                }
+              ],
+              "type": "string",
+              "title": "Content"
+            }
+          },
+          "required": [],
+          "title": "Layout"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/components/ui/CookieConsent.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form": {
       "type": "object",
       "properties": {
@@ -10597,7 +10646,7 @@
       ],
       "title": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx@LoaderProps"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaERhdGUudHM=@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props": {
       "type": "object",
       "properties": {
         "start": {
@@ -10618,9 +10667,9 @@
         }
       },
       "required": [],
-      "title": "/Users/lucis/deco/live/matchers/MatchDate.ts@Props"
+      "title": "deco-cx/live/matchers/MatchDate.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaERldmljZS50cw==@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGV2aWNlLnRz@Props": {
       "type": "object",
       "properties": {
         "devices": {
@@ -10648,9 +10697,9 @@
       "required": [
         "devices"
       ],
-      "title": "/Users/lucis/deco/live/matchers/MatchDevice.ts@Props"
+      "title": "deco-cx/live/matchers/MatchDevice.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaEVudmlyb25tZW50LnRz@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props": {
       "type": "object",
       "properties": {
         "environment": {
@@ -10671,9 +10720,9 @@
       "required": [
         "environment"
       ],
-      "title": "/Users/lucis/deco/live/matchers/MatchEnvironment.ts@Props"
+      "title": "deco-cx/live/matchers/MatchEnvironment.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaEhvc3QudHM=@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoSG9zdC50cw==@Props": {
       "type": "object",
       "properties": {
         "includes": {
@@ -10692,20 +10741,20 @@
         }
       },
       "required": [],
-      "title": "/Users/lucis/deco/live/matchers/MatchHost.ts@Props"
+      "title": "deco-cx/live/matchers/MatchHost.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbWF0Y2hlci50cw==@Matcher": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
       "$ref": "#/root/matchers",
       "title": "Matcher"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbWF0Y2hlci50cw==@Matcher[]": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbWF0Y2hlci50cw==@Matcher"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher"
       },
       "title": "Matcher[]"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaE11bHRpLnRz@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props": {
       "type": "object",
       "properties": {
         "op": {
@@ -10723,7 +10772,7 @@
           "title": "Op"
         },
         "matchers": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbWF0Y2hlci50cw==@Matcher[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]",
           "title": "Matchers"
         }
       },
@@ -10731,9 +10780,9 @@
         "op",
         "matchers"
       ],
-      "title": "/Users/lucis/deco/live/matchers/MatchMulti.ts@Props"
+      "title": "deco-cx/live/matchers/MatchMulti.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaFJhbmRvbS50cw==@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props": {
       "type": "object",
       "properties": {
         "traffic": {
@@ -10744,9 +10793,9 @@
       "required": [
         "traffic"
       ],
-      "title": "/Users/lucis/deco/live/matchers/MatchRandom.ts@Props"
+      "title": "deco-cx/live/matchers/MatchRandom.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaFNpdGUudHM=@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props": {
       "type": "object",
       "properties": {
         "siteId": {
@@ -10757,9 +10806,9 @@
       "required": [
         "siteId"
       ],
-      "title": "/Users/lucis/deco/live/matchers/MatchSite.ts@Props"
+      "title": "deco-cx/live/matchers/MatchSite.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaFVzZXJBZ2VudC50cw==@Props": {
+    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props": {
       "type": "object",
       "properties": {
         "includes": {
@@ -10778,9 +10827,9 @@
         }
       },
       "required": [],
-      "title": "/Users/lucis/deco/live/matchers/MatchUserAgent.ts@Props"
+      "title": "deco-cx/live/matchers/MatchUserAgent.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Override": {
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override": {
       "type": "object",
       "properties": {
         "use": {
@@ -10798,18 +10847,18 @@
       ],
       "title": "Override"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Override[]": {
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Override"
+        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override"
       },
       "title": "Override[]"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Audience": {
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience": {
       "type": "object",
       "properties": {
         "matcher": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvbWF0Y2hlci50cw==@Matcher",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
           "title": "Matcher"
         },
         "name": {
@@ -10820,11 +10869,11 @@
           "pattern": "^[A-Za-z0-9_-]+$"
         },
         "routes": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Route[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         },
         "overrides": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Override[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
           "title": "Overrides"
         }
       },
@@ -10832,24 +10881,24 @@
         "matcher",
         "name"
       ],
-      "title": "/Users/lucis/deco/live/flags/audience.ts@Audience"
+      "title": "deco-cx/live/flags/audience.ts@Audience"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9ldmVyeW9uZS50cw==@EveryoneConfig": {
+    "ZGVjby1jeC9saXZlL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig": {
       "type": "object",
       "properties": {
         "routes": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Route[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         },
         "overrides": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Override[]",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
           "title": "Overrides"
         }
       },
       "required": [],
-      "title": "/Users/lucis/deco/live/flags/everyone.ts@EveryoneConfig"
+      "title": "deco-cx/live/flags/everyone.ts@EveryoneConfig"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9jYW5jZWwudHM=@Props": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props": {
       "type": "object",
       "properties": {
         "executionId": {
@@ -10867,7 +10916,7 @@
       "required": [
         "executionId"
       ],
-      "title": "/Users/lucis/deco/live/actions/workflows/cancel.ts@Props"
+      "title": "deco-cx/live/actions/workflows/cancel.ts@Props"
     },
     "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest": {
       "type": "object",
@@ -10890,7 +10939,7 @@
       ],
       "title": "deco-cx/durable/handler.ts@RunRequest"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zaWduYWwudHM=@Props": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
       "type": "object",
       "properties": {
         "signal": {
@@ -10913,9 +10962,9 @@
         "signal",
         "executionId"
       ],
-      "title": "/Users/lucis/deco/live/actions/workflows/signal.ts@Props"
+      "title": "deco-cx/live/actions/workflows/signal.ts@Props"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zdGFydC50cw==@WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef": {
       "type": "object",
       "properties": {
         "key": {
@@ -10933,16 +10982,16 @@
       ],
       "title": "WorkflowRef"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zdGFydC50cw==@1908eaf7241cf30ab44834ed6547dd2c|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@885ebd5a8b07248a8410f9bf0b0d90c7|WorkflowRef": {
       "anyOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zdGFydC50cw==@WorkflowRef"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
         },
         {
           "type": "object",
           "properties": {
             "ref": {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3Mvd29ya2Zsb3cudHM=@Workflow",
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
               "title": "Ref"
             }
           },
@@ -10951,13 +11000,13 @@
           ]
         }
       ],
-      "title": "1908eaf7241cf30ab44834ed6547dd2c|WorkflowRef"
+      "title": "885ebd5a8b07248a8410f9bf0b0d90c7|WorkflowRef"
     },
-    "L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zdGFydC50cw==@Props": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zdGFydC50cw==@1908eaf7241cf30ab44834ed6547dd2c|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@885ebd5a8b07248a8410f9bf0b0d90c7|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
@@ -10978,7 +11027,7 @@
       "required": [
         "workflow"
       ],
-      "title": "/Users/lucis/deco/live/actions/workflows/start.ts@Props"
+      "title": "deco-cx/live/actions/workflows/start.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvYWRkSXRlbXMudHM=@Item": {
       "type": "object",
@@ -12060,7 +12109,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3N0YXRlLnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@Props"
         }
       ],
       "required": [
@@ -12082,7 +12131,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3dvcmtmbG93cy9ldmVudHMudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props"
         }
       ],
       "required": [
@@ -12104,7 +12153,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9sb2FkZXJzL3dvcmtmbG93cy9nZXQudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
         }
       ],
       "required": [
@@ -12573,7 +12622,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9kZXZQYWdlLnRz@DevConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig"
         }
       ],
       "required": [
@@ -12595,7 +12644,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9mcmVzaC50cw==@FreshConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig"
         }
       ],
       "required": [
@@ -12617,7 +12666,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9wcm94eS50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Props"
         }
       ],
       "required": [
@@ -12638,7 +12687,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9yZWRpcmVjdC50cw==@RedirectConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig"
         }
       ],
       "required": [
@@ -12659,7 +12708,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9yb3V0ZXIudHM=@RouterConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig"
         }
       ],
       "required": [
@@ -12681,7 +12730,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy9yb3V0ZXNTZWxlY3Rpb24udHM=@SelectionConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig"
         }
       ],
       "required": [
@@ -12702,7 +12751,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9oYW5kbGVycy93b3JrZmxvd1J1bm5lci50cw==@Config"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config"
         }
       ],
       "required": [
@@ -12723,7 +12772,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9wYWdlcy9MaXZlUGFnZS50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props"
         }
       ],
       "required": [
@@ -12744,7 +12793,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9zZWN0aW9ucy9QYWdlSW5jbHVkZS50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props"
         }
       ],
       "required": [
@@ -12765,7 +12814,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9zZWN0aW9ucy9TbG90LnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@Props"
         }
       ],
       "required": [
@@ -12786,7 +12835,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9zZWN0aW9ucy9Vc2VTbG90LnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props"
         }
       ],
       "required": [
@@ -13141,6 +13190,11 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ29va2llQ29uc2VudC50c3g=": {
       "title": "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -13553,7 +13607,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaERhdGUudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props"
         }
       ],
       "required": [
@@ -13575,7 +13629,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaERldmljZS50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGV2aWNlLnRz@Props"
         }
       ],
       "required": [
@@ -13596,7 +13650,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaEVudmlyb25tZW50LnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props"
         }
       ],
       "required": [
@@ -13617,7 +13671,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaEhvc3QudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoSG9zdC50cw==@Props"
         }
       ],
       "required": [
@@ -13638,7 +13692,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaE11bHRpLnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props"
         }
       ],
       "required": [
@@ -13659,7 +13713,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaFJhbmRvbS50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props"
         }
       ],
       "required": [
@@ -13680,7 +13734,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaFNpdGUudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props"
         }
       ],
       "required": [
@@ -13701,7 +13755,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9tYXRjaGVycy9NYXRjaFVzZXJBZ2VudC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props"
         }
       ],
       "required": [
@@ -13723,7 +13777,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9hdWRpZW5jZS50cw==@Audience"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience"
         }
       ],
       "required": [
@@ -13745,7 +13799,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9mbGFncy9ldmVyeW9uZS50cw==@EveryoneConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig"
         }
       ],
       "required": [
@@ -13767,7 +13821,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9jYW5jZWwudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props"
         }
       ],
       "required": [
@@ -13811,7 +13865,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zaWduYWwudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props"
         }
       ],
       "required": [
@@ -13833,7 +13887,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9hY3Rpb25zL3dvcmtmbG93cy9zdGFydC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props"
         }
       ],
       "required": [
@@ -14695,21 +14749,21 @@
         "./routes/_middleware.ts": {
           "anyOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9yb3V0ZXMvX21pZGRsZXdhcmUudHM=@MiddlewareConfig"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig"
             }
           ]
         },
         "./routes/[...catchall].tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvaGFuZGxlci50cw==@Handler"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         },
         "./routes/index.tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/L1VzZXJzL2x1Y2lzL2RlY28vbGl2ZS9ibG9ja3MvaGFuZGxlci50cw==@Handler"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         }
