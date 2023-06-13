@@ -100,7 +100,7 @@ export interface Props {
       newsletter?: boolean;
       sectionLinks?: boolean;
       socialLinks?: boolean;
-      playmentMethods?: boolean;
+      paymentMethods?: boolean;
       mobileApps?: boolean;
       regionOptions?: boolean;
       extraLinks?: boolean;
@@ -139,7 +139,7 @@ function Footer({
   const _social = layout?.hide?.socialLinks
     ? <></>
     : <Social content={social} vertical={layout?.variation == "Variation 3"} />;
-  const _payments = layout?.hide?.playmentMethods
+  const _payments = layout?.hide?.paymentMethods
     ? <></>
     : <PaymentMethods content={payments} />;
   const _apps = layout?.hide?.mobileApps
