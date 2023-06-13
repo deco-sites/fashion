@@ -8214,24 +8214,6 @@
       "required": [],
       "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@74592a4a06c5ce464ca33da3b0b49a2f&Colors": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "optional": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@OptionalColors",
-              "title": "Optional"
-            }
-          },
-          "required": []
-        }
-      ],
-      "title": "74592a4a06c5ce464ca33da3b0b49a2f&Colors"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous": {
       "type": "object",
       "properties": {
@@ -8333,8 +8315,12 @@
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@74592a4a06c5ce464ca33da3b0b49a2f&Colors",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Colors",
           "title": "Colors"
+        },
+        "optionalColors": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@OptionalColors",
+          "title": "Optional Colors"
         },
         "miscellaneous": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Miscellaneous",
@@ -8762,12 +8748,12 @@
                   ],
                   "title": "Social Links"
                 },
-                "playmentMethods": {
+                "paymentMethods": {
                   "type": [
                     "boolean",
                     "null"
                   ],
-                  "title": "Playment Methods"
+                  "title": "Payment Methods"
                 },
                 "mobileApps": {
                   "type": [
