@@ -227,7 +227,8 @@ export interface Font {
 }
 
 export interface Props {
-  colors?: Colors & { optional?: OptionalColors };
+  colors?: Colors;
+  optionalColors?: OptionalColors;
   miscellaneous?: Miscellaneous;
   fonts?: Font;
 }
@@ -339,6 +340,7 @@ const defaultTheme = {
  */
 function Section({
   colors,
+  optionalColors,
   miscellaneous,
   fonts,
 }: Props) {
@@ -346,7 +348,7 @@ function Section({
   const theme = {
     ...defaultTheme,
     ...colors,
-    ...colors?.optional,
+    ...optionalColors,
     ...miscellaneous,
   };
   const variables = [
