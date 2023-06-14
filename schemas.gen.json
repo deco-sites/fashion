@@ -7067,10 +7067,6 @@
           ],
           "title": "Path"
         },
-        "layout": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
-          "title": "Layout"
-        },
         "sections": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Sections"
@@ -8955,15 +8951,20 @@
       ],
       "title": "deco-sites/fashion/components/header/Header.tsx@Props"
     },
+    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
       "type": "object",
       "properties": {
         "srcMobile": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image",
           "title": "Src Mobile"
         },
         "srcDesktop": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL3N0ZC9jb21wb25lbnRzL3R5cGVzLnRz@Image",
           "title": "Src Desktop"
         },
         "alt": {
@@ -9960,112 +9961,6 @@
       },
       "required": [],
       "title": "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "text": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "html",
-          "title": "Text"
-        },
-        "policy": {
-          "type": "object",
-          "properties": {
-            "text": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Text"
-            },
-            "link": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Link"
-            }
-          },
-          "required": [],
-          "title": "Policy"
-        },
-        "buttons": {
-          "type": "object",
-          "properties": {
-            "allowText": {
-              "type": "string",
-              "title": "Allow Text"
-            },
-            "cancelText": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Cancel Text"
-            }
-          },
-          "required": [
-            "allowText"
-          ],
-          "title": "Buttons"
-        },
-        "layout": {
-          "type": "object",
-          "properties": {
-            "position": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Expanded"
-                },
-                {
-                  "type": "string",
-                  "const": "Left"
-                },
-                {
-                  "type": "string",
-                  "const": "Center"
-                },
-                {
-                  "type": "string",
-                  "const": "Right"
-                }
-              ],
-              "type": "string",
-              "title": "Position"
-            },
-            "content": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Tiled"
-                },
-                {
-                  "type": "string",
-                  "const": "Piled up"
-                }
-              ],
-              "type": "string",
-              "title": "Content"
-            }
-          },
-          "required": [],
-          "title": "Layout"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/fashion/components/ui/CookieConsent.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form": {
       "type": "object",
@@ -11210,7 +11105,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@334b1e8b1a9b72929b472c12d844039f|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|ca50b4e15b5ad4151e0537d103e64a3a": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -11228,13 +11123,13 @@
           ]
         }
       ],
-      "title": "334b1e8b1a9b72929b472c12d844039f|WorkflowRef"
+      "title": "WorkflowRef|ca50b4e15b5ad4151e0537d103e64a3a"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@334b1e8b1a9b72929b472c12d844039f|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|ca50b4e15b5ad4151e0537d103e64a3a",
           "title": "Workflow"
         },
         "id": {
@@ -13418,11 +13313,6 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ29va2llQ29uc2VudC50c3g=": {
       "title": "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx",
       "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29va2llQ29uc2VudC50c3g=@Props"
-        }
-      ],
       "required": [
         "__resolveType"
       ],
