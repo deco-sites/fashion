@@ -56,6 +56,32 @@ export interface NewsletterForm {
   helpText?: string;
 }
 
+export interface Layout {
+  backgroundColor?:
+    | "Primary"
+    | "Secondary"
+    | "Accent"
+    | "Base 100"
+    | "Base 100 inverted";
+  variation?:
+    | "Variation 1"
+    | "Variation 2"
+    | "Variation 3"
+    | "Variation 4"
+    | "Variation 5";
+  hide?: {
+    logo?: boolean;
+    newsletter?: boolean;
+    sectionLinks?: boolean;
+    socialLinks?: boolean;
+    paymentMethods?: boolean;
+    mobileApps?: boolean;
+    regionOptions?: boolean;
+    extraLinks?: boolean;
+    backToTheTop?: boolean;
+  };
+}
+
 export interface Props {
   logo?: {
     image: LiveImage;
@@ -82,44 +108,38 @@ export interface Props {
   backToTheTop?: {
     text?: string;
   };
-  layout?: {
-    backgroundColor?:
-      | "Primary"
-      | "Secondary"
-      | "Accent"
-      | "Base 100"
-      | "Base 100 inverted";
-    variation?:
-      | "Variation 1"
-      | "Variation 2"
-      | "Variation 3"
-      | "Variation 4"
-      | "Variation 5";
-    hide?: {
-      logo?: boolean;
-      newsletter?: boolean;
-      sectionLinks?: boolean;
-      socialLinks?: boolean;
-      paymentMethods?: boolean;
-      mobileApps?: boolean;
-      regionOptions?: boolean;
-      extraLinks?: boolean;
-      backToTheTop?: boolean;
-    };
-  };
+  layout?: Layout;
 }
 
 function Footer({
   logo,
-  newsletter,
+  newsletter = {
+    title: "",
+    description: "",
+    form: { placeholder: "", buttonText: "", helpText: "" },
+  },
   sections = [],
-  social = [],
-  payments = [],
+  social = { title: "", items: [] },
+  payments = { title: "", items: [] },
   mobileApps = { apple: "", android: "" },
-  regionOptions = [],
+  regionOptions = { currency: [], language: [] },
   extraLinks = [],
   backToTheTop,
-  layout,
+  layout = {
+    backgroundColor: "Primary",
+    variation: "Variation 1",
+    hide: {
+      logo: false,
+      newsletter: false,
+      sectionLinks: false,
+      socialLinks: false,
+      paymentMethods: false,
+      mobileApps: false,
+      regionOptions: false,
+      extraLinks: false,
+      backToTheTop: false,
+    },
+  },
 }: Props) {
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
@@ -132,7 +152,7 @@ function Footer({
   const _sectionLinks = layout?.hide?.sectionLinks ? <></> : (
     <FooterItems
       sections={sections}
-      justifty={layout?.variation == "Variation 2" ||
+      justify={layout?.variation == "Variation 2" ||
         layout?.variation == "Variation 3"}
     />
   );

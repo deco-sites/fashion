@@ -1,27 +1,33 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
-export interface SocialIcon {
-  label: string;
+export interface SocialItem {
+  label:
+    | "Discord"
+    | "Facebook"
+    | "Instagram"
+    | "Linkedin"
+    | "Tiktok"
+    | "Twitter";
   link: string;
 }
 
 export default function Social(
   { content, vertical = false }: {
-    content: { title: string; items: SocialIcon[] };
+    content?: { title?: string; items?: SocialItem[] };
     vertical?: boolean;
   },
 ) {
   return (
     <>
-      {content?.items?.length > 0 && (
+      {content && content.items && content.items.length > 0 && (
         <div class="flex flex-col gap-4">
-          {content?.title && <h3 class="text-lg">{content?.title}</h3>}
+          {content.title && <h3 class="text-lg">{content.title}</h3>}
           <ul
             class={`flex gap-4 ${
               vertical ? "lg:flex-col lg:items-start" : "flex-wrap items-center"
             }`}
           >
-            {content?.items.map((item) => {
+            {content.items.map((item) => {
               return (
                 <li>
                   <a

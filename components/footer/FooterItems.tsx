@@ -5,8 +5,13 @@ export type Item = {
   href: string;
 };
 
+export type Section = {
+  label: string;
+  items: Item[];
+};
+
 export default function FooterItems(
-  { sections, justify = false }: { sections: Item[]; justify: boolean },
+  { sections, justify = false }: { sections: Section[]; justify: boolean },
 ) {
   return (
     <>

@@ -7563,6 +7563,10 @@
                   },
                   {
                     "type": "string",
+                    "const": "Linkedin"
+                  },
+                  {
+                    "type": "string",
                     "const": "Logo"
                   },
                   {
@@ -7628,6 +7632,10 @@
                   {
                     "type": "string",
                     "const": "Truck"
+                  },
+                  {
+                    "type": "string",
+                    "const": "Twitter"
                   },
                   {
                     "type": "string",
@@ -8588,6 +8596,135 @@
       "required": [],
       "title": "RegionOptions"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout": {
+      "type": "object",
+      "properties": {
+        "backgroundColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Secondary"
+            },
+            {
+              "type": "string",
+              "const": "Accent"
+            },
+            {
+              "type": "string",
+              "const": "Base 100"
+            },
+            {
+              "type": "string",
+              "const": "Base 100 inverted"
+            }
+          ],
+          "type": "string",
+          "title": "Background Color"
+        },
+        "variation": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Variation 1"
+            },
+            {
+              "type": "string",
+              "const": "Variation 2"
+            },
+            {
+              "type": "string",
+              "const": "Variation 3"
+            },
+            {
+              "type": "string",
+              "const": "Variation 4"
+            },
+            {
+              "type": "string",
+              "const": "Variation 5"
+            }
+          ],
+          "type": "string",
+          "title": "Variation"
+        },
+        "hide": {
+          "type": "object",
+          "properties": {
+            "logo": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Logo"
+            },
+            "newsletter": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Newsletter"
+            },
+            "sectionLinks": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Section Links"
+            },
+            "socialLinks": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Social Links"
+            },
+            "paymentMethods": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Payment Methods"
+            },
+            "mobileApps": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Mobile Apps"
+            },
+            "regionOptions": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Region Options"
+            },
+            "extraLinks": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Extra Links"
+            },
+            "backToTheTop": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Back To The Top"
+            }
+          },
+          "required": [],
+          "title": "Hide"
+        }
+      },
+      "required": [],
+      "title": "Layout"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -8707,132 +8844,7 @@
           "title": "Back To The Top"
         },
         "layout": {
-          "type": "object",
-          "properties": {
-            "backgroundColor": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Primary"
-                },
-                {
-                  "type": "string",
-                  "const": "Secondary"
-                },
-                {
-                  "type": "string",
-                  "const": "Accent"
-                },
-                {
-                  "type": "string",
-                  "const": "Base 100"
-                },
-                {
-                  "type": "string",
-                  "const": "Base 100 inverted"
-                }
-              ],
-              "type": "string",
-              "title": "Background Color"
-            },
-            "variation": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Variation 1"
-                },
-                {
-                  "type": "string",
-                  "const": "Variation 2"
-                },
-                {
-                  "type": "string",
-                  "const": "Variation 3"
-                },
-                {
-                  "type": "string",
-                  "const": "Variation 4"
-                },
-                {
-                  "type": "string",
-                  "const": "Variation 5"
-                }
-              ],
-              "type": "string",
-              "title": "Variation"
-            },
-            "hide": {
-              "type": "object",
-              "properties": {
-                "logo": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Logo"
-                },
-                "newsletter": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Newsletter"
-                },
-                "sectionLinks": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Section Links"
-                },
-                "socialLinks": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Social Links"
-                },
-                "paymentMethods": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Payment Methods"
-                },
-                "mobileApps": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Mobile Apps"
-                },
-                "regionOptions": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Region Options"
-                },
-                "extraLinks": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Extra Links"
-                },
-                "backToTheTop": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Back To The Top"
-                }
-              },
-              "required": [],
-              "title": "Hide"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Layout",
           "title": "Layout"
         }
       },
@@ -9777,6 +9789,10 @@
             },
             {
               "type": "string",
+              "const": "Linkedin"
+            },
+            {
+              "type": "string",
               "const": "Logo"
             },
             {
@@ -9842,6 +9858,10 @@
             {
               "type": "string",
               "const": "Truck"
+            },
+            {
+              "type": "string",
+              "const": "Twitter"
             },
             {
               "type": "string",
