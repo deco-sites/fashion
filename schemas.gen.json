@@ -6665,7 +6665,7 @@
       "required": [],
       "title": "deco-sites/std/packs/vtex/loaders/navbar.ts@Props"
     },
-    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvbGl2ZS9ibG9ja3MvaGFuZGxlci50cw==@Handler": {
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
       "$ref": "#/root/handlers",
       "title": "Handler"
     },
@@ -6688,7 +6688,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvbGl2ZS9ibG9ja3MvaGFuZGxlci50cw==@Handler",
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
               "title": "Value"
             }
           },
@@ -6980,10 +6980,6 @@
         "to"
       ],
       "title": "deco-cx/live/handlers/redirect.ts@RedirectConfig"
-    },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
-      "$ref": "#/root/handlers",
-      "title": "Handler"
     },
     "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route": {
       "type": "object",
@@ -11258,7 +11254,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@8bc0df097bc3063cb9ed87dac81d632a|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6acb1783f1ea96dee394b84784b60bb3|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -11276,13 +11272,13 @@
           ]
         }
       ],
-      "title": "8bc0df097bc3063cb9ed87dac81d632a|WorkflowRef"
+      "title": "6acb1783f1ea96dee394b84784b60bb3|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@8bc0df097bc3063cb9ed87dac81d632a|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6acb1783f1ea96dee394b84784b60bb3|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
