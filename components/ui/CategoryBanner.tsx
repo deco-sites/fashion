@@ -1,7 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
+import type { SectionProps } from "$live/types.ts";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Banner {
   /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
@@ -20,12 +19,11 @@ export interface Banner {
   };
 }
 
-export interface Props {
-  page?: LoaderReturnType<ProductListingPage | null>;
-  banners?: Banner[];
-}
+function Banner({ banner }: SectionProps<ReturnType<typeof loader>>) {
+  if (!banner) {
+    return null;
+  }
 
-function BannerUI({ banner }: { banner: Banner }) {
   const { title, subtitle, image } = banner;
 
   return (
@@ -62,29 +60,16 @@ function BannerUI({ banner }: { banner: Banner }) {
   );
 }
 
-/**
- * TODO: run the matcher agains the true URL instead on the breadcrumb.
- * This way we can remove the need for a loader. This can be done on live@1.x
- */
-function Banner({ page, banners = [] }: Props) {
-  if (!page || page.breadcrumb.itemListElement.length === 0) {
-    return null;
-  }
+export interface Props {
+  banners?: Banner[];
+}
 
-  const { item: canonical } = page
-    .breadcrumb
-    .itemListElement
-    .reduce((curr, acc) => curr.position > acc.position ? curr : acc);
-
-  const matching = banners.find(({ matcher }) =>
-    new RegExp(matcher).test(canonical)
+export const loader = ({ banners = [] }: Props, req: Request) => {
+  const banner = banners.find(({ matcher }) =>
+    new URLPattern({ pathname: matcher }).test(req.url)
   );
 
-  if (!matching) {
-    return null;
-  }
-
-  return <BannerUI banner={matching} />;
-}
+  return { banner };
+};
 
 export default Banner;
