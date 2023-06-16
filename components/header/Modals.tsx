@@ -4,7 +4,6 @@ import { useUI } from "$store/sdk/useUI.ts";
 
 import type { Props as MenuProps } from "$store/components/header/Menu.tsx";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import Loading from "$store/components/ui/Loading.tsx";
 
 const Menu = lazy(() => import("$store/components/header/Menu.tsx"));
 const Cart = lazy(() => import("$store/components/minicart/Cart.tsx"));
@@ -18,6 +17,12 @@ interface Props {
 function Modals({ menu, searchbar }: Props) {
   const { displayCart, displayMenu, displaySearchbar } = useUI();
 
+  const fallback = (
+    <div class="flex justify-center items-center w-full h-full">
+      <span class="loading loading-ring" />
+    </div>
+  );
+
   return (
     <>
       <Modal
@@ -29,7 +34,7 @@ function Modals({ menu, searchbar }: Props) {
           displayMenu.value = false;
         }}
       >
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={fallback}>
           <Menu {...menu} />
         </Suspense>
       </Modal>
@@ -44,7 +49,7 @@ function Modals({ menu, searchbar }: Props) {
           displaySearchbar.value = false;
         }}
       >
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={fallback}>
           <Searchbar {...searchbar} />
         </Suspense>
       </Modal>
@@ -58,7 +63,7 @@ function Modals({ menu, searchbar }: Props) {
           displayCart.value = false;
         }}
       >
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={fallback}>
           <Cart />
         </Suspense>
       </Modal>

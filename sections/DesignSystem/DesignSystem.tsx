@@ -227,7 +227,8 @@ export interface Font {
 }
 
 export interface Props {
-  colors?: Colors & { optional?: OptionalColors };
+  colors?: Colors;
+  optionalColors?: OptionalColors;
   miscellaneous?: Miscellaneous;
   fonts?: Font;
 }
@@ -303,11 +304,14 @@ const toVariables = (t: Theme): [string, string][] => {
 };
 
 const defaultTheme = {
-  "primary": "hsl(180 100% 10%)",
-  "secondary": "hsl(0 39% 39%)",
-  "accent": "hsl(150 100% 50%)",
-  "neutral": "hsl(0 0% 20%)",
-  "base-100": "hsl(0 0% 100%)",
+  "primary": "hsla(209, 28%, 21%, 1)",
+  "primary-content": "hsla(0, 0%, 100%, 1)",
+  "secondary": "hsla(104, 18%, 46%, 1)",
+  "secondary-content": "hsla(0, 0%, 100%, 1)",
+  "accent": "hsla(8, 69%, 65%, 1)",
+  "accent-content": "hsla(0, 0%, 100%, 1)",
+  "neutral": "hsla(0, 0%, 47%, 1)",
+  "base-100": "hsla(0, 0%, 100%, 1)",
   "success": "hsl(150 62% 95%)",
   "warning": "hsl(43 100% 95%)",
   "error": "hsl(9 100% 95%)",
@@ -336,21 +340,21 @@ const defaultTheme = {
  */
 function Section({
   colors,
+  optionalColors,
   miscellaneous,
-  fonts = {
-    fontFamily: "Albert Sans",
-    styleInnerHtml:
-      "@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');",
-  },
+  fonts,
 }: Props) {
   const id = useId();
   const theme = {
     ...defaultTheme,
     ...colors,
-    ...colors?.optional,
+    ...optionalColors,
     ...miscellaneous,
   };
-  const variables = [...toVariables(theme), ["--font-family", fonts.fontFamily]]
+  const variables = [
+    ...toVariables(theme),
+    ["--font-family", fonts?.fontFamily ?? ""],
+  ]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
     .join(";");
 
@@ -359,10 +363,12 @@ function Section({
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       <style
+        type="text/css"
         id={`__DESIGN_SYSTEM_FONT-${id}`}
-        dangerouslySetInnerHTML={{ __html: fonts.styleInnerHtml }}
+        dangerouslySetInnerHTML={{ __html: fonts?.styleInnerHtml ?? "" }}
       />
       <style
+        type="text/css"
         id={`__DESIGN_SYSTEM_VARS-${id}`}
         dangerouslySetInnerHTML={{
           __html: `:root {${variables}}`,

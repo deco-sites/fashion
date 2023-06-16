@@ -47,15 +47,13 @@ export interface Props {
   suggestions?: LoaderReturnType<Suggestion | null>;
 }
 
-function Header(
-  {
-    alerts,
-    searchbar: _searchbar,
-    products,
-    navItems = [],
-    suggestions,
-  }: Props,
-) {
+function Header({
+  alerts,
+  searchbar: _searchbar,
+  products,
+  navItems = [],
+  suggestions,
+}: Props) {
   const searchbar = { ..._searchbar, products, suggestions };
   return (
     <>

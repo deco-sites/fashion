@@ -48,14 +48,14 @@ function Navbar({ items, searchbar }: {
           <Buttons variant="search" />
           <Searchbar searchbar={searchbar} />
           <a
-            class="btn btn-square btn-ghost"
+            class="btn btn-circle btn-sm btn-ghost"
             href="/login"
             aria-label="Log in"
           >
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </a>
           <a
-            class="btn btn-square btn-ghost"
+            class="btn btn-circle btn-sm btn-ghost"
             href="/wishlist"
             aria-label="Wishlist"
           >

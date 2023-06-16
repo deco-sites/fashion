@@ -105,28 +105,26 @@ function ShippingSimulation({ items }: Props) {
       </div>
       <div>
         <form
-          class="form-control input-group"
+          class="join"
           onSubmit={(e) => {
             e.preventDefault();
             handleSimulation();
           }}
         >
-          <div class="input-group">
-            <input
-              as="input"
-              type="text"
-              class="input input-bordered"
-              placeholder="Seu cep aqui"
-              value={postalCode.value}
-              maxLength={8}
-              onChange={(e: { currentTarget: { value: string } }) => {
-                postalCode.value = e.currentTarget.value;
-              }}
-            />
-            <Button type="submit" loading={loading.value}>
-              Calcular
-            </Button>
-          </div>
+          <input
+            as="input"
+            type="text"
+            class="input input-bordered join-item"
+            placeholder="Seu cep aqui"
+            value={postalCode.value}
+            maxLength={8}
+            onChange={(e: { currentTarget: { value: string } }) => {
+              postalCode.value = e.currentTarget.value;
+            }}
+          />
+          <Button type="submit" loading={loading.value} class="join-item">
+            Calcular
+          </Button>
         </form>
       </div>
       <div>

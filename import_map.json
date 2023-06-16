@@ -2,16 +2,16 @@
   "imports": {
     "deco-sites/fashion/": "./",
     "$store/": "./",
-    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.9.19/",
-    "$live/": "https://denopkg.com/deco-cx/live@1.7.9/",
-    "$fresh/": "https://denopkg.com/deco-cx/fresh@1.2.0/",
-    "preact": "https://esm.sh/preact@10.13.2",
-    "preact/": "https://esm.sh/preact@10.13.2/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.0.2",
+    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.9.32/",
+    "$live/": "https://denopkg.com/deco-cx/live@1.12.2/",
+    "$fresh/": "https://denopkg.com/deco-cx/fresh@1.3.0/",
+    "preact": "https://esm.sh/preact@10.15.1",
+    "preact/": "https://esm.sh/preact@10.15.1/",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.1.0",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",
-    "@preact/signals-core": "https://esm.sh/@preact/signals-core@1.2.3",
-    "std/": "https://deno.land/std@0.181.0/",
-    "partytown/": "https://denopkg.com/deco-cx/partytown@0.3.0/",
-    "daisyui": "npm:daisyui@2.51.6"
+    "@preact/signals-core": "https://esm.sh/@preact/signals-core@1.3.0",
+    "std/": "https://deno.land/std@0.190.0/",
+    "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.0/",
+    "daisyui": "npm:daisyui@3.0.3"
   }
 }

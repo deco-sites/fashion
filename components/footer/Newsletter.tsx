@@ -6,7 +6,23 @@ const subscribe = Runtime.create(
   "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
 );
 
-function Newsletter() {
+export interface Form {
+  placeholder?: string;
+  buttonText?: string;
+  /** @format html */
+  helpText?: string;
+}
+
+export interface Props {
+  title?: string;
+  /** @format textarea */
+  description?: string;
+  form?: Form;
+}
+
+function Newsletter(
+  { content, tiled = false }: { content: Props; tiled: boolean },
+) {
   const loading = useSignal(false);
 
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
@@ -25,31 +41,48 @@ function Newsletter() {
   };
 
   return (
-    <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-20">
-      <div class="flex flex-col gap-2 max-w-[400px]">
-        <span class="font-medium text-2xl text-primary-content">
-          Cadastre-se
-        </span>
-        <span class="text-sm text-primary-content">
-          Fique por dentro das novidades e ganhe 15% de desconto na primeira
-          compra. Para mais informações clique aqui.
-        </span>
+    <div
+      class={`flex ${
+        tiled
+          ? "flex-col gap-4 lg:flex-row lg:w-full lg:justify-between"
+          : "flex-col gap-4"
+      }`}
+    >
+      <div class="flex flex-col gap-4">
+        {content?.title && (
+          <h3 class={tiled ? "text-2xl lg:text-3xl" : "text-lg"}>
+            {content?.title}
+          </h3>
+        )}
+        {content?.description && <div>{content?.description}</div>}
       </div>
-      <form
-        class="w-full sm:w-[408px] form-control"
-        onSubmit={handleSubmit}
-      >
-        <div class="input-group">
-          <input
-            name="email"
-            class="flex-grow input input-primary"
-            placeholder="Seu e-mail"
+      <div class="flex flex-col gap-4">
+        <form
+          class="form-control"
+          onSubmit={handleSubmit}
+        >
+          <div class="flex gap-3">
+            <input
+              name="email"
+              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
+              placeholder={content?.form?.placeholder || "Digite seu email"}
+            />
+            <button
+              type="submit"
+              class="btn disabled:loading"
+              disabled={loading}
+            >
+              {content?.form?.buttonText || "Inscrever"}
+            </button>
+          </div>
+        </form>
+        {content?.form?.helpText && (
+          <div
+            class="text-sm"
+            dangerouslySetInnerHTML={{ __html: content?.form?.helpText }}
           />
-          <button class="btn disabled:loading" disabled={loading}>
-            Cadastrar
-          </button>
-        </div>
-      </form>
+        )}
+      </div>
     </div>
   );
 }

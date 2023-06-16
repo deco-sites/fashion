@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "preact/compat";
 
 import { useUI } from "$store/sdk/useUI.ts";
-import Loading from "$store/components/ui/Loading.tsx";
 import { headerHeight } from "$store/components/header/constants.ts";
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 
@@ -26,7 +25,7 @@ function Searchbar({ searchbar }: Props) {
       style={{ marginTop: headerHeight }}
     >
       {open && (
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<span class="loading loading-ring" />}>
           <LazySearchbar {...searchbar} variant="desktop" />
         </Suspense>
       )}

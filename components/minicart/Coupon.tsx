@@ -29,24 +29,25 @@ function Coupon() {
       <span class="text-sm">Cupom de desconto</span>
       {!displayInput.value && (
         <Button
-          class="btn-ghost underline"
+          class="btn-ghost underline font-normal"
           onClick={toggleInput}
         >
           {coupon || "Adicionar"}
         </Button>
       )}
       {displayInput.value && (
-        <form class="flex gap-2">
+        <form class="join">
           <input
             id="coupon"
             name="coupon"
             ref={ref}
-            class="w-[140px] border rounded p-2 font-caption"
+            class="input join-item"
             type="text"
             value={coupon ?? ""}
-            placeholder={"Coupom"}
+            placeholder={"Cupom"}
           />
           <Button
+            class="join-item"
             type="submit"
             htmlFor="coupon"
             loading={loading.value}
