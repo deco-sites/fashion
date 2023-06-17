@@ -3510,7 +3510,8 @@
         "key",
         "value"
       ],
-      "title": "StateProp"
+      "title": "StateProp",
+      "titleBy": "key"
     },
     "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp[]": {
       "type": "array",
@@ -6853,6 +6854,61 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL05ld3NsZXR0ZXIudHN4@Form": {
+      "type": "object",
+      "properties": {
+        "placeholder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Placeholder"
+        },
+        "buttonText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Text"
+        },
+        "helpText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "html",
+          "title": "Help Text"
+        }
+      },
+      "required": [],
+      "title": "Form"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL05ld3NsZXR0ZXIudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "textarea",
+          "title": "Description"
+        },
+        "form": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL05ld3NsZXR0ZXIudHN4@Form",
+          "title": "Form"
+        }
+      },
+      "required": [],
+      "title": "Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
@@ -7076,7 +7132,8 @@
         "name",
         "sections"
       ],
-      "title": "deco-cx/live/pages/LivePage.tsx@Props"
+      "title": "deco-cx/live/pages/LivePage.tsx@Props",
+      "titleBy": "name"
     },
     "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
@@ -11121,7 +11178,8 @@
         "matcher",
         "name"
       ],
-      "title": "deco-cx/live/flags/audience.ts@Audience"
+      "title": "deco-cx/live/flags/audience.ts@Audience",
+      "titleBy": "name"
     },
     "ZGVjby1jeC9saXZlL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig": {
       "type": "object",
@@ -11222,7 +11280,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@83d660dd3cbc0efa537555e12b086226|WorkflowRef": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@80e63c0102b95f26364190c793fefa86|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -11240,13 +11298,13 @@
           ]
         }
       ],
-      "title": "83d660dd3cbc0efa537555e12b086226|WorkflowRef"
+      "title": "80e63c0102b95f26364190c793fefa86|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@83d660dd3cbc0efa537555e12b086226|WorkflowRef",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@80e63c0102b95f26364190c793fefa86|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
