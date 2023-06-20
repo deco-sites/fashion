@@ -97,12 +97,12 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
     <div
       id={id}
       class={`card card-compact group w-full ${
-          align === "center" ? "text-center" : "text-start"
-        } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
+        align === "center" ? "text-center" : "text-start"
+      } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
-          l?.onMouseOver?.card === "Move up"
-            && "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
-        }
+        l?.onMouseOver?.card === "Move up" &&
+        "duration-500 transition-translate ease-in-out lg:hover:-translate-y-2"
+      }
       `}
       data-deco="view-product"
     >
@@ -164,12 +164,12 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                   l?.onMouseOver?.image == "Change image")
                 ? "duration-100 transition-opacity opacity-100 lg:group-hover:opacity-0"
                 : ""
-              }
+            }
               ${
-                l?.onMouseOver?.image == "Zoom image"
-                  ? "duration-100 transition-scale scale-100 lg:group-hover:scale-125"
-                  : ""
-              }
+              l?.onMouseOver?.image == "Zoom image"
+                ? "duration-100 transition-scale scale-100 lg:group-hover:scale-125"
+                : ""
+            }
             `}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
