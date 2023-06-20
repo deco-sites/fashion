@@ -6862,61 +6862,6 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL05ld3NsZXR0ZXIudHN4@Form": {
-      "type": "object",
-      "properties": {
-        "placeholder": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Placeholder"
-        },
-        "buttonText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Button Text"
-        },
-        "helpText": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "html",
-          "title": "Help Text"
-        }
-      },
-      "required": [],
-      "title": "Form"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL05ld3NsZXR0ZXIudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "textarea",
-          "title": "Description"
-        },
-        "form": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL05ld3NsZXR0ZXIudHN4@Form",
-          "title": "Form"
-        }
-      },
-      "required": [],
-      "title": "Props"
-    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
       "type": "object",
       "properties": {
