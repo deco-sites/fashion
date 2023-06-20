@@ -38,6 +38,7 @@ export interface Props {
     };
     onMouseOver?: {
       image?: "Change image" | "Zoom image";
+      card?: "None" | "Move up";
       showFavoriteIcon?: boolean;
       showSkuSelector?: boolean;
       showCardShadow?: boolean;
