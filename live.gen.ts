@@ -63,10 +63,13 @@ import * as i2$$$$$$4 from "$live/handlers/router.ts";
 import * as i2$$$$$$5 from "$live/handlers/routesSelection.ts";
 import * as i2$$$$$$6 from "$live/handlers/workflowRunner.ts";
 import * as i2$$$$$$$0 from "$live/pages/LivePage.tsx";
+import * as i1$$$$0 from "$live/sections/Conditional_Beta.tsx";
+import * as i1$$$$1 from "$live/sections/EmptySection.tsx";
 import * as i2$$$$0 from "$live/sections/PageInclude.tsx";
 import * as i2$$$$1 from "$live/sections/Slot.tsx";
 import * as i2$$$$2 from "$live/sections/UseSlot.tsx";
 import * as i2$$$$$$$$0 from "$live/matchers/MatchAlways.ts";
+import * as i1$$$$$1 from "$live/matchers/MatchCron.ts";
 import * as i2$$$$$$$$1 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$$$2 from "$live/matchers/MatchDevice.ts";
 import * as i2$$$$$$$$3 from "$live/matchers/MatchEnvironment.ts";
@@ -185,6 +188,8 @@ const manifest = {
     "./islands/WishlistButton.tsx": $$$$$1,
   },
   "sections": {
+    "$live/sections/Conditional_Beta.tsx": i1$$$$0,
+    "$live/sections/EmptySection.tsx": i1$$$$1,
     "$live/sections/PageInclude.tsx": i2$$$$0,
     "$live/sections/Slot.tsx": i2$$$$1,
     "$live/sections/UseSlot.tsx": i2$$$$2,
@@ -258,6 +263,7 @@ const manifest = {
   },
   "matchers": {
     "$live/matchers/MatchAlways.ts": i2$$$$$$$$0,
+    "$live/matchers/MatchCron.ts": i1$$$$$1,
     "$live/matchers/MatchDate.ts": i2$$$$$$$$1,
     "$live/matchers/MatchDevice.ts": i2$$$$$$$$2,
     "$live/matchers/MatchEnvironment.ts": i2$$$$$$$$3,
