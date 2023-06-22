@@ -1740,7 +1740,7 @@
           }
         },
         {
-          "title": "VTEX product details page - legacy (deprecated)",
+          "title": "VTEX Catalog - Product Details Page (deprecated)",
           "description": "Works on routes of type /:slug/p",
           "deprecated": true,
           "type": "object",
@@ -1758,7 +1758,7 @@
           }
         },
         {
-          "title": "VTEX Intelligent Search - Product Details page",
+          "title": "VTEX Intelligent Search - Product Details Page (deprecated)",
           "description": "For routes of type /:slug/p",
           "deprecated": true,
           "type": "object",
@@ -1776,7 +1776,7 @@
           }
         },
         {
-          "title": "VTEX product details page - Intelligent Search",
+          "title": "VTEX Intelligent Search - Product Details Page",
           "description": "Works on routes of type /:slug/p",
           "type": "object",
           "allOf": [
@@ -1798,7 +1798,7 @@
           }
         },
         {
-          "title": "VTEX Legacy - Product Details page",
+          "title": "VTEX Catalog - Product Details Page",
           "description": "For routes of type /:slug/p",
           "type": "object",
           "allOf": [
@@ -1932,7 +1932,7 @@
           }
         },
         {
-          "title": "VTEX - Search Products - legacy (deprecated)",
+          "title": "VTEX Legacy - Search Products (deprecated)",
           "description": "Useful for shelves and static galleries.",
           "deprecated": true,
           "type": "object",
@@ -1955,7 +1955,7 @@
           }
         },
         {
-          "title": "VTEX Legacy - Related Products (deprecated)",
+          "title": "VTEX Catalog - Related Products (deprecated)",
           "description": "Works on routes of type /:slug/p",
           "deprecated": true,
           "type": "object",
@@ -1978,7 +1978,7 @@
           }
         },
         {
-          "title": "VTEX Intelligent Search - Search Products",
+          "title": "VTEX Intelligent Search - Search Products (deprecated)",
           "description": "Use it in Shelves and static Galleries.",
           "deprecated": true,
           "type": "object",
@@ -2001,7 +2001,7 @@
           }
         },
         {
-          "title": "VTEX product list - Intelligent Search",
+          "title": "VTEX Intelligent Search - Search Products",
           "description": "Useful for shelves and galleries.",
           "type": "object",
           "allOf": [
@@ -2023,7 +2023,7 @@
           }
         },
         {
-          "title": "VTEX Legacy - Search Products",
+          "title": "VTEX Catalog - Search Products",
           "description": "Use it in Shelves and static Galleries.",
           "type": "object",
           "allOf": [
@@ -2045,7 +2045,7 @@
           }
         },
         {
-          "title": "VTEX related products - Portal",
+          "title": "VTEX Related Products - Catalog",
           "description": "Works on routes of type /:slug/p",
           "type": "object",
           "allOf": [
@@ -2417,7 +2417,7 @@
           }
         },
         {
-          "title": "VTEX Legacy - Product Listing page",
+          "title": "VTEX Catalog - Product Listing Page (deprecated)",
           "description": "Useful for category, search, brand and collection pages.",
           "deprecated": true,
           "type": "object",
@@ -2440,7 +2440,7 @@
           }
         },
         {
-          "title": "VTEX Intelligent Search - Product Listing page",
+          "title": "VTEX Intelligent Search - Product Listing page (deprecated)",
           "description": "Useful for category, search, brand and collection pages.",
           "deprecated": true,
           "type": "object",
@@ -2508,7 +2508,7 @@
           }
         },
         {
-          "title": "VTEX product listing page - Portal",
+          "title": "VTEX Catalog - Product Listing Page",
           "description": "Returns data ready for search pages like category,brand pages",
           "type": "object",
           "allOf": [
@@ -2954,7 +2954,7 @@
           "type": "null"
         },
         {
-          "title": "deco-sites/std/functions/vtexNavbar.ts",
+          "title": "Navigation Bar",
           "deprecated": true,
           "type": "object",
           "allOf": [
@@ -3274,7 +3274,7 @@
           "type": "null"
         },
         {
-          "title": "VTEX search suggestions - Intelligent Search (deprecated)",
+          "title": "VTEX Intelligent Search - Search Suggestions (deprecated)",
           "deprecated": true,
           "type": "object",
           "allOf": [
@@ -3296,7 +3296,7 @@
           }
         },
         {
-          "title": "VTEX search suggestions - Intelligent Search",
+          "title": "VTEX Intelligent Search - Search Suggestions",
           "type": "object",
           "allOf": [
             {
@@ -12619,7 +12619,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX product details page - legacy (deprecated)",
+      "title": "VTEX Catalog - Product Details Page (deprecated)",
       "description": "Works on routes of type /:slug/p",
       "deprecated": true,
       "type": "object",
@@ -12637,7 +12637,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX - Search Products - legacy (deprecated)",
+      "title": "VTEX Legacy - Search Products (deprecated)",
       "description": "Useful for shelves and static galleries.",
       "deprecated": true,
       "type": "object",
@@ -12660,7 +12660,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VTEX Legacy - Product Listing page",
+      "title": "VTEX Catalog - Product Listing Page (deprecated)",
       "description": "Useful for category, search, brand and collection pages.",
       "deprecated": true,
       "type": "object",
@@ -12683,7 +12683,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lSZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=": {
-      "title": "VTEX Legacy - Related Products (deprecated)",
+      "title": "VTEX Catalog - Related Products (deprecated)",
       "description": "Works on routes of type /:slug/p",
       "deprecated": true,
       "type": "object",
@@ -12706,7 +12706,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhOYXZiYXIudHM=": {
-      "title": "deco-sites/std/functions/vtexNavbar.ts",
+      "title": "Navigation Bar",
       "deprecated": true,
       "type": "object",
       "allOf": [
@@ -12728,7 +12728,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX Intelligent Search - Product Details page",
+      "title": "VTEX Intelligent Search - Product Details Page (deprecated)",
       "description": "For routes of type /:slug/p",
       "deprecated": true,
       "type": "object",
@@ -12746,7 +12746,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX Intelligent Search - Search Products",
+      "title": "VTEX Intelligent Search - Search Products (deprecated)",
       "description": "Use it in Shelves and static Galleries.",
       "deprecated": true,
       "type": "object",
@@ -12769,7 +12769,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VTEX Intelligent Search - Product Listing page",
+      "title": "VTEX Intelligent Search - Product Listing page (deprecated)",
       "description": "Useful for category, search, brand and collection pages.",
       "deprecated": true,
       "type": "object",
@@ -12792,7 +12792,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhTdWdnZXN0aW9ucy50cw==": {
-      "title": "VTEX search suggestions - Intelligent Search (deprecated)",
+      "title": "VTEX Intelligent Search - Search Suggestions (deprecated)",
       "deprecated": true,
       "type": "object",
       "allOf": [
@@ -13025,7 +13025,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3REZXRhaWxzUGFnZS50cw==": {
-      "title": "VTEX product details page - Intelligent Search",
+      "title": "VTEX Intelligent Search - Product Details Page",
       "description": "Works on routes of type /:slug/p",
       "type": "object",
       "allOf": [
@@ -13047,7 +13047,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0LnRz": {
-      "title": "VTEX product list - Intelligent Search",
+      "title": "VTEX Intelligent Search - Search Products",
       "description": "Useful for shelves and galleries.",
       "type": "object",
       "allOf": [
@@ -13091,7 +13091,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3N1Z2dlc3Rpb25zLnRz": {
-      "title": "VTEX search suggestions - Intelligent Search",
+      "title": "VTEX Intelligent Search - Search Suggestions",
       "type": "object",
       "allOf": [
         {
@@ -13112,7 +13112,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX Legacy - Product Details page",
+      "title": "VTEX Catalog - Product Details Page",
       "description": "For routes of type /:slug/p",
       "type": "object",
       "allOf": [
@@ -13134,7 +13134,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX Legacy - Search Products",
+      "title": "VTEX Catalog - Search Products",
       "description": "Use it in Shelves and static Galleries.",
       "type": "object",
       "allOf": [
@@ -13156,7 +13156,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VTEX product listing page - Portal",
+      "title": "VTEX Catalog - Product Listing Page",
       "description": "Returns data ready for search pages like category,brand pages",
       "type": "object",
       "allOf": [
@@ -13178,7 +13178,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9yZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=": {
-      "title": "VTEX related products - Portal",
+      "title": "VTEX Related Products - Catalog",
       "description": "Works on routes of type /:slug/p",
       "type": "object",
       "allOf": [
