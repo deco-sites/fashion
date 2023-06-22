@@ -3,16 +3,13 @@
     "start": "deno run -A --watch=tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
     "component": "deno eval 'import \"$live/scripts/component.ts\"'",
     "release": "deno eval 'import \"$live/scripts/release.ts\"'",
+    "update": "deno eval 'import \"$live/scripts/update.ts\"'",
     "check": "deno fmt && deno lint && deno check dev.ts main.ts"
   },
   "githooks": {
     "pre-commit": "check"
   },
-  "exclude": [
-    "node_modules",
-    "static/",
-    "README.md"
-  ],
+  "exclude": ["node_modules", "static/", "README.md"],
   "nodeModulesDir": true,
   "importMap": "./import_map.json",
   "compilerOptions": {
