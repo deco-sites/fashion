@@ -1,5 +1,8 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
+/**
+ * @titleBy title
+ */
 export interface Props {
   /** @description Title */
   title: string;

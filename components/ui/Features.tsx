@@ -1,5 +1,8 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
+/**
+ * @titleBy title
+ */
 export interface Feature {
   /**
    * @description Image src

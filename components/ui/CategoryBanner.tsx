@@ -2,6 +2,9 @@ import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { SectionProps } from "$live/types.ts";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
+/**
+ * @titleBy matcher
+ */
 export interface Banner {
   /** @description RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category  */
   matcher: string;

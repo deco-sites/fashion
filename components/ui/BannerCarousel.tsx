@@ -6,6 +6,9 @@ import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
+/**
+ * @titleBy alt
+ */
 export interface Banner {
   /** @description desktop otimized image */
   desktop: LiveImage;

@@ -2,6 +2,9 @@ import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
+/**
+ * @titleBy alt
+ */
 export interface Banner {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;

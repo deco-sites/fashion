@@ -1,6 +1,9 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
+/**
+ * @titleBy alt
+ */
 export interface Banner {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;
