@@ -3523,7 +3523,7 @@
       ],
       "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
     },
-    "ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig": {
+    "ZGVjby1jeC9kZWNvL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -3543,7 +3543,7 @@
           "required": [
             "state"
           ],
-          "title": "deco-cx/live/routes/_middleware.ts@MiddlewareConfig",
+          "title": "deco-cx/deco/routes/_middleware.ts@MiddlewareConfig",
           "description": "Global configurations for ./routes/_middleware.ts route"
         },
         {
@@ -3552,7 +3552,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@Props"
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvc3RhdGUudHM=@Props"
             }
           ],
           "required": [
@@ -3570,46 +3570,52 @@
         }
       ]
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
       "$ref": "#/root/loaders",
       "title": "Loader"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "title": "Account"
+    },
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags",
       "title": "Flag"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
       "$ref": "#/root/sections",
       "title": "Section"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9wYWdlLnRz@Page": {
       "$ref": "#/root/pages",
       "title": "Page"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
         },
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@Loader"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9sb2FkZXIudHM=@Loader"
         },
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
         },
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Flag"
         },
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
         },
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9wYWdlLnRz@Page"
         }
       ],
       "title": "4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section"
     },
-    "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp": {
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvc3RhdGUudHM=@StateProp": {
       "type": "object",
       "properties": {
         "key": {
@@ -3617,7 +3623,7 @@
           "title": "Key"
         },
         "value": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9sb2FkZXIudHM=@4dc8c2f895a6513848bc8f3f1319d3f2|Account|Flag|Loader|Page|Section",
           "title": "Value"
         }
       },
@@ -3628,25 +3634,25 @@
       "title": "StateProp",
       "titleBy": "key"
     },
-    "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp[]": {
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvc3RhdGUudHM=@StateProp[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp"
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvc3RhdGUudHM=@StateProp"
       },
       "title": "StateProp[]"
     },
-    "ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@Props": {
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvc3RhdGUudHM=@Props": {
       "type": "object",
       "properties": {
         "state": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@StateProp[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvc3RhdGUudHM=@StateProp[]",
           "title": "State"
         }
       },
       "required": [
         "state"
       ],
-      "title": "deco-cx/live/loaders/state.ts@Props"
+      "title": "deco-cx/deco/loaders/state.ts@Props"
     },
     "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata": {
       "type": "object",
@@ -3704,7 +3710,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props"
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props"
             }
           ],
           "required": [
@@ -3722,7 +3728,7 @@
         }
       ]
     },
-    "ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props": {
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props": {
       "type": "object",
       "properties": {
         "id": {
@@ -3747,7 +3753,7 @@
       "required": [
         "id"
       ],
-      "title": "deco-cx/live/loaders/workflows/events.ts@Props"
+      "title": "deco-cx/deco/loaders/workflows/events.ts@Props"
     },
     "ZGVjby1jeC9kdXJhYmxlL2JhY2tlbmRzL2JhY2tlbmQudHM=@indexedAccessstatusWorkflowExecution+Arg": {
       "type": "object",
@@ -3761,21 +3767,21 @@
       ],
       "title": "indexedAccessstatusWorkflowExecution+Arg"
     },
-    "ZGVjby1jeC9saXZlL2NvbW1vbnMvd29ya2Zsb3dzL3R5cGVzLnRz@Arg": {
+    "ZGVjby1jeC9kZWNvL2NvbW1vbnMvd29ya2Zsb3dzL3R5cGVzLnRz@Arg": {
       "title": "Arg"
     },
     "ZGVjby1jeC9kdXJhYmxlL2JhY2tlbmRzL2JhY2tlbmQudHM=@indexedAccessinputWorkflowExecution+Arg": {
       "type": "object",
       "properties": {
         "input": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2NvbW1vbnMvd29ya2Zsb3dzL3R5cGVzLnRz@Arg",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2NvbW1vbnMvd29ya2Zsb3dzL3R5cGVzLnRz@Arg",
           "title": "Input"
         }
       },
       "required": [],
       "title": "indexedAccessinputWorkflowExecution+Arg"
     },
-    "ZGVjby1jeC9saXZlL2NvbW1vbnMvd29ya2Zsb3dzL3R5cGVzLnRz@WorkflowExecution": {
+    "ZGVjby1jeC9kZWNvL2NvbW1vbnMvd29ya2Zsb3dzL3R5cGVzLnRz@WorkflowExecution": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -3814,7 +3820,7 @@
             "status",
             "workflow"
           ],
-          "title": "deco-cx/live/commons/workflows/types.ts@WorkflowExecution"
+          "title": "deco-cx/deco/commons/workflows/types.ts@WorkflowExecution"
         },
         {
           "title": "$live/loaders/workflows/get.ts",
@@ -3822,7 +3828,7 @@
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
             }
           ],
           "required": [
@@ -3840,7 +3846,7 @@
         }
       ]
     },
-    "ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props": {
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props": {
       "type": "object",
       "properties": {
         "id": {
@@ -3851,7 +3857,7 @@
       "required": [
         "id"
       ],
-      "title": "deco-cx/live/loaders/workflows/get.ts@Props"
+      "title": "deco-cx/deco/loaders/workflows/get.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@Fields": {
       "type": "object",
@@ -7122,33 +7128,33 @@
       ],
       "title": "deco-sites/fashion/components/ui/ShippingSimulation.tsx@Props"
     },
-    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
+    "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9wYWdlLnRz@Page",
           "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "deco-cx/live/handlers/devPage.ts@DevConfig"
+      "title": "deco-cx/deco/handlers/devPage.ts@DevConfig"
     },
-    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig": {
+    "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9wYWdlLnRz@Page",
           "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
+      "title": "deco-cx/deco/handlers/fresh.ts@FreshConfig"
     },
-    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Props": {
+    "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3Byb3h5LnRz@Props": {
       "type": "object",
       "properties": {
         "url": {
@@ -7176,9 +7182,9 @@
       "required": [
         "url"
       ],
-      "title": "deco-cx/live/handlers/proxy.ts@Props"
+      "title": "deco-cx/deco/handlers/proxy.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig": {
+    "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig": {
       "type": "object",
       "properties": {
         "to": {
@@ -7205,9 +7211,57 @@
       "required": [
         "to"
       ],
-      "title": "deco-cx/live/handlers/redirect.ts@RedirectConfig"
+      "title": "deco-cx/deco/handlers/redirect.ts@RedirectConfig"
     },
-    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
+      "$ref": "#/root/handlers",
+      "title": "Handler"
+    },
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route": {
+      "type": "object",
+      "properties": {
+        "pathTemplate": {
+          "type": "string",
+          "title": "Path Template"
+        },
+        "isHref": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "if true so the path will be checked agaisnt the coming from request instead of using urlpattern.",
+          "title": "Is Href"
+        },
+        "handler": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
+              "title": "Value"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "title": "Handler"
+        }
+      },
+      "required": [
+        "pathTemplate",
+        "handler"
+      ],
+      "title": "Site Route",
+      "titleBy": "pathTemplate"
+    },
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route"
+      },
+      "title": "Routes",
+      "description": "Used to configure your site routes"
+    },
+    "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig": {
       "type": "object",
       "properties": {
         "base": {
@@ -7218,19 +7272,19 @@
           "title": "Base"
         },
         "routes": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         }
       },
       "required": [
         "routes"
       ],
-      "title": "deco-cx/live/handlers/router.ts@RouterConfig"
+      "title": "deco-cx/deco/handlers/router.ts@RouterConfig"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag": {
       "anyOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Flag"
         },
         {
           "$ref": "#/definitions/JGxpdmUvZmxhZ3MvYXVkaWVuY2UudHM="
@@ -7241,51 +7295,51 @@
       ],
       "title": "Audiences"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag"
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag"
       },
       "title": "15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]"
     },
-    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig": {
+    "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig": {
       "type": "object",
       "properties": {
         "audiences": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@15b1ddc7b4bb6e032bd22948a3dc02c4|9cc5443ad72a10e9797a691a19b4ce81|Flag[]",
           "title": "Audiences"
         }
       },
       "required": [
         "audiences"
       ],
-      "title": "deco-cx/live/handlers/routesSelection.ts@SelectionConfig"
+      "title": "deco-cx/deco/handlers/routesSelection.ts@SelectionConfig"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow": {
       "$ref": "#/root/workflows",
       "title": "Workflow"
     },
-    "ZGVjby1jeC9saXZlL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config": {
+    "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
           "title": "Workflow"
         }
       },
       "required": [
         "workflow"
       ],
-      "title": "deco-cx/live/handlers/workflowRunner.ts@Config"
+      "title": "deco-cx/deco/handlers/workflowRunner.ts@Config"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
       },
       "title": "Section[]"
     },
-    "ZGVjby1jeC9saXZlL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props": {
+    "ZGVjby1jeC9kZWNvL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "name": {
@@ -7300,7 +7354,7 @@
           "title": "Path"
         },
         "sections": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Sections"
         }
       },
@@ -7308,22 +7362,22 @@
         "name",
         "sections"
       ],
-      "title": "deco-cx/live/pages/LivePage.tsx@Props",
+      "title": "deco-cx/deco/pages/LivePage.tsx@Props",
       "titleBy": "name"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
       "$ref": "#/root/matchers",
       "title": "Matcher"
     },
-    "ZGVjby1jeC9saXZlL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[]": {
+    "ZGVjby1jeC9kZWNvL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[]": {
       "type": "object",
       "properties": {
         "if": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
           "title": "If"
         },
         "then": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Then"
         }
       },
@@ -7333,22 +7387,22 @@
       ],
       "title": "Rule"
     },
-    "ZGVjby1jeC9saXZlL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[][]": {
+    "ZGVjby1jeC9kZWNvL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[][]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[]"
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[]"
       },
       "title": "Rule+Section[][]"
     },
-    "ZGVjby1jeC9saXZlL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Props+Section[]": {
+    "ZGVjby1jeC9kZWNvL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Props+Section[]": {
       "type": "object",
       "properties": {
         "rules": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[][]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Rule+Section[][]",
           "title": "Rules"
         },
         "else": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Otherwise",
           "description": "Used in case of none of the previous values are used."
         }
@@ -7357,22 +7411,22 @@
         "rules",
         "else"
       ],
-      "title": "deco-cx/live/utils/conditionals.ts@Props+Section[]"
+      "title": "deco-cx/deco/utils/conditionals.ts@Props+Section[]"
     },
-    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
+    "ZGVjby1jeC9kZWNvL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props": {
       "type": "object",
       "properties": {
         "page": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9wYWdlLnRz@Page",
           "title": "Page"
         }
       },
       "required": [
         "page"
       ],
-      "title": "deco-cx/live/sections/PageInclude.tsx@Props"
+      "title": "deco-cx/deco/sections/PageInclude.tsx@Props"
     },
-    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@Props": {
+    "ZGVjby1jeC9kZWNvL3NlY3Rpb25zL1Nsb3QudHN4@Props": {
       "type": "object",
       "properties": {
         "required": {
@@ -7431,9 +7485,9 @@
         }
       },
       "required": [],
-      "title": "deco-cx/live/sections/Slot.tsx@Props"
+      "title": "deco-cx/deco/sections/Slot.tsx@Props"
     },
-    "ZGVjby1jeC9saXZlL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props": {
+    "ZGVjby1jeC9kZWNvL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props": {
       "type": "object",
       "properties": {
         "name": {
@@ -7481,7 +7535,7 @@
           "title": "Name"
         },
         "sections": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
           "title": "Sections"
         }
       },
@@ -7489,7 +7543,7 @@
         "name",
         "sections"
       ],
-      "title": "deco-cx/live/sections/UseSlot.tsx@Props"
+      "title": "deco-cx/deco/sections/UseSlot.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
       "type": "string",
@@ -11412,7 +11466,7 @@
       ],
       "title": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx@LoaderProps"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoQ3Jvbi50cw==@CronProps": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoQ3Jvbi50cw==@CronProps": {
       "type": "object",
       "properties": {
         "cron": {
@@ -11425,10 +11479,10 @@
       "required": [
         "cron"
       ],
-      "title": "deco-cx/live/matchers/MatchCron.ts@CronProps",
+      "title": "deco-cx/deco/matchers/MatchCron.ts@CronProps",
       "titleBy": "cron"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props": {
       "type": "object",
       "properties": {
         "start": {
@@ -11449,10 +11503,10 @@
         }
       },
       "required": [],
-      "title": "deco-cx/live/matchers/MatchDate.ts@Props",
+      "title": "deco-cx/deco/matchers/MatchDate.ts@Props",
       "titleBy": "start"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGV2aWNlLnRz@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRGV2aWNlLnRz@Props": {
       "type": "object",
       "properties": {
         "devices": {
@@ -11483,9 +11537,9 @@
       "required": [
         "devices"
       ],
-      "title": "deco-cx/live/matchers/MatchDevice.ts@Props"
+      "title": "deco-cx/deco/matchers/MatchDevice.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props": {
       "type": "object",
       "properties": {
         "environment": {
@@ -11508,9 +11562,9 @@
       "required": [
         "environment"
       ],
-      "title": "deco-cx/live/matchers/MatchEnvironment.ts@Props"
+      "title": "deco-cx/deco/matchers/MatchEnvironment.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoSG9zdC50cw==@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoSG9zdC50cw==@Props": {
       "type": "object",
       "properties": {
         "includes": {
@@ -11529,16 +11583,16 @@
         }
       },
       "required": [],
-      "title": "deco-cx/live/matchers/MatchHost.ts@Props"
+      "title": "deco-cx/deco/matchers/MatchHost.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher"
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher"
       },
       "title": "Matcher[]"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props": {
       "type": "object",
       "properties": {
         "op": {
@@ -11558,7 +11612,7 @@
           "title": "Op"
         },
         "matchers": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]",
           "title": "Matchers"
         }
       },
@@ -11566,9 +11620,9 @@
         "op",
         "matchers"
       ],
-      "title": "deco-cx/live/matchers/MatchMulti.ts@Props"
+      "title": "deco-cx/deco/matchers/MatchMulti.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props": {
       "type": "object",
       "properties": {
         "traffic": {
@@ -11579,9 +11633,9 @@
       "required": [
         "traffic"
       ],
-      "title": "deco-cx/live/matchers/MatchRandom.ts@Props"
+      "title": "deco-cx/deco/matchers/MatchRandom.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props": {
       "type": "object",
       "properties": {
         "siteId": {
@@ -11592,9 +11646,9 @@
       "required": [
         "siteId"
       ],
-      "title": "deco-cx/live/matchers/MatchSite.ts@Props"
+      "title": "deco-cx/deco/matchers/MatchSite.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props": {
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props": {
       "type": "object",
       "properties": {
         "includes": {
@@ -11613,9 +11667,9 @@
         }
       },
       "required": [],
-      "title": "deco-cx/live/matchers/MatchUserAgent.ts@Props"
+      "title": "deco-cx/deco/matchers/MatchUserAgent.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override": {
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Override": {
       "type": "object",
       "properties": {
         "use": {
@@ -11633,18 +11687,18 @@
       ],
       "title": "Override"
     },
-    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]": {
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override"
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Override"
       },
       "title": "Override[]"
     },
-    "ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience": {
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Audience": {
       "type": "object",
       "properties": {
         "matcher": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
           "title": "Matcher"
         },
         "name": {
@@ -11655,11 +11709,11 @@
           "pattern": "^[A-Za-z0-9_-]+$"
         },
         "routes": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         },
         "overrides": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
           "title": "Overrides"
         }
       },
@@ -11667,25 +11721,25 @@
         "matcher",
         "name"
       ],
-      "title": "deco-cx/live/flags/audience.ts@Audience",
+      "title": "deco-cx/deco/flags/audience.ts@Audience",
       "titleBy": "name"
     },
-    "ZGVjby1jeC9saXZlL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig": {
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig": {
       "type": "object",
       "properties": {
         "routes": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
           "title": "Routes"
         },
         "overrides": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Override[]",
           "title": "Overrides"
         }
       },
       "required": [],
-      "title": "deco-cx/live/flags/everyone.ts@EveryoneConfig"
+      "title": "deco-cx/deco/flags/everyone.ts@EveryoneConfig"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props": {
+    "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props": {
       "type": "object",
       "properties": {
         "executionId": {
@@ -11703,7 +11757,7 @@
       "required": [
         "executionId"
       ],
-      "title": "deco-cx/live/actions/workflows/cancel.ts@Props"
+      "title": "deco-cx/deco/actions/workflows/cancel.ts@Props"
     },
     "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@984c340e2b85bf44b5129917db123a21&Metadata": {
       "allOf": [
@@ -11711,7 +11765,7 @@
           "type": "object",
           "properties": {
             "workflow": {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
               "title": "Workflow"
             }
           },
@@ -11747,7 +11801,7 @@
       ],
       "title": "deco-cx/durable/handler.ts@RunRequest+Arg+984c340e2b85bf44b5129917db123a21&Metadata"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
+    "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
       "type": "object",
       "properties": {
         "signal": {
@@ -11770,12 +11824,12 @@
         "signal",
         "executionId"
       ],
-      "title": "deco-cx/live/actions/workflows/signal.ts@Props"
+      "title": "deco-cx/deco/actions/workflows/signal.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowProps": {
+    "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowProps": {
       "title": "WorkflowProps"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@WorkflowMetadata": {
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy93b3JrZmxvdy50cw==@WorkflowMetadata": {
       "type": "object",
       "allOf": [
         {
@@ -11794,7 +11848,7 @@
       "required": [],
       "title": "WorkflowMetadata"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@CommonProps": {
+    "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@CommonProps": {
       "type": "object",
       "properties": {
         "id": {
@@ -11805,18 +11859,18 @@
           "title": "Id"
         },
         "metadata": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@WorkflowMetadata",
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy93b3JrZmxvdy50cw==@WorkflowMetadata",
           "title": "Metadata"
         }
       },
       "required": [],
       "title": "CommonProps"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow": {
+    "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow": {
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@CommonProps"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@CommonProps"
         }
       ],
       "properties": {
@@ -11827,7 +11881,7 @@
           "type": "object",
           "properties": {
             "data": {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
               "title": "Data"
             },
             "__resolveType": {
@@ -11849,16 +11903,16 @@
       ],
       "title": "AnyWorkflow"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow|WorkflowProps": {
+    "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow|WorkflowProps": {
       "anyOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowProps"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowProps"
         },
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow"
         }
       ],
-      "title": "deco-cx/live/actions/workflows/start.ts@AnyWorkflow|WorkflowProps"
+      "title": "deco-cx/deco/actions/workflows/start.ts@AnyWorkflow|WorkflowProps"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvYWRkSXRlbXMudHM=@Item": {
       "type": "object",
@@ -12951,7 +13005,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvc3RhdGUudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvc3RhdGUudHM=@Props"
         }
       ],
       "required": [
@@ -12973,7 +13027,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvd29ya2Zsb3dzL2V2ZW50cy50cw==@Props"
         }
       ],
       "required": [
@@ -12995,7 +13049,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvd29ya2Zsb3dzL2dldC50cw==@Props"
         }
       ],
       "required": [
@@ -13464,7 +13518,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2hhbmRsZXJzL2RldlBhZ2UudHM=@DevConfig"
         }
       ],
       "required": [
@@ -13486,7 +13540,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2hhbmRsZXJzL2ZyZXNoLnRz@FreshConfig"
         }
       ],
       "required": [
@@ -13508,7 +13562,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3Byb3h5LnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3Byb3h5LnRz@Props"
         }
       ],
       "required": [
@@ -13529,7 +13583,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3JlZGlyZWN0LnRz@RedirectConfig"
         }
       ],
       "required": [
@@ -13550,7 +13604,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig"
         }
       ],
       "required": [
@@ -13572,7 +13626,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3JvdXRlc1NlbGVjdGlvbi50cw==@SelectionConfig"
         }
       ],
       "required": [
@@ -13593,7 +13647,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3dvcmtmbG93UnVubmVyLnRz@Config"
         }
       ],
       "required": [
@@ -13614,7 +13668,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3BhZ2VzL0xpdmVQYWdlLnRzeA==@Props"
         }
       ],
       "required": [
@@ -13635,7 +13689,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Props+Section[]"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3V0aWxzL2NvbmRpdGlvbmFscy50cw==@Props+Section[]"
         }
       ],
       "required": [
@@ -13672,7 +13726,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3NlY3Rpb25zL1BhZ2VJbmNsdWRlLnRzeA==@Props"
         }
       ],
       "required": [
@@ -13693,7 +13747,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1Nsb3QudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3NlY3Rpb25zL1Nsb3QudHN4@Props"
         }
       ],
       "required": [
@@ -13714,7 +13768,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3NlY3Rpb25zL1VzZVNsb3QudHN4@Props"
         }
       ],
       "required": [
@@ -14487,7 +14541,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoQ3Jvbi50cw==@CronProps"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoQ3Jvbi50cw==@CronProps"
         }
       ],
       "required": [
@@ -14508,7 +14562,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props"
         }
       ],
       "required": [
@@ -14530,7 +14584,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGV2aWNlLnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRGV2aWNlLnRz@Props"
         }
       ],
       "required": [
@@ -14551,7 +14605,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props"
         }
       ],
       "required": [
@@ -14572,7 +14626,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoSG9zdC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoSG9zdC50cw==@Props"
         }
       ],
       "required": [
@@ -14593,7 +14647,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTXVsdGkudHM=@Props"
         }
       ],
       "required": [
@@ -14614,7 +14668,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props"
         }
       ],
       "required": [
@@ -14635,7 +14689,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props"
         }
       ],
       "required": [
@@ -14656,7 +14710,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props"
         }
       ],
       "required": [
@@ -14678,7 +14732,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Audience"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Audience"
         }
       ],
       "required": [
@@ -14700,7 +14754,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig"
         }
       ],
       "required": [
@@ -14722,7 +14776,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL2NhbmNlbC50cw==@Props"
         }
       ],
       "required": [
@@ -14766,7 +14820,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props"
         }
       ],
       "required": [
@@ -14788,7 +14842,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow|WorkflowProps"
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@AnyWorkflow|WorkflowProps"
         }
       ],
       "required": [
@@ -15660,28 +15714,28 @@
         "./routes/_middleware.ts": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig"
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig"
             }
           ]
         },
         "./routes/[...catchall].tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         },
         "./routes/index.tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         },
         "./routes/live/previews/index.tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page"
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9wYWdlLnRz@Page"
             }
           ]
         }
