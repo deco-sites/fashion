@@ -3,7 +3,7 @@
     "deco-sites/fashion/": "./",
     "$store/": "./",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.9.36/",
-    "$live/": "https://denopkg.com/deco-cx/deco@e0ed34e3719f8e0cd1ae590618d77717b2cdb9c5/",
+    "$live/": "https://denopkg.com/deco-cx/deco@e4d72df4271f0682d749280a79e90289e96d15e8/",
     "$fresh/": "https://denopkg.com/deco-cx/fresh@1.3.0/",
     "preact": "https://esm.sh/preact@10.15.1",
     "preact/": "https://esm.sh/preact@10.15.1/",
