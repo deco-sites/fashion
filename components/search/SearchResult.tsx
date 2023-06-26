@@ -5,48 +5,25 @@ import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
+import { Layout as cardLayout } from "$store/components/product/ProductCard.tsx";;
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
+export interface Layout {
+  /**
+   * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
+   */
+  variant?: "aside" | "drawer";
+  /**
+   * @description Number of products per line on grid
+   */
+  columns: Columns;
+}
+
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
-  layout?: {
-    /**
-     * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
-     */
-    variant?: "aside" | "drawer";
-    /**
-     * @description Number of products per line on grid
-     */
-    columns: Columns;
-  };
-  cardLayout?: {
-    basics?: {
-      contentAlignment?: "Left" | "Center";
-      oldPriceSize?: "Small" | "Normal";
-      ctaText?: string;
-    };
-    elementsPositions?: {
-      skuSelector?: "Top" | "Bottom";
-      favoriteIcon?: "Top right" | "Top left";
-    };
-    hide?: {
-      productName?: boolean;
-      productDescription?: boolean;
-      allPrices?: boolean;
-      installments?: boolean;
-      skuSelector?: boolean;
-      cta?: boolean;
-    };
-    onMouseOver?: {
-      image?: "Change image" | "Zoom image";
-      card?: "None" | "Move up";
-      showFavoriteIcon?: boolean;
-      showSkuSelector?: boolean;
-      showCardShadow?: boolean;
-      showCta?: boolean;
-    };
-  };
+  layout?: Layout;
+  cardLayout?: cardLayout;
 }
 
 function NotFound() {

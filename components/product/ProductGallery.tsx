@@ -1,6 +1,6 @@
 import { Product } from "deco-sites/std/commerce/types.ts";
 
-import ProductCard from "./ProductCard.tsx";
+import ProductCard, { Layout as cardLayout } from "$store/components/product/ProductCard.tsx";;
 
 export interface Columns {
   mobile?: number;
@@ -9,33 +9,7 @@ export interface Columns {
 
 export interface Props {
   products: Product[] | null;
-  layout?: {
-    basics?: {
-      contentAlignment?: "Left" | "Center";
-      oldPriceSize?: "Small" | "Normal";
-      ctaText?: string;
-    };
-    elementsPositions?: {
-      skuSelector?: "Top" | "Bottom";
-      favoriteIcon?: "Top right" | "Top left";
-    };
-    hide?: {
-      productName?: boolean;
-      productDescription?: boolean;
-      allPrices?: boolean;
-      installments?: boolean;
-      skuSelector?: boolean;
-      cta?: boolean;
-    };
-    onMouseOver?: {
-      image?: "Change image" | "Zoom image";
-      card?: "None" | "Move up";
-      showFavoriteIcon?: boolean;
-      showSkuSelector?: boolean;
-      showCardShadow?: boolean;
-      showCta?: boolean;
-    };
-  };
+  layout?: cardLayout;
 }
 
 function ProductGallery({ products, layout }: Props) {

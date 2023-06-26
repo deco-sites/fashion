@@ -8,6 +8,34 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import { SendEventOnClick } from "$store/sdk/analytics.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
+export interface Layout {
+  basics?: {
+    contentAlignment?: "Left" | "Center";
+    oldPriceSize?: "Small" | "Normal";
+    ctaText?: string;
+  };
+  elementsPositions?: {
+    skuSelector?: "Top" | "Bottom";
+    favoriteIcon?: "Top right" | "Top left";
+  };
+  hide?: {
+    productName?: boolean;
+    productDescription?: boolean;
+    allPrices?: boolean;
+    installments?: boolean;
+    skuSelector?: boolean;
+    cta?: boolean;
+  };
+  onMouseOver?: {
+    image?: "Change image" | "Zoom image";
+    card?: "None" | "Move up";
+    showFavoriteIcon?: boolean;
+    showSkuSelector?: boolean;
+    showCardShadow?: boolean;
+    showCta?: boolean;
+  };
+}
+
 interface Props {
   product: Product;
   /** Preload card image */
@@ -15,33 +43,7 @@ interface Props {
 
   /** @description used for analytics event */
   itemListName?: string;
-  layout?: {
-    basics?: {
-      contentAlignment?: "Left" | "Center";
-      oldPriceSize?: "Small" | "Normal";
-      ctaText?: string;
-    };
-    elementsPositions?: {
-      skuSelector?: "Top" | "Bottom";
-      favoriteIcon?: "Top right" | "Top left";
-    };
-    hide?: {
-      productName?: boolean;
-      productDescription?: boolean;
-      allPrices?: boolean;
-      installments?: boolean;
-      skuSelector?: boolean;
-      cta?: boolean;
-    };
-    onMouseOver?: {
-      image?: "Change image" | "Zoom image";
-      card?: "None" | "Move up";
-      showFavoriteIcon?: boolean;
-      showSkuSelector?: boolean;
-      showCardShadow?: boolean;
-      showCta?: boolean;
-    };
-  };
+  layout?: Layout;
 }
 
 const relative = (url: string) => {
