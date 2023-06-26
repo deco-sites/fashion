@@ -10,14 +10,43 @@ import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
-  /**
-   * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
-   */
-  variant?: "aside" | "drawer";
-  /**
-   * @description Number of products per line on grid
-   */
-  columns: Columns;
+  layout?: {
+    /**
+     * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
+     */
+    variant?: "aside" | "drawer";
+    /**
+     * @description Number of products per line on grid
+     */
+    columns: Columns;
+  };
+  cardLayout?: {
+    basics?: {
+      contentAlignment?: "Left" | "Center";
+      oldPriceSize?: "Small" | "Normal";
+      ctaText?: string;
+    };
+    elementsPositions?: {
+      skuSelector?: "Top" | "Bottom";
+      favoriteIcon?: "Top right" | "Top left";
+    };
+    hide?: {
+      productName?: boolean;
+      productDescription?: boolean;
+      allPrices?: boolean;
+      installments?: boolean;
+      skuSelector?: boolean;
+      cta?: boolean;
+    };
+    onMouseOver?: {
+      image?: "Change image" | "Zoom image";
+      card?: "None" | "Move up";
+      showFavoriteIcon?: boolean;
+      showSkuSelector?: boolean;
+      showCardShadow?: boolean;
+      showCta?: boolean;
+    };
+  };
 }
 
 function NotFound() {
@@ -30,7 +59,8 @@ function NotFound() {
 
 function Result({
   page,
-  variant,
+  layout,
+  cardLayout,
 }: Omit<Props, "page"> & { page: ProductListingPage }) {
   const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
 
@@ -41,17 +71,17 @@ function Result({
           sortOptions={sortOptions}
           filters={filters}
           breadcrumb={breadcrumb}
-          displayFilter={variant === "drawer"}
+          displayFilter={layout?.variant === "drawer"}
         />
 
         <div class="flex flex-row">
-          {variant === "aside" && filters.length > 0 && (
+          {layout?.variant === "aside" && filters.length > 0 && (
             <aside class="hidden sm:block w-min min-w-[250px]">
               <Filters filters={filters} />
             </aside>
           )}
           <div class="flex-grow">
-            <ProductGallery products={products} />
+            <ProductGallery products={products} layout={cardLayout} />
           </div>
         </div>
 

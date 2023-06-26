@@ -28,7 +28,7 @@ export interface Props {
       skuSelector?: "Top" | "Bottom";
       favoriteIcon?: "Top right" | "Top left";
     };
-    hide: {
+    hide?: {
       productName?: boolean;
       productDescription?: boolean;
       allPrices?: boolean;

@@ -10985,9 +10985,7 @@
               "title": "On Mouse Over"
             }
           },
-          "required": [
-            "hide"
-          ],
+          "required": [],
           "title": "Card Layout"
         }
       },
@@ -11024,32 +11022,246 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
           "title": "Page"
         },
-        "variant": {
-          "anyOf": [
-            {
+        "layout": {
+          "type": "object",
+          "properties": {
+            "variant": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "aside",
+                  "default": "aside"
+                },
+                {
+                  "type": "string",
+                  "const": "drawer",
+                  "default": "drawer"
+                }
+              ],
               "type": "string",
-              "const": "aside",
-              "default": "aside"
+              "title": "Variant"
             },
-            {
-              "type": "string",
-              "const": "drawer",
-              "default": "drawer"
+            "columns": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0R2FsbGVyeS50c3g=@Columns",
+              "title": "Columns"
             }
+          },
+          "required": [
+            "columns"
           ],
-          "type": "string",
-          "description": "Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products",
-          "title": "Variant"
+          "title": "Layout"
         },
-        "columns": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0R2FsbGVyeS50c3g=@Columns",
-          "description": "Number of products per line on grid",
-          "title": "Columns"
+        "cardLayout": {
+          "type": "object",
+          "properties": {
+            "basics": {
+              "type": "object",
+              "properties": {
+                "contentAlignment": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Left",
+                      "default": "Left"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Center",
+                      "default": "Center"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Content Alignment"
+                },
+                "oldPriceSize": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Small",
+                      "default": "Small"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Normal",
+                      "default": "Normal"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Old Price Size"
+                },
+                "ctaText": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "title": "Cta Text"
+                }
+              },
+              "required": [],
+              "title": "Basics"
+            },
+            "elementsPositions": {
+              "type": "object",
+              "properties": {
+                "skuSelector": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Top",
+                      "default": "Top"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Bottom",
+                      "default": "Bottom"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Sku Selector"
+                },
+                "favoriteIcon": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Top right",
+                      "default": "Top right"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Top left",
+                      "default": "Top left"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Favorite Icon"
+                }
+              },
+              "required": [],
+              "title": "Elements Positions"
+            },
+            "hide": {
+              "type": "object",
+              "properties": {
+                "productName": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Product Name"
+                },
+                "productDescription": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Product Description"
+                },
+                "allPrices": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "All Prices"
+                },
+                "installments": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Installments"
+                },
+                "skuSelector": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Sku Selector"
+                },
+                "cta": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Cta"
+                }
+              },
+              "required": [],
+              "title": "Hide"
+            },
+            "onMouseOver": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Change image",
+                      "default": "Change image"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Zoom image",
+                      "default": "Zoom image"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Image"
+                },
+                "card": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "None",
+                      "default": "None"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Move up",
+                      "default": "Move up"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Card"
+                },
+                "showFavoriteIcon": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Show Favorite Icon"
+                },
+                "showSkuSelector": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Show Sku Selector"
+                },
+                "showCardShadow": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Show Card Shadow"
+                },
+                "showCta": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "title": "Show Cta"
+                }
+              },
+              "required": [],
+              "title": "On Mouse Over"
+            }
+          },
+          "required": [],
+          "title": "Card Layout"
         }
       },
       "required": [
-        "page",
-        "columns"
+        "page"
       ],
       "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
     },
