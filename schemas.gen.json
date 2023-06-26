@@ -11759,7 +11759,7 @@
       ],
       "title": "deco-cx/deco/actions/workflows/cancel.ts@Props"
     },
-    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@90d1236df4992ce3740b9dc7474dced1&Metadata": {
+    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&e78c449414504dd3e83a8c172c355fbb": {
       "allOf": [
         {
           "type": "object",
@@ -11777,9 +11777,9 @@
           "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata"
         }
       ],
-      "title": "90d1236df4992ce3740b9dc7474dced1&Metadata"
+      "title": "Metadata&e78c449414504dd3e83a8c172c355fbb"
     },
-    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+90d1236df4992ce3740b9dc7474dced1&Metadata": {
+    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&e78c449414504dd3e83a8c172c355fbb": {
       "type": "object",
       "properties": {
         "results": {
@@ -11790,7 +11790,7 @@
           "title": "Execution Id"
         },
         "metadata": {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@90d1236df4992ce3740b9dc7474dced1&Metadata",
+          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&e78c449414504dd3e83a8c172c355fbb",
           "title": "Metadata"
         }
       },
@@ -11799,7 +11799,7 @@
         "executionId",
         "metadata"
       ],
-      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+90d1236df4992ce3740b9dc7474dced1&Metadata"
+      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+Metadata&e78c449414504dd3e83a8c172c355fbb"
     },
     "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
       "type": "object",
@@ -14536,8 +14536,8 @@
       }
     },
     "JGxpdmUvbWF0Y2hlcnMvTWF0Y2hDcm9uLnRz": {
-      "title": "Con Matcher",
-      "description": "Use cron at minute precision to calculate if it is active",
+      "title": "Cron Matcher",
+      "description": "Use cron, at minute precision, to declare date and hour ranges",
       "type": "object",
       "allOf": [
         {
@@ -14798,7 +14798,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+90d1236df4992ce3740b9dc7474dced1&Metadata"
+          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&e78c449414504dd3e83a8c172c355fbb"
         }
       ],
       "required": [
