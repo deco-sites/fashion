@@ -10801,6 +10801,214 @@
       ],
       "title": "deco-sites/fashion/components/product/ProductDetails.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout": {
+      "type": "object",
+      "properties": {
+        "basics": {
+          "type": "object",
+          "properties": {
+            "contentAlignment": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Left",
+                  "default": "Left"
+                },
+                {
+                  "type": "string",
+                  "const": "Center",
+                  "default": "Center"
+                }
+              ],
+              "type": "string",
+              "title": "Content Alignment"
+            },
+            "oldPriceSize": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Small",
+                  "default": "Small"
+                },
+                {
+                  "type": "string",
+                  "const": "Normal",
+                  "default": "Normal"
+                }
+              ],
+              "type": "string",
+              "title": "Old Price Size"
+            },
+            "ctaText": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Cta Text"
+            }
+          },
+          "required": [],
+          "title": "Basics"
+        },
+        "elementsPositions": {
+          "type": "object",
+          "properties": {
+            "skuSelector": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Top",
+                  "default": "Top"
+                },
+                {
+                  "type": "string",
+                  "const": "Bottom",
+                  "default": "Bottom"
+                }
+              ],
+              "type": "string",
+              "title": "Sku Selector"
+            },
+            "favoriteIcon": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Top right",
+                  "default": "Top right"
+                },
+                {
+                  "type": "string",
+                  "const": "Top left",
+                  "default": "Top left"
+                }
+              ],
+              "type": "string",
+              "title": "Favorite Icon"
+            }
+          },
+          "required": [],
+          "title": "Elements Positions"
+        },
+        "hide": {
+          "type": "object",
+          "properties": {
+            "productName": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Product Name"
+            },
+            "productDescription": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Product Description"
+            },
+            "allPrices": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "All Prices"
+            },
+            "installments": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Installments"
+            },
+            "skuSelector": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Sku Selector"
+            },
+            "cta": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Cta"
+            }
+          },
+          "required": [],
+          "title": "Hide"
+        },
+        "onMouseOver": {
+          "type": "object",
+          "properties": {
+            "image": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Change image",
+                  "default": "Change image"
+                },
+                {
+                  "type": "string",
+                  "const": "Zoom image",
+                  "default": "Zoom image"
+                }
+              ],
+              "type": "string",
+              "title": "Image"
+            },
+            "card": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "None",
+                  "default": "None"
+                },
+                {
+                  "type": "string",
+                  "const": "Move up",
+                  "default": "Move up"
+                }
+              ],
+              "type": "string",
+              "title": "Card"
+            },
+            "showFavoriteIcon": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Favorite Icon"
+            },
+            "showSkuSelector": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Sku Selector"
+            },
+            "showCardShadow": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Card Shadow"
+            },
+            "showCta": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Cta"
+            }
+          },
+          "required": [],
+          "title": "On Mouse Over"
+        }
+      },
+      "required": [],
+      "title": "Layout"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props": {
       "type": "object",
       "properties": {
@@ -10862,213 +11070,7 @@
           "title": "Layout"
         },
         "cardLayout": {
-          "type": "object",
-          "properties": {
-            "basics": {
-              "type": "object",
-              "properties": {
-                "contentAlignment": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Left",
-                      "default": "Left"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Center",
-                      "default": "Center"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Content Alignment"
-                },
-                "oldPriceSize": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Small",
-                      "default": "Small"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Normal",
-                      "default": "Normal"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Old Price Size"
-                },
-                "ctaText": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "title": "Cta Text"
-                }
-              },
-              "required": [],
-              "title": "Basics"
-            },
-            "elementsPositions": {
-              "type": "object",
-              "properties": {
-                "skuSelector": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Top",
-                      "default": "Top"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Bottom",
-                      "default": "Bottom"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Sku Selector"
-                },
-                "favoriteIcon": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Top right",
-                      "default": "Top right"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Top left",
-                      "default": "Top left"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Favorite Icon"
-                }
-              },
-              "required": [],
-              "title": "Elements Positions"
-            },
-            "hide": {
-              "type": "object",
-              "properties": {
-                "productName": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Product Name"
-                },
-                "productDescription": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Product Description"
-                },
-                "allPrices": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "All Prices"
-                },
-                "installments": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Installments"
-                },
-                "skuSelector": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Sku Selector"
-                },
-                "cta": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Cta"
-                }
-              },
-              "required": [],
-              "title": "Hide"
-            },
-            "onMouseOver": {
-              "type": "object",
-              "properties": {
-                "image": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Change image",
-                      "default": "Change image"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Zoom image",
-                      "default": "Zoom image"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Image"
-                },
-                "card": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "None",
-                      "default": "None"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Move up",
-                      "default": "Move up"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Card"
-                },
-                "showFavoriteIcon": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Show Favorite Icon"
-                },
-                "showSkuSelector": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Show Sku Selector"
-                },
-                "showCardShadow": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Show Card Shadow"
-                },
-                "showCta": {
-                  "type": [
-                    "boolean",
-                    "null"
-                  ],
-                  "title": "Show Cta"
-                }
-              },
-              "required": [],
-              "title": "On Mouse Over"
-            }
-          },
-          "required": [
-            "hide"
-          ],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout",
           "title": "Card Layout"
         }
       },
@@ -11098,13 +11100,9 @@
       "required": [],
       "title": "Columns"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Layout": {
       "type": "object",
       "properties": {
-        "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
-          "title": "Page"
-        },
         "variant": {
           "anyOf": [
             {
@@ -11129,8 +11127,28 @@
         }
       },
       "required": [
-        "page",
         "columns"
+      ],
+      "title": "Layout"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Layout",
+          "title": "Layout"
+        },
+        "cardLayout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout",
+          "title": "Card Layout"
+        }
+      },
+      "required": [
+        "page"
       ],
       "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
     },

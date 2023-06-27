@@ -8,6 +8,34 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import { SendEventOnClick } from "$store/sdk/analytics.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
+export interface Layout {
+  basics?: {
+    contentAlignment?: "Left" | "Center";
+    oldPriceSize?: "Small" | "Normal";
+    ctaText?: string;
+  };
+  elementsPositions?: {
+    skuSelector?: "Top" | "Bottom";
+    favoriteIcon?: "Top right" | "Top left";
+  };
+  hide?: {
+    productName?: boolean;
+    productDescription?: boolean;
+    allPrices?: boolean;
+    installments?: boolean;
+    skuSelector?: boolean;
+    cta?: boolean;
+  };
+  onMouseOver?: {
+    image?: "Change image" | "Zoom image";
+    card?: "None" | "Move up";
+    showFavoriteIcon?: boolean;
+    showSkuSelector?: boolean;
+    showCardShadow?: boolean;
+    showCta?: boolean;
+  };
+}
+
 interface Props {
   product: Product;
   /** Preload card image */
@@ -15,33 +43,7 @@ interface Props {
 
   /** @description used for analytics event */
   itemListName?: string;
-  layout?: {
-    basics?: {
-      contentAlignment?: "Left" | "Center";
-      oldPriceSize?: "Small" | "Normal";
-      ctaText?: string;
-    };
-    elementsPositions?: {
-      skuSelector?: "Top" | "Bottom";
-      favoriteIcon?: "Top right" | "Top left";
-    };
-    hide: {
-      productName?: boolean;
-      productDescription?: boolean;
-      allPrices?: boolean;
-      installments?: boolean;
-      skuSelector?: boolean;
-      cta?: boolean;
-    };
-    onMouseOver?: {
-      image?: "Change image" | "Zoom image";
-      card?: "None" | "Move up";
-      showFavoriteIcon?: boolean;
-      showSkuSelector?: boolean;
-      showCardShadow?: boolean;
-      showCta?: boolean;
-    };
-  };
+  layout?: Layout;
 }
 
 const relative = (url: string) => {
@@ -215,7 +217,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
         {(!l?.elementsPositions?.skuSelector ||
           l?.elementsPositions?.skuSelector === "Top") && (
           <>
-            {l?.hide.skuSelector ? "" : (
+            {l?.hide?.skuSelector ? "" : (
               <ul
                 class={`flex items-center gap-2 w-full ${
                   align === "center" ? "justify-center" : "justify-start"
@@ -227,18 +229,18 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           </>
         )}
 
-        {l?.hide.productName && l?.hide.productDescription
+        {l?.hide?.productName && l?.hide?.productDescription
           ? ""
           : (
             <div class="flex flex-col gap-0">
-              {l?.hide.productName
+              {l?.hide?.productName
                 ? ""
                 : (
                   <h2 class="truncate text-base lg:text-lg text-base-content">
                     {name}
                   </h2>
                 )}
-              {l?.hide.productDescription
+              {l?.hide?.productDescription
                 ? ""
                 : (
                   <p class="truncate text-sm lg:text-sm text-neutral">
@@ -247,7 +249,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                 )}
             </div>
           )}
-        {l?.hide.allPrices ? "" : (
+        {l?.hide?.allPrices ? "" : (
           <div class="flex flex-col gap-2">
             <div
               class={`flex flex-col gap-0 ${
@@ -267,7 +269,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
                 {formatPrice(price, offers!.priceCurrency!)}
               </div>
             </div>
-            {l?.hide.installments
+            {l?.hide?.installments
               ? ""
               : (
                 <div class="text-base-300 text-sm lg:text-base">
@@ -280,7 +282,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
         {/* SKU Selector */}
         {l?.elementsPositions?.skuSelector === "Bottom" && (
           <>
-            {l?.hide.skuSelector ? "" : (
+            {l?.hide?.skuSelector ? "" : (
               <ul
                 class={`flex items-center gap-2 w-full ${
                   align === "center" ? "justify-center" : "justify-start"
@@ -292,7 +294,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           </>
         )}
 
-        {!l?.hide.cta
+        {!l?.hide?.cta
           ? (
             <div
               class={`flex-auto flex items-end ${
