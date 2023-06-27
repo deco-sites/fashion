@@ -41,6 +41,21 @@ const DEFAULT_PROPS = {
       answer:
         "Oferecemos uma política de devolução sem complicações. Se você não estiver completamente satisfeito(a) com a sua compra, pode devolver o item em até 30 dias após a entrega para obter um reembolso total ou troca. Certifique-se de que o item esteja sem uso, na embalagem original e acompanhado do recibo. Entre em contato com a nossa equipe de atendimento ao cliente e eles o(a) orientarão pelo processo de devolução.",
     },
+    {
+      question: "Quais são os métodos de pagamento aceitos?",
+      answer:
+        "Aceitamos diversos métodos de pagamento, incluindo cartões de crédito, débito e boleto bancário. Ao finalizar a sua compra, você poderá escolher a opção de pagamento que melhor se adequa às suas preferências. Garantimos que todas as transações são seguras e protegidas.",
+    },
+    {
+      question: "Quanto tempo leva para a entrega do meu pedido?",
+      answer:
+        "O tempo de entrega varia de acordo com a sua localização. Geralmente, o prazo estimado para entrega é de 5 a 10 dias úteis após a confirmação do pagamento. No entanto, esse prazo pode variar devido a circunstâncias imprevistas. Após o envio do seu pedido, enviaremos um e-mail com as informações de rastreamento para que você possa acompanhar a entrega.",
+    },
+    {
+      question: "Vocês oferecem frete grátis?",
+      answer:
+        "Sim, oferecemos frete grátis para pedidos acima de um determinado valor. O valor mínimo para se qualificar para frete grátis pode variar, então verifique as condições atuais em nosso site. Caso o seu pedido atenda aos requisitos, o frete será automaticamente ajustado para zero durante o processo de finalização da compra.",
+    },
   ],
   contact: {
     title: "",
