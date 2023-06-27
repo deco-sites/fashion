@@ -1,6 +1,8 @@
 import { Product } from "deco-sites/std/commerce/types.ts";
 
-import ProductCard, { Layout as cardLayout } from "$store/components/product/ProductCard.tsx";;
+import ProductCard, {
+  Layout as cardLayout,
+} from "$store/components/product/ProductCard.tsx";
 
 export interface Columns {
   mobile?: number;
