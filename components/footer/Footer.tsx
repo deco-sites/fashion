@@ -114,14 +114,46 @@ export interface Props {
 function Footer({
   logo,
   newsletter = {
-    title: "",
+    title: "Newsletter",
     description: "",
     form: { placeholder: "", buttonText: "", helpText: "" },
   },
-  sections = [],
-  social = { title: "", items: [] },
-  payments = { title: "", items: [] },
-  mobileApps = { apple: "", android: "" },
+  sections = [{
+    "label": "Sobre",
+    "items": [
+      {
+        "href": "/quem-somos",
+        "label": "Quem somos"
+      },
+      {
+        "href": "/termos-de-uso",
+        "label": "Termos de uso"
+      },
+      {
+        "href": "/trabalhe-conosco",
+        "label": "Trabalhe conosco"
+      }
+    ]
+  }, {
+    "label": "Atendimento",
+    "items": [
+      {
+        "href": "/centraldeatendimento",
+        "label": "Central de atendimento"
+      },
+      {
+        "href": "/whatsapp",
+        "label": "Fale conosco pelo WhatsApp"
+      },
+      {
+        "href": "/trocaedevolucao",
+        "label": "Troca e devolução"
+      }
+    ]
+  }],
+  social = { title: "Redes sociais", items: [{ label: "Instagram", link: "/" }, { label: "Tiktok", link: "/" }] },
+  payments = { title: "Formas de pagamento", items: [{ label: "Mastercard" }, { label: "Visa" }, { label: "Pix" }] },
+  mobileApps = { apple: "/", android: "/" },
   regionOptions = { currency: [], language: [] },
   extraLinks = [],
   backToTheTop,
