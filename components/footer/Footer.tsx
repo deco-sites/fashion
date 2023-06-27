@@ -123,36 +123,42 @@ function Footer({
     "items": [
       {
         "href": "/quem-somos",
-        "label": "Quem somos"
+        "label": "Quem somos",
       },
       {
         "href": "/termos-de-uso",
-        "label": "Termos de uso"
+        "label": "Termos de uso",
       },
       {
         "href": "/trabalhe-conosco",
-        "label": "Trabalhe conosco"
-      }
-    ]
+        "label": "Trabalhe conosco",
+      },
+    ],
   }, {
     "label": "Atendimento",
     "items": [
       {
         "href": "/centraldeatendimento",
-        "label": "Central de atendimento"
+        "label": "Central de atendimento",
       },
       {
         "href": "/whatsapp",
-        "label": "Fale conosco pelo WhatsApp"
+        "label": "Fale conosco pelo WhatsApp",
       },
       {
         "href": "/trocaedevolucao",
-        "label": "Troca e devolução"
-      }
-    ]
+        "label": "Troca e devolução",
+      },
+    ],
   }],
-  social = { title: "Redes sociais", items: [{ label: "Instagram", link: "/" }, { label: "Tiktok", link: "/" }] },
-  payments = { title: "Formas de pagamento", items: [{ label: "Mastercard" }, { label: "Visa" }, { label: "Pix" }] },
+  social = {
+    title: "Redes sociais",
+    items: [{ label: "Instagram", link: "/" }, { label: "Tiktok", link: "/" }],
+  },
+  payments = {
+    title: "Formas de pagamento",
+    items: [{ label: "Mastercard" }, { label: "Visa" }, { label: "Pix" }],
+  },
   mobileApps = { apple: "/", android: "/" },
   regionOptions = { currency: [], language: [] },
   extraLinks = [],
@@ -206,14 +212,14 @@ function Footer({
 
   return (
     <footer
-      class={`w-full flex flex-col pt-10 pb-2 lg:pb-10 gap-10 ${
+      class={`w-full flex flex-col pt-10 pb-2 md:pb-10 gap-10 ${
         ColorClasses(layout)
       }`}
     >
       <div class="lg:container mx-6 lg:mx-auto">
         {(!layout?.variation || layout?.variation == "Variation 1") && (
           <div class="flex flex-col gap-10">
-            <div class="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-12">
+            <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
               {_logo}
               {_sectionLinks}
               {_newsletter}
@@ -222,8 +228,10 @@ function Footer({
             <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
               {_payments}
               {_social}
-              {_apps}
-              {_region}
+              <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-end">
+                {_apps}
+                {_region}
+              </div>
             </div>
             <Divider />
             <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
@@ -258,13 +266,15 @@ function Footer({
           <div class="flex flex-col gap-10">
             {_logo}
             <div class="flex flex-col lg:flex-row gap-14">
-              <div class="flex flex-col gap-10 lg:w-2/5">
+              <div class="flex flex-col md:flex-row lg:flex-col md:justify-between lg:justify-normal gap-10 lg:w-2/5">
                 {_newsletter}
-                {_payments}
-                {_apps}
+                <div class="flex flex-col gap-10">
+                  {_payments}
+                  {_apps}
+                </div>
               </div>
               <div class="flex flex-col gap-10 lg:gap-20 lg:w-3/5 lg:items-end">
-                <div class="flex flex-col lg:flex-row gap-10">
+                <div class="flex flex-col md:flex-row gap-10">
                   {_sectionLinks}
                   {_social}
                 </div>
@@ -284,17 +294,19 @@ function Footer({
             {layout?.hide?.newsletter ? <></> : <Divider />}
             <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
               {_sectionLinks}
-              <div class="flex flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
+              <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
                 <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
-                  <div class="flex-auto">
+                  <div class="lg:flex-auto">
                     {_payments}
                   </div>
-                  <div class="flex-auto">
+                  <div class="lg:flex-auto">
                     {_social}
                   </div>
                 </div>
-                {_region}
-                {_apps}
+                <div class="flex flex-col gap-10 lg:gap-10">
+                  {_region}
+                  {_apps}
+                </div>
               </div>
             </div>
             <Divider />
@@ -309,9 +321,9 @@ function Footer({
             {_newsletter}
             {layout?.hide?.newsletter ? <></> : <Divider />}
             {_logo}
-            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
+            <div class="flex flex-col md:flex-row gap-10 lg:gap-20 md:justify-between">
               {_sectionLinks}
-              <div class="flex flex-col gap-10 lg:w-2/5 lg:pl-10">
+              <div class="flex flex-col gap-10 md:w-2/5 lg:pl-10">
                 {_payments}
                 {_social}
                 {_apps}
