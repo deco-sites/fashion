@@ -7372,7 +7372,7 @@
           "items": {
             "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
           },
-          "title": "Section[]"
+          "title": "Page Sections"
         },
         {
           "title": "Page Variant",
