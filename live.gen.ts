@@ -80,6 +80,8 @@ import * as i2$$$$$$$$9 from "$live/matchers/MatchUserAgent.ts";
 import * as i2$$$$$$$$$0 from "$live/flags/audience.ts";
 import * as i2$$$$$$$$$1 from "$live/flags/everyone.ts";
 import * as i2$$$$$$$$$2 from "$live/flags/flag.ts";
+import * as i1$$$$$$3 from "$live/flags/multivariate.ts";
+import * as i1$$$$$$4 from "$live/flags/pageVariants_beta.ts";
 import * as i2$$$$$$0 from "$live/actions/workflows/cancel.ts";
 import * as i2$$$$$$1 from "$live/actions/workflows/run.ts";
 import * as i2$$$$$$2 from "$live/actions/workflows/signal.ts";
@@ -279,6 +281,8 @@ const manifest = {
     "$live/flags/audience.ts": i2$$$$$$$$$0,
     "$live/flags/everyone.ts": i2$$$$$$$$$1,
     "$live/flags/flag.ts": i2$$$$$$$$$2,
+    "$live/flags/multivariate.ts": i1$$$$$$3,
+    "$live/flags/pageVariants_beta.ts": i1$$$$$$4,
   },
   "actions": {
     "$live/actions/workflows/cancel.ts": i2$$$$$$0,
