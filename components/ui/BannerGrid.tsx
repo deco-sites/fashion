@@ -1,5 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 
 /**
  * @titleBy alt
@@ -7,13 +8,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 export interface Banner {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;
-  /**
-   * @description Image alt text
-   */
   alt: string;
-  /**
-   * @description When you click you go to
-   */
   href: string;
 }
 
@@ -27,27 +22,36 @@ export type BorderRadius =
   | "3xl"
   | "full";
 
-export interface Props {
-  title?: string;
+export interface Items {
+  /** @default 2 */
+  mobile?: 1 | 2;
+  /** @default 4 */
+  desktop?: 1 | 2 | 4 | 6 | 8;
+}
+
+export interface Border {
+  /** @default none */
+  mobile?: BorderRadius;
+  /** @default none */
+  desktop?: BorderRadius;
+}
+
+export interface Layout {
+  header?: HeaderLayout;
   /**
    * @description Default is 2 for mobile and all for desktop
    */
-  itemsPerLine: {
-    /** @default 2 */
-    mobile?: 1 | 2;
-    /** @default 4 */
-    desktop?: 1 | 2 | 4 | 6 | 8;
-  };
+  itemsPerLine: Items;
   /**
-   * @description Item's border radius in px
+   * @description Item's border radius
    */
-  borderRadius: {
-    /** @default none */
-    mobile?: BorderRadius;
-    /** @default none */
-    desktop?: BorderRadius;
-  };
+  borderRadius: Border;
+}
+
+export interface Props {
+  header?: HeaderContent;
   banners: Banner[];
+  layout?: Layout;
 }
 
 const MOBILE_COLUMNS = {
@@ -86,34 +90,49 @@ const RADIUS_DESKTOP = {
 };
 
 export default function BannnerGrid({
-  title,
-  itemsPerLine,
-  borderRadius,
-  banners = [],
+  header,
+  layout,
+  banners = [
+    {
+      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8d36df6-4b96-4421-bb6c-de0fe1478e06",
+      srcDesktop: "",
+      alt: "",
+      href: "/",
+    },
+    {
+      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/29dbf8d4-90c3-43f7-9b6b-4c6bda5e7835",
+      srcDesktop: "",
+      alt: "",
+      href: "/",
+    },
+    {
+      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/1e6250d4-f9d2-4185-b8a6-b0e8a8fed4a7",
+      srcDesktop: "",
+      alt: "",
+      href: "/",
+    },
+    {
+      srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/3210eea1-5437-4f19-8327-8b8fa4edfc45",
+      srcDesktop: "",
+      alt: "",
+      href: "/",
+    },
+  ],
 }: Props) {
   return (
-    <section class="container w-full px-4 md:px-0 mx-auto">
-      {title &&
-        (
-          <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6">
-            <h2 class="text-lg leading-5 font-semibold uppercase">
-              {title}
-            </h2>
-
-            <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
-          </div>
-        )}
+    <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
+      <Header content={header} layout={layout?.header} />
       <div
         class={`grid gap-4 md:gap-6 ${
-          MOBILE_COLUMNS[itemsPerLine?.mobile ?? 2]
-        } ${DESKTOP_COLUMNS[itemsPerLine?.desktop ?? 4]}`}
+          MOBILE_COLUMNS[layout?.itemsPerLine?.mobile ?? 2]
+        } ${DESKTOP_COLUMNS[layout?.itemsPerLine?.desktop ?? 4]}`}
       >
         {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
           <a
             href={href}
             class={`overflow-hidden ${
-              RADIUS_MOBILE[borderRadius.mobile ?? "none"]
-            } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
+              RADIUS_MOBILE[layout?.borderRadius.mobile ?? "none"]
+            } ${RADIUS_DESKTOP[layout?.borderRadius.desktop ?? "none"]} `}
           >
             <Picture>
               <Source
@@ -140,6 +159,6 @@ export default function BannnerGrid({
           </a>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

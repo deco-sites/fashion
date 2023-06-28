@@ -9557,12 +9557,10 @@
         },
         "alt": {
           "type": "string",
-          "description": "Image alt text",
           "title": "Alt"
         },
         "href": {
           "type": "string",
-          "description": "When you click you go to",
           "title": "Href"
         }
       },
@@ -9581,9 +9579,10 @@
       },
       "title": "Banner[]"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items": {
       "type": "object",
       "properties": {
+<<<<<<< HEAD
 =======
       "type": "object",
       "properties": {
@@ -9682,153 +9681,203 @@
                   "default": 2
                 }
               ],
+=======
+        "mobile": {
+          "anyOf": [
+            {
               "type": "number",
-              "title": "Mobile"
+              "const": 1,
+              "default": 1
             },
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "number",
-                  "const": 1,
-                  "default": 1
-                },
-                {
-                  "type": "number",
-                  "const": 2,
-                  "default": 2
-                },
-                {
-                  "type": "number",
-                  "const": 4,
-                  "default": 4
-                },
-                {
-                  "type": "number",
-                  "const": 6,
-                  "default": 6
-                },
-                {
-                  "type": "number",
-                  "const": 8,
-                  "default": 8
-                }
-              ],
+            {
               "type": "number",
-              "title": "Desktop"
+              "const": 2,
+              "default": 2
             }
-          },
-          "required": [],
-          "title": "Items Per Line",
-          "description": "Default is 2 for mobile and all for desktop"
+          ],
+          "type": "number",
+          "default": "2",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+>>>>>>> Improve banner grid
+              "type": "number",
+              "const": 1,
+              "default": 1
+            },
+            {
+              "type": "number",
+              "const": 2,
+              "default": 2
+            },
+            {
+              "type": "number",
+              "const": 4,
+              "default": 4
+            },
+            {
+              "type": "number",
+              "const": 6,
+              "default": 6
+            },
+            {
+              "type": "number",
+              "const": 8,
+              "default": 8
+            }
+          ],
+          "type": "number",
+          "default": "4",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Items"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Border": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Border"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Layout": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+          "title": "Header"
+        },
+        "itemsPerLine": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items",
+          "description": "Default is 2 for mobile and all for desktop",
+          "title": "Items Per Line"
         },
         "borderRadius": {
-          "type": "object",
-          "properties": {
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none",
-                  "default": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm",
-                  "default": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md",
-                  "default": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg",
-                  "default": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl",
-                  "default": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl",
-                  "default": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl",
-                  "default": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full",
-                  "default": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Mobile"
-            },
-            "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "none",
-                  "default": "none"
-                },
-                {
-                  "type": "string",
-                  "const": "sm",
-                  "default": "sm"
-                },
-                {
-                  "type": "string",
-                  "const": "md",
-                  "default": "md"
-                },
-                {
-                  "type": "string",
-                  "const": "lg",
-                  "default": "lg"
-                },
-                {
-                  "type": "string",
-                  "const": "xl",
-                  "default": "xl"
-                },
-                {
-                  "type": "string",
-                  "const": "2xl",
-                  "default": "2xl"
-                },
-                {
-                  "type": "string",
-                  "const": "3xl",
-                  "default": "3xl"
-                },
-                {
-                  "type": "string",
-                  "const": "full",
-                  "default": "full"
-                }
-              ],
-              "type": "string",
-              "title": "Desktop"
-            }
-          },
-          "required": [],
-          "title": "Border Radius",
-          "description": "Item's border radius in px"
-        },
-        "banners": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]",
-          "title": "Banners"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Border",
+          "description": "Item's border radius",
+          "title": "Border Radius"
         }
       },
       "required": [
         "itemsPerLine",
-        "borderRadius",
+        "borderRadius"
+      ],
+      "title": "Layout"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
+        },
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]",
+          "title": "Banners"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Layout",
+          "title": "Layout"
+        }
+      },
+      "required": [
         "banners"
       ],
       "title": "deco-sites/fashion/components/ui/BannerGrid.tsx@Props"
