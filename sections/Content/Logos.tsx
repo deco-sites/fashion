@@ -1,7 +1,7 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
 import { useMemo } from "preact/hooks";
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 
 export interface Image {
   image: ImageType;
@@ -9,12 +9,9 @@ export interface Image {
 }
 
 export interface Props {
-  title?: string;
-  description?: string;
+  header?: HeaderContent;
   images?: Image[];
-  layout?: {
-    headerAlignment?: "center" | "left";
-  };
+  layout?: HeaderLayout;
 }
 
 const IMAGES = [
@@ -32,8 +29,7 @@ const IMAGES = [
 
 function Logos(props: Props) {
   const {
-    title,
-    description,
+    header,
     images,
     layout,
   } = props;
@@ -47,11 +43,7 @@ function Logos(props: Props) {
 
   return (
     <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-12 lg:py-10 lg:px-0">
-      <Header
-        title={title}
-        description={description}
-        alignment={layout?.headerAlignment || "center"}
-      />
+      <Header content={header} layout={layout} />
       <div class="w-full text-center items-center">
         {list.map((element) => (
           <div class="w-36 lg:w-40 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle">

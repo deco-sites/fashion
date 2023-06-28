@@ -1,9 +1,9 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
 
 export interface Testimonial {
@@ -21,21 +21,22 @@ export interface Testimonial {
 }
 
 export interface Props {
-  title?: string;
-  description?: string;
+  header?: HeaderContent;
   testimonials?: Testimonial[];
   layout?: {
     variation?: "Grid" | "Slider";
-    headerAlignment?: "center" | "left";
+    header?: HeaderLayout;
   };
 }
 
 const DEFAULT_PROPS: Props = {
-  "title": "",
-  "description": "",
+  header: {
+    "title": "",
+    "description": "",
+  },
   "testimonials": [{
     "text":
-      "Fashion Store is my go-to online destination for all things stylish. Their vast collection of trendy clothes and accessories never disappoints. The quality is exceptional, and the prices are affordable. The website is easy to navigate, and their customer service team is friendly and responsive. I always feel like a fashionista when I shop here!",
+      "Fashion Store is my go-to online destination for all things stylish. Their vast collection of trendy clothes and accessories never disappoints. The quality is exceptional, and the prices are affordable.",
     "image": {
       "src":
         "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/e0fcbcae-0a21-4269-9605-7ef8708e58ad",
@@ -49,7 +50,7 @@ const DEFAULT_PROPS: Props = {
     },
   }, {
     "text":
-      "I can't praise Fashion Store enough! Their commitment to staying ahead of the fashion curve is evident in their diverse and up-to-date inventory. Whether I need a casual outfit or a glamorous dress, they have it all. The shopping experience is seamless, and my orders always arrive promptly. Fashion Store is a true fashion lover's paradise!",
+      "I can't praise Fashion Store enough! Their commitment to staying ahead of the fashion curve is evident in their diverse and up-to-date inventory. Whether I need a casual outfit or a glamorous dress, they have it all.",
     "image": {
       "src":
         "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/e0fcbcae-0a21-4269-9605-7ef8708e58ad",
@@ -63,7 +64,7 @@ const DEFAULT_PROPS: Props = {
     },
   }, {
     "text":
-      "Fashion Store has transformed my wardrobe. Their curated collection of clothing and accessories has helped me discover my personal style. The quality of their products is outstanding, and the prices are unbeatable. The website is visually appealing and easy to navigate. Fashion Store is my trusted companion for staying fashionable and feeling confident!",
+      "Fashion Store has transformed my wardrobe. Their curated collection of clothing and accessories has helped me discover my personal style. The quality of their products is outstanding, and the prices are unbeatable.",
     "image": {
       "src":
         "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/e0fcbcae-0a21-4269-9605-7ef8708e58ad",
@@ -78,7 +79,11 @@ const DEFAULT_PROPS: Props = {
   }],
   "layout": {
     "variation": "Grid",
-    "headerAlignment": "center",
+    header: {
+      alignment: "Center",
+      fontSize: "Large",
+      colorReverse: false,
+    },
   },
 };
 
@@ -127,18 +132,14 @@ export default function Testimonials(
   props: Props,
 ) {
   const id = useId();
-  const { title, description, testimonials, layout } = {
+  const { header, testimonials, layout } = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
   return (
     <div class="w-full container px-4 py-8 flex flex-col gap-14 lg:gap-20 lg:py-10 lg:px-0">
-      <Header
-        title={title}
-        description={description}
-        alignment={layout?.headerAlignment || "center"}
-      />
+      <Header content={header} layout={layout?.header} />
 
       {layout?.variation === "Grid" && (
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">

@@ -1,4 +1,4 @@
-import Header from "$store/components/ui/SectionHeader.tsx";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 
 export interface Form {
   placeholder?: string;
@@ -8,12 +8,10 @@ export interface Form {
 }
 
 export interface Props {
-  title?: string;
-  /** @format textarea */
-  description?: string;
+  header?: HeaderContent;
   form?: Form;
   layout?: {
-    headerFontSize?: "Large" | "Normal";
+    header?: HeaderLayout;
     content?: {
       border?: boolean;
       alignment?: "Center" | "Left" | "Side to side";
@@ -23,8 +21,10 @@ export interface Props {
 }
 
 const DEFAULT_PROPS: Props = {
-  title: "",
-  description: "",
+  header: {
+    title: "",
+    description: "",
+  },
   form: {
     placeholder: "Digite seu email",
     buttonText: "Inscrever",
@@ -32,7 +32,11 @@ const DEFAULT_PROPS: Props = {
       'Ao se inscrever, você concorda com nossa <a class="link" href="/politica-de-privacidade">Política de privacidade</a>.',
   },
   layout: {
-    headerFontSize: "Large",
+    header: {
+      alignment: "Center",
+      fontSize: "Large",
+      colorReverse: false,
+    },
     content: {
       border: false,
       alignment: "Center",
@@ -41,17 +45,18 @@ const DEFAULT_PROPS: Props = {
 };
 
 export default function Newsletter(props: Props) {
-  const { title, description, form, layout } = { ...DEFAULT_PROPS, ...props };
+  const { header, form, layout } = { ...DEFAULT_PROPS, ...props };
   const isReverse = layout?.content?.bgColor === "Reverse";
   const bordered = Boolean(layout?.content?.border);
 
   const headerLayout = (
     <Header
-      title={title}
-      description={description}
-      alignment={layout?.content?.alignment === "Left" ? "left" : "center"}
-      colorReverse={isReverse}
-      fontSize={layout?.headerFontSize}
+      content={header}
+      layout={{
+        alignment: layout?.header?.alignment,
+        fontSize: layout?.header?.fontSize,
+        colorReverse: isReverse
+      }}
     />
   );
 

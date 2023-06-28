@@ -1,9 +1,8 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 
 export interface Props {
-  title?: string;
-  description?: string;
+  header?: HeaderContent;
   benefits?: Array<{
     label: string;
     icon: AvailableIcons;
@@ -11,7 +10,7 @@ export interface Props {
   }>;
   layout?: {
     variation?: "Simple" | "With border" | "Color reverse";
-    headerAlignment?: "center" | "left";
+    header?: HeaderLayout;
   };
 }
 
@@ -19,8 +18,10 @@ export default function Benefits(
   props: Props,
 ) {
   const {
-    title = "",
-    description = "",
+    header = {
+      title: "",
+      description: "",
+    },
     benefits = [{
       icon: "Truck",
       label: "Entrega em todo Brasil",
@@ -93,11 +94,7 @@ export default function Benefits(
       {!layout?.variation || layout?.variation === "Simple"
         ? (
           <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
-            <Header
-              title={title}
-              description={description}
-              alignment={layout?.headerAlignment || "center"}
-            />
+            <Header content={header} layout={layout?.header} />
             <div class="w-full flex justify-center">
               <div class="flex flex-col gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
                 {listOfBenefits}
@@ -108,11 +105,7 @@ export default function Benefits(
         : ""}
       {layout?.variation === "With border" && (
         <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header
-            title={title}
-            description={description}
-            alignment={layout?.headerAlignment || "center"}
-          />
+          <Header content={header} layout={layout?.header} />
           <div class="w-full flex justify-center">
             <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 border border-base-300 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
               {listOfBenefits}
@@ -122,11 +115,7 @@ export default function Benefits(
       )}
       {layout?.variation === "Color reverse" && (
         <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header
-            title={title}
-            description={description}
-            alignment={layout?.headerAlignment || "center"}
-          />
+          <Header content={header} layout={layout?.header} />
           <div class="w-full flex justify-center">
             <div class="grid grid-cols-2 gap-4 w-full lg:gap-8 lg:grid-flow-col lg:auto-cols-fr">
               {listOfBenefits}

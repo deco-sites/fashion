@@ -1,9 +1,9 @@
 import type { SectionProps } from "$live/mod.ts";
 import Image from "deco-sites/std/components/Image.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 
 export interface layout {
-  headerAlignment?: "center" | "left";
+  header?: HeaderLayout;
   /** @description Default is 12 */
   numberOfPosts?: number;
   /** @description Up to 6. Default is 4 */
@@ -18,8 +18,7 @@ export interface Data {
 }
 
 export interface Props {
-  title?: string;
-  description?: string;
+  header?: HeaderContent;
   /**
    * @description Get it in Facebook app. Expires every 90 days.
    * @format textarea
@@ -30,8 +29,7 @@ export interface Props {
 
 export async function loader(
   {
-    title,
-    description,
+    header,
     facebookToken,
     layout,
   }: Props,
@@ -51,15 +49,13 @@ export async function loader(
 
   return {
     data: data.slice(0, layout?.numberOfPosts ?? 12),
-    title,
-    description,
+    header,
     layout,
   };
 }
 
 export default function InstagramPosts({
-  title,
-  description,
+  header,
   layout,
   data = [
     {
@@ -72,11 +68,7 @@ export default function InstagramPosts({
 }: SectionProps<typeof loader>) {
   return (
     <div class="w-full container px-4 py-8 flex flex-col gap-14 lg:gap-20 lg:py-10 lg:px-0">
-      <Header
-        title={title}
-        description={description}
-        alignment={layout?.headerAlignment || "center"}
-      />
+      <Header content={header} layout={layout?.header} />
       <div class="hidden lg:grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5 lg:grid-cols-6">
       </div>
       <div

@@ -7903,6 +7903,27 @@
       "required": [],
       "title": "deco-sites/fashion/components/ui/CategoryBanner.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        }
+      },
+      "required": [],
+      "title": "Content"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Category": {
       "type": "object",
       "properties": {
@@ -7955,28 +7976,57 @@
       },
       "title": "Category[]"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout": {
+      "type": "object",
+      "properties": {
+        "alignment": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Center",
+              "default": "Center"
+            },
+            {
+              "type": "string",
+              "const": "Left",
+              "default": "Left"
+            }
+          ],
+          "type": "string",
+          "title": "Alignment"
+        },
+        "fontSize": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Normal",
+              "default": "Normal"
+            },
+            {
+              "type": "string",
+              "const": "Large",
+              "default": "Large"
+            }
+          ],
+          "type": "string",
+          "title": "Font Size"
+        },
+        "colorReverse": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Color Reverse"
+        }
+      },
+      "required": [],
+      "title": "Layout"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5TGlzdC50c3g=@Props": {
       "type": "object",
       "properties": {
         "header": {
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Title"
-            },
-            "description": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Description"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
           "title": "Header"
         },
         "list": {
@@ -7986,21 +8036,9 @@
         "layout": {
           "type": "object",
           "properties": {
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
+            "header": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+              "title": "Header"
             },
             "categoryCard": {
               "type": "object",
@@ -8052,19 +8090,9 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "benefits": {
           "type": "array",
@@ -8318,21 +8346,9 @@
               "type": "string",
               "title": "Variation"
             },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
+            "header": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+              "title": "Header"
             }
           },
           "required": [],
@@ -8383,7 +8399,6 @@
             "string",
             "null"
           ],
-          "format": "html",
           "title": "Description"
         },
         "link": {
@@ -8411,19 +8426,9 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "questions": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Question[]",
@@ -8457,21 +8462,9 @@
               "type": "string",
               "title": "Variation"
             },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
+            "header": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+              "title": "Header"
             }
           },
           "required": [],
@@ -8509,45 +8502,16 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "images": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvTG9nb3MudHN4@Image[]",
           "title": "Images"
         },
         "layout": {
-          "type": "object",
-          "properties": {
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
           "title": "Layout"
         }
       },
@@ -8628,19 +8592,9 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "testimonials": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvVGVzdGltb25pYWxzLnRzeA==@Testimonial[]",
@@ -8665,21 +8619,9 @@
               "type": "string",
               "title": "Variation"
             },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
+            "header": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+              "title": "Header"
             }
           },
           "required": [],
@@ -10929,20 +10871,9 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "textarea",
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "form": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form",
@@ -10951,21 +10882,9 @@
         "layout": {
           "type": "object",
           "properties": {
-            "headerFontSize": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Large",
-                  "default": "Large"
-                },
-                {
-                  "type": "string",
-                  "const": "Normal",
-                  "default": "Normal"
-                }
-              ],
-              "type": "string",
-              "title": "Header Font Size"
+            "header": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+              "title": "Header"
             },
             "content": {
               "type": "object",
@@ -11276,57 +11195,12 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
           "title": "Products"
         },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "layout": {
-          "type": "object",
-          "properties": {
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
-              ],
-              "type": "string",
-              "title": "Header Alignment"
-            },
-            "headerfontSize": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Normal",
-                  "default": "Normal"
-                },
-                {
-                  "type": "string",
-                  "const": "Large",
-                  "default": "Large"
-                }
-              ],
-              "type": "string",
-              "title": "Headerfont Size"
-            }
-          },
-          "required": [],
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
           "title": "Layout"
         },
         "cardLayout": {
@@ -11415,21 +11289,9 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NvY2lhbC9JbnN0YWdyYW1Qb3N0cy50c3g=@layout": {
       "type": "object",
       "properties": {
-        "headerAlignment": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "center",
-              "default": "center"
-            },
-            {
-              "type": "string",
-              "const": "left",
-              "default": "left"
-            }
-          ],
-          "type": "string",
-          "title": "Header Alignment"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+          "title": "Header"
         },
         "numberOfPosts": {
           "type": [
@@ -11454,19 +11316,9 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NvY2lhbC9JbnN0YWdyYW1Qb3N0cy50c3g=@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "facebookToken": {
           "type": "string",

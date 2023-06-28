@@ -1,4 +1,4 @@
-import Header from "$store/components/ui/SectionHeader.tsx";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 
 export interface Question {
   question: string;
@@ -8,7 +8,6 @@ export interface Question {
 
 export interface Contact {
   title?: string;
-  /** @format html */
   description?: string;
   link?: {
     text: string;
@@ -17,19 +16,20 @@ export interface Contact {
 }
 
 export interface Props {
-  title?: string;
-  description?: string;
+  header?: HeaderContent;
   questions?: Question[];
   contact?: Contact;
   layout?: {
     variation?: "Compact" | "Full" | "Side to side";
-    headerAlignment?: "center" | "left";
+    header?: HeaderLayout;
   };
 }
 
 const DEFAULT_PROPS = {
-  title: "",
-  description: "",
+  header: {
+    title: "",
+    description: "",
+  },
   questions: [
     {
       question: "Como faço para acompanhar o meu pedido?",
@@ -102,8 +102,7 @@ function Contact({ title, description, link }: Contact) {
 export default function FAQ(props: Props) {
   const {
     questions = [],
-    title,
-    description,
+    header,
     contact,
     layout,
   } = { ...DEFAULT_PROPS, ...props };
@@ -113,11 +112,8 @@ export default function FAQ(props: Props) {
       {(!layout?.variation || layout?.variation === "Compact") && (
         <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-40">
           <div class="flex flex-col gap-8 lg:gap-10">
-            <Header
-              title={title || ""}
-              description={description || ""}
-              alignment={layout?.headerAlignment || "center"}
-            />
+            <Header content={header} layout={layout?.header} />
+
             <div class="join join-vertical w-full">
               {questions.map((question) => <Question {...question} />)}
             </div>
@@ -130,11 +126,7 @@ export default function FAQ(props: Props) {
       {layout?.variation === "Full" && (
         <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-0">
           <div class="flex flex-col gap-8 lg:gap-10">
-            <Header
-              title={title || ""}
-              description={description || ""}
-              alignment={layout?.headerAlignment || "center"}
-            />
+            <Header content={header} layout={layout?.header} />
             <div class="join join-vertical w-full">
               {questions.map((question) => <Question {...question} />)}
             </div>
@@ -147,11 +139,7 @@ export default function FAQ(props: Props) {
       {layout?.variation === "Side to side" && (
         <div class="w-full container px-4 py-8 grid gap-8 grid-flow-row grid-cols-1 lg:grid-flow-col lg:grid-cols-2 lg:grid-rows-2 lg:py-10 lg:px-0">
           <div class="order-1 lg:order-1">
-            <Header
-              title={title || ""}
-              description={description || ""}
-              alignment={layout?.headerAlignment || "center"}
-            />
+            <Header content={header} layout={layout?.header} />
           </div>
           <div class="order-2 lg:order-3 lg:row-span-2">
             <div class="join join-vertical">
