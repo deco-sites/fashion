@@ -140,7 +140,6 @@ export default function Testimonials(
   return (
     <div class="w-full container px-4 py-8 flex flex-col gap-14 lg:gap-20 lg:py-10 lg:px-0">
       <Header content={header} layout={layout?.header} />
-
       {layout?.variation === "Grid" && (
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {testimonials?.map(({ image, text, user }) => (

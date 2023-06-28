@@ -9984,12 +9984,10 @@
         },
         "alt": {
           "type": "string",
-          "description": "Image alt text",
           "title": "Alt"
         },
         "href": {
           "type": "string",
-          "description": "Adicione um link",
           "title": "Href"
         }
       },
@@ -10008,22 +10006,163 @@
       },
       "title": "Banner[]"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Border": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Mobile"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none",
+              "default": "none"
+            },
+            {
+              "type": "string",
+              "const": "sm",
+              "default": "sm"
+            },
+            {
+              "type": "string",
+              "const": "md",
+              "default": "md"
+            },
+            {
+              "type": "string",
+              "const": "lg",
+              "default": "lg"
+            },
+            {
+              "type": "string",
+              "const": "xl",
+              "default": "xl"
+            },
+            {
+              "type": "string",
+              "const": "2xl",
+              "default": "2xl"
+            },
+            {
+              "type": "string",
+              "const": "3xl",
+              "default": "3xl"
+            },
+            {
+              "type": "string",
+              "const": "full",
+              "default": "full"
+            }
+          ],
+          "type": "string",
+          "default": "none",
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Border"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Layout": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+          "title": "Header"
+        },
+        "autosizeMobile": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Asymmetric",
+              "default": "Asymmetric"
+            },
+            {
+              "type": "string",
+              "const": "Symmetrical",
+              "default": "Symmetrical"
+            }
+          ],
+          "type": "string",
+          "title": "Autosize Mobile"
+        },
+        "autosizeDesktop": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Asymmetric",
+              "default": "Asymmetric"
+            },
+            {
+              "type": "string",
+              "const": "Symmetrical",
+              "default": "Symmetrical"
+            }
+          ],
+          "type": "string",
+          "title": "Autosize Desktop"
+        },
+        "borderRadius": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Border",
+          "description": "Item's border radius",
+          "title": "Border Radius"
+        }
+      },
+      "required": [
+        "borderRadius"
+      ],
+      "title": "Layout"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Props": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
+        "header": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Content",
+          "title": "Header"
         },
         "banners": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner[]",
@@ -10031,158 +10170,107 @@
           "minItems": 4,
           "title": "Banners"
         },
-        "layout": {
+        "imagesSizes": {
           "type": "object",
           "properties": {
-            "borderRadius": {
+            "mobile": {
               "type": "object",
               "properties": {
-                "mobile": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "none",
-                      "default": "none"
+                "largerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
                     },
-                    {
-                      "type": "string",
-                      "const": "sm",
-                      "default": "sm"
-                    },
-                    {
-                      "type": "string",
-                      "const": "md",
-                      "default": "md"
-                    },
-                    {
-                      "type": "string",
-                      "const": "lg",
-                      "default": "lg"
-                    },
-                    {
-                      "type": "string",
-                      "const": "xl",
-                      "default": "xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "2xl",
-                      "default": "2xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "3xl",
-                      "default": "3xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "full",
-                      "default": "full"
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
                     }
+                  },
+                  "required": [
+                    "height",
+                    "width"
                   ],
-                  "type": "string",
-                  "title": "Mobile"
+                  "title": "Larger Image"
                 },
-                "desktop": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "none",
-                      "default": "none"
+                "smallerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
                     },
-                    {
-                      "type": "string",
-                      "const": "sm",
-                      "default": "sm"
-                    },
-                    {
-                      "type": "string",
-                      "const": "md",
-                      "default": "md"
-                    },
-                    {
-                      "type": "string",
-                      "const": "lg",
-                      "default": "lg"
-                    },
-                    {
-                      "type": "string",
-                      "const": "xl",
-                      "default": "xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "2xl",
-                      "default": "2xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "3xl",
-                      "default": "3xl"
-                    },
-                    {
-                      "type": "string",
-                      "const": "full",
-                      "default": "full"
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
                     }
+                  },
+                  "required": [
+                    "height",
+                    "width"
                   ],
-                  "type": "string",
-                  "title": "Desktop"
+                  "title": "Smaller Image"
                 }
               },
-              "required": [],
-              "title": "Border Radius"
-            },
-            "headerAlignment": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "center",
-                  "default": "center"
-                },
-                {
-                  "type": "string",
-                  "const": "left",
-                  "default": "left"
-                }
+              "required": [
+                "largerImage",
+                "smallerImage"
               ],
-              "type": "string",
-              "title": "Header Alignment"
-            },
-            "mobile": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Asymmetric",
-                  "default": "Asymmetric"
-                },
-                {
-                  "type": "string",
-                  "const": "Symmetrical",
-                  "default": "Symmetrical"
-                }
-              ],
-              "type": "string",
               "title": "Mobile"
             },
             "desktop": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "Asymmetric",
-                  "default": "Asymmetric"
+              "type": "object",
+              "properties": {
+                "largerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
+                    },
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
+                    }
+                  },
+                  "required": [
+                    "height",
+                    "width"
+                  ],
+                  "title": "Larger Image"
                 },
-                {
-                  "type": "string",
-                  "const": "Symmetrical",
-                  "default": "Symmetrical"
+                "smallerImage": {
+                  "type": "object",
+                  "properties": {
+                    "height": {
+                      "type": "number",
+                      "title": "Height"
+                    },
+                    "width": {
+                      "type": "number",
+                      "title": "Width"
+                    }
+                  },
+                  "required": [
+                    "height",
+                    "width"
+                  ],
+                  "title": "Smaller Image"
                 }
+              },
+              "required": [
+                "largerImage",
+                "smallerImage"
               ],
-              "type": "string",
               "title": "Desktop"
             }
           },
           "required": [],
+          "title": "Images Sizes"
+        },
+        "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Layout",
           "title": "Layout"
         }
       },

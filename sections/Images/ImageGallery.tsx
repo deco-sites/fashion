@@ -1,6 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
 
 /**
  * @titleBy alt
@@ -8,13 +8,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 export interface Banner {
   srcMobile: LiveImage;
   srcDesktop?: LiveImage;
-  /**
-   * @description Image alt text
-   */
   alt: string;
-  /**
-   * @description Adicione um link
-   */
   href: string;
 }
 
@@ -28,28 +22,53 @@ export type BorderRadius =
   | "3xl"
   | "full";
 
+export interface Border {
+  /** @default none */
+  mobile?: BorderRadius;
+  /** @default none */
+  desktop?: BorderRadius;
+}
+  
+export interface Layout {
+  header?: HeaderLayout;
+  autosizeMobile?: "Asymmetric" | "Symmetrical";
+  autosizeDesktop?: "Asymmetric" | "Symmetrical";
+  /**
+   * @description Item's border radius
+   */
+  borderRadius: Border;
+}
+  
 export interface Props {
-  title?: string;
-  description?: string;
+  header?: HeaderContent;
   /**
    * @maxItems 4
    * @minItems 4
    */
   banners?: Banner[];
-  layout?: {
-    /**
-     * @description Aplique borda a sua imagem
-     */
-    borderRadius?: {
-      /** @default none */
-      mobile?: BorderRadius;
-      /** @default none */
-      desktop?: BorderRadius;
-    };
-    headerAlignment?: "center" | "left";
-    mobile?: "Asymmetric" | "Symmetrical";
-    desktop?: "Asymmetric" | "Symmetrical";
-  };
+  imagesSizes?: {
+    mobile?: {
+      largerImage: {
+        height: number;
+        width: number;
+      }
+      smallerImage: {
+        height: number;
+        width: number;
+      };
+    }
+    desktop?: {
+      largerImage: {
+        height: number;
+        width: number;
+      }
+      smallerImage: {
+        height: number;
+        width: number;
+      };
+    }
+  }
+  layout?: Layout;
 }
 
 const RADIUS: Record<string, Record<BorderRadius, string>> = {
@@ -111,13 +130,17 @@ const DEFAULT_PROPS: Props = {
     },
   ],
   "layout": {
+    header: {
+      alignment: "Center",
+      fontSize: "Large",
+      colorReverse: false,
+    },
     "borderRadius": {
       "mobile": "3xl",
       "desktop": "2xl",
     },
-    "headerAlignment": "center",
-    "mobile": "Asymmetric",
-    "desktop": "Asymmetric",
+    "autosizeMobile": "Asymmetric",
+    "autosizeDesktop": "Asymmetric",
   },
 };
 
@@ -129,6 +152,17 @@ function Banner(
       /** @default none */
       desktop?: BorderRadius;
     };
+    type: string;
+    sizeMobile?: {
+      height: number;
+      width: number;
+    };
+    sizeDesktop?: {
+      height: number;
+      width: number;
+    };
+    mobile: string;
+    desktop: string;
   },
 ) {
   const { borderRadius, srcMobile, srcDesktop, alt } = props;
@@ -142,19 +176,19 @@ function Banner(
     >
       <Picture>
         <Source
-          width={190}
-          height={190}
+          width={props.sizeMobile ? props.sizeMobile.width : 400}
+          height={props.sizeMobile ? props.sizeMobile.height : props.type === "large" ? 400 : props.mobile == "Symmetrical" ? 400 : 220}
           media="(max-width: 767px)"
           src={srcMobile}
         />
         <Source
-          width={640}
-          height={420}
+          width={props.sizeDesktop ? props.sizeDesktop.width : 640}
+          height={props.sizeDesktop ? props.sizeDesktop.height : props.type === "large" ? 640 : props.desktop == "Symmetrical" ? 640 : 400}
           media="(min-width: 768px)"
           src={srcDesktop || srcMobile}
         />
         <img
-          class="w-full h-full object-cover"
+          class={`w-full object-cover"}`}
           src={srcMobile}
           alt={alt}
           decoding="async"
@@ -166,39 +200,57 @@ function Banner(
 }
 
 export default function Gallery(props: Props) {
-  const { title, description, banners, layout } = {
+  const { header, banners, imagesSizes, layout } = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
-  const mobileItemLayout = (index: number) =>
-    layout?.mobile === "Symmetrical"
-      ? "row-span-3"
-      : index === 0 || index === 3
-      ? "row-span-3"
-      : "row-span-2";
-
-  const desktopItemLayout = (index: number) =>
-    layout?.desktop === "Symmetrical"
-      ? "sm:row-span-3"
-      : index === 0 || index === 3
-      ? "sm:row-span-3"
-      : "sm:row-span-2";
-
   return (
     <section class="container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
-      <Header
-        title={title}
-        description={description}
-        alignment={layout?.headerAlignment || "center"}
-      />
-      <ul class="grid grid-flow-col grid-cols-2 grid-rows-6 gap-4 list-none">
-        {banners?.map((banner, index) => (
-          <li class={`${mobileItemLayout(index)} ${desktopItemLayout(index)}`}>
-            <Banner {...banner} borderRadius={props.layout?.borderRadius} />
-          </li>
-        ))}
-      </ul>
+            <Header content={header} layout={layout?.header} />
+
+      <div class="flex gap-4">
+        <div class="flex flex-col gap-4 w-1/2">
+          {banners?.map((banner, index) => (
+            <>
+              {
+                index < 2 && (
+                  <Banner
+                    {...banner}
+                    borderRadius={props.layout?.borderRadius}
+                    type={index % 2 == 0 ? "large" : "small"}
+                    sizeMobile={index % 2 == 0 ? imagesSizes?.mobile?.largerImage : imagesSizes?.mobile?.smallerImage}
+                    sizeDesktop={index % 2 == 0 ? imagesSizes?.desktop?.largerImage : imagesSizes?.desktop?.smallerImage}
+                    mobile={layout?.autosizeMobile || "Asymmetric"}
+                    desktop={layout?.autosizeDesktop || "Asymmetric"}
+                  />
+                )
+              }
+            </>
+          ))}
+        </div>
+        <div class="flex flex-col gap-4 w-1/2">
+          {banners?.map((banner, index) => (
+            <>
+              {
+                index >= 2 && (
+
+                  <Banner
+                    {...banner}
+                    borderRadius={props.layout?.borderRadius}
+                    type={index % 2 != 0 ? "large" : "small"}
+                    sizeMobile={index % 2 != 0 ? imagesSizes?.mobile?.largerImage : imagesSizes?.mobile?.smallerImage}
+                    sizeDesktop={index % 2 != 0 ? imagesSizes?.desktop?.largerImage : imagesSizes?.desktop?.smallerImage}
+                    mobile={layout?.autosizeMobile || "Asymmetric"}
+                    desktop={layout?.autosizeDesktop || "Asymmetric"}
+                  />
+                )
+              }
+            </>
+          ))}
+        </div>
+
+      </div>
     </section>
   );
 }
