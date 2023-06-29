@@ -174,11 +174,11 @@ export interface Button {
    */
   "--border-btn": "1px" | "2px" | "3px" | "4px" | "5px" | "6px" | "7px" | "8px";
   /**
-   * @default 0.5rem
+   * @default 0.2rem
    * @title Radius
    * @description Button and similar elements
    */
-  "--rounded-btn": string;
+  "--rounded-btn": "0" | "0.2rem" | "0.4rem" | "0.8rem" | "2rem";
   /**
    * @default normal-case
    * @title Text transform
@@ -188,7 +188,7 @@ export interface Button {
    * @default 0.95
    * @title Scale on click
    */
-  "--btn-focus-scale": string ;
+  "--btn-focus-scale": "0.9" | "0.95" | "1" | "1.05" | "1.1" ;
 }
 
 export interface Miscellaneous {
@@ -197,7 +197,7 @@ export interface Miscellaneous {
    * @title Animation
    * @description Duration when you click
    */
-  "--animation-btn": "0.1s" | "0.15s" | "0.2s" | "0.3s" | "0.35s";
+  "--animation-btn": "0.1s" | "0.15s" | "0.2s" | "0.25s" | "0.3s" | "0.35s";
   /**
    * @default 1rem
    * @title Rounded box
@@ -250,7 +250,16 @@ export interface Props {
   fonts?: Font;
 }
 
-type Theme = MainColors & PrimaryColorOptional & SecondaryColorOptional & TertiaryColorOptional & BaseColorOptional & SystemColors & OtherOptionalColors & Miscellaneous;
+type Theme =
+  MainColors &
+  PrimaryColorOptional &
+  SecondaryColorOptional &
+  TertiaryColorOptional &
+  BaseColorOptional &
+  Button &
+  SystemColors &
+  OtherOptionalColors &
+  Miscellaneous;
 
 const darken = (color: string, percentage = 0.2) =>
   Color.string(color).darken(percentage);
@@ -335,13 +344,13 @@ const defaultTheme = {
   "info": "hsl(220 100% 97%)",
 
   "--rounded-box": "1rem", // border radius rounded-box utility class, used in card and other large boxes
-  "--rounded-btn": "0.5rem", // border radius rounded-btn utility class, used in buttons and similar element
+  "--rounded-btn": "0.2rem" as const, // border radius rounded-btn utility class, used in buttons and similar element
   "--rounded-badge": "1.9rem", // border radius rounded-badge utility class, used in badges and similar
-  "--animation-btn": "0.25s", // duration of animation when you click on button
+  "--animation-btn": "0.25s" as const, // duration of animation when you click on button
   "--animation-input": "0.2s", // duration of animation for inputs like checkbox, toggle, radio, etc
-  "--btn-text-case": "uppercase", // set default text transform for buttons
-  "--btn-focus-scale": "0.95", // scale transform of button when you focus on it
-  "--border-btn": "1px", // border width of buttons
+  "--btn-text-case": "uppercase" as const, // set default text transform for buttons
+  "--btn-focus-scale": "0.95" as const, // scale transform of button when you focus on it
+  "--border-btn": "1px" as const, // border width of buttons
   "--tab-border": "1px", // border width of tabs
   "--tab-radius": "0.5rem", // border radius of tabs
 };

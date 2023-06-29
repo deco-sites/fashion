@@ -8649,8 +8649,35 @@
           "title": "Border width"
         },
         "--rounded-btn": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "0",
+              "default": "0"
+            },
+            {
+              "type": "string",
+              "const": "0.2rem",
+              "default": "0.2rem"
+            },
+            {
+              "type": "string",
+              "const": "0.4rem",
+              "default": "0.4rem"
+            },
+            {
+              "type": "string",
+              "const": "0.8rem",
+              "default": "0.8rem"
+            },
+            {
+              "type": "string",
+              "const": "2rem",
+              "default": "2rem"
+            }
+          ],
           "type": "string",
-          "default": "0.5rem",
+          "default": "0.2rem",
           "title": "Radius",
           "description": "Button and similar elements"
         },
@@ -8682,6 +8709,33 @@
           "title": "Text transform"
         },
         "--btn-focus-scale": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "0.9",
+              "default": "0.9"
+            },
+            {
+              "type": "string",
+              "const": "0.95",
+              "default": "0.95"
+            },
+            {
+              "type": "string",
+              "const": "1",
+              "default": "1"
+            },
+            {
+              "type": "string",
+              "const": "1.05",
+              "default": "1.05"
+            },
+            {
+              "type": "string",
+              "const": "1.1",
+              "default": "1.1"
+            }
+          ],
           "type": "string",
           "default": "0.95",
           "title": "Scale on click"
