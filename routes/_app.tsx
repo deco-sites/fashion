@@ -1,12 +1,12 @@
 import { AppProps } from "$fresh/server.ts";
 import GlobalTags from "$store/components/GlobalTags.tsx";
-import DesignSystem from "$store/sections/DesignSystem/DesignSystem.tsx";
+import Theme from "$store/sections/Theme/Theme.tsx";
 
 function App(props: AppProps) {
   return (
     <>
       {/* Include default fonts and css vars */}
-      <DesignSystem />
+      <Theme />
 
       {/* Include Icons and manifest */}
       <GlobalTags />
