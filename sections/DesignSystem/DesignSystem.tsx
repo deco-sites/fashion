@@ -409,7 +409,7 @@ export function Preview(props: Props) {
       <Section {...props} />
       <div class="grid justify-stretch">
         <div class="grid grid-flow-row gap-6 p-10 justify-center bg-base-100 text-base-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -446,7 +446,7 @@ export function Preview(props: Props) {
         </div>{" "}
 
         <div class="grid grid-flow-row gap-6 p-10 justify-center bg-base-content text-base-100">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -482,7 +482,7 @@ export function Preview(props: Props) {
         </div>{" "}
 
         <div class="grid grid-flow-row gap-6 p-10 justify-center bg-primary text-primary-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -515,7 +515,7 @@ export function Preview(props: Props) {
         </div>{" "}
 
         <div class="grid grid-flow-row gap-6 p-10 justify-center bg-secondary text-secondary-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -548,7 +548,7 @@ export function Preview(props: Props) {
         </div>{" "}
 
         <div class="grid grid-flow-row gap-6 p-10 justify-center bg-accent text-accent-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
