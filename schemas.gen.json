@@ -8439,22 +8439,51 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Content/Testimonials.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@BaseColors": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@MainColors": {
       "type": "object",
       "properties": {
         "base-100": {
           "type": "string",
           "format": "color",
-          "default": "#FFFFFF",
-          "title": "Base-100"
+          "title": "Base",
+          "default": "#FFFFFF"
         },
+        "primary": {
+          "type": "string",
+          "format": "color",
+          "title": "Primary",
+          "default": "#003232"
+        },
+        "secondary": {
+          "type": "string",
+          "format": "color",
+          "title": "Scondary",
+          "default": "#8C3D3D"
+        },
+        "tertiary": {
+          "type": "string",
+          "format": "color",
+          "title": "Tertiary",
+          "default": "#00FF7F"
+        }
+      },
+      "required": [
+        "base-100",
+        "primary",
+        "secondary",
+        "tertiary"
+      ],
+      "title": "MainColors"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@BaseColorOptional": {
+      "type": "object",
+      "properties": {
         "base-200": {
           "type": [
             "string",
             "null"
           ],
           "format": "color",
-          "description": "Default: darker tone of base-100",
           "title": "Base-200"
         },
         "base-300": {
@@ -8463,7 +8492,6 @@
             "null"
           ],
           "format": "color",
-          "description": "Default: darker tone of base-200",
           "title": "Base-300"
         },
         "base-content": {
@@ -8472,32 +8500,22 @@
             "null"
           ],
           "format": "color",
-          "description": "Default: readable tone of base-100",
           "title": "Base-content"
         }
       },
-      "required": [
-        "base-100"
-      ],
-      "title": "BaseColors"
+      "required": [],
+      "title": "BaseColorOptional"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@PrimaryColor": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@PrimaryColorOptional": {
       "type": "object",
       "properties": {
-        "primary": {
-          "type": "string",
-          "format": "color",
-          "title": "Color",
-          "default": "#003232"
-        },
         "primary-focus": {
           "type": [
             "string",
             "null"
           ],
           "format": "color",
-          "title": "Hover color",
-          "description": "Default: darker tone of primary"
+          "title": "Hover color"
         },
         "primary-content": {
           "type": [
@@ -8505,32 +8523,22 @@
             "null"
           ],
           "format": "color",
-          "title": "Content color",
-          "description": "Default: readable tone of primary"
+          "title": "Content color"
         }
       },
-      "required": [
-        "primary"
-      ],
-      "title": "PrimaryColor"
+      "required": [],
+      "title": "PrimaryColorOptional"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@SecondaryColor": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@SecondaryColorOptional": {
       "type": "object",
       "properties": {
-        "secondary": {
-          "type": "string",
-          "format": "color",
-          "title": "Color",
-          "default": "#8C3D3D"
-        },
         "secondary-focus": {
           "type": [
             "string",
             "null"
           ],
           "format": "color",
-          "title": "Hover color",
-          "description": "Default: darker tone of secondary"
+          "title": "Hover color"
         },
         "secondary-content": {
           "type": [
@@ -8538,32 +8546,22 @@
             "null"
           ],
           "format": "color",
-          "title": "Content color",
-          "description": "Default: readable tone of secondary"
+          "title": "Content color"
         }
       },
-      "required": [
-        "secondary"
-      ],
-      "title": "SecondaryColor"
+      "required": [],
+      "title": "SecondaryColorOptional"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@TertiaryColor": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@TertiaryColorOptional": {
       "type": "object",
       "properties": {
-        "tertiary": {
-          "type": "string",
-          "format": "color",
-          "title": "Color",
-          "default": "#00FF7F"
-        },
         "tertiary-focus": {
           "type": [
             "string",
             "null"
           ],
           "format": "color",
-          "title": "Hover color",
-          "description": "Default: darker tone of tertiary"
+          "title": "Hover color"
         },
         "tertiary-content": {
           "type": [
@@ -8571,14 +8569,34 @@
             "null"
           ],
           "format": "color",
-          "title": "Content color",
-          "description": "Default: readable tone of tertiary"
+          "title": "Content color"
         }
       },
-      "required": [
-        "tertiary"
-      ],
-      "title": "TertiaryColor"
+      "required": [],
+      "title": "TertiaryColorOptional"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@HoverAndContentColors": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@BaseColorOptional",
+          "title": "Base"
+        },
+        "primary": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@PrimaryColorOptional",
+          "title": "Primary"
+        },
+        "secondary": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@SecondaryColorOptional",
+          "title": "Secondary"
+        },
+        "tertiary": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@TertiaryColorOptional",
+          "title": "Tertiary"
+        }
+      },
+      "required": [],
+      "title": "HoverAndContentColors"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Button": {
       "type": "object",
@@ -8699,21 +8717,13 @@
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Props": {
       "type": "object",
       "properties": {
-        "baseColors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@BaseColors",
-          "title": "Base Colors"
+        "mainColors": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@MainColors",
+          "title": "Main Colors"
         },
-        "primaryColor": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@PrimaryColor",
-          "title": "Primary Color"
-        },
-        "secondaryColor": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@SecondaryColor",
-          "title": "Secondary Color"
-        },
-        "tertiaryColor": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@TertiaryColor",
-          "title": "Tertiary Color"
+        "hoverAndContentColors": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@HoverAndContentColors",
+          "title": "Hover And Content Colors"
         },
         "buttonStyle": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Button",

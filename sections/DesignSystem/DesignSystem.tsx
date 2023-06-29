@@ -7,95 +7,96 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "preact/hooks";
 import { Head } from "$fresh/runtime.ts";
-import Icon from "$store/components/ui/Icon.tsx";
 
-export interface BaseColors {
+export interface MainColors {
   /**
    * @format color
+   * @title Base
    * @default #FFFFFF
    */
   "base-100": string;
   /**
    * @format color
-   * @description Default: darker tone of base-100
-   */
-  "base-200"?: string;
-  /**
-   * @format color
-   * @description Default: darker tone of base-200
-   */
-  "base-300"?: string;
-  /**
-   * @format color
-   * @description Default: readable tone of base-100
-   */
-  "base-content"?: string;
-}
-
-export interface PrimaryColor {
-  /**
-   * @format color
-   * @title Color
+   * @title Primary
    * @default #003232
    */
   "primary": string;
   /**
    * @format color
-   * @title Hover color
-   * @description Default: darker tone of primary
-   */
-  "primary-focus"?: string;
-  /**
-   * @format color
-   * @title Content color
-   * @description Default: readable tone of primary
-   */
-  "primary-content"?: string;
-}
-
-export interface SecondaryColor {
-  /**
-   * @format color
-   * @title Color
+   * @title Scondary
    * @default #8C3D3D
    */
   "secondary": string;
   /**
    * @format color
+   * @title Tertiary
+   * @default #00FF7F
+   */
+  "tertiary": string;
+}
+
+export interface HoverAndContentColors {
+  base?: BaseColorOptional;
+  primary?: PrimaryColorOptional;
+  secondary?: SecondaryColorOptional;
+  tertiary?: TertiaryColorOptional;
+}
+
+export interface BaseColorOptional {
+  /**
+   * @format color
+   */
+  "base-200"?: string;
+  /**
+   * @format color
+   */
+  "base-300"?: string;
+  /**
+   * @format color
+   */
+  "base-content"?: string;
+}
+
+export interface PrimaryColorOptional {
+  /**
+   * @format color
    * @title Hover color
-   * @description Default: darker tone of secondary
+   */
+  "primary-focus"?: string;
+  /**
+   * @format color
+   * @title Content color
+   */
+  "primary-content"?: string;
+}
+
+export interface SecondaryColorOptional {
+  /**
+   * @format color
+   * @title Hover color
    */
   "secondary-focus"?: string;
   /**
    * @format color
    * @title Content color
-   * @description Default: readable tone of secondary
    */
   "secondary-content"?: string;
 }
 
-export interface TertiaryColor {
-  /**
-   * @format color
-   * @title Color
-   * @default #00FF7F
-   */
-  "tertiary": string;
+export interface TertiaryColorOptional {
   /**
    * @format color
    * @title Hover color
-   * @description Default: darker tone of tertiary
    */
   "tertiary-focus"?: string;
   /**
    * @format color
    * @title Content color
-   * @description Default: readable tone of tertiary
    */
   "tertiary-content"?: string;
 }
 
-export interface OptionalColors {
+export interface OtherOptionalColors {
   /**
    * @format color
    * @description Will be a darker tone of neutral if not specified
@@ -133,7 +134,7 @@ export interface OptionalColors {
   
 }
 
-export interface Colors {
+export interface SystemColors {
   /**
    * @format color
    * @default #333333
@@ -242,15 +243,14 @@ export interface Font {
 }
 
 export interface Props {
-  baseColors?: BaseColors;
-  primaryColor?: PrimaryColor;
-  secondaryColor?: SecondaryColor;
-  tertiaryColor?: TertiaryColor;
+  mainColors?: MainColors;
+  /** These colors are automatically generated with darker tons of their originals */
+  hoverAndContentColors?: HoverAndContentColors;
   buttonStyle?: Button;
   fonts?: Font;
 }
 
-type Theme = PrimaryColor & SecondaryColor & TertiaryColor & BaseColors & Colors & OptionalColors & Miscellaneous;
+type Theme = MainColors & PrimaryColorOptional & SecondaryColorOptional & TertiaryColorOptional & BaseColorOptional & SystemColors & OtherOptionalColors & Miscellaneous;
 
 const darken = (color: string, percentage = 0.2) =>
   Color.string(color).darken(percentage);
@@ -356,21 +356,21 @@ const defaultTheme = {
  * }
  */
 function Section({
-  baseColors,
-  primaryColor,
-  secondaryColor,
-  tertiaryColor,
+  mainColors,
+  hoverAndContentColors,
   buttonStyle,
   fonts,
 }: Props) {
   const id = useId();
   const theme = {
     ...defaultTheme,
-    ...baseColors,
-    ...primaryColor,
-    ...secondaryColor,
-    ...tertiaryColor,
+    ...mainColors,
+    ...hoverAndContentColors?.base,
+    ...hoverAndContentColors?.primary,
+    ...hoverAndContentColors?.secondary,
+    ...hoverAndContentColors?.tertiary,
     ...buttonStyle,
+    ...fonts,
   };
   const variables = [
     ...toVariables(theme),
@@ -407,9 +407,9 @@ export function Preview(props: Props) {
   return (
     <>
       <Section {...props} />
-      <div class="grid lg:grid-cols-2">
-        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-10 bg-base-100 text-base-content">
-          <div class="flex flex-col gap-1">
+      <div class="grid justify-stretch">
+        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-base-100 text-base-content">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -419,38 +419,34 @@ export function Preview(props: Props) {
             <div class="text-sm">Size 7</div>{" "}
             <div class="text-xs">Size 8</div>
           </div>{" "}
-          <div class="flex md:flex-col gap-6 items-stretch">
-            <div class="grid grid-flow-col gap-2 md:gap-4">
-              <div class="flex flex-col gap-3">
-                <button class="btn">Base</button>{" "}
-                <button class="btn btn-primary">Primary</button>{" "}
-                <button class="btn btn-secondary">Secondary</button>{" "}
-                <button class="btn btn-accent">Tertiary</button>{" "}
-              </div>{" "}
-              <div class="flex flex-col gap-3">
-                <button class="btn btn-outline">Base</button>{" "}
-                <button class="btn btn-primary btn-outline">Primary</button>{" "}
-                <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-                <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-              </div>{" "}
-            </div>
-            <div class="flex gap-2 justify-center">
-              <span class="badge">Base</span>{" "}
-              <span class="badge badge-primary">Primary</span>{" "}
-              <span class="badge badge-secondary">Secondary</span>{" "}
-              <span class="badge badge-accent">Tertiary</span>{" "}
-            </div>{" "}
-            <div class="flex gap-2 justify-center">
-              <div class="text-base">Content</div>
-              <div class="text-base text-primary">Primary</div>
-              <div class="text-base text-secondary">Secondary</div>
-              <div class="text-base text-accent">Tertiary</div>
-            </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex gap-2">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
+          </div>{" "}
+          <div class="flex gap-4">
+            <div class="text-base">Content</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-secondary">Secondary</div>
+            <div class="text-base text-accent">Tertiary</div>
           </div>{" "}
         </div>{" "}
 
-        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-10 bg-base-200 text-base-content">
-          <div class="flex flex-col gap-1">
+        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-base-content text-base-100">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -460,81 +456,33 @@ export function Preview(props: Props) {
             <div class="text-sm">Size 7</div>{" "}
             <div class="text-xs">Size 8</div>
           </div>{" "}
-          <div class="flex md:flex-col gap-6 items-stretch">
-            <div class="grid grid-flow-col gap-2 md:gap-4">
-              <div class="flex flex-col gap-3">
-                <button class="btn">Base</button>{" "}
-                <button class="btn btn-primary">Primary</button>{" "}
-                <button class="btn btn-secondary">Secondary</button>{" "}
-                <button class="btn btn-accent">Tertiary</button>{" "}
-              </div>{" "}
-              <div class="flex flex-col gap-3">
-                <button class="btn btn-outline">Base</button>{" "}
-                <button class="btn btn-primary btn-outline">Primary</button>{" "}
-                <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-                <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-              </div>{" "}
-            </div>
-            <div class="flex gap-2 justify-center">
-              <span class="badge">Base</span>{" "}
-              <span class="badge badge-primary">Primary</span>{" "}
-              <span class="badge badge-secondary">Secondary</span>{" "}
-              <span class="badge badge-accent">Tertiary</span>{" "}
-            </div>{" "}
-            <div class="flex gap-2 justify-center">
-              <div class="text-base">Content</div>
-              <div class="text-base text-primary">Primary</div>
-              <div class="text-base text-secondary">Secondary</div>
-              <div class="text-base text-accent">Tertiary</div>
-            </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
           </div>{" "}
-        </div>{" "}
-      </div>
-
-      <div class="grid lg:grid-cols-2">
-        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-10 bg-base-300 text-base-100">
-          <div class="flex flex-col gap-1">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
           </div>{" "}
-          <div class="flex md:flex-col gap-6 items-stretch">
-            <div class="grid grid-flow-col gap-2 md:gap-4">
-              <div class="flex flex-col gap-3">
-                <button class="btn">Base</button>{" "}
-                <button class="btn btn-primary">Primary</button>{" "}
-                <button class="btn btn-secondary">Secondary</button>{" "}
-                <button class="btn btn-accent">Tertiary</button>{" "}
-              </div>{" "}
-              <div class="flex flex-col gap-3">
-                <button class="btn btn-outline">Base</button>{" "}
-                <button class="btn btn-primary btn-outline">Primary</button>{" "}
-                <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-                <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-              </div>{" "}
-            </div>
-            <div class="flex gap-2 justify-center">
-              <span class="badge">Base</span>{" "}
-              <span class="badge badge-primary">Primary</span>{" "}
-              <span class="badge badge-secondary">Secondary</span>{" "}
-              <span class="badge badge-accent">Tertiary</span>{" "}
-            </div>{" "}
-            <div class="flex gap-2 justify-center">
-              <div class="text-base">Content</div>
-              <div class="text-base text-primary">Primary</div>
-              <div class="text-base text-secondary">Secondary</div>
-              <div class="text-base text-accent">Tertiary</div>
-            </div>{" "}
+          <div class="flex gap-2">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
+          </div>{" "}
+          <div class="flex gap-4">
+            <div class="text-base">Content</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-secondary">Secondary</div>
+            <div class="text-base text-accent">Tertiary</div>
           </div>{" "}
         </div>{" "}
 
-        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-10 bg-base-content text-base-100">
-          <div class="flex flex-col gap-1">
+        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-primary text-primary-content">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -544,76 +492,30 @@ export function Preview(props: Props) {
             <div class="text-sm">Size 7</div>{" "}
             <div class="text-xs">Size 8</div>
           </div>{" "}
-          <div class="flex md:flex-col gap-6 items-stretch">
-            <div class="grid grid-flow-col gap-2 md:gap-4">
-              <div class="flex flex-col gap-3">
-                <button class="btn">Base</button>{" "}
-                <button class="btn btn-primary">Primary</button>{" "}
-                <button class="btn btn-secondary">Secondary</button>{" "}
-                <button class="btn btn-accent">Tertiary</button>{" "}
-              </div>{" "}
-              <div class="flex flex-col gap-3">
-                <button class="btn btn-primary btn-outline">Primary</button>{" "}
-                <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-                <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-              </div>{" "}
-            </div>
-            <div class="flex gap-2 justify-center">
-              <span class="badge">Base</span>{" "}
-              <span class="badge badge-primary">Primary</span>{" "}
-              <span class="badge badge-secondary">Secondary</span>{" "}
-              <span class="badge badge-accent">Tertiary</span>{" "}
-            </div>{" "}
-            <div class="flex gap-2 justify-center">
-              <div class="text-base">Content</div>
-              <div class="text-base text-primary">Primary</div>
-              <div class="text-base text-secondary">Secondary</div>
-              <div class="text-base text-accent">Tertiary</div>
-            </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
           </div>{" "}
-        </div>{" "}
-      </div>
-
-      <div class="grid lg:grid-cols-2">
-        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-10 bg-primary text-primary-content">
-          <div class="flex flex-col gap-1">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
           </div>{" "}
-          <div class="flex md:flex-col gap-6 items-stretch">
-            <div class="grid grid-flow-col gap-2 md:gap-4">
-              <div class="flex flex-col gap-3">
-                <button class="btn">Base</button>{" "}
-                <button class="btn btn-secondary">Secondary</button>{" "}
-                <button class="btn btn-accent">Tertiary</button>{" "}
-              </div>{" "}
-              <div class="flex flex-col gap-3">
-                <button class="btn btn-outline">Base</button>{" "}
-                <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-                <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-              </div>{" "}
-            </div>
-            <div class="flex gap-2 justify-center">
-              <span class="badge">Base</span>{" "}
-              <span class="badge badge-secondary">Secondary</span>{" "}
-              <span class="badge badge-accent">Tertiary</span>{" "}
-            </div>{" "}
-            <div class="flex gap-2 justify-center">
-              <div class="text-base">Content</div>
-              <div class="text-base text-secondary">Secondary</div>
-              <div class="text-base text-accent">Tertiary</div>
-            </div>{" "}
+          <div class="flex gap-2">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
+          </div>{" "}
+          <div class="flex gap-4">
+            <div class="text-base">Content</div>
+            <div class="text-base text-secondary">Secondary</div>
+            <div class="text-base text-accent">Tertiary</div>
           </div>{" "}
         </div>{" "}
 
-        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-10 bg-secondary text-secondary-content">
-          <div class="flex flex-col gap-1">
+        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-secondary text-secondary-content">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
             <div class="text-4xl">Size 1</div>{" "}
             <div class="text-3xl">Size 2</div>{" "}
             <div class="text-2xl">Size 3</div>{" "}
@@ -623,72 +525,61 @@ export function Preview(props: Props) {
             <div class="text-sm">Size 7</div>{" "}
             <div class="text-xs">Size 8</div>
           </div>{" "}
-          <div class="flex md:flex-col gap-6 items-stretch">
-            <div class="grid grid-flow-col gap-2 md:gap-4">
-              <div class="flex flex-col gap-3">
-                <button class="btn">Base</button>{" "}
-                <button class="btn btn-primary">Primary</button>{" "}
-                <button class="btn btn-accent">Tertiary</button>{" "}
-              </div>{" "}
-              <div class="flex flex-col gap-3">
-                <button class="btn btn-outline">Base</button>{" "}
-                <button class="btn btn-primary btn-outline">Primary</button>{" "}
-                <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-              </div>{" "}
-            </div>
-            <div class="flex gap-2 justify-center">
-              <span class="badge">Base</span>{" "}
-              <span class="badge badge-primary">Primary</span>{" "}
-              <span class="badge badge-accent">Tertiary</span>{" "}
-            </div>{" "}
-            <div class="flex gap-2 justify-center">
-              <div class="text-base">Content</div>
-              <div class="text-base text-primary">Primary</div>
-              <div class="text-base text-accent">Tertiary</div>
-            </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex gap-2">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
+          </div>{" "}
+          <div class="flex gap-4">
+            <div class="text-base">Content</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-accent">Tertiary</div>
+          </div>{" "}
+        </div>{" "}
+
+        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-accent text-accent-content">
+          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+          </div>{" "}
+          <div class="grid md:grid-flow-col gap-3">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+          </div>{" "}
+          <div class="flex gap-2">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+          </div>{" "}
+          <div class="flex gap-4">
+            <div class="text-base">Content</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-secondary">Secondary</div>
           </div>{" "}
         </div>{" "}
       </div>
-
-      <div class="grid lg:grid-cols-2">
-        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-10 bg-accent text-accent-content">
-          <div class="flex flex-col gap-1">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
-          </div>{" "}
-          <div class="flex md:flex-col gap-6 items-stretch">
-            <div class="grid grid-flow-col gap-2 md:gap-4">
-              <div class="flex flex-col gap-3">
-                <button class="btn">Base</button>{" "}
-                <button class="btn btn-primary">Primary</button>{" "}
-                <button class="btn btn-secondary">Secondary</button>{" "}
-              </div>{" "}
-              <div class="flex flex-col gap-3">
-                <button class="btn btn-outline">Base</button>{" "}
-                <button class="btn btn-primary btn-outline">Primary</button>{" "}
-                <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-              </div>{" "}
-            </div>
-            <div class="flex gap-2 justify-center">
-              <span class="badge">Base</span>{" "}
-              <span class="badge badge-primary">Primary</span>{" "}
-              <span class="badge badge-secondary">Secondary</span>{" "}
-            </div>{" "}
-            <div class="flex gap-2 justify-center">
-              <div class="text-base">Content</div>
-              <div class="text-base text-primary">Primary</div>
-              <div class="text-base text-secondary">Secondary</div>
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
-      </div>
-
     </>
   );
 }
