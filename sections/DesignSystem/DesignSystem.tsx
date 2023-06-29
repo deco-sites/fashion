@@ -9,40 +9,93 @@ import { useId } from "preact/hooks";
 import { Head } from "$fresh/runtime.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 
-export interface OptionalColors {
+export interface BaseColors {
   /**
    * @format color
-   * @description Will be a darker tone of primary if not specified
+   * @default #FFFFFF
+   */
+  "base-100": string;
+  /**
+   * @format color
+   * @description Default: darker tone of base-100
+   */
+  "base-200"?: string;
+  /**
+   * @format color
+   * @description Default: darker tone of base-200
+   */
+  "base-300"?: string;
+  /**
+   * @format color
+   * @description Default: readable tone of base-100
+   */
+  "base-content"?: string;
+}
+
+export interface PrimaryColor {
+  /**
+   * @format color
+   * @title Color
+   * @default #003232
+   */
+  "primary": string;
+  /**
+   * @format color
+   * @title Hover color
+   * @description Default: darker tone of primary
    */
   "primary-focus"?: string;
   /**
    * @format color
-   * @description Will be a readable tone of primary if not specified
+   * @title Content color
+   * @description Default: readable tone of primary
    */
   "primary-content"?: string;
+}
 
+export interface SecondaryColor {
   /**
    * @format color
-   * @description Will be a darker tone of secondary if not specified
+   * @title Color
+   * @default #8C3D3D
+   */
+  "secondary": string;
+  /**
+   * @format color
+   * @title Hover color
+   * @description Default: darker tone of secondary
    */
   "secondary-focus"?: string;
   /**
    * @format color
-   * @description Will be a readable tone of secondary if not specified
+   * @title Content color
+   * @description Default: readable tone of secondary
    */
   "secondary-content"?: string;
+}
 
+export interface TertiaryColor {
   /**
    * @format color
-   * @description Will be a darker tone of accent if not specified
+   * @title Color
+   * @default #00FF7F
    */
-  "accent-focus"?: string;
+  "tertiary": string;
   /**
    * @format color
-   * @description Will be a readable tone of accent if not specified
+   * @title Hover color
+   * @description Default: darker tone of tertiary
    */
-  "accent-content"?: string;
+  "tertiary-focus"?: string;
+  /**
+   * @format color
+   * @title Content color
+   * @description Default: readable tone of tertiary
+   */
+  "tertiary-content"?: string;
+}
 
+export interface OptionalColors {
   /**
    * @format color
    * @description Will be a darker tone of neutral if not specified
@@ -54,104 +107,96 @@ export interface OptionalColors {
    */
   "neutral-content"?: string;
 
-  /**
-   * @format color
-   * @description Will be a darker tone of base-100 if not specified
-   */
-  "base-200"?: string;
-  /**
-   * @format color
-   * @description Will be a darker tone of base-200 if not specified
-   */
-  "base-300"?: string;
-  /**
-   * @format color
-   * @description Will be a readable tone of base-100 if not specified
-   */
-  "base-content"?: string;
-
-  /**
+    /**
    * @format color
    * @description Will be a readable success of neutral if not specified
    */
-  "success-content"?: string;
+    "success-content"?: string;
 
-  /**
-   * @format color
-   * @description Will be a readable tone of warning if not specified
-   */
-  "warning-content"?: string;
-
-  /**
-   * @format color
-   * @description Will be a readable tone of error if not specified
-   */
-  "error-content"?: string;
-
-  /**
-   * @format color
-   * @description Will be a readable tone of info if not specified
-   */
-  "info-content"?: string;
+    /**
+     * @format color
+     * @description Will be a readable tone of warning if not specified
+     */
+    "warning-content"?: string;
+  
+    /**
+     * @format color
+     * @description Will be a readable tone of error if not specified
+     */
+    "error-content"?: string;
+  
+    /**
+     * @format color
+     * @description Will be a readable tone of info if not specified
+     */
+    "info-content"?: string;
+  
 }
 
 export interface Colors {
-  /**
-   * @format color
-   * @default #003232
-   */
-  "primary": string;
-
-  /**
-   * @format color
-   * @default #8C3D3D
-   */
-  "secondary": string;
-
-  /**
-   * @format color
-   * @default #00FF7F
-   */
-  "accent": string;
-
   /**
    * @format color
    * @default #333333
    */
   "neutral": string;
 
-  /**
-   * @format color
-   * @default #FFFFFF
-   */
-  "base-100": string;
-
-  /**
+    /**
    * @format color
    * @default #EAFAF2
    */
-  "success": string;
+    "success": string;
 
-  /**
-   * @format color
-   * @default #FFF8E6
-   */
-  "warning": string;
+    /**
+     * @format color
+     * @default #FFF8E6
+     */
+    "warning": string;
+  
+    /**
+     * @format color
+     * @default #FFE9E5
+     */
+    "error": string;
+  
+    /**
+     * @format color
+     * @default #F0F5FF
+     */
+    "info": string;
+  
+}
 
+export interface Button {
   /**
-   * @format color
-   * @default #FFE9E5
+   * @default 1px
+   * @title Border width
    */
-  "error": string;
-
+  "--border-btn": "1px" | "2px" | "3px" | "4px" | "5px" | "6px" | "7px" | "8px";
   /**
-   * @format color
-   * @default #F0F5FF
+   * @default 0.5rem
+   * @title Radius
+   * @description Button and similar elements
    */
-  "info": string;
+  "--rounded-btn": string;
+  /**
+   * @default normal-case
+   * @title Text transform
+   */
+  "--btn-text-case": "normal-case" | "uppercase" | "lowercase" | "capitalize";
+  /**
+   * @default 0.95
+   * @title Scale on click
+   */
+  "--btn-focus-scale": string ;
 }
 
 export interface Miscellaneous {
+  /**
+   * @default 0.25s
+   * @title Animation
+   * @description Duration when you click
+   */
+  "--animation-btn": "0.1s" | "0.15s" | "0.2s" | "0.3s" | "0.35s";
   /**
    * @default 1rem
    * @title Rounded box
@@ -159,47 +204,17 @@ export interface Miscellaneous {
    */
   "--rounded-box": string;
   /**
-   * @default 0.5rem
-   * @title Rounded button
-   * @description border radius rounded-btn utility class, used in buttons and similar element
-   */
-  "--rounded-btn": string;
-  /**
    * @default 1.9rem
    * @title Rounded badge
    * @description border radius rounded-badge utility class, used in badges and similar
    */
   "--rounded-badge": string;
   /**
-   * @default 0.25s
-   * @title Animation button
-   * @description duration of animation when you click on button
-   */
-  "--animation-btn": string;
-  /**
    * @default 0.2s
    * @title Animation input
    * @description duration of animation for inputs like checkbox, toggle, radio, etc
    */
   "--animation-input": string;
-  /**
-   * @default uppercase
-   * @title Button text case
-   * @description set default text transform for buttons
-   */
-  "--btn-text-case": string;
-  /**
-   * @default 0.95
-   * @title Button focus scale
-   * @description scale transform of button when you focus on it
-   */
-  "--btn-focus-scale": string;
-  /**
-   * @default 1px
-   * @title Border button
-   * @description border width of buttons
-   */
-  "--border-btn": string;
   /**
    * @default 1px
    * @title Tab border
@@ -227,13 +242,15 @@ export interface Font {
 }
 
 export interface Props {
-  colors?: Colors;
-  optionalColors?: OptionalColors;
-  miscellaneous?: Miscellaneous;
+  baseColors?: BaseColors;
+  primaryColor?: PrimaryColor;
+  secondaryColor?: SecondaryColor;
+  tertiaryColor?: TertiaryColor;
+  buttonStyle?: Button;
   fonts?: Font;
 }
 
-type Theme = Colors & OptionalColors & Miscellaneous;
+type Theme = PrimaryColor & SecondaryColor & TertiaryColor & BaseColors & Colors & OptionalColors & Miscellaneous;
 
 const darken = (color: string, percentage = 0.2) =>
   Color.string(color).darken(percentage);
@@ -261,9 +278,9 @@ const toVariables = (t: Theme): [string, string][] => {
     "--sf": t["secondary-focus"] ?? darken(t["secondary"]),
     "--sc": t["secondary-content"] ?? contrasted(t["secondary"]),
 
-    "--a": t["accent"],
-    "--af": t["accent-focus"] ?? darken(t["accent"]),
-    "--ac": t["accent-content"] ?? contrasted(t["accent"]),
+    "--a": t["tertiary"],
+    "--af": t["tertiary-focus"] ?? darken(t["tertiary"]),
+    "--ac": t["tertiary-content"] ?? contrasted(t["tertiary"]),
 
     "--n": t["neutral"],
     "--nf": t["neutral-focus"] ?? darken(t["neutral"]),
@@ -308,8 +325,8 @@ const defaultTheme = {
   "primary-content": "hsla(0, 0%, 100%, 1)",
   "secondary": "hsla(104, 18%, 46%, 1)",
   "secondary-content": "hsla(0, 0%, 100%, 1)",
-  "accent": "hsla(8, 69%, 65%, 1)",
-  "accent-content": "hsla(0, 0%, 100%, 1)",
+  "tertiary": "hsla(8, 69%, 65%, 1)",
+  "tertiary-content": "hsla(0, 0%, 100%, 1)",
   "neutral": "hsla(0, 0%, 47%, 1)",
   "base-100": "hsla(0, 0%, 100%, 1)",
   "success": "hsl(150 62% 95%)",
@@ -339,17 +356,21 @@ const defaultTheme = {
  * }
  */
 function Section({
-  colors,
-  optionalColors,
-  miscellaneous,
+  baseColors,
+  primaryColor,
+  secondaryColor,
+  tertiaryColor,
+  buttonStyle,
   fonts,
 }: Props) {
   const id = useId();
   const theme = {
     ...defaultTheme,
-    ...colors,
-    ...optionalColors,
-    ...miscellaneous,
+    ...baseColors,
+    ...primaryColor,
+    ...secondaryColor,
+    ...tertiaryColor,
+    ...buttonStyle,
   };
   const variables = [
     ...toVariables(theme),
@@ -386,317 +407,441 @@ export function Preview(props: Props) {
   return (
     <>
       <Section {...props} />
+      <div class="grid lg:grid-cols-2">
+        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-4 bg-base-100 text-base-content">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex md:flex-col gap-4 justify-center">
+            <div class="flex flex-col gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex flex-col">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
+          </div>
+        </div>{" "}
+        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-4 bg-base-200 text-base-content">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex md:flex-col gap-4 justify-center">
+            <div class="flex flex-col gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex flex-col">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
+          </div>
+        </div>{" "}
+      </div>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-4 bg-base-300 text-base-100">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex md:flex-col gap-4 justify-center">
+            <div class="flex flex-col gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex flex-col">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
+          </div>
+        </div>{" "}
+        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-4 bg-base-content text-base-100">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex md:flex-col gap-4 justify-center">
+            <div class="flex flex-col gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex flex-col">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
+          </div>
+        </div>{" "}
+      </div>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-4 bg-primary text-primary-content">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex md:flex-col gap-4 justify-center">
+            <div class="flex flex-col gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex flex-col">
+              <div class="text-base">Content</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
+          </div>
+        </div>{" "}
+        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-4 bg-secondary text-secondary-content">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex md:flex-col gap-4 justify-center">
+            <div class="flex flex-col gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex flex-col">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
+          </div>
+        </div>{" "}
+      </div>
+
+      <div class="grid lg:grid-cols-2">
+        <div class="grid grid-flow-col justify-stretch gap-2 md:gap-4 p-4 bg-accent text-accent-content">
+          <div class="flex flex-col gap-1 justify-center">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-col gap-3 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+          </div>{" "}
+          <div class="flex md:flex-col gap-4 justify-center">
+            <div class="flex flex-col gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+            </div>{" "}
+            <div class="flex flex-col">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+            </div>{" "}
+          </div>
+        </div>{" "}
+      </div>
+
+
       <div class="rounded-box bg-base-100 border-base-content/5 text-base-content not-prose grid gap-3 border p-6">
-        <div class="grid grid-cols-2 gap-2 md:grid-cols-4">
-          <button class="btn">Default</button>{" "}
-          <button class="btn btn-primary">Primary</button>{" "}
-          <button class="btn btn-secondary">Secondary</button>{" "}
-          <button class="btn btn-accent">Accent</button>{" "}
-          <button class="btn btn-info">Info</button>{" "}
-          <button class="btn btn-success">Success</button>{" "}
-          <button class="btn btn-warning">Warning</button>{" "}
-          <button class="btn btn-error">Error</button>
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
+          <div class="flex flex-grow flex-col gap-3 p-4">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 bg-base-content text-base-100">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 bg-primary text-primary-content p-4">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 bg-secondary text-secondary-content p-4">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 bg-accent text-accent-content p-4">
+            <div class="text-4xl">Size 1</div>{" "}
+            <div class="text-3xl">Size 2</div>{" "}
+            <div class="text-2xl">Size 3</div>{" "}
+            <div class="text-xl">Size 4</div>{" "}
+            <div class="text-lg">Size 5</div>{" "}
+            <div class="text-base">Size 6</div>{" "}
+            <div class="text-sm">Size 7</div>{" "}
+            <div class="text-xs">Size 8</div>
+          </div>{" "}
         </div>{" "}
-        <div class="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4">
-          <span class="badge">Default</span>{" "}
-          <span class="badge badge-primary">Primary</span>{" "}
-          <span class="badge badge-secondary">Secondary</span>{" "}
-          <span class="badge badge-accent">Accent</span>{" "}
-          <span class="badge badge-info">Info</span>{" "}
-          <span class="badge badge-success">Success</span>{" "}
-          <span class="badge badge-warning">Warning</span>{" "}
-          <span class="badge badge-error">Error</span>
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center">
+            <div class="text-base text-base-content">Base-content</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-secondary">Secondary</div>
+            <div class="text-base text-accent">Tertiary</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 bg-base-content justify-center">
+            <div class="text-base text-base-100">Base-100</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-secondary">Secondary</div>
+            <div class="text-base text-accent">Tertiary</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 bg-primary justify-center">
+            <div class="text-base text-primary-content">Primary-content</div>
+            <div class="text-base text-secondary">Secondary</div>
+            <div class="text-base text-accent">Tertiary</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 bg-secondary justify-center">
+            <div class="text-base text-secondary-content">Secondary-content</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-accent">Tertiary</div>
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 bg-accent justify-center">
+            <div class="text-base text-accent-content">Tertiary-content</div>
+            <div class="text-base text-primary">Primary</div>
+            <div class="text-base text-secondary">Secondary</div>
+          </div>{" "}
         </div>{" "}
-        <div class="flex flex-col gap-3">
-          <div class="flex flex-col gap-3 md:flex-row">
-            <div class="md:w-1/2">
-              <div class="tabs">
-                <button class="tab tab-lifted">Tab</button>{" "}
-                <button class="tab tab-lifted tab-active">Tab</button>
-                <button class="tab tab-lifted">Tab</button>
-              </div>{" "}
-              <div class="flex flex-col">
-                <span class="link">I'm a simple link</span>
-                <span class="link link-primary">I'm a simple link</span>{" "}
-                <span class="link link-secondary">I'm a simple link</span>{" "}
-                <span class="link link-accent">I'm a simple link</span>
-              </div>
-            </div>{" "}
-            <div class="flex flex-col gap-3 md:w-1/2">
-              <progress value="20" max="100" class="progress">Default</progress>
-              {" "}
-              <progress value="25" max="100" class="progress progress-primary">
-                Primary
-              </progress>{" "}
-              <progress
-                value="30"
-                max="100"
-                class="progress progress-secondary"
-              >
-                Secondary
-              </progress>{" "}
-              <progress value="40" max="100" class="progress progress-accent">
-                Accent
-              </progress>{" "}
-              <progress value="45" max="100" class="progress progress-info">
-                Info
-              </progress>{" "}
-              <progress value="55" max="100" class="progress progress-success">
-                Success
-              </progress>{" "}
-              <progress value="70" max="100" class="progress progress-warning">
-                Warning
-              </progress>{" "}
-              <progress value="90" max="100" class="progress progress-error">
-                Error
-              </progress>
-            </div>
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
           </div>{" "}
-          <div class="flex flex-col gap-3 md:flex-row">
-            <div class="stats bg-base-300 border-base-300 border md:w-1/2">
-              <div class="stat">
-                <div class="stat-title">Total Page Views</div>{" "}
-                <div class="stat-value">89,400</div>{" "}
-                <div class="stat-desc">21% more than last month</div>
-              </div>
-            </div>{" "}
-            <div class="flex flex-wrap items-center justify-center gap-3 md:w-1/2">
-              <div class="radial-progress" style="--value:60; --size:3.5rem;">
-                60%
-              </div>{" "}
-              <div class="radial-progress" style="--value:75; --size:3.5rem;">
-                75%
-              </div>{" "}
-              <div class="radial-progress" style="--value:90; --size:3.5rem;">
-                90%
-              </div>
-            </div>
-          </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-base-content">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-primary">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-secondary">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>{" "}
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-accent">
+            <span class="badge">Base</span>{" "}
+            <span class="badge badge-primary">Primary</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>{" "}
+          </div>{" "}
         </div>{" "}
-        <div class="flex flex-col gap-3">
-          <div class="flex flex-col gap-3 md:flex-row">
-            <div class="md:w-1/2">
-              <div>
-                <input type="checkbox" class="toggle" />{" "}
-                <input type="checkbox" class="toggle toggle-primary" />{" "}
-                <input type="checkbox" class="toggle toggle-secondary" />{" "}
-                <input type="checkbox" class="toggle toggle-accent" />
-              </div>{" "}
-              <div>
-                <input type="checkbox" class="checkbox" />{" "}
-                <input type="checkbox" class="checkbox checkbox-primary" />{" "}
-                <input type="checkbox" class="checkbox checkbox-secondary" />
-                {" "}
-                <input type="checkbox" class="checkbox checkbox-accent" />
-              </div>{" "}
-              <div>
-                <input type="radio" name="radio-1" class="radio" />{" "}
-                <input
-                  type="radio"
-                  name="radio-1"
-                  class="radio radio-primary"
-                />{" "}
-                <input
-                  type="radio"
-                  name="radio-1"
-                  class="radio radio-secondary"
-                />{" "}
-                <input type="radio" name="radio-1" class="radio radio-accent" />
-              </div>
-            </div>{" "}
-            <div class="md:w-1/2">
-              <input type="range" min="0" max="100" class="range range-xs" />
-              {" "}
-              <input
-                type="range"
-                min="0"
-                max="100"
-                class="range range-xs range-primary"
-              />{" "}
-              <input
-                type="range"
-                min="0"
-                max="100"
-                class="range range-xs range-secondary"
-              />{" "}
-              <input
-                type="range"
-                min="0"
-                max="100"
-                class="range range-xs range-accent"
-              />
-            </div>
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
           </div>{" "}
-          <div class="flex flex-col gap-3 md:flex-row">
-            <div class="flex flex-col gap-3 md:w-1/2">
-              <input
-                type="text"
-                placeholder="Default"
-                class="input input-bordered w-full"
-              />{" "}
-              <input
-                type="text"
-                placeholder="Primary"
-                class="input input-primary input-bordered w-full"
-              />{" "}
-              <input
-                type="text"
-                placeholder="Secondary"
-                class="input input-secondary input-bordered w-full"
-              />{" "}
-              <input
-                type="text"
-                placeholder="Accent"
-                class="input input-accent input-bordered w-full"
-              />
-            </div>{" "}
-            <div class="flex flex-col gap-3 md:w-1/2">
-              <input
-                type="text"
-                placeholder="Info"
-                class="input input-info input-bordered w-full"
-              />{" "}
-              <input
-                type="text"
-                placeholder="Success"
-                class="input input-success input-bordered w-full"
-              />{" "}
-              <input
-                type="text"
-                placeholder="Warning"
-                class="input input-warning input-bordered w-full"
-              />{" "}
-              <input
-                type="text"
-                placeholder="Error"
-                class="input input-error input-bordered w-full"
-              />
-            </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-base-content">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
           </div>{" "}
-          <div class="navbar bg-neutral text-neutral-content rounded-box">
-            <div class="flex-none">
-              <button class="btn btn-square btn-ghost">
-                <Icon id="Bars3" strokeWidth={0.1} size={24} />
-              </button>
-            </div>{" "}
-            <div class="flex-1">
-              <button class="btn btn-ghost text-xl normal-case">deco.cx</button>
-            </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-primary">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
           </div>{" "}
-          <div class="flex gap-3">
-            <div class="flex flex-grow flex-col gap-3">
-              <div class="text-4xl font-bold">Text Size 1</div>{" "}
-              <div class="text-3xl font-bold">Text Size 2</div>{" "}
-              <div class="text-2xl font-bold">Text Size 3</div>{" "}
-              <div class="text-xl font-bold">Text Size 4</div>{" "}
-              <div class="text-lg font-bold">Text Size 5</div>{" "}
-              <div class="text-sm font-bold">Text Size 6</div>{" "}
-              <div class="text-xs font-bold">Text Size 7</div>
-            </div>{" "}
-            <ul class="steps steps-vertical">
-              <li class="step step-primary">Step 1</li>{" "}
-              <li class="step step-primary">Step 2</li>{" "}
-              <li class="step">Step 3</li> <li class="step">Step 4</li>
-            </ul>
-          </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-secondary">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-accent">Tertiary</button>{" "}
+          </div>{" "}
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-accent">
+            <button class="btn">Base</button>{" "}
+            <button class="btn btn-primary">Primary</button>{" "}
+            <button class="btn btn-secondary">Secondary</button>{" "}
+          </div>{" "}
         </div>{" "}
-        <div class="flex flex-col gap-3">
-          <div class="alert">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="stroke-info h-6 w-6 flex-shrink-0"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
-              </svg>{" "}
-              <span>12 unread messages. Tap to see.</span>
-            </div>
+        <div class="grid grid-cols-2 gap-2 md:grid-cols-5">
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
           </div>{" "}
-          <div class="alert alert-info">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                class="h-6 w-6 flex-shrink-0 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
-              </svg>{" "}
-              <span>New software update available.</span>
-            </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-base-content">
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
           </div>{" "}
-          <div class="alert alert-success">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 flex-shrink-0 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
-              </svg>{" "}
-              <span>Your purchase has been confirmed!</span>
-            </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-primary">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
           </div>{" "}
-          <div class="alert alert-warning">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 flex-shrink-0 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                >
-                </path>
-              </svg>{" "}
-              <span>Warning: Invalid email address!</span>
-            </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-secondary">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
           </div>{" "}
-          <div class="alert alert-error">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 flex-shrink-0 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                >
-                </path>
-              </svg>{" "}
-              <span>Error! Task failed successfully.</span>
-            </div>
-          </div>
-        </div>
+          <div class="flex flex-grow flex-col gap-3 p-4 justify-center bg-accent">
+            <button class="btn btn-outline">Base</button>{" "}
+            <button class="btn btn-primary btn-outline">Primary</button>{" "}
+            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     </>
   );
