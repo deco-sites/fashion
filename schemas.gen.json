@@ -8515,7 +8515,7 @@
             "null"
           ],
           "format": "color",
-          "title": "Hover color"
+          "title": "Hover"
         },
         "primary-content": {
           "type": [
@@ -8523,7 +8523,7 @@
             "null"
           ],
           "format": "color",
-          "title": "Content color"
+          "title": "Content"
         }
       },
       "required": [],
@@ -8538,7 +8538,7 @@
             "null"
           ],
           "format": "color",
-          "title": "Hover color"
+          "title": "Hover"
         },
         "secondary-content": {
           "type": [
@@ -8546,7 +8546,7 @@
             "null"
           ],
           "format": "color",
-          "title": "Content color"
+          "title": "Content"
         }
       },
       "required": [],
@@ -8561,7 +8561,7 @@
             "null"
           ],
           "format": "color",
-          "title": "Hover color"
+          "title": "Hover"
         },
         "tertiary-content": {
           "type": [
@@ -8569,13 +8569,13 @@
             "null"
           ],
           "format": "color",
-          "title": "Content color"
+          "title": "Content"
         }
       },
       "required": [],
       "title": "TertiaryColorOptional"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@HoverAndContentColors": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@ComplementaryColors": {
       "type": "object",
       "properties": {
         "base": {
@@ -8596,7 +8596,7 @@
         }
       },
       "required": [],
-      "title": "HoverAndContentColors"
+      "title": "ComplementaryColors"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Button": {
       "type": "object",
@@ -8721,9 +8721,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@MainColors",
           "title": "Main Colors"
         },
-        "hoverAndContentColors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@HoverAndContentColors",
-          "title": "Hover And Content Colors"
+        "complementaryColors": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@ComplementaryColors",
+          "title": "Complementary Colors"
         },
         "buttonStyle": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS9EZXNpZ25TeXN0ZW0udHN4@Button",

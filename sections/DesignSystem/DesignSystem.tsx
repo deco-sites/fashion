@@ -35,7 +35,7 @@ export interface MainColors {
   "tertiary": string;
 }
 
-export interface HoverAndContentColors {
+export interface ComplementaryColors {
   base?: BaseColorOptional;
   primary?: PrimaryColorOptional;
   secondary?: SecondaryColorOptional;
@@ -60,12 +60,12 @@ export interface BaseColorOptional {
 export interface PrimaryColorOptional {
   /**
    * @format color
-   * @title Hover color
+   * @title Hover
    */
   "primary-focus"?: string;
   /**
    * @format color
-   * @title Content color
+   * @title Content
    */
   "primary-content"?: string;
 }
@@ -73,12 +73,12 @@ export interface PrimaryColorOptional {
 export interface SecondaryColorOptional {
   /**
    * @format color
-   * @title Hover color
+   * @title Hover
    */
   "secondary-focus"?: string;
   /**
    * @format color
-   * @title Content color
+   * @title Content
    */
   "secondary-content"?: string;
 }
@@ -86,12 +86,12 @@ export interface SecondaryColorOptional {
 export interface TertiaryColorOptional {
   /**
    * @format color
-   * @title Hover color
+   * @title Hover
    */
   "tertiary-focus"?: string;
   /**
    * @format color
-   * @title Content color
+   * @title Content
    */
   "tertiary-content"?: string;
 }
@@ -245,7 +245,7 @@ export interface Font {
 export interface Props {
   mainColors?: MainColors;
   /** These colors are automatically generated with darker tons of their originals */
-  hoverAndContentColors?: HoverAndContentColors;
+  complementaryColors?: ComplementaryColors;
   buttonStyle?: Button;
   fonts?: Font;
 }
@@ -357,7 +357,7 @@ const defaultTheme = {
  */
 function Section({
   mainColors,
-  hoverAndContentColors,
+  complementaryColors,
   buttonStyle,
   fonts,
 }: Props) {
@@ -365,10 +365,10 @@ function Section({
   const theme = {
     ...defaultTheme,
     ...mainColors,
-    ...hoverAndContentColors?.base,
-    ...hoverAndContentColors?.primary,
-    ...hoverAndContentColors?.secondary,
-    ...hoverAndContentColors?.tertiary,
+    ...complementaryColors?.base,
+    ...complementaryColors?.primary,
+    ...complementaryColors?.secondary,
+    ...complementaryColors?.tertiary,
     ...buttonStyle,
     ...fonts,
   };
