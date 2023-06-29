@@ -407,176 +407,216 @@ export function Preview(props: Props) {
   return (
     <>
       <Section {...props} />
-      <div class="grid justify-stretch">
-        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-base-100 text-base-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn">Base</button>{" "}
-            <button class="btn btn-primary">Primary</button>{" "}
-            <button class="btn btn-secondary">Secondary</button>{" "}
-            <button class="btn btn-accent">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn btn-outline">Base</button>{" "}
-            <button class="btn btn-primary btn-outline">Primary</button>{" "}
-            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="flex gap-2">
-            <span class="badge">Base</span>{" "}
-            <span class="badge badge-primary">Primary</span>{" "}
-            <span class="badge badge-secondary">Secondary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
-          </div>{" "}
-          <div class="flex gap-4">
-            <div class="text-base">Content</div>
-            <div class="text-base text-primary">Primary</div>
-            <div class="text-base text-secondary">Secondary</div>
-            <div class="text-base text-accent">Tertiary</div>
-          </div>{" "}
-        </div>{" "}
-
-        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-base-content text-base-100">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn">Base</button>{" "}
-            <button class="btn btn-primary">Primary</button>{" "}
-            <button class="btn btn-secondary">Secondary</button>{" "}
-            <button class="btn btn-accent">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn btn-primary btn-outline">Primary</button>{" "}
-            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="flex gap-2">
-            <span class="badge">Base</span>{" "}
-            <span class="badge badge-primary">Primary</span>{" "}
-            <span class="badge badge-secondary">Secondary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
-          </div>{" "}
-          <div class="flex gap-4">
-            <div class="text-base">Content</div>
-            <div class="text-base text-primary">Primary</div>
-            <div class="text-base text-secondary">Secondary</div>
-            <div class="text-base text-accent">Tertiary</div>
+      <div class="grid">
+        <div class="grid md:grid-flow-col gap-10 p-6 lg:p-10 bg-base-100 text-base-content justify-center">
+          <div class="flex flex-col gap-2 max-w-[22rem]">
+            <div class="text-4xl">Your site, beautiful.</div>
+            <div>
+              Aesthetics create a visually pleasing and engaging environment, establish brand identity, improve readability, and evoke positive emotional responses, ultimately enhancing user engagement and satisfaction.
+            </div>
+          </div>
+          <div class="grid grid-flow-row gap-6 justify-center">
+            <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
+              <div class="text-4xl">Size 1</div>{" "}
+              <div class="text-3xl">Size 2</div>{" "}
+              <div class="text-2xl">Size 3</div>{" "}
+              <div class="text-xl">Size 4</div>{" "}
+              <div class="text-lg">Size 5</div>{" "}
+              <div class="text-base">Size 6</div>{" "}
+              <div class="text-sm">Size 7</div>{" "}
+              <div class="text-xs">Size 8</div>
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn">Base</button>{" "}
+              <button class="btn btn-primary">Primary</button>{" "}
+              <button class="btn btn-secondary">Secondary</button>{" "}
+              <button class="btn btn-accent">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn btn-outline">Base</button>{" "}
+              <button class="btn btn-primary btn-outline">Primary</button>{" "}
+              <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+              <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="flex gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex gap-4">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
           </div>{" "}
         </div>{" "}
 
-        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-primary text-primary-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn">Base</button>{" "}
-            <button class="btn btn-secondary">Secondary</button>{" "}
-            <button class="btn btn-accent">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn btn-outline">Base</button>{" "}
-            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="flex gap-2">
-            <span class="badge">Base</span>{" "}
-            <span class="badge badge-secondary">Secondary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
-          </div>{" "}
-          <div class="flex gap-4">
-            <div class="text-base">Content</div>
-            <div class="text-base text-secondary">Secondary</div>
-            <div class="text-base text-accent">Tertiary</div>
-          </div>{" "}
-        </div>{" "}
-
-        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-secondary text-secondary-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn">Base</button>{" "}
-            <button class="btn btn-primary">Primary</button>{" "}
-            <button class="btn btn-accent">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn btn-outline">Base</button>{" "}
-            <button class="btn btn-primary btn-outline">Primary</button>{" "}
-            <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
-          </div>{" "}
-          <div class="flex gap-2">
-            <span class="badge">Base</span>{" "}
-            <span class="badge badge-primary">Primary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
-          </div>{" "}
-          <div class="flex gap-4">
-            <div class="text-base">Content</div>
-            <div class="text-base text-primary">Primary</div>
-            <div class="text-base text-accent">Tertiary</div>
+        <div class="grid md:grid-flow-col gap-10 p-6 lg:p-10 bg-base-content text-base-100 justify-center">
+          <div class="flex flex-col gap-2 max-w-[22rem]">
+            <div class="text-4xl">Your site, colorful.</div>
+            <div>
+              Colors evoke emotions, guide user attention, enhance readability, and reinforce brand identity, resulting in a visually appealing and engaging user interface.
+            </div>
+          </div>
+          <div class="grid grid-flow-row gap-6 justify-center">
+            <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
+              <div class="text-4xl">Size 1</div>{" "}
+              <div class="text-3xl">Size 2</div>{" "}
+              <div class="text-2xl">Size 3</div>{" "}
+              <div class="text-xl">Size 4</div>{" "}
+              <div class="text-lg">Size 5</div>{" "}
+              <div class="text-base">Size 6</div>{" "}
+              <div class="text-sm">Size 7</div>{" "}
+              <div class="text-xs">Size 8</div>
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn">Base</button>{" "}
+              <button class="btn btn-primary">Primary</button>{" "}
+              <button class="btn btn-secondary">Secondary</button>{" "}
+              <button class="btn btn-accent">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn btn-primary btn-outline">Primary</button>{" "}
+              <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+              <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="flex gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex gap-4">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
           </div>{" "}
         </div>{" "}
 
-        <div class="grid grid-flow-row gap-6 p-10 justify-center bg-accent text-accent-content">
-          <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
-            <div class="text-4xl">Size 1</div>{" "}
-            <div class="text-3xl">Size 2</div>{" "}
-            <div class="text-2xl">Size 3</div>{" "}
-            <div class="text-xl">Size 4</div>{" "}
-            <div class="text-lg">Size 5</div>{" "}
-            <div class="text-base">Size 6</div>{" "}
-            <div class="text-sm">Size 7</div>{" "}
-            <div class="text-xs">Size 8</div>
+        <div class="grid md:grid-flow-col gap-10 p-6 lg:p-10 bg-primary text-primary-content justify-center">
+          <div class="flex flex-col gap-2 max-w-[22rem]">
+            <div class="text-4xl">Your site, consistent.</div>
+            <div>
+              Consistency simplifies user navigation, reduces cognitive effort, reinforces brand identity, and ultimately leads to improved user satisfaction and engagement.
+            </div>
+          </div>
+          <div class="grid grid-flow-row gap-6 justify-center">
+            <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
+              <div class="text-4xl">Size 1</div>{" "}
+              <div class="text-3xl">Size 2</div>{" "}
+              <div class="text-2xl">Size 3</div>{" "}
+              <div class="text-xl">Size 4</div>{" "}
+              <div class="text-lg">Size 5</div>{" "}
+              <div class="text-base">Size 6</div>{" "}
+              <div class="text-sm">Size 7</div>{" "}
+              <div class="text-xs">Size 8</div>
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn">Base</button>{" "}
+              <button class="btn btn-secondary">Secondary</button>{" "}
+              <button class="btn btn-accent">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn btn-outline">Base</button>{" "}
+              <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+              <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="flex gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex gap-4">
+              <div class="text-base">Content</div>
+              <div class="text-base text-secondary">Secondary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
           </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn">Base</button>{" "}
-            <button class="btn btn-primary">Primary</button>{" "}
-            <button class="btn btn-secondary">Secondary</button>{" "}
+        </div>{" "}
+
+        <div class="grid md:grid-flow-col gap-10 p-6 lg:p-10 bg-secondary text-secondary-content justify-center">
+          <div class="flex flex-col gap-2 max-w-[22rem]">
+            <div class="text-4xl">Your site, dynamic.</div>
+            <div>
+              Animations engage users, provide visual cues, enhance interactivity, and contribute to a dynamic and memorable browsing experience, ultimately improving user satisfaction.
+            </div>
+          </div>
+          <div class="grid grid-flow-row gap-6 justify-center">
+            <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
+              <div class="text-4xl">Size 1</div>{" "}
+              <div class="text-3xl">Size 2</div>{" "}
+              <div class="text-2xl">Size 3</div>{" "}
+              <div class="text-xl">Size 4</div>{" "}
+              <div class="text-lg">Size 5</div>{" "}
+              <div class="text-base">Size 6</div>{" "}
+              <div class="text-sm">Size 7</div>{" "}
+              <div class="text-xs">Size 8</div>
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn">Base</button>{" "}
+              <button class="btn btn-primary">Primary</button>{" "}
+              <button class="btn btn-accent">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn btn-outline">Base</button>{" "}
+              <button class="btn btn-primary btn-outline">Primary</button>{" "}
+              <button class="btn btn-accent btn-outline">Tertiary</button>{" "}
+            </div>{" "}
+            <div class="flex gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-accent">Tertiary</span>{" "}
+            </div>{" "}
+            <div class="flex gap-4">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-accent">Tertiary</div>
+            </div>{" "}
           </div>{" "}
-          <div class="grid md:grid-flow-col gap-3">
-            <button class="btn btn-outline">Base</button>{" "}
-            <button class="btn btn-primary btn-outline">Primary</button>{" "}
-            <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
-          </div>{" "}
-          <div class="flex gap-2">
-            <span class="badge">Base</span>{" "}
-            <span class="badge badge-primary">Primary</span>{" "}
-            <span class="badge badge-secondary">Secondary</span>{" "}
-          </div>{" "}
-          <div class="flex gap-4">
-            <div class="text-base">Content</div>
-            <div class="text-base text-primary">Primary</div>
-            <div class="text-base text-secondary">Secondary</div>
+        </div>{" "}
+
+        <div class="grid md:grid-flow-col gap-10 p-6 lg:p-10 bg-accent text-accent-content justify-center">
+          <div class="flex flex-col gap-2 max-w-[22rem]">
+            <div class="text-4xl">Your site, fast.</div>
+            <div>
+              Speed performance affects user satisfaction, engagement, conversion rates, and search engine visibility. Faster-loading websites provide a seamless browsing experience, reduce bounce rates, and improve usability.
+            </div>
+          </div>
+          <div class="grid grid-flow-row gap-6 justify-center">
+            <div class="flex flex-wrap gap-x-2 md:gap-x-4 items-baseline">
+              <div class="text-4xl">Size 1</div>{" "}
+              <div class="text-3xl">Size 2</div>{" "}
+              <div class="text-2xl">Size 3</div>{" "}
+              <div class="text-xl">Size 4</div>{" "}
+              <div class="text-lg">Size 5</div>{" "}
+              <div class="text-base">Size 6</div>{" "}
+              <div class="text-sm">Size 7</div>{" "}
+              <div class="text-xs">Size 8</div>
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn">Base</button>{" "}
+              <button class="btn btn-primary">Primary</button>{" "}
+              <button class="btn btn-secondary">Secondary</button>{" "}
+            </div>{" "}
+            <div class="grid md:grid-flow-col gap-3">
+              <button class="btn btn-outline">Base</button>{" "}
+              <button class="btn btn-primary btn-outline">Primary</button>{" "}
+              <button class="btn btn-secondary btn-outline">Secondary</button>{" "}
+            </div>{" "}
+            <div class="flex gap-2">
+              <span class="badge">Base</span>{" "}
+              <span class="badge badge-primary">Primary</span>{" "}
+              <span class="badge badge-secondary">Secondary</span>{" "}
+            </div>{" "}
+            <div class="flex gap-4">
+              <div class="text-base">Content</div>
+              <div class="text-base text-primary">Primary</div>
+              <div class="text-base text-secondary">Secondary</div>
+            </div>{" "}
           </div>{" "}
         </div>{" "}
       </div>
