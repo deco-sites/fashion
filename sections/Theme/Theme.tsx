@@ -234,12 +234,12 @@ export interface Font {
   /**
    * @default 'Albert Sans'
    */
-  fontFamily: string;
+  fontFamily?: string;
   /**
    * @default @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');
    * \@format css
    */
-  styleInnerHtml: string;
+  styleInnerHtml?: string;
 }
 
 export interface Props {
