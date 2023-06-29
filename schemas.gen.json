@@ -3944,6 +3944,11 @@
         {
           "title": "VTEX Proxy Routes",
           "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L3Byb3h5LnRz@Props"
+            }
+          ],
           "required": [
             "__resolveType"
           ],
@@ -7000,6 +7005,23 @@
       },
       "required": [],
       "title": "deco-sites/std/packs/vtex/loaders/navbar.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L3Byb3h5LnRz@Props": {
+      "type": "object",
+      "properties": {
+        "extraPathsToProxy": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": "Extra Paths To Proxy"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/std/loaders/vtex/proxy.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9sb2FkZXJzL3VzZXIudHM=@User": {
       "type": "object",
@@ -11941,7 +11963,7 @@
       ],
       "title": "deco-cx/deco/actions/workflows/cancel.ts@Props"
     },
-    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&d53c654012b1a9c30560229e428269fa": {
+    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&d6167b58741fd75d1231025cd3971ada": {
       "allOf": [
         {
           "type": "object",
@@ -11959,9 +11981,9 @@
           "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata"
         }
       ],
-      "title": "Metadata&d53c654012b1a9c30560229e428269fa"
+      "title": "Metadata&d6167b58741fd75d1231025cd3971ada"
     },
-    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&d53c654012b1a9c30560229e428269fa": {
+    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&d6167b58741fd75d1231025cd3971ada": {
       "type": "object",
       "properties": {
         "results": {
@@ -11972,7 +11994,7 @@
           "title": "Execution Id"
         },
         "metadata": {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&d53c654012b1a9c30560229e428269fa",
+          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&d6167b58741fd75d1231025cd3971ada",
           "title": "Metadata"
         }
       },
@@ -11981,7 +12003,7 @@
         "executionId",
         "metadata"
       ],
-      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+Metadata&d53c654012b1a9c30560229e428269fa"
+      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+Metadata&d6167b58741fd75d1231025cd3971ada"
     },
     "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
       "type": "object",
@@ -13484,6 +13506,11 @@
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L3Byb3h5LnRz": {
       "title": "VTEX Proxy Routes",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L3Byb3h5LnRz@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -15059,7 +15086,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&d53c654012b1a9c30560229e428269fa"
+          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&d6167b58741fd75d1231025cd3971ada"
         }
       ],
       "required": [
