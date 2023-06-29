@@ -279,8 +279,6 @@ function Details({
                     style={{ aspectRatio: ASPECT_RATIO }}
                     src={img.url!}
                     alt={img.alternateName}
-                    width={WIDTH}
-                    height={HEIGHT}
                   />
                 </Slider.Item>
               ))}
