@@ -1,7 +1,6 @@
 export interface Layout {
   alignment?: "Center" | "Left";
   fontSize?: "Normal" | "Large";
-  colorReverse?: boolean;
 }
 
 export interface Content {
@@ -28,12 +27,7 @@ function Header(props: Props) {
               (
                 <h1
                   class={`text-2xl leading-8 lg:leading-10
-                  ${
-                    props.layout?.colorReverse
-                      ? "text-primary-content"
-                      : "text-base-content"
-                  }
-                  ${props.layout?.fontSize === "Normal" ? "lg:text-3xl" : "lg:text-4xl"}
+                  ${props.layout?.fontSize === "Large" ? "lg:text-4xl" : "lg:text-3xl"}
                 `}
                 >
                   {props.content?.title}
@@ -43,10 +37,7 @@ function Header(props: Props) {
               (
                 <h2
                   class={`
-                  leading-6 lg:leading-8
-                  ${
-                    props.layout?.colorReverse ? "text-primary-content" : "text-neutral"
-                  }
+                  leading-6 lg:leading-8 opacity-60
                   ${props.layout?.fontSize === "Normal" ? "lg:text-xl" : "lg:text-2xl"}
                 `}
                 >

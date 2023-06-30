@@ -8010,13 +8010,6 @@
           ],
           "type": "string",
           "title": "Font Size"
-        },
-        "colorReverse": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Color Reverse"
         }
       },
       "required": [],
@@ -11005,6 +10998,46 @@
       "required": [],
       "title": "Form"
     },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Default",
+              "default": "Default"
+            },
+            {
+              "type": "string",
+              "const": "Primary",
+              "default": "Primary"
+            },
+            {
+              "type": "string",
+              "const": "Secondary",
+              "default": "Secondary"
+            },
+            {
+              "type": "string",
+              "const": "Tertiary",
+              "default": "Tertiary"
+            }
+          ],
+          "type": "string",
+          "title": "Color"
+        },
+        "outline": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Outline"
+        }
+      },
+      "required": [],
+      "title": "ButtonType"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -11016,22 +11049,90 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL05ld3NsZXR0ZXIvTmV3c2xldHRlci50c3g=@Form",
           "title": "Form"
         },
-        "layout": {
+        "style": {
           "type": "object",
           "properties": {
-            "header": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
-              "title": "Header"
+            "container": {
+              "type": "object",
+              "properties": {
+                "bgColor": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Transparent",
+                      "default": "Transparent"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Primary",
+                      "default": "Primary"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Secondary",
+                      "default": "Secondary"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Tertiary",
+                      "default": "Tertiary"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Base",
+                      "default": "Base"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Base inverted",
+                      "default": "Base inverted"
+                    }
+                  ],
+                  "type": "string",
+                  "title": "Bg Color"
+                }
+              },
+              "required": [],
+              "title": "Container"
             },
             "content": {
               "type": "object",
               "properties": {
-                "border": {
-                  "type": [
-                    "boolean",
-                    "null"
+                "bgColor": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "const": "Transparent",
+                      "default": "Transparent"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Primary",
+                      "default": "Primary"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Secondary",
+                      "default": "Secondary"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Tertiary",
+                      "default": "Tertiary"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Base",
+                      "default": "Base"
+                    },
+                    {
+                      "type": "string",
+                      "const": "Base inverted",
+                      "default": "Base inverted"
+                    }
                   ],
-                  "title": "Border"
+                  "type": "string",
+                  "title": "Bg Color"
                 },
                 "alignment": {
                   "anyOf": [
@@ -11053,30 +11154,22 @@
                   ],
                   "type": "string",
                   "title": "Alignment"
-                },
-                "bgColor": {
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "const": "Normal",
-                      "default": "Normal"
-                    },
-                    {
-                      "type": "string",
-                      "const": "Reverse",
-                      "default": "Reverse"
-                    }
-                  ],
-                  "type": "string",
-                  "title": "Bg Color"
                 }
               },
               "required": [],
               "title": "Content"
+            },
+            "header": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@Layout",
+              "title": "Header"
+            },
+            "button": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType",
+              "title": "Button"
             }
           },
           "required": [],
-          "title": "Layout"
+          "title": "Style"
         }
       },
       "required": [],

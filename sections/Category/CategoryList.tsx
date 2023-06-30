@@ -106,7 +106,6 @@ function CategoryList(props: Props) {
       header: {
         alignment: "Center",
         fontSize: "Large",
-        colorReverse: false,
       },
       categoryCard: {
         textPosition: "top",

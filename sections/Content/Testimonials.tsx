@@ -82,7 +82,6 @@ const DEFAULT_PROPS: Props = {
     header: {
       alignment: "Center",
       fontSize: "Large",
-      colorReverse: false,
     },
   },
 };

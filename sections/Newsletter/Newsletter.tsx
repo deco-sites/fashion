@@ -1,4 +1,5 @@
 import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import { Colors, colorClasses, ButtonType, buttonClasses } from "$store/components/ui/Types.tsx"
 
 export interface Form {
   placeholder?: string;
@@ -10,13 +11,16 @@ export interface Form {
 export interface Props {
   header?: HeaderContent;
   form?: Form;
-  layout?: {
-    header?: HeaderLayout;
-    content?: {
-      border?: boolean;
-      alignment?: "Center" | "Left" | "Side to side";
-      bgColor?: "Normal" | "Reverse";
+  style?: {
+    container?: {
+      bgColor?: Colors;
     };
+    content?: {
+      bgColor?: Colors;
+      alignment?: "Center" | "Left" | "Side to side";
+    }
+    header?: HeaderLayout;
+    button?: ButtonType;
   };
 }
 
@@ -31,31 +35,41 @@ const DEFAULT_PROPS: Props = {
     helpText:
       'Ao se inscrever, você concorda com nossa <a class="link" href="/politica-de-privacidade">Política de privacidade</a>.',
   },
-  layout: {
+  style: {
+    container: {
+      bgColor: "Transparent",
+    },
+    content: {
+      bgColor: "Transparent",
+      alignment: "Center",
+    },
     header: {
       alignment: "Center",
       fontSize: "Large",
-      colorReverse: false,
     },
-    content: {
-      border: false,
-      alignment: "Center",
-    },
+    button: {
+      color: "Default",
+      outline: false,
+    }
   },
 };
 
 export default function Newsletter(props: Props) {
-  const { header, form, layout } = { ...DEFAULT_PROPS, ...props };
-  const isReverse = layout?.content?.bgColor === "Reverse";
-  const bordered = Boolean(layout?.content?.border);
+  const { header, form, style } = { ...DEFAULT_PROPS, ...props };
+  
+  const containerBgColor = style?.container?.bgColor
+  const contentBgColor = style?.content?.bgColor
+  const containerBgColorClasses = containerBgColor ? colorClasses[containerBgColor] : "";
+  const contentBgColorClasses = contentBgColor ? colorClasses[contentBgColor] : "";
+  
+  const hasPadding = contentBgColor !== 'Transparent' && containerBgColor !== contentBgColor
 
   const headerLayout = (
     <Header
       content={header}
       layout={{
-        alignment: layout?.header?.alignment,
-        fontSize: layout?.header?.fontSize,
-        colorReverse: isReverse
+        alignment: style?.header?.alignment,
+        fontSize: style?.header?.fontSize,
       }}
     />
   );
@@ -69,7 +83,7 @@ export default function Newsletter(props: Props) {
           placeholder={form.placeholder}
         />
         <button
-          class={`btn ${isReverse ? "btn-accent" : ""}`}
+          class={`btn ${buttonClasses[style?.button?.color || "Default"]} ${style?.button?.outline ? "btn-outline" : ""}`}
           type="submit"
         >
           {form.buttonText}
@@ -84,22 +98,12 @@ export default function Newsletter(props: Props) {
     </form>
   );
 
-  const bgLayout = isReverse
-    ? "bg-secondary text-secondary-content"
-    : "bg-transparent";
-
   return (
-    <div
-      class={`${
-        bordered
-          ? isReverse ? "bg-secondary-content" : "bg-secondary"
-          : bgLayout
-      } ${bordered ? "p-4 lg:p-16" : "p-0"}`}
-    >
-      {(!layout?.content?.alignment ||
-        layout?.content?.alignment === "Center") && (
+    <div class={`${containerBgColorClasses} ${hasPadding ? "p-4 lg:p-16" : ""}`}>
+      {(!style?.content?.alignment ||
+        style?.content?.alignment === "Center") && (
         <div
-          class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`${contentBgColorClasses} container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12`}
         >
           {headerLayout}
           <div class="flex justify-center">
@@ -107,9 +111,9 @@ export default function Newsletter(props: Props) {
           </div>
         </div>
       )}
-      {layout?.content?.alignment === "Left" && (
+      {style?.content?.alignment === "Left" && (
         <div
-          class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`${contentBgColorClasses} container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12`}
         >
           {headerLayout}
           <div class="flex justify-start">
@@ -117,9 +121,9 @@ export default function Newsletter(props: Props) {
           </div>
         </div>
       )}
-      {layout?.content?.alignment === "Side to side" && (
+      {style?.content?.alignment === "Side to side" && (
         <div
-          class={`container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`${contentBgColorClasses} container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12`}
         >
           {headerLayout}
           <div class="flex justify-center">
