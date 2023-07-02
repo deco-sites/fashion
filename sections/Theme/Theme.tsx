@@ -108,30 +108,29 @@ export interface OtherOptionalColors {
    */
   "neutral-content"?: string;
 
-    /**
+  /**
    * @format color
    * @description Will be a readable success of neutral if not specified
    */
-    "success-content"?: string;
+  "success-content"?: string;
 
-    /**
-     * @format color
-     * @description Will be a readable tone of warning if not specified
-     */
-    "warning-content"?: string;
-  
-    /**
-     * @format color
-     * @description Will be a readable tone of error if not specified
-     */
-    "error-content"?: string;
-  
-    /**
-     * @format color
-     * @description Will be a readable tone of info if not specified
-     */
-    "info-content"?: string;
-  
+  /**
+   * @format color
+   * @description Will be a readable tone of warning if not specified
+   */
+  "warning-content"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of error if not specified
+   */
+  "error-content"?: string;
+
+  /**
+   * @format color
+   * @description Will be a readable tone of info if not specified
+   */
+  "info-content"?: string;
 }
 
 export interface SystemColors {
@@ -141,30 +140,29 @@ export interface SystemColors {
    */
   "neutral": string;
 
-    /**
+  /**
    * @format color
    * @default #EAFAF2
    */
-    "success": string;
+  "success": string;
 
-    /**
-     * @format color
-     * @default #FFF8E6
-     */
-    "warning": string;
-  
-    /**
-     * @format color
-     * @default #FFE9E5
-     */
-    "error": string;
-  
-    /**
-     * @format color
-     * @default #F0F5FF
-     */
-    "info": string;
-  
+  /**
+   * @format color
+   * @default #FFF8E6
+   */
+  "warning": string;
+
+  /**
+   * @format color
+   * @default #FFE9E5
+   */
+  "error": string;
+
+  /**
+   * @format color
+   * @default #F0F5FF
+   */
+  "info": string;
 }
 
 export interface Button {
@@ -188,7 +186,7 @@ export interface Button {
    * @default 0.95
    * @title Scale on click
    */
-  "--btn-focus-scale": "0.9" | "0.95" | "1" | "1.05" | "1.1" ;
+  "--btn-focus-scale": "0.9" | "0.95" | "1" | "1.05" | "1.1";
 }
 
 export interface Miscellaneous {
@@ -251,15 +249,15 @@ export interface Props {
 }
 
 type Theme =
-  MainColors &
-  PrimaryColorOptional &
-  SecondaryColorOptional &
-  TertiaryColorOptional &
-  BaseColorOptional &
-  Button &
-  SystemColors &
-  OtherOptionalColors &
-  Miscellaneous;
+  & MainColors
+  & PrimaryColorOptional
+  & SecondaryColorOptional
+  & TertiaryColorOptional
+  & BaseColorOptional
+  & Button
+  & SystemColors
+  & OtherOptionalColors
+  & Miscellaneous;
 
 const darken = (color: string, percentage = 0.2) =>
   Color.string(color).darken(percentage);
@@ -418,147 +416,176 @@ export function Preview(props: Props) {
       <Section {...props} />
       <div class="grid grid-flow-col">
         <div class="flex flex-col gap-4 p-4 bg-base-100 text-base-content">
-          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>{" "}
+          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>
+          {" "}
           <button class="btn">Default button</button>{" "}
           <div class="flex flex-col gap-1">
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm">A</button>{" "}
               <button class="btn btn-sm btn-primary">A</button>{" "}
               <button class="btn btn-sm btn-secondary">A</button>{" "}
-              <button class="btn btn-sm btn-accent">A</button>{" "}
+              <button class="btn btn-sm btn-accent">A</button>
+              {" "}
             </div>
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm btn-outline">A</button>{" "}
               <button class="btn btn-sm btn-primary btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-secondary btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-accent btn-outline">A</button>{" "}
-            </div>{" "}
+              <button class="btn btn-sm btn-secondary btn-outline">A</button>
+              {" "}
+              <button class="btn btn-sm btn-accent btn-outline">A</button>
+              {" "}
+            </div>
+            {" "}
           </div>
           <div class="flex flex-col gap-2">
             <span class="badge">Base</span>{" "}
             <span class="badge badge-primary">Primary</span>{" "}
             <span class="badge badge-secondary">Secondary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>
+            {" "}
           </div>{" "}
           <div class="flex flex-col">
             <div class="text-base">Content</div>
             <div class="text-base text-primary">Primary</div>
             <div class="text-base text-secondary">Secondary</div>
             <div class="text-base text-accent">Tertiary</div>
-          </div>{" "}
+          </div>
+          {" "}
         </div>{" "}
-
         <div class="flex flex-col gap-4 p-4 bg-base-content text-base-100">
-          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>{" "}
+          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>
+          {" "}
           <button class="btn">Default button</button>{" "}
           <div class="flex flex-col gap-1">
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm">A</button>{" "}
               <button class="btn btn-sm btn-primary">A</button>{" "}
               <button class="btn btn-sm btn-secondary">A</button>{" "}
-              <button class="btn btn-sm btn-accent">A</button>{" "}
+              <button class="btn btn-sm btn-accent">A</button>
+              {" "}
             </div>
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm btn-primary btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-secondary btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-accent btn-outline">A</button>{" "}
-            </div>{" "}
+              <button class="btn btn-sm btn-secondary btn-outline">A</button>
+              {" "}
+              <button class="btn btn-sm btn-accent btn-outline">A</button>
+              {" "}
+            </div>
+            {" "}
           </div>
           <div class="flex flex-col gap-2">
             <span class="badge">Base</span>{" "}
             <span class="badge badge-primary">Primary</span>{" "}
             <span class="badge badge-secondary">Secondary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>
+            {" "}
           </div>{" "}
           <div class="flex flex-col">
             <div class="text-base">Content</div>
             <div class="text-base text-primary">Primary</div>
             <div class="text-base text-secondary">Secondary</div>
             <div class="text-base text-accent">Tertiary</div>
-          </div>{" "}
+          </div>
+          {" "}
         </div>{" "}
-
         <div class="flex flex-col gap-4 p-4 bg-primary text-primary-content">
-          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>{" "}
+          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>
+          {" "}
           <button class="btn">Default button</button>{" "}
           <div class="flex flex-col gap-1">
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm">A</button>{" "}
               <button class="btn btn-sm btn-secondary">A</button>{" "}
-              <button class="btn btn-sm btn-accent">A</button>{" "}
+              <button class="btn btn-sm btn-accent">A</button>
+              {" "}
             </div>
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-secondary btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-accent btn-outline">A</button>{" "}
-            </div>{" "}
+              <button class="btn btn-sm btn-secondary btn-outline">A</button>
+              {" "}
+              <button class="btn btn-sm btn-accent btn-outline">A</button>
+              {" "}
+            </div>
+            {" "}
           </div>
           <div class="flex flex-col gap-2">
             <span class="badge">Base</span>{" "}
             <span class="badge badge-secondary">Secondary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>
+            {" "}
           </div>{" "}
           <div class="flex flex-col">
             <div class="text-base">Content</div>
             <div class="text-base text-secondary">Secondary</div>
             <div class="text-base text-accent">Tertiary</div>
-          </div>{" "}
+          </div>
+          {" "}
         </div>{" "}
-
         <div class="flex flex-col gap-4 p-4 bg-secondary text-secondary-content">
-          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>{" "}
+          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>
+          {" "}
           <button class="btn">Default button</button>{" "}
           <div class="flex flex-col gap-1">
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm">A</button>{" "}
               <button class="btn btn-sm btn-primary">A</button>{" "}
-              <button class="btn btn-sm btn-accent">A</button>{" "}
+              <button class="btn btn-sm btn-accent">A</button>
+              {" "}
             </div>
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm btn-outline">A</button>{" "}
               <button class="btn btn-sm btn-primary btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-accent btn-outline">A</button>{" "}
-            </div>{" "}
+              <button class="btn btn-sm btn-accent btn-outline">A</button>
+              {" "}
+            </div>
+            {" "}
           </div>
           <div class="flex flex-col gap-2">
             <span class="badge">Base</span>{" "}
             <span class="badge badge-primary">Primary</span>{" "}
-            <span class="badge badge-accent">Tertiary</span>{" "}
+            <span class="badge badge-accent">Tertiary</span>
+            {" "}
           </div>{" "}
           <div class="flex flex-col">
             <div class="text-base">Content</div>
             <div class="text-base text-primary">Primary</div>
             <div class="text-base text-accent">Tertiary</div>
-          </div>{" "}
+          </div>
+          {" "}
         </div>{" "}
-
         <div class="flex flex-col gap-4 p-4 bg-accent text-accent-content">
-          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>{" "}
+          <div class="text-xl">The quick brown fox jumps over the lazy dog</div>
+          {" "}
           <button class="btn">Default button</button>{" "}
           <div class="flex flex-col gap-1">
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm">A</button>{" "}
               <button class="btn btn-sm btn-primary">A</button>{" "}
-              <button class="btn btn-sm btn-secondary">A</button>{" "}
+              <button class="btn btn-sm btn-secondary">A</button>
+              {" "}
             </div>
             <div class="flex flex-wrap gap-1">
               <button class="btn btn-sm btn-outline">A</button>{" "}
               <button class="btn btn-sm btn-primary btn-outline">A</button>{" "}
-              <button class="btn btn-sm btn-secondary btn-outline">A</button>{" "}
-            </div>{" "}
+              <button class="btn btn-sm btn-secondary btn-outline">A</button>
+              {" "}
+            </div>
+            {" "}
           </div>
           <div class="flex flex-col gap-2">
             <span class="badge">Base</span>{" "}
             <span class="badge badge-primary">Primary</span>{" "}
-            <span class="badge badge-secondary">Secondary</span>{" "}
+            <span class="badge badge-secondary">Secondary</span>
+            {" "}
           </div>{" "}
           <div class="flex flex-col">
             <div class="text-base">Content</div>
             <div class="text-base text-primary">Primary</div>
             <div class="text-base text-secondary">Secondary</div>
-          </div>{" "}
-        </div>{" "}
-
+          </div>
+          {" "}
+        </div>
+        {" "}
       </div>
     </>
   );
