@@ -134,7 +134,6 @@
               "$live/flags/everyone.ts",
               "$live/flags/flag.ts",
               "$live/flags/multivariate.ts",
-              "$live/flags/pageVariants_beta.ts",
               "$live/actions/workflows/cancel.ts",
               "$live/actions/workflows/run.ts",
               "$live/actions/workflows/signal.ts",
@@ -3360,7 +3359,7 @@
       ],
       "title": "deco-sites/std/functions/vtexWishlist.ts@Props"
     },
-    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
+    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2FjY291bnQudHM=@Account": {
       "type": "object",
       "properties": {},
       "required": [],
@@ -3370,7 +3369,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2FjY291bnQudHM=@Account"
         }
       ],
       "properties": {
@@ -3395,7 +3394,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2FjY291bnQudHM=@Account"
         }
       ],
       "properties": {
@@ -3420,7 +3419,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2FjY291bnQudHM=@Account"
         }
       ],
       "properties": {
@@ -3464,7 +3463,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2FjY291bnQudHM=@Account"
         }
       ],
       "properties": {
@@ -3588,6 +3587,12 @@
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
       "$ref": "#/root/loaders",
       "title": "Loader"
+    },
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "title": "Account"
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags",
@@ -3868,11 +3873,11 @@
       ],
       "title": "deco-cx/deco/loaders/workflows/get.ts@Props"
     },
-    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
+    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2hhbmRsZXIudHM=@Handler": {
       "$ref": "#/root/handlers",
       "title": "Handler"
     },
-    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route": {
+    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vZmxhZ3MvYXVkaWVuY2UudHM=@Route": {
       "type": "object",
       "properties": {
         "pathTemplate": {
@@ -3891,7 +3896,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
+              "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2hhbmRsZXIudHM=@Handler",
               "title": "Value"
             }
           },
@@ -3908,7 +3913,7 @@
       "title": "Site Route",
       "titleBy": "pathTemplate"
     },
-    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]": {
+    "L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vZmxhZ3MvYXVkaWVuY2UudHM=@Route[]": {
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
@@ -3916,9 +3921,9 @@
         {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route"
+            "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vZmxhZ3MvYXVkaWVuY2UudHM=@Route"
           },
-          "title": "deco-cx/deco/flags/audience.ts@Route[]"
+          "title": "/Users/marcoscandeia/workspace/deco/flags/audience.ts@Route[]"
         },
         {
           "title": "VNDA Proxy Routes",
@@ -3959,50 +3964,6 @@
                 "deco-sites/std/loaders/vtex/proxy.ts"
               ],
               "default": "deco-sites/std/loaders/vtex/proxy.ts"
-            }
-          }
-        },
-        {
-          "title": "Audience",
-          "description": "Select routes based on the matched audience.",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Audience"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "$live/flags/audience.ts"
-              ],
-              "default": "$live/flags/audience.ts"
-            }
-          }
-        },
-        {
-          "title": "Audience Everyone",
-          "description": "Always match regardless of the current user",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "$live/flags/everyone.ts"
-              ],
-              "default": "$live/flags/everyone.ts"
             }
           }
         }
@@ -7327,6 +7288,105 @@
       ],
       "title": "deco-cx/deco/handlers/redirect.ts@RedirectConfig"
     },
+    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler": {
+      "$ref": "#/root/handlers",
+      "title": "Handler"
+    },
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route": {
+      "type": "object",
+      "properties": {
+        "pathTemplate": {
+          "type": "string",
+          "title": "Path Template"
+        },
+        "isHref": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "if true so the path will be checked agaisnt the coming from request instead of using urlpattern.",
+          "title": "Is Href"
+        },
+        "handler": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
+              "title": "Value"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "title": "Handler"
+        }
+      },
+      "required": [
+        "pathTemplate",
+        "handler"
+      ],
+      "title": "Site Route",
+      "titleBy": "pathTemplate"
+    },
+    "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Route"
+          },
+          "title": "Routes",
+          "description": "Used to configure your site routes"
+        },
+        {
+          "title": "Audience",
+          "description": "Select routes based on the matched audience.",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Audience"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "$live/flags/audience.ts"
+              ],
+              "default": "$live/flags/audience.ts"
+            }
+          }
+        },
+        {
+          "title": "Audience Everyone",
+          "description": "Always match regardless of the current user",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2ZsYWdzL2V2ZXJ5b25lLnRz@EveryoneConfig"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "$live/flags/everyone.ts"
+              ],
+              "default": "$live/flags/everyone.ts"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1jeC9kZWNvL2hhbmRsZXJzL3JvdXRlci50cw==@RouterConfig": {
       "type": "object",
       "properties": {
@@ -7397,7 +7457,7 @@
           "title": "Page Sections"
         },
         {
-          "title": "Page Variant",
+          "title": "Variant",
           "type": "object",
           "allOf": [
             {
@@ -7411,9 +7471,9 @@
             "__resolveType": {
               "type": "string",
               "enum": [
-                "$live/flags/pageVariants_beta.ts"
+                "$live/flags/multivariate.ts"
               ],
-              "default": "$live/flags/pageVariants_beta.ts"
+              "default": "$live/flags/multivariate.ts"
             }
           }
         }
@@ -11376,7 +11436,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+          "$ref": "#/definitions/L1VzZXJzL21hcmNvc2NhbmRlaWEvd29ya3NwYWNlL2RlY28vYmxvY2tzL2FjY291bnQudHM=@Account"
         }
       ],
       "properties": {
@@ -11643,35 +11703,30 @@
     "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRGV2aWNlLnRz@Props": {
       "type": "object",
       "properties": {
-        "devices": {
-          "type": "array",
-          "items": {
-            "anyOf": [
-              {
-                "type": "string",
-                "const": "mobile",
-                "default": "mobile"
-              },
-              {
-                "type": "string",
-                "const": "tablet",
-                "default": "tablet"
-              },
-              {
-                "type": "string",
-                "const": "desktop",
-                "default": "desktop"
-              }
-            ],
-            "type": "string"
-          },
-          "title": "Devices"
+        "mobile": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Mobile"
+        },
+        "tablet": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Tablet"
+        },
+        "desktop": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Desktop"
         }
       },
-      "required": [
-        "devices"
-      ],
-      "title": "deco-cx/deco/matchers/MatchDevice.ts@Props"
+      "required": [],
+      "title": "{{#mobile}}Mobile{{/mobile}} {{#tablet}}Tablet{{/tablet}} {{#desktop}}Desktop{{/desktop}}"
     },
     "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoRW52aXJvbm1lbnQudHM=@Props": {
       "type": "object",
@@ -11696,7 +11751,7 @@
       "required": [
         "environment"
       ],
-      "title": "deco-cx/deco/matchers/MatchEnvironment.ts@Props"
+      "title": "{{{environment}}}"
     },
     "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoSG9zdC50cw==@Props": {
       "type": "object",
@@ -11717,7 +11772,7 @@
         }
       },
       "required": [],
-      "title": "deco-cx/deco/matchers/MatchHost.ts@Props"
+      "title": "{{{includes}}} {{{match}}}"
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]": {
       "type": "array",
@@ -11754,7 +11809,7 @@
         "op",
         "matchers"
       ],
-      "title": "deco-cx/deco/matchers/MatchMulti.ts@Props"
+      "title": "Combined options with {{{op}}}"
     },
     "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoUmFuZG9tLnRz@Props": {
       "type": "object",
@@ -11767,7 +11822,7 @@
       "required": [
         "traffic"
       ],
-      "title": "deco-cx/deco/matchers/MatchRandom.ts@Props"
+      "title": "ABTest {{{percentage traffic}}}"
     },
     "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoU2l0ZS50cw==@Props": {
       "type": "object",
@@ -11780,7 +11835,7 @@
       "required": [
         "siteId"
       ],
-      "title": "deco-cx/deco/matchers/MatchSite.ts@Props"
+      "title": "{{{siteId}}}"
     },
     "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoVXNlckFnZW50LnRz@Props": {
       "type": "object",
@@ -11801,7 +11856,7 @@
         }
       },
       "required": [],
-      "title": "deco-cx/deco/matchers/MatchUserAgent.ts@Props"
+      "title": "{{{includes}}} {{{match}}}"
     },
     "ZGVjby1jeC9kZWNvL2ZsYWdzL2F1ZGllbmNlLnRz@Audience": {
       "type": "object",
@@ -11866,61 +11921,24 @@
       ],
       "title": "deco-cx/deco/blocks/flag.ts@FlagObj"
     },
-    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant": {
-      "type": "object",
-      "properties": {
-        "rule": {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
-          "title": "Rule"
-        },
-        "value": {
-          "title": "Value"
-        }
-      },
-      "required": [
-        "rule",
-        "value"
-      ],
-      "title": "Variant"
-    },
-    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant"
-      },
-      "title": "Variant[]"
-    },
-    "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@MultivariateFlag": {
-      "type": "object",
-      "properties": {
-        "variants": {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant[]",
-          "minItems": 1,
-          "title": "Variants"
-        }
-      },
-      "required": [
-        "variants"
-      ],
-      "title": "Multivariate"
-    },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant+Section[]": {
       "type": "object",
       "properties": {
         "rule": {
           "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
-          "title": "Rule"
+          "title": "Condition"
         },
         "value": {
           "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section[]",
-          "title": "Value"
+          "title": "Content"
         }
       },
       "required": [
         "rule",
         "value"
       ],
-      "title": "Variant"
+      "title": "{{#beautifySchemaTitle}}{{{rule.__resolveType}}}{{/beautifySchemaTitle}} Variant",
+      "icon": "flag"
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant+Section[][]": {
       "type": "array",
@@ -11935,6 +11953,7 @@
         "variants": {
           "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant+Section[][]",
           "minItems": 1,
+          "addBehavior": "1",
           "title": "Variants"
         }
       },
@@ -11963,7 +11982,7 @@
       ],
       "title": "deco-cx/deco/actions/workflows/cancel.ts@Props"
     },
-    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&e2dbbead6da62840128d91c00ba09fcd": {
+    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@7650e401d33ddc2d92b19e505d962eaa&Metadata": {
       "allOf": [
         {
           "type": "object",
@@ -11981,9 +12000,9 @@
           "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata"
         }
       ],
-      "title": "Metadata&e2dbbead6da62840128d91c00ba09fcd"
+      "title": "7650e401d33ddc2d92b19e505d962eaa&Metadata"
     },
-    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&e2dbbead6da62840128d91c00ba09fcd": {
+    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+7650e401d33ddc2d92b19e505d962eaa&Metadata": {
       "type": "object",
       "properties": {
         "results": {
@@ -11994,7 +12013,7 @@
           "title": "Execution Id"
         },
         "metadata": {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata&e2dbbead6da62840128d91c00ba09fcd",
+          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@7650e401d33ddc2d92b19e505d962eaa&Metadata",
           "title": "Metadata"
         }
       },
@@ -12003,7 +12022,7 @@
         "executionId",
         "metadata"
       ],
-      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+Metadata&e2dbbead6da62840128d91c00ba09fcd"
+      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+7650e401d33ddc2d92b19e505d962eaa&Metadata"
     },
     "ZGVjby1jeC9kZWNvL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
       "type": "object",
@@ -13910,7 +13929,7 @@
       }
     },
     "JGxpdmUvcGFnZXMvTGl2ZVBhZ2UudHN4": {
-      "title": "$live/pages/LivePage.tsx",
+      "title": "Page",
       "type": "object",
       "allOf": [
         {
@@ -15017,28 +15036,7 @@
       }
     },
     "JGxpdmUvZmxhZ3MvbXVsdGl2YXJpYXRlLnRz": {
-      "title": "Multivariate Option",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@MultivariateFlag"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "$live/flags/multivariate.ts"
-          ],
-          "default": "$live/flags/multivariate.ts"
-        }
-      }
-    },
-    "JGxpdmUvZmxhZ3MvcGFnZVZhcmlhbnRzX2JldGEudHM=": {
-      "title": "Page Variant",
+      "title": "Variant",
       "type": "object",
       "allOf": [
         {
@@ -15052,9 +15050,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "$live/flags/pageVariants_beta.ts"
+            "$live/flags/multivariate.ts"
           ],
-          "default": "$live/flags/pageVariants_beta.ts"
+          "default": "$live/flags/multivariate.ts"
         }
       }
     },
@@ -15086,7 +15084,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+Metadata&e2dbbead6da62840128d91c00ba09fcd"
+          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+7650e401d33ddc2d92b19e505d962eaa&Metadata"
         }
       ],
       "required": [
@@ -15924,9 +15922,6 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvZmxhZ3MvbXVsdGl2YXJpYXRlLnRz"
-        },
-        {
-          "$ref": "#/definitions/JGxpdmUvZmxhZ3MvcGFnZVZhcmlhbnRzX2JldGEudHM="
         }
       ]
     },
