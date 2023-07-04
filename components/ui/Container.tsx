@@ -46,8 +46,8 @@ const DEFAULT_PROPS: Props = {
 export default function Container({children, ...props}: Props) {
   const { header, layout, style } = { ...DEFAULT_PROPS, ...props };
   
-  const sectionBgColor = style?.section?.bgColor
-  const contentBgColor = style?.content?.bgColor
+  const sectionBgColor = style?.section?.bgColor || "Transparent"
+  const contentBgColor = style?.content?.bgColor || "Transparent"
   const containerBgColorClasses = sectionBgColor ? colorClasses[sectionBgColor] : "";
   const contentBgColorClasses = contentBgColor ? colorClasses[contentBgColor] : "";
   

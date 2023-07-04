@@ -4,7 +4,7 @@ import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import Container, { HeaderContent, Layout, ExtendedStyle } from "$store/components/ui/Container.tsx"
+import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
 
 export interface Category {
   tag?: string;
@@ -19,7 +19,7 @@ export interface Props {
   header?: HeaderContent;
   list?: Category[];
   layout?: Layout;
-  style?: ExtendedStyle;
+  style?: Style;
   cardStyle?: {
     textPosition?: "Top" | "Bottom";
     textAlignment?: "Center" | "Left";
