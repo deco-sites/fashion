@@ -70,7 +70,7 @@ export default function Container({children, ...props}: Props) {
       <div
         class={`
           flex flex-wrap flex-col rounded gap-6 lg:gap-12
-          ${hasPadding ? "p-2 lg:p-10" : "p-4 lg:p-16"}
+          ${hasPadding ? "p-4 lg:p-10" : "px-4 py-8 lg:p-16"}
           ${layoutClasses[layout?.contentWidth || "Container"]}
           ${contentBgColorClasses}
           ${style?.content?.bgImage ? "bg-cover bg-center" : ""}

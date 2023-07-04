@@ -31,15 +31,15 @@ export const fontSizeClasses = {
 }
 
 export const fontSizeDescriptionClasses = {
-  "Extra Large": "text-2xl lg:text-3xl",
+  "Extra Large": "text-xl lg:text-3xl",
   "Large": "text-base lg:text-xl",
   "Medium": "text-xs lg:text-sm",
 }
 
 export const gapClasses = {
-  "Extra Large": "gap-1",
-  "Large": "gap-0",
-  "Medium": "gap-0",
+  "Extra Large": "lg:gap-1",
+  "Large": "",
+  "Medium": "",
 }
 
 export const fontWeightClasses = {
@@ -62,32 +62,41 @@ function Header(props: Props) {
   } = props;
 
   const fontSize = style?.fontSize || "Extra Large";
+  const line = style?.line || "None"
 
   return (
     <>
       {content?.title || content?.description
         ? (
-          <div
-            class={`flex flex-col leading[120%]
-              ${gapClasses[fontSize]}
-              ${alignmentClasses[style?.alignment || "Center"]}
-              ${textColorClasses[style?.textColor || "Auto"]}
-              ${fontWeightClasses[style?.fontWeight || "Semibold"]}
-              ${textTransformClasses[style?.textTransform || "Normal"]}
-            `}
-          >
-            {content?.title &&
-              (
-                <h1 class={`${fontSizeClasses[fontSize]}`}>
-                  {content?.title}
-                </h1>
-              )}
-            {content?.description &&
-              (
-                <h2 class={`opacity-60 ${fontSizeDescriptionClasses[fontSize]}`}>
-                  {content?.description}
-                </h2>
-              )}
+          <div class={`${line === "Bottom" ? "flex flex-col pb-3" : ""} ${line === "Middle" && "flex items-center"}`}>
+            {line === "Middle" && style?.alignment === "Center" &&
+              <div class={`bg-[#e5e5ea] h-[1px] flex-auto mr-3 lg:mr-7`}/>
+            }
+            <div
+              class={`flex-none flex flex-col leading[120%]
+                ${gapClasses[fontSize]}
+                ${alignmentClasses[style?.alignment || "Center"]}
+                ${textColorClasses[style?.textColor || "Auto"]}
+                ${fontWeightClasses[style?.fontWeight || "Semibold"]}
+                ${textTransformClasses[style?.textTransform || "Normal"]}
+              `}
+            >
+              {content?.title &&
+                (
+                  <h1 class={`${fontSizeClasses[fontSize]}`}>
+                    {content?.title}
+                  </h1>
+                )}
+              {content?.description &&
+                (
+                  <h2 class={`opacity-60 ${fontSizeDescriptionClasses[fontSize]}`}>
+                    {content?.description}
+                  </h2>
+                )}
+            </div>
+            {line !== "None" &&
+              <div class={`bg-[#e5e5ea] h-[1px] flex-auto ${line === "Bottom" ? "mt-3" : "ml-3 lg:ml-7"}`}/>
+            }
           </div>
         )
         : null}
