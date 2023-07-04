@@ -1,9 +1,10 @@
+import Icon from "$store/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import Container, { HeaderContent, Layout, ExtendedStyle } from "$store/components/ui/Container.tsx"
 
 export interface Category {
   tag?: string;
@@ -17,12 +18,11 @@ export interface Category {
 export interface Props {
   header?: HeaderContent;
   list?: Category[];
-  layout?: {
-    header?: HeaderLayout;
-    categoryCard?: {
-      textPosition?: "top" | "bottom";
-      textAlignment?: "center" | "left";
-    };
+  layout?: Layout;
+  style?: ExtendedStyle;
+  cardStyle?: {
+    textPosition?: "Top" | "Bottom";
+    textAlignment?: "Center" | "Left";
   };
 }
 
@@ -31,13 +31,13 @@ function CardText(
     tag?: string;
     label?: string;
     description?: string;
-    alignment?: "center" | "left";
+    alignment?: "Center" | "Left";
   },
 ) {
   return (
     <div
       class={`flex flex-col ${
-        alignment === "center" ? "text-center" : "text-left"
+        alignment === "Center" ? "text-center" : "text-left"
       }`}
     >
       {tag && <div class="text-sm text-primary">{tag}</div>}
@@ -84,7 +84,8 @@ function CategoryList(props: Props) {
         href: "/",
         image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/2d507523-6f5a-4bb5-98d5-d9c944b35845",
         label: "Jackets",
-        description: "New colors"
+        description: "New colors",
+        buttonText: "Ver produtos",
       },
       {
         tag: "10% off",
@@ -102,77 +103,80 @@ function CategoryList(props: Props) {
         buttonText: "Ver produtos",
       }
     ],
-    layout = {
-      header: {
-        alignment: "Center",
-        fontSize: "Large",
-      },
-      categoryCard: {
-        textPosition: "top",
-        textAlignment: "center",
-      },
-    },
+    layout,
+    style,
+    cardStyle,
   } = props;
 
   return (
-    <div
-      id={id}
-      class="container py-8 flex flex-col gap-8 lg:gap-10 text-base-content  lg:py-10"
-    >
-      <Header content={header} layout={layout?.header} />
-      <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
-        {list.map((
-          { tag, label, description, href, image, buttonText },
-          index,
-        ) => (
-          <Slider.Item
-            index={index}
-            class="flex flex-col gap-4 carousel-item first:pl-6 sm:first:pl-0 last:pr-6 sm:last:pr-0"
-          >
-            <a
-              href={href}
-              class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
+    <Container header={header} layout={layout} style={style}>
+      <div id={id} class="w-full relative grid">
+        <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5">
+          {list.map((
+            { tag, label, description, href, image, buttonText },
+            index,
+          ) => (
+            <Slider.Item
+              index={index}
+              class="flex flex-col gap-4 carousel-item first:pl-6 sm:first:pl-0 last:pr-6 sm:last:pr-0"
             >
-              {layout.categoryCard?.textPosition === "top" &&
-                (
-                  <CardText
-                    tag={tag}
-                    label={label}
-                    description={description}
-                    alignment={layout?.categoryCard?.textAlignment}
-                  />
-                )}
-              {image &&
-                (
-                  <figure>
-                    <Image
-                      class="card w-full"
-                      src={image}
-                      alt={description || label || tag}
-                      width={160}
-                      height={195}
-                      loading="lazy"
+              <a
+                href={href}
+                class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
+              >
+                {cardStyle?.textPosition === "Top" &&
+                  (
+                    <CardText
+                      tag={tag}
+                      label={label}
+                      description={description}
+                      alignment={cardStyle?.textAlignment}
                     />
-                  </figure>
-                )}
-              {layout.categoryCard?.textPosition === "bottom" &&
-                (
-                  <CardText
-                    tag={tag}
-                    label={label}
-                    description={description}
-                    alignment={layout?.categoryCard?.textAlignment}
-                  />
-                )}
-            </a>
-            {buttonText &&
-              <a href={href} class="btn">{buttonText}</a>}
-          </Slider.Item>
-        ))}
-      </Slider>
+                  )}
+                {image &&
+                  (
+                    <figure>
+                      <Image
+                        class="card w-full"
+                        src={image}
+                        alt={description || label || tag}
+                        width={160}
+                        height={195}
+                        loading="lazy"
+                      />
+                    </figure>
+                  )}
+                {cardStyle?.textPosition === "Bottom" &&
+                  (
+                    <CardText
+                      tag={tag}
+                      label={label}
+                      description={description}
+                      alignment={cardStyle?.textAlignment}
+                    />
+                  )}
+              </a>
+              {buttonText &&
+                <a href={href} class="btn">{buttonText}</a>}
+            </Slider.Item>
+          ))}
+        </Slider>
+        <>
+          <div class="z-10 absolute -left-2 lg:-left-8 top-1/3">
+            <Slider.PrevButton class="btn btn-circle btn-outline">
+              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+            </Slider.PrevButton>
+          </div>
+          <div class="z-10 absolute -right-2 lg:-right-8 top-1/3">
+            <Slider.NextButton class="btn btn-circle btn-outline">
+              <Icon size={20} id="ChevronRight" strokeWidth={3} />
+            </Slider.NextButton>
+          </div>
+        </>
 
-      <SliderJS rootId={id} />
-    </div>
+        <SliderJS rootId={id} />
+      </div>
+    </Container>
   );
 }
 
