@@ -52,6 +52,26 @@ export const colorClasses = {
     "Base inverted": "bg-base-content text-base-100",
 }
 
+export const borderColorClasses = {
+    "Transparent": "",
+    "Backdrop opacity": "border-base-100",
+    "Primary": "border-primary-content",
+    "Secondary": "border-secondary-content",
+    "Tertiary": "border-accent-content",
+    "Base": "border-base-content",
+    "Base inverted": "border-base-100",
+}
+
+export const lineColorClasses = {
+    "Transparent": "",
+    "Backdrop opacity": "bg-base-100",
+    "Primary": "bg-primary-content",
+    "Secondary": "bg-secondary-content",
+    "Tertiary": "bg-accent-content",
+    "Base": "bg-base-content",
+    "Base inverted": "bg-base-100",
+}
+
 export const textColorClasses = {
     "Auto": "",
     "Primary": "text-primary",
@@ -64,4 +84,10 @@ export const buttonClasses = {
     "Primary": "btn-primary",
     "Secondary": "btn-secondary",
     "Tertiary": "btn-accent",
+}
+
+export function getButtonClasses(style: ButtonType) {
+    const allButtonClasses = `btn ${buttonClasses[style?.color || "Default"]} ${style?.outline ? "btn-outline" : ""}`;
+
+    return allButtonClasses;
 }

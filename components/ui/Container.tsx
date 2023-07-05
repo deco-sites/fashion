@@ -78,7 +78,7 @@ export default function Container({children, ...props}: Props) {
         `}
         style={{ "background-image": style?.content?.bgImage ? `url(${style?.content?.bgImage})` : "" }}
       >
-        <Header content={header} style={style?.header}/>
+        <Header content={header} style={style?.header} lineColor={contentBgColor !== "Transparent" ? contentBgColor : sectionBgColor}/>
         <div class={`flex flex-col ${style?.content?.alignment == "Center" ? "items-center" : "items-left"}`}>
           {children}
         </div>

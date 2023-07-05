@@ -8399,9 +8399,6 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Category/CategoryList.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
-      "title": "HeaderLayout"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvQmVuZWZpdHMudHN4@Props": {
       "type": "object",
       "properties": {
@@ -8638,36 +8635,83 @@
           "title": "Benefits"
         },
         "layout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
+          "title": "Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@Style",
+          "title": "Style"
+        },
+        "itemsStyle": {
           "type": "object",
           "properties": {
-            "variation": {
+            "showDivider": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Show Divider"
+            },
+            "iconPosition": {
               "anyOf": [
                 {
                   "type": "string",
-                  "const": "Simple",
-                  "default": "Simple"
+                  "const": "Top",
+                  "default": "Top"
                 },
                 {
                   "type": "string",
-                  "const": "With border",
-                  "default": "With border"
-                },
-                {
-                  "type": "string",
-                  "const": "Color reverse",
-                  "default": "Color reverse"
+                  "const": "Left",
+                  "default": "Left"
                 }
               ],
               "type": "string",
-              "title": "Variation"
+              "title": "Icon Position"
             },
-            "header": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout",
-              "title": "Header"
+            "bgColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Transparent",
+                  "default": "Transparent"
+                },
+                {
+                  "type": "string",
+                  "const": "Backdrop opacity",
+                  "default": "Backdrop opacity"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                },
+                {
+                  "type": "string",
+                  "const": "Base",
+                  "default": "Base"
+                },
+                {
+                  "type": "string",
+                  "const": "Base inverted",
+                  "default": "Base inverted"
+                }
+              ],
+              "type": "string",
+              "title": "Bg Color"
             }
           },
           "required": [],
-          "title": "Layout"
+          "title": "Items Style"
         }
       },
       "required": [],
@@ -8737,6 +8781,9 @@
       },
       "required": [],
       "title": "Contact"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
+      "title": "HeaderLayout"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0NvbnRlbnQvRmFxLnRzeA==@Props": {
       "type": "object",

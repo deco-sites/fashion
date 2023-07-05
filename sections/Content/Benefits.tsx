@@ -1,5 +1,6 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
+import { Colors, colorClasses, borderColorClasses } from "$store/components/ui/Types.tsx"
 
 export interface Props {
   header?: HeaderContent;
@@ -8,10 +9,13 @@ export interface Props {
     icon: AvailableIcons;
     description: string;
   }>;
-  layout?: {
-    variation?: "Simple" | "With border" | "Color reverse";
-    header?: HeaderLayout;
-  };
+  layout?: Layout;
+  style?: Style;
+  itemsStyle?: {
+    showDivider?: boolean;
+    iconPosition?: "Top" | "Left"
+    bgColor?: Colors;
+  }
 }
 
 export default function Benefits(
@@ -36,33 +40,31 @@ export default function Benefits(
       description: "Veja as condições para devolver seu produto.",
     }],
     layout,
+    style,
+    itemsStyle,
   } = props;
 
   const listOfBenefits = benefits.map((benefit, index) => {
-    const showDivider = index < benefits.length - 1;
-    const reverse = layout?.variation === "Color reverse";
-    const benefitLayout = !layout?.variation || layout?.variation === "Simple"
-      ? "tiled"
-      : "piledup";
+    const hasBg = itemsStyle?.bgColor && itemsStyle?.bgColor !== "Transparent"
+    const showDivider = !hasBg && itemsStyle?.showDivider && index < benefits.length - 1;
 
     return (
       <div
         class={`${
-          reverse ? "bg-primary text-primary-content p-4 lg:px-8 lg:py-4" : ""
-        } flex gap-4 ${
-          benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
+          hasBg ? `${colorClasses[itemsStyle?.bgColor || "Primary"]} p-4 lg:px-8 lg:py-4` : ""
+        } flex gap-2 flex-col items-center text-center ${
+          itemsStyle?.iconPosition == "Left" ? "lg:flex-row lg:items-start lg:text-left lg:gap-4" : ""
         } ${
-          showDivider && benefitLayout !== "piledup"
-            ? "border-b border-neutral-300"
+          showDivider
+            ? `border-b ${borderColorClasses[itemsStyle?.bgColor || style?.content?.bgColor || style?.section?.bgColor || "Transparent"]}`
             : ""
         } ${showDivider ? "pb-4 lg:pr-8 lg:border-r lg:border-b-0" : ""} ${
-          showDivider && !reverse ? "lg:pb-0" : ""
+          showDivider && (!itemsStyle?.bgColor || itemsStyle?.bgColor == "Transparent") ? "lg:pb-0" : ""
         }`}
       >
         <div class="flex-none">
           <Icon
             id={benefit.icon}
-            class={reverse ? "text-base-100" : "text-primary"}
             width={36}
             height={36}
             strokeWidth={0.01}
@@ -71,16 +73,12 @@ export default function Benefits(
         </div>
         <div class="flex-auto flex flex-col gap-1 lg:gap-2">
           <div
-            class={`text-base lg:text-xl leading-7 ${
-              reverse ? "text-base-100" : "text-base-content"
-            }`}
+            class={`text-base lg:text-xl leading-7`}
           >
             {benefit.label}
           </div>
           <p
-            class={`text-sm leading-5 ${
-              reverse ? "text-base-100" : "text-neutral"
-            } ${benefitLayout == "piledup" ? "hidden lg:block" : ""}`}
+            class={`text-sm leading-5`}
           >
             {benefit.description}
           </p>
@@ -90,39 +88,12 @@ export default function Benefits(
   });
 
   return (
-    <>
-      {!layout?.variation || layout?.variation === "Simple"
-        ? (
-          <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
-            <Header content={header} layout={layout?.header} />
-            <div class="w-full flex justify-center">
-              <div class="flex flex-col gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
-                {listOfBenefits}
-              </div>
-            </div>
-          </div>
-        )
-        : ""}
-      {layout?.variation === "With border" && (
-        <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header content={header} layout={layout?.header} />
-          <div class="w-full flex justify-center">
-            <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 border border-base-300 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
-              {listOfBenefits}
-            </div>
-          </div>
+    <Container header={header} layout={layout} style={style}>
+      <div class="w-full flex justify-center">
+        <div class="grid grid-cols-2 gap-4 w-full lg:gap-8 lg:grid-flow-col lg:auto-cols-fr">
+          {listOfBenefits}
         </div>
-      )}
-      {layout?.variation === "Color reverse" && (
-        <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header content={header} layout={layout?.header} />
-          <div class="w-full flex justify-center">
-            <div class="grid grid-cols-2 gap-4 w-full lg:gap-8 lg:grid-flow-col lg:auto-cols-fr">
-              {listOfBenefits}
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+      </div>
+    </Container>
   );
 }

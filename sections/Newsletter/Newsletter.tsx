@@ -1,4 +1,4 @@
-import { buttonClasses } from "$store/components/ui/Types.tsx"
+import { getButtonClasses } from "$store/components/ui/Types.tsx"
 import Container, { HeaderContent, Layout, ExtendedStyle } from "$store/components/ui/Container.tsx"
 
 export interface Form {
@@ -29,7 +29,6 @@ const DEFAULT_PROPS: Props = {
 
 export default function Newsletter(props: Props) {
   const { header, form, layout, style } = { ...DEFAULT_PROPS, ...props };
-  const allButtonClasses = `${buttonClasses[style?.button?.color || "Default"]} ${style?.button?.outline ? "btn-outline" : ""}`
   
   return (
     <Container header={header} layout={layout} style={style}>
@@ -41,7 +40,7 @@ export default function Newsletter(props: Props) {
             placeholder={form?.placeholder}
           />
           <button
-            class={`btn ${allButtonClasses}`}
+            class={getButtonClasses(style?.button || {})}
             type="submit"
           >
             {form?.buttonText}
