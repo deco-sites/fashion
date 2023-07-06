@@ -24,12 +24,14 @@ export type TextColors =
     | "Primary"
     | "Secondary"
     | "Tertiary"
+    | "Base"
+    | "Base inverted";
 
 export type ButtonColor = 
     "Default"
     | "Primary"
     | "Secondary"
-    | "Tertiary"
+    | "Tertiary";
 
 export interface ButtonType {
     color?: ButtonColor;
@@ -77,6 +79,8 @@ export const textColorClasses = {
     "Primary": "text-primary",
     "Secondary": "text-secondary",
     "Tertiary": "text-accent",
+    "Base": "text-base-100",
+    "Base inverted": "text-base-content",
 }
 
 export const buttonClasses = {
