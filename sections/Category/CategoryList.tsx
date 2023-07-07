@@ -5,7 +5,7 @@ import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
-import { getButtonClasses } from "$store/components/ui/Types.tsx"
+import { getButtonClasses, ButtonColor, buttonClasses } from "$store/components/ui/Types.tsx"
 
 export interface Category {
   tag?: string;
@@ -25,6 +25,10 @@ export interface Props {
     textPosition?: "Top" | "Bottom";
     textAlignment?: "Center" | "Left";
   };
+  sliderStyle?: {
+    controlsColor?: ButtonColor;
+    controlsOutline?: boolean;
+  }
 }
 
 function CardText(
@@ -62,7 +66,7 @@ function CategoryList(props: Props) {
         image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/5a8edfec-400f-421f-b436-4ce23d2b13e7",
         label: "Dresses",
         description: "Amazing",
-        buttonText: "Ver produtos",
+        buttonText: "View procucts",
       },
       {
         tag: "10% off",
@@ -70,7 +74,7 @@ function CategoryList(props: Props) {
         image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/7363da7a-8530-4e19-8b76-6f92c4da3f1e",
         label: "Bags",
         description: "Bags",
-        buttonText: "Ver produtos",
+        buttonText: "View procucts",
       },
       {
         tag: "10% off",
@@ -78,7 +82,7 @@ function CategoryList(props: Props) {
         image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/33755494-9104-410e-9e48-256aef7fc113",
         label: "Shoes",
         description: "New deals",
-        buttonText: "Ver produtos",
+        buttonText: "View procucts",
       },
       {
         tag: "10% off",
@@ -86,7 +90,7 @@ function CategoryList(props: Props) {
         image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/2d507523-6f5a-4bb5-98d5-d9c944b35845",
         label: "Jackets",
         description: "New colors",
-        buttonText: "Ver produtos",
+        buttonText: "View procucts",
       },
       {
         tag: "10% off",
@@ -94,20 +98,23 @@ function CategoryList(props: Props) {
         image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/907b5510-d4a0-4d75-b2bf-c0c9e9b0ba68",
         label: "Jeans",
         description: "Amazing",
-        buttonText: "Ver produtos",
+        buttonText: "View procucts",
       },
       {
         href: "/",
         image: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/40eb7c93-59a7-4963-9917-32508c56e4cc",
         label: "Shorts",
         description: "Summer",
-        buttonText: "Ver produtos",
+        buttonText: "View procucts",
       }
     ],
     layout,
     style,
     cardStyle,
+    sliderStyle,
   } = props;
+
+  const controlsClasses = `${buttonClasses[sliderStyle?.controlsColor || "Default"]} ${sliderStyle?.controlsOutline ? "btn-outline" : ""}`
 
   return (
     <Container header={header} layout={layout} style={style}>
@@ -163,14 +170,14 @@ function CategoryList(props: Props) {
           ))}
         </Slider>
         <>
-          <div class="z-10 absolute -left-2 lg:-left-8 top-1/3">
-            <Slider.PrevButton class="btn btn-circle btn-outline">
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+          <div class="z-10 absolute -left-3 lg:-left-8 top-1/3">
+            <Slider.PrevButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+              <Icon size={24} id="ChevronLeft" />
             </Slider.PrevButton>
           </div>
-          <div class="z-10 absolute -right-2 lg:-right-8 top-1/3">
-            <Slider.NextButton class="btn btn-circle btn-outline">
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
+          <div class="z-10 absolute -right-3 lg:-right-8 top-1/3">
+            <Slider.NextButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+              <Icon size={24} id="ChevronRight" />
             </Slider.NextButton>
           </div>
         </>

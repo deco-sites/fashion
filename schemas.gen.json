@@ -8450,6 +8450,46 @@
           },
           "required": [],
           "title": "Card Style"
+        },
+        "sliderStyle": {
+          "type": "object",
+          "properties": {
+            "controlsColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Default",
+                  "default": "Default"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                }
+              ],
+              "type": "string",
+              "title": "Controls Color"
+            },
+            "controlsOutline": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Controls Outline"
+            }
+          },
+          "required": [],
+          "title": "Slider Style"
         }
       },
       "required": [],
