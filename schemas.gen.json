@@ -9145,6 +9145,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
         },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
+        },
         "itemsLayout": {
           "type": "object",
           "properties": {
@@ -9168,9 +9172,45 @@
           "required": [],
           "title": "Items Layout"
         },
-        "style": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
-          "title": "Style"
+        "sliderStyle": {
+          "type": "object",
+          "properties": {
+            "controlsColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Default",
+                  "default": "Default"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                }
+              ],
+              "type": "string",
+              "title": "Controls Color"
+            },
+            "controlsOutline": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Controls Outline"
+            }
+          },
+          "required": [],
+          "title": "Slider Style"
         }
       },
       "required": [],

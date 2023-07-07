@@ -57,24 +57,19 @@ function Newsletter(
         {content?.description && <div>{content?.description}</div>}
       </div>
       <div class="flex flex-col gap-4">
-        <form
-          class="form-control"
-          onSubmit={handleSubmit}
-        >
-          <div class="flex gap-3">
-            <input
-              name="email"
-              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
-              placeholder={content?.form?.placeholder || "Digite seu email"}
-            />
-            <button
-              type="submit"
-              class="btn disabled:loading"
-              disabled={loading}
-            >
-              {content?.form?.buttonText || "Inscrever"}
-            </button>
-          </div>
+        <form onSubmit={handleSubmit} class="flex gap-1 lg:gap-3">
+          <input
+            name="email"
+            class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
+            placeholder={content?.form?.placeholder || "Digite seu email"}
+          />
+          <button
+            type="submit"
+            class="btn disabled:loading"
+            disabled={loading}
+          >
+            {content?.form?.buttonText || "Inscrever"}
+          </button>
         </form>
         {content?.form?.helpText && (
           <div
