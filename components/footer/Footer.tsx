@@ -11,6 +11,7 @@ import BackToTop from "$store/components/footer/BackToTop.tsx";
 import PoweredByDeco from "deco-sites/std/components/PoweredByDeco.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Container, { Layout, Style } from "$store/components/ui/SimpleContainer.tsx"
+import { lineColorClasses } from "$store/components/ui/Types.tsx"
 
 export type Item = {
   label: string;
@@ -209,6 +210,7 @@ function Footer({
   const _links = layoutOptions?.hide?.extraLinks
     ? <></>
     : <ExtraLinks content={extraLinks} />;
+  const _divider = <Divider color={lineColorClasses[style?.content?.textColor || "Auto"]} />
 
   return (
     <Container layout={layout} style={style}>
@@ -221,7 +223,7 @@ function Footer({
                 {_sectionLinks}
                 {_newsletter}
               </div>
-              <Divider />
+              {_divider}
               <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
                 {_payments}
                 {_social}
@@ -230,7 +232,7 @@ function Footer({
                   {_region}
                 </div>
               </div>
-              <Divider />
+              {_divider}
               <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
                 <PoweredByDeco />
                 {_links}
@@ -252,7 +254,7 @@ function Footer({
                   {_sectionLinks}
                 </div>
               </div>
-              <Divider />
+              {_divider}
               <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
                 <PoweredByDeco />
                 {_links}
@@ -278,7 +280,7 @@ function Footer({
                   {_region}
                 </div>
               </div>
-              <Divider />
+              {_divider}
               <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
                 <PoweredByDeco />
                 {_links}
@@ -288,7 +290,7 @@ function Footer({
           {layoutOptions?.variation == "Variation 4" && (
             <div class="flex flex-col gap-10">
               {_newsletter}
-              {layoutOptions?.hide?.newsletter ? <></> : <Divider />}
+              {layoutOptions?.hide?.newsletter ? <></> : _divider}
               <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
                 {_sectionLinks}
                 <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
@@ -306,7 +308,7 @@ function Footer({
                   </div>
                 </div>
               </div>
-              <Divider />
+              {_divider}
               <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
                 {_logo}
                 <PoweredByDeco />
@@ -316,7 +318,7 @@ function Footer({
           {layoutOptions?.variation == "Variation 5" && (
             <div class="flex flex-col gap-10">
               {_newsletter}
-              {layoutOptions?.hide?.newsletter ? <></> : <Divider />}
+              {layoutOptions?.hide?.newsletter ? <></> : _divider}
               {_logo}
               <div class="flex flex-col md:flex-row gap-10 lg:gap-20 md:justify-between">
                 {_sectionLinks}
@@ -326,7 +328,7 @@ function Footer({
                   {_apps}
                 </div>
               </div>
-              <Divider />
+              {_divider}
               <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 md:items-center">
                 <PoweredByDeco />
                 <div class="flex flex-col md:flex-row gap-10 md:items-center">
