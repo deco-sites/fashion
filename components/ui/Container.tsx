@@ -60,7 +60,7 @@ export default function Container({children, ...props}: Props) {
     "Center": "items-stretch",
     "Left": "",
     "Side to side top": "justify-between lg:grid lg:grid-flow-col",
-    "Side to side middle": "justify-between items-center lg:grid lg:grid-flow-col",
+    "Side to side middle": "justify-between items-center lg:flex-row lg:flex-nowrap",
   }
 
   const _header = <Header content={header} style={style?.header}/>
@@ -86,14 +86,10 @@ export default function Container({children, ...props}: Props) {
         `}
         style={{ "background-image": style?.content?.bgImage ? `url(${style?.content?.bgImage})` : "" }}
       >
-        {
-          afterHeader ? (
-            <div class="flex flex-col gap-6 lg:gap-10">
-              { _header }
-              { afterHeader }
-            </div>
-          ) : _header
-        }
+        <div class="flex flex-col gap-6 lg:gap-10 lg:px-6 lg:min-w-[22rem]">
+          { _header }
+          { afterHeader }
+        </div>
         <div class={`flex flex-col ${style?.content?.alignment == "Center" ? "items-center" : "items-left"}`}>
           {children}
         </div>

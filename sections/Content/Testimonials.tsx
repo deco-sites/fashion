@@ -150,33 +150,32 @@ export default function Testimonials(
         )}
 
         {variation !== "Grid" && (
-          <div
-            class="relative w-full lg:px-8"
-            id={id}
-          >
-            <Slider class="carousel carousel-start lg:gap-8 row-start-2 row-end-5 w-full">
-              {testimonials?.map(({ image, text, user }, index) => (
-                <Slider.Item
-                  index={index}
-                  class="flex carousel-item w-full"
-                >
-                  <Testimonal image={image} text={text} user={user} />
-                </Slider.Item>
-              ))}
-            </Slider>
-            <>
-              <div class="z-10 absolute -left-3 lg:-left-8 top-1/3">
-                <Slider.PrevButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
-                  <Icon size={24} id="ChevronLeft" />
-                </Slider.PrevButton>
-              </div>
-              <div class="z-10 absolute -right-3 lg:-right-8 top-1/3">
-                <Slider.NextButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
-                  <Icon size={24} id="ChevronRight" />
-                </Slider.NextButton>
-              </div>
-            </>
-            <SliderJS rootId={id} />
+          <div class="relative w-full lg:px-8">
+            <div id={id}>
+              <Slider class="carousel carousel-start row-start-2 row-end-5 w-full">
+                {testimonials?.map(({ image, text, user }, index) => (
+                  <Slider.Item
+                    index={index}
+                    class="flex carousel-item w-full"
+                  >
+                    <Testimonal image={image} text={text} user={user} />
+                  </Slider.Item>
+                ))}
+              </Slider>
+              <>
+                <div class="z-10 absolute -left-3 lg:-left-8 top-1/3">
+                  <Slider.PrevButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+                    <Icon size={24} id="ChevronLeft" />
+                  </Slider.PrevButton>
+                </div>
+                <div class="z-10 absolute -right-3 lg:-right-8 top-1/3">
+                  <Slider.NextButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+                    <Icon size={24} id="ChevronRight" />
+                  </Slider.NextButton>
+                </div>
+              </>
+              <SliderJS rootId={id} />
+            </div>
           </div>
         )}
       </>
