@@ -5,6 +5,7 @@ import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
 import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
+import { ButtonColor, buttonClasses } from "$store/components/ui/Types.tsx"
 
 export interface Testimonial {
   text?: string;
@@ -24,10 +25,14 @@ export interface Props {
   header?: HeaderContent;
   testimonials?: Testimonial[];
   layout?: Layout;
+  style?: Style;
   itemsLayout?: {
     variation?: "Grid" | "Slider";
   };
-  style?: Style;
+  sliderStyle?: {
+    controlsColor?: ButtonColor;
+    controlsOutline?: boolean;
+  }
 }
 
 const DEFAULT_PROPS: Props = {
@@ -90,9 +95,9 @@ const Testimonal = ({ image, text, user }: Testimonial) => (
         height={100}
       />
     )}
-    <h3 class="text-xl lg:text-2xl">
+    <div class="text-xl lg:text-2xl">
       {text}
-    </h3>
+    </div>
     <div class="flex flex-col items-center gap-4">
       {user?.avatar && (
         <Image
@@ -125,13 +130,14 @@ export default function Testimonials(
   props: Props,
 ) {
   const id = useId();
-  const { header, testimonials, itemsLayout, layout, style } = {
+  const { header, testimonials, layout, style, itemsLayout, sliderStyle } = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
   const variation = itemsLayout?.variation || "Grid"
-
+  const controlsClasses = `${buttonClasses[sliderStyle?.controlsColor || "Default"]} ${sliderStyle?.controlsOutline ? "btn-outline" : ""}`
+  
   return (
     <Container header={header} layout={layout} style={style}>
       <>
@@ -145,28 +151,28 @@ export default function Testimonials(
 
         {variation !== "Grid" && (
           <div
-            class="relative w-full px-8"
+            class="relative w-full lg:px-8"
             id={id}
           >
-            <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5 w-full">
+            <Slider class="carousel carousel-start lg:gap-8 row-start-2 row-end-5 w-full">
               {testimonials?.map(({ image, text, user }, index) => (
                 <Slider.Item
                   index={index}
-                  class="flex flex-col gap-4 carousel-item w-full"
+                  class="flex carousel-item w-full"
                 >
                   <Testimonal image={image} text={text} user={user} />
                 </Slider.Item>
               ))}
             </Slider>
             <>
-              <div class="z-10 absolute -left-2 lg:-left-8 top-1/2">
-                <Slider.PrevButton class="btn btn-circle btn-outline">
-                  <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+              <div class="z-10 absolute -left-3 lg:-left-8 top-1/3">
+                <Slider.PrevButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+                  <Icon size={24} id="ChevronLeft" />
                 </Slider.PrevButton>
               </div>
-              <div class="z-10 absolute -right-2 lg:-right-8 top-1/2">
-                <Slider.NextButton class="btn btn-circle btn-outline">
-                  <Icon size={20} id="ChevronRight" strokeWidth={3} />
+              <div class="z-10 absolute -right-3 lg:-right-8 top-1/3">
+                <Slider.NextButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+                  <Icon size={24} id="ChevronRight" />
                 </Slider.NextButton>
               </div>
             </>
