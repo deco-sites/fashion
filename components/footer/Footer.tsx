@@ -184,8 +184,8 @@ function Footer({
   const _newsletter = layoutOptions?.hide?.newsletter ? <></> : (
     <Newsletter
       content={newsletter}
-      tiled={layoutOptions?.variation == "Variation 4" ||
-      layoutOptions?.variation == "Variation 5"}
+      tiled={layoutOptions?.variation == "Variation 4" || layoutOptions?.variation == "Variation 5"}
+      btnStyle={style?.button}
     />
   );
   const _sectionLinks = layoutOptions?.hide?.sectionLinks ? <></> : (
@@ -341,7 +341,7 @@ function Footer({
         </footer>
         {layoutOptions?.hide?.backToTheTop
           ? <></>
-          : <BackToTop content={backToTheTop?.text} />}
+          : <BackToTop style={style?.button}>{backToTheTop?.text}</BackToTop>}
       </>
     </Container>
   );
