@@ -65,13 +65,12 @@ export const borderColorClasses = {
 }
 
 export const lineColorClasses = {
-    "Transparent": "",
-    "Backdrop opacity": "bg-base-100",
-    "Primary": "bg-primary-content",
-    "Secondary": "bg-secondary-content",
-    "Tertiary": "bg-accent-content",
-    "Base": "bg-base-content",
-    "Base inverted": "bg-base-100",
+    "Auto": "",
+    "Primary": "border-primary",
+    "Secondary": "border-secondary",
+    "Tertiary": "border-accent",
+    "Base": "border-base",
+    "Base inverted": "border-base-content",
 }
 
 export const textColorClasses = {

@@ -21,7 +21,7 @@ export interface Style {
 export interface ExtendedStyle {
     section?: Section;
     content?: {
-      alignment?: "Center" | "Left" | "Side to side";
+      alignment?: "Center" | "Left" | "Side to side top" | "Side to side middle";
       bgColor?: Colors;
       bgImage?: LiveImage;
       textColor?: TextColors;
@@ -59,10 +59,11 @@ export default function Container({children, ...props}: Props) {
   const contentClasses = {
     "Center": "items-stretch",
     "Left": "",
-    "Side to side": "justify-between items-center lg:flex-row"
+    "Side to side top": "justify-between lg:grid lg:grid-flow-col",
+    "Side to side middle": "justify-between items-center lg:grid lg:grid-flow-col",
   }
 
-  const _header = <Header content={header} style={style?.header} lineColor={contentBgColor !== "Transparent" ? contentBgColor : sectionBgColor}/>
+  const _header = <Header content={header} style={style?.header}/>
 
   return (
     <div class={`

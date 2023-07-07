@@ -1,5 +1,5 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
+import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
 import { Colors, colorClasses, borderColorClasses } from "$store/components/ui/Types.tsx"
 
 export interface Props {

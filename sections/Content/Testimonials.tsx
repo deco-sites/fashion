@@ -3,7 +3,7 @@ import Image from "deco-sites/std/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
-import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
 
 export interface Testimonial {
@@ -23,10 +23,11 @@ export interface Testimonial {
 export interface Props {
   header?: HeaderContent;
   testimonials?: Testimonial[];
-  layout?: {
+  layout?: Layout;
+  itemsLayout?: {
     variation?: "Grid" | "Slider";
-    header?: HeaderLayout;
   };
+  style?: Style;
 }
 
 const DEFAULT_PROPS: Props = {
@@ -77,13 +78,6 @@ const DEFAULT_PROPS: Props = {
       "company": "Sanlock",
     },
   }],
-  "layout": {
-    "variation": "Grid",
-    header: {
-      alignment: "Center",
-      fontSize: "Large",
-    },
-  },
 };
 
 const Testimonal = ({ image, text, user }: Testimonial) => (
@@ -131,52 +125,55 @@ export default function Testimonials(
   props: Props,
 ) {
   const id = useId();
-  const { header, testimonials, layout } = {
+  const { header, testimonials, itemsLayout, layout, style } = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
-  return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-14 lg:gap-20 lg:py-10 lg:px-0">
-      <Header content={header} layout={layout?.header} />
-      {layout?.variation === "Grid" && (
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {testimonials?.map(({ image, text, user }) => (
-            <Testimonal image={image} text={text} user={user} />
-          ))}
-        </div>
-      )}
+  const variation = itemsLayout?.variation || "Grid"
 
-      {layout?.variation !== "Grid" && (
-        <div
-          class="relative w-full px-8"
-          id={id}
-        >
-          <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5 w-full">
-            {testimonials?.map(({ image, text, user }, index) => (
-              <Slider.Item
-                index={index}
-                class="flex flex-col gap-4 carousel-item w-full"
-              >
-                <Testimonal image={image} text={text} user={user} />
-              </Slider.Item>
+  return (
+    <Container header={header} layout={layout} style={style}>
+      <>
+        {variation === "Grid" && (
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {testimonials?.map(({ image, text, user }) => (
+              <Testimonal image={image} text={text} user={user} />
             ))}
-          </Slider>
-          <>
-            <div class="z-10 absolute -left-2 lg:-left-8 top-1/2">
-              <Slider.PrevButton class="btn btn-circle btn-outline">
-                <Icon size={20} id="ChevronLeft" strokeWidth={3} />
-              </Slider.PrevButton>
-            </div>
-            <div class="z-10 absolute -right-2 lg:-right-8 top-1/2">
-              <Slider.NextButton class="btn btn-circle btn-outline">
-                <Icon size={20} id="ChevronRight" strokeWidth={3} />
-              </Slider.NextButton>
-            </div>
-          </>
-          <SliderJS rootId={id} />
-        </div>
-      )}
-    </div>
+          </div>
+        )}
+
+        {variation !== "Grid" && (
+          <div
+            class="relative w-full px-8"
+            id={id}
+          >
+            <Slider class="carousel carousel-start gap-4 lg:gap-8 row-start-2 row-end-5 w-full">
+              {testimonials?.map(({ image, text, user }, index) => (
+                <Slider.Item
+                  index={index}
+                  class="flex flex-col gap-4 carousel-item w-full"
+                >
+                  <Testimonal image={image} text={text} user={user} />
+                </Slider.Item>
+              ))}
+            </Slider>
+            <>
+              <div class="z-10 absolute -left-2 lg:-left-8 top-1/2">
+                <Slider.PrevButton class="btn btn-circle btn-outline">
+                  <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+                </Slider.PrevButton>
+              </div>
+              <div class="z-10 absolute -right-2 lg:-right-8 top-1/2">
+                <Slider.NextButton class="btn btn-circle btn-outline">
+                  <Icon size={20} id="ChevronRight" strokeWidth={3} />
+                </Slider.NextButton>
+              </div>
+            </>
+            <SliderJS rootId={id} />
+          </div>
+        )}
+      </>
+    </Container>
   );
 }

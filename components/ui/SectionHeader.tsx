@@ -1,4 +1,4 @@
-import { TextColors, textColorClasses, Colors, lineColorClasses } from "$store/components/ui/Types.tsx"
+import { TextColors, textColorClasses, lineColorClasses } from "$store/components/ui/Types.tsx"
 
 export interface Style {
   textColor?: TextColors;
@@ -17,7 +17,6 @@ export interface Content {
 export interface Props {
   content?: Content;
   style?: Style;
-  lineColor?: Colors;
 }
 
 export const alignmentClasses = {
@@ -60,7 +59,6 @@ function Header(props: Props) {
   const {
     content,
     style,
-    lineColor,
   } = props;
 
   const fontSize = style?.fontSize || "Extra Large";
@@ -70,9 +68,9 @@ function Header(props: Props) {
     <>
       {content?.title || content?.description
         ? (
-          <div class={`${line === "Bottom" ? "flex flex-col pb-3" : ""} ${line === "Middle" && "flex items-center"}`}>
+          <div class={`${line === "Bottom" ? "flex flex-col pb-3" : ""} ${line === "Middle" ? "flex items-center" : ""}`}>
             {line === "Middle" && style?.alignment === "Center" &&
-              <div class={`${lineColorClasses[lineColor || "Transparent"]} h-[1px] flex-auto mr-3 lg:mr-7`}/>
+              <div class={`${lineColorClasses[style?.textColor || "Auto"]} h-[1px] flex-auto mr-3 lg:mr-7 border-t`}/>
             }
             <div
               class={`flex-none flex flex-col leading[120%]
@@ -97,7 +95,7 @@ function Header(props: Props) {
                 )}
             </div>
             {line !== "None" &&
-              <div class={`${lineColorClasses[lineColor || "Transparent"]} h-[1px] flex-auto ${line === "Bottom" ? "mt-3" : "ml-3 lg:ml-7"}`}/>
+              <div class={`${lineColorClasses[style?.textColor || "Auto"]} h-[1px] flex-auto border-t ${line === "Bottom" ? "mt-3" : "ml-3 lg:ml-7"}`}/>
             }
           </div>
         )

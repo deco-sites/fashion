@@ -1,7 +1,7 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import { useMemo } from "preact/hooks";
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
-import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
 
 export interface Image {
   image: ImageType;
@@ -11,7 +11,8 @@ export interface Image {
 export interface Props {
   header?: HeaderContent;
   images?: Image[];
-  layout?: HeaderLayout;
+  layout?: Layout;
+  style?: Style;
 }
 
 const IMAGES = [
@@ -32,6 +33,7 @@ function Logos(props: Props) {
     header,
     images,
     layout,
+    style,
   } = props;
   const list = useMemo(
     () =>
@@ -42,11 +44,10 @@ function Logos(props: Props) {
   );
 
   return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-12 lg:py-10 lg:px-0">
-      <Header content={header} layout={layout} />
-      <div class="w-full text-center items-center">
+    <Container header={header} layout={layout} style={style}>
+      <div class="flex flex-wrap justify-center">
         {list.map((element) => (
-          <div class="w-36 lg:w-40 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4 inline-block align-middle">
+          <div class="w-36 lg:w-40 h-17 lg:h-20 px-4 lg:px-6 py-6 lg:py-4">
             <div class="flex w-full h-full items-center justify-center">
               <Image
                 width={300}
@@ -59,7 +60,7 @@ function Logos(props: Props) {
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 }
 

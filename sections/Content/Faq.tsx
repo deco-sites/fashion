@@ -1,5 +1,5 @@
 import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
-import { getButtonClasses, borderColorClasses } from "$store/components/ui/Types.tsx"
+import { getButtonClasses } from "$store/components/ui/Types.tsx"
 
 export interface Question {
   question: string;

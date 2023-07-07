@@ -4,7 +4,7 @@ import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import Container, { HeaderContent, Layout, Style } from "$store/components/ui/Container.tsx"
+import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
 import { getButtonClasses } from "$store/components/ui/Types.tsx"
 
 export interface Category {
