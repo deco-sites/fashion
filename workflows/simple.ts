@@ -5,22 +5,30 @@ export interface Props {
 }
 export default function Simple({ sleepTime }: Props): Workflow {
   return function* (_ctx: WorkflowContext<Manifest>): WorkflowGen<void> {
-    const chargedValue1 = yield _ctx.invoke({
-      key: "deco-sites/fashion/actions/charge.ts",
-      props: {
+    const { value: chargedValue1 } = yield _ctx.invoke(
+      "deco-sites/fashion/actions/charge.ts",
+      {
         value: 20,
       },
-    });
+    );
     console.log("the charged value", chargedValue1);
     console.log("sleeping", sleepTime);
     yield _ctx.sleep(sleepTime);
-    const chargedValue2 = yield _ctx.invoke({
-      key: "deco-sites/fashion/actions/charge.ts",
-      props: {
-        value: 20,
+    const { value: chargedValue3 } = yield _ctx.invoke(
+      "deco-sites/fashion/actions/charge.ts",
+      {
+        value: 30,
       },
-    });
+    );
+    console.log("the charged value3", chargedValue3);
+
+    const { value: chargedValue2 } = yield _ctx.invoke(
+      "deco-sites/fashion/actions/charge.ts",
+      {
+        value: 40,
+      },
+    );
     console.log("the charged value", chargedValue2);
-    console.log("TOTAL", chargedValue1.value + chargedValue2.value);
+    console.log("TOTAL", chargedValue1 + chargedValue2 + chargedValue3);
   };
 }

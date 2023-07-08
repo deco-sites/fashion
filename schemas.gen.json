@@ -140,9 +140,9 @@
               "$live/flags/flag.ts",
               "$live/flags/multivariate.ts",
               "$live/actions/workflows/cancel.ts",
-              "$live/actions/workflows/run.ts",
               "$live/actions/workflows/signal.ts",
               "$live/actions/workflows/start.ts",
+              "deco-sites/fashion/actions/charge.ts",
               "deco-sites/std/actions/vtex/cart/addItems.ts",
               "deco-sites/std/actions/vtex/cart/getInstallment.ts",
               "deco-sites/std/actions/vtex/cart/removeItemAttachment.ts",
@@ -158,7 +158,8 @@
               "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
               "deco-sites/std/actions/vtex/notifyme.ts",
               "deco-sites/std/actions/vtex/wishlist/addItem.ts",
-              "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
+              "deco-sites/std/actions/vtex/wishlist/removeItem.ts",
+              "deco-sites/fashion/workflows/simple.ts"
             ]
           }
         }
@@ -11725,6 +11726,11 @@
           ],
           "title": "Meta tag description override"
         },
+        "favicon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Recommended: 16 x 16 px",
+          "title": "Favicon"
+        },
         "page": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
           "title": "Page"
@@ -11778,6 +11784,11 @@
             "null"
           ],
           "title": "Metatag description override"
+        },
+        "favicon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Recommended: 16 x 16 px",
+          "title": "Favicon"
         }
       },
       "required": [
@@ -12120,48 +12131,6 @@
       ],
       "title": "deco-cx/live/actions/workflows/cancel.ts@Props"
     },
-    "ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@922a64c7ae05c6ecf72f25fa681e42d6&Metadata": {
-      "allOf": [
-        {
-          "type": "object",
-          "properties": {
-            "workflow": {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy93b3JrZmxvdy50cw==@Workflow",
-              "title": "Workflow"
-            }
-          },
-          "required": [
-            "workflow"
-          ]
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@Metadata"
-        }
-      ],
-      "title": "922a64c7ae05c6ecf72f25fa681e42d6&Metadata"
-    },
-    "ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+922a64c7ae05c6ecf72f25fa681e42d6&Metadata": {
-      "type": "object",
-      "properties": {
-        "results": {
-          "title": "Results"
-        },
-        "executionId": {
-          "type": "string",
-          "title": "Execution Id"
-        },
-        "metadata": {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2NvbnRleHQudHM=@922a64c7ae05c6ecf72f25fa681e42d6&Metadata",
-          "title": "Metadata"
-        }
-      },
-      "required": [
-        "results",
-        "executionId",
-        "metadata"
-      ],
-      "title": "deco-cx/durable/handler.ts@RunRequest+Arg+922a64c7ae05c6ecf72f25fa681e42d6&Metadata"
-    },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3NpZ25hbC50cw==@Props": {
       "type": "object",
       "properties": {
@@ -12274,6 +12243,19 @@
         }
       ],
       "title": "deco-cx/live/actions/workflows/start.ts@AnyWorkflow|WorkflowProps"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2FjdGlvbnMvY2hhcmdlLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "number",
+          "title": "Value"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "deco-sites/fashion/actions/charge.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL2NhcnQvYWRkSXRlbXMudHM=@Item": {
       "type": "object",
@@ -12712,6 +12694,19 @@
         "id"
       ],
       "title": "deco-sites/std/packs/vtex/actions/wishlist/removeItem.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3dvcmtmbG93cy9zaW1wbGUudHM=@Props": {
+      "type": "object",
+      "properties": {
+        "sleepTime": {
+          "type": "number",
+          "title": "Sleep Time"
+        }
+      },
+      "required": [
+        "sleepTime"
+      ],
+      "title": "deco-sites/fashion/workflows/simple.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0Fkcy50cw==": {
       "title": "Butter CMS Featured Ads Loader",
@@ -15322,28 +15317,6 @@
         }
       }
     },
-    "JGxpdmUvYWN0aW9ucy93b3JrZmxvd3MvcnVuLnRz": {
-      "title": "$live/actions/workflows/run.ts",
-      "description": "Proceed the workflow execution based on the current state of the workflow.",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9kdXJhYmxlL2hhbmRsZXIudHM=@RunRequest+Arg+922a64c7ae05c6ecf72f25fa681e42d6&Metadata"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "$live/actions/workflows/run.ts"
-          ],
-          "default": "$live/actions/workflows/run.ts"
-        }
-      }
-    },
     "JGxpdmUvYWN0aW9ucy93b3JrZmxvd3Mvc2lnbmFsLnRz": {
       "title": "$live/actions/workflows/signal.ts",
       "description": "Sends a signal to the workflow using the specified payload.",
@@ -15385,6 +15358,27 @@
             "$live/actions/workflows/start.ts"
           ],
           "default": "$live/actions/workflows/start.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2FjdGlvbnMvY2hhcmdlLnRz": {
+      "title": "deco-sites/fashion/actions/charge.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2FjdGlvbnMvY2hhcmdlLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/actions/charge.ts"
+          ],
+          "default": "deco-sites/fashion/actions/charge.ts"
         }
       }
     },
@@ -15722,6 +15716,27 @@
             "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
           ],
           "default": "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3dvcmtmbG93cy9zaW1wbGUudHM=": {
+      "title": "deco-sites/fashion/workflows/simple.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3dvcmtmbG93cy9zaW1wbGUudHM=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/workflows/simple.ts"
+          ],
+          "default": "deco-sites/fashion/workflows/simple.ts"
         }
       }
     }
@@ -16194,13 +16209,13 @@
           "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3MvY2FuY2VsLnRz"
         },
         {
-          "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3MvcnVuLnRz"
-        },
-        {
           "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3Mvc2lnbmFsLnRz"
         },
         {
           "$ref": "#/definitions/JGxpdmUvYWN0aW9ucy93b3JrZmxvd3Mvc3RhcnQudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2FjdGlvbnMvY2hhcmdlLnRz"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvYWRkSXRlbXMudHM="
@@ -16254,7 +16269,14 @@
     },
     "workflows": {
       "title": "workflows",
-      "anyOf": []
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3dvcmtmbG93cy9zaW1wbGUudHM="
+        }
+      ]
     },
     "entrypoint": {
       "type": "object",
@@ -16344,11 +16366,3 @@
     }
   }
 }
-          "type": "string"
-        }
-      }
-    },
-          "title": "deco-sites/std/functions/shopifyProductDetailsPage.ts",
-      "title": "deco-cx/live/handlers/devPage.ts@DevConfig"
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page",
-      "title": "deco-cx/live/handlers/fresh.ts@FreshConfig"
