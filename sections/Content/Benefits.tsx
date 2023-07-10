@@ -26,19 +26,23 @@ export default function Benefits(
       title: "",
       description: "",
     },
-    benefits = [{
-      icon: "Truck",
-      label: "Entrega em todo Brasil",
-      description: "Consulte o prazo no fechamento da compra.",
-    }, {
-      icon: "Discount",
-      label: "15% na primeira compra",
-      description: "Aplicado direto na sacola de compras.",
-    }, {
-      icon: "ArrowsPointingOut",
-      label: "Devolução grátis",
-      description: "Veja as condições para devolver seu produto.",
-    }],
+    benefits = [
+      {
+        "icon": "Truck",
+        "label": "Delivery Nationwide",
+        "description": "Check the delivery timeframe during checkout."
+      },
+      {
+        "icon": "Discount",
+        "label": "15% off on first purchase",
+        "description": "Applied directly in the shopping bag."
+      },
+      {
+        "icon": "ArrowsPointingOut",
+        "label": "Free Returns",
+        "description": "See the conditions for returning your product."
+      }
+    ],
     layout,
     style,
     itemsStyle,
