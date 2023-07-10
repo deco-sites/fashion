@@ -230,14 +230,61 @@ export interface Miscellaneous {
 
 export interface Font {
   /**
-   * @default 'Albert Sans'
+   * @title Font family
    */
+  fontFamily?:
+    "None" |
+    "Alegreya" |
+    "Alegreya Sans" |
+    "Archivo Narrow" |
+    "BioRhyme" |
+    "Cardo" |
+    "Chivo" |
+    "Cormorant" |
+    "DM Sans" |
+    "Eczar" |
+    "Fira Sans" |
+    "Inconsolata" |
+    "Inknut Antiqua" |
+    "Inter" |
+    "IBM Plex Sans" |
+    "Karla" |
+    "Lato" |
+    "Libre Baskerville" |
+    "Libre Franklin" |
+    "Lora" |
+    "Manrope" |
+    "Merriweather" |
+    "Montserrat" |
+    "Neuton" |
+    "Open Sans" |
+    "Poppins" |
+    "Playfair Display" |
+    "Proza Libre" |
+    "PT Sans" |
+    "PT Serif" |
+    "Raleway" |
+    "Roboto" |
+    "Roboto Slab" |
+    "Rubik" |
+    "Space Grotesk" |
+    "Space Mono" |
+    "Spectral" |
+    "Source Sans Pro" |
+    "Source Serif Pro" |
+    "Syne" |
+    "Work Sans"
+  /** @title Other */
+  other?: string;
+}
+
+export interface CustomFont {
   fontFamily?: string;
   /**
-   * @default @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;700&display=swap');
-   * \@format css
+   * @format css
    */
   styleInnerHtml?: string;
+
 }
 
 export interface Props {
@@ -245,7 +292,9 @@ export interface Props {
   /** These colors are automatically generated with darker tons of their originals */
   complementaryColors?: ComplementaryColors;
   buttonStyle?: Button;
-  fonts?: Font;
+  /** @title Google font */
+  font?: Font;
+  customFont?: CustomFont;
 }
 
 type Theme =
@@ -366,7 +415,8 @@ function Section({
   mainColors,
   complementaryColors,
   buttonStyle,
-  fonts,
+  font,
+  customFont,
 }: Props) {
   const id = useId();
   const theme = {
@@ -377,14 +427,20 @@ function Section({
     ...complementaryColors?.secondary,
     ...complementaryColors?.tertiary,
     ...buttonStyle,
-    ...fonts,
+    ...font,
+    ...customFont,
   };
+
+  const selectedFont =
+    customFont?.fontFamily ||
+    font?.other ||
+    (font?.fontFamily !== "None" && font?.fontFamily)
+    
+
   const variables = [
     ...toVariables(theme),
     [
-      "--font-family",
-      fonts?.fontFamily ??
-        "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+      "--font-family", selectedFont || "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
     ],
   ]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
@@ -394,11 +450,20 @@ function Section({
     <Head>
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
-      <style
-        type="text/css"
-        id={`__DESIGN_SYSTEM_FONT-${id}`}
-        dangerouslySetInnerHTML={{ __html: fonts?.styleInnerHtml ?? "" }}
-      />
+      {
+        selectedFont && !customFont?.fontFamily && (
+          <link href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,700,900`} rel="stylesheet" type="text/css"/>
+        )
+      }
+      {
+        customFont?.fontFamily && customFont?.styleInnerHtml && (
+          <style
+            type="text/css"
+            id={`__DESIGN_SYSTEM_FONT-${id}`}
+            dangerouslySetInnerHTML={{ __html: customFont.styleInnerHtml ?? "" }}
+          />
+        )
+      }
       <style
         type="text/css"
         id={`__DESIGN_SYSTEM_VARS-${id}`}
@@ -411,10 +476,15 @@ function Section({
 }
 
 export function Preview(props: Props) {
-  return (
+  const selectedFont =
+    props.customFont?.fontFamily ||
+    props.font?.other ||
+    (props.font?.fontFamily !== "None" && props.font?.fontFamily)
+
+    return (
     <>
       <Section {...props} />
-      <div class="grid grid-flow-col">
+      <div class="grid grid-flow-row md:grid-flow-col">
         <div class="flex flex-col gap-4 p-4 bg-base-100 text-base-content">
           <div class="text-xl">The quick brown fox jumps over the lazy dog</div>
           {" "}
@@ -587,6 +657,13 @@ export function Preview(props: Props) {
         </div>
         {" "}
       </div>
+      {
+        selectedFont && (
+          <div class="text-center py-2">
+            Font: {selectedFont}
+          </div>
+        )
+      }
     </>
   );
 }
