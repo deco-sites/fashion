@@ -10022,9 +10022,6 @@
       },
       "title": "Banner[]"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
-      "title": "HeaderLayout"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items": {
       "type": "object",
       "properties": {
@@ -10182,13 +10179,9 @@
       "required": [],
       "title": "Border"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Layout": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@ItemsLayout": {
       "type": "object",
       "properties": {
-        "header": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout",
-          "title": "Header"
-        },
         "itemsPerLine": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Items",
           "description": "Default is 2 for mobile and all for desktop",
@@ -10200,11 +10193,8 @@
           "title": "Border Radius"
         }
       },
-      "required": [
-        "itemsPerLine",
-        "borderRadius"
-      ],
-      "title": "Layout"
+      "required": [],
+      "title": "ItemsLayout"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props": {
       "type": "object",
@@ -10218,13 +10208,19 @@
           "title": "Banners"
         },
         "layout": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Layout",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
+        },
+        "itemsLayout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@ItemsLayout",
+          "title": "Items Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@ExtendedStyle",
+          "title": "Style"
         }
       },
-      "required": [
-        "banners"
-      ],
+      "required": [],
       "title": "deco-sites/fashion/components/ui/BannerGrid.tsx@Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
@@ -10350,6 +10346,9 @@
         "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Banner"
       },
       "title": "Banner[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
+      "title": "HeaderLayout"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Border": {
       "type": "object",

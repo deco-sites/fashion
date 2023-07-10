@@ -1,6 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import Container, { HeaderContent, Layout, ExtendedStyle } from "$store/components/ui/Container.tsx"
 
 /**
  * @titleBy alt
@@ -36,22 +36,24 @@ export interface Border {
   desktop?: BorderRadius;
 }
 
-export interface Layout {
-  header?: HeaderLayout;
+export interface ItemsLayout {
   /**
    * @description Default is 2 for mobile and all for desktop
    */
-  itemsPerLine: Items;
+  itemsPerLine?: Items;
   /**
    * @description Item's border radius
    */
-  borderRadius: Border;
+  borderRadius?: Border;
 }
 
 export interface Props {
   header?: HeaderContent;
-  banners: Banner[];
+  banners?: Banner[];
   layout?: Layout;
+  itemsLayout?: ItemsLayout;
+  style?: ExtendedStyle;
+
 }
 
 const MOBILE_COLUMNS = {
@@ -92,6 +94,7 @@ const RADIUS_DESKTOP = {
 export default function BannnerGrid({
   header,
   layout,
+  style,
   banners = [
     {
       srcMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/a8d36df6-4b96-4421-bb6c-de0fe1478e06",
@@ -120,8 +123,7 @@ export default function BannnerGrid({
   ],
 }: Props) {
   return (
-    <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
-      <Header content={header} layout={layout?.header} />
+    <Container header={header} layout={layout} style={style}>
       <div
         class={`grid gap-4 md:gap-6 ${
           MOBILE_COLUMNS[layout?.itemsPerLine?.mobile ?? 2]
@@ -159,6 +161,6 @@ export default function BannnerGrid({
           </a>
         ))}
       </div>
-    </div>
+    </Container>
   );
 }
