@@ -86,10 +86,14 @@ export default function Container({children, ...props}: Props) {
         `}
         style={{ "background-image": style?.content?.bgImage ? `url(${style?.content?.bgImage})` : "" }}
       >
-        <div class="flex flex-col gap-6 lg:gap-10 lg:px-6 lg:min-w-[22rem]">
-          { _header }
-          { afterHeader }
-        </div>
+        {
+          header?.title || header?.description || afterHeader ? (
+            <div class="flex flex-col gap-6 lg:gap-10 lg:px-6 lg:min-w-[22rem]">
+              <Header content={header} style={style?.header}/>
+              { afterHeader }
+            </div>
+          ) : ""
+        }
         <div class={`flex flex-col ${style?.content?.alignment == "Center" ? "items-center" : "items-left"}`}>
           {children}
         </div>
