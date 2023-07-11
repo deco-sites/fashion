@@ -5,11 +5,11 @@ import Social from "$store/components/footer/Social.tsx";
 import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
 import MobileApps from "$store/components/footer/MobileApps.tsx";
 import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
-import PoweredBy from "$store/components/footer/PoweredBy.tsx";
 import RegionSelector from "$store/components/footer/RegionSelector.tsx";
 import ColorClasses from "$store/components/footer/ColorClasses.tsx";
 import Divider from "$store/components/footer/Divider.tsx";
 import BackToTop from "$store/components/footer/BackToTop.tsx";
+import PoweredByDeco from "deco-sites/std/components/PoweredByDeco.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export type Item = {
@@ -235,7 +235,7 @@ function Footer({
             </div>
             <Divider />
             <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredBy />
+              <PoweredByDeco />
               {_links}
             </div>
           </div>
@@ -257,7 +257,7 @@ function Footer({
             </div>
             <Divider />
             <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredBy />
+              <PoweredByDeco />
               {_links}
             </div>
           </div>
@@ -283,7 +283,7 @@ function Footer({
             </div>
             <Divider />
             <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-              <PoweredBy />
+              <PoweredByDeco />
               {_links}
             </div>
           </div>
@@ -312,7 +312,7 @@ function Footer({
             <Divider />
             <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
               {_logo}
-              <PoweredBy />
+              <PoweredByDeco />
             </div>
           </div>
         )}
@@ -331,7 +331,7 @@ function Footer({
             </div>
             <Divider />
             <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 md:items-center">
-              <PoweredBy />
+              <PoweredByDeco />
               <div class="flex flex-col md:flex-row gap-10 md:items-center">
                 {_links}
                 {_region}
