@@ -452,7 +452,7 @@ function Section({
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       {
         selectedFont && !customFont?.fontFamily && (
-          <link href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,700,900`} rel="stylesheet" type="text/css"/>
+          <link href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,600,700`} rel="stylesheet" type="text/css"/>
         )
       }
       {
