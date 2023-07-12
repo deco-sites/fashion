@@ -8689,6 +8689,11 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Content/Testimonials.tsx@Props"
     },
+    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@NewsletterForm": {
       "type": "object",
       "properties": {
@@ -9056,7 +9061,7 @@
           "type": "object",
           "properties": {
             "image": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
               "title": "Image"
             },
             "description": {
