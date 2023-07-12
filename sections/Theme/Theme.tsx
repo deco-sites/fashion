@@ -233,47 +233,47 @@ export interface Font {
    * @title Font family
    */
   fontFamily?:
-    "None" |
-    "Alegreya" |
-    "Alegreya Sans" |
-    "Archivo Narrow" |
-    "BioRhyme" |
-    "Cardo" |
-    "Chivo" |
-    "Cormorant" |
-    "DM Sans" |
-    "Eczar" |
-    "Fira Sans" |
-    "Inconsolata" |
-    "Inknut Antiqua" |
-    "Inter" |
-    "IBM Plex Sans" |
-    "Karla" |
-    "Lato" |
-    "Libre Baskerville" |
-    "Libre Franklin" |
-    "Lora" |
-    "Manrope" |
-    "Merriweather" |
-    "Montserrat" |
-    "Neuton" |
-    "Open Sans" |
-    "Poppins" |
-    "Playfair Display" |
-    "Proza Libre" |
-    "PT Sans" |
-    "PT Serif" |
-    "Raleway" |
-    "Roboto" |
-    "Roboto Slab" |
-    "Rubik" |
-    "Space Grotesk" |
-    "Space Mono" |
-    "Spectral" |
-    "Source Sans Pro" |
-    "Source Serif Pro" |
-    "Syne" |
-    "Work Sans"
+    | "None"
+    | "Alegreya"
+    | "Alegreya Sans"
+    | "Archivo Narrow"
+    | "BioRhyme"
+    | "Cardo"
+    | "Chivo"
+    | "Cormorant"
+    | "DM Sans"
+    | "Eczar"
+    | "Fira Sans"
+    | "Inconsolata"
+    | "Inknut Antiqua"
+    | "Inter"
+    | "IBM Plex Sans"
+    | "Karla"
+    | "Lato"
+    | "Libre Baskerville"
+    | "Libre Franklin"
+    | "Lora"
+    | "Manrope"
+    | "Merriweather"
+    | "Montserrat"
+    | "Neuton"
+    | "Open Sans"
+    | "Poppins"
+    | "Playfair Display"
+    | "Proza Libre"
+    | "PT Sans"
+    | "PT Serif"
+    | "Raleway"
+    | "Roboto"
+    | "Roboto Slab"
+    | "Rubik"
+    | "Space Grotesk"
+    | "Space Mono"
+    | "Spectral"
+    | "Source Sans Pro"
+    | "Source Serif Pro"
+    | "Syne"
+    | "Work Sans";
   /** @title Other */
   other?: string;
 }
@@ -284,7 +284,6 @@ export interface CustomFont {
    * @format css
    */
   styleInnerHtml?: string;
-
 }
 
 export interface Props {
@@ -431,16 +430,16 @@ function Section({
     ...customFont,
   };
 
-  const selectedFont =
-    customFont?.fontFamily ||
+  const selectedFont = customFont?.fontFamily ||
     font?.other ||
-    (font?.fontFamily !== "None" && font?.fontFamily)
-    
+    (font?.fontFamily !== "None" && font?.fontFamily);
 
   const variables = [
     ...toVariables(theme),
     [
-      "--font-family", selectedFont || "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+      "--font-family",
+      selectedFont ||
+      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
     ],
   ]
     .map(([cssVar, value]) => `${cssVar}: ${value}`)
@@ -450,20 +449,20 @@ function Section({
     <Head>
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
-      {
-        selectedFont && !customFont?.fontFamily && (
-          <link href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,600,700`} rel="stylesheet" type="text/css"/>
-        )
-      }
-      {
-        customFont?.fontFamily && customFont?.styleInnerHtml && (
-          <style
-            type="text/css"
-            id={`__DESIGN_SYSTEM_FONT-${id}`}
-            dangerouslySetInnerHTML={{ __html: customFont.styleInnerHtml ?? "" }}
-          />
-        )
-      }
+      {selectedFont && !customFont?.fontFamily && (
+        <link
+          href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,600,700`}
+          rel="stylesheet"
+          type="text/css"
+        />
+      )}
+      {customFont?.fontFamily && customFont?.styleInnerHtml && (
+        <style
+          type="text/css"
+          id={`__DESIGN_SYSTEM_FONT-${id}`}
+          dangerouslySetInnerHTML={{ __html: customFont.styleInnerHtml ?? "" }}
+        />
+      )}
       <style
         type="text/css"
         id={`__DESIGN_SYSTEM_VARS-${id}`}
@@ -476,12 +475,11 @@ function Section({
 }
 
 export function Preview(props: Props) {
-  const selectedFont =
-    props.customFont?.fontFamily ||
+  const selectedFont = props.customFont?.fontFamily ||
     props.font?.other ||
-    (props.font?.fontFamily !== "None" && props.font?.fontFamily)
+    (props.font?.fontFamily !== "None" && props.font?.fontFamily);
 
-    return (
+  return (
     <>
       <Section {...props} />
       <div class="grid grid-flow-row md:grid-flow-col">
@@ -657,13 +655,11 @@ export function Preview(props: Props) {
         </div>
         {" "}
       </div>
-      {
-        selectedFont && (
-          <div class="text-center py-2">
-            Font: {selectedFont}
-          </div>
-        )
-      }
+      {selectedFont && (
+        <div class="text-center py-2">
+          Font: {selectedFont}
+        </div>
+      )}
     </>
   );
 }
