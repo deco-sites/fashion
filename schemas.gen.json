@@ -10347,9 +10347,6 @@
       },
       "title": "Banner[]"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
-      "title": "HeaderLayout"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Border": {
       "type": "object",
       "properties": {
@@ -10451,13 +10448,9 @@
       "required": [],
       "title": "Border"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Layout": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ItemsLayout": {
       "type": "object",
       "properties": {
-        "header": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout",
-          "title": "Header"
-        },
         "autosizeMobile": {
           "anyOf": [
             {
@@ -10496,10 +10489,8 @@
           "title": "Border Radius"
         }
       },
-      "required": [
-        "borderRadius"
-      ],
-      "title": "Layout"
+      "required": [],
+      "title": "ItemsLayout"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Props": {
       "type": "object",
@@ -10614,8 +10605,16 @@
           "title": "Images Sizes"
         },
         "layout": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@Layout",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@Layout",
           "title": "Layout"
+        },
+        "itemsLayout": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ltYWdlcy9JbWFnZUdhbGxlcnkudHN4@ItemsLayout",
+          "title": "Items Layout"
+        },
+        "style": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQ29udGFpbmVyLnRzeA==@Style",
+          "title": "Style"
         }
       },
       "required": [],
@@ -11406,6 +11405,9 @@
         "page"
       ],
       "title": "deco-sites/fashion/components/product/ProductDetails.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2VjdGlvbkhlYWRlci50c3g=@HeaderLayout": {
+      "title": "HeaderLayout"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout": {
       "type": "object",
