@@ -7,6 +7,4 @@ import site from "./site.json" assert { type: "json" };
 tailwind();
 
 // Generate manifest and boot server
-await dev(import.meta.url, "./main.ts", {
-  imports: site.imports,
-});
+await dev(import.meta.url, "./main.ts", site);
