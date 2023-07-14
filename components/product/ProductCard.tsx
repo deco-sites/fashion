@@ -7,6 +7,7 @@ import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { SendEventOnClick } from "$store/sdk/analytics.tsx";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import { ButtonType, getButtonClasses } from "$store/components/ui/Types.tsx"
 
 export interface Layout {
   basics?: {
@@ -34,6 +35,7 @@ export interface Layout {
     showCardShadow?: boolean;
     showCta?: boolean;
   };
+  btnStyle: ButtonType;
 }
 
 interface Props {
@@ -54,7 +56,7 @@ const relative = (url: string) => {
 const WIDTH = 200;
 const HEIGHT = 279;
 
-function ProductCard({ product, preload, itemListName, layout }: Props) {
+function ProductCard({ product, preload, itemListName, layout, btnStyle = {} }: Props) {
   const {
     url,
     productID,
@@ -89,7 +91,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
     <a
       href={url && relative(url)}
       aria-label="view product"
-      class="btn btn-block"
+      class={`${getButtonClasses(btnStyle)} btn-block`}
     >
       {l?.basics?.ctaText || "Ver produto"}
     </a>

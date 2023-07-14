@@ -10,12 +10,13 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import { useOffer } from "$store/sdk/useOffer.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
-import Header, { Content as HeaderContent, Layout as HeaderLayout } from "$store/components/ui/SectionHeader.tsx";
+import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
 
 export interface Props {
   products: LoaderReturnType<Product[] | null>;
   header?: HeaderContent;
-  layout?: HeaderLayout;
+  layout?: Layout;
+  style?: Style;
   cardLayout?: cardLayout;
 }
 
@@ -23,6 +24,7 @@ function ProductShelf({
   products,
   header,
   layout,
+  style,
   cardLayout,
 }: Props) {
   const id = useId();
@@ -32,8 +34,7 @@ function ProductShelf({
   }
 
   return (
-    <div class="w-full container  py-8 flex flex-col gap-12 lg:gap-16 lg:py-10">
-      <Header content={header} layout={layout} />
+    <Container header={header} layout={layout} style={style}>
       <div
         id={id}
         class="container grid grid-cols-[48px_1fr_48px] px-0 sm:px-5"
@@ -48,6 +49,7 @@ function ProductShelf({
                 product={product}
                 itemListName={header?.title}
                 layout={cardLayout}
+                btnStyle={style?.button}
               />
             </Slider.Item>
           ))}
@@ -81,7 +83,7 @@ function ProductShelf({
           }}
         />
       </div>
-    </div>
+    </Container>
   );
 }
 
