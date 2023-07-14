@@ -131,6 +131,7 @@
               "$live/matchers/MatchDevice.ts",
               "$live/matchers/MatchEnvironment.ts",
               "$live/matchers/MatchHost.ts",
+              "$live/matchers/MatchLocation.ts",
               "$live/matchers/MatchMulti.ts",
               "$live/matchers/MatchRandom.ts",
               "$live/matchers/MatchSite.ts",
@@ -8684,11 +8685,6 @@
       "required": [],
       "title": "deco-sites/fashion/sections/Content/Testimonials.tsx@Props"
     },
-    "L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
-    },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@NewsletterForm": {
       "type": "object",
       "properties": {
@@ -9056,7 +9052,7 @@
           "type": "object",
           "properties": {
             "image": {
-              "$ref": "#/definitions/L1VzZXJzL2dpbWVuZXMvRG9jdW1lbnRzL2NvZGUvc3RkL2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
               "title": "Image"
             },
             "description": {
@@ -12175,6 +12171,56 @@
       },
       "required": [],
       "title": "{{{includes}}} {{{match}}}"
+    },
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTG9jYXRpb24udHM=@Location": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "City"
+        },
+        "regionCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Region Code"
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Country"
+        }
+      },
+      "required": [],
+      "title": "{{{city}}} {{{regionCode}}} {{{country}}}"
+    },
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTG9jYXRpb24udHM=@Location[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTG9jYXRpb24udHM=@Location"
+      },
+      "title": "Location[]"
+    },
+    "ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTG9jYXRpb24udHM=@Props": {
+      "type": "object",
+      "properties": {
+        "includeLocations": {
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTG9jYXRpb24udHM=@Location[]",
+          "title": "Include Locations"
+        },
+        "excludeLocations": {
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTG9jYXRpb24udHM=@Location[]",
+          "title": "Exclude Locations"
+        }
+      },
+      "required": [],
+      "title": "deco-cx/deco/matchers/MatchLocation.ts@Props"
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]": {
       "type": "array",
@@ -15352,6 +15398,27 @@
         }
       }
     },
+    "JGxpdmUvbWF0Y2hlcnMvTWF0Y2hMb2NhdGlvbi50cw==": {
+      "title": "Location Matcher",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL21hdGNoZXJzL01hdGNoTG9jYXRpb24udHM=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/matchers/MatchLocation.ts"
+          ],
+          "default": "$live/matchers/MatchLocation.ts"
+        }
+      }
+    },
     "JGxpdmUvbWF0Y2hlcnMvTWF0Y2hNdWx0aS50cw==": {
       "title": "OR & AND Matcher",
       "type": "object",
@@ -16366,6 +16433,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvbWF0Y2hlcnMvTWF0Y2hIb3N0LnRz"
+        },
+        {
+          "$ref": "#/definitions/JGxpdmUvbWF0Y2hlcnMvTWF0Y2hMb2NhdGlvbi50cw=="
         },
         {
           "$ref": "#/definitions/JGxpdmUvbWF0Y2hlcnMvTWF0Y2hNdWx0aS50cw=="

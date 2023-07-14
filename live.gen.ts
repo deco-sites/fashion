@@ -74,6 +74,7 @@ import * as i2$$$$$$$$2 from "$live/matchers/MatchDate.ts";
 import * as i2$$$$$$$$3 from "$live/matchers/MatchDevice.ts";
 import * as i2$$$$$$$$4 from "$live/matchers/MatchEnvironment.ts";
 import * as i2$$$$$$$$5 from "$live/matchers/MatchHost.ts";
+import * as i1$$$$$6 from "$live/matchers/MatchLocation.ts";
 import * as i2$$$$$$$$6 from "$live/matchers/MatchMulti.ts";
 import * as i2$$$$$$$$7 from "$live/matchers/MatchRandom.ts";
 import * as i2$$$$$$$$8 from "$live/matchers/MatchSite.ts";
@@ -282,6 +283,7 @@ const manifest = {
     "$live/matchers/MatchDevice.ts": i2$$$$$$$$3,
     "$live/matchers/MatchEnvironment.ts": i2$$$$$$$$4,
     "$live/matchers/MatchHost.ts": i2$$$$$$$$5,
+    "$live/matchers/MatchLocation.ts": i1$$$$$6,
     "$live/matchers/MatchMulti.ts": i2$$$$$$$$6,
     "$live/matchers/MatchRandom.ts": i2$$$$$$$$7,
     "$live/matchers/MatchSite.ts": i2$$$$$$$$8,
