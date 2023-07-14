@@ -49,7 +49,7 @@ function ProductShelf({
                 product={product}
                 itemListName={header?.title}
                 layout={cardLayout}
-                btnStyle={style?.button}
+                btnStyle={style?.button || {}}
               />
             </Slider.Item>
           ))}

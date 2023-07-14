@@ -35,7 +35,6 @@ export interface Layout {
     showCardShadow?: boolean;
     showCta?: boolean;
   };
-  btnStyle: ButtonType;
 }
 
 interface Props {
@@ -46,6 +45,7 @@ interface Props {
   /** @description used for analytics event */
   itemListName?: string;
   layout?: Layout;
+  btnStyle: ButtonType;
 }
 
 const relative = (url: string) => {
