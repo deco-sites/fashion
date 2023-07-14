@@ -8164,11 +8164,6 @@
                   },
                   {
                     "type": "string",
-                    "const": "Logo",
-                    "default": "Logo"
-                  },
-                  {
-                    "type": "string",
                     "const": "Minus",
                     "default": "Minus"
                   },
@@ -9333,6 +9328,24 @@
         "suggestions": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
           "title": "Enable Top Search terms"
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "alt": {
+              "type": "string",
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "title": "Logo"
         }
       },
       "required": [
@@ -10186,11 +10199,6 @@
               "type": "string",
               "const": "Linkedin",
               "default": "Linkedin"
-            },
-            {
-              "type": "string",
-              "const": "Logo",
-              "default": "Logo"
             },
             {
               "type": "string",
