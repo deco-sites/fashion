@@ -11604,15 +11604,9 @@
           },
           "required": [],
           "title": "On Mouse Over"
-        },
-        "btnStyle": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvVHlwZXMudHN4@ButtonType",
-          "title": "Btn Style"
         }
       },
-      "required": [
-        "btnStyle"
-      ],
+      "required": [],
       "title": "Layout"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props": {
@@ -11637,6 +11631,46 @@
         "cardLayout": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0Q2FyZC50c3g=@Layout",
           "title": "Card Layout"
+        },
+        "sliderStyle": {
+          "type": "object",
+          "properties": {
+            "controlsColor": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "Default",
+                  "default": "Default"
+                },
+                {
+                  "type": "string",
+                  "const": "Primary",
+                  "default": "Primary"
+                },
+                {
+                  "type": "string",
+                  "const": "Secondary",
+                  "default": "Secondary"
+                },
+                {
+                  "type": "string",
+                  "const": "Tertiary",
+                  "default": "Tertiary"
+                }
+              ],
+              "type": "string",
+              "title": "Controls Color"
+            },
+            "controlsOutline": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Controls Outline"
+            }
+          },
+          "required": [],
+          "title": "Slider Style"
         }
       },
       "required": [

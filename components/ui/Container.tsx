@@ -77,7 +77,7 @@ export default function Container({children, ...props}: Props) {
         class={`
           flex flex-col flex-wrap gap-6 lg:gap-12
           ${afterHeader ? "lg:grid lg:grid-cols-2" : ""}
-          ${hasPadding ? "p-4 lg:p-10" : "px-4 py-8 lg:p-16"}
+          ${hasPadding ? "p-4 lg:p-10" : "px-4 py-8 lg:py-16"}
           ${layoutClasses[layout?.contentWidth || "Container"]}
           ${contentBgColorClasses}
           ${style?.content?.bgImage ? "bg-cover bg-center" : ""}
@@ -94,7 +94,7 @@ export default function Container({children, ...props}: Props) {
             </div>
           ) : ""
         }
-        <div class={`flex flex-col ${style?.content?.alignment == "Center" ? "items-center" : "items-left"}`}>
+        <div class={`flex flex-col w-full ${style?.content?.alignment == "Center" ? "items-center" : "items-left"}`}>
           {children}
         </div>
       </div>

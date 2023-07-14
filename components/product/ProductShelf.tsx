@@ -11,6 +11,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import Container, { HeaderContent, Layout, ExtendedStyle as Style } from "$store/components/ui/Container.tsx"
+import { ButtonColor, buttonClasses } from "$store/components/ui/Types.tsx"
 
 export interface Props {
   products: LoaderReturnType<Product[] | null>;
@@ -18,6 +19,10 @@ export interface Props {
   layout?: Layout;
   style?: Style;
   cardLayout?: cardLayout;
+  sliderStyle?: {
+    controlsColor?: ButtonColor;
+    controlsOutline?: boolean;
+  }
 }
 
 function ProductShelf({
@@ -26,6 +31,7 @@ function ProductShelf({
   layout,
   style,
   cardLayout,
+  sliderStyle,
 }: Props) {
   const id = useId();
 
@@ -33,13 +39,12 @@ function ProductShelf({
     return null;
   }
 
+  const controlsClasses = `${buttonClasses[sliderStyle?.controlsColor || "Default"]} ${sliderStyle?.controlsOutline ? "btn-outline" : ""}`
+
   return (
     <Container header={header} layout={layout} style={style}>
-      <div
-        id={id}
-        class="container grid grid-cols-[48px_1fr_48px] px-0 sm:px-5"
-      >
-        <Slider class="carousel carousel-center sm:carousel-end gap-6 col-span-full row-start-2 row-end-5">
+      <div id={id} class="relative grid grid-flow-col">
+        <Slider class="w-full carousel carousel-center sm:carousel-end gap-6 col-span-full">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
@@ -56,14 +61,14 @@ function ProductShelf({
         </Slider>
 
         <>
-          <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-            <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+          <div class="z-10 absolute -left-3 lg:-left-8 top-1/3">
+            <Slider.PrevButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+              <Icon size={24} id="ChevronLeft" />
             </Slider.PrevButton>
           </div>
-          <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-            <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
+          <div class="z-10 absolute -right-3 lg:-right-8 top-1/3">
+            <Slider.NextButton class={`${controlsClasses} btn btn-circle btn-sm lg:btn-md`}>
+              <Icon size={24} id="ChevronRight" />
             </Slider.NextButton>
           </div>
         </>
