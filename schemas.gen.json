@@ -45,6 +45,8 @@
               "deco-sites/std/accounts/vnda.ts",
               "deco-sites/std/accounts/vtex.ts",
               "deco-sites/std/accounts/yourViews.ts",
+              "$live/loaders/file.ts",
+              "$live/loaders/manifest.ts",
               "$live/loaders/state.ts",
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
@@ -3632,6 +3634,864 @@
         "appId"
       ],
       "title": "deco-sites/std/commerce/yourViews/client.ts@ConfigYourViews"
+    },
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvbWFuaWZlc3QudHM=@File": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string",
+              "title": "Content"
+            },
+            "path": {
+              "type": "string",
+              "title": "Path"
+            }
+          },
+          "required": [
+            "content",
+            "path"
+          ],
+          "title": "deco-cx/deco/loaders/manifest.ts@File"
+        },
+        {
+          "title": "$live/loaders/file.ts",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvZmlsZS50cw==@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "$live/loaders/file.ts"
+              ],
+              "default": "$live/loaders/file.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvZmlsZS50cw==@Props": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "title": "Content"
+        },
+        "path": {
+          "type": "string",
+          "title": "Path"
+        }
+      },
+      "required": [
+        "content",
+        "path"
+      ],
+      "title": "deco-cx/deco/loaders/file.ts@Props"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialPageProps": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "title": "Url"
+        },
+        "route": {
+          "type": "string",
+          "title": "Route"
+        },
+        "params": {
+          "title": "Params",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "Data"
+        }
+      },
+      "required": [],
+      "title": "partialPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "children": {
+                  "title": "Children"
+                }
+              },
+              "required": []
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Default Props"
+        }
+      },
+      "required": [],
+      "title": "FunctionComponent"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Consumer": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent"
+        }
+      ],
+      "properties": {},
+      "required": [],
+      "title": "Consumer"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Provider": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent"
+        }
+      ],
+      "properties": {},
+      "required": [],
+      "title": "Provider"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Context": {
+      "type": "object",
+      "properties": {
+        "Consumer": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Consumer",
+          "title": " Consumer"
+        },
+        "Provider": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Provider",
+          "title": " Provider"
+        },
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        }
+      },
+      "required": [
+        "Consumer",
+        "Provider"
+      ],
+      "title": "Context"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+PageProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialPageProps",
+          "title": "Default Props"
+        },
+        "contextType": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Context",
+          "title": "Context Type"
+        }
+      },
+      "required": [],
+      "title": "ComponentClass+PageProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialPageProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialPageProps"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "null|partialPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+PageProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialPageProps",
+          "title": "Default Props"
+        }
+      },
+      "required": [],
+      "title": "FunctionComponent+PageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+PageProps|FunctionComponent+PageProps+PageProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+PageProps"
+        },
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+PageProps"
+        }
+      ],
+      "title": "ComponentClass+PageProps|FunctionComponent+PageProps+PageProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@Handler": {
+      "title": "Handler"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@Handlers": {
+      "title": "Handlers"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@Handler|Handlers": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@Handler"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@Handlers"
+        }
+      ],
+      "title": "Handler|Handlers"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@RouteConfig": {
+      "type": "object",
+      "properties": {
+        "routeOverride": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Route Override"
+        },
+        "csp": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Csp"
+        }
+      },
+      "required": [],
+      "title": "RouteConfig"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@RouteModule": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+PageProps|FunctionComponent+PageProps+PageProps",
+          "title": "Default"
+        },
+        "handler": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@Handler|Handlers",
+          "title": "Handler"
+        },
+        "config": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@RouteConfig",
+          "title": "Config"
+        }
+      },
+      "required": [],
+      "title": "RouteModule"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareHandler": {
+      "title": "MiddlewareHandler"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareHandler[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareHandler"
+      },
+      "title": "MiddlewareHandler[]"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareHandler|MiddlewareHandler[]": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareHandler"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareHandler[]"
+        }
+      ],
+      "title": "MiddlewareHandler|MiddlewareHandler[]"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareModule": {
+      "type": "object",
+      "properties": {
+        "handler": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareHandler|MiddlewareHandler[]",
+          "title": "Handler"
+        }
+      },
+      "required": [
+        "handler"
+      ],
+      "title": "MiddlewareModule"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@PageProps": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "title": "Url"
+        },
+        "route": {
+          "type": "string",
+          "title": "Route"
+        },
+        "params": {
+          "title": "Params",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "data": {
+          "type": "object",
+          "title": "Data"
+        }
+      },
+      "required": [
+        "url",
+        "route",
+        "params",
+        "data"
+      ],
+      "title": "PageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "title": "Default Props"
+        },
+        "contextType": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Context",
+          "title": "Context Type"
+        }
+      },
+      "required": [],
+      "title": "ComponentClass"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass|FunctionComponent": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass"
+        },
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent"
+        }
+      ],
+      "title": "ComponentClass|FunctionComponent"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialAppProps": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@PageProps"
+        }
+      ],
+      "properties": {
+        "Component": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass|FunctionComponent",
+          "title": " Component"
+        }
+      },
+      "required": [],
+      "title": "partialAppProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+AppProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialAppProps",
+          "title": "Default Props"
+        },
+        "contextType": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Context",
+          "title": "Context Type"
+        }
+      },
+      "required": [],
+      "title": "ComponentClass+AppProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialAppProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialAppProps"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "null|partialAppProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+AppProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialAppProps",
+          "title": "Default Props"
+        }
+      },
+      "required": [],
+      "title": "FunctionComponent+AppProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+AppProps|FunctionComponent+AppProps+AppProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+AppProps"
+        },
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+AppProps"
+        }
+      ],
+      "title": "ComponentClass+AppProps|FunctionComponent+AppProps+AppProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@AppModule": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+AppProps|FunctionComponent+AppProps+AppProps",
+          "title": "Default"
+        }
+      },
+      "required": [
+        "default"
+      ],
+      "title": "AppModule"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialErrorPageProps": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "title": "Url"
+        },
+        "pattern": {
+          "type": "string",
+          "title": "Pattern"
+        },
+        "error": {
+          "title": "Error"
+        }
+      },
+      "required": [],
+      "title": "partialErrorPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+ErrorPageProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialErrorPageProps",
+          "title": "Default Props"
+        },
+        "contextType": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Context",
+          "title": "Context Type"
+        }
+      },
+      "required": [],
+      "title": "ComponentClass+ErrorPageProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialErrorPageProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialErrorPageProps"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "null|partialErrorPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+ErrorPageProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialErrorPageProps",
+          "title": "Default Props"
+        }
+      },
+      "required": [],
+      "title": "FunctionComponent+ErrorPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+ErrorPageProps|FunctionComponent+ErrorPageProps+ErrorPageProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+ErrorPageProps"
+        },
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+ErrorPageProps"
+        }
+      ],
+      "title": "ComponentClass+ErrorPageProps|FunctionComponent+ErrorPageProps+ErrorPageProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@ErrorHandler": {
+      "title": "ErrorHandler"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@ErrorPageModule": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+ErrorPageProps|FunctionComponent+ErrorPageProps+ErrorPageProps",
+          "title": "Default"
+        },
+        "handler": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@ErrorHandler",
+          "title": "Handler"
+        },
+        "config": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@RouteConfig",
+          "title": "Config"
+        }
+      },
+      "required": [],
+      "title": "ErrorPageModule"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialUnknownPageProps": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "title": "Url"
+        },
+        "route": {
+          "type": "string",
+          "title": "Route"
+        }
+      },
+      "required": [],
+      "title": "partialUnknownPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+UnknownPageProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialUnknownPageProps",
+          "title": "Default Props"
+        },
+        "contextType": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@Context",
+          "title": "Context Type"
+        }
+      },
+      "required": [],
+      "title": "ComponentClass+UnknownPageProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialUnknownPageProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@partialUnknownPageProps"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "null|partialUnknownPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+UnknownPageProps": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Display Name"
+        },
+        "defaultProps": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@null|partialUnknownPageProps",
+          "title": "Default Props"
+        }
+      },
+      "required": [],
+      "title": "FunctionComponent+UnknownPageProps"
+    },
+    "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+UnknownPageProps|FunctionComponent+UnknownPageProps+UnknownPageProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+UnknownPageProps"
+        },
+        {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent+UnknownPageProps"
+        }
+      ],
+      "title": "ComponentClass+UnknownPageProps|FunctionComponent+UnknownPageProps+UnknownPageProps"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@UnknownHandler": {
+      "title": "UnknownHandler"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@UnknownPageModule": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass+UnknownPageProps|FunctionComponent+UnknownPageProps+UnknownPageProps",
+          "title": "Default"
+        },
+        "handler": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@UnknownHandler",
+          "title": "Handler"
+        },
+        "config": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@RouteConfig",
+          "title": "Config"
+        }
+      },
+      "required": [],
+      "title": "UnknownPageModule"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@AppModule|ErrorPageModule|MiddlewareModule|RouteModule|UnknownPageModule": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@RouteModule"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@MiddlewareModule"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@AppModule"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@ErrorPageModule"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@UnknownPageModule"
+        }
+      ],
+      "title": "AppModule|ErrorPageModule|MiddlewareModule|RouteModule|UnknownPageModule"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@AppModule|ErrorPageModule|MiddlewareModule|RouteModule|UnknownPageModule@record": {
+      "title": "Unknown record",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@AppModule|ErrorPageModule|MiddlewareModule|RouteModule|UnknownPageModule"
+      }
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@IslandModule": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "$ref": "#/definitions/djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@ComponentClass|FunctionComponent",
+          "title": "Default"
+        }
+      },
+      "required": [
+        "default"
+      ],
+      "title": "IslandModule"
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@IslandModule@record": {
+      "title": "Unknown record",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@IslandModule"
+      }
+    },
+    "ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL21vZC50cw==@Manifest": {
+      "type": "object",
+      "properties": {
+        "routes": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@AppModule|ErrorPageModule|MiddlewareModule|RouteModule|UnknownPageModule@record",
+          "title": "Routes"
+        },
+        "islands": {
+          "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL3R5cGVzLnRz@IslandModule@record",
+          "title": "Islands"
+        },
+        "baseUrl": {
+          "type": "string",
+          "title": "Base Url"
+        }
+      },
+      "required": [
+        "routes",
+        "islands",
+        "baseUrl"
+      ],
+      "title": "Manifest"
+    },
+    "ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf": {
+      "title": "ModuleOf"
+    },
+    "ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record": {
+      "title": "Unknown record",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf"
+      }
+    },
+    "ZGVjby1jeC9kZWNvL3R5cGVzLnRz@DecoManifest": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1jeC9mcmVzaC9zcmMvc2VydmVyL21vZC50cw==@Manifest"
+            }
+          ],
+          "properties": {
+            "islands": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Islands"
+            },
+            "workflows": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Workflows"
+            },
+            "actions": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Actions"
+            },
+            "sections": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Sections"
+            },
+            "functions": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Functions"
+            },
+            "loaders": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Loaders"
+            },
+            "pages": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Pages"
+            },
+            "matchers": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Matchers"
+            },
+            "handlers": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Handlers"
+            },
+            "flags": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Flags"
+            },
+            "accounts": {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2VuZ2luZS9ibG9jay50cw==@ModuleOf@record",
+              "title": "Accounts"
+            }
+          },
+          "required": [
+            "islands"
+          ],
+          "title": "deco-cx/deco/types.ts@DecoManifest"
+        },
+        {
+          "title": "$live/loaders/manifest.ts",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvbWFuaWZlc3QudHM=@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "$live/loaders/manifest.ts"
+              ],
+              "default": "$live/loaders/manifest.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvbWFuaWZlc3QudHM=@File[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvbWFuaWZlc3QudHM=@File"
+      },
+      "title": "File[]"
+    },
+    "ZGVjby1jeC9kZWNvL2xvYWRlcnMvbWFuaWZlc3QudHM=@Props": {
+      "type": "object",
+      "properties": {
+        "files": {
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvbWFuaWZlc3QudHM=@File[]",
+          "title": "Files"
+        }
+      },
+      "required": [
+        "files"
+      ],
+      "title": "deco-cx/deco/loaders/manifest.ts@Props"
     },
     "ZGVjby1jeC9kZWNvL3JvdXRlcy9fbWlkZGxld2FyZS50cw==@MiddlewareConfig": {
       "anyOf": [
@@ -13649,6 +14509,48 @@
         }
       }
     },
+    "JGxpdmUvbG9hZGVycy9maWxlLnRz": {
+      "title": "$live/loaders/file.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvZmlsZS50cw==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/loaders/file.ts"
+          ],
+          "default": "$live/loaders/file.ts"
+        }
+      }
+    },
+    "JGxpdmUvbG9hZGVycy9tYW5pZmVzdC50cw==": {
+      "title": "$live/loaders/manifest.ts",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2xvYWRlcnMvbWFuaWZlc3QudHM=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "$live/loaders/manifest.ts"
+          ],
+          "default": "$live/loaders/manifest.ts"
+        }
+      }
+    },
     "JGxpdmUvbG9hZGVycy9zdGF0ZS50cw==": {
       "title": "Shared application State Loader.",
       "description": "Set the application state using resolvables.",
@@ -16131,6 +17033,12 @@
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/JGxpdmUvbG9hZGVycy9maWxlLnRz"
+        },
+        {
+          "$ref": "#/definitions/JGxpdmUvbG9hZGVycy9tYW5pZmVzdC50cw=="
         },
         {
           "$ref": "#/definitions/JGxpdmUvbG9hZGVycy9zdGF0ZS50cw=="

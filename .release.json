@@ -1,0 +1,52 @@
+{
+  "MySection.tsx": {
+    "path": "deco-sites/fashion/sections/MySection.tsx",
+    "content": "export default function MySection({phrase}: {phrase:string}) { return <div><h2>{phrase}</h2></div>; }",
+    "__resolveType": "$live/loaders/file.ts"
+  },
+  "manifest": {
+    "files": [{ "__resolveType": "MySection.tsx" }],
+    "__resolveType": "$live/loaders/manifest.ts"
+  },
+  "audience-everyone": {
+    "overrides": [],
+    "routes": [
+      {
+        "pathTemplate": "/test",
+        "handler": {
+          "value": {
+            "page": {
+              "sections": [
+                {
+                  "phrase": "hello world",
+                  "__resolveType": "deco-sites/fashion/sections/MySection.tsx"
+                }
+              ],
+              "__resolveType": "$live/pages/LivePage.tsx"
+            },
+            "__resolveType": "$live/handlers/fresh.ts"
+          }
+        }
+      },
+      {
+        "pathTemplate": "/*",
+        "handler": {
+          "value": {
+            "to": "https://www.google.com",
+            "type": "temporary",
+            "__resolveType": "$live/handlers/redirect.ts"
+          }
+        }
+      }
+    ],
+    "__resolveType": "$live/flags/everyone.ts"
+  },
+  "./routes/[...catchall].tsx": {
+    "audiences": [
+      {
+        "__resolveType": "audience-everyone"
+      }
+    ],
+    "__resolveType": "$live/handlers/routesSelection.ts"
+  }
+}
