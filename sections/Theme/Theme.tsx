@@ -447,11 +447,12 @@ function Section({
 
   return (
     <Head>
+      {font && <link rel="preconnect" src="https://fonts.gstatic.com" />}
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       {selectedFont && !customFont?.fontFamily && (
         <link
-          href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,600,700`}
+          href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,600,700&display=swap`}
           rel="stylesheet"
           type="text/css"
         />
