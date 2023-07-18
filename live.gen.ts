@@ -113,12 +113,13 @@ import * as i2$23 from "deco-sites/std/functions/vtexProductList.ts";
 import * as i2$24 from "deco-sites/std/functions/vtexProductListingPage.ts";
 import * as i2$25 from "deco-sites/std/functions/vtexSuggestions.ts";
 import * as i2$26 from "deco-sites/std/functions/vtexWishlist.ts";
-import * as i2$$0 from "deco-sites/std/accounts/nuvemShop.ts";
-import * as i2$$1 from "deco-sites/std/accounts/occ.ts";
-import * as i2$$2 from "deco-sites/std/accounts/shopify.ts";
-import * as i2$$3 from "deco-sites/std/accounts/vnda.ts";
-import * as i2$$4 from "deco-sites/std/accounts/vtex.ts";
-import * as i2$$5 from "deco-sites/std/accounts/yourViews.ts";
+import * as i2$$0 from "deco-sites/std/accounts/butterCMS.ts";
+import * as i2$$1 from "deco-sites/std/accounts/nuvemShop.ts";
+import * as i2$$2 from "deco-sites/std/accounts/occ.ts";
+import * as i2$$3 from "deco-sites/std/accounts/shopify.ts";
+import * as i2$$4 from "deco-sites/std/accounts/vnda.ts";
+import * as i2$$5 from "deco-sites/std/accounts/vtex.ts";
+import * as i2$$6 from "deco-sites/std/accounts/yourViews.ts";
 import * as i2$$$3 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts";
 import * as i2$$$4 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts";
 import * as i2$$$5 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts";
@@ -347,12 +348,13 @@ const manifest = {
     "deco-sites/std/functions/vtexWishlist.ts": i2$26,
   },
   "accounts": {
-    "deco-sites/std/accounts/nuvemShop.ts": i2$$0,
-    "deco-sites/std/accounts/occ.ts": i2$$1,
-    "deco-sites/std/accounts/shopify.ts": i2$$2,
-    "deco-sites/std/accounts/vnda.ts": i2$$3,
-    "deco-sites/std/accounts/vtex.ts": i2$$4,
-    "deco-sites/std/accounts/yourViews.ts": i2$$5,
+    "deco-sites/std/accounts/butterCMS.ts": i2$$0,
+    "deco-sites/std/accounts/nuvemShop.ts": i2$$1,
+    "deco-sites/std/accounts/occ.ts": i2$$2,
+    "deco-sites/std/accounts/shopify.ts": i2$$3,
+    "deco-sites/std/accounts/vnda.ts": i2$$4,
+    "deco-sites/std/accounts/vtex.ts": i2$$5,
+    "deco-sites/std/accounts/yourViews.ts": i2$$6,
   },
   "baseUrl": import.meta.url,
 };
