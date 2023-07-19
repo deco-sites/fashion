@@ -13,7 +13,6 @@ import { formatPrice } from "$store/sdk/format.ts";
 import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-import type { LoaderReturnType } from "$live/types.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
@@ -22,7 +21,7 @@ import WishlistButton from "../wishlist/WishlistButton.tsx";
 export type Variant = "front-back" | "slider" | "auto";
 
 export interface Props {
-  page: LoaderReturnType<ProductDetailsPage | null>;
+  page: ProductDetailsPage | null;
   /**
    * @title Product view
    * @description Ask for the developer to remove this option since this is here to help development only and should not be used in production

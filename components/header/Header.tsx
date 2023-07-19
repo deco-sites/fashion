@@ -1,7 +1,6 @@
 import Modals from "$store/islands/HeaderModals.tsx";
 import type { Image } from "deco-sites/std/components/types.ts";
 import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 
 import Alert from "./Alert.tsx";
@@ -39,12 +38,12 @@ export interface Props {
    * @title Product suggestions
    * @description Product suggestions displayed on search
    */
-  products?: LoaderReturnType<Product[] | null>;
+  products?: Product[] | null;
 
   /**
    * @title Enable Top Search terms
    */
-  suggestions?: LoaderReturnType<Suggestion | null>;
+  suggestions?: Suggestion | null;
 
   /** @title Logo */
   logo?: { src: Image; alt: string };

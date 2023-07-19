@@ -6,7 +6,6 @@ import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/product
 import { useOffer } from "$store/sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import { Layout as cardLayout } from "$store/components/product/ProductCard.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
 export interface Layout {
@@ -21,7 +20,7 @@ export interface Layout {
 }
 
 export interface Props {
-  page: LoaderReturnType<ProductListingPage | null>;
+  page: ProductListingPage | null;
   layout?: Layout;
   cardLayout?: cardLayout;
 }
