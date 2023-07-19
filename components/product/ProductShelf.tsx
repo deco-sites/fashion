@@ -9,11 +9,10 @@ import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { useId } from "preact/hooks";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
-import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 export interface Props {
-  products: LoaderReturnType<Product[] | null>;
+  products: Product[] | null;
   title?: string;
   description?: string;
   layout?: {
