@@ -7,11 +7,19 @@ import type { JSX } from "preact";
 
 import Icon from "./Icon.tsx";
 
+async function setupPolyfill() {
+  const dialogPolyfill = await import(
+    "https://raw.githubusercontent.com/GoogleChrome/dialog-polyfill/master/dist/dialog-polyfill.esm.js"
+  ).then((m) => m.default);
+  const dialogs = document.getElementsByTagName("dialog");
+  for (const d of dialogs) {
+    dialogPolyfill.registerDialog(d);
+  }
+}
+
 // Lazy load a <dialog> polyfill.
 if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
-  await import(
-    "https://raw.githubusercontent.com/GoogleChrome/dialog-polyfill/5033aac1b74c44f36cde47be3d11f4756f3f8fda/dist/dialog-polyfill.esm.js"
-  );
+  setupPolyfill();
 }
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
@@ -53,15 +61,17 @@ const Modal = ({
 
   useEffect(() => {
     if (open === false) {
-      document.getElementsByTagName("body").item(0)?.classList.remove(
+      const item = document.getElementsByTagName("body").item(0);
+      item && item.classList.remove(
         "no-scroll",
       );
-      ref.current?.open === true && ref.current.close();
+      ref.current && ref.current.open === true && ref.current.close();
     } else if (open === true) {
-      document.getElementsByTagName("body").item(0)?.classList.add(
+      const item = document.getElementsByTagName("body").item(0);
+      item && item.classList.add(
         "no-scroll",
       );
-      ref.current?.open === false && ref.current.showModal();
+      ref.current && ref.current.open === false && ref.current.showModal();
       lazy.value = true;
     }
   }, [open]);
@@ -74,7 +84,8 @@ const Modal = ({
         dialogStyles[mode]
       } ${props.class ?? ""}`}
       onClick={(e) =>
-        (e.target as HTMLDialogElement).tagName === "SECTION" && onClose?.()}
+        (e.target as HTMLDialogElement).tagName === "SECTION" && onClose &&
+        onClose()}
       onClose={onClose}
     >
       <section

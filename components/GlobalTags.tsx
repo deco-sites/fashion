@@ -9,6 +9,11 @@ function GlobalTags() {
       {/* Tailwind v3 CSS file */}
       <link href={asset("/styles.css")} rel="stylesheet" />
 
+      <link
+        href={asset("/dialog-polyfill.css")}
+        rel="stylesheet"
+      />
+
       {/* Web Manifest */}
       <link rel="manifest" href={asset("/site.webmanifest")} />
     </Head>
