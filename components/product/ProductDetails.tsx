@@ -258,7 +258,8 @@ function Details({
                   index={index}
                   class="carousel-item w-full"
                 >
-                  <Image
+                  {
+                    /* <Image
                     class="w-full"
                     sizes="(max-width: 640px) 100vw, 40vw"
                     style={{ aspectRatio: ASPECT_RATIO }}
@@ -269,6 +270,14 @@ function Details({
                     // Preload LCP image for better web vitals
                     preload={index === 0}
                     loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority="high"
+                  /> */
+                  }
+                  <img
+                    class="w-full"
+                    style={{ aspectRatio: ASPECT_RATIO }}
+                    src={img.url!}
+                    alt={img.alternateName}
                   />
                 </Slider.Item>
               ))}
