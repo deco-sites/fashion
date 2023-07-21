@@ -61,17 +61,15 @@ const Modal = ({
 
   useEffect(() => {
     if (open === false) {
-      const item = document.getElementsByTagName("body").item(0);
-      item && item.classList.remove(
+      document.getElementsByTagName("body").item(0)?.classList.remove(
         "no-scroll",
       );
-      ref.current && ref.current.open === true && ref.current.close();
+      ref.current?.open === true && ref.current.close();
     } else if (open === true) {
-      const item = document.getElementsByTagName("body").item(0);
-      item && item.classList.add(
+      document.getElementsByTagName("body").item(0)?.classList.add(
         "no-scroll",
       );
-      ref.current && ref.current.open === false && ref.current.showModal();
+      ref.current?.open === false && ref.current.showModal();
       lazy.value = true;
     }
   }, [open]);
@@ -84,8 +82,8 @@ const Modal = ({
         dialogStyles[mode]
       } ${props.class ?? ""}`}
       onClick={(e) =>
-        (e.target as HTMLDialogElement).tagName === "SECTION" && onClose &&
-        onClose()}
+        (e.target as HTMLDialogElement).tagName === "SECTION" &&
+        onClose?.()}
       onClose={onClose}
     >
       <section
