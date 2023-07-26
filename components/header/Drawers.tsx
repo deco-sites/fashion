@@ -50,25 +50,25 @@ const Aside = (
 );
 
 function Drawers({ menu, searchbar, children }: Props) {
-  const { displayCart, displayMenu, displaySearchbar } = useUI();
+  const { displayCart, displayMenu, displaySearchDrawer } = useUI();
 
   return (
     <Drawer // left drawer
-      open={displayMenu.value || displaySearchbar.value}
+      open={displayMenu.value || displaySearchDrawer.value}
       onClose={() => {
         displayMenu.value = false;
-        displaySearchbar.value = false;
+        displaySearchDrawer.value = false;
       }}
       aside={
         <Aside
           onClose={() => {
             displayMenu.value = false;
-            displaySearchbar.value = false;
+            displaySearchDrawer.value = false;
           }}
           title={displayMenu.value ? "Menu" : "Buscar"}
         >
           {displayMenu.value && <Menu {...menu} />}
-          {displaySearchbar.value && <Searchbar {...searchbar} />}
+          {displaySearchDrawer.value && <Searchbar {...searchbar} />}
         </Aside>
       }
     >
