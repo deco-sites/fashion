@@ -14,15 +14,21 @@ export interface Form {
 }
 
 export interface Props {
-  title?: string;
-  /** @format textarea */
-  description?: string;
-  form?: Form;
+  content: {
+    title?: string;
+    /** @format textarea */
+    description?: string;
+    form?: Form;
+  };
+  layout?: {
+    tiled?: boolean;
+  };
 }
 
 function Newsletter(
-  { content, tiled = false }: { content: Props; tiled: boolean },
+  { content, layout = {} }: Props,
 ) {
+  const { tiled = false } = layout;
   const loading = useSignal(false);
 
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {

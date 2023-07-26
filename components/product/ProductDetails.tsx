@@ -14,7 +14,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import Image from "deco-sites/std/components/Image.tsx";
-import WishlistButton from "../wishlist/WishlistButton.tsx";
+import Component from "../wishlist/WishlistButton.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
@@ -115,7 +115,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
                   productGroupId={product.isVariantOf?.productGroupID ?? ""}
                 />
               )}
-              <WishlistButton
+              <Component
                 variant="full"
                 productGroupID={isVariantOf?.productGroupID}
                 productID={productID}

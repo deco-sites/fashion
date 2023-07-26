@@ -3,7 +3,7 @@ import { Runtime } from "$store/runtime.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import type { JSX } from "preact";
 
-interface Props {
+export interface Props {
   productID: Product["productID"];
 }
 

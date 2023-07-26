@@ -4,7 +4,7 @@ import {
   useAddToCart,
 } from "$store/sdk/useAddToCart.ts";
 
-interface Props extends UseAddToCartProps {
+export interface Props extends UseAddToCartProps {
   /**
    * @description Product id
    */

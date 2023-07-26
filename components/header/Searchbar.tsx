@@ -8,7 +8,7 @@ const LazySearchbar = lazy(() =>
   import("$store/components/search/Searchbar.tsx")
 );
 
-interface Props {
+export interface Props {
   searchbar: SearchbarProps;
 }
 
