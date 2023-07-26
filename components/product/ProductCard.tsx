@@ -152,27 +152,18 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
         <a
           href={url && relative(url)}
           aria-label="view product"
-          class="contents"
+          class="grid grid-cols-1 grid-rows-1 w-full"
         >
           <Image
             src={front.url!}
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class={`
-              absolute rounded w-full
-              ${
-              (!l?.onMouseOver?.image ||
-                  l?.onMouseOver?.image == "Change image")
-                ? "duration-100 transition-opacity opacity-100 lg:group-hover:opacity-0"
-                : ""
-            }
-              ${
+            class={`bg-base-100 col-span-full row-span-full rounded w-full ${
               l?.onMouseOver?.image == "Zoom image"
                 ? "duration-100 transition-scale scale-100 lg:group-hover:scale-125"
                 : ""
-            }
-            `}
+            }`}
             sizes="(max-width: 640px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
@@ -185,7 +176,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
               alt={back?.alternateName ?? front.alternateName}
               width={WIDTH}
               height={HEIGHT}
-              class="absolute transition-opacity rounded w-full opacity-0 lg:group-hover:opacity-100"
+              class="bg-base-100 col-span-full row-span-full transition-opacity rounded w-full opacity-0 lg:group-hover:opacity-100"
               sizes="(max-width: 640px) 50vw, 20vw"
               loading="lazy"
               decoding="async"
@@ -194,13 +185,11 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
         </a>
         <figcaption
           class={`
-          absolute bottom-1 left-0 w-full flex flex-col gap-3 p-2
-          ${
+          absolute bottom-1 left-0 w-full flex flex-col gap-3 p-2 ${
             l?.onMouseOver?.showSkuSelector || l?.onMouseOver?.showCta
               ? "transition-opacity opacity-0 lg:group-hover:opacity-100"
               : "lg:hidden"
-          }
-        `}
+          }`}
         >
           {/* SKU Selector */}
           {l?.onMouseOver?.showSkuSelector && (

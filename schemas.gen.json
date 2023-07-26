@@ -59,6 +59,9 @@
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts",
               "deco-sites/std/loaders/vnda/cart.ts",
+              "deco-sites/std/loaders/vnda/productDetailsPage.ts",
+              "deco-sites/std/loaders/vnda/productList.ts",
+              "deco-sites/std/loaders/vnda/productListingPage.ts",
               "deco-sites/std/loaders/vnda/proxy.ts",
               "deco-sites/std/loaders/vtex/cart.ts",
               "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts",
@@ -1746,8 +1749,7 @@
           }
         },
         {
-          "title": "VTEX Product Page Loader",
-          "description": "Works on routes of type /:slug/p",
+          "title": "deco-sites/std/functions/vndaProductDetailsPage.ts",
           "type": "object",
           "required": [
             "__resolveType"
@@ -1816,6 +1818,23 @@
                 "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts"
               ],
               "default": "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts"
+            }
+          }
+        },
+        {
+          "title": "VNDA Product Page Loader",
+          "description": "Works on routes of type /produto/:slug",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/loaders/vnda/productDetailsPage.ts"
+              ],
+              "default": "deco-sites/std/loaders/vnda/productDetailsPage.ts"
             }
           }
         },
@@ -1954,12 +1973,11 @@
           }
         },
         {
-          "title": "VNDA - Search Products",
-          "description": "Use it in Shelves and static Galleries.",
+          "title": "deco-sites/std/functions/vndaProductList.ts",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0LnRz@Props"
             }
           ],
           "required": [
@@ -2106,6 +2124,28 @@
                 "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts"
               ],
               "default": "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts"
+            }
+          }
+        },
+        {
+          "title": "VNDA - Search Products",
+          "description": "Use it in Shelves and static Galleries.",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0LnRz@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/loaders/vnda/productList.ts"
+              ],
+              "default": "deco-sites/std/loaders/vnda/productList.ts"
             }
           }
         },
@@ -2504,12 +2544,11 @@
           }
         },
         {
-          "title": "VNDA - Product Listing page",
-          "description": "Useful for category, search, brand and collection pages.",
+          "title": "deco-sites/std/functions/vndaProductListingPage.ts",
           "type": "object",
           "allOf": [
             {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==@Props"
             }
           ],
           "required": [
@@ -2639,6 +2678,28 @@
           }
         },
         {
+          "title": "VNDA - Product Listing page",
+          "description": "Useful for category, search, brand and collection pages.",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/std/loaders/vnda/productListingPage.ts"
+              ],
+              "default": "deco-sites/std/loaders/vnda/productListingPage.ts"
+            }
+          }
+        },
+        {
           "title": "VTEX Intelligent Search - Product Listing page",
           "description": "Returns data ready for search pages like category,brand pages",
           "type": "object",
@@ -2706,13 +2767,13 @@
       ],
       "title": "deco-sites/std/functions/shopifyProductListingPage.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0LnRz@Props": {
       "type": "object",
       "properties": {
-        "limit": {
+        "count": {
           "type": "number",
           "description": "total number of items to display",
-          "title": "Limit"
+          "title": "Count"
         },
         "term": {
           "type": [
@@ -2770,11 +2831,11 @@
         }
       },
       "required": [
-        "limit"
+        "count"
       ],
-      "title": "deco-sites/std/functions/vndaProductList.ts@Props"
+      "title": "deco-sites/std/packs/vnda/loaders/productList.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props": {
+    "ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==@Props": {
       "type": "object",
       "properties": {
         "term": {
@@ -2800,12 +2861,16 @@
           "type": "number",
           "title": "Items per page",
           "description": "number of products per page to display"
+        },
+        "slug": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3JlcXVlc3RUb1BhcmFtLnRz@RequestURLParam",
+          "title": "Slug"
         }
       },
       "required": [
         "count"
       ],
-      "title": "deco-sites/std/functions/vndaProductListingPage.ts@Props"
+      "title": "deco-sites/std/packs/vnda/loaders/productListingPage.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==@Props": {
       "type": "object",
@@ -6383,6 +6448,41 @@
       ],
       "title": "Shipping"
     },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS90eXBlcy50cw==@Coupon": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Code"
+        },
+        "discount": {
+          "type": "number",
+          "title": "Discount"
+        },
+        "rebate_token": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Rebate_token"
+        },
+        "rebate_discount": {
+          "type": "number",
+          "title": "Rebate_discount"
+        }
+      },
+      "required": [
+        "code",
+        "discount",
+        "rebate_token",
+        "rebate_discount"
+      ],
+      "title": "Coupon"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS90eXBlcy50cw==@Cart": {
       "anyOf": [
         {
@@ -6404,52 +6504,7 @@
               "title": "Shipping"
             },
             "coupon": {
-              "anyOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "code": {
-                      "type": "string",
-                      "title": "Code"
-                    },
-                    "discount": {
-                      "type": "number",
-                      "title": "Discount"
-                    },
-                    "rebate_token": {
-                      "anyOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ],
-                      "title": "Rebate_token"
-                    },
-                    "rebate_discount": {
-                      "type": "number",
-                      "title": "Rebate_discount"
-                    }
-                  },
-                  "required": [
-                    "code",
-                    "discount",
-                    "rebate_token",
-                    "rebate_discount"
-                  ]
-                },
-                {
-                  "type": "string",
-                  "const": "Error",
-                  "default": "Error"
-                },
-                {
-                  "type": "string",
-                  "const": "Removed",
-                  "default": "Removed"
-                }
-              ],
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS90eXBlcy50cw==@Coupon",
               "title": "Coupon"
             }
           },
@@ -16516,8 +16571,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX Product Page Loader",
-      "description": "Works on routes of type /:slug/p",
+      "title": "deco-sites/std/functions/vndaProductDetailsPage.ts",
       "type": "object",
       "required": [
         "__resolveType"
@@ -16533,12 +16587,11 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==": {
-      "title": "VNDA - Search Products",
-      "description": "Use it in Shelves and static Galleries.",
+      "title": "deco-sites/std/functions/vndaProductList.ts",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0LnRz@Props"
         }
       ],
       "required": [
@@ -16555,12 +16608,11 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VNDA - Product Listing page",
-      "description": "Useful for category, search, brand and collection pages.",
+      "title": "deco-sites/std/functions/vndaProductListingPage.ts",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==@Props"
         }
       ],
       "required": [
@@ -17213,6 +17265,67 @@
             "deco-sites/std/loaders/vnda/cart.ts"
           ],
           "default": "deco-sites/std/loaders/vnda/cart.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL3Byb2R1Y3REZXRhaWxzUGFnZS50cw==": {
+      "title": "VNDA Product Page Loader",
+      "description": "Works on routes of type /produto/:slug",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/loaders/vnda/productDetailsPage.ts"
+          ],
+          "default": "deco-sites/std/loaders/vnda/productDetailsPage.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL3Byb2R1Y3RMaXN0LnRz": {
+      "title": "VNDA - Search Products",
+      "description": "Use it in Shelves and static Galleries.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0LnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/loaders/vnda/productList.ts"
+          ],
+          "default": "deco-sites/std/loaders/vnda/productList.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==": {
+      "title": "VNDA - Product Listing page",
+      "description": "Useful for category, search, brand and collection pages.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3Mvdm5kYS9sb2FkZXJzL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/loaders/vnda/productListingPage.ts"
+          ],
+          "default": "deco-sites/std/loaders/vnda/productListingPage.ts"
         }
       }
     },
@@ -19786,6 +19899,15 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL2NhcnQudHM="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL3Byb2R1Y3REZXRhaWxzUGFnZS50cw=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL3Byb2R1Y3RMaXN0LnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92bmRhL3Byb3h5LnRz"
