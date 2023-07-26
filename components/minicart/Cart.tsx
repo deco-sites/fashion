@@ -20,11 +20,14 @@ function Cart() {
     totalizers?.find((item) => item.id === "Discounts")?.value || 0;
 
   return (
-    <div class="flex flex-col h-full justify-center items-center">
+    <div
+      class="flex flex-col h-full justify-center items-center"
+      style={{ minWidth: "calc(min(100vw, 425px))", maxWidth: "425px" }}
+    >
       {cart.value == null || isCartEmpty
         ? (
           <>
-            <div class="flex flex-col gap-6 px-9">
+            <div class="flex flex-col gap-6">
               <span class="font-medium text-2xl">Sua sacola está vazia</span>
               <Button
                 class="btn-outline"
