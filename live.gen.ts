@@ -130,21 +130,24 @@ import * as i2$$$8 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetail
 import * as i2$$$9 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts";
 import * as i2$$$10 from "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts";
 import * as i2$$$11 from "deco-sites/std/loaders/vnda/cart.ts";
-import * as i2$$$12 from "deco-sites/std/loaders/vnda/proxy.ts";
-import * as i2$$$13 from "deco-sites/std/loaders/vtex/cart.ts";
-import * as i2$$$14 from "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts";
-import * as i2$$$15 from "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts";
-import * as i2$$$16 from "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts";
-import * as i2$$$17 from "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts";
-import * as i2$$$18 from "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts";
-import * as i2$$$19 from "deco-sites/std/loaders/vtex/legacy/productList.ts";
-import * as i2$$$20 from "deco-sites/std/loaders/vtex/legacy/productListingPage.ts";
-import * as i2$$$21 from "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts";
-import * as i2$$$22 from "deco-sites/std/loaders/vtex/navbar.ts";
-import * as i2$$$23 from "deco-sites/std/loaders/vtex/proxy.ts";
-import * as i2$$$24 from "deco-sites/std/loaders/vtex/user.ts";
-import * as i2$$$25 from "deco-sites/std/loaders/vtex/wishlist.ts";
-import * as i2$$$26 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
+import * as i2$$$12 from "deco-sites/std/loaders/vnda/productDetailsPage.ts";
+import * as i2$$$13 from "deco-sites/std/loaders/vnda/productList.ts";
+import * as i2$$$14 from "deco-sites/std/loaders/vnda/productListingPage.ts";
+import * as i2$$$15 from "deco-sites/std/loaders/vnda/proxy.ts";
+import * as i2$$$16 from "deco-sites/std/loaders/vtex/cart.ts";
+import * as i2$$$17 from "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts";
+import * as i2$$$18 from "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts";
+import * as i2$$$19 from "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts";
+import * as i2$$$20 from "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts";
+import * as i2$$$21 from "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts";
+import * as i2$$$22 from "deco-sites/std/loaders/vtex/legacy/productList.ts";
+import * as i2$$$23 from "deco-sites/std/loaders/vtex/legacy/productListingPage.ts";
+import * as i2$$$24 from "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts";
+import * as i2$$$25 from "deco-sites/std/loaders/vtex/navbar.ts";
+import * as i2$$$26 from "deco-sites/std/loaders/vtex/proxy.ts";
+import * as i2$$$27 from "deco-sites/std/loaders/vtex/user.ts";
+import * as i2$$$28 from "deco-sites/std/loaders/vtex/wishlist.ts";
+import * as i2$$$29 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
 import * as i2$$$$7 from "deco-sites/std/handlers/sitemap.ts";
 import * as i2$$$$8 from "deco-sites/std/handlers/vtex/sitemap.ts";
 import * as i2$$$$$5 from "deco-sites/std/sections/Analytics.tsx";
@@ -268,23 +271,26 @@ const manifest = {
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$9,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$10,
     "deco-sites/std/loaders/vnda/cart.ts": i2$$$11,
-    "deco-sites/std/loaders/vnda/proxy.ts": i2$$$12,
-    "deco-sites/std/loaders/vtex/cart.ts": i2$$$13,
+    "deco-sites/std/loaders/vnda/productDetailsPage.ts": i2$$$12,
+    "deco-sites/std/loaders/vnda/productList.ts": i2$$$13,
+    "deco-sites/std/loaders/vnda/productListingPage.ts": i2$$$14,
+    "deco-sites/std/loaders/vnda/proxy.ts": i2$$$15,
+    "deco-sites/std/loaders/vtex/cart.ts": i2$$$16,
     "deco-sites/std/loaders/vtex/intelligentSearch/productDetailsPage.ts":
-      i2$$$14,
-    "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts": i2$$$15,
+      i2$$$17,
+    "deco-sites/std/loaders/vtex/intelligentSearch/productList.ts": i2$$$18,
     "deco-sites/std/loaders/vtex/intelligentSearch/productListingPage.ts":
-      i2$$$16,
-    "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts": i2$$$17,
-    "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts": i2$$$18,
-    "deco-sites/std/loaders/vtex/legacy/productList.ts": i2$$$19,
-    "deco-sites/std/loaders/vtex/legacy/productListingPage.ts": i2$$$20,
-    "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts": i2$$$21,
-    "deco-sites/std/loaders/vtex/navbar.ts": i2$$$22,
-    "deco-sites/std/loaders/vtex/proxy.ts": i2$$$23,
-    "deco-sites/std/loaders/vtex/user.ts": i2$$$24,
-    "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$25,
-    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$26,
+      i2$$$19,
+    "deco-sites/std/loaders/vtex/intelligentSearch/suggestions.ts": i2$$$20,
+    "deco-sites/std/loaders/vtex/legacy/productDetailsPage.ts": i2$$$21,
+    "deco-sites/std/loaders/vtex/legacy/productList.ts": i2$$$22,
+    "deco-sites/std/loaders/vtex/legacy/productListingPage.ts": i2$$$23,
+    "deco-sites/std/loaders/vtex/legacy/relatedProductsLoader.ts": i2$$$24,
+    "deco-sites/std/loaders/vtex/navbar.ts": i2$$$25,
+    "deco-sites/std/loaders/vtex/proxy.ts": i2$$$26,
+    "deco-sites/std/loaders/vtex/user.ts": i2$$$27,
+    "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$28,
+    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$29,
   },
   "handlers": {
     "$live/handlers/devPage.ts": i2$$$$0,
