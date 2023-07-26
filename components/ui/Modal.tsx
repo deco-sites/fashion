@@ -1,4 +1,5 @@
 import { useId } from "$store/sdk/useId.ts";
+import { useSignal } from "@preact/signals";
 import { ComponentChildren } from "preact";
 import { useEffect, useState } from "preact/hooks";
 
@@ -11,8 +12,14 @@ interface Props {
 }
 
 function Modal(props: Props) {
-  const { children, open, onClose, class: _class = "", loading } = props;
-  const [lazy, setLazy] = useState(loading === "lazy" && !open);
+  const {
+    children,
+    open,
+    onClose,
+    class: _class = "",
+    loading = "lazy",
+  } = props;
+  const lazy = useSignal(loading === "lazy" && !open);
   const id = useId();
 
   useEffect(() => {
@@ -26,7 +33,9 @@ function Modal(props: Props) {
     };
   }, [open]);
 
-  useEffect(() => setLazy(false), []);
+  useEffect(() => {
+    lazy.value = false;
+  }, []);
 
   return (
     <>
@@ -39,7 +48,7 @@ function Modal(props: Props) {
       />
       <div class="modal">
         <div class={`modal-box ${_class}`}>
-          {!lazy && children}
+          {!lazy.value && children}
         </div>
         <label class="modal-backdrop" for={id}>Close</label>
       </div>

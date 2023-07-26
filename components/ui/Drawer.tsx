@@ -1,6 +1,7 @@
 import { useId } from "$store/sdk/useId.ts";
+import { useSignal } from "@preact/signals";
 import { ComponentChildren } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect } from "preact/hooks";
 
 interface Props {
   onClose?: () => void;
@@ -12,7 +13,6 @@ interface Props {
 }
 
 function Drawer(props: Props) {
-  const id = useId();
   const {
     children,
     aside,
@@ -21,7 +21,8 @@ function Drawer(props: Props) {
     class: _class = "",
     loading = "lazy",
   } = props;
-  const [lazy, setLazy] = useState(loading === "lazy" && !open);
+  const lazy = useSignal(loading === "lazy" && !open);
+  const id = useId();
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) =>
@@ -34,7 +35,9 @@ function Drawer(props: Props) {
     };
   }, [open]);
 
-  useEffect(() => setLazy(false), []);
+  useEffect(() => {
+    lazy.value = false;
+  }, []);
 
   return (
     <div class={`drawer ${_class}`}>
@@ -52,7 +55,7 @@ function Drawer(props: Props) {
 
       <aside class="drawer-side z-50">
         <label for={id} class="drawer-overlay" />
-        {!lazy && aside}
+        {!lazy.value && aside}
       </aside>
     </div>
   );
