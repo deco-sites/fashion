@@ -8,7 +8,7 @@ import { useSignal } from "@preact/signals";
 import type { ImageObject } from "deco-sites/std/commerce/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 
-interface Props {
+export interface Props {
   images: ImageObject[];
   width: number;
   height: number;

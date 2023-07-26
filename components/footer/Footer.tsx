@@ -183,8 +183,10 @@ function Footer({
   const _newsletter = layout?.hide?.newsletter ? <></> : (
     <Newsletter
       content={newsletter}
-      tiled={layout?.variation == "Variation 4" ||
-        layout?.variation == "Variation 5"}
+      layout={{
+        tiled: layout?.variation == "Variation 4" ||
+          layout?.variation == "Variation 5",
+      }}
     />
   );
   const _sectionLinks = layout?.hide?.sectionLinks ? <></> : (

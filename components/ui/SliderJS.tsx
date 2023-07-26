@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 
-interface Props {
+export interface Props {
   rootId: string;
   scroll?: "smooth" | "auto";
   interval?: number;

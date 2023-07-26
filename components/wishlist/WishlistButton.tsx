@@ -4,7 +4,7 @@ import Button from "$store/components/ui/Button.tsx";
 import { useWishlist } from "deco-sites/std/packs/vtex/hooks/useWishlist.ts";
 import { useUser } from "deco-sites/std/packs/vtex/hooks/useUser.ts";
 
-interface Props {
+export interface Props {
   productID: string;
   productGroupID?: string;
   variant?: "icon" | "full";
