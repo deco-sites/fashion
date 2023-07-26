@@ -110,7 +110,7 @@ function CartItem({ index, locale, currency }: Props) {
         loading={loading.value}
         class="btn btn-ghost"
       >
-        <Icon id="Trash" width={20} height={20} />
+        <Icon id="Trash" size={24} />
       </Button>
     </div>
   );

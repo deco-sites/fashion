@@ -1,11 +1,15 @@
-import Searchbar from "$store/islands/HeaderSearchbar.tsx";
-import Buttons from "$store/islands/HeaderButton.tsx";
+import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import NavItem from "./NavItem.tsx";
-import { navbarHeight } from "./constants.ts";
+import {
+  CartButton,
+  MenuButton,
+  SearchButton,
+} from "$store/islands/Header/Buttons.tsx";
+import Searchbar from "$store/islands/Header/Searchbar.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
 import type { INavItem } from "./NavItem.tsx";
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import NavItem from "./NavItem.tsx";
+import { navbarHeight } from "./constants.ts";
 
 function Navbar({ items, searchbar, logo }: {
   items: INavItem[];
@@ -19,7 +23,7 @@ function Navbar({ items, searchbar, logo }: {
         style={{ height: navbarHeight }}
         class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
-        <Buttons variant="menu" />
+        <MenuButton />
 
         {logo && (
           <a
@@ -33,8 +37,8 @@ function Navbar({ items, searchbar, logo }: {
         )}
 
         <div class="flex gap-1">
-          <Buttons variant="search" />
-          <Buttons variant="cart" />
+          <SearchButton />
+          <CartButton />
         </div>
       </div>
 
@@ -55,14 +59,14 @@ function Navbar({ items, searchbar, logo }: {
           {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <Buttons variant="search" />
+          <SearchButton />
           <Searchbar searchbar={searchbar} />
           <a
             class="btn btn-circle btn-sm btn-ghost"
             href="/login"
             aria-label="Log in"
           >
-            <Icon id="User" width={20} height={20} strokeWidth={0.4} />
+            <Icon id="User" size={24} strokeWidth={0.4} />
           </a>
           <a
             class="btn btn-circle btn-sm btn-ghost"
@@ -71,12 +75,12 @@ function Navbar({ items, searchbar, logo }: {
           >
             <Icon
               id="Heart"
-              size={20}
+              size={24}
               strokeWidth={2}
               fill="none"
             />
           </a>
-          <Buttons variant="cart" />
+          <CartButton />
         </div>
       </div>
     </>

@@ -6,7 +6,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
-import { useId } from "preact/hooks";
+import { useId } from "$store/sdk/useId.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
@@ -66,12 +66,12 @@ function ProductShelf({
         <>
           <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
             <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+              <Icon size={24} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
           </div>
           <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
             <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
+              <Icon size={24} id="ChevronRight" strokeWidth={3} />
             </Slider.NextButton>
           </div>
         </>

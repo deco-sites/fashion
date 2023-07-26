@@ -69,7 +69,7 @@ function Result({
               href={pageInfo.previousPage ?? "#"}
               class="btn btn-ghost join-item"
             >
-              <Icon id="ChevronLeft" width={20} height={20} strokeWidth={2} />
+              <Icon id="ChevronLeft" size={24} strokeWidth={2} />
             </a>
             <span class="btn btn-ghost join-item">
               Page {pageInfo.currentPage + 1}
@@ -80,12 +80,7 @@ function Result({
               href={pageInfo.nextPage ?? "#"}
               class="btn btn-ghost join-item"
             >
-              <Icon
-                id="ChevronRight"
-                width={20}
-                height={20}
-                strokeWidth={2}
-              />
+              <Icon id="ChevronRight" size={24} strokeWidth={2} />
             </a>
           </div>
         </div>

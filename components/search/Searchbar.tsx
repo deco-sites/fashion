@@ -19,19 +19,6 @@ import { useAutocomplete } from "deco-sites/std/packs/vtex/hooks/useAutocomplete
 import { useUI } from "$store/sdk/useUI.ts";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 
-function CloseButton() {
-  const { displaySearchbar } = useUI();
-
-  return (
-    <Button
-      class="btn-ghost btn-circle"
-      onClick={() => (displaySearchbar.value = false)}
-    >
-      <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-    </Button>
-  );
-}
-
 // Editable props
 export interface EditableProps {
   /**
@@ -69,6 +56,7 @@ function Searchbar({
   query,
   variant = "mobile",
 }: Props) {
+  const { displaySearchPopup } = useUI();
   const searchInputRef = useRef<HTMLInputElement>(null);
   const { setSearch, suggestions, loading } = useAutocomplete();
   const hasProducts = Boolean(suggestions.value?.products?.length);
@@ -84,7 +72,7 @@ function Searchbar({
   }, []);
 
   return (
-    <div class="flex flex-col p-4 md:py-6 md:px-20">
+    <div class="flex flex-col p-4 md:py-6 md:px-20 max-w-[100vw]">
       <div class="flex items-center gap-4">
         <form
           id="searchbar"
@@ -100,7 +88,7 @@ function Searchbar({
             <Icon
               class="text-base-300"
               id="MagnifyingGlass"
-              size={20}
+              size={24}
               strokeWidth={0.01}
             />
           </Button>
@@ -143,7 +131,16 @@ function Searchbar({
             <span class="text-sm">limpar</span>
           </button>
         </form>
-        {variant === "desktop" && <CloseButton />}
+        {variant === "desktop" && (
+          <Button
+            class="btn-ghost btn-circle"
+            onClick={() => (
+              displaySearchPopup.value = false
+            )}
+          >
+            <Icon id="XMark" size={24} strokeWidth={2} />
+          </Button>
+        )}
       </div>
       <div class="flex flex-col gap-6 divide-y divide-base-200 mt-6 empty:mt-0 md:flex-row md:divide-y-0">
         {notFound
@@ -182,7 +179,7 @@ function Searchbar({
                         <span>
                           <Icon
                             id="MagnifyingGlass"
-                            size={20}
+                            size={24}
                             strokeWidth={0.01}
                           />
                         </span>

@@ -15,7 +15,7 @@ function FreeShippingProgressBar({ target, total, currency, locale }: Props) {
   return (
     <div class="flex flex-col w-full gap-2">
       <div class="flex justify-center items-center gap-2 text-primary">
-        <Icon id="Truck" size={20} />
+        <Icon id="Truck" size={24} />
         {remaining > 0
           ? (
             <span>

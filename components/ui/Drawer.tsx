@@ -1,19 +1,21 @@
 import { useId } from "$store/sdk/useId.ts";
 import { useSignal } from "@preact/signals";
 import { ComponentChildren } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect } from "preact/hooks";
 
 interface Props {
   onClose?: () => void;
   open?: boolean;
   class?: string;
-  children?: ComponentChildren;
   loading?: "eager" | "lazy";
+  children: ComponentChildren;
+  aside: ComponentChildren;
 }
 
-function Modal(props: Props) {
+function Drawer(props: Props) {
   const {
     children,
+    aside,
     open,
     onClose,
     class: _class = "",
@@ -38,22 +40,25 @@ function Modal(props: Props) {
   }, []);
 
   return (
-    <>
+    <div class={`drawer ${_class}`}>
       <input
         id={id}
         checked={open}
         type="checkbox"
-        class="modal-toggle"
+        class="drawer-toggle"
         onChange={(e) => e.currentTarget.checked === false && onClose?.()}
       />
-      <div class="modal">
-        <div class={`modal-box ${_class}`}>
-          {!lazy.value && children}
-        </div>
-        <label class="modal-backdrop" for={id}>Close</label>
+
+      <div class="drawer-content">
+        {children}
       </div>
-    </>
+
+      <aside class="drawer-side z-50">
+        <label for={id} class="drawer-overlay" />
+        {!lazy.value && aside}
+      </aside>
+    </div>
   );
 }
 
-export default Modal;
+export default Drawer;

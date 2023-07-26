@@ -3,7 +3,7 @@ import Image from "deco-sites/std/components/Image.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import { useId } from "preact/hooks";
+import { useId } from "$store/sdk/useId.ts";
 import type { Image as ImageType } from "deco-sites/std/components/types.ts";
 
 export interface Testimonial {
@@ -166,12 +166,12 @@ export default function Testimonials(
           <>
             <div class="z-10 absolute -left-2 lg:-left-8 top-1/2">
               <Slider.PrevButton class="btn btn-circle btn-outline">
-                <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+                <Icon size={24} id="ChevronLeft" strokeWidth={3} />
               </Slider.PrevButton>
             </div>
             <div class="z-10 absolute -right-2 lg:-right-8 top-1/2">
               <Slider.NextButton class="btn btn-circle btn-outline">
-                <Icon size={20} id="ChevronRight" strokeWidth={3} />
+                <Icon size={24} id="ChevronRight" strokeWidth={3} />
               </Slider.NextButton>
             </div>
           </>

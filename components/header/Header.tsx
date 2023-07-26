@@ -1,8 +1,7 @@
-import Modals from "$store/islands/HeaderModals.tsx";
-import type { Image } from "deco-sites/std/components/types.ts";
 import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import Drawers from "$store/islands/Header/Drawers.tsx";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
-
+import type { Image } from "deco-sites/std/components/types.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
@@ -61,15 +60,15 @@ function Header({
   return (
     <>
       <header style={{ height: headerHeight }}>
-        <div class="bg-base-100 fixed w-full z-50">
-          <Alert alerts={alerts} />
-          <Navbar items={navItems} searchbar={searchbar} logo={logo} />
-        </div>
-
-        <Modals
+        <Drawers
           menu={{ items: navItems }}
           searchbar={searchbar}
-        />
+        >
+          <div class="bg-base-100 fixed w-full z-50">
+            <Alert alerts={alerts} />
+            <Navbar items={navItems} searchbar={searchbar} logo={logo} />
+          </div>
+        </Drawers>
       </header>
     </>
   );
