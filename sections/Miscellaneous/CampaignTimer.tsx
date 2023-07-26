@@ -1,4 +1,4 @@
-import { useId } from "preact/hooks";
+import { useId } from "$store/sdk/useId.ts";
 import { HTML } from "deco-sites/std/components/types.ts";
 
 export interface Props {

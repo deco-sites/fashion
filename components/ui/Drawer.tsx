@@ -6,14 +6,22 @@ interface Props {
   onClose?: () => void;
   open?: boolean;
   class?: string;
-  children?: ComponentChildren;
   loading?: "eager" | "lazy";
+  children: ComponentChildren;
+  aside: ComponentChildren;
 }
 
-function Modal(props: Props) {
-  const { children, open, onClose, class: _class = "", loading } = props;
-  const [lazy, setLazy] = useState(loading === "lazy" && !open);
+function Drawer(props: Props) {
   const id = useId();
+  const {
+    children,
+    aside,
+    open,
+    onClose,
+    class: _class = "",
+    loading = "lazy",
+  } = props;
+  const [lazy, setLazy] = useState(loading === "lazy" && !open);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) =>
@@ -29,22 +37,25 @@ function Modal(props: Props) {
   useEffect(() => setLazy(false), []);
 
   return (
-    <>
+    <div class={`drawer ${_class}`}>
       <input
         id={id}
         checked={open}
         type="checkbox"
-        class="modal-toggle"
+        class="drawer-toggle"
         onChange={(e) => e.currentTarget.checked === false && onClose?.()}
       />
-      <div class="modal">
-        <div class={`modal-box ${_class}`}>
-          {!lazy && children}
-        </div>
-        <label class="modal-backdrop" for={id}>Close</label>
+
+      <div class="drawer-content">
+        {children}
       </div>
-    </>
+
+      <aside class="drawer-side z-50">
+        <label for={id} class="drawer-overlay" />
+        {!lazy && aside}
+      </aside>
+    </div>
   );
 }
 
-export default Modal;
+export default Drawer;

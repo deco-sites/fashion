@@ -75,9 +75,8 @@
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "deco-sites/std/loaders/x/redirectsFromCsv.ts",
               "./islands/AddToCartButton.tsx",
-              "./islands/HeaderButton.tsx",
-              "./islands/HeaderModals.tsx",
-              "./islands/HeaderSearchbar.tsx",
+              "./islands/Header/Drawers.tsx",
+              "./islands/Header/Searchbar.tsx",
               "./islands/Newsletter.tsx",
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
@@ -16872,8 +16871,8 @@
         }
       }
     },
-    "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
-      "title": "./islands/HeaderButton.tsx",
+    "Li9pc2xhbmRzL0hlYWRlci9EcmF3ZXJzLnRzeA==": {
+      "title": "./islands/Header/Drawers.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -16882,14 +16881,14 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/HeaderButton.tsx"
+            "./islands/Header/Drawers.tsx"
           ],
-          "default": "./islands/HeaderButton.tsx"
+          "default": "./islands/Header/Drawers.tsx"
         }
       }
     },
-    "Li9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g=": {
-      "title": "./islands/HeaderModals.tsx",
+    "Li9pc2xhbmRzL0hlYWRlci9TZWFyY2hiYXIudHN4": {
+      "title": "./islands/Header/Searchbar.tsx",
       "type": "object",
       "required": [
         "__resolveType"
@@ -16898,25 +16897,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "./islands/HeaderModals.tsx"
+            "./islands/Header/Searchbar.tsx"
           ],
-          "default": "./islands/HeaderModals.tsx"
-        }
-      }
-    },
-    "Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g=": {
-      "title": "./islands/HeaderSearchbar.tsx",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/HeaderSearchbar.tsx"
-          ],
-          "default": "./islands/HeaderSearchbar.tsx"
+          "default": "./islands/Header/Searchbar.tsx"
         }
       }
     },
@@ -19146,13 +19129,10 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
         },
         {
-          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlci9EcmF3ZXJzLnRzeA=="
         },
         {
-          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
-        },
-        {
-          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g="
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlci9TZWFyY2hiYXIudHN4"
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4"

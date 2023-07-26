@@ -3,7 +3,7 @@ import Button from "$store/components/ui/Button.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import { useId } from "preact/hooks";
+import { useId } from "$store/sdk/useId.ts";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 /**
@@ -131,7 +131,7 @@ function Buttons() {
         <Slider.PrevButton class="btn btn-circle glass">
           <Icon
             class="text-base-100"
-            size={20}
+            size={24}
             id="ChevronLeft"
             strokeWidth={3}
           />
@@ -141,7 +141,7 @@ function Buttons() {
         <Slider.NextButton class="btn btn-circle glass">
           <Icon
             class="text-base-100"
-            size={20}
+            size={24}
             id="ChevronRight"
             strokeWidth={3}
           />

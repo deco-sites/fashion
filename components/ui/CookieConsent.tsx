@@ -1,4 +1,4 @@
-import { useId } from "preact/hooks";
+import { useId } from "$store/sdk/useId.ts";
 
 const script = (id: string) => `
 const callback = () => {
@@ -61,7 +61,7 @@ const DEFAULT_PROPS = {
 };
 
 function CookieConsent(props: Props) {
-  const id = `cookie-consent-${useId()}`;
+  const id = useId();
   const { title, text, policy, buttons, layout } = {
     ...DEFAULT_PROPS,
     ...props,

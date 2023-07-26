@@ -22,16 +22,6 @@
   }
 }
 
-@layer components {
-
-  /** Prevent scroll when modal is open */
-  .no-scroll {
-    overflow: hidden;
-    height: 100vh;
-  }
-}
-
-
 @layer utilities {
 
   /** Remove scrollbar from overflow-auto */
@@ -42,48 +32,6 @@
 
   .scrollbar-none::-webkit-scrollbar {
     display: none;
-  }
-
-  @keyframes slide-left-frame {
-    0% {
-      transform: translateX(100%);
-    }
-
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slide-right-frame {
-    0% {
-      transform: translateX(-100%)
-    }
-
-    to {
-      transform: translateX(0)
-    }
-  }
-
-  @keyframes slide-bottom-frame {
-    0% {
-      transform: translateY(100%)
-    }
-
-    to {
-      transform: translateY(0)
-    }
-  }
-
-  .animate-slide-left {
-    animation: slide-left-frame 0.4s ease normal;
-  }
-
-  .animate-slide-right {
-    animation: slide-right-frame 0.4s ease normal;
-  }
-
-  .animate-slide-bottom {
-    animation: slide-bottom-frame 0.4s ease normal;
   }
 }
 

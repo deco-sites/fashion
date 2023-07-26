@@ -1,22 +1,21 @@
-import { useId } from "preact/hooks";
-import AddToCartButton from "$store/islands/AddToCartButton.tsx";
-import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import Image from "deco-sites/std/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/components/ui/SliderJS.tsx";
+import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import OutOfStock from "$store/islands/OutOfStock.tsx";
-import { useOffer } from "$store/sdk/useOffer.ts";
-import { formatPrice } from "$store/sdk/format.ts";
-import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
-import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-
-import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
+import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
+import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
+import { formatPrice } from "$store/sdk/format.ts";
+import { useId } from "$store/sdk/useId.ts";
+import { useOffer } from "$store/sdk/useOffer.ts";
+import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
+import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import Image from "deco-sites/std/components/Image.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
+import ProductSelector from "./ProductVariantSelector.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -233,7 +232,7 @@ function Details({
   variant,
 }: { page: ProductDetailsPage; variant: Variant }) {
   const { product } = page;
-  const id = `product-image-gallery:${useId()}`;
+  const id = useId();
   const images = useStableImages(product);
 
   /**
@@ -278,21 +277,21 @@ function Details({
               class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
               disabled
             >
-              <Icon size={20} id="ChevronLeft" strokeWidth={3} />
+              <Icon size={24} id="ChevronLeft" strokeWidth={3} />
             </Slider.PrevButton>
 
             <Slider.NextButton
               class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
               disabled={images.length < 2}
             >
-              <Icon size={20} id="ChevronRight" strokeWidth={3} />
+              <Icon size={24} id="ChevronRight" strokeWidth={3} />
             </Slider.NextButton>
 
             <div class="absolute top-2 right-2 bg-base-100 rounded-full">
               <ProductImageZoom
                 images={images}
-                width={1280}
-                height={1280 * HEIGHT / WIDTH}
+                width={700}
+                height={Math.trunc(700 * HEIGHT / WIDTH)}
               />
             </div>
           </div>

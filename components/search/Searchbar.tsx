@@ -27,7 +27,7 @@ function CloseButton() {
       class="btn-ghost btn-circle"
       onClick={() => (displaySearchbar.value = false)}
     >
-      <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+      <Icon id="XMark" size={24} strokeWidth={2} />
     </Button>
   );
 }
@@ -84,7 +84,7 @@ function Searchbar({
   }, []);
 
   return (
-    <div class="flex flex-col p-4 md:py-6 md:px-20">
+    <div class="flex flex-col p-4 md:py-6 md:px-20 max-w-[100vw]">
       <div class="flex items-center gap-4">
         <form
           id="searchbar"
@@ -100,7 +100,7 @@ function Searchbar({
             <Icon
               class="text-base-300"
               id="MagnifyingGlass"
-              size={20}
+              size={24}
               strokeWidth={0.01}
             />
           </Button>
@@ -182,7 +182,7 @@ function Searchbar({
                         <span>
                           <Icon
                             id="MagnifyingGlass"
-                            size={20}
+                            size={24}
                             strokeWidth={0.01}
                           />
                         </span>

@@ -38,11 +38,7 @@ export default function Social(
                     class="flex gap-2 items-center"
                   >
                     <span class="block p-1 border rounded-full">
-                      <Icon
-                        width={20}
-                        height={20}
-                        id={item.label}
-                      />
+                      <Icon size={24} id={item.label} />
                     </span>
                     {vertical && (
                       <div class="text-sm hidden lg:block">{item.label}</div>
