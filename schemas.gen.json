@@ -10034,7 +10034,7 @@
       ],
       "title": "Props"
     },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@Props": {
       "type": "object",
       "properties": {
         "placeholder": {
@@ -10073,37 +10073,7 @@
         }
       },
       "required": [],
-      "title": "EditableProps"
-    },
-    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@4f2a67071966a2f109c06f6dedc088d6&EditableProps": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "variant": {
-              "anyOf": [
-                {
-                  "type": "string",
-                  "const": "desktop",
-                  "default": "desktop"
-                },
-                {
-                  "type": "string",
-                  "const": "mobile",
-                  "default": "mobile"
-                }
-              ],
-              "type": "string",
-              "title": "Variant"
-            }
-          },
-          "required": []
-        }
-      ],
-      "title": "4f2a67071966a2f109c06f6dedc088d6&EditableProps"
+      "title": "Props"
     },
     "djExOC9wcmVhY3RAMTAuMTUuMS9pbmRleC5kLnRz@FunctionComponent": {
       "type": "object",
@@ -10399,7 +10369,7 @@
           "title": "Menu"
         },
         "searchbar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@4f2a67071966a2f109c06f6dedc088d6&EditableProps",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@Props",
           "title": "Searchbar"
         },
         "children": {
@@ -10416,7 +10386,7 @@
       "type": "object",
       "properties": {
         "searchbar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@4f2a67071966a2f109c06f6dedc088d6&EditableProps",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@Props",
           "title": "Searchbar"
         }
       },
@@ -12591,7 +12561,7 @@
           "title": "Alerts"
         },
         "searchbar": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@Props",
           "title": "Search Bar"
         },
         "navItems": {

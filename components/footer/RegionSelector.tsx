@@ -15,7 +15,7 @@ export default function RegionSelector(
     <>
       {content && content.language && content.currency &&
         (content?.language?.length > 0 || content?.currency?.length > 0) && (
-        <div class="flex gap-4 text-base-content">
+        <div class="flex flex-wrap gap-4 text-base-content">
           {content?.currency?.length > 0 && (
             <select class="select select-bordered select-sm h-10">
               {content.currency.map((crr) => <option>{crr.label}</option>)}

@@ -20,18 +20,12 @@
     -moz-appearance: textfield;
     appearance: textfield;
   }
-}
 
-@layer utilities {
-
-  /** Remove scrollbar from overflow-auto */
-  .scrollbar-none {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
+  /* Disable scroll once drawer/modal is openned */
+  body:has(.drawer-toggle:checked),
+  body:has(.modal-toggle:checked) {
+    overflow: hidden;
+    height: 100vh;
   }
 }
 

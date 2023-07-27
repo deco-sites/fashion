@@ -1,4 +1,4 @@
-import type { EditableProps as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Drawers from "$store/islands/Header/Drawers.tsx";
 import type { Product, Suggestion } from "deco-sites/std/commerce/types.ts";
 import type { Image } from "deco-sites/std/components/types.ts";
