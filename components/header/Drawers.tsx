@@ -24,7 +24,7 @@ const Aside = (
     children: ComponentChildren;
   },
 ) => (
-  <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
+  <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden max-w-[100vw]">
     <div class="flex justify-between items-center">
       <h1 class="px-4 py-3">
         <span class="font-medium text-2xl">{title}</span>
@@ -35,13 +35,9 @@ const Aside = (
         </Button>
       )}
     </div>
-    <div class="flex-grow overflow-y-auto">
+    <div class="flex-grow overflow-y-auto flex flex-col justify-center items-center">
       <Suspense
-        fallback={
-          <div class="flex justify-center items-center w-full h-full">
-            <span class="loading loading-ring" />
-          </div>
-        }
+        fallback={<span class="loading loading-ring" />}
       >
         {children}
       </Suspense>

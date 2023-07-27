@@ -159,7 +159,7 @@ function BannerCarousel({ images, preload, interval }: Props) {
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
     >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
         {images?.map((image, index) => (
           <Slider.Item index={index} class="carousel-item w-full">
             <BannerItem image={image} lcp={index === 0 && preload} />

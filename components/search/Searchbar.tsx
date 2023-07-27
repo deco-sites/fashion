@@ -72,7 +72,7 @@ function Searchbar({
   }, []);
 
   return (
-    <div class="flex flex-col p-4 md:py-6 md:px-20 max-w-[100vw]">
+    <div class="flex-grow flex flex-col p-4 md:py-6 md:px-20">
       <div class="flex items-center gap-4">
         <form
           id="searchbar"
