@@ -46,16 +46,45 @@ function CartItem({ index, locale, currency }: Props) {
   );
 
   return (
-    <div class="flex flex-row justify-between items-start gap-4">
+    <div
+      class="grid grid-rows-1 gap-2"
+      style={{
+        gridTemplateColumns: "auto 1fr",
+      }}
+    >
       <Image
+        style={{ aspectRatio: "108 / 150" }}
         src={imageUrl}
         alt={skuName}
         width={108}
         height={150}
-        class="object-cover object-center"
+        class="h-full object-contain"
       />
-      <div class="flex flex-grow flex-col gap-2">
-        <span>{name}</span>
+
+      <div class="flex flex-col gap-2">
+        <div class="flex justify-between items-center">
+          <span>{name}</span>
+          <Button
+            disabled={loading.value || isGift}
+            loading={loading.value}
+            class="btn-ghost btn-square"
+            onClick={withLoading(async () => {
+              await updateItems({ orderItems: [{ index, quantity: 0 }] });
+              if (!cart.value) return;
+              sendEvent({
+                name: "remove_from_cart",
+                params: {
+                  items: mapItemsToAnalyticsItems({
+                    items: [item],
+                    marketingData: cart.value.marketingData,
+                  }),
+                },
+              });
+            })}
+          >
+            <Icon id="Trash" size={24} />
+          </Button>
+        </div>
         <div class="flex items-center gap-2">
           <span class="line-through text-base-300 text-sm">
             {formatPrice(listPrice / 100, currency, locale)}
@@ -66,52 +95,31 @@ function CartItem({ index, locale, currency }: Props) {
               : formatPrice(sellingPrice / 100, currency, locale)}
           </span>
         </div>
-        <div class="mt-6 max-w-min">
-          <QuantitySelector
-            disabled={loading.value || isGift}
-            quantity={quantity}
-            onChange={withLoading(async (quantity) => {
-              await updateItems({ orderItems: [{ index, quantity }] });
-              const quantityDiff = quantity - item.quantity;
 
-              if (!cart.value) return;
+        <QuantitySelector
+          disabled={loading.value || isGift}
+          quantity={quantity}
+          onChange={withLoading(async (quantity) => {
+            await updateItems({ orderItems: [{ index, quantity }] });
+            const quantityDiff = quantity - item.quantity;
 
-              sendEvent({
-                name: quantityDiff < 0 ? "remove_from_cart" : "add_to_cart",
-                params: {
-                  items: mapItemsToAnalyticsItems({
-                    items: [{
-                      ...item,
-                      quantity: Math.abs(quantityDiff),
-                    }],
-                    marketingData: cart.value.marketingData,
-                  }),
-                },
-              });
-            })}
-          />
-        </div>
+            if (!cart.value) return;
+
+            sendEvent({
+              name: quantityDiff < 0 ? "remove_from_cart" : "add_to_cart",
+              params: {
+                items: mapItemsToAnalyticsItems({
+                  items: [{
+                    ...item,
+                    quantity: Math.abs(quantityDiff),
+                  }],
+                  marketingData: cart.value.marketingData,
+                }),
+              },
+            });
+          })}
+        />
       </div>
-      <Button
-        onClick={withLoading(async () => {
-          await updateItems({ orderItems: [{ index, quantity: 0 }] });
-          if (!cart.value) return;
-          sendEvent({
-            name: "remove_from_cart",
-            params: {
-              items: mapItemsToAnalyticsItems({
-                items: [item],
-                marketingData: cart.value.marketingData,
-              }),
-            },
-          });
-        })}
-        disabled={loading.value || isGift}
-        loading={loading.value}
-        class="btn btn-ghost"
-      >
-        <Icon id="Trash" size={24} />
-      </Button>
     </div>
   );
 }
