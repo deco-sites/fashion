@@ -25,7 +25,7 @@ function Searchbar({ searchbar }: Props) {
     >
       {open && (
         <Suspense fallback={<span class="loading loading-ring" />}>
-          <LazySearchbar {...searchbar} variant="desktop" />
+          <LazySearchbar {...searchbar} />
         </Suspense>
       )}
     </div>

@@ -21,7 +21,7 @@ function Cart() {
 
   return (
     <div
-      class="flex flex-col h-full justify-center items-center"
+      class="flex flex-col justify-center items-center overflow-hidden"
       style={{ minWidth: "calc(min(100vw, 425px))", maxWidth: "425px" }}
     >
       {cart.value == null || isCartEmpty

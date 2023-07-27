@@ -208,7 +208,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           <>
             {l?.hide?.skuSelector ? "" : (
               <ul
-                class={`flex items-center gap-2 w-full ${
+                class={`flex items-center gap-2 w-full overflow-auto p-3 ${
                   align === "center" ? "justify-center" : "justify-start"
                 } ${l?.onMouseOver?.showSkuSelector ? "lg:hidden" : ""}`}
               >
