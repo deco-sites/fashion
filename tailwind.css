@@ -16,11 +16,6 @@
     margin: 0;
   }
 
-  input[type=number] {
-    -moz-appearance: textfield;
-    appearance: textfield;
-  }
-
   /* Disable scroll once drawer/modal is openned */
   body:has(.drawer-toggle:checked),
   body:has(.modal-toggle:checked) {
