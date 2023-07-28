@@ -292,9 +292,11 @@ export interface Props {
   complementaryColors?: ComplementaryColors;
   buttonStyle?: Button;
   /** @title Google font */
-  font?: Font;
+  fonts?: Font[];
   customFont?: CustomFont;
 }
+
+type FontSheet = string;
 
 type Theme =
   & MainColors
@@ -414,10 +416,15 @@ function Section({
   mainColors,
   complementaryColors,
   buttonStyle,
-  font,
+  fonts,
   customFont,
-}: Props) {
+  fontsSheet,
+}: Props & { fontsSheet?: FontSheet[] }) {
   const id = useId();
+  const fontsFamilies = fonts?.map((font) => font.other || font.fontFamily)
+    .join(
+      ", ",
+    );
   const theme = {
     ...defaultTheme,
     ...mainColors,
@@ -426,13 +433,11 @@ function Section({
     ...complementaryColors?.secondary,
     ...complementaryColors?.tertiary,
     ...buttonStyle,
-    ...font,
+    fontFamily: fontsFamilies,
     ...customFont,
   };
 
-  const selectedFont = customFont?.fontFamily ||
-    font?.other ||
-    (font?.fontFamily !== "None" && font?.fontFamily);
+  const selectedFont = customFont?.fontFamily || fontsFamilies;
 
   const variables = [
     ...toVariables(theme),
@@ -447,16 +452,17 @@ function Section({
 
   return (
     <Head>
-      {font && <link rel="preconnect" src="https://fonts.gstatic.com" />}
+      {fonts && fonts.length > 0 && (
+        <link rel="preconnect" src="https://fonts.gstatic.com" />
+      )}
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
-      {selectedFont && !customFont?.fontFamily && (
-        <link
-          href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,600,700&display=swap`}
-          rel="stylesheet"
+      {fontsSheet?.map((fontSheet) => (
+        <style
           type="text/css"
+          dangerouslySetInnerHTML={{ __html: fontSheet }}
         />
-      )}
+      ))}
       {customFont?.fontFamily && customFont?.styleInnerHtml && (
         <style
           type="text/css"
@@ -477,8 +483,7 @@ function Section({
 
 export function Preview(props: Props) {
   const selectedFont = props.customFont?.fontFamily ||
-    props.font?.other ||
-    (props.font?.fontFamily !== "None" && props.font?.fontFamily);
+    props.fonts?.map((font) => font.other || font.fontFamily).join(", ");
 
   return (
     <>
@@ -665,5 +670,25 @@ export function Preview(props: Props) {
   );
 }
 // todo loader -> get req headers and pass to google css API
+export const loader = async (props: Props, req: Request) => {
+  const { fonts } = props;
+  const filteredFonts = fonts?.filter((font) => font.fontFamily !== "None");
+  const fontsSheet = await Promise.all(
+    filteredFonts?.map(async (font) => {
+      const fontFamily = font?.other || font?.fontFamily;
+      const fontCss = await fetch(
+        `https://fonts.googleapis.com/css?family=${fontFamily}:300,400,600,700&display=swap`,
+        { headers: req.headers },
+      ).then((res) => res.text()).catch(() => undefined);
+      return fontCss;
+    }) ?? [],
+  );
+
+  return {
+    ...props,
+    fonts: filteredFonts,
+    fontsSheet: fontsSheet.filter(Boolean),
+  };
+};
 
 export default Section;
