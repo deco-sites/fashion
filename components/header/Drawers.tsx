@@ -14,6 +14,8 @@ const Searchbar = lazy(() => import("$store/components/search/Searchbar.tsx"));
 export interface Props {
   menu: MenuProps;
   searchbar?: SearchbarProps;
+  // deno-lint-ignore no-explicit-any
+  children?: any; // TODO(mcandeia) do not change this to component children to avoid generating VNode object.
 }
 
 const Aside = (
@@ -46,10 +48,7 @@ const Aside = (
   </div>
 );
 
-function Drawers(
-  { menu, searchbar, ...rest }: Props,
-) {
-  const { children } = rest as { children?: ComponentChildren };
+function Drawers({ menu, searchbar, children }: Props) {
   const { displayCart, displayMenu, displaySearchDrawer } = useUI();
 
   return (
