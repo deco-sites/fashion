@@ -10085,13 +10085,6 @@
         "searchbar": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@Props",
           "title": "Searchbar"
-        },
-        "children": {
-          "type": [
-            "object",
-            "null"
-          ],
-          "title": "Children"
         }
       },
       "required": [

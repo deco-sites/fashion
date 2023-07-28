@@ -14,8 +14,10 @@ const Searchbar = lazy(() => import("$store/components/search/Searchbar.tsx"));
 export interface Props {
   menu: MenuProps;
   searchbar?: SearchbarProps;
-  // deno-lint-ignore no-explicit-any
-  children?: any; // TODO(mcandeia) do not change this to component children to avoid generating VNode object.
+  /**
+   * @ignore_gen true
+   */
+  children?: ComponentChildren;
 }
 
 const Aside = (
