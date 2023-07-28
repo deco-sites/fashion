@@ -3,8 +3,7 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import { DecoManifest } from "$live/types.ts";
-import * as $$$$0 from "./routes/styles.css.ts";
-import * as $$$$1 from "./routes/_app.tsx";
+import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Newsletter.tsx";
 import * as $$$$$1 from "./islands/WishlistButton.tsx";
 import * as $$$$$2 from "./islands/ShippingSimulation.tsx";
@@ -186,7 +185,7 @@ import * as i2$$$$$$23 from "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
 
 const manifest = {
   "routes": {
-    "./routes/_app.tsx": $$$$1,
+    "./routes/_app.tsx": $$$$0,
     "./routes/_middleware.ts": $live_middleware,
     "./routes/[...catchall].tsx": $live_catchall,
     "./routes/index.tsx": $live_catchall,
@@ -200,7 +199,6 @@ const manifest = {
     "./routes/live/release.ts": $live_release,
     "./routes/live/workbench.ts": $live_workbench,
     "./routes/live/workflows/run.ts": $live_workflows,
-    "./routes/styles.css.ts": $$$$0,
   },
   "islands": {
     "./islands/AddToCartButton.tsx": $$$$$3,
