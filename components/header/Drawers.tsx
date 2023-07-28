@@ -14,7 +14,6 @@ const Searchbar = lazy(() => import("$store/components/search/Searchbar.tsx"));
 export interface Props {
   menu: MenuProps;
   searchbar?: SearchbarProps;
-  children?: ComponentChildren;
 }
 
 const Aside = (
@@ -47,7 +46,10 @@ const Aside = (
   </div>
 );
 
-function Drawers({ menu, searchbar, children }: Props) {
+function Drawers(
+  { menu, searchbar, ...rest }: Props,
+) {
+  const { children } = rest as { children?: ComponentChildren };
   const { displayCart, displayMenu, displaySearchDrawer } = useUI();
 
   return (
