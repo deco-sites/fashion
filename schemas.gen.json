@@ -3977,6 +3977,7 @@
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section": {
       "$ref": "#/root/sections",
+      "widget": "none",
       "title": "Section"
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9sb2FkZXIudHM=@Loader": {
@@ -10597,10 +10598,13 @@
           "items": {
             "$ref": "#/definitions/ZGVjby1jeC9kZWNvL2Jsb2Nrcy9zZWN0aW9uLnRz@Section"
           },
-          "title": "Page Sections"
+          "title": "Sections",
+          "label": "hidden",
+          "changeable": "true"
         },
         {
           "title": "Variant",
+          "label": "hidden",
           "type": "object",
           "allOf": [
             {
@@ -10646,7 +10650,8 @@
         "sections"
       ],
       "title": "deco-cx/deco/pages/LivePage.tsx@Props",
-      "titleBy": "name"
+      "titleBy": "name",
+      "label": "rootHidden"
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
       "$ref": "#/root/matchers",
@@ -15290,6 +15295,7 @@
         "value"
       ],
       "title": "{{#beautifySchemaTitle}}{{{rule.__resolveType}}}{{/beautifySchemaTitle}} Variant",
+      "label": "hidden",
       "icon": "flag"
     },
     "ZGVjby1jeC9kZWNvL2Jsb2Nrcy9mbGFnLnRz@Variant+Section[][]": {
@@ -18892,6 +18898,7 @@
     },
     "JGxpdmUvZmxhZ3MvbXVsdGl2YXJpYXRlLnRz": {
       "title": "Variant",
+      "label": "hidden",
       "type": "object",
       "allOf": [
         {
