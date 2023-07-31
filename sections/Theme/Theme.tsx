@@ -7,6 +7,7 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { Head } from "$fresh/runtime.ts";
+import { fetchSafe } from "deco-sites/std/utils/fetch.ts";
 
 export interface MainColors {
   /**
@@ -452,9 +453,6 @@ function Section({
 
   return (
     <Head>
-      {fonts && fonts.length > 0 && (
-        <link rel="preconnect" src="https://fonts.gstatic.com" />
-      )}
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
       {fontsSheet?.map((fontSheet) => (
@@ -670,6 +668,8 @@ export function Preview(props: Props) {
   );
 }
 
+export const FONTS_GSTATIC_ORIGIN = "https://fonts.gstatic.com";
+
 const isValidFont = (font: Font) => font.fontFamily !== "None";
 const generateHeaderFlightKey = (headers: Headers) => {
   const acceptLanguage = headers.get("Accept-Language");
@@ -690,9 +690,11 @@ export const singleFlightKey = (props: Props, req: Request) => {
 export const loader = async (props: Props, req: Request) => {
   const { fonts } = props;
   const filteredFonts = fonts?.filter(isValidFont);
+
   const fontsSheet = await Promise.all(
     filteredFonts?.map(async (font) => {
       const fontFamily = font?.other || font?.fontFamily;
+      // TODO: use fetchSafe
       const fontCss = await fetch(
         `https://fonts.googleapis.com/css?family=${fontFamily}:300,400,600,700&display=swap`,
         { headers: req.headers },
@@ -704,7 +706,9 @@ export const loader = async (props: Props, req: Request) => {
   return {
     ...props,
     fonts: filteredFonts,
-    fontsSheet: fontsSheet.filter(Boolean),
+    fontsSheet: fontsSheet.filter(Boolean).map((cssSheet) =>
+      cssSheet?.replaceAll(FONTS_GSTATIC_ORIGIN, "/fonts")
+    ),
   };
 };
 
