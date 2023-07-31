@@ -669,10 +669,27 @@ export function Preview(props: Props) {
     </>
   );
 }
-// todo loader -> get req headers and pass to google css API
+
+const isValidFont = (font: Font) => font.fontFamily !== "None";
+const generateHeaderFlightKey = (headers: Headers) => {
+  const acceptLanguage = headers.get("Accept-Language");
+  const userAgent = headers.get("User-Agent");
+  return `a-l/${acceptLanguage},u-a/${userAgent}`;
+};
+
+export const singleFlightKey = (props: Props, req: Request) => {
+  const validFonts = props.fonts?.filter(isValidFont).map((font) =>
+    font.other || font.fontFamily
+  );
+
+  return `${validFonts?.join(",") ?? ""},${
+    generateHeaderFlightKey(req.headers)
+  }`;
+};
+
 export const loader = async (props: Props, req: Request) => {
   const { fonts } = props;
-  const filteredFonts = fonts?.filter((font) => font.fontFamily !== "None");
+  const filteredFonts = fonts?.filter(isValidFont);
   const fontsSheet = await Promise.all(
     filteredFonts?.map(async (font) => {
       const fontFamily = font?.other || font?.fontFamily;
