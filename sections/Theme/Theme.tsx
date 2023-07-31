@@ -694,7 +694,6 @@ export const loader = async (props: Props, req: Request) => {
   const fontsSheet = await Promise.all(
     filteredFonts?.map(async (font) => {
       const fontFamily = font?.other || font?.fontFamily;
-      // TODO: use fetchSafe
       const fontCss = await fetch(
         `https://fonts.googleapis.com/css?family=${fontFamily}:300,400,600,700&display=swap`,
         { headers: req.headers },

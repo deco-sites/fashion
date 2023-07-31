@@ -1,4 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
+import { fetchSafe } from "deco-sites/std/utils/fetch.ts";
 import { FONTS_GSTATIC_ORIGIN } from "$store/sections/Theme/Theme.tsx";
 
 export const handler: Handlers = {
@@ -6,8 +7,9 @@ export const handler: Handlers = {
     const { font } = ctx.params;
 
     const fontUrl = new URL(`/${font}`, FONTS_GSTATIC_ORIGIN);
-    // TODO: use fetch safe
-    const fontResponse = await fetch(fontUrl.href);
+    const fontResponse = await fetchSafe(fontUrl.href, {
+      withProxyCache: true,
+    });
     const headers = new Headers();
     copyHeader("content-length", headers, fontResponse.headers);
     copyHeader("content-type", headers, fontResponse.headers);
