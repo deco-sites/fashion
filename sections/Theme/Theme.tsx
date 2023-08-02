@@ -7,7 +7,7 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { Head } from "$fresh/runtime.ts";
-import { PATH as FONT_LOADER_PATH } from "deco-sites/std/loaders/x/font.ts";
+import { toFontServer } from "deco-sites/std/loaders/x/font.ts";
 
 export interface MainColors {
   /**
@@ -701,7 +701,7 @@ export const loader = async (props: Props, req: Request) => {
 
       if (!fontCss) return;
 
-      return fontCss.replaceAll("https://", `${FONT_LOADER_PATH}?src=https://`);
+      return toFontServer(fontCss);
     }) ?? [],
   );
 
