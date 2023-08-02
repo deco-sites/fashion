@@ -7,7 +7,7 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { Head } from "$fresh/runtime.ts";
-import { fetchSafe } from "deco-sites/std/utils/fetch.ts";
+import { PATH as FONT_LOADER_PATH } from "deco-sites/std/loaders/x/font.ts";
 
 export interface MainColors {
   /**
@@ -698,16 +698,17 @@ export const loader = async (props: Props, req: Request) => {
         `https://fonts.googleapis.com/css?family=${fontFamily}:300,400,600,700&display=swap`,
         { headers: req.headers },
       ).then((res) => res.text()).catch(() => undefined);
-      return fontCss;
+
+      if (!fontCss) return;
+
+      return fontCss.replaceAll("https://", `${FONT_LOADER_PATH}?src=https://`);
     }) ?? [],
   );
 
   return {
     ...props,
     fonts: filteredFonts,
-    fontsSheet: fontsSheet.filter(Boolean).map((cssSheet) =>
-      cssSheet?.replaceAll(FONTS_GSTATIC_ORIGIN, "/fonts")
-    ),
+    fontsSheet: fontsSheet.filter(Boolean),
   };
 };
 
