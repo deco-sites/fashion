@@ -14374,9 +14374,7 @@
           "title": "Fonts"
         }
       },
-      "required": [
-        "fonts"
-      ],
+      "required": [],
       "title": "Props"
     },
     "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RoZW1lL1RoZW1lLnRzeA==@MainColors": {
