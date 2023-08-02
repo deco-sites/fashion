@@ -3,8 +3,7 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import { DecoManifest } from "$live/types.ts";
-import * as $$$$0 from "./routes/fonts/[...font].ts";
-import * as $$$$1 from "./routes/_app.tsx";
+import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Newsletter.tsx";
 import * as $$$$$1 from "./islands/WishlistButton.tsx";
 import * as $$$$$2 from "./islands/ShippingSimulation.tsx";
@@ -147,7 +146,8 @@ import * as i2$$$25 from "deco-sites/std/loaders/vtex/navbar.ts";
 import * as i2$$$26 from "deco-sites/std/loaders/vtex/proxy.ts";
 import * as i2$$$27 from "deco-sites/std/loaders/vtex/user.ts";
 import * as i2$$$28 from "deco-sites/std/loaders/vtex/wishlist.ts";
-import * as i2$$$29 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
+import * as i2$$$29 from "deco-sites/std/loaders/x/font.ts";
+import * as i2$$$30 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
 import * as i2$$$$7 from "deco-sites/std/handlers/sitemap.ts";
 import * as i2$$$$8 from "deco-sites/std/handlers/vtex/sitemap.ts";
 import * as i2$$$$$5 from "deco-sites/std/sections/Analytics.tsx";
@@ -186,10 +186,9 @@ import * as i2$$$$$$23 from "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
 
 const manifest = {
   "routes": {
-    "./routes/_app.tsx": $$$$1,
+    "./routes/_app.tsx": $$$$0,
     "./routes/_middleware.ts": $live_middleware,
     "./routes/[...catchall].tsx": $live_catchall,
-    "./routes/fonts/[...font].ts": $$$$0,
     "./routes/index.tsx": $live_catchall,
     "./routes/live/_meta.ts": $live_meta,
     "./routes/live/editorData.ts": $live_editorData,
@@ -290,7 +289,8 @@ const manifest = {
     "deco-sites/std/loaders/vtex/proxy.ts": i2$$$26,
     "deco-sites/std/loaders/vtex/user.ts": i2$$$27,
     "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$28,
-    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$29,
+    "deco-sites/std/loaders/x/font.ts": i2$$$29,
+    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$30,
   },
   "handlers": {
     "$live/handlers/devPage.ts": i2$$$$0,
