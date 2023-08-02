@@ -7,6 +7,9 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { Head } from "$fresh/runtime.ts";
+import googleFontsLoader, {
+  Props as GoogleFontsLoaderProps,
+} from "deco-sites/std/packs/font/loaders/googleFonts.ts";
 
 export interface MainColors {
   /**
@@ -228,56 +231,6 @@ export interface Miscellaneous {
   "--tab-radius": string;
 }
 
-export interface Font {
-  /**
-   * @title Font family
-   */
-  fontFamily?:
-    | "None"
-    | "Alegreya"
-    | "Alegreya Sans"
-    | "Archivo Narrow"
-    | "BioRhyme"
-    | "Cardo"
-    | "Chivo"
-    | "Cormorant"
-    | "DM Sans"
-    | "Eczar"
-    | "Fira Sans"
-    | "Inconsolata"
-    | "Inknut Antiqua"
-    | "Inter"
-    | "IBM Plex Sans"
-    | "Karla"
-    | "Lato"
-    | "Libre Baskerville"
-    | "Libre Franklin"
-    | "Lora"
-    | "Manrope"
-    | "Merriweather"
-    | "Montserrat"
-    | "Neuton"
-    | "Open Sans"
-    | "Poppins"
-    | "Playfair Display"
-    | "Proza Libre"
-    | "PT Sans"
-    | "PT Serif"
-    | "Raleway"
-    | "Roboto"
-    | "Roboto Slab"
-    | "Rubik"
-    | "Space Grotesk"
-    | "Space Mono"
-    | "Spectral"
-    | "Source Sans Pro"
-    | "Source Serif Pro"
-    | "Syne"
-    | "Work Sans";
-  /** @title Other */
-  other?: string;
-}
-
 export interface CustomFont {
   fontFamily?: string;
   /**
@@ -286,15 +239,15 @@ export interface CustomFont {
   styleInnerHtml?: string;
 }
 
-export interface Props {
+export interface Props extends GoogleFontsLoaderProps {
   mainColors?: MainColors;
   /** These colors are automatically generated with darker tons of their originals */
   complementaryColors?: ComplementaryColors;
   buttonStyle?: Button;
-  /** @title Google font */
-  font?: Font;
   customFont?: CustomFont;
 }
+
+type FontSheet = string;
 
 type Theme =
   & MainColors
@@ -401,6 +354,8 @@ const defaultTheme = {
   "--tab-radius": "0.5rem", // border radius of tabs
 };
 
+type SectionProps = Props & { fontsSheet?: FontSheet[] };
+
 /**
  * This section merges the DESIGN_SYTEM variable with incoming props into a css sheet with variables, i.e.
  * this function transforms props into
@@ -414,10 +369,15 @@ function Section({
   mainColors,
   complementaryColors,
   buttonStyle,
-  font,
+  fonts,
   customFont,
-}: Props) {
+  fontsSheet,
+}: SectionProps) {
   const id = useId();
+  const fontsFamilies = fonts?.map((font) => font.other || font.fontFamily)
+    .join(
+      ", ",
+    );
   const theme = {
     ...defaultTheme,
     ...mainColors,
@@ -426,13 +386,11 @@ function Section({
     ...complementaryColors?.secondary,
     ...complementaryColors?.tertiary,
     ...buttonStyle,
-    ...font,
+    fontFamily: fontsFamilies,
     ...customFont,
   };
 
-  const selectedFont = customFont?.fontFamily ||
-    font?.other ||
-    (font?.fontFamily !== "None" && font?.fontFamily);
+  const selectedFont = customFont?.fontFamily || fontsFamilies;
 
   const variables = [
     ...toVariables(theme),
@@ -449,13 +407,12 @@ function Section({
     <Head>
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
-      {selectedFont && !customFont?.fontFamily && (
-        <link
-          href={`https://fonts.googleapis.com/css?family=${selectedFont}:300,400,600,700`}
-          rel="stylesheet"
+      {fontsSheet?.map((fontSheet) => (
+        <style
           type="text/css"
+          dangerouslySetInnerHTML={{ __html: fontSheet }}
         />
-      )}
+      ))}
       {customFont?.fontFamily && customFont?.styleInnerHtml && (
         <style
           type="text/css"
@@ -476,8 +433,7 @@ function Section({
 
 export function Preview(props: Props) {
   const selectedFont = props.customFont?.fontFamily ||
-    props.font?.other ||
-    (props.font?.fontFamily !== "None" && props.font?.fontFamily);
+    props.fonts?.map((font) => font.other || font.fontFamily).join(", ");
 
   return (
     <>
@@ -663,5 +619,14 @@ export function Preview(props: Props) {
     </>
   );
 }
+
+export const loader = async (
+  props: Props,
+  req: Request,
+): Promise<SectionProps> => {
+  const fontProps = await googleFontsLoader(props, req);
+
+  return { ...props, ...fontProps };
+};
 
 export default Section;

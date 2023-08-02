@@ -146,7 +146,8 @@ import * as i2$$$25 from "deco-sites/std/loaders/vtex/navbar.ts";
 import * as i2$$$26 from "deco-sites/std/loaders/vtex/proxy.ts";
 import * as i2$$$27 from "deco-sites/std/loaders/vtex/user.ts";
 import * as i2$$$28 from "deco-sites/std/loaders/vtex/wishlist.ts";
-import * as i2$$$29 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
+import * as i2$$$29 from "deco-sites/std/loaders/x/font.ts";
+import * as i2$$$30 from "deco-sites/std/loaders/x/redirectsFromCsv.ts";
 import * as i2$$$$7 from "deco-sites/std/handlers/sitemap.ts";
 import * as i2$$$$8 from "deco-sites/std/handlers/vtex/sitemap.ts";
 import * as i2$$$$$5 from "deco-sites/std/sections/Analytics.tsx";
@@ -288,7 +289,8 @@ const manifest = {
     "deco-sites/std/loaders/vtex/proxy.ts": i2$$$26,
     "deco-sites/std/loaders/vtex/user.ts": i2$$$27,
     "deco-sites/std/loaders/vtex/wishlist.ts": i2$$$28,
-    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$29,
+    "deco-sites/std/loaders/x/font.ts": i2$$$29,
+    "deco-sites/std/loaders/x/redirectsFromCsv.ts": i2$$$30,
   },
   "handlers": {
     "$live/handlers/devPage.ts": i2$$$$0,
