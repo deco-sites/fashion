@@ -7,7 +7,9 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { Head } from "$fresh/runtime.ts";
-import { toFontServer } from "deco-sites/std/loaders/x/font.ts";
+import googleFontsLoader, {
+  Props as GoogleFontsLoaderProps,
+} from "deco-sites/std/packs/font/loaders/googleFonts.ts";
 
 export interface MainColors {
   /**
@@ -229,56 +231,6 @@ export interface Miscellaneous {
   "--tab-radius": string;
 }
 
-export interface Font {
-  /**
-   * @title Font family
-   */
-  fontFamily?:
-    | "None"
-    | "Alegreya"
-    | "Alegreya Sans"
-    | "Archivo Narrow"
-    | "BioRhyme"
-    | "Cardo"
-    | "Chivo"
-    | "Cormorant"
-    | "DM Sans"
-    | "Eczar"
-    | "Fira Sans"
-    | "Inconsolata"
-    | "Inknut Antiqua"
-    | "Inter"
-    | "IBM Plex Sans"
-    | "Karla"
-    | "Lato"
-    | "Libre Baskerville"
-    | "Libre Franklin"
-    | "Lora"
-    | "Manrope"
-    | "Merriweather"
-    | "Montserrat"
-    | "Neuton"
-    | "Open Sans"
-    | "Poppins"
-    | "Playfair Display"
-    | "Proza Libre"
-    | "PT Sans"
-    | "PT Serif"
-    | "Raleway"
-    | "Roboto"
-    | "Roboto Slab"
-    | "Rubik"
-    | "Space Grotesk"
-    | "Space Mono"
-    | "Spectral"
-    | "Source Sans Pro"
-    | "Source Serif Pro"
-    | "Syne"
-    | "Work Sans";
-  /** @title Other */
-  other?: string;
-}
-
 export interface CustomFont {
   fontFamily?: string;
   /**
@@ -287,13 +239,11 @@ export interface CustomFont {
   styleInnerHtml?: string;
 }
 
-export interface Props {
+export interface Props extends GoogleFontsLoaderProps {
   mainColors?: MainColors;
   /** These colors are automatically generated with darker tons of their originals */
   complementaryColors?: ComplementaryColors;
   buttonStyle?: Button;
-  /** @title Google font */
-  fonts?: Font[];
   customFont?: CustomFont;
 }
 
@@ -404,6 +354,8 @@ const defaultTheme = {
   "--tab-radius": "0.5rem", // border radius of tabs
 };
 
+type SectionProps = Props & { fontsSheet?: FontSheet[] };
+
 /**
  * This section merges the DESIGN_SYTEM variable with incoming props into a css sheet with variables, i.e.
  * this function transforms props into
@@ -420,7 +372,7 @@ function Section({
   fonts,
   customFont,
   fontsSheet,
-}: Props & { fontsSheet?: FontSheet[] }) {
+}: SectionProps) {
   const id = useId();
   const fontsFamilies = fonts?.map((font) => font.other || font.fontFamily)
     .join(
@@ -668,48 +620,13 @@ export function Preview(props: Props) {
   );
 }
 
-export const FONTS_GSTATIC_ORIGIN = "https://fonts.gstatic.com";
+export const loader = async (
+  props: Props,
+  req: Request,
+): Promise<SectionProps> => {
+  const fontProps = await googleFontsLoader(props, req);
 
-const isValidFont = (font: Font) => font.fontFamily !== "None";
-const generateHeaderFlightKey = (headers: Headers) => {
-  const acceptLanguage = headers.get("Accept-Language");
-  const userAgent = headers.get("User-Agent");
-  return `a-l/${acceptLanguage},u-a/${userAgent}`;
-};
-
-export const singleFlightKey = (props: Props, req: Request) => {
-  const validFonts = props.fonts?.filter(isValidFont).map((font) =>
-    font.other || font.fontFamily
-  );
-
-  return `${validFonts?.join(",") ?? ""},${
-    generateHeaderFlightKey(req.headers)
-  }`;
-};
-
-export const loader = async (props: Props, req: Request) => {
-  const { fonts } = props;
-  const filteredFonts = fonts?.filter(isValidFont);
-
-  const fontsSheet = await Promise.all(
-    filteredFonts?.map(async (font) => {
-      const fontFamily = font?.other || font?.fontFamily;
-      const fontCss = await fetch(
-        `https://fonts.googleapis.com/css?family=${fontFamily}:300,400,600,700&display=swap`,
-        { headers: req.headers },
-      ).then((res) => res.text()).catch(() => undefined);
-
-      if (!fontCss) return;
-
-      return toFontServer(fontCss);
-    }) ?? [],
-  );
-
-  return {
-    ...props,
-    fonts: filteredFonts,
-    fontsSheet: fontsSheet.filter(Boolean),
-  };
+  return { ...props, ...fontProps };
 };
 
 export default Section;
