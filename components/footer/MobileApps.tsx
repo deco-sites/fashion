@@ -8,6 +8,7 @@ export default function MobileApps(
           {content?.apple && (
             <a href={content?.apple} target="_blank">
               <img
+                loading="lazy"
                 width="135"
                 height="40"
                 src="/image/app-apple.png"
@@ -17,6 +18,7 @@ export default function MobileApps(
           {content?.android && (
             <a href={content?.android} target="_blank">
               <img
+                loading="lazy"
                 width="135"
                 height="40"
                 src="/image/app-android.png"

@@ -14,6 +14,7 @@ export default function Logo({ logo }: Props) {
         <div class="flex flex-col gap-3">
           <div class="w-28 max-h-16">
             <img
+              loading="lazy"
               src={logo?.image}
               alt={logo?.description}
               width={200}
