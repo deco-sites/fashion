@@ -7,7 +7,8 @@
     "update": "deno eval 'import \"$live/scripts/update.ts\"'",
     "check": "deno fmt && deno lint && deno check dev.ts main.ts",
     "install": "deno eval 'import \"$live/scripts/apps/install.ts\"'",
-    "uninstall": "deno eval 'import \"$live/scripts/apps/uninstall.ts\"'"
+    "uninstall": "deno eval 'import \"$live/scripts/apps/uninstall.ts\"'",
+    "bundle": "deno eval 'import \"$live/scripts/apps/bundle.ts\"' deco-sites/fashion"
   },
   "githooks": {
     "pre-commit": "check"
