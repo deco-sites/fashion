@@ -28,6 +28,7 @@ export const SendEventOnClick = <E extends AnalyticsEvent>({ event, id }: {
   id: string;
 }) => (
   <script
+    type="module"
     dangerouslySetInnerHTML={{
       __html:
         `addEventListener("load", () => document.getElementById("${id}")?.addEventListener("click", () => (${sendEvent})(${
@@ -46,6 +47,7 @@ export const SendEventOnLoad = <E extends AnalyticsEvent>(
   { event }: { event: E },
 ) => (
   <script
+    type="module"
     dangerouslySetInnerHTML={{
       __html: `addEventListener("load", () => (${sendEvent})(${
         JSON.stringify(event)
