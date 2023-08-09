@@ -4,14 +4,17 @@
 /// <reference lib="esnext" />
 
 import { start } from "$fresh/server.ts";
-import { $live } from "$live/mod.ts";
 import plugins from "deco-sites/std/plugins/mod.ts";
 import partytownPlugin from "partytown/mod.ts";
 import manifest from "./fresh.gen.ts";
+import liveManifest from "./manifest.gen.ts";
 
-await start($live(manifest, { namespace: "deco-sites/fashion" }), {
+await start(manifest, {
   plugins: [
-    ...plugins(),
+    ...plugins({
+      manifest: liveManifest,
+      site: { namespace: "deco-sites/fashion" },
+    }),
     partytownPlugin(),
   ],
 });
