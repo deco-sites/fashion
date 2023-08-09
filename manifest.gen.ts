@@ -31,38 +31,38 @@ import { AppManifest } from "$live/types.ts";
 
 const manifest = {
   "sections": {
-    "deco-sites/fashion/sections/Category/CategoryBanner.tsx": $$$$$$1,
-    "deco-sites/fashion/sections/Category/CategoryList.tsx": $$$$$$2,
-    "deco-sites/fashion/sections/Content/Benefits.tsx": $$$$$$10,
-    "deco-sites/fashion/sections/Content/Faq.tsx": $$$$$$9,
-    "deco-sites/fashion/sections/Content/Logos.tsx": $$$$$$8,
-    "deco-sites/fashion/sections/Content/Testimonials.tsx": $$$$$$7,
-    "deco-sites/fashion/sections/Footer/Footer.tsx": $$$$$$0,
-    "deco-sites/fashion/sections/Header/Header.tsx": $$$$$$23,
-    "deco-sites/fashion/sections/Images/BannerGrid.tsx": $$$$$$4,
-    "deco-sites/fashion/sections/Images/Carousel.tsx": $$$$$$6,
-    "deco-sites/fashion/sections/Images/ImageGallery.tsx": $$$$$$5,
-    "deco-sites/fashion/sections/Images/ShoppableBanner.tsx": $$$$$$3,
-    "deco-sites/fashion/sections/Links/LinkTree.tsx": $$$$$$20,
-    "deco-sites/fashion/sections/Links/Shortcuts.tsx": $$$$$$21,
-    "deco-sites/fashion/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$15,
-    "deco-sites/fashion/sections/Miscellaneous/CookieConsent.tsx": $$$$$$16,
-    "deco-sites/fashion/sections/Newsletter/Newsletter.tsx": $$$$$$22,
-    "deco-sites/fashion/sections/Product/ProductDetails.tsx": $$$$$$14,
-    "deco-sites/fashion/sections/Product/ProductShelf.tsx": $$$$$$13,
-    "deco-sites/fashion/sections/Product/SearchResult.tsx": $$$$$$12,
-    "deco-sites/fashion/sections/Product/Wishlist.tsx": $$$$$$11,
-    "deco-sites/fashion/sections/Social/InstagramPosts.tsx": $$$$$$18,
-    "deco-sites/fashion/sections/Social/WhatsApp.tsx": $$$$$$17,
-    "deco-sites/fashion/sections/Theme/Theme.tsx": $$$$$$19,
+    "deco-sites/candy-store/sections/Category/CategoryBanner.tsx": $$$$$$1,
+    "deco-sites/candy-store/sections/Category/CategoryList.tsx": $$$$$$2,
+    "deco-sites/candy-store/sections/Content/Benefits.tsx": $$$$$$10,
+    "deco-sites/candy-store/sections/Content/Faq.tsx": $$$$$$9,
+    "deco-sites/candy-store/sections/Content/Logos.tsx": $$$$$$8,
+    "deco-sites/candy-store/sections/Content/Testimonials.tsx": $$$$$$7,
+    "deco-sites/candy-store/sections/Footer/Footer.tsx": $$$$$$0,
+    "deco-sites/candy-store/sections/Header/Header.tsx": $$$$$$23,
+    "deco-sites/candy-store/sections/Images/BannerGrid.tsx": $$$$$$4,
+    "deco-sites/candy-store/sections/Images/Carousel.tsx": $$$$$$6,
+    "deco-sites/candy-store/sections/Images/ImageGallery.tsx": $$$$$$5,
+    "deco-sites/candy-store/sections/Images/ShoppableBanner.tsx": $$$$$$3,
+    "deco-sites/candy-store/sections/Links/LinkTree.tsx": $$$$$$20,
+    "deco-sites/candy-store/sections/Links/Shortcuts.tsx": $$$$$$21,
+    "deco-sites/candy-store/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$15,
+    "deco-sites/candy-store/sections/Miscellaneous/CookieConsent.tsx": $$$$$$16,
+    "deco-sites/candy-store/sections/Newsletter/Newsletter.tsx": $$$$$$22,
+    "deco-sites/candy-store/sections/Product/ProductDetails.tsx": $$$$$$14,
+    "deco-sites/candy-store/sections/Product/ProductShelf.tsx": $$$$$$13,
+    "deco-sites/candy-store/sections/Product/SearchResult.tsx": $$$$$$12,
+    "deco-sites/candy-store/sections/Product/Wishlist.tsx": $$$$$$11,
+    "deco-sites/candy-store/sections/Social/InstagramPosts.tsx": $$$$$$18,
+    "deco-sites/candy-store/sections/Social/WhatsApp.tsx": $$$$$$17,
+    "deco-sites/candy-store/sections/Theme/Theme.tsx": $$$$$$19,
   },
   "apps": {
-    "deco-sites/fashion/apps/site.ts": $$$$$$$$$$$0,
+    "deco-sites/candy-store/apps/site.ts": $$$$$$$$$$$0,
   },
 };
 
 export type Manifest = typeof manifest;
 
-export const name = "deco-sites/fashion";
+export const name = "deco-sites/candy-store";
 
 export default manifest satisfies AppManifest;

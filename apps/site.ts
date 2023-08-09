@@ -3,7 +3,7 @@ import { AppRuntime } from "$live/mod.ts";
 import type { State } from "site/mod.ts";
 import site from "site/mod.ts";
 import manifest from "../manifest.gen.ts";
-export const name = "deco-sites/fashion";
+export const name = "deco-sites/candy-store";
 
 export default function Fashion(state: State): AppRuntime {
   return site({

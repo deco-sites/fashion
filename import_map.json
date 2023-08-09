@@ -1,7 +1,6 @@
 {
   "imports": {
-    "deco-sites/staging/": "./",
-    "deco-sites/fashion/": "./",
+    "deco-sites/candy-store/": "./",
     "$store/": "./",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.20.4/",
     "$live/": "https://denopkg.com/deco-cx/deco@1.27.0/",
@@ -14,6 +13,6 @@
     "std/": "https://deno.land/std@0.190.0/",
     "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.3/",
     "daisyui": "npm:daisyui@3.5.0",
-    "site/": "https:/denopkg.com/mcandeia/deco-apps@0.3.1/site/"
+    "site/": "https:/denopkg.com/mcandeia/deco-apps@0.3.2/site/"
   }
 }

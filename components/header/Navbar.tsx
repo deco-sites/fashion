@@ -5,7 +5,7 @@ import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";
 import CartButtonVTEX from "$store/islands/Header/Cart/vtex.tsx";
 import Searchbar from "$store/islands/Header/Searchbar.tsx";
 import { PLATFORM } from "$store/platform.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "site/image/components/Image.tsx";
 import type { INavItem } from "./NavItem.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";

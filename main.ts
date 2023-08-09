@@ -13,7 +13,7 @@ await start(manifest, {
   plugins: [
     ...plugins({
       manifest: liveManifest,
-      site: { namespace: "deco-sites/fashion" },
+      site: { namespace: "deco-sites/candy-store" },
     }),
     partytownPlugin(),
   ],
