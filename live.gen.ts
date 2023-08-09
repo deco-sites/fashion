@@ -2,8 +2,7 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $$$$0 from "./routes/_middleware.ts";
-import * as $$$$1 from "./routes/_app.tsx";
+import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Newsletter.tsx";
 import * as $$$$$1 from "./islands/WishlistButton.tsx";
 import * as $$$$$2 from "./islands/ShippingSimulation.tsx";
@@ -178,8 +177,7 @@ import * as i2$$$$$$24 from "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
 
 const manifest = {
   "routes": {
-    "./routes/_app.tsx": $$$$1,
-    "./routes/_middleware.ts": $$$$0,
+    "./routes/_app.tsx": $$$$0,
   },
   "islands": {
     "./islands/AddToCartButton.tsx": $$$$$3,
