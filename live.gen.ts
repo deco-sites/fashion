@@ -51,6 +51,7 @@ import * as $live_previews_block from "$live/routes/live/previews/[...block].tsx
 import * as $live_previews_index from "$live/routes/live/previews/index.tsx";
 import * as $live_catchall from "$live/routes/[...catchall].tsx";
 import { DecoManifest } from "$live/types.ts";
+import * as i1$0 from "$live/loaders/secret.ts";
 import * as i2$$$0 from "$live/loaders/state.ts";
 import * as i2$$$1 from "$live/loaders/workflows/events.ts";
 import * as i2$$$2 from "$live/loaders/workflows/get.ts";
@@ -82,6 +83,7 @@ import * as i2$$$$$$$$$0 from "$live/flags/audience.ts";
 import * as i2$$$$$$$$$1 from "$live/flags/everyone.ts";
 import * as i2$$$$$$$$$2 from "$live/flags/flag.ts";
 import * as i2$$$$$$$$$3 from "$live/flags/multivariate.ts";
+import * as i1$$$$$$$0 from "$live/actions/secrets/encrypt.ts";
 import * as i2$$$$$$0 from "$live/actions/workflows/cancel.ts";
 import * as i2$$$$$$1 from "$live/actions/workflows/signal.ts";
 import * as i2$$$$$$2 from "$live/actions/workflows/start.ts";
@@ -259,6 +261,7 @@ const manifest = {
     "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx": i2$$$$$16,
   },
   "loaders": {
+    "$live/loaders/secret.ts": i1$0,
     "$live/loaders/state.ts": i2$$$0,
     "$live/loaders/workflows/events.ts": i2$$$1,
     "$live/loaders/workflows/get.ts": i2$$$2,
@@ -328,6 +331,7 @@ const manifest = {
     "$live/flags/multivariate.ts": i2$$$$$$$$$3,
   },
   "actions": {
+    "$live/actions/secrets/encrypt.ts": i1$$$$$$$0,
     "$live/actions/workflows/cancel.ts": i2$$$$$$0,
     "$live/actions/workflows/signal.ts": i2$$$$$$1,
     "$live/actions/workflows/start.ts": i2$$$$$$2,
