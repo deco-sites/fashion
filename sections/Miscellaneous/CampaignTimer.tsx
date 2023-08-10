@@ -1,7 +1,10 @@
 import { useId } from "$store/sdk/useId.ts";
 import { HTML } from "deco-sites/std/components/types.ts";
+import { Secret } from '$live/loaders/secret.ts'
 
 export interface Props {
+  mySecret: Secret
+
   /**
    * @title Text
    * @default Time left for a campaign to end wth a link
