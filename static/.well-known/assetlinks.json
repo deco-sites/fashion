@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "site.deco.fashion.twa",
+        "sha256_cert_fingerprints": ["84:2D:6C:D4:CB:F8:F1:BB:EA:8A:61:07:2F:97:F7:FF:E8:02:9D:F7:24:74:A5:96:BF:4A:8E:C6:A7:E2:73:57"]
+      }
+    }]
