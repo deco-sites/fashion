@@ -103,30 +103,31 @@ function ShippingSimulation({ items }: Props) {
           Informe seu CEP para consultar os prazos de entrega
         </span>
       </div>
-      <div>
-        <form
-          class="join"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSimulation();
+
+      <form
+        class="join"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSimulation();
+        }}
+      >
+        <input
+          as="input"
+          type="text"
+          class="input input-bordered join-item"
+          placeholder="Seu cep aqui"
+          value={postalCode.value}
+          maxLength={8}
+          size={8}
+          onChange={(e: { currentTarget: { value: string } }) => {
+            postalCode.value = e.currentTarget.value;
           }}
-        >
-          <input
-            as="input"
-            type="text"
-            class="input input-bordered join-item"
-            placeholder="Seu cep aqui"
-            value={postalCode.value}
-            maxLength={8}
-            onChange={(e: { currentTarget: { value: string } }) => {
-              postalCode.value = e.currentTarget.value;
-            }}
-          />
-          <Button type="submit" loading={loading.value} class="join-item">
-            Calcular
-          </Button>
-        </form>
-      </div>
+        />
+        <Button type="submit" loading={loading.value} class="join-item">
+          Calcular
+        </Button>
+      </form>
+
       <div>
         <div>
           <ShippingContent simulation={simulateResult} />
