@@ -7,6 +7,7 @@ import OutOfStock from "$store/islands/OutOfStock.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
+import Component from "$store/islands/WishlistButton.tsx";
 import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useId } from "$store/sdk/useId.ts";
@@ -14,7 +15,6 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import Image from "deco-sites/std/components/Image.tsx";
-import Component from "../wishlist/WishlistButton.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
