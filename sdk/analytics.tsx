@@ -37,8 +37,7 @@ export const SendEventOnClick = <E extends AnalyticsEvent>({ event, id }: {
           JSON.stringify(event)
         }));})`,
     }}
-  >
-  </script>
+  />
 );
 
 /**
