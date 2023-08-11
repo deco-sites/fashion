@@ -10,14 +10,16 @@ declare global {
 }
 
 export const sendEvent = <E extends AnalyticsEvent>(event: E) => {
-  if (typeof window.DECO_SITES_STD?.sendAnalyticsEvent !== "function") {
-    console.info(
-      "Cannot find Analytics section in your page. Press `.` to add Analytics and supress this warning",
-    );
+  const doSend = window.DECO_SITES_STD &&
+    window.DECO_SITES_STD.sendAnalyticsEvent;
 
-    return;
+  if (typeof doSend === "function") {
+    return doSend(event);
   }
-  window.DECO_SITES_STD.sendAnalyticsEvent(event);
+
+  console.info(
+    "Cannot find Analytics section in your page. Press `.` to add Analytics and supress this warning",
+  );
 };
 
 /**
@@ -31,12 +33,11 @@ export const SendEventOnClick = <E extends AnalyticsEvent>({ event, id }: {
     type="module"
     dangerouslySetInnerHTML={{
       __html:
-        `addEventListener("load", () => document.getElementById("${id}")?.addEventListener("click", () => (${sendEvent})(${
+        `addEventListener("load", () => {const element = document.getElementById("${id}"); element && element.addEventListener("click", () => (${sendEvent})(${
           JSON.stringify(event)
-        })))`,
+        }));})`,
     }}
-  >
-  </script>
+  />
 );
 
 /**
