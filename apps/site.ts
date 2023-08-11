@@ -1,13 +1,14 @@
-import { buildApp } from "$live/blocks/app.ts";
-import { AppRuntime } from "$live/mod.ts";
+import { App, AppModule } from "$live/mod.ts";
 import type { State } from "site/mod.ts";
-import site from "site/mod.ts";
+import * as site from "site/mod.ts";
 import manifest from "../manifest.gen.ts";
+export { onBeforeResolveProps } from "site/mod.ts";
 export const name = "deco-sites/candy-store";
 
-export default function Fashion(state: State): AppRuntime {
-  return site({
-    ...state,
-    apps: [...(state?.apps ?? []), buildApp({ manifest, state })],
-  });
+export const dependencies = [site] satisfies AppModule[];
+
+export default function Fashion(state: State): App<State, Manifest> {
+  return {
+    state, manifest
+  };
 }
