@@ -7,12 +7,12 @@ import { start } from "$fresh/server.ts";
 import plugins from "deco-sites/std/plugins/mod.ts";
 import partytownPlugin from "partytown/mod.ts";
 import manifest from "./fresh.gen.ts";
-import liveManifest from "./manifest.gen.ts";
+import decoManifest from "./manifest.gen.ts";
 
 await start(manifest, {
   plugins: [
     ...plugins({
-      manifest: liveManifest,
+      manifest: decoManifest,
       site: { namespace: "deco-sites/candy-store" },
     }),
     partytownPlugin(),
