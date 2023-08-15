@@ -1,1 +1,1 @@
-export const PLATFORM: "vtex" | "vnda" = "vnda";
+export const PLATFORM: "vtex" | "vnda" = "vtex";
