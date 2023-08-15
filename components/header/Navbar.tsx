@@ -1,11 +1,10 @@
 import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import {
-  CartButton,
-  MenuButton,
-  SearchButton,
-} from "$store/islands/Header/Buttons.tsx";
+import { MenuButton, SearchButton } from "$store/islands/Header/Buttons.tsx";
+import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";
+import CartButtonVTEX from "$store/islands/Header/Cart/vtex.tsx";
 import Searchbar from "$store/islands/Header/Searchbar.tsx";
+import { PLATFORM } from "$store/platform.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import type { INavItem } from "./NavItem.tsx";
 import NavItem from "./NavItem.tsx";
@@ -38,7 +37,8 @@ function Navbar({ items, searchbar, logo }: {
 
         <div class="flex gap-1">
           <SearchButton />
-          <CartButton />
+          {PLATFORM === "vtex" && <CartButtonVTEX />}
+          {PLATFORM === "vnda" && <CartButtonVDNA />}
         </div>
       </div>
 
@@ -80,7 +80,8 @@ function Navbar({ items, searchbar, logo }: {
               fill="none"
             />
           </a>
-          <CartButton />
+          {PLATFORM === "vtex" && <CartButtonVTEX />}
+          {PLATFORM === "vnda" && <CartButtonVDNA />}
         </div>
       </div>
     </>

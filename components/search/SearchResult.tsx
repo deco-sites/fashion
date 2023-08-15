@@ -1,12 +1,12 @@
+import { SendEventOnLoad } from "$store/components/Analytics.tsx";
+import { Layout as cardLayout } from "$store/components/product/ProductCard.tsx";
 import Filters from "$store/components/search/Filters.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import SearchControls from "$store/islands/SearchControls.tsx";
-import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
-import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
-import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
-import { Layout as cardLayout } from "$store/components/product/ProductCard.tsx";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
+import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 
 export interface Layout {
   /**
