@@ -1,20 +1,27 @@
-import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import {
+  itemToAnalyticsItem,
+  useCart,
+} from "deco-sites/std/packs/vtex/hooks/useCart.ts";
 import Button from "./common.tsx";
 
 function CartButton() {
   const { loading, cart } = useCart();
-  const totalizers = cart.value?.totalizers ?? [];
-  const currency = cart.value?.storePreferencesData.currencyCode ?? "BRL";
+  const { totalizers = [], items = [], marketingData, storePreferencesData } =
+    cart.value ?? {};
+  const coupon = marketingData?.coupon ?? undefined;
+  const currency = storePreferencesData?.currencyCode ?? "BRL";
   const total = totalizers.find((item) => item.id === "Items")?.value ?? 0;
   const discounts = totalizers.find((item) => item.id === "Discounts")?.value ??
     0;
 
   return (
     <Button
-      items={[]}
       currency={currency}
-      total={(total - discounts) / 100}
       loading={loading.value}
+      total={(total - discounts) / 100}
+      items={items.map((item, index) =>
+        itemToAnalyticsItem({ ...item, coupon }, index)
+      )}
     />
   );
 }
