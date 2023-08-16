@@ -1,14 +1,16 @@
+import { SendEventOnLoad } from "$store/components/Analytics.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
-import AddToCartButton from "$store/islands/AddToCartButton.tsx";
+import { PLATFORM } from "$store/platform.ts";
+import AddToCartButtonVNDA from "$store/islands/AddToCartButton/vnda.tsx";
+import AddToCartButtonVTEX from "$store/islands/AddToCartButton/vtex.tsx";
 import OutOfStock from "$store/islands/OutOfStock.tsx";
 import ProductImageZoom from "$store/islands/ProductImageZoom.tsx";
 import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
-import Component from "$store/islands/WishlistButton.tsx";
-import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
+import WishlistButton from "$store/islands/WishlistButton.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
@@ -57,13 +59,20 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
     description,
     productID,
     offers,
-    name,
+    name = "",
     gtin,
     isVariantOf,
+    additionalProperty = [],
   } = product;
-  const { price, listPrice, seller, installments, availability } = useOffer(
-    offers,
-  );
+  const {
+    price = 0,
+    listPrice,
+    seller = "1",
+    installments,
+    availability,
+  } = useOffer(offers);
+  const productGroupID = isVariantOf?.productGroupID ?? "";
+  const discount = price && listPrice ? listPrice - price : 0;
 
   return (
     <>
@@ -105,20 +114,31 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
         {availability === "https://schema.org/InStock"
           ? (
             <>
-              {seller && (
-                <AddToCartButton
-                  skuId={productID}
-                  sellerId={seller}
-                  price={price ?? 0}
-                  discount={price && listPrice ? listPrice - price : 0}
-                  name={product.name ?? ""}
-                  productGroupId={product.isVariantOf?.productGroupID ?? ""}
+              {PLATFORM === "vtex" && (
+                <AddToCartButtonVTEX
+                  name={name}
+                  productID={productID}
+                  productGroupID={productGroupID}
+                  price={price}
+                  discount={discount}
+                  seller={seller}
                 />
               )}
-              <Component
+              {PLATFORM === "vnda" && (
+                <AddToCartButtonVNDA
+                  name={name}
+                  productID={productID}
+                  productGroupID={productGroupID}
+                  price={price}
+                  discount={discount}
+                  additionalProperty={additionalProperty}
+                />
+              )}
+
+              <WishlistButton
                 variant="full"
-                productGroupID={isVariantOf?.productGroupID}
                 productID={productID}
+                productGroupID={productGroupID}
               />
             </>
           )
@@ -130,7 +150,7 @@ function ProductInfo({ page }: { page: ProductDetailsPage }) {
           items={[{
             id: Number(product.sku),
             quantity: 1,
-            seller: seller ?? "1",
+            seller: seller,
           }]}
         />
       </div>

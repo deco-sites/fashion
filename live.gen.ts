@@ -6,14 +6,17 @@ import * as $$$$0 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Newsletter.tsx";
 import * as $$$$$1 from "./islands/WishlistButton.tsx";
 import * as $$$$$2 from "./islands/ShippingSimulation.tsx";
-import * as $$$$$3 from "./islands/AddToCartButton.tsx";
-import * as $$$$$4 from "./islands/SliderJS.tsx";
-import * as $$$$$5 from "./islands/ProductImageZoom.tsx";
-import * as $$$$$6 from "./islands/OutOfStock.tsx";
-import * as $$$$$7 from "./islands/Header/Drawers.tsx";
-import * as $$$$$8 from "./islands/Header/Searchbar.tsx";
-import * as $$$$$9 from "./islands/Header/Buttons.tsx";
-import * as $$$$$10 from "./islands/SearchControls.tsx";
+import * as $$$$$3 from "./islands/SliderJS.tsx";
+import * as $$$$$4 from "./islands/AddToCartButton/vtex.tsx";
+import * as $$$$$5 from "./islands/AddToCartButton/vnda.tsx";
+import * as $$$$$6 from "./islands/ProductImageZoom.tsx";
+import * as $$$$$7 from "./islands/OutOfStock.tsx";
+import * as $$$$$8 from "./islands/Header/Drawers.tsx";
+import * as $$$$$9 from "./islands/Header/Searchbar.tsx";
+import * as $$$$$10 from "./islands/Header/Buttons.tsx";
+import * as $$$$$11 from "./islands/Header/Cart/vtex.tsx";
+import * as $$$$$12 from "./islands/Header/Cart/vnda.tsx";
+import * as $$$$$13 from "./islands/SearchControls.tsx";
 import * as $$$$$$$$0 from "./sections/Footer/Footer.tsx";
 import * as $$$$$$$$1 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$$$2 from "./sections/Category/CategoryList.tsx";
@@ -89,19 +92,18 @@ import * as i2$10 from "deco-sites/std/functions/requestToParam.ts";
 import * as i2$11 from "deco-sites/std/functions/shopifyProductDetailsPage.ts";
 import * as i2$12 from "deco-sites/std/functions/shopifyProductList.ts";
 import * as i2$13 from "deco-sites/std/functions/shopifyProductListingPage.ts";
-import * as i2$14 from "deco-sites/std/functions/vndaProductDetailsPage.ts";
-import * as i2$15 from "deco-sites/std/functions/vndaProductList.ts";
-import * as i2$16 from "deco-sites/std/functions/vndaProductListingPage.ts";
-import * as i2$17 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
-import * as i2$18 from "deco-sites/std/functions/vtexLegacyProductList.ts";
-import * as i2$19 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
-import * as i2$20 from "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts";
-import * as i2$21 from "deco-sites/std/functions/vtexNavbar.ts";
-import * as i2$22 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
-import * as i2$23 from "deco-sites/std/functions/vtexProductList.ts";
-import * as i2$24 from "deco-sites/std/functions/vtexProductListingPage.ts";
-import * as i2$25 from "deco-sites/std/functions/vtexSuggestions.ts";
-import * as i2$26 from "deco-sites/std/functions/vtexWishlist.ts";
+import * as i2$14 from "deco-sites/std/functions/vndaProductList.ts";
+import * as i2$15 from "deco-sites/std/functions/vndaProductListingPage.ts";
+import * as i2$16 from "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts";
+import * as i2$17 from "deco-sites/std/functions/vtexLegacyProductList.ts";
+import * as i2$18 from "deco-sites/std/functions/vtexLegacyProductListingPage.ts";
+import * as i2$19 from "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts";
+import * as i2$20 from "deco-sites/std/functions/vtexNavbar.ts";
+import * as i2$21 from "deco-sites/std/functions/vtexProductDetailsPage.ts";
+import * as i2$22 from "deco-sites/std/functions/vtexProductList.ts";
+import * as i2$23 from "deco-sites/std/functions/vtexProductListingPage.ts";
+import * as i2$24 from "deco-sites/std/functions/vtexSuggestions.ts";
+import * as i2$25 from "deco-sites/std/functions/vtexWishlist.ts";
 import * as i2$$0 from "deco-sites/std/accounts/butterCMS.ts";
 import * as i2$$1 from "deco-sites/std/accounts/linxImpulse.ts";
 import * as i2$$2 from "deco-sites/std/accounts/nuvemShop.ts";
@@ -180,16 +182,19 @@ const manifest = {
     "./routes/_app.tsx": $$$$0,
   },
   "islands": {
-    "./islands/AddToCartButton.tsx": $$$$$3,
-    "./islands/Header/Buttons.tsx": $$$$$9,
-    "./islands/Header/Drawers.tsx": $$$$$7,
-    "./islands/Header/Searchbar.tsx": $$$$$8,
+    "./islands/AddToCartButton/vnda.tsx": $$$$$5,
+    "./islands/AddToCartButton/vtex.tsx": $$$$$4,
+    "./islands/Header/Buttons.tsx": $$$$$10,
+    "./islands/Header/Cart/vnda.tsx": $$$$$12,
+    "./islands/Header/Cart/vtex.tsx": $$$$$11,
+    "./islands/Header/Drawers.tsx": $$$$$8,
+    "./islands/Header/Searchbar.tsx": $$$$$9,
     "./islands/Newsletter.tsx": $$$$$0,
-    "./islands/OutOfStock.tsx": $$$$$6,
-    "./islands/ProductImageZoom.tsx": $$$$$5,
-    "./islands/SearchControls.tsx": $$$$$10,
+    "./islands/OutOfStock.tsx": $$$$$7,
+    "./islands/ProductImageZoom.tsx": $$$$$6,
+    "./islands/SearchControls.tsx": $$$$$13,
     "./islands/ShippingSimulation.tsx": $$$$$2,
-    "./islands/SliderJS.tsx": $$$$$4,
+    "./islands/SliderJS.tsx": $$$$$3,
     "./islands/WishlistButton.tsx": $$$$$1,
   },
   "sections": {
@@ -347,19 +352,18 @@ const manifest = {
     "deco-sites/std/functions/shopifyProductDetailsPage.ts": i2$11,
     "deco-sites/std/functions/shopifyProductList.ts": i2$12,
     "deco-sites/std/functions/shopifyProductListingPage.ts": i2$13,
-    "deco-sites/std/functions/vndaProductDetailsPage.ts": i2$14,
-    "deco-sites/std/functions/vndaProductList.ts": i2$15,
-    "deco-sites/std/functions/vndaProductListingPage.ts": i2$16,
-    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": i2$17,
-    "deco-sites/std/functions/vtexLegacyProductList.ts": i2$18,
-    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": i2$19,
-    "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts": i2$20,
-    "deco-sites/std/functions/vtexNavbar.ts": i2$21,
-    "deco-sites/std/functions/vtexProductDetailsPage.ts": i2$22,
-    "deco-sites/std/functions/vtexProductList.ts": i2$23,
-    "deco-sites/std/functions/vtexProductListingPage.ts": i2$24,
-    "deco-sites/std/functions/vtexSuggestions.ts": i2$25,
-    "deco-sites/std/functions/vtexWishlist.ts": i2$26,
+    "deco-sites/std/functions/vndaProductList.ts": i2$14,
+    "deco-sites/std/functions/vndaProductListingPage.ts": i2$15,
+    "deco-sites/std/functions/vtexLegacyProductDetailsPage.ts": i2$16,
+    "deco-sites/std/functions/vtexLegacyProductList.ts": i2$17,
+    "deco-sites/std/functions/vtexLegacyProductListingPage.ts": i2$18,
+    "deco-sites/std/functions/vtexLegacyRelatedProductsLoader.ts": i2$19,
+    "deco-sites/std/functions/vtexNavbar.ts": i2$20,
+    "deco-sites/std/functions/vtexProductDetailsPage.ts": i2$21,
+    "deco-sites/std/functions/vtexProductList.ts": i2$22,
+    "deco-sites/std/functions/vtexProductListingPage.ts": i2$23,
+    "deco-sites/std/functions/vtexSuggestions.ts": i2$24,
+    "deco-sites/std/functions/vtexWishlist.ts": i2$25,
   },
   "accounts": {
     "deco-sites/std/accounts/butterCMS.ts": i2$$0,
