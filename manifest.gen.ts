@@ -26,7 +26,7 @@ import * as $$$$$$20 from "./sections/Links/LinkTree.tsx";
 import * as $$$$$$21 from "./sections/Links/Shortcuts.tsx";
 import * as $$$$$$22 from "./sections/Newsletter/Newsletter.tsx";
 import * as $$$$$$23 from "./sections/Header/Header.tsx";
-import * as $$$$$$$$$$$0 from "./apps/site.ts";
+import * as $$$$$$$$$$$0 from "./apps/storefront.ts";
 import { AppManifest } from "$live/types.ts";
 
 const manifest = {
@@ -57,7 +57,7 @@ const manifest = {
     "deco-sites/candy-store/sections/Theme/Theme.tsx": $$$$$$19,
   },
   "apps": {
-    "deco-sites/candy-store/apps/site.ts": $$$$$$$$$$$0,
+    "deco-sites/candy-store/apps/storefront.ts": $$$$$$$$$$$0,
   },
 };
 

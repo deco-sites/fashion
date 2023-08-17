@@ -13,6 +13,6 @@
     "std/": "https://deno.land/std@0.190.0/",
     "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.3/",
     "daisyui": "npm:daisyui@3.5.0",
-    "site/": "../deco-apps/site/"
+    "apps/": "../apps/"
   }
 }

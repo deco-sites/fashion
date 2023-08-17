@@ -1,4 +1,4 @@
-import Image from "site/image/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 

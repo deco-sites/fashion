@@ -1,7 +1,7 @@
 import {
   itemToAnalyticsItem,
   useCart,
-} from "deco-sites/std/packs/vnda/hooks/useCart.ts";
+} from "apps/vnda/hooks/useCart.ts";
 import Button from "./common.tsx";
 
 function CartButton() {

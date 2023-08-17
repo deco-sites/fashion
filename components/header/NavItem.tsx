@@ -1,4 +1,4 @@
-import Image from "site/image/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import { headerHeight } from "./constants.ts";
 
 export interface INavItem {

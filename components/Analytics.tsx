@@ -1,5 +1,5 @@
 import { sendEvent } from "$store/sdk/analytics.tsx";
-import type { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+import type { AnalyticsEvent } from "apps/commerce/types.ts";
 
 /**
  * This function is usefull for sending events on click. Works with both Server and Islands components

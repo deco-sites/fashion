@@ -5,8 +5,8 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { useId } from "$store/sdk/useId.ts";
 import { useSignal } from "@preact/signals";
-import type { ImageObject } from "deco-sites/std/commerce/types.ts";
-import Image from "site/image/components/Image.tsx";
+import type { ImageObject } from "apps/commerce/types.ts";
+import Image from "apps/website/components/Image.tsx";
 
 export interface Props {
   images: ImageObject[];

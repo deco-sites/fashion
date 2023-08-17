@@ -1,7 +1,7 @@
 import {
   itemToAnalyticsItem,
   useCart,
-} from "deco-sites/std/packs/vnda/hooks/useCart.ts";
+} from "apps/vnda/hooks/useCart.ts";
 import BaseCart from "../common/Cart.tsx";
 
 const normalizeUrl = (url: string) =>

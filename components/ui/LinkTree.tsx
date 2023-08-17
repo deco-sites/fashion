@@ -1,5 +1,5 @@
 import { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Image from "site/image/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Link {

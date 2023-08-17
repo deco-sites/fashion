@@ -1,6 +1,6 @@
 import { useSignal } from "@preact/signals";
 import { Runtime } from "$store/runtime.ts";
-import type { Product } from "deco-sites/std/commerce/types.ts";
+import type { Product } from "apps/commerce/types.ts";
 import type { JSX } from "preact";
 
 export interface Props {
