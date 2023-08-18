@@ -2,8 +2,8 @@
   "imports": {
     "deco-sites/candy-store/": "./",
     "$store/": "./",
-    "apps/": "https://denopkg.com/deco-cx/apps@main/",
-    "$live/": "https://denopkg.com/deco-cx/deco@1.27.5/",
+    "apps/": "https://denopkg.com/deco-cx/apps/",
+    "$live/": "https://denopkg.com/deco-cx/deco@1.27.7/",
     "$fresh/": "https://denopkg.com/deco-cx/fresh@1.3.5/",
     "preact": "https://esm.sh/preact@10.15.1",
     "preact/": "https://esm.sh/preact@10.15.1/",

@@ -27,16 +27,10 @@ export default function Storefront(
 ): App<Manifest, State, [WebsiteApp, CommerceApp]> {
   if (!state.commerce.platform) throw new Error("Missing platform");
 
-  // Uncomment for testing
-  // const DEBUG_TEST = 'shopify'
-  // if (DEBUG_TEST !== state.commerce.platform) {
-  //   return { state, manifest, dependencies: [] as any };
-  // }
-
   _platform = state.commerce.platform;
 
   // @ts-expect-error Trust me, I'm an engineer
-  const ecommerce = PLATFORMS[_platform]?.(state.commerce);
+  const ecommerce = PLATFORMS[state.commerce.platform]?.(state.commerce);
   const site = website(state);
 
   // Add theme to Page
@@ -49,7 +43,11 @@ export default function Storefront(
     },
   };
 
-  return { state, manifest, dependencies: [site, ecommerce] };
+  return {
+    state,
+    manifest,
+    dependencies: [site, ecommerce],
+  };
 }
 
 export { onBeforeResolveProps } from "apps/website/mod.ts";
