@@ -16,25 +16,28 @@ type CommerceApp = ReturnType<typeof vnda> | ReturnType<typeof vtex>;
 
 const PLATFORMS = { vnda, vtex };
 
+// Uncomment for testing and specific platform
+const DEBUG_TEST: null | keyof typeof PLATFORMS = "vnda";
+
 export let _platform: null | keyof typeof PLATFORMS = null;
 
 export default function Storefront(
   state: State,
 ): App<Manifest, State, [WebsiteApp, CommerceApp]> {
-  // // Uncomment for testing an specific platform
-  // if (state.commerce.platform !== "vtex") {
-  //   // @ts-expect-error blacklist platform
-  //   return { state: {}, manifest: {}, name, dependencies: [] };
-  // }
-
-  if (!state.commerce.platform) throw new Error("Missing platform");
-
   _platform = state.commerce.platform;
 
+  if (!_platform) throw new Error("Missing platform");
+  if (DEBUG_TEST !== _platform) {
+    return { state, manifest, dependencies: [] as any };
+  }
+
+  // @ts-expect-error Trust me, I'm an engineer
+  const ecommerce = PLATFORMS[_platform]?.(state.commerce);
   const site = website(state);
+
+  // Add theme to Page
   const LivePageTSX = site.manifest.pages["apps/website/pages/LivePage.tsx"];
   const { default: LivePage } = LivePageTSX;
-
   site.manifest.pages["apps/website/pages/LivePage.tsx"] = {
     ...site.manifest.pages["apps/website/pages/LivePage.tsx"],
     default: (props: ComponentProps<typeof LivePage>) => {
@@ -42,15 +45,7 @@ export default function Storefront(
     },
   };
 
-  return {
-    state,
-    manifest,
-    dependencies: [
-      website(state),
-      // @ts-expect-error Trust me, I'm an engineer
-      PLATFORMS[_platform](state.commerce),
-    ],
-  };
+  return { state, manifest, dependencies: [site, ecommerce] };
 }
 
 export { onBeforeResolveProps } from "apps/website/mod.ts";
