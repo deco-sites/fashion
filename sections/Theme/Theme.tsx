@@ -7,9 +7,7 @@
 import { Color } from "https://deno.land/x/color@v0.3.0/mod.ts";
 import { useId } from "$store/sdk/useId.ts";
 import { Head } from "$fresh/runtime.ts";
-import googleFontsLoader, {
-  Props as GoogleFontsLoaderProps,
-} from "deco-sites/std/packs/font/loaders/googleFonts.ts";
+import { Font } from "apps/website/loaders/fonts/local.ts";
 
 export interface MainColors {
   /**
@@ -231,23 +229,13 @@ export interface Miscellaneous {
   "--tab-radius": string;
 }
 
-export interface CustomFont {
-  fontFamily?: string;
-  /**
-   * @format css
-   */
-  styleInnerHtml?: string;
-}
-
-export interface Props extends GoogleFontsLoaderProps {
+export interface Props {
   mainColors?: MainColors;
   /** These colors are automatically generated with darker tons of their originals */
   complementaryColors?: ComplementaryColors;
   buttonStyle?: Button;
-  customFont?: CustomFont;
+  font?: Font;
 }
-
-type FontSheet = string;
 
 type Theme =
   & MainColors
@@ -354,8 +342,6 @@ const defaultTheme = {
   "--tab-radius": "0.5rem", // border radius of tabs
 };
 
-type SectionProps = Props & { fontsSheet?: FontSheet[] };
-
 /**
  * This section merges the DESIGN_SYTEM variable with incoming props into a css sheet with variables, i.e.
  * this function transforms props into
@@ -369,15 +355,10 @@ function Section({
   mainColors,
   complementaryColors,
   buttonStyle,
-  fonts,
-  customFont,
-  fontsSheet,
-}: SectionProps) {
+  font,
+}: Props) {
   const id = useId();
-  const fontsFamilies = fonts?.map((font) => font.other || font.fontFamily)
-    .join(
-      ", ",
-    );
+
   const theme = {
     ...defaultTheme,
     ...mainColors,
@@ -386,17 +367,14 @@ function Section({
     ...complementaryColors?.secondary,
     ...complementaryColors?.tertiary,
     ...buttonStyle,
-    fontFamily: fontsFamilies,
-    ...customFont,
+    fontFamily: font?.family,
   };
-
-  const selectedFont = customFont?.fontFamily || fontsFamilies;
 
   const variables = [
     ...toVariables(theme),
     [
       "--font-family",
-      selectedFont ||
+      theme.fontFamily ||
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
     ],
   ]
@@ -407,17 +385,10 @@ function Section({
     <Head>
       <meta name="theme-color" content={theme["primary"]} />
       <meta name="msapplication-TileColor" content={theme["primary"]} />
-      {fontsSheet?.map((fontSheet) => (
+      {font?.styleSheet && (
         <style
           type="text/css"
-          dangerouslySetInnerHTML={{ __html: fontSheet }}
-        />
-      ))}
-      {customFont?.fontFamily && customFont?.styleInnerHtml && (
-        <style
-          type="text/css"
-          id={`__DESIGN_SYSTEM_FONT-${id}`}
-          dangerouslySetInnerHTML={{ __html: customFont.styleInnerHtml ?? "" }}
+          dangerouslySetInnerHTML={{ __html: font.styleSheet }}
         />
       )}
       <style
@@ -432,9 +403,6 @@ function Section({
 }
 
 export function Preview(props: Props) {
-  const selectedFont = props.customFont?.fontFamily ||
-    props.fonts?.map((font) => font.other || font.fontFamily).join(", ");
-
   return (
     <>
       <Section {...props} />
@@ -611,22 +579,13 @@ export function Preview(props: Props) {
         </div>
         {" "}
       </div>
-      {selectedFont && (
+      {props.font?.family && (
         <div class="text-center py-2">
-          Font: {selectedFont}
+          Font: {props.font.family}
         </div>
       )}
     </>
   );
 }
-
-export const loader = async (
-  props: Props,
-  req: Request,
-): Promise<SectionProps> => {
-  const fontProps = await googleFontsLoader(props, req);
-
-  return { ...props, ...fontProps };
-};
 
 export default Section;

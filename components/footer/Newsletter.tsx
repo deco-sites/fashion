@@ -2,8 +2,8 @@ import { useSignal } from "@preact/signals";
 import { Runtime } from "$store/runtime.ts";
 import type { JSX } from "preact";
 
-const subscribe = Runtime.create(
-  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+const subscribe = Runtime.vtex.create(
+  "apps/vtex/actions/newsletter/subscribe.ts",
 );
 
 export interface Form {

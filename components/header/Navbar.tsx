@@ -4,8 +4,8 @@ import { MenuButton, SearchButton } from "$store/islands/Header/Buttons.tsx";
 import CartButtonVDNA from "$store/islands/Header/Cart/vnda.tsx";
 import CartButtonVTEX from "$store/islands/Header/Cart/vtex.tsx";
 import Searchbar from "$store/islands/Header/Searchbar.tsx";
-import { PLATFORM } from "$store/platform.ts";
 import Image from "apps/website/components/Image.tsx";
+import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import type { INavItem } from "./NavItem.tsx";
 import NavItem from "./NavItem.tsx";
 import { navbarHeight } from "./constants.ts";
@@ -15,6 +15,8 @@ function Navbar({ items, searchbar, logo }: {
   searchbar: SearchbarProps;
   logo?: { src: string; alt: string };
 }) {
+  const platform = usePlatform();
+
   return (
     <>
       {/* Mobile Version */}
@@ -37,8 +39,8 @@ function Navbar({ items, searchbar, logo }: {
 
         <div class="flex gap-1">
           <SearchButton />
-          {PLATFORM === "vtex" && <CartButtonVTEX />}
-          {PLATFORM === "vnda" && <CartButtonVDNA />}
+          {platform === "vtex" && <CartButtonVTEX />}
+          {platform === "vnda" && <CartButtonVDNA />}
         </div>
       </div>
 
@@ -80,8 +82,8 @@ function Navbar({ items, searchbar, logo }: {
               fill="none"
             />
           </a>
-          {PLATFORM === "vtex" && <CartButtonVTEX />}
-          {PLATFORM === "vnda" && <CartButtonVDNA />}
+          {platform === "vtex" && <CartButtonVTEX />}
+          {platform === "vnda" && <CartButtonVDNA />}
         </div>
       </div>
     </>

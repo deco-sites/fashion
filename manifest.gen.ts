@@ -63,6 +63,4 @@ const manifest = {
 
 export type Manifest = typeof manifest;
 
-export const name = "deco-sites/candy-store";
-
 export default manifest satisfies AppManifest;
