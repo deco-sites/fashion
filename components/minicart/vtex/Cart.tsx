@@ -1,7 +1,4 @@
-import {
-  itemToAnalyticsItem,
-  useCart,
-} from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import { itemToAnalyticsItem, useCart } from "apps/vtex/hooks/useCart.ts";
 import BaseCart from "../common/Cart.tsx";
 
 function Cart() {

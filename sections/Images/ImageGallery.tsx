@@ -1,13 +1,13 @@
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 
 /**
  * @titleBy alt
  */
 export interface Banner {
-  srcMobile: LiveImage;
-  srcDesktop?: LiveImage;
+  srcMobile: ImageWidget;
+  srcDesktop?: ImageWidget;
   /**
    * @description Image alt text
    */

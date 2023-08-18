@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run -A --unstable --watch=static/sw.js,tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
+    "start": "deno task bundle && deno run -A --unstable --watch=tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
     "gen": "deno run -A dev.ts --gen-only",
     "component": "deno eval 'import \"$live/scripts/component.ts\"'",
     "release": "deno eval 'import \"$live/scripts/release.ts\"'",
@@ -13,7 +13,19 @@
   "githooks": {
     "pre-commit": "check"
   },
-  "exclude": ["node_modules", "static/", "README.md"],
+  "exclude": [
+    "node_modules",
+    "static/",
+    "README.md"
+  ],
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
   "nodeModulesDir": true,
   "importMap": "./import_map.json",
   "compilerOptions": {

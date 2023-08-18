@@ -1,5 +1,5 @@
 import type { SectionProps } from "$live/mod.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface layout {

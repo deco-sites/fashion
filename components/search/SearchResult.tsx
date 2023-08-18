@@ -4,8 +4,8 @@ import Filters from "$store/components/search/Filters.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import SearchControls from "$store/islands/SearchControls.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
-import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
-import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
+import type { ProductListingPage } from "apps/commerce/types.ts";
+import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 
 export interface Layout {
@@ -20,6 +20,7 @@ export interface Layout {
 }
 
 export interface Props {
+  /** @title Integration */
   page: ProductListingPage | null;
   layout?: Layout;
   cardLayout?: cardLayout;

@@ -1,16 +1,16 @@
-import Logo from "$store/components/footer/Logo.tsx";
-import Newsletter from "$store/islands/Newsletter.tsx";
-import FooterItems from "$store/components/footer/FooterItems.tsx";
-import Social from "$store/components/footer/Social.tsx";
-import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
-import MobileApps from "$store/components/footer/MobileApps.tsx";
-import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
-import RegionSelector from "$store/components/footer/RegionSelector.tsx";
+import BackToTop from "$store/components/footer/BackToTop.tsx";
 import ColorClasses from "$store/components/footer/ColorClasses.tsx";
 import Divider from "$store/components/footer/Divider.tsx";
-import BackToTop from "$store/components/footer/BackToTop.tsx";
-import PoweredByDeco from "deco-sites/std/components/PoweredByDeco.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import ExtraLinks from "$store/components/footer/ExtraLinks.tsx";
+import FooterItems from "$store/components/footer/FooterItems.tsx";
+import Logo from "$store/components/footer/Logo.tsx";
+import MobileApps from "$store/components/footer/MobileApps.tsx";
+import PaymentMethods from "$store/components/footer/PaymentMethods.tsx";
+import RegionSelector from "$store/components/footer/RegionSelector.tsx";
+import Social from "$store/components/footer/Social.tsx";
+import Newsletter from "$store/islands/Newsletter.tsx";
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 
 export type Item = {
   label: string;
@@ -84,7 +84,7 @@ export interface Layout {
 
 export interface Props {
   logo?: {
-    image: LiveImage;
+    image: ImageWidget;
     description?: string;
   };
   newsletter?: {

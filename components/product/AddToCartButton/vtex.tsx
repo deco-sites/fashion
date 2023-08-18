@@ -1,4 +1,4 @@
-import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
+import { useCart } from "apps/vtex/hooks/useCart.ts";
 import Button, { Props as BtnProps } from "./common.tsx";
 
 export interface Props extends Omit<BtnProps, "onAddItem" | "platform"> {

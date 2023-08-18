@@ -1,9 +1,9 @@
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Highlight {
-  src: LiveImage;
+  src: ImageWidget;
   alt: string;
   href: string;
   label: string;
