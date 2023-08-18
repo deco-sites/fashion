@@ -220,6 +220,6 @@ Check performance best practices on [deco.cx's docs](https://www.deco.cx/docs).
 
 # Thanks to all contributors!
 
-<a href="https://github.com/deco-sites/candy-store/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=deco-sites/candy-store" />
+<a href="https://github.com/deco-sites/fashion/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=deco-sites/fashion" />
 </a>

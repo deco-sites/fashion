@@ -1,6 +1,6 @@
 {
   "imports": {
-    "deco-sites/candy-store/": "./",
+    "deco-sites/fashion/": "./",
     "$store/": "./",
     "apps/": "https://denopkg.com/deco-cx/apps/",
     "$live/": "https://denopkg.com/deco-cx/deco@1.27.7/",

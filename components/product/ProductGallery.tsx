@@ -3,7 +3,7 @@ import { Product } from "apps/commerce/types.ts";
 import ProductCard, {
   Layout as cardLayout,
 } from "$store/components/product/ProductCard.tsx";
-import { usePlatform } from "deco-sites/candy-store/sdk/usePlatform.tsx";
+import { usePlatform } from "$store/sdk/usePlatform.tsx";
 
 export interface Columns {
   mobile?: number;
