@@ -1,12 +1,12 @@
 import { useId } from "$store/sdk/useId.ts";
-import { HTML } from "deco-sites/std/components/types.ts";
+import type { HTMLWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
   /**
    * @title Text
    * @default Time left for a campaign to end wth a link
    */
-  text?: HTML;
+  text?: HTMLWidget;
 
   /**
    * @title Expires at date

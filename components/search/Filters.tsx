@@ -1,12 +1,12 @@
 import Avatar from "$store/components/ui/Avatar.tsx";
-import { parseRange } from "deco-sites/std/utils/filters.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type {
   Filter,
   FilterToggle,
   FilterToggleValue,
   ProductListingPage,
-} from "deco-sites/std/commerce/types.ts";
+} from "apps/commerce/types.ts";
+import { parseRange } from "apps/commerce/utils/filters.ts";
 
 interface Props {
   filters: ProductListingPage["filters"];

@@ -2,12 +2,8 @@ import { Signal, useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 import Button from "$store/components/ui/Button.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
-import { useCart } from "deco-sites/std/packs/vtex/hooks/useCart.ts";
-import type {
-  SimulationOrderForm,
-  SKU,
-  Sla,
-} from "deco-sites/std/packs/vtex/types.ts";
+import { useCart } from "apps/vtex/hooks/useCart.ts";
+import type { SimulationOrderForm, SKU, Sla } from "apps/vtex/utils/types.ts";
 
 export interface Props {
   items: Array<SKU>;
