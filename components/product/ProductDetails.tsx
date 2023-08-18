@@ -22,6 +22,7 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 export type Variant = "front-back" | "slider" | "auto";
 
 export interface Props {
+  /** @title Integration */
   page: ProductDetailsPage | null;
   /**
    * @title Product view

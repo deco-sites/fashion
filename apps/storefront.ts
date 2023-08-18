@@ -1,8 +1,8 @@
 import { Section } from "$live/blocks/section.ts";
 import { App } from "$live/mod.ts";
+import shopify, { Props as ShopifyProps } from "apps/shopify/mod.ts";
 import vnda, { Props as VNDAProps } from "apps/vnda/mod.ts";
 import vtex, { Props as VTEXProps } from "apps/vtex/mod.ts";
-import shopify, { Props as ShopifyProps } from "apps/shopify/mod.ts";
 import website, { Props as WebsiteProps } from "apps/website/mod.ts";
 import type { ComponentProps } from "preact";
 import manifest, { Manifest } from "../manifest.gen.ts";

@@ -20,6 +20,7 @@ export interface Layout {
 }
 
 export interface Props {
+  /** @title Integration */
   page: ProductListingPage | null;
   layout?: Layout;
   cardLayout?: cardLayout;
