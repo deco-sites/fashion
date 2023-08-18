@@ -20,18 +20,18 @@ type CommerceApp =
 
 const PLATFORMS = { vnda, vtex, shopify };
 
-// Uncomment for testing and specific platform
-const DEBUG_TEST: null | keyof typeof PLATFORMS = null; // "shopify";
-
 export let _platform: null | keyof typeof PLATFORMS = null;
 
 export default function Storefront(
   state: State,
 ): App<Manifest, State, [WebsiteApp, CommerceApp]> {
   if (!state.commerce.platform) throw new Error("Missing platform");
-  if (DEBUG_TEST !== state.commerce.platform) {
-    return { state, manifest, dependencies: [] as any };
-  }
+
+  // Uncomment for testing
+  // const DEBUG_TEST = 'shopify'
+  // if (DEBUG_TEST !== state.commerce.platform) {
+  //   return { state, manifest, dependencies: [] as any };
+  // }
 
   _platform = state.commerce.platform;
 
