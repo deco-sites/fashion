@@ -7,6 +7,7 @@ import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import Image from "deco-sites/std/components/Image.tsx";
+import { getImageInCorrectRatio } from "deco-sites/staging/sdk/getImageInCorrectRatio.ts";
 
 export interface Layout {
   basics?: {
@@ -155,7 +156,7 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           class="grid grid-cols-1 grid-rows-1 w-full"
         >
           <Image
-            src={front.url!}
+            src={getImageInCorrectRatio(front.url, WIDTH, HEIGHT)}
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
@@ -172,7 +173,11 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
           {(!l?.onMouseOver?.image ||
             l?.onMouseOver?.image == "Change image") && (
             <Image
-              src={back?.url ?? front.url!}
+              src={getImageInCorrectRatio(
+                back?.url ?? front.url!,
+                WIDTH,
+                HEIGHT,
+              )}
               alt={back?.alternateName ?? front.alternateName}
               width={WIDTH}
               height={HEIGHT}
