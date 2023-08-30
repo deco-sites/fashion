@@ -6,8 +6,7 @@ import type { JSX } from "preact";
 export interface Props {
   productID: Product["productID"];
 }
-
-const notifyme = Runtime.create("deco-sites/std/actions/vtex/notifyme.ts");
+const notifyme = Runtime.invoke["deco-sites/std"].actions.vtex.notifyme;
 
 function Notify({ productID }: Props) {
   const loading = useSignal(false);
