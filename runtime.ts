@@ -1,4 +1,4 @@
-import { withManifest } from "$live/clients/withManifest.ts";
-import type { Manifest } from "./live.gen.ts";
+import { forApp } from "$live/clients/withManifest.ts";
+import type { Storefront } from "./apps/site.ts";
 
-export const Runtime = withManifest<Manifest>();
+export const Runtime = forApp<Storefront>();
