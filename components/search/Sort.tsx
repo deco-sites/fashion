@@ -1,5 +1,5 @@
 import { useMemo } from "preact/hooks";
-import { ProductListingPage } from "deco-sites/std/commerce/types.ts";
+import { ProductListingPage } from "apps/commerce/types.ts";
 import type { JSX } from "preact";
 
 const SORT_QUERY_PARAM = "sort";

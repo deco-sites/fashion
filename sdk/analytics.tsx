@@ -1,4 +1,4 @@
-import type { AnalyticsEvent } from "deco-sites/std/commerce/types.ts";
+import type { AnalyticsEvent } from "apps/commerce/types.ts";
 
 declare global {
   interface Window {

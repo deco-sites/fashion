@@ -1,4 +1,4 @@
-import { Product } from "deco-sites/std/commerce/types.ts";
+import { Product } from "apps/commerce/types.ts";
 
 import ProductCard, {
   Layout as cardLayout,

@@ -3,7 +3,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
 import { sendEvent } from "$store/sdk/analytics.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
-import { AnalyticsItem } from "deco-sites/std/commerce/types.ts";
+import { AnalyticsItem } from "apps/commerce/types.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import { useCallback, useState } from "preact/hooks";
 
