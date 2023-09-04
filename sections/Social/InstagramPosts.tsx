@@ -1,4 +1,4 @@
-import type { SectionProps } from "$live/mod.ts";
+import type { SectionProps } from "deco/mod.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 
