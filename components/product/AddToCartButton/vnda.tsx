@@ -1,4 +1,4 @@
-import { PropertyValue } from "deco-sites/std/commerce/types.ts";
+import { PropertyValue } from "apps/commerce/types.ts";
 import { useCart } from "deco-sites/std/packs/vnda/hooks/useCart.ts";
 import Button, { Props as BtnProps } from "./common.tsx";
 

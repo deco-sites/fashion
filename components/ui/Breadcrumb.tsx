@@ -1,4 +1,4 @@
-import type { BreadcrumbList } from "deco-sites/std/commerce/types.ts";
+import type { BreadcrumbList } from "apps/commerce/types.ts";
 
 interface Props {
   itemListElement: BreadcrumbList["itemListElement"];
