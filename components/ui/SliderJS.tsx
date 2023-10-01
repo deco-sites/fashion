@@ -87,7 +87,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   const goToItem = (index: number) => {
     const item = items.item(index);
 
-    if (!isHTMLElement(item)) {
+    if (!isHTMLElement(item) || !isHTMLElement(slider)) {
       console.warn(
         `Element at index ${index} is not an html element. Skipping carousel`,
       );
@@ -98,7 +98,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     slider.scrollTo({
       top: 0,
       behavior: scroll,
-      left: item.offsetLeft - root.offsetLeft,
+      left: item.offsetLeft - slider.offsetLeft,
     });
   };
 
