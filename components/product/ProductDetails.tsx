@@ -18,6 +18,7 @@ import type { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import { getImageInCorrectRatio } from "deco-sites/staging/sdk/getImageInCorrectRatio.ts";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -235,15 +236,17 @@ const useStableImages = (product: ProductDetailsPage["product"]) => {
   const allImages = product.isVariantOf?.hasVariant.flatMap((p) => p.image)
     .reduce((acc, img) => {
       if (img?.url) {
-        acc[imageNameFromURL(img.url)] = img.url;
+        const url = getImageInCorrectRatio(img.url, WIDTH, HEIGHT);
+        acc[imageNameFromURL(img.url)] = url;
       }
       return acc;
     }, {} as Record<string, string>) ?? {};
 
   return images.map((img) => {
     const name = imageNameFromURL(img.url);
+    const url = getImageInCorrectRatio(img.url, WIDTH, HEIGHT);
 
-    return { ...img, url: allImages[name] ?? img.url };
+    return { ...img, url: allImages[name] ?? url };
   });
 };
 
